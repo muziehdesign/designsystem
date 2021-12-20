@@ -1,0 +1,106 @@
+<h1>Button</h1>
+<p class="prose">
+    A button triggers an event or action.
+</p>
+
+<article>
+    <h2>Variants</h2>
+    <p>
+        Each button variant serves a specific purpose, they should be used accordingly.
+    </p>
+    <div class="example">
+        <h3>Primary</h3>
+        <button class="btn-primary">Primary button</button>
+        <p>Use `primary` for primary action of a container. While not every container requires a primary button, it
+            should only appear once per container (not including application header, modal, or side panel).</p>
+
+        <h3>Secondary/Default</h3>
+        <button class="btn-secondary">Secondary button</button>
+        <p>Default button to use on actions. They can be used alone or as a secondary button along with a primary
+            button.
+        </p>
+
+        <h3>Link</h3>
+        <button class="btn-link">Link button</button>
+        <p>Use a `link` button when the action takes a user to another page.</p>
+
+        <h3>Danger</h3>
+        <button class="btn-danger">Danger button</button>
+        <p>Use a `danger` button for the primary action when it would causes destruction on the data. This is usually
+            seen in confirmation modals.</p>
+
+        <h3>Warning</h3>
+        <button class="btn-warning">Warning button</button>
+        <p>Use a `warning` button to warn the user when the associated action would cause significant changes. This is
+            usually seen in modals.</p>
+    </div>
+</article>
+
+<article>
+    <h2>States</h2>
+    <div class="example">
+        <h3>Disabled</h3>
+        <p>Disabled buttons can cause accessibility problems and should be avoided.</p>
+        <h3>Loading</h3>
+        <button class="btn-primary loading">
+            <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+            </svg>
+            Primary button
+        </button>
+        // TODO: this needs to use a css class instead of svg directly
+    </div>
+</article>
+
+<article>
+    <h2>Split button</h2>
+    // TODO
+    <p>Use a split button to group related commands together to reduce space needs and cognitive load.</p>
+</article>
+
+<article>
+    <h2>Button group</h2>
+    <div class="buttons">
+        <button class="btn-primary">Primary button</button>
+        <button class="btn-primary">Primary button</button>
+        <button class="btn-secondary">Secondary button</button>
+        <button class="btn-secondary">Secondary button</button>
+    </div>
+    <p>Use <code>.buttons</code> when displaying a group of buttons to enforce consistent button spacing.</p>
+</article>
+
+<article>
+    <h2>Button with icon</h2>
+    <p>Use button with an icon when it helps conveying meaning quicker.</p>
+</article>
+
+<article>
+    <h2>Icon button</h2>
+    // TODO
+</article>
+
+<article>
+    <h2>Best practices</h2>
+    <ul class="list-inside list-disc">
+        <li>
+            Use concise active verbs or phrases that clearly indicate action
+            <ul>
+                <li>DO: <button class="btn-secondary">Reset password</button></li>
+                <li>DON'T: <button class="btn-secondary">Click here to reset password</button> </li>
+            </ul>
+        </li>
+        <li>Use sentence-case captitalization, e.g. <code>Primary button</code> and not <code>Primary Button</code></li>
+    </ul>
+</article>
+
+
+<article>
+    <h2>Notes</h2>
+    <ul>
+        <li>TODO: tab order and focus</li>
+    </ul>
+</article>

@@ -1,53 +1,12 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+// site specific
+.example {
+    @apply bg-white mt-8 mb-8 p-8;
+}
 
-@layer base {
-    h1 {
-        @apply text-4xl mb-0.5 font-medium;
-    }
-    h2 {
-        @apply text-3xl mb-0.5 font-medium;
-    }
-    h3 {
-        @apply text-2xl mb-0.5 font-medium;
-    }
-    h4 {
-        @apply text-xl mb-0.5 font-medium;
-    }
-    h5 {
-        @apply text-lg mb-0.5 font-medium;
-    }
-    h6 {
-        @apply text-base mb-0.5 font-medium;
-    }
-    // TODO: fill in other headings
+article {
+    margin: 2rem 0;
+}
 
-    a {
-        @apply text-blue-500 hover:text-blue-900;
-    }
-
-    table {
-        @apply w-full text-left border-collapse;
-
-        tbody {
-            @apply align-baseline;
-        }
-
-        tr {
-            @apply border-b border-gray-200;
-        }
-
-        td {
-            @apply py-3 px-2;
-        }
-
-        th {
-            @apply top-0 text-sm font-semibold text-gray-500 p-2;
-        }
-
-        thead tr {
-            @apply border-gray-500;
-        }
-    }
+code {
+    @apply font-mono text-pink-500;
 }

@@ -1,0 +1,206 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    h1 {
+        @apply text-2xl font-medium mt-8;
+    }
+
+    h2 {
+        @apply text-xl font-medium mt-8;
+    }
+
+    h3 {
+        @apply text-lg font-medium mt-8;
+    }
+
+    h4 {
+        @apply text-base font-semibold mt-8;
+    }
+
+    h5 {
+        @apply text-sm font-semibold mt-5;  
+    }
+
+    h6 {
+        @apply text-sm font-semibold mt-5;  
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply mb-1;
+    }
+
+    a {
+        @apply text-blue-500 hover:text-blue-900 hover:underline;
+    }
+
+    a:visited {
+        color: #551A8B; // TODO
+    }
+
+    p {
+        @apply mb-4;
+    }
+
+    small {
+        @apply text-sm;
+    }
+
+    table {
+        @apply w-full text-left border-collapse;
+
+        tbody {
+            @apply align-baseline;
+        }
+
+        tr {
+            @apply border-b border-gray-200;
+        }
+
+        td {
+            @apply py-3 px-2;
+        }
+
+        th {
+            @apply top-0 text-sm font-semibold text-gray-500 p-2;
+        }
+
+        thead tr {
+            @apply border-gray-500;
+        }
+    }
+
+    details summary {
+        cursor: pointer;
+    }
+}
+
+@layer components {
+    
+    .breadcrumbs ol {
+        @apply flex space-x-4;
+    }
+
+    .empty-state {
+        @apply py-8 text-center;
+    }
+}
+
+.page > header {
+    @apply py-6;
+}
+
+// breadcrumbs
+.breadcrumbs li:not(:last-child):after {
+    content: '/';
+    @apply text-gray-300 pl-4;
+}
+
+.breadcrumbs a {
+    @apply text-gray-500;
+}
+
+// form 
+form {
+    @apply max-w-md;
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply mt-3 mb-0;
+    }
+
+    header {
+        @apply mb-2;
+    }
+
+    .description {
+        @apply text-gray-600 text-sm;
+    }
+
+    .footer {
+        @apply mt-8 mb-3;
+    }
+}
+
+.field {
+    @apply block py-1 text-sm font-medium;
+
+    .help-text {
+        @apply text-gray-500;
+    }
+}
+
+.field-label {
+    @apply text-gray-600;
+}
+
+.field-control {
+    @apply mt-1 block w-full;
+}
+
+fieldset {
+    @apply mt-5;
+}
+
+legend {
+    @apply text-gray-700 tracking-wide uppercase;
+}
+
+.form-message {
+    @apply p-1;
+
+    // this is temporary
+    &.success svg {
+        @apply text-success inline-block;
+    }
+    &.failed svg {
+        @apply text-danger inline-block;
+    }
+}
+
+
+// buttons
+button {
+    @apply inline-flex justify-center py-2 px-4 border border-transparent font-medium focus:outline-none;
+    min-width: 10rem;
+}
+
+.btn-primary, .btn-secondary, .btn-danger, .btn-warning {
+    @apply focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100;
+}
+
+.btn-primary {
+    @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 focus:ring-blue-500;
+}
+
+.btn-secondary {
+    @apply text-secondary shadow-sm bg-white border-gray-300 hover:bg-gray-100 focus:ring-blue-500;
+}
+
+.btn-danger {
+    @apply text-white shadow-sm bg-red-500 hover:bg-red-600 focus:ring-red-500;
+}
+
+.btn-warning {
+    @apply text-white shadow-sm bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-500;
+}
+
+.btn-link {
+    @apply hover:underline text-primary;
+}
+
+button.loading {
+    @apply pointer-events-none cursor-not-allowed;
+}
+  
+.buttons {
+    button:not(last-child) {
+        @apply mr-4;
+    }
+}
+
+
+// icon
+.svg-icon {
+    @apply h-6 w-6 p-1 inline-block;
+}

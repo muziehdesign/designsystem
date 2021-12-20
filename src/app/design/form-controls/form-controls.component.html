@@ -1,128 +1,171 @@
-<h1>Form Controls</h1>
+<header>
+  <h1>Form Controls</h1>
+</header>
 
-<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-    <div class="grid grid-cols-1 gap-6">
-      <label class="block">
-        <span class="text-gray-700">Input (text)</span>
-        <input type="text" class="form-input mt-1 block w-full" placeholder="john@example.com">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (email)</span>
-        <input type="email" class="form-input mt-1 block w-full" placeholder="john@example.com">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (email, multiple)</span>
-        <input type="email" multiple="" class="form-input mt-1 block w-full" placeholder="john@example.com">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (password)</span>
-        <input type="password" class="form-input mt-1 block w-full" placeholder="john@example.com">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (date)</span>
-        <input type="date" class="form-input mt-1 block w-full">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (datetime-local)</span>
-        <input type="datetime-local" class="form-input mt-1 block w-full">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (month)</span>
-        <input type="month" class="form-input mt-1 block w-full">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (number)</span>
-        <input type="number" class="form-input mt-1 block w-full">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (search)</span>
-        <input type="search" class="form-input mt-1 block w-full">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (time)</span>
-        <input type="time" class="form-input mt-1 block w-full">
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Input (week)</span>
-        <input type="week" class="form-input mt-1 block w-full">
+<article>
+  <h2>Input</h2>
+  <p>
+    Use <code>input</code> with the appropriate <code>type</code> value to support accessibility.
+  </p>
+  <div class="example">
+    <form>
+      <input type="text" class="field-control">
+    </form>
+  </div>
+</article>
+
+<article>
+  <h2>Textarea</h2>
+  <p>Use textarea to collect long text content from user.</p>
+  <div class="example">
+    <form>
+      <textarea class="field-control" rows="3"></textarea>
+    </form>
+  </div>
+</article>
+
+<article>
+  <h2>Selection related controls</h2>
+  Several controls can be used when we need to collect a selection or selections from the user:
+  <ul class="list-disc list-inside">
+    <li>toggle</li>
+    <li>radio button</li>
+    <li>select</li>
+    <li>multiselect</li>
+    <li>checkbox</li>
+  </ul>
+  Each is different and should be used appropriately.
+
+
+  <div class="grid grid-rows-6 grid-flow-col mt-8 control-decision-table">
+    <div></div>
+    <div>how many options</div>
+    <div>how many selections user can make</div>
+    <div>is there a default option</div>
+    <div>relationship between choices</div>
+    <div>when does selection take effect</div>
+
+    <div>Radio buttons</div>
+    <div>2-4</div>
+    <div>1</div>
+    <div>yes</div>
+    <div>mutually exclusive</div>
+    <div>after user submits form</div>
+
+    <div>Select</div>
+    <div>more than 4</div>
+    <div>1</div>
+    <div>no, unless there's an option that we expect almost all users will select</div>
+    <div>mutually exclusive</div>
+    <div>after user submits form</div>
+
+    <div>Checkboxes</div>
+    <div>2-4</div>
+    <div>0-all</div>
+    <div>no</div>
+    <div>independent</div>
+    <div>after user submits form</div>
+
+    <div>Multiselect</div>
+    <div>more than 4</div>
+    <div>0-all</div>
+    <div>no</div>
+    <div>independent</div>
+    <div>after user submits form</div>
+
+    <div>Single checkbox</div>
+    <div>1</div>
+    <div>2 (on/off)</div>
+    <div>yes</div>
+    <div>mutually exclusive</div>
+    <div>after user submits form</div>
+
+    <div>Toggle</div>
+    <div>1</div>
+    <div>2 (on/off)</div>
+    <div>yes</div>
+    <div>mutually exclusive</div>
+    <div>immediately</div>
+  </div>
+
+  <h3>Toggle</h3>
+  <div class="example">
+    TODO
+  </div>
+
+  <h3>Radio buttons</h3>
+  Radio buttons allows users to scan options quickly.
+  <div class="example">
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-radio" type="radio" checked="" name="radio-direct" value="1">
+        <span class="ml-2">Option 1</span>
       </label>
     </div>
-    <div class="grid grid-cols-1 gap-6">
-      <label class="block">
-        <span class="text-gray-700">Input (tel)</span>
-        <input type="tel" multiple="" class="form-input mt-1 block w-full" placeholder="john@example.com">
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-radio" type="radio" name="radio-direct" value="2">
+        <span class="ml-2">Option 2</span>
       </label>
-      <label class="block">
-        <span class="text-gray-700">Input (url)</span>
-        <input type="url" multiple="" class="form-input mt-1 block w-full" placeholder="john@example.com">
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-radio" type="radio" name="radio-direct" value="3">
+        <span class="ml-2">Option 3</span>
       </label>
-      <label class="block">
-        <span class="text-gray-700">Select</span>
-        <select class="form-select block w-full mt-1">
-          <option>Option 1</option>
-          <option>Option 2</option>
-        </select>
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Select (multiple)</span>
-        <select class="form-multiselect block w-full mt-1" multiple="">
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-          <option>Option 4</option>
-          <option>Option 5</option>
-        </select>
-      </label>
-      <label class="block">
-        <span class="text-gray-700">Textarea</span>
-        <textarea class="form-textarea mt-1 block w-full h-24" rows="3" placeholder="Enter some long form content."></textarea>
-      </label>
-      <div class="block">
-        <span class="text-gray-700">Checkboxes</span>
-        <div class="mt-2">
-          <div>
-            <label class="inline-flex items-center">
-              <input class="form-checkbox" type="checkbox" checked="">
-              <span class="ml-2">Option 1</span>
-            </label>
-          </div>
-          <div>
-            <label class="inline-flex items-center">
-              <input class="form-checkbox" type="checkbox">
-              <span class="ml-2">Option 2</span>
-            </label>
-          </div>
-          <div>
-            <label class="inline-flex items-center">
-              <input class="form-checkbox" type="checkbox">
-              <span class="ml-2">Option 3</span>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <span class="text-gray-700">Radio Buttons</span>
-        <div class="mt-2">
-          <div>
-            <label class="inline-flex items-center">
-              <input class="form-radio" type="radio" checked="" name="radio-direct" value="1">
-              <span class="ml-2">Option 1</span>
-            </label>
-          </div>
-          <div>
-            <label class="inline-flex items-center">
-              <input class="form-radio" type="radio" name="radio-direct" value="2">
-              <span class="ml-2">Option 2</span>
-            </label>
-          </div>
-          <div>
-            <label class="inline-flex items-center">
-              <input class="form-radio" type="radio" name="radio-direct" value="3">
-              <span class="ml-2">Option 3</span>
-            </label>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
+  <h3>Select</h3>
+  <p>A select is similar to radio button list, but allows reducing space needs. A label should be used when using a
+    select. Default value should be populated when it's what most users will use.
+    Group options when it helps.</p>
+  <div class="example">
+    <form>
+      <label class="field">
+        <span class="field-label">Color</span>
+        <select class="field-control">
+          <option selected disabled>Select a color...</option>
+          <option>Red</option>
+          <option>Green</option>
+        </select>
+      </label>
+    </form>
+  </div>
+  <h3>Checkbox</h3>
+  <div class="example">
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-checkbox" type="checkbox" checked="">
+        <span class="ml-2">Option 1</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-checkbox" type="checkbox">
+        <span class="ml-2">Option 2</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-checkbox" type="checkbox">
+        <span class="ml-2">Option 3</span>
+      </label>
+    </div>
+  </div>
+  <h3>
+    Multiselect
+    <div class="example">
+      TODO
+    </div>
+  </h3>
+</article>
+
+<article>
+  <h2>Notes</h2>
+  <ul>
+    <li>May need select with typeahead, checkbox listbox</li>
+    <li>some of the css and html structure here needs cleanup</li>
+    <li>Decision table is revised based on https://www.nngroup.com/articles/toggle-switch-guidelines/</li>
+  </ul>
+</article>
