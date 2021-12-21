@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { AccordionComponent } from './accordion/accordion.component';
+import { AlertsComponent } from './alerts/alerts.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { BreakpointsComponent } from './breakpoints/breakpoints.component';
 import { ButtonComponent } from './button/button.component';
 import { ColorComponent } from './color/color.component';
+import { ContentComponent } from './content/content.component';
+import { DescriptionListComponent } from './description-list/description-list.component';
 import { DesignComponent } from './design.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { FormControlsComponent } from './form-controls/form-controls.component';
@@ -14,6 +17,7 @@ import { FormComponent } from './form/form.component';
 import { GridComponent } from './grid/grid.component';
 import { IconographyComponent } from './iconography/iconography.component';
 import { LayoutComponent } from './layout/layout.component';
+import { PaginationComponent } from './pagination/pagination.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
 import { TableComponent } from './table/table.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -27,9 +31,12 @@ const routes: Routes = [
     children: [
       { path: 'about', component: AboutComponent },
       { path: 'accessibility', component: AccessibilityComponent },
+      { path: 'alerts', component: AlertsComponent },
       { path: 'breadcrumbs', component: BreadcrumbsComponent },
       { path: 'breakpoints', component: BreakpointsComponent },
       { path: 'color', component: ColorComponent },
+      { path: 'content', component: ContentComponent },
+      { path: 'descriptionlist', component: DescriptionListComponent },
       { path: 'emptystate', component: EmptyStateComponent },
       { path: 'grid', component: GridComponent },
       { path: 'typography', component: TypographyComponent },
@@ -38,6 +45,7 @@ const routes: Routes = [
       { path: 'form', component: FormComponent },
       { path: 'accordion', component: AccordionComponent },
       { path: 'button', component: ButtonComponent },
+      { path: 'pagination', component: PaginationComponent },
       { path: 'formcontrols', component: FormControlsComponent },
       { path: 'skeletonloader', component: SkeletonLoaderComponent },
       { path: 'table', component: TableComponent },
@@ -51,4 +59,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DesignRoutingModule {}
+export class DesignRoutingModule { }

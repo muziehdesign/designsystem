@@ -25,6 +25,9 @@ import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TooltipsComponent } from './tooltips/tooltips.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
+import { PaginationComponent } from './pagination/pagination.component';
+import { DescriptionListComponent } from './description-list/description-list.component';
+import { AlertsComponent } from './alerts/alerts.component';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.compo
     EmptyStateComponent,
     TabsComponent,
     TooltipsComponent,
-    SkeletonLoaderComponent
+    SkeletonLoaderComponent,
+    PaginationComponent,
+    DescriptionListComponent,
+    AlertsComponent
   ],
   imports: [
     CommonModule,

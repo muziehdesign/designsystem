@@ -85,6 +85,32 @@
     .empty-state {
         @apply py-8 text-center;
     }
+
+    .dl {
+        dt, dd {
+            @apply inline-block p-3;
+        }
+
+        dt {
+            @apply w-48;
+        }
+
+        & > *:nth-child(odd) {
+            @apply bg-gray-100;
+        }
+    }
+
+    .alert {
+        @apply border-l-4 pl-8 py-4;
+
+        .title {
+            @apply font-medium py-1;
+        }
+
+        &.success {
+            @apply text-success bg-green-50 border-green-900;
+        }
+    }
 }
 
 .page > header {
@@ -139,11 +165,11 @@ form {
 }
 
 fieldset {
-    @apply mt-5;
+    @apply mt-6;
 }
 
 legend {
-    @apply text-gray-700 tracking-wide uppercase;
+    @apply text-gray-700 tracking-wide uppercase font-medium;
 }
 
 .form-message {
