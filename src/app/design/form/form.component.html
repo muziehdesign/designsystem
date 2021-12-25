@@ -19,12 +19,8 @@
                 <span class="field-label">Recipent name <span class="text-red-500">*</span></span>
                 <input type="text" class="field-control" [(ngModel)]="model.recipientName" name="recipientName"
                     required>
-                <small class="field-error text-red-500" *ngIf="scenario == 'validationerror'">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                            clip-rule="evenodd" />
-                    </svg>
+                <small class="field-error text-red-500" *ngIf="displayError('recipientName')">
+                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
                     Invalid value
                 </small>
             </label>
@@ -32,12 +28,16 @@
             <label class="field">
                 <span class="field-label">Address 1 <span class="text-red-500">*</span></span>
                 <input type="text" class="field-control" [(ngModel)]="model.address1" name="address1" required>
+                <small class="field-error text-red-500" *ngIf="displayError('address1')">
+                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    Invalid value
+                </small>
             </label>
             <label class="field">
                 <span class="field-label">Address 2</span>
                 <input type="text" class="field-control" [(ngModel)]="model.address2" name="address2">
             </label>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-3 gap-x-4">
                 <label class="field">
                     <span class="field-label">City <span class="text-red-500">*</span></span>
                     <input type="text" class="field-control" [(ngModel)]="model.city" name="city" required>
@@ -53,50 +53,44 @@
                     <span class="field-label">Zip code <span class="text-red-500">*</span></span>
                     <input type="text" class="field-control" [(ngModel)]="model.zipCode" name="zipCode" required>
                 </label>
+                <small class="field-error text-red-500"
+                    *ngIf="displayError('city') || displayError('state') || displayError('zipCode')">
+                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    Invalid value(s)
+                </small>
             </div>
 
-            <fieldset>
-                <legend>Delivery Instructions</legend>
+            <!--<fieldset>
+                <legend>Delivery instructions</legend>
                 <label class="field">
                     <span class="field-label">Navigation instructions</span>
                     <input type="text" class="field-control" [(ngModel)]="model.navigationInstructions"
-                        name="navigationInstructions" required>
+                        name="navigationInstructions">
                     <small class="help-text">Provide details such as nearby landmark to help find the address.</small>
                 </label>
                 <label class="field">
                     <span class="field-label">Security code</span>
-                    <input type="text" class="field-control" [(ngModel)]="model.securityCode" name="securityCode"
-                        required>
+                    <input type="text" class="field-control" [(ngModel)]="model.securityCode" name="securityCode">
                     <small class="help-text">Security code for the door</small>
                 </label>
-                <label class="field">
-                    <span class="field-label">Scenario</span>
-                    <select [(ngModel)]="scenario" name="scenario" [ngModelOptions]="{standalone:true}"
-                        class="field-control">
-                        <option value="success" selected>success</option>
-                        <option value="unexpectederror">unexpected error</option>
-                        <option value="validationerror">validation error</option>
-                    </select>
-                    <small class="help-text">Select one to see form behavior at play. TODO: move</small>
+            </fieldset>-->
+
+            <fieldset>
+                <legend>Form scenario</legend>
+                <label class="field field-checkbox">
+                    <input type="checkbox" class="field-control" [(ngModel)]="model.unexpectedError" name="unexpectedError"> Unexpected
+                    error
                 </label>
             </fieldset>
 
             <div class="footer">
-                <div class="form-message success" *ngIf="isSuccess == true">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    Saved
+                <div class="form-message success" *ngIf="isSuccessful == true">
+                    <app-svg-icon key="check-circle" type="solid"></app-svg-icon>
+                    Saved!
                 </div>
-                <div class="form-message failed text-danger" *ngIf="isSuccess == false">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    {{error}}
+                <div class="form-message failed text-danger" *ngIf="isSuccessful == false">
+                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    Unexpected error, try submitting the form again.
                 </div>
 
                 <button class="btn-primary" [ngClass]="{'loading': isLoading}">
@@ -167,17 +161,24 @@
     <h2>Usage</h2>
 
     <h3>Best practices</h3>
-    <ol>
+    <ol class="list-decimal list-inside">
         <li>Button should state the action that the button performs when clicked.</li>
-        <li>Avoid multiple action buttons, reset button, and cancel button.</li>
+        <li>Avoid multiple action buttons. Forms usually should have 1-2 buttons.</li>
+        <li>Avoid reset button, and cancel button.</li>
         <li>Avoid placeholder attributes.</li>
         <li>Never disable a submit button.</li>
-        <li>Autofocus the first field by default.</li>
         <li>A form is a conversation with user. Be helpful and concise in our communication.</li>
-        <li>Present fields in a single column layout to keep users in flow. Related fields can be grouped together to
-            reduce space needs.</li>
-        <li>Use logical sequencing</li>
+        <li>Present fields in a single column layout to keep users in flow.</li>
+        <li>Use logical grouping and sequencing for form field arrangements.</li>
     </ol>
+
+    <h3>Button positioning</h3>
+    <ul class="list-inside list-disc">
+        <li>Buttons should be sorted by importance from left to right for pages. Primary button should always be first
+            button.</li>
+        <li>Buttons should be sorted by importance from right to left for modals and multi-step forms. Primary button
+            should always be last.</li>
+    </ul>
 
     <h3>References</h3>
     <ul>
@@ -194,9 +195,7 @@
     <ul class="list-disc list-inside">
         <li>iterate css selectors</li>
         <li>field widths</li>
-        <li>create css class for field entries that are on one line; require control spacing when displayed as group
-        </li>
-        <li>auto focus form</li>
-        <li>form message css needs work</li>
+        <li>create css class for field entries that are on one line; require control spacing when displayed as group</li>
+        <li>Autofocus the first field by default.</li>
     </ul>
 </article>

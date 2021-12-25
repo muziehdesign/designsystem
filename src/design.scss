@@ -40,7 +40,7 @@
     }
 
     p {
-        @apply mb-4;
+        @apply my-4;
     }
 
     small {
@@ -152,7 +152,14 @@ form {
     @apply block py-1 text-sm font-medium;
 
     .help-text {
-        @apply text-gray-500;
+        @apply text-gray-500 block;
+    }
+}
+
+.field-checkbox {
+    @apply font-normal;
+    & input {
+        @apply mr-1;
     }
 }
 
@@ -160,7 +167,7 @@ form {
     @apply text-gray-600;
 }
 
-.field-control {
+.field-control:not([type="checkbox"]) {
     @apply mt-1 block w-full;
 }
 
@@ -173,10 +180,13 @@ legend {
 }
 
 .form-message {
-    @apply p-1;
+    @apply p-1 block;
 
     // this is temporary
-    &.success svg {
+    &.success {
+        @apply text-success;
+    }
+    &.success svg{
         @apply text-success inline-block;
     }
     &.failed svg {
@@ -184,11 +194,26 @@ legend {
     }
 }
 
+.field-error {
+    @apply mt-1 block;
+}
+
+.ng-submitted .ng-invalid:not(:focus), .ng-touched.ng-invalid:not(:focus) {
+    @apply border-danger;
+}
 
 // buttons
 button {
-    @apply inline-flex justify-center py-2 px-4 border border-transparent font-medium focus:outline-none;
+    
+}
+
+.btn-primary, .btn-secondary, .btn-danger, .btn-warning, .btn-link {
+    @apply inline-flex justify-center py-2 px-4 border font-medium focus:outline-none;
     min-width: 10rem;
+}
+
+.btn-icon {
+    @apply bg-gray-200 hover:bg-gray-300 focus:ring-blue-500 py-2 px-3;
 }
 
 .btn-primary, .btn-secondary, .btn-danger, .btn-warning {
@@ -200,7 +225,7 @@ button {
 }
 
 .btn-secondary {
-    @apply text-secondary shadow-sm bg-white border-gray-300 hover:bg-gray-100 focus:ring-blue-500;
+    @apply text-secondary shadow-sm border-transparent bg-gray-200 hover:bg-gray-300 focus:ring-blue-500;
 }
 
 .btn-danger {
@@ -212,21 +237,20 @@ button {
 }
 
 .btn-link {
-    @apply hover:underline text-primary;
+    @apply hover:underline text-primary border-transparent;
 }
 
 button.loading {
-    @apply pointer-events-none cursor-not-allowed;
+    @apply pointer-events-none cursor-wait;
 }
   
-.buttons {
+.button-list {
     button:not(last-child) {
         @apply mr-4;
     }
 }
 
-
 // icon
-.svg-icon {
-    @apply h-6 w-6 p-1 inline-block;
+.icon {
+    @apply h-5 w-5 inline-block;
 }

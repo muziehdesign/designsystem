@@ -8,31 +8,40 @@
     <p>
         Each button variant serves a specific purpose, they should be used accordingly.
     </p>
+    <h3>Primary</h3>
+    <p>Use `primary` for primary action of a container. While not every container requires a primary button, it
+        should only appear once per container (not including application header, modal, or side panel).</p>
     <div class="example">
-        <h3>Primary</h3>
         <button class="btn-primary">Primary button</button>
-        <p>Use `primary` for primary action of a container. While not every container requires a primary button, it
-            should only appear once per container (not including application header, modal, or side panel).</p>
+    </div>
 
-        <h3>Secondary/Default</h3>
+
+    <h3>Secondary/Default</h3>
+    <p>Default button to use on actions. They can be used alone or as a secondary button along with a primary
+        button.
+    </p>
+    <div class="example">
         <button class="btn-secondary">Secondary button</button>
-        <p>Default button to use on actions. They can be used alone or as a secondary button along with a primary
-            button.
-        </p>
+    </div>
 
-        <h3>Link</h3>
+    <h3>Link</h3>
+    <p>Use a `link` button when the action takes a user to another page.</p>
+    <div class="example">
         <button class="btn-link">Link button</button>
-        <p>Use a `link` button when the action takes a user to another page.</p>
+    </div>
 
-        <h3>Danger</h3>
+    <h3>Danger</h3>
+    <p>Use a `danger` button for the primary action when it would causes destruction on the data. This is usually
+        seen in confirmation modals.</p>
+    <div class="example">
         <button class="btn-danger">Danger button</button>
-        <p>Use a `danger` button for the primary action when it would causes destruction on the data. This is usually
-            seen in confirmation modals.</p>
+    </div>
 
-        <h3>Warning</h3>
+    <h3>Warning</h3>
+    <p>Use a `warning` button to warn the user when the associated action would cause significant changes. This is
+        usually seen in modals.</p>
+    <div class="example">
         <button class="btn-warning">Warning button</button>
-        <p>Use a `warning` button to warn the user when the associated action would cause significant changes. This is
-            usually seen in modals.</p>
     </div>
 </article>
 
@@ -64,13 +73,15 @@
 
 <article>
     <h2>Button group</h2>
-    <div class="buttons">
-        <button class="btn-primary">Primary button</button>
-        <button class="btn-primary">Primary button</button>
-        <button class="btn-secondary">Secondary button</button>
-        <button class="btn-secondary">Secondary button</button>
+    <div class="example">
+        <div class="button-list">
+            <button class="btn-primary">Primary button</button>
+            <button class="btn-primary">Primary button</button>
+            <button class="btn-secondary">Secondary button</button>
+            <button class="btn-secondary">Secondary button</button>
+        </div>
     </div>
-    <p>Use <code>.buttons</code> when displaying a group of buttons to enforce consistent button spacing.</p>
+    <p>Use <code>.button-list</code> when displaying a group of buttons to enforce consistent button spacing.</p>
 </article>
 
 <article>
@@ -81,6 +92,10 @@
 <article>
     <h2>Icon button</h2>
     // TODO
+
+    <div class="example">
+        <button class="btn-icon"><app-svg-icon key="menu" type="outline"></app-svg-icon></button>
+    </div>
 </article>
 
 <article>
@@ -93,7 +108,8 @@
                 <li>DON'T: <button class="btn-secondary">Click here to reset password</button> </li>
             </ul>
         </li>
-        <li>Use sentence-case captitalization, e.g. <code>Primary button</code> and not <code>Primary Button</code></li>
+        <li>Use sentence-case captitalization, e.g. <code>Primary button</code> and not <code>Primary Button</code>
+        </li>
     </ul>
 </article>
 

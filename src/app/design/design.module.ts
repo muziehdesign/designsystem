@@ -23,11 +23,13 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { GridComponent } from './grid/grid.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { TooltipsComponent } from './tooltips/tooltips.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { DescriptionListComponent } from './description-list/description-list.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
+import { WizardComponent } from './wizard/wizard.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -52,16 +54,18 @@ import { AlertsComponent } from './alerts/alerts.component';
     GridComponent,
     EmptyStateComponent,
     TabsComponent,
-    TooltipsComponent,
     SkeletonLoaderComponent,
     PaginationComponent,
     DescriptionListComponent,
-    AlertsComponent
+    AlertsComponent,
+    TooltipComponent,
+    WizardComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    DesignRoutingModule
+    DesignRoutingModule,
+    SharedModule
   ]
 })
 export class DesignModule { }

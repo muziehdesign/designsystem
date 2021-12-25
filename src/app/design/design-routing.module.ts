@@ -21,42 +21,44 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
 import { TableComponent } from './table/table.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { TooltipsComponent } from './tooltips/tooltips.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypographyComponent } from './typography/typography.component';
+import { WizardComponent } from './wizard/wizard.component';
 
 const routes: Routes = [
-  {
-    path: 'design',
-    component: DesignComponent,
-    children: [
-      { path: 'about', component: AboutComponent },
-      { path: 'accessibility', component: AccessibilityComponent },
-      { path: 'alerts', component: AlertsComponent },
-      { path: 'breadcrumbs', component: BreadcrumbsComponent },
-      { path: 'breakpoints', component: BreakpointsComponent },
-      { path: 'color', component: ColorComponent },
-      { path: 'content', component: ContentComponent },
-      { path: 'descriptionlist', component: DescriptionListComponent },
-      { path: 'emptystate', component: EmptyStateComponent },
-      { path: 'grid', component: GridComponent },
-      { path: 'typography', component: TypographyComponent },
-      { path: 'iconography', component: IconographyComponent },
-      { path: 'layout', component: LayoutComponent },
-      { path: 'form', component: FormComponent },
-      { path: 'accordion', component: AccordionComponent },
-      { path: 'button', component: ButtonComponent },
-      { path: 'pagination', component: PaginationComponent },
-      { path: 'formcontrols', component: FormControlsComponent },
-      { path: 'skeletonloader', component: SkeletonLoaderComponent },
-      { path: 'table', component: TableComponent },
-      { path: 'tabs', component: TabsComponent },
-      { path: 'tooltips', component: TooltipsComponent },
-    ],
-  },
+    {
+        path: 'design',
+        component: DesignComponent,
+        children: [
+            { path: 'about', component: AboutComponent },
+            { path: 'accessibility', component: AccessibilityComponent },
+            { path: 'alerts', component: AlertsComponent },
+            { path: 'breadcrumbs', component: BreadcrumbsComponent },
+            { path: 'breakpoints', component: BreakpointsComponent },
+            { path: 'color', component: ColorComponent },
+            { path: 'content', component: ContentComponent },
+            { path: 'descriptionlist', component: DescriptionListComponent },
+            { path: 'emptystate', component: EmptyStateComponent },
+            { path: 'grid', component: GridComponent },
+            { path: 'typography', component: TypographyComponent },
+            { path: 'iconography', component: IconographyComponent },
+            { path: 'layout', component: LayoutComponent },
+            { path: 'form', component: FormComponent },
+            { path: 'accordion', component: AccordionComponent },
+            { path: 'button', component: ButtonComponent },
+            { path: 'pagination', component: PaginationComponent },
+            { path: 'formcontrols', component: FormControlsComponent },
+            { path: 'skeletonloader', component: SkeletonLoaderComponent },
+            { path: 'table', component: TableComponent },
+            { path: 'tabs', component: TabsComponent },
+            { path: 'tooltip', component: TooltipComponent },
+            { path: 'wizard', component: WizardComponent },
+        ],
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule],
 })
-export class DesignRoutingModule { }
+export class DesignRoutingModule {}

@@ -1,54 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, NgForm } from '@angular/forms';
 import { of } from 'rxjs';
 import { delay, finalize } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
+    selector: 'app-form',
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  model: DeliveryAddressInputModel = {};
-  scenario: formScenario = formScenario.success;
-  isLoading: boolean = false;
-  isSuccess: boolean | undefined;
-  error: string | undefined;
-  constructor() {}
+    model: DeliveryAddressInputModel = { unexpectedError: false };
+    isLoading: boolean = false;
+    error: string | undefined;
+    isSuccessful: boolean | undefined;
+    @ViewChild('addressForm', { static: true }) addressForm?: NgForm;
+    constructor() {}
 
-  ngOnInit(): void {}
+    ngOnInit(): void {}
 
-  onSubmit() {
-    this.isLoading = true;
-    this.isSuccess = undefined;
-    of(null)
-      .pipe(
-        delay(1800),
-        finalize(() => (this.isLoading = false))
-      )
-      .subscribe(() => {
-        this.isSuccess = this.scenario == formScenario.success;
-        if(this.scenario == formScenario.unexpectederror) {
-          this.error = 'Unexpected error, try again.';
-        } else if(this.scenario == formScenario.validationerror) {
-          this.error = 'Correct the field errors and try again.';
+    onSubmit() {
+        this.isSuccessful = undefined;
+
+        if (this.addressForm!.invalid) {
+            return;
         }
-      });
-  }
+
+        this.isLoading = true;
+        of(null)
+            .pipe(
+                delay(1500),
+                finalize(() => (this.isLoading = false))
+            )
+            .subscribe((x) => {
+                this.isSuccessful = this.model.unexpectedError == false;
+            });
+    }
+
+    displayError(controlKey: string) {
+        return this.addressForm?.form.controls[controlKey]?.invalid && (this.addressForm?.form.controls[controlKey]?.touched || this.addressForm?.submitted);
+    }
 }
 
 interface DeliveryAddressInputModel {
-  recipientName?: string;
-  address1?: string;
-  address2?: string;
-  city?: string;
-  state?: string;
-  zipCode?: string;
-  navigationInstructions?: string;
-  securityCode?: string;
-}
-
-enum formScenario {
-  success = 'success',
-  validationerror = 'validationerror',
-  unexpectederror = 'unexpectederror'
+    recipientName?: string;
+    address1?: string;
+    address2?: string;
+    city?: string;
+    state?: string;
+    zipCode?: string;
+    navigationInstructions?: string;
+    securityCode?: string;
+    unexpectedError: boolean;
 }
