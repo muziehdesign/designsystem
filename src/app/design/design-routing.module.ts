@@ -6,7 +6,7 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { BreakpointsComponent } from './breakpoints/breakpoints.component';
-import { ButtonComponent } from './button/button.component';
+import { ButtonDesignComponent } from './button-design/button-design.component';
 import { ColorComponent } from './color/color.component';
 import { ContentComponent } from './content/content.component';
 import { DescriptionListComponent } from './description-list/description-list.component';
@@ -46,7 +46,7 @@ const routes: Routes = [
             { path: 'layout', component: LayoutComponent },
             { path: 'form', component: FormComponent },
             { path: 'accordion', component: AccordionComponent },
-            { path: 'button', component: ButtonComponent },
+            { path: 'button', component: ButtonDesignComponent },
             { path: 'pagination', component: PaginationComponent },
             { path: 'progressbar', component: ProgressBarComponent },
             { path: 'formcontrols', component: FormControlsComponent },

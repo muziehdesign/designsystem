@@ -12,7 +12,7 @@ import { ColorComponent } from './color/color.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconographyComponent } from './iconography/iconography.component';
 import { BreakpointsComponent } from './breakpoints/breakpoints.component';
-import { ButtonComponent } from './button/button.component';
+import { ButtonDesignComponent } from './button-design/button-design.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { TableComponent } from './table/table.component';
@@ -45,7 +45,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     TypographyComponent,
     IconographyComponent,
     BreakpointsComponent,
-    ButtonComponent,
+    ButtonDesignComponent,
     AccordionComponent,
     AccessibilityComponent,
     TableComponent,
