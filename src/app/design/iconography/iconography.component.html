@@ -1,9 +1,63 @@
 <header>
     <h1>Iconography</h1>
 </header>
+<p>
+    Use icons to reduce cognitive load and allow quick identification.
+    Check out <a href="https://heroicons.com/">heroicons</a> for the complete set.
+</p>
 
-<p>Heroicons is the set of icons in use, <a href="https://heroicons.com/">see complete list</a>.</p>
-
-<ul>
-    <li><app-svg-icon key="x-circle" type="solid"></app-svg-icon></li>
+<ul class="icon-demo">
+    <li>
+        <app-svg-icon key="x-circle" type="solid"></app-svg-icon>
+        <span>x-circle, solid</span>
+    </li>
+    <li>
+        <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+        <span>exclamation, solid</span>
+    </li>
+    <li>
+        <app-svg-icon key="menu"></app-svg-icon>
+        <span>menu, outline</span>
+    </li>
+    <li>
+        <app-svg-icon key="arrow-down"></app-svg-icon>
+        <span>arrow-down, outline</span>
+    </li>
+    <li>
+        <app-svg-icon key="arrow-up"></app-svg-icon>
+        <span>arrow-up, outline</span>
+    </li>
+    <li>
+        <app-svg-icon key="arrow-sm-up"></app-svg-icon>
+        <span>arrow-sm-up, outline</span>
+    </li>
+    <li>
+        <app-svg-icon key="chevron-up"></app-svg-icon>
+        <span>chevron-up, outline</span>
+    </li>
+    <li>
+        <app-svg-icon key="chevron-down"></app-svg-icon>
+        <span>chevron-down, outline</span>
+    </li>
+    <li>
+        <app-svg-icon key="chevron-right"></app-svg-icon>
+        <span>chevron-right, outline</span>
+    </li>
 </ul>
+
+<h2>Variants</h2>
+There are two versions of icons, outline and solid. Use outline by default. Use solid version to indicate the associated
+action has already happened.
+
+<h2>Best practices</h2>
+<ul class="list-disc list-inside">
+    <li>Icons should only be used when it serves a purpose and adds value.</li>
+    <li>Icon should reflect the associated section or action.</li>
+    <li>Icon should share the same color as what they're associated with.</li>
+    <li>The few globally recognized icons can be used by themselves to save space. Add a `sr-only` span for
+        screen-reader in this case. See this site's hamburger menu for example.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<p>Icons are rendered with `aria-hidden=true`. `sr-only` element and associated text are relied on for accessibility
+    support.</p>

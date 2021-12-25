@@ -1,0 +1,8 @@
+.icon-demo li {
+    border-bottom:1px solid black;
+    @apply inline-block border-b-gray-300 p-6 text-center;
+
+    span {
+        @apply text-center pl-1;
+    }
+}

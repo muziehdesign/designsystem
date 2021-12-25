@@ -15,20 +15,19 @@
         <button class="btn-primary">Primary button</button>
     </div>
 
-
     <h3>Secondary/Default</h3>
-    <p>Default button to use on actions. They can be used alone or as a secondary button along with a primary
+    <p>Default button to use for actions. They can be used alone or as a secondary button along with a primary
         button.
     </p>
     <div class="example">
         <button class="btn-secondary">Secondary button</button>
     </div>
 
-    <h3>Link</h3>
+    <!--<h3>Link</h3>
     <p>Use a `link` button when the action takes a user to another page.</p>
     <div class="example">
         <button class="btn-link">Link button</button>
-    </div>
+    </div>-->
 
     <h3>Danger</h3>
     <p>Use a `danger` button for the primary action when it would causes destruction on the data. This is usually
@@ -51,7 +50,7 @@
         <h3>Disabled</h3>
         <p>Disabled buttons can cause accessibility problems and should be avoided.</p>
         <h3>Loading</h3>
-        <button class="btn-primary loading">
+        <button class="btn-primary loading" (click)="onButtonClick()">
             <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -86,28 +85,23 @@
 
 <article>
     <h2>Button with icon</h2>
-    <p>Use button with an icon when it helps conveying meaning quicker.</p>
+    <p>Use button with an icon when the visual presentation helps conveying meaning quicker and attention is needed for
+        the action.</p>
 </article>
 
 <article>
     <h2>Icon button</h2>
-    // TODO
-
     <div class="example">
-        <button class="btn-icon"><app-svg-icon key="menu" type="outline"></app-svg-icon></button>
+        <button class="btn-icon">
+            <app-svg-icon key="menu" type="outline"></app-svg-icon>
+        </button>
     </div>
 </article>
 
 <article>
     <h2>Best practices</h2>
     <ul class="list-inside list-disc">
-        <li>
-            Use concise active verbs or phrases that clearly indicate action
-            <ul>
-                <li>DO: <button class="btn-secondary">Reset password</button></li>
-                <li>DON'T: <button class="btn-secondary">Click here to reset password</button> </li>
-            </ul>
-        </li>
+        <li>Use concise active verbs or phrases that clearly indicate action </li>
         <li>Use sentence-case captitalization, e.g. <code>Primary button</code> and not <code>Primary Button</code>
         </li>
     </ul>

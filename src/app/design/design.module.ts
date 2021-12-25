@@ -30,6 +30,7 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { SharedModule } from '../shared/shared.module';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { SharedModule } from '../shared/shared.module';
     DescriptionListComponent,
     AlertsComponent,
     TooltipComponent,
-    WizardComponent
+    WizardComponent,
+    ProgressBarComponent
   ],
   imports: [
     CommonModule,

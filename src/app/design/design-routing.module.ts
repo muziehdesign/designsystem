@@ -18,6 +18,7 @@ import { GridComponent } from './grid/grid.component';
 import { IconographyComponent } from './iconography/iconography.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
 import { TableComponent } from './table/table.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
             { path: 'accordion', component: AccordionComponent },
             { path: 'button', component: ButtonComponent },
             { path: 'pagination', component: PaginationComponent },
+            { path: 'progressbar', component: ProgressBarComponent },
             { path: 'formcontrols', component: FormControlsComponent },
             { path: 'skeletonloader', component: SkeletonLoaderComponent },
             { path: 'table', component: TableComponent },
