@@ -5,7 +5,8 @@
 <article>
   <h2>Input</h2>
   <p>
-    Use <code>input</code> with the appropriate <code>type</code> value to support accessibility.
+    Use <code>input</code> with the appropriate <code>type</code> value to support accessibility. Use a mask to help
+    user with correct format when applicable.
   </p>
   <div class="example">
     <form>
@@ -18,8 +19,7 @@
 
   <h3>Date input</h3>
   <p>Use a date input when collecting a date. Indicate to user what the expected format is. Always leave user the option
-    to type in a date. It can be frustrating for users to choose dates far away from
-    today.</p>
+    to type in a date. It can be frustrating for users to choose dates are far away.</p>
   <div class="example">
     <form>
       <label class="field">
@@ -27,6 +27,15 @@
         <input type="date" class="field-control">
       </label>
     </form>
+  </div>
+
+  <h3>Date time</h3>
+  <p>Same note as date input.</p>
+
+  <h3>Date range</h3>
+  <p>Same note as date input.</p>
+  <div class="example">
+    TODO
   </div>
 </article>
 
@@ -40,31 +49,35 @@
   </div>
 </article>
 
-<h3>Toggle/switch</h3>
+<h3>Toggle switch</h3>
+<p>Use a toggle switch to immediately flip a state in the system.</p>
 <div class="example">
-  TODO
+  TODO. Not needed immediately.
 </div>
 
 <h3>Radio buttons</h3>
 Radio buttons allows users to scan options quickly.
 <div class="example">
-  <div>
-    <label class="inline-flex items-center">
-      <input class="form-radio" type="radio" checked="" name="radio-direct" value="1">
-      <span class="ml-2">Option 1</span>
-    </label>
-  </div>
-  <div>
-    <label class="inline-flex items-center">
-      <input class="form-radio" type="radio" name="radio-direct" value="2">
-      <span class="ml-2">Option 2</span>
-    </label>
-  </div>
-  <div>
-    <label class="inline-flex items-center">
-      <input class="form-radio" type="radio" name="radio-direct" value="3">
-      <span class="ml-2">Option 3</span>
-    </label>
+
+  <div class="radiobutton-list">
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-radio" type="radio" checked="" name="radio-direct" value="1">
+        <span class="ml-2">Option 1</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-radio" type="radio" name="radio-direct" value="2">
+        <span class="ml-2">Option 2</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-radio" type="radio" name="radio-direct" value="3">
+        <span class="ml-2">Option 3</span>
+      </label>
+    </div>
   </div>
 </div>
 
@@ -86,29 +99,36 @@ Radio buttons allows users to scan options quickly.
 </div>
 <h3>Checkbox</h3>
 <div class="example">
-  <div>
-    <label class="inline-flex items-center">
-      <input class="form-checkbox" type="checkbox">
-      <span class="ml-2">Option 1</span>
-    </label>
-  </div>
-  <div>
-    <label class="inline-flex items-center">
-      <input class="form-checkbox" type="checkbox">
-      <span class="ml-2">Option 2</span>
-    </label>
-  </div>
-  <div>
-    <label class="inline-flex items-center">
-      <input class="form-checkbox" type="checkbox">
-      <span class="ml-2">Option 3</span>
-    </label>
-  </div>
+  <label class="field mb-8">
+    <input type="checkbox" class="field-control"> Single checkbox label here
+  </label>
+
+  <fieldset class="option-list">
+    <legend>Checkbox list label here</legend>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-checkbox" type="checkbox">
+        <span class="ml-2">Option 1</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-checkbox" type="checkbox">
+        <span class="ml-2">Option 2</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input class="form-checkbox" type="checkbox">
+        <span class="ml-2">Option 3</span>
+      </label>
+    </div>
+  </fieldset>
 </div>
 <h3>
   Multiselect
   <div class="example">
-    TODO
+    TODO. TBD
   </div>
 </h3>
 
@@ -159,7 +179,7 @@ Radio buttons allows users to scan options quickly.
       <div>mutually exclusive</div>
       <div>after user submits form</div>
 
-      <div>Toggle</div>
+      <div>Toggle switch</div>
       <div>1</div>
       <div>2 (on/off)</div>
       <div>yes</div>
@@ -167,6 +187,7 @@ Radio buttons allows users to scan options quickly.
       <div>immediately</div>
     </div>
   </div>
+  <i>Decision table is revised based on https://www.nngroup.com/articles/toggle-switch-guidelines/</i>
 </article>
 
 <article>
@@ -174,6 +195,5 @@ Radio buttons allows users to scan options quickly.
   <ul>
     <li>May need select with typeahead, checkbox listbox</li>
     <li>some of the css and html structure here needs cleanup</li>
-    <li>Decision table is revised based on https://www.nngroup.com/articles/toggle-switch-guidelines/</li>
   </ul>
 </article>

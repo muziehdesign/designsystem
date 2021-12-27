@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesignComponent implements OnInit {
 
+  stickyNavigation: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleNavigation() {
+    this.stickyNavigation = !this.stickyNavigation;
+  }
 }

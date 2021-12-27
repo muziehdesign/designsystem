@@ -6,23 +6,21 @@
 
 <article>
     <h2>Example</h2>
-    TODO
+    <!-- your navs bound to current route fragments -->
+    <ul ngbNav [activeId]="route.fragment | async" class="nav-tabs">
+        <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+            <a ngbNavLink [routerLink]="link.link" [fragment]="link.fragment">{{ link.title }}</a>
+        </li>
+    </ul>
+
+    <!-- and an actual outlet elsewhere -->
+    <router-outlet></router-outlet>
 </article>
 
 <article>
     <h2>Usage</h2>
     <ol>
-        <li>Use tabs when user doesn't need to see content from multiple tabs simultaneously</li>
         <li>Tabs should be parallel in nature</li>
-        <li>Visually indicate current tab</li>
-        <li>Do not use caps for labels</li>
+        <li>Use sentence case for tab titles</li>
     </ol>
-    These are taken from the nngroup article referenced.
-</article>
-
-<article>
-    <h2>References</h2>
-    <ul>
-        <li>https://www.nngroup.com/articles/tabs-used-right/</li>
-    </ul>
 </article>

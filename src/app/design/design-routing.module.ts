@@ -11,6 +11,7 @@ import { ColorComponent } from './color/color.component';
 import { ContentComponent } from './content/content.component';
 import { DescriptionListComponent } from './description-list/description-list.component';
 import { DesignComponent } from './design.component';
+import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { FormControlsComponent } from './form-controls/form-controls.component';
 import { FormComponent } from './form/form.component';
@@ -23,6 +24,7 @@ import { ProgressBarGuidelinesComponent } from './progress-bar-guidelines/progre
 import { ResultTableGuidelinesComponent } from './result-table-guidelines/result-table-guidelines.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
 import { SpinnerGuidelinesComponent } from './spinner-guidelines/spinner-guidelines.component';
+import { TabChild1Component } from './tab-child1/tab-child1.component';
 import { TableComponent } from './table/table.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
@@ -50,6 +52,7 @@ const routes: Routes = [
             { path: 'form', component: FormComponent },
             { path: 'accordion', component: AccordionComponent },
             { path: 'button', component: ButtonDesignComponent },
+            { path: 'menudropdown', component: DropdownMenuGuidelinesComponent },
             { path: 'modal', component: ModalGuidelinesComponent },
             { path: 'pagination', component: PaginationComponent },
             { path: 'progressbar', component: ProgressBarGuidelinesComponent },
@@ -58,7 +61,7 @@ const routes: Routes = [
             { path: 'spinner', component: SpinnerGuidelinesComponent },
             { path: 'skeletonloader', component: SkeletonLoaderComponent },
             { path: 'table', component: TableComponent },
-            { path: 'tabs', component: TabsComponent },
+            { path: 'tabs', component: TabsComponent, children: [{ path: 'child1', component: TabChild1Component }] },
             { path: 'tooltip', component: TooltipComponent },
             { path: 'wizard', component: WizardComponent },
         ],

@@ -34,6 +34,9 @@ import { SpinnerGuidelinesComponent } from './spinner-guidelines/spinner-guideli
 import { ResultTableGuidelinesComponent } from './result-table-guidelines/result-table-guidelines.component';
 import { ProgressBarGuidelinesComponent } from './progress-bar-guidelines/progress-bar-guidelines.component';
 import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.component';
+import { NgbDropdown, NgbDropdownMenu, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { TabChild1Component } from './tab-child1/tab-child1.component';
+import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
 
 
 @NgModule({
@@ -67,13 +70,16 @@ import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.co
     SpinnerGuidelinesComponent,
     ResultTableGuidelinesComponent,
     ProgressBarGuidelinesComponent,
-    ModalGuidelinesComponent
+    ModalGuidelinesComponent,
+    TabChild1Component,
+    DropdownMenuGuidelinesComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     DesignRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ]
 })
 export class DesignModule { }

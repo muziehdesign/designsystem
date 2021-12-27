@@ -1,0 +1,16 @@
+.nav-item {
+    @apply inline-block;
+}
+
+.nav-link {
+    padding: 0.5rem 2rem;
+    @apply border-b-4 mr-1 border-b-primary border-opacity-25 hover:no-underline;
+
+    &.active {
+        @apply border-b-primary;
+    }
+}
+
+.nav-tabs {
+    @apply block;
+}

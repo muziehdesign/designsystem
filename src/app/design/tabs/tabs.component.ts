@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsComponent implements OnInit {
 
-  constructor() { }
+  links = [
+    { title: 'One', fragment: 'one', link: 'child1' },
+    { title: 'Two', fragment: 'two', link: '.' }
+  ];
+  constructor(public route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }

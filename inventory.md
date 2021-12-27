@@ -2,7 +2,7 @@
 | ---------------- | --------- | -------- | -------------- | --- |
 | accordion        | maybe     |          |                |     |
 | alerts           |           | x        | code           |     |
-| badge            |           | x        | css            |     |
+| badge            | maybe     | x        | css            |     |
 | breadcrumbs      | maybe     | x        | code           |     |
 | button           |           | x        | code           |     |
 | empty state      |           | x        |                |     |
@@ -25,7 +25,7 @@
 
 ## Tasks
 
-- table total should be caption
-- numeric input without stepper, or restyle
-- auto focus form?
-- input loading
+-   table total should be caption
+-   numeric input without stepper, or restyle
+-   auto focus form?
+-   input loading
