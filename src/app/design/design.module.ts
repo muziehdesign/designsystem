@@ -30,7 +30,10 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { SharedModule } from '../shared/shared.module';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { SpinnerGuidelinesComponent } from './spinner-guidelines/spinner-guidelines.component';
+import { ResultTableGuidelinesComponent } from './result-table-guidelines/result-table-guidelines.component';
+import { ProgressBarGuidelinesComponent } from './progress-bar-guidelines/progress-bar-guidelines.component';
+import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.component';
 
 
 @NgModule({
@@ -61,7 +64,10 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     AlertsComponent,
     TooltipComponent,
     WizardComponent,
-    ProgressBarComponent
+    SpinnerGuidelinesComponent,
+    ResultTableGuidelinesComponent,
+    ProgressBarGuidelinesComponent,
+    ModalGuidelinesComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 <h1>Button</h1>
 <p class="prose">
-    A button triggers an event or action.
+    Use a button to allow user to perform an action.
 </p>
 
 <article>
@@ -50,24 +50,21 @@
         <h3>Disabled</h3>
         <p>Disabled buttons can cause accessibility problems and should be avoided.</p>
         <h3>Loading</h3>
-        <button class="btn-primary loading" (click)="onButtonClick()">
-            <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                </path>
-            </svg>
-            Primary button
-        </button>
-        // TODO: this needs to use a css class instead of svg directly
+        <div class="button-list">
+            <button class="btn-primary loading" (click)="onButtonClick()">
+                <div class="button-loading-overlay">
+                    <app-spinner></app-spinner>
+                </div>
+                Primary button
+            </button>
+            <button class="btn-secondary loading" (click)="onButtonClick()">
+                <div class="button-loading-overlay">
+                    <app-spinner></app-spinner>
+                </div>
+                Secondary button
+            </button>
+        </div>
     </div>
-</article>
-
-<article>
-    <h2>Split button</h2>
-    // TODO
-    <p>Use a split button to group related commands together to reduce space needs and cognitive load.</p>
 </article>
 
 <article>
@@ -87,14 +84,31 @@
     <h2>Button with icon</h2>
     <p>Use button with an icon when the visual presentation helps conveying meaning quicker and attention is needed for
         the action.</p>
+    <div class="example">
+        <div class="button-list">
+            <button class="btn-primary">
+                <app-svg-icon key="pencil"></app-svg-icon>
+                Edit
+            </button>
+            <button class="btn-secondary">
+                <app-svg-icon key="pencil"></app-svg-icon>
+                Edit
+            </button>
+        </div>
+    </div>
 </article>
 
 <article>
     <h2>Icon button</h2>
     <div class="example">
-        <button class="btn-icon">
-            <app-svg-icon key="menu" type="outline"></app-svg-icon>
-        </button>
+        <div class="button-list">
+            <button class="btn-icon">
+                <app-svg-icon key="menu" type="outline"></app-svg-icon>
+            </button>
+            <button class="btn-icon">
+                <app-svg-icon key="pencil"></app-svg-icon>
+            </button>
+        </div>
     </div>
 </article>
 
@@ -104,13 +118,5 @@
         <li>Use concise active verbs or phrases that clearly indicate action </li>
         <li>Use sentence-case captitalization, e.g. <code>Primary button</code> and not <code>Primary Button</code>
         </li>
-    </ul>
-</article>
-
-
-<article>
-    <h2>Notes</h2>
-    <ul>
-        <li>TODO: tab order and focus</li>
     </ul>
 </article>

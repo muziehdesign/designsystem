@@ -17,9 +17,12 @@ import { FormComponent } from './form/form.component';
 import { GridComponent } from './grid/grid.component';
 import { IconographyComponent } from './iconography/iconography.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.component';
 import { PaginationComponent } from './pagination/pagination.component';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { ProgressBarGuidelinesComponent } from './progress-bar-guidelines/progress-bar-guidelines.component';
+import { ResultTableGuidelinesComponent } from './result-table-guidelines/result-table-guidelines.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
+import { SpinnerGuidelinesComponent } from './spinner-guidelines/spinner-guidelines.component';
 import { TableComponent } from './table/table.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
@@ -47,9 +50,12 @@ const routes: Routes = [
             { path: 'form', component: FormComponent },
             { path: 'accordion', component: AccordionComponent },
             { path: 'button', component: ButtonDesignComponent },
+            { path: 'modal', component: ModalGuidelinesComponent },
             { path: 'pagination', component: PaginationComponent },
-            { path: 'progressbar', component: ProgressBarComponent },
+            { path: 'progressbar', component: ProgressBarGuidelinesComponent },
             { path: 'formcontrols', component: FormControlsComponent },
+            { path: 'resulttable', component: ResultTableGuidelinesComponent },
+            { path: 'spinner', component: SpinnerGuidelinesComponent },
             { path: 'skeletonloader', component: SkeletonLoaderComponent },
             { path: 'table', component: TableComponent },
             { path: 'tabs', component: TabsComponent },

@@ -67,8 +67,9 @@
         }
     }
 
-    ul { @apply list-disc list-inside; }
-    ol { @apply list-decimal list-inside; }
+    // TODO
+    //ul { @apply list-disc list-inside; }
+    //ol { @apply list-decimal list-inside; }
 
     details summary {
         cursor: pointer;
@@ -111,6 +112,14 @@
         }
     }
 }
+
+// icon
+.icon {
+    height: 1.25em;
+    width: 1.25em;
+    @apply inline-block;
+}
+
 
 .page > header {
     @apply py-6;
@@ -243,19 +252,32 @@ button {
     @apply hover:underline text-primary border-transparent;
 }
 
-button.loading {
-    @apply pointer-events-none cursor-wait;
-}
-
 .button-list {
     button:not(last-child) {
         @apply mr-4;
     }
 }
 
-// icon
-.icon {
-    height: 1.25em;
-    width: 1.25em;
-    @apply inline-block;
+button.loading {
+    @apply pointer-events-none cursor-wait relative;
+}
+
+.button-loading-overlay {
+    @apply absolute inset-0 flex items-center justify-center;
+}
+
+.btn-secondary .button-loading-overlay {
+    @apply bg-gray-200;
+}
+
+.btn-primary .button-loading-overlay {
+    @apply bg-blue-700;
+}
+
+button .icon{
+    @apply mr-3 -ml-1 -mt-1;
+}
+
+.btn-icon .icon {
+    @apply m-0; 
 }
