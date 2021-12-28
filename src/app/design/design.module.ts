@@ -37,49 +37,47 @@ import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.co
 import { NgbDropdown, NgbDropdownMenu, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { TabChild1Component } from './tab-child1/tab-child1.component';
 import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
-
+import { NAVIGATION_LINK_TOKEN } from './navigation-links.token';
+import { navigationLinks } from '../navigation-links';
+import { ResourceDetailComponent } from './resource-detail/resource-detail.component';
 
 @NgModule({
-  declarations: [
-    FormControlsComponent,
-    DesignComponent,
-    AboutComponent,
-    ContentComponent,
-    NavigationComponent,
-    FormComponent,
-    ColorComponent,
-    TypographyComponent,
-    IconographyComponent,
-    BreakpointsComponent,
-    ButtonDesignComponent,
-    AccordionComponent,
-    AccessibilityComponent,
-    TableComponent,
-    LayoutComponent,
-    SvgIconComponent,
-    BreadcrumbsComponent,
-    GridComponent,
-    EmptyStateComponent,
-    TabsComponent,
-    SkeletonLoaderComponent,
-    PaginationComponent,
-    DescriptionListComponent,
-    AlertsComponent,
-    TooltipComponent,
-    WizardComponent,
-    SpinnerGuidelinesComponent,
-    ResultTableGuidelinesComponent,
-    ProgressBarGuidelinesComponent,
-    ModalGuidelinesComponent,
-    TabChild1Component,
-    DropdownMenuGuidelinesComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    DesignRoutingModule,
-    SharedModule,
-    NgbModule
-  ]
+    declarations: [
+        FormControlsComponent,
+        DesignComponent,
+        AboutComponent,
+        ContentComponent,
+        NavigationComponent,
+        FormComponent,
+        ColorComponent,
+        TypographyComponent,
+        IconographyComponent,
+        BreakpointsComponent,
+        ButtonDesignComponent,
+        AccordionComponent,
+        AccessibilityComponent,
+        TableComponent,
+        LayoutComponent,
+        SvgIconComponent,
+        BreadcrumbsComponent,
+        GridComponent,
+        EmptyStateComponent,
+        TabsComponent,
+        SkeletonLoaderComponent,
+        PaginationComponent,
+        DescriptionListComponent,
+        AlertsComponent,
+        TooltipComponent,
+        WizardComponent,
+        SpinnerGuidelinesComponent,
+        ResultTableGuidelinesComponent,
+        ProgressBarGuidelinesComponent,
+        ModalGuidelinesComponent,
+        TabChild1Component,
+        DropdownMenuGuidelinesComponent,
+        ResourceDetailComponent,
+    ],
+    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule],
+    providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
 })
-export class DesignModule { }
+export class DesignModule {}

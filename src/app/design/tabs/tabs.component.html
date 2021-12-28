@@ -7,7 +7,7 @@
 <article>
     <h2>Example</h2>
     <!-- your navs bound to current route fragments -->
-    <ul ngbNav [activeId]="route.fragment | async" class="nav-tabs">
+    <ul ngbNav [activeId]="route.fragment | async">
         <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
             <a ngbNavLink [routerLink]="link.link" [fragment]="link.fragment">{{ link.title }}</a>
         </li>

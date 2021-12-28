@@ -14,3 +14,7 @@ article {
 code {
     @apply font-mono text-pink-500;
 }
+
+.page {
+    @apply bg-white pt-0.5 pb-4;
+}

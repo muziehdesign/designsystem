@@ -1,8 +1,150 @@
 <h1>Result table</h1>
+<p>
+    Use a result table to display search results.
+</p>
 
 <article>
     <h2>States</h2>
     <h3>Loading</h3>
+    <div class="example">
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Store</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="table-companion">
+                <app-spinner size="large"></app-spinner>
+            </div>
+        </div>
+    </div>
+
     <h3>Empty</h3>
+    <div class="example">
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Store</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="table-companion">
+                <div class="empty-state">
+                    <h3>No orders found</h3>
+                    <p>
+                        Modify your search criteria and try searching again.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <h3>Error</h3>
+    <div class="example">
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Store</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="table-companion">
+                <div class="error-state">
+                    <h3><app-svg-icon key="x-circle" type="solid" class="text-danger"></app-svg-icon> Unexpected error</h3>
+                    <p>
+                        Something went wrong, try searching again.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Sortable</h3>
+    <div class="example">
+        <div class="table-wrapper">
+            <table class="table">
+                <caption>1-4 of 4 orders</caption>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Store</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>53961111</td>
+                        <td>Jane Doe</td>
+                        <td>01/01/2022 5:15 PM</td>
+                        <td>$80.05</td>
+                        <td>Created</td>
+                        <td>amazon.com</td>
+                    </tr>
+                    <tr>
+                        <td>53961121</td>
+                        <td>John Doe</td>
+                        <td>12/31/2021 5:15 PM</td>
+                        <td>$56.75</td>
+                        <td>Partially filled</td>
+                        <td>Broadway St 76 NY</td>
+                    </tr>
+                    <tr>
+                        <td>53971146</td>
+                        <td>Joe Shmoe</td>
+                        <td>12/30/2021 5:15 PM</td>
+                        <td>$327.63</td>
+                        <td>Completed</td>
+                        <td>Main St Salt Lake City</td>
+                    </tr>
+                    <tr>
+                        <td>53971122</td>
+                        <td>Jane Doe</td>
+                        <td>12/30/2021 5:15 PM</td>
+                        <td>$327.63</td>
+                        <td>Canceled</td>
+                        <td>South Jordan Pkwy Salt Lake City</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h3>Pageable</h3>
+</article>
+
+<article>
+    <h2>Best practices</h2>
+
+    <h2>TODO</h2>
+    <ul>
+        <li>Styling when table is horizontally scrollable</li>
+    </ul>
 </article>

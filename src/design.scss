@@ -27,7 +27,12 @@
         @apply text-sm font-semibold mt-5;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         @apply mb-1;
     }
 
@@ -41,30 +46,6 @@
 
     small {
         @apply text-sm;
-    }
-
-    table {
-        @apply w-full text-left border-collapse;
-
-        tbody {
-            @apply align-baseline;
-        }
-
-        tr {
-            @apply border-b border-gray-200;
-        }
-
-        td {
-            @apply py-3 px-2;
-        }
-
-        th {
-            @apply top-0 text-sm font-semibold text-gray-500 p-2;
-        }
-
-        thead tr {
-            @apply border-gray-500;
-        }
     }
 
     // TODO
@@ -81,18 +62,19 @@
         @apply flex space-x-4;
     }
 
-    .empty-state {
+    .empty-state,
+    .error-state {
         @apply py-8 text-center;
     }
 
-    .dl {
+    .dl.horizontal {
         dt,
         dd {
             @apply inline-block p-3;
         }
 
         dt {
-            @apply w-48;
+            @apply w-48 align-top;
         }
 
         & > *:nth-child(odd) {
@@ -100,9 +82,52 @@
         }
     }
 
+    .dl.stacked {
+        dt {
+            @apply text-gray-600 mt-2 tracking-wide text-sm;
+        }
+        dd {
+            @apply mb-2;
+        }
+    }
+
+    .table-wrapper {
+        @apply max-w-full overflow-x-auto relative;
+    }
+
     .table {
-        tbody tr:nth-child(even) {
-            @apply bg-gray-100;
+        @apply w-full text-left border-collapse;
+
+        caption {
+            @apply text-left;
+        }
+
+        tbody {
+            @apply align-baseline;
+
+            tr:nth-child(even) {
+                @apply bg-gray-100;
+            }
+        }
+
+        tr {
+            @apply border-b border-gray-200;
+        }
+
+        td {
+            @apply py-3 px-2;
+        }
+
+        th {
+            @apply top-0 text-sm font-semibold text-gray-500 p-2;
+        }
+
+        thead tr {
+            @apply border-gray-500 py-3;
+        }
+
+        caption {
+            @apply mb-4;
         }
     }
 
@@ -125,7 +150,6 @@
     width: 1.25em;
     @apply inline-block;
 }
-
 
 .page > header {
     @apply py-6;
@@ -163,7 +187,7 @@ form {
     }
 
     .footer {
-        @apply mt-8 mb-3;
+        @apply mt-4 mb-3;
     }
 }
 
@@ -202,7 +226,7 @@ form {
     @apply block py-1;
 
     legend {
-       @apply text-gray-600 text-sm font-medium;
+        @apply text-gray-600 text-sm font-medium;
     }
 }
 
@@ -239,7 +263,7 @@ button {
 .btn-danger,
 .btn-warning,
 .btn-link {
-    @apply inline-flex justify-center py-2 px-4 border font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100;
+    @apply inline-flex justify-center py-1.5 px-4 border font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100;
 }
 
 .btn-icon {
@@ -268,7 +292,7 @@ button {
 
 .button-list {
     button:not(last-child) {
-        @apply mr-4;
+        @apply mr-4 mb-2;
     }
 }
 
@@ -288,10 +312,45 @@ button.loading {
     @apply bg-blue-700;
 }
 
-button .icon{
+button .icon {
     @apply mr-3 -ml-1 -mt-1;
 }
 
 .btn-icon .icon {
-    @apply m-0; 
+    @apply m-0;
+}
+
+.nav-tabs {
+    @apply block border-b-gray-300 border-b;
+}
+
+.nav-item {
+    @apply inline-block text-center;
+}
+
+.nav-link {
+    @apply hover:no-underline inline-block text-gray-500 py-2 px-6 border-b border-b-transparent hover:border-b-gray-600;
+    min-width: 8rem;
+}
+
+.nav-link.active {
+    @apply text-primary border-b-primary border-b font-medium;
+}
+
+.dropdown-menu {
+    display:none;
+}
+
+.dropdown-menu.show {
+    z-index:1000;
+    float:left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    display: block;
+    background-color: white;
+}
+
+.dropdown-item {
+    display:block;
+    padding: 0.5rem;
 }
