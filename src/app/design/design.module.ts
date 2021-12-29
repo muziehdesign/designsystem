@@ -6,7 +6,6 @@ import { FormControlsComponent } from './form-controls/form-controls.component';
 import { DesignComponent } from './design.component';
 import { AboutComponent } from './about/about.component';
 import { ContentComponent } from './content/content.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { FormComponent } from './form/form.component';
 import { ColorComponent } from './color/color.component';
 import { TypographyComponent } from './typography/typography.component';
@@ -18,7 +17,6 @@ import { AccessibilityComponent } from './accessibility/accessibility.component'
 import { TableComponent } from './table/table.component';
 import { LayoutComponent } from './layout/layout.component';
 import { FormsModule } from '@angular/forms';
-import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { GridComponent } from './grid/grid.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
@@ -37,8 +35,8 @@ import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.co
 import { NgbDropdown, NgbDropdownMenu, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { TabChild1Component } from './tab-child1/tab-child1.component';
 import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
-import { NAVIGATION_LINK_TOKEN } from './navigation-links.token';
-import { navigationLinks } from '../navigation-links';
+import { NAVIGATION_LINK_TOKEN } from '../navigation/navigation-links.token';
+import { navigationLinks } from '../navigation/navigation-links';
 import { ResourceDetailComponent } from './resource-detail/resource-detail.component';
 
 @NgModule({
@@ -47,7 +45,6 @@ import { ResourceDetailComponent } from './resource-detail/resource-detail.compo
         DesignComponent,
         AboutComponent,
         ContentComponent,
-        NavigationComponent,
         FormComponent,
         ColorComponent,
         TypographyComponent,
@@ -58,7 +55,6 @@ import { ResourceDetailComponent } from './resource-detail/resource-detail.compo
         AccessibilityComponent,
         TableComponent,
         LayoutComponent,
-        SvgIconComponent,
         BreadcrumbsComponent,
         GridComponent,
         EmptyStateComponent,

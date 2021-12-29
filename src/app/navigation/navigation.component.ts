@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { NavigationLink } from 'src/app/navigation-links';
-import { NAVIGATION_LINK_TOKEN as NAVIGATION_LINKS_TOKEN } from '../navigation-links.token';
+import { NavigationLink } from 'src/app/navigation/navigation-links';
+import { NAVIGATION_LINK_TOKEN as NAVIGATION_LINKS_TOKEN } from './navigation-links.token';
 
 @Component({
   selector: 'app-navigation',
