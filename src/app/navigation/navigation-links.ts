@@ -39,7 +39,7 @@ export const navigationLinks: NavigationLink[] = [
     ]},
     { name: 'Examples', children: [
         { name: 'Resource list', inactive: true, link: '/design/examples/resourcelist'},
-        { name: 'Resource detail', link: '/design/resourcedetail'}
+        { name: 'Resource detail', link: '/examples/resourcedetail'}
     ]}
 ];
 

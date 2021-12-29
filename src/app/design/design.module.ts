@@ -37,7 +37,6 @@ import { TabChild1Component } from './tab-child1/tab-child1.component';
 import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
 import { NAVIGATION_LINK_TOKEN } from '../navigation/navigation-links.token';
 import { navigationLinks } from '../navigation/navigation-links';
-import { ResourceDetailComponent } from './resource-detail/resource-detail.component';
 
 @NgModule({
     declarations: [
@@ -71,7 +70,6 @@ import { ResourceDetailComponent } from './resource-detail/resource-detail.compo
         ModalGuidelinesComponent,
         TabChild1Component,
         DropdownMenuGuidelinesComponent,
-        ResourceDetailComponent,
     ],
     imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
