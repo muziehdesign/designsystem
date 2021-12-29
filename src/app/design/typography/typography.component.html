@@ -3,47 +3,54 @@
 </header>
 
 <article>
-    <h2>Font Family</h2>
-    <div class="prose">
-        Roboto is the font used.
-    </div>
-</article>
+    <h2>Font</h2>
+    <section>
+        <h3>Font Family</h3>
+        <p>Roboto</p>
+    </section>
 
-<article>
-    <h2>Font formats</h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Style</th>
-                <th>Usage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>em</code></td>
-                <td><em>Use this to stress emphasis.</em></td>
-            </tr>
-            <tr>
-                <td><code>strong</code></td>
-                <td><strong>Use this to stress importance.</strong></td>
-            </tr>
-            <tr>
-                <td><code>small</code></td>
-                <td><small>Use this for secondary supporting text such as help text in form fields.
-                        It should be used sparingly.</small></td>
-            </tr>
-            <tr>
-                <td><a href="#">Link</a></td>
-                <td>Use this to take user to another location. Purpose of link can be determined from link text. This should not be used for actions.</td>
-            </tr>
-        </tbody>
-    </table>
+    <section>
+        <h3>Font formats</h3>
+        <div class="example">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Style</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>em</code></td>
+                        <td><em>Use this to stress emphasis.</em></td>
+                    </tr>
+                    <tr>
+                        <td><code>strong</code></td>
+                        <td><strong>Use this to stress importance.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><code>small</code></td>
+                        <td><small>Use this for secondary supporting text such as help text in form fields.
+                                It should be used sparingly.</small></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Link</a></td>
+                        <td>
+                            <p class="text-block">Use this to take user to another location. Link text should reflect
+                                purpose of link.
+                                This should not be used for actions.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </article>
 <article>
     <h2>Headings</h2>
-    <div class="prose">Use headings h1 - h6 for titles and subtitles. Each page should have one h1. Heading ranks should
-        not be skipped. All headings should reflect the document or section's content and purpose.</div>
+    <p class="text-block">Use headings h1 - h6 for titles and subtitles. Each page should have one h1. Heading ranks
+        should
+        not be skipped. All headings should reflect the document or section's content and purpose.</p>
     <div class="example">
         <h1>Main page title</h1>
         <p>Use <code>h1</code> for main title of the page. Each page should have exactly one.</p>
@@ -75,7 +82,12 @@
 <article>
     <h2>Content</h2>
     <ul class="list-disc list-inside">
-        <li>Blocks of text shoud be no more than 80 characters. See <a href="https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html">WCAG 2.1 Understanding success criterion 1.4.8: Visual Presentation</a> for reasoning.</li>
+        <li>
+            <div class="inline-block align-top text-block">Blocks of text shoud be no more than 80 characters. Use
+                <code>text-block</code> to enforce max width. See <a
+                    href="https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html">WCAG 2.1 Understanding
+                    success criterion 1.4.8: Visual Presentation</a> for reasoning.</div>
+        </li>
         <li>Should default to left justified, since English readers read from left to right</li>
     </ul>
 </article>

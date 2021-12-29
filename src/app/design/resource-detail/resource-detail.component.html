@@ -1,4 +1,4 @@
-<header class="grid md:grid-cols-3">
+<header class="grid md:grid-cols-3 page-header">
     <div class="md:col-span-2">
         <h1>Jane Doe</h1>
         <div>
@@ -11,7 +11,7 @@
             <button class="btn-secondary">Email password reset</button>
         </div>
     </div>
-    <div ngbDropdown class="d-inline-block float-right mt-12">
+    <div ngbDropdown class="d-inline-block float-right mt-12 text-left md:text-right">
         <button class="btn-secondary" id="dropdownBasic1" ngbDropdownToggle>Active <app-svg-icon key="chevron-down" class="ml-4"></app-svg-icon></button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem>Deactivate</button>
@@ -19,8 +19,8 @@
     </div>
 </header>
 
-<div class="grid md:grid-cols-3 md:gap-8">
-    <article class="md:col-span-2">
+<div class="grid md:grid-cols-3 gap-x-2 page-main">
+    <article class="md:col-span-2 page-content">
         <section>
             <h2>Details</h2>
             <dl class="dl horizontal">
@@ -90,7 +90,7 @@
         </section>
     </article>
 
-    <article>
+    <article class="md:ml-2 page-content">
         <section>
             <h2>Membership</h2>
             <dl class="dl stacked">
@@ -124,8 +124,8 @@
     </article>
 </div>
 
-<article>
-    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs" (navChange)="onNavChange()">
+<article class="page-content">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs pt-4" (navChange)="onNavChange()">
         <li [ngbNavItem]="1">
             <a ngbNavLink>Orders</a>
             <ng-template ngbNavContent>

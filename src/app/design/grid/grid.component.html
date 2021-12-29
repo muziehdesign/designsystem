@@ -1,59 +1,65 @@
-<h1>Grid</h1>
+<header>
+    <h1>Grid</h1>
+    <p class="prose">Use a grid to create consistent layout and structure.</p>
+</header>
 
 <article>
-    <h2>Auto-layout grid</h2>
-    <p>
-        Auto-layout grid automatically distributes even width to columns.
-    </p>
-    <h3>Equal width columns</h3>
-    <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
-        <div class="example-column" *ngFor="let i of [].constructor(3); let j = index">1 of 3</div>
-    </div>
-    <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
-        <div class="example-column" *ngFor="let i of [].constructor(5); let j = index">1 of 5</div>
-    </div>
+    <section>
+        <h2>Auto-layout grid</h2>
+        <p>
+            Auto-layout grid automatically distributes even width to columns.
+        </p>
+        <h3>Equal width columns</h3>
+        <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
+            <div class="example-column" *ngFor="let i of [].constructor(3); let j = index">1 of 3</div>
+        </div>
+        <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
+            <div class="example-column" *ngFor="let i of [].constructor(5); let j = index">1 of 5</div>
+        </div>
 
-    <h3>Set width</h3>
-    <p>
-        When an auto-layout grid has set width columns, it will automatically distribute even widths to rest of the
-        columns.
-    </p>
-    <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
-        <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 5</div>
-        <div class="example-column col-span-6">1 of 5 (wider, span 6)</div>
-        <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 5</div>
-    </div>
-    <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
-        <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 7</div>
-        <div class="example-column col-span-6">1 of 5 (wider, span 6)</div>
-        <div class="example-column col-span-2">1 of 5 (wider, span 2)</div>
-        <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 7</div>
-    </div>
+        <h3>Set width</h3>
+        <p>
+            When an auto-layout grid has set width columns, it will automatically distribute even widths to rest of the
+            columns.
+        </p>
+        <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
+            <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 5</div>
+            <div class="example-column col-span-6">1 of 5 (wider, span 6)</div>
+            <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 5</div>
+        </div>
+        <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
+            <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 7</div>
+            <div class="example-column col-span-6">1 of 5 (wider, span 6)</div>
+            <div class="example-column col-span-2">1 of 5 (wider, span 2)</div>
+            <div class="example-column" *ngFor="let i of [].constructor(2); let j = index">1 of 7</div>
+        </div>
+    </section>
 </article>
 
 <article>
-    <h2>Responsive</h2>
-    <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
-        <div class="example-column">1 of 4</div>
-        <div class="example-column col-span-2 md:col-span-6">1 of 4, span 2, md and up span 6</div>
-        <div class="example-column">1 of 4</div>
-        <div class="example-column">1 of 4</div>
-    </div>
-</article>
+    <section>
+        <h2>Responsive</h2>
+        <div class="grid grid-flow-col auto-cols-auto gap-4 py-4">
+            <div class="example-column">1 of 4</div>
+            <div class="example-column col-span-2 md:col-span-6">1 of 4, span 2, md and up span 6</div>
+            <div class="example-column">1 of 4</div>
+            <div class="example-column">1 of 4</div>
+        </div>
+    </section>
+    <section>
+        <h2>Fixed column count</h2>
+        <div class="grid grid-cols-4 py-4 gap-4">
+            <div class="example-column" *ngFor="let i of [].constructor(7); let j = index">1 of 9</div>
+        </div>
 
-<article>
-    <h2>Fixed column count</h2>
-    <div class="grid grid-cols-4 py-4 gap-4">
-        <div class="example-column" *ngFor="let i of [].constructor(7); let j = index">1 of 9</div>
-    </div>
-</article>
-
-<article>
-    <h2>Gap</h2>
-    Grid below has a gap of <code>gap-4</code>.
-    <div class="grid grid-cols-4 py-4 gap-4">
-        <div class="example-column" *ngFor="let i of [].constructor(7); let j = index">1 of 9</div>
-    </div>
+    </section>
+    <section>
+        <h2>Gap</h2>
+        Grid below has a gap of <code>gap-4</code>.
+        <div class="grid grid-cols-4 py-4 gap-4">
+            <div class="example-column" *ngFor="let i of [].constructor(7); let j = index">1 of 9</div>
+        </div>
+    </section>
 </article>
 
 <article>

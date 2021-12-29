@@ -1,10 +1,9 @@
 <header>
     <h1>Form</h1>
+    <p class="prose">Use a form to collect information from the user. Guidelines here are on top of <a
+            href="https://atlassian.design/components/form/usage">Atlassian
+            Design System's on forms.</a></p>
 </header>
-
-<p>Use a form to collect information from the user. Guidelines here are on top of <a
-        href="https://atlassian.design/components/form/usage">Atlassian
-        Design System's on forms.</a></p>
 
 <article>
     <h2>Example</h2>
@@ -23,6 +22,7 @@
                     <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
                     Invalid value
                 </small>
+                <small class="help-text">This is what instruction text would look like</small>
             </label>
 
             <label class="field">
@@ -75,10 +75,11 @@
                 </label>
             </fieldset>-->
 
-            <fieldset>
+            <fieldset class="fieldset">
                 <legend>Form scenario</legend>
                 <label class="field field-checkbox">
-                    <input type="checkbox" class="field-control" [(ngModel)]="model.unexpectedError" name="unexpectedError"> Unexpected
+                    <input type="checkbox" class="field-control" [(ngModel)]="model.unexpectedError"
+                        name="unexpectedError"> Unexpected
                     error
                 </label>
             </fieldset>
@@ -93,16 +94,11 @@
                     Unexpected error, try submitting the form again.
                 </div>
 
-                <button class="btn-primary" [ngClass]="{'loading': isLoading}">
-                    <svg *ngIf="isLoading" class="animate-spin -ml-1 mr-3 h-6 w-6 text-white"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
-                        </circle>
-                        <path class="opacity-75" fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                        </path>
-                    </svg><!-- TODO -->
-                    Add delivery address
+                <button class="btn-primary" [ngClass]="{ 'loading' : isLoading}">
+                    <div class="button-loading-overlay" *ngIf="isLoading">
+                        <app-spinner type="primary"></app-spinner>
+                    </div>
+                    Primary button
                 </button>
             </footer>
         </form>
@@ -110,82 +106,79 @@
 </article>
 
 <article>
-    <h2>Elements</h2>
-    <div class="prose">
-        <ol>
-            <li>
-                <p><strong>Form title</strong></p>
+    <h2>Usage</h2>
+
+    <h3>Elements</h3>
+    <div class="text-block">
+        <ol class="list-outside list-decimal ml-4">
+            <li class="mb-2">
+                <strong>Form title</strong>
                 <p>Concise text that describes the form. Use appropriate heading element based on where form is on page.
                     Optionally, follow the title with a short description.</p>
             </li>
-            <li>
-                <p><strong>Form section</strong></p>
+            <li class="mb-2">
+                <strong>Form section</strong>
                 <p>A group of controls and fields that are logically related. There can be multiple form sections in one
                     form. They should be grouped using &lt;fieldset&gt;, with &lt;legend&gt; as the headline.
                 </p>
             </li>
-            <li>
-                <p><strong>Field</strong></p>
+            <li class="mb-2">
+                <strong>Field</strong>
                 <p>A field is an entry in the form.</p>
-                <ul>
+                <ol class="list-outside list-decimal ml-8">
                     <li>
-                        <p><strong>Label</strong></p>
+                        <strong>Label</strong>
                         <p>Use concise label.</p>
                     </li>
                     <li>
-                        <p><strong>Required field</strong></p>
+                        <strong>Required field</strong>
                         <p>Use asterisk to indicate a required field.</p>
                     </li>
                     <li>
-                        <p><strong>Help text</strong></p>
+                        <strong>Help text</strong>
                         <p>Use help text to provide instructions so that users don't have to guess.</p>
                     </li>
                     <li>
-                        <p><strong>Error message</strong></p>
+                        <strong>Error message</strong>
                     </li>
-                    <li>
-                        <p><strong>Loading indicator</strong></p>
-                        <p>TODO</p>
-                    </li>
-                </ul>
+                </ol>
             </li>
-            <li>
-                <p><strong>Form footer</strong></p>
-                <p>It should always contain one primary action button. Buttons should be enabled by default.</p>
+            <li class="mb-2">
+                <strong>Form footer</strong>
+                <p>It should always contain one primary action button.</p>
             </li>
         </ol>
     </div>
-</article>
-
-<article>
-    <h2>Usage</h2>
 
     <h3>Best practices</h3>
-    <ol class="list-decimal list-inside">
+    <ul class="list-disc list-inside text-block">
         <li>Button should state the action that the button performs when clicked.</li>
         <li>Avoid multiple action buttons. Forms usually should have 1-2 buttons.</li>
-        <li>Avoid reset button, and cancel button.</li>
-        <li>Avoid placeholder attributes.</li>
+        <li>Avoid reset button, and cancel button to avoid misclicks, unless they add value.</li>
+        <li>Avoid placeholder attributes due to accessibility concerns.</li>
         <li>Never disable a submit button.</li>
         <li>A form is a conversation with user. Be helpful and concise in our communication.</li>
         <li>Present fields in a single column layout to keep users in flow.</li>
         <li>Use logical grouping and sequencing for form field arrangements.</li>
-    </ol>
+    </ul>
 
     <h3>Button positioning</h3>
-    <ul class="list-inside list-disc">
+    <ul class="list-inside list-disc text-block">
         <li>Buttons should be sorted by importance from left to right for pages. Primary button should always be first
             button.</li>
         <li>Buttons should be sorted by importance from right to left for modals and multi-step forms. Primary button
             should always be last.</li>
     </ul>
 
+    <h3>Field widths</h3>
+    <p>TODO: define field widths</p>
+
     <h3>References</h3>
     <ul>
         <li><a href="https://atlassian.design/patterns/forms">Atlassian Design System Forms Patterns</a></li>
-        <li>TODO: https://www.nngroup.com/articles/indicators-validations-notifications/</li>
-        <li>TODO: https://www.nngroup.com/articles/errors-forms-design-guidelines/</li>
-        <li>https://www.nngroup.com/articles/web-form-design/</li>
+        <!--<li><a href="https://www.nngroup.com/articles/indicators-validations-notifications/"></a></li>-->
+        <li><a href="https://www.nngroup.com/articles/errors-forms-design-guidelines/">How to Report Errors in Forms: 10 Design Guidelines</a></li>
+        <li><a href="https://www.nngroup.com/articles/web-form-design/">Website Forms Usability: Top 10 Recommendations</a></li>
     </ul>
 
 </article>
@@ -193,9 +186,6 @@
 <article>
     <h2>TODO</h2>
     <ul class="list-disc list-inside">
-        <li>iterate css selectors</li>
-        <li>field widths</li>
-        <li>create css class for field entries that are on one line; require control spacing when displayed as group</li>
         <li>Autofocus the first field by default.</li>
     </ul>
 </article>

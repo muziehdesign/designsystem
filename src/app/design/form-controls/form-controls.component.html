@@ -3,9 +3,12 @@
 </header>
 
 <article>
-  <h2>Input</h2>
-  <p>
-    Use <code>input</code> with the appropriate <code>type</code> value to support accessibility. Use a mask to help
+  <h2>Text input</h2>
+  <p class="text-block">
+    Use <code>input</code> with the appropriate <code>type</code> value to support accessibility and leverage native
+    behaviors. Choose between
+    <code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code>, and
+    <code>url</code>. Default is <code>text</code>. Use a mask to help
     user with correct format when applicable.
   </p>
   <div class="example">
@@ -16,26 +19,28 @@
       </label>
     </form>
   </div>
+</article>
 
-  <h3>Date input</h3>
-  <p>Use a date input when collecting a date. Indicate to user what the expected format is. Always leave user the option
-    to type in a date. It can be frustrating for users to choose dates are far away.</p>
+<article>
+  <h2>Date input</h2>
+  <p class="text-block">Use a date input when collecting a date. Indicate to user what the expected format is. Always
+    leave user the option
+    to type in a date, because it can be frustrating to choose dates that are far away.</p>
   <div class="example">
     <form>
       <label class="field">
         <span class="field-label">Date input</span>
         <input type="date" class="field-control">
       </label>
+      <label class="field">
+        <span class="field-label">Date time</span>
+        TODO
+      </label>
+      <label class="field">
+        <span class="field-label">Date range</span>
+        TODO
+      </label>
     </form>
-  </div>
-
-  <h3>Date time</h3>
-  <p>Same note as date input.</p>
-
-  <h3>Date range</h3>
-  <p>Same note as date input.</p>
-  <div class="example">
-    TODO
   </div>
 </article>
 
@@ -49,88 +54,102 @@
   </div>
 </article>
 
-<h3>Toggle switch</h3>
-<p>Use a toggle switch to immediately flip a state in the system.</p>
-<div class="example">
-  TODO. Not needed immediately.
-</div>
-
-<h3>Radio buttons</h3>
-Radio buttons allows users to scan options quickly.
-<div class="example">
-
-  <div class="radiobutton-list">
-    <div>
-      <label class="inline-flex items-center">
-        <input class="form-radio" type="radio" checked="" name="radio-direct" value="1">
-        <span class="ml-2">Option 1</span>
-      </label>
-    </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input class="form-radio" type="radio" name="radio-direct" value="2">
-        <span class="ml-2">Option 2</span>
-      </label>
-    </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input class="form-radio" type="radio" name="radio-direct" value="3">
-        <span class="ml-2">Option 3</span>
-      </label>
-    </div>
-  </div>
-</div>
-
-<h3>Select</h3>
-<p>A select is similar to radio button list, but allows reducing space needs. A label should be used when using a
-  select. Default value should be populated when it's what most users will use.
-  Group options when it helps.</p>
-<div class="example">
-  <form>
-    <label class="field">
-      <span class="field-label">Color</span>
-      <select class="field-control">
-        <option selected disabled>Select a color...</option>
-        <option>Red</option>
-        <option>Green</option>
-      </select>
-    </label>
-  </form>
-</div>
-<h3>Checkbox</h3>
-<div class="example">
-  <label class="field mb-8">
-    <input type="checkbox" class="field-control"> Single checkbox label here
-  </label>
-
-  <fieldset class="option-list">
-    <legend>Checkbox list label here</legend>
-    <div>
-      <label class="inline-flex items-center">
-        <input class="form-checkbox" type="checkbox">
-        <span class="ml-2">Option 1</span>
-      </label>
-    </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input class="form-checkbox" type="checkbox">
-        <span class="ml-2">Option 2</span>
-      </label>
-    </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input class="form-checkbox" type="checkbox">
-        <span class="ml-2">Option 3</span>
-      </label>
-    </div>
-  </fieldset>
-</div>
-<h3>
-  Multiselect
+<article>
+  <h2>Toggle switch</h2>
+  <p>Use a toggle switch to immediately flip a state in the system.</p>
   <div class="example">
-    TODO. TBD
+    TODO. Not needed immediately.
   </div>
-</h3>
+</article>
+
+<article>
+  <h2>Selects</h2>
+  <section>
+    <h3>Radio buttons</h3>
+    <p>Radio buttons allows users to scan options quickly.</p>
+    <div class="example">
+
+      <div class="radiobutton-list">
+        <div>
+          <label class="inline-flex items-center">
+            <input class="form-radio" type="radio" checked="" name="radio-direct" value="1">
+            <span class="ml-2">Option 1</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center">
+            <input class="form-radio" type="radio" name="radio-direct" value="2">
+            <span class="ml-2">Option 2</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center">
+            <input class="form-radio" type="radio" name="radio-direct" value="3">
+            <span class="ml-2">Option 3</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h3>Select</h3>
+    <p>A select is similar to radio button list, but allows reducing space needs. A label should be used when using a
+      select. Default value should be populated when it's what most users will use.
+      Group options when it helps.</p>
+    <div class="example">
+      <form>
+        <label class="field">
+          <span class="field-label">Color</span>
+          <select class="field-control">
+            <option selected disabled>Select a color...</option>
+            <option>Red</option>
+            <option>Green</option>
+          </select>
+        </label>
+      </form>
+    </div>
+  </section>
+
+  <section>
+
+    <h3>Checkbox</h3>
+    <div class="example">
+      <label class="field mb-8">
+        <input type="checkbox" class="field-control"> Single checkbox label here
+      </label>
+
+      <fieldset class="option-list">
+        <legend>Checkbox list label here</legend>
+        <div>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox">
+            <span class="ml-2">Option 1</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox">
+            <span class="ml-2">Option 2</span>
+          </label>
+        </div>
+        <div>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox">
+            <span class="ml-2">Option 3</span>
+          </label>
+        </div>
+      </fieldset>
+    </div>
+  </section>
+  <section>
+    <h3>
+      Multiselect
+      <div class="example">
+        TODO. TBD
+      </div>
+    </h3>
+  </section>
+</article>
 
 <article>
   <h2>When to use what selection control</h2>

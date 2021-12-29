@@ -13,6 +13,7 @@ export const navigationLinks: NavigationLink[] = [
     ]},
     { name: 'Patterns', children: [
         { name: 'Content', link: '/design/content' },
+        { name: 'Page header', link: '/design/pageheaderpatterns'},
         { name: 'Form', link: '/design/form' },
         { name: 'Result table', link: '/design/resulttable'}
     ]},

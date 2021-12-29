@@ -1,26 +1,29 @@
-<h1>Tabs</h1>
-
-<div class="prose">
-    Use tabs to alternate between views within the same context.
-</div>
+<header>
+    <h1>Tabs</h1>
+    <div class="prose">
+        Use tabs to alternate between views within the same context.
+    </div>    
+</header>
 
 <article>
     <h2>Example</h2>
-    <!-- your navs bound to current route fragments -->
-    <ul ngbNav [activeId]="route.fragment | async">
-        <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
-            <a ngbNavLink [routerLink]="link.link" [fragment]="link.fragment">{{ link.title }}</a>
-        </li>
-    </ul>
+    <div class="example">
+        <!-- your navs bound to current route fragments -->
+        <ul ngbNav [activeId]="route.fragment | async" class="nav-tabs">
+            <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+                <a ngbNavLink [routerLink]="link.link" [fragment]="link.fragment">{{ link.title }}</a>
+            </li>
+        </ul>
 
-    <!-- and an actual outlet elsewhere -->
-    <router-outlet></router-outlet>
+        <!-- and an actual outlet elsewhere -->
+        <router-outlet></router-outlet>
+    </div>
 </article>
 
 <article>
     <h2>Usage</h2>
-    <ol>
+    <ul class="list-inside list-disc">
         <li>Tabs should be parallel in nature</li>
         <li>Use sentence case for tab titles</li>
-    </ol>
+    </ul>
 </article>

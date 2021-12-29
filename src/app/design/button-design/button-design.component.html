@@ -1,7 +1,9 @@
-<h1>Button</h1>
-<p class="prose">
-    Use a button to allow user to perform an action.
-</p>
+<header>
+    <h1>Button</h1>
+    <p class="prose">
+        Use a button to allow user to perform an action.
+    </p>
+</header>
 
 <article>
     <h2>Variants</h2>
@@ -9,14 +11,16 @@
         Each button variant serves a specific purpose, they should be used accordingly.
     </p>
     <h3>Primary</h3>
-    <p>Use `primary` for primary action of a container. While not every container requires a primary button, it
+    <p class="text-block">Use `primary` for primary action of a container. While not every container requires a primary
+        button, it
         should only appear once per container (not including application header, modal, or side panel).</p>
     <div class="example">
         <button class="btn-primary">Primary button</button>
     </div>
 
     <h3>Secondary/Default</h3>
-    <p>Default button to use for actions. They can be used alone or as a secondary button along with a primary
+    <p class="text-block">Default button to use for actions. They can be used alone or as a secondary button along with
+        a primary
         button.
     </p>
     <div class="example">
@@ -30,14 +34,16 @@
     </div>-->
 
     <h3>Danger</h3>
-    <p>Use a `danger` button for the primary action when it would causes destruction on the data. This is usually
+    <p class="text-block">Use a `danger` button for the primary action when it would causes destruction on the data.
+        This is usually
         seen in confirmation modals.</p>
     <div class="example">
         <button class="btn-danger">Danger button</button>
     </div>
 
     <h3>Warning</h3>
-    <p>Use a `warning` button to warn the user when the associated action would cause significant changes. This is
+    <p class="text-block">Use a `warning` button to warn the user when the associated action would cause significant
+        changes. This is
         usually seen in modals.</p>
     <div class="example">
         <button class="btn-warning">Warning button</button>
@@ -53,13 +59,13 @@
         <div class="button-list">
             <button class="btn-primary loading" (click)="onButtonClick()">
                 <div class="button-loading-overlay">
-                    <app-spinner></app-spinner>
+                    <app-spinner type="primary"></app-spinner>
                 </div>
                 Primary button
             </button>
             <button class="btn-secondary loading" (click)="onButtonClick()">
                 <div class="button-loading-overlay">
-                    <app-spinner></app-spinner>
+                    <app-spinner type="secondary"></app-spinner>
                 </div>
                 Secondary button
             </button>
@@ -72,7 +78,6 @@
     <div class="example">
         <div class="button-list">
             <button class="btn-primary">Primary button</button>
-            <button class="btn-primary">Primary button</button>
             <button class="btn-secondary">Secondary button</button>
             <button class="btn-secondary">Secondary button</button>
         </div>
@@ -82,7 +87,8 @@
 
 <article>
     <h2>Button with icon</h2>
-    <p>Use button with an icon when the visual presentation helps conveying meaning quicker and attention is needed for
+    <p class="text-block">Use button with an icon when the visual presentation helps conveying meaning quicker and
+        attention is needed for
         the action.</p>
     <div class="example">
         <div class="button-list">
@@ -100,12 +106,14 @@
 
 <article>
     <h2>Icon button</h2>
+    <p class="text-block">An icon can be used alone in a button if user has a global understanding of what the icon
+        means, and using it without text brings benefits.</p>
     <div class="example">
         <div class="button-list">
-            <button class="btn-icon">
+            <button class="btn-primary btn-icon">
                 <app-svg-icon key="menu" type="outline"></app-svg-icon>
             </button>
-            <button class="btn-icon">
+            <button class="btn-secondary btn-icon">
                 <app-svg-icon key="pencil"></app-svg-icon>
             </button>
         </div>

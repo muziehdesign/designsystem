@@ -1,24 +1,33 @@
-<h1>Spinner</h1>
+<header>
+    <h1>Spinner</h1>
+    <p class="prose">
+        Use a spinner to let users know content is being loaded.
+    </p>
+</header>
 
-<p>
-    Use a spinner to let users know content is being loaded.
-</p>
+<article>
+    <h2>Example</h2>
+    <ul>
+        <li>
+            <span class="pr-4">medium (default)</span>
+            <div class="max-w-sm">
+                <app-spinner></app-spinner>
+            </div>
+        </li>
+        <li>
+            <span class="pr-4">large</span>
+            <div class="max-w-sm">
+                <app-spinner size="large"></app-spinner>
+            </div>
+        </li>
+    </ul>
 
-<h2>Example</h2>
-<ul>
-    <li>
-        <span class="pr-4">medium (default)</span>
-        <app-spinner></app-spinner>
-    </li>
-    <li>
-        <span class="pr-4">large</span>
-        <app-spinner size="large"></app-spinner>
-    </li>
-</ul>
-
-
-<h2>Best practices</h2>
-<ul class="list-inside list-disc">
-    <li>There should only be a single spinner on a page at one time</li>
-    <li>Spinner should be placed inside container of the content being loaded</li>
-</ul>
+    <section>
+        <h2>Best practices</h2>
+        <ul class="list-inside list-disc">
+            <li>There should only be a single spinner on a page at one time.</li>
+            <li>Spinner should be placed inside container of the content being loaded.</li>
+            <li>Spinner should appear when user action is initiated and disappear once content loads.</li>
+        </ul>
+    </section>
+</article>

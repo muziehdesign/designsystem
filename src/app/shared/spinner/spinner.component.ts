@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SpinnerComponent implements OnInit {
 
   @Input() size: 'medium' | 'large' = 'medium';
+  @Input() type: 'primary' | 'secondary' | 'lone' = 'lone';
   constructor() { }
 
   ngOnInit(): void {

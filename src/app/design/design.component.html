@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="hidden md:flex md:w-72 md:flex-col md:fixed md:inset-y-0" *ngIf="!stickyNavigation">
+  <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0" *ngIf="!stickyNavigation">
     <div class="flex flex-col flex-grow border-gray-200 pt-5 bg-white overflow-y-auto">
       <div class="flex-grow flex flex-col">
         <app-navigation></app-navigation>
@@ -34,7 +34,7 @@
   <div class="md:pl-64 flex flex-col flex-1">
     <main class="flex-1">
       <div class="py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 page">
+        <div class="page">
           <router-outlet class=""></router-outlet>
         </div>
       </div>

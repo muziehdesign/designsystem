@@ -41,7 +41,7 @@
     }
 
     p {
-        @apply my-4;
+        @apply my-2;
     }
 
     small {
@@ -54,6 +54,10 @@
 
     details summary {
         cursor: pointer;
+    }
+
+    strong {
+        @apply font-medium;
     }
 }
 
@@ -84,7 +88,7 @@
 
     .dl.stacked {
         dt {
-            @apply text-gray-600 mt-2 tracking-wide text-sm;
+            @apply text-gray-600 mt-2 tracking-wide text-sm uppercase;
         }
         dd {
             @apply mb-2;
@@ -142,6 +146,10 @@
             @apply text-success bg-green-50 border-green-900;
         }
     }
+
+    .text-block {
+        max-width: 90ch;
+    }
 }
 
 // icon
@@ -192,22 +200,21 @@ form {
 }
 
 .field {
-    @apply block py-1 text-sm font-medium;
+    @apply block py-1 text-sm;
 
     .help-text {
-        @apply text-gray-500 block;
+        @apply text-gray-500 block mt-1;
     }
 }
 
 .field-checkbox {
-    @apply font-normal;
     & input {
         @apply mr-1;
     }
 }
 
 .field-label {
-    @apply text-gray-600;
+    @apply text-gray-600 font-medium;
 }
 
 .field-control:not([type='checkbox']) {
@@ -218,7 +225,7 @@ form {
     @apply mt-6;
 
     legend {
-        @apply text-gray-700 tracking-wide uppercase font-medium;
+        @apply text-gray-700 tracking-wide uppercase font-medium text-sm;
     }
 }
 
