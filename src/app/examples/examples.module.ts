@@ -5,10 +5,11 @@ import { ExamplesRoutingModule } from './examples-routing.module';
 import { ResourceDetailComponent } from './resource-detail/resource-detail.component';
 import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
+import { ExamplesComponent } from './examples.component';
 
 
 @NgModule({
-  declarations: [ResourceDetailComponent],
+  declarations: [ResourceDetailComponent, ExamplesComponent],
   imports: [
     CommonModule,
     ExamplesRoutingModule,
