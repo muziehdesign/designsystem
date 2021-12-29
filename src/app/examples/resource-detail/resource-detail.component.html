@@ -1,248 +1,260 @@
-<header class="grid md:grid-cols-3 page-header">
-    <div class="md:col-span-2">
-        <h1>Jane Doe</h1>
-        <div>
-            <div class="text-secondary text-sm">
-                Member since 08/01/2019
+<div class="page style1">
+    <header class="page-header">
+        <div class="md:flex md:justify-between md:items-end">
+            <div>
+                <h1>Jane Doe</h1>
+                <div>
+                    <div class="text-secondary text-sm">
+                        Member since 08/01/2019
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:space-x-3 md:flex-row">
+                <div class="inline-flex">
+                    <button class="btn-secondary">Clone</button>
+                </div>
+                <div class="inline-flex">
+                    <button class="btn-secondary">Email password reset</button>
+                </div>
+                <div ngbDropdown class="inline-flex">
+                    <button class="btn-primary" id="dropdownBasic1" ngbDropdownToggle>Active <app-svg-icon
+                            key="chevron-down" class="ml-4"></app-svg-icon></button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>Deactivate</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="button-list mt-2">
-            <button class="btn-secondary">Clone</button>
-            <button class="btn-secondary">Email password reset</button>
-        </div>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-x-2 page-main">
+        <article class="md:col-span-2 page-content">
+            <section>
+                <h2>Details</h2>
+                <dl class="dl horizontal">
+                    <div>
+                        <dt>Username</dt>
+                        <dd>janedoe</dd>
+                    </div>
+                    <div>
+                        <dt>Last logged in</dt>
+                        <dd>12/31/2021</dd>
+                    </div>
+                    <div>
+                        <dt>Devices logged in</dt>
+                        <dd>
+                            <ul>
+                                <li>Laptop K15366</li>
+                                <li>iPhone</li>
+                                <li>iOS 15</li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section>
+                <form>
+                    <header>
+                        <h2>Personal information</h2>
+                        <div class="description"></div>
+                    </header>
+
+                    <label class="field">
+                        <span class="field-label">First name <span class="text-red-500">*</span></span>
+                        <input type="text" class="field-control">
+                    </label>
+
+                    <label class="field">
+                        <span class="field-label">Last name <span class="text-red-500">*</span></span>
+                        <input type="text" class="field-control">
+                    </label>
+                    <footer class="footer">
+                        <button class="btn-primary">Save</button>
+                    </footer>
+                </form>
+            </section>
+
+            <section>
+                <form>
+                    <header>
+                        <h2>Contact information</h2>
+                        <div class="description"></div>
+                    </header>
+
+                    <label class="field">
+                        <span class="field-label">Email <span class="text-red-500">*</span></span>
+                        <input type="email" class="field-control">
+                    </label>
+
+                    <label class="field">
+                        <span class="field-label">Phone number <span class="text-red-500">*</span></span>
+                        <input type="tel" class="field-control">
+                    </label>
+                    <footer class="footer">
+                        <button class="btn-primary">Save</button>
+                    </footer>
+                </form>
+            </section>
+        </article>
+
+        <article class="md:ml-2 page-content">
+            <section>
+                <h2>Membership</h2>
+                <dl class="dl stacked">
+                    <div>
+                        <dt>Level</dt>
+                        <dd>Premium</dd>
+                    </div>
+                    <div>
+                        <dt>Expiration date</dt>
+                        <dd>01/15/2022</dd>
+                    </div>
+                </dl>
+                <div class="text-center">
+                    <button class="btn-link">Manage membership</button>
+                </div>
+            </section>
+
+            <section>
+                <h2>Services</h2>
+                <dl class="dl stacked">
+                    <div>
+                        <dt>Muzieh music</dt>
+                        <dd>Last accessed 12/01/2021</dd>
+                    </div>
+                    <div>
+                        <dt>Muzieh video</dt>
+                        <dd>Last accessed 12/01/2021</dd>
+                    </div>
+                </dl>
+            </section>
+        </article>
     </div>
-    <div ngbDropdown class="d-inline-block float-right mt-12 text-left md:text-right">
-        <button class="btn-secondary" id="dropdownBasic1" ngbDropdownToggle>Active <app-svg-icon key="chevron-down" class="ml-4"></app-svg-icon></button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Deactivate</button>
-        </div>
-    </div>
-</header>
 
-<div class="grid md:grid-cols-3 gap-x-2 page-main">
-    <article class="md:col-span-2 page-content">
+    <article class="page-content">
         <section>
-            <h2>Details</h2>
-            <dl class="dl horizontal">
-                <div>
-                    <dt>Username</dt>
-                    <dd>janedoe</dd>
-                </div>
-                <div>
-                    <dt>Last logged in</dt>
-                    <dd>12/31/2021</dd>
-                </div>
-                <div>
-                    <dt>Devices logged in</dt>
-                    <dd>
-                        <ul>
-                            <li>Laptop K15366</li>
-                            <li>iPhone</li>
-                            <li>iOS 15</li>
-                        </ul>
-                    </dd>
-                </div>
-            </dl>
-        </section>
+            <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs pt-4" (navChange)="onNavChange()">
+                <li [ngbNavItem]="1">
+                    <a ngbNavLink>Orders</a>
+                    <ng-template ngbNavContent>
+                        <div class="table-wrapper">
+                            <table class="table" *ngIf="!isLoading; else loading">
+                                <caption>1-5 of 570 orders</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Date</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="/orders/53961111">53961111</a></td>
+                                        <td>01/01/2022 5:15 PM</td>
+                                        <td>$80.05</td>
+                                        <td>Created</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/orders/53961111">43961111</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$70.05</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/orders/43961110">43961110</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$60.55</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/orders/43961109">43961109</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$236.07</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/orders/43961108">43961108</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$100.05</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-        <section>
-            <form>
-                <header>
-                    <h2>Personal information</h2>
-                    <div class="description"></div>
-                </header>
-
-                <label class="field">
-                    <span class="field-label">First name <span class="text-red-500">*</span></span>
-                    <input type="text" class="field-control">
-                </label>
-
-                <label class="field">
-                    <span class="field-label">Last name <span class="text-red-500">*</span></span>
-                    <input type="text" class="field-control">
-                </label>
-                <footer class="footer">
-                    <button class="btn-primary">Save</button>
-                </footer>
-            </form>
-        </section>
-
-        <section>
-            <form>
-                <header>
-                    <h2>Contact information</h2>
-                    <div class="description"></div>
-                </header>
-
-                <label class="field">
-                    <span class="field-label">Email <span class="text-red-500">*</span></span>
-                    <input type="email" class="field-control">
-                </label>
-
-                <label class="field">
-                    <span class="field-label">Phone number <span class="text-red-500">*</span></span>
-                    <input type="tel" class="field-control">
-                </label>
-                <footer class="footer">
-                    <button class="btn-primary">Save</button>
-                </footer>
-            </form>
-        </section>
-    </article>
-
-    <article class="md:ml-2 page-content">
-        <section>
-            <h2>Membership</h2>
-            <dl class="dl stacked">
-                <div>
-                    <dt>Level</dt>
-                    <dd>Premium</dd>
-                </div>
-                <div>
-                    <dt>Expiration date</dt>
-                    <dd>01/15/2022</dd>
-                </div>
-            </dl>
-            <div class="text-center">
-                <button class="btn-link">Manage membership</button>
-            </div>
-        </section>
-
-        <section>
-            <h2>Services</h2>
-            <dl class="dl stacked">
-                <div>
-                    <dt>Muzieh music</dt>
-                    <dd>Last accessed 12/01/2021</dd>
-                </div>
-                <div>
-                    <dt>Muzieh video</dt>
-                    <dd>Last accessed 12/01/2021</dd>
-                </div>
-            </dl>
+                            <ng-template #loading>
+                                <div class="table-companion">
+                                    <app-spinner size="large"></app-spinner>
+                                </div>
+                            </ng-template>
+                        </div>
+                        <div class="p-4 text-center" *ngIf="!isLoading">
+                            <a href="#">See complete list</a>
+                        </div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                    <a ngbNavLink>Shipments</a>
+                    <ng-template ngbNavContent>
+                        <div class="table-wrapper">
+                            <table class="table" *ngIf="!isLoading; else loading">
+                                <caption>1-5 of 1070 shipments</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Shipment</th>
+                                        <th>Date</th>
+                                        <th>Address</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="/shipments/53961111">53961111</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$80.05</td>
+                                        <td>Delivered</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/shipments/43961111">43961111</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$70.05</td>
+                                        <td>Delivered</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/shipments/43961110">43961110</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$60.55</td>
+                                        <td>Delivered</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/shipments/43961109">43961109</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$236.07</td>
+                                        <td>Delivered</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/shipments/43961108">43961108</a></td>
+                                        <td>11/01/2021 5:15 PM</td>
+                                        <td>$100.05</td>
+                                        <td>Delivered</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ng-template #loading>
+                                <div class="table-companion">
+                                    <app-spinner size="large"></app-spinner>
+                                </div>
+                            </ng-template>
+                        </div>
+                        <div class="p-4 text-center" *ngIf="!isLoading">
+                            <a href="#">See complete list</a>
+                        </div>
+                    </ng-template>
+                </li>
+            </ul>
+            <div [ngbNavOutlet]="nav" class="mt-4 p-4"></div>
         </section>
     </article>
 </div>
-
-<article class="page-content">
-    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs pt-4" (navChange)="onNavChange()">
-        <li [ngbNavItem]="1">
-            <a ngbNavLink>Orders</a>
-            <ng-template ngbNavContent>
-                <div class="table-wrapper">
-                    <table class="table" *ngIf="!isLoading; else loading">
-                        <caption>1-5 of 570 orders</caption>
-                        <thead>
-                            <tr>
-                                <th>Order</th>
-                                <th>Date</th>
-                                <th>Total</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="/orders/53961111">53961111</a></td>
-                                <td>01/01/2022 5:15 PM</td>
-                                <td>$80.05</td>
-                                <td>Created</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/orders/53961111">43961111</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$70.05</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/orders/43961110">43961110</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$60.55</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/orders/43961109">43961109</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$236.07</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/orders/43961108">43961108</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$100.05</td>
-                                <td>Completed</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <ng-template #loading>
-                        <div class="table-companion">
-                            <app-spinner size="large"></app-spinner>
-                        </div>
-                    </ng-template>
-                </div>
-                <div class="p-4 text-center" *ngIf="!isLoading">
-                    <a href="#">See complete list</a>
-                </div>
-            </ng-template>
-        </li>
-        <li [ngbNavItem]="2">
-            <a ngbNavLink>Shipments</a>
-            <ng-template ngbNavContent>
-                <div class="table-wrapper">
-                    <table class="table" *ngIf="!isLoading; else loading">
-                        <caption>1-5 of 1070 shipments</caption>
-                        <thead>
-                            <tr>
-                                <th>Shipment</th>
-                                <th>Date</th>
-                                <th>Address</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="/shipments/53961111">53961111</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$80.05</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/shipments/43961111">43961111</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$70.05</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/shipments/43961110">43961110</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$60.55</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/shipments/43961109">43961109</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$236.07</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/shipments/43961108">43961108</a></td>
-                                <td>11/01/2021 5:15 PM</td>
-                                <td>$100.05</td>
-                                <td>Delivered</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <ng-template #loading>
-                        <div class="table-companion">
-                            <app-spinner size="large"></app-spinner>
-                        </div>
-                    </ng-template>
-                </div>
-                <div class="p-4 text-center" *ngIf="!isLoading">
-                    <a href="#">See complete list</a>
-                </div>
-            </ng-template>
-        </li>
-    </ul>
-    <div [ngbNavOutlet]="nav" class="mt-4 p-4"></div>
-</article>

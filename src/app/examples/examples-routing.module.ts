@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ExamplesComponent } from './examples.component';
 import { ResourceDetailComponent } from './resource-detail/resource-detail.component';
 
 const routes: Routes = [
-  { path: 'examples/resourcedetail', component: ResourceDetailComponent },
+  {
+    path: 'examples', component: ExamplesComponent, children: [
+      { path: 'resourcedetail', component: ResourceDetailComponent }
+    ]
+  }
 ];
 
 @NgModule({

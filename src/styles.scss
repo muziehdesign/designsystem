@@ -15,27 +15,7 @@ code {
     @apply font-mono text-pink-500;
 }
 
-.page-header {
-    @apply grid md:grid-cols-3;
-}
-
 .page {
     @apply pt-0.5 pb-4 max-w-7xl mx-auto;
 }
 
-.page-main {
-    @apply mt-2;
-
-    article {
-        margin: 0;
-    }
-}
-
-.page-content {
-    margin: 0;
-    @apply bg-white px-4 sm:px-6 md:px-8 py-2 mt-2;
-}
-
-.page-header {
-    @apply bg-white px-4 sm:px-6 md:px-8 pb-2;
-}
