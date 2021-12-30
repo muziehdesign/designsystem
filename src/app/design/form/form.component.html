@@ -8,7 +8,7 @@
 <article>
     <h2>Example</h2>
     <div class="example">
-        <form #addressForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #addressForm="ngForm" (ngSubmit)="onSubmit()" (change)="onFormChange()">
             <header>
                 <h3>Add delivery address</h3>
                 <div class="description">Add a new delivery address to your profile.</div>
@@ -60,7 +60,7 @@
                 </small>
             </div>
 
-            <!--<fieldset class="fieldset">
+            <fieldset class="fieldset">
                 <legend>Delivery instructions</legend>
                 <label class="field">
                     <span class="field-label">Navigation instructions</span>
@@ -73,7 +73,7 @@
                     <input type="text" class="field-control" [(ngModel)]="model.securityCode" name="securityCode">
                     <small class="help-text">Security code for the door</small>
                 </label>
-            </fieldset>-->
+            </fieldset>
 
             <fieldset class="fieldset">
                 <legend>Form scenario</legend>
@@ -98,7 +98,7 @@
                     <div class="button-loading-overlay" *ngIf="isLoading">
                         <app-spinner type="primary"></app-spinner>
                     </div>
-                    Primary button
+                    Add delivery address
                 </button>
             </footer>
         </form>
@@ -119,7 +119,7 @@
             <li class="mb-2">
                 <strong>Form section</strong>
                 <p>A group of controls and fields that are logically related. There can be multiple form sections in one
-                    form. They should be grouped using &lt;fieldset&gt;, with &lt;legend&gt; as the headline.
+                    form. They should be grouped using <code>&lt;fieldset&gt;</code>, with <code>&lt;legend&gt;</code> as the headline.
                 </p>
             </li>
             <li class="mb-2">
@@ -140,24 +140,25 @@
                     </li>
                     <li>
                         <strong>Error message</strong>
+                        <p>Use field error message to communicate that associated field needs correction.</p>
                     </li>
                 </ol>
             </li>
             <li class="mb-2">
                 <strong>Form footer</strong>
-                <p>It should always contain one primary action button.</p>
+                <p>It should always contain one primary action button, and form errors above button.</p>
             </li>
         </ol>
     </div>
 
     <h3>Best practices</h3>
+    <p>General rule of thumb is to treat form as a conversation with user. Practice good communication -- be helpful, concise, and timely.</p>
     <ul class="list-disc list-inside text-block">
-        <li>Button should state the action that the button performs when clicked.</li>
+        <li>Button text should state the action that the button performs when clicked.</li>
         <li>Avoid multiple action buttons. Forms usually should have 1-2 buttons.</li>
         <li>Avoid reset button, and cancel button to avoid misclicks, unless they add value.</li>
         <li>Avoid placeholder attributes due to accessibility concerns.</li>
         <li>Never disable a submit button.</li>
-        <li>A form is a conversation with user. Be helpful and concise in our communication.</li>
         <li>Present fields in a single column layout to keep users in flow.</li>
         <li>Use logical grouping and sequencing for form field arrangements.</li>
     </ul>

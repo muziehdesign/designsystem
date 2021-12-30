@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-svg-icon',

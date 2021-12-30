@@ -27,12 +27,11 @@
             </div>
         </div>
     </header>
-
     <div class="grid md:grid-cols-3 gap-x-2 page-main">
         <article class="md:col-span-2 page-content">
             <section>
                 <h2>Details</h2>
-                <dl class="dl horizontal">
+                <dl class="dl dl-horizontal">
                     <div>
                         <dt>Username</dt>
                         <dd>janedoe</dd>
@@ -102,7 +101,7 @@
         <article class="md:ml-2 page-content">
             <section>
                 <h2>Membership</h2>
-                <dl class="dl stacked">
+                <dl class="dl dl-stacked">
                     <div>
                         <dt>Level</dt>
                         <dd>Premium</dd>
@@ -118,8 +117,8 @@
             </section>
 
             <section>
-                <h2>Services</h2>
-                <dl class="dl stacked">
+                <h2>Subscriptions</h2>
+                <dl class="dl dl-stacked">
                     <div>
                         <dt>Muzieh music</dt>
                         <dd>Last accessed 12/01/2021</dd>
@@ -129,6 +128,24 @@
                         <dd>Last accessed 12/01/2021</dd>
                     </div>
                 </dl>
+            </section>
+
+            <section>
+                <h2>Services</h2>
+                <div class="skeleton-loader py-2 w-full">
+                    <div class="animate-pulse flex space-x-4">
+                        <div class="flex-1 space-y-6 py-1">
+                            <div class="grid gap-y-2">
+                                <div class="h-3 bg-gray-100 w-36"></div>
+                                <div class="h-4 bg-gray-100 w-64"></div>
+                                <div class="h-3 bg-gray-100 w-36"></div>
+                                <div class="h-4 bg-gray-100 w-64"></div>
+                                <div class="h-3 bg-gray-100 w-36"></div>
+                                <div class="h-4 bg-gray-100 w-64"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </article>
     </div>

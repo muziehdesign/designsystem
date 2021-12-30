@@ -4,7 +4,7 @@
 
 .page-progress-bar {
     overflow: hidden;
-    @apply w-full h-1 bg-primary bg-opacity-50;
+    @apply w-full h-0.5 bg-primary bg-opacity-50;
 }
 
 .page-progress-bar-value {

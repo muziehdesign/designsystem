@@ -23,10 +23,73 @@
     <div class="example">
         <div class="flex gap-4">
             <div class="flex-auto" *ngFor="let color of colors">
-                <div class="text-center mb-4">{{color}}</div>
+                <div class="text-center pb-10 block">{{color}}</div>
                 <div class="color-swatch {{'bg-' + color + '-' + shade}}" [ngClass]="{'text-white': shade > 400}"
                     *ngFor="let shade of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">{{shade}}</div>
             </div>
         </div>
+    </div>
+</article>
+
+<article>
+    <h2>Code</h2>
+    <p class="text-block">Colors have been built into different css classes for us to easily reuse. Below are examples
+        of commonly needed ones.</p>
+    <div class="example">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Prefix</th>
+                    <th>Css class</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>text-*</code></td>
+                    <td><code>text-primary</code></td>
+                    <td><span class="text-primary">lorem ipsum</span></td>
+                </tr>
+                <tr>
+                    <td><code></code></td>
+                    <td><code>text-gray-700</code></td>
+                    <td><span class="text-gray-700">lorem ipsum</span></td>
+                </tr>
+                <tr>
+                    <td><code>bg-*</code></td>
+                    <td><code>bg-secondary</code></td>
+                    <td>
+                        <div class="color-swatch bg-secondary h-4 w-16 px-1 py-2"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code></code></td>
+                    <td><code>bg-gray-400</code></td>
+                    <td>
+                        <div class="color-swatch bg-gray-400 h-4 w-16 px-1 py-2"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>border-*</code></td>
+                    <td><code>border-success</code></td>
+                    <td><span class="border-success border p-1.5">lorem ipsum</span></td>
+                </tr>
+                <tr>
+                    <td><code></code></td>
+                    <td><code>border-green-500</code></td>
+                    <td><span class="border-green-500 border p-1.5">lorem ipsum</span></td>
+                </tr>
+                <tr>
+                    <td><code>border-t/b/l/r-*</code></td>
+                    <td><code>border-l-danger</code></td>
+                    <td><span class="border-l border-l-danger p-1.5">lorem ipsum</span></td>
+                </tr>
+                <tr>
+                    <td><code></code></td>
+                    <td><code>border-l-red-900</code></td>
+                    <td><span class="border-l border-l-red-900 p-1.5">lorem ipsum</span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </article>

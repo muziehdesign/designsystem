@@ -7,6 +7,26 @@
     }
 }
 
+.example-template {
+    @apply -mt-6 p-6 overflow-x-auto bg-white;
+    &:before {
+        content: '';
+        mask: url('./assets/example-code.svg') no-repeat 50% 50%;
+        @apply inline-block h-4 w-4 bg-gray-400;
+    }
+}
+
+.demox {
+    .example {
+        @apply rounded-t-2xl;
+    }
+
+    .example-template {
+        @apply rounded-b-2xl;
+    }
+}
+
+
 article {
     //margin: 2rem 0;
 }

@@ -18,6 +18,12 @@ export class FormComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    onFormChange() {
+        if(this.isSuccessful == true) {
+            this.isSuccessful = undefined;
+        }
+    }
+
     onSubmit() {
         this.isSuccessful = undefined;
 

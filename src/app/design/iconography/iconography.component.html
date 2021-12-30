@@ -6,53 +6,93 @@
     </p>
 </header>
 
-<div class="example">
-    <ul class="icon-demo">
-        <li>
-            <app-svg-icon key="x-circle" type="solid"></app-svg-icon>
-            <span>x-circle, solid</span>
-        </li>
-        <li>
-            <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
-            <span>exclamation, solid</span>
-        </li>
-        <li>
-            <app-svg-icon key="menu"></app-svg-icon>
-            <span>menu, outline</span>
-        </li>
-        <li>
-            <app-svg-icon key="arrow-down"></app-svg-icon>
-            <span>arrow-down, outline</span>
-        </li>
-        <li>
-            <app-svg-icon key="arrow-up"></app-svg-icon>
-            <span>arrow-up, outline</span>
-        </li>
-        <li>
-            <app-svg-icon key="arrow-sm-up"></app-svg-icon>
-            <span>arrow-sm-up, outline</span>
-        </li>
-        <li>
-            <app-svg-icon key="chevron-up"></app-svg-icon>
-            <span>chevron-up, outline</span>
-        </li>
-        <li>
-            <app-svg-icon key="chevron-down"></app-svg-icon>
-            <span>chevron-down, outline</span>
-        </li>
-        <li>
-            <app-svg-icon key="chevron-right"></app-svg-icon>
-            <span>chevron-right, outline</span>
-        </li>
-    </ul>
-</div>
+<article>
+    <h2>Variants</h2>
 
-<h2>Variants</h2>
-There are two versions of icons, outline and solid. Use outline by default. Use solid version to indicate the associated
-action has already happened.
+    <section>
+        <h3>Outline</h3>
+        <p>Default. Designed to be rendered at 24x24.</p>
+        <div class="example">
+            <div class="grid grid-cols-8 text-center">
+                <div>
+                    <app-svg-icon key="check-circle"></app-svg-icon>
+                    <span class="block mt-3">check-circle</span>
+                </div>
+                <div>
+                    <app-svg-icon key="menu"></app-svg-icon>
+                    <span class="block mt-3">menu</span>
+                </div>
+                <div>
+                    <app-svg-icon key="arrow-down"></app-svg-icon>
+                    <span class="block mt-3">arrow-down</span>
+                </div>
+                <div>
+                    <app-svg-icon key="arrow-up"></app-svg-icon>
+                    <span class="block mt-3">arrow-up</span>
+                </div>
+                <div>
+                    <app-svg-icon key="arrow-sm-up"></app-svg-icon>
+                    <span class="block mt-3">arrow-sm-up</span>
+                </div>
+                <div>
+                    <app-svg-icon key="chevron-up"></app-svg-icon>
+                    <span class="block mt-3">chevron-up</span>
+                </div>
+                <div>
+                    <app-svg-icon key="chevron-down"></app-svg-icon>
+                    <span class="block mt-3">chevron-down</span>
+                </div>
+                <div>
+                    <app-svg-icon key="chevron-right"></app-svg-icon>
+                    <span class="block mt-3">chevron-right</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Solid fill</h3>
+        <p>Designed to be rendered at 20x20. Use this in buttons, form elements, to indicate action that has already
+            taken
+            place.</p>
+        <div class="example">
+            <div class="grid grid-cols-8 text-center">
+                <div>
+                    <app-svg-icon key="check-circle" type="solid"></app-svg-icon>
+                    <span class="block mt-3">check-circle</span>
+                </div>
+                <div>
+                    <app-svg-icon key="x-circle" type="solid"></app-svg-icon>
+                    <span class="block mt-3">x-circle</span>
+                </div>
+                <div>
+                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    <span class="block mt-3">exclamation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Code</h3>
+        <div class="example">
+            <div class="max-w-sm text-center">
+                <app-svg-icon key="check-circle" type="outline"></app-svg-icon>
+            </div>
+        </div>
+        <div class="example-template">
+            <code>
+                <pre>
+                    &lt;app-svg-icon key="check-circle" type="outline"&gt;&lt;/app-svg-icon&gt;
+                    // type options are ['outline', 'solid']
+                </pre>
+            </code>
+        </div>
+    </section>
+</article>
 
 <h2>Best practices</h2>
-<ul class="list-disc list-inside">
+<ul class="list-disc list-inside text-block">
     <li>Icons should only be used when it serves a purpose and adds value.</li>
     <li>Icon should reflect the associated section or action.</li>
     <li>Icon should share the same color as what they're associated with.</li>
@@ -61,7 +101,8 @@ action has already happened.
 </ul>
 
 <h2>Accessibility</h2>
-<p>Icons are rendered with `aria-hidden=true`. `sr-only` element and associated text are relied on for accessibility
+<p>Icons are rendered with <code>aria-hidden=true</code>. Use an additional <code>sr-only</code> element with help text
+    for accessibility
     support.</p>
 
 <h2>TODO</h2>
