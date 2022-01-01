@@ -8,6 +8,7 @@
         "dist/common/common",
         "dist/common"
       ]
+
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
