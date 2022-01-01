@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule as AngularCommonModule } from '@angular/common';
 import { CommonComponent } from './common.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 
@@ -10,9 +11,11 @@ import { SpinnerComponent } from './spinner/spinner.component';
     SpinnerComponent
   ],
   imports: [
+    AngularCommonModule
   ],
   exports: [
-    CommonComponent
+    CommonComponent,
+    SpinnerComponent
   ]
 })
 export class CommonModule { }

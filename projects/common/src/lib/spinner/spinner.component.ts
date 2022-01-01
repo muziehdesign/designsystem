@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-spinner',
+  selector: 'kitchensink-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css']
 })
-export class SpinnerComponent implements OnInit {
+export class SpinnerComponent  {
 
+  @Input() size: 'medium' | 'large' = 'medium';
+  @Input() type: 'primary' | 'secondary' | 'lone' = 'lone';
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
