@@ -11,18 +11,15 @@
             </div>
 
             <div class="md:space-x-3 md:flex-row">
-                <div class="inline-flex">
-                    <button class="btn-secondary">Clone</button>
-                </div>
-                <div class="inline-flex">
-                    <button class="btn-secondary">Email password reset</button>
-                </div>
                 <div ngbDropdown class="inline-flex">
                     <button class="btn-primary" id="dropdownBasic1" ngbDropdownToggle>Active <app-svg-icon
                             key="chevron-down" class="ml-4"></app-svg-icon></button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                         <button ngbDropdownItem>Deactivate</button>
                     </div>
+                </div>
+                <div class="inline-flex">
+                    <button class="btn-secondary"><app-svg-icon key="check-circle"></app-svg-icon></button>
                 </div>
             </div>
         </div>
