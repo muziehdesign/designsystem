@@ -31,7 +31,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "config*.json",
+                "input": "src/",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/design.scss",
@@ -100,7 +105,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "config*.json",
+                "input": "src/",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/design.scss",
