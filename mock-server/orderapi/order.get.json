@@ -12,10 +12,10 @@
                 "Content-Type": "application/json"
             },
             "data": {
-                "orderId": "%%orderId%%",
-                "orderNumber": "%%orderId%%",
+                "orderId": 1,
                 "orderTotal": 335.8,
-                "date": "2021-12-30T15:51:38.357-07:00",
+                "status": "partiallyComplete",
+                "submissionDate": "2021-12-30T15:51:38.357-07:00",
                 "customer": {
                     "userId": 7822,
                     "firstName": "Jane",
@@ -25,6 +25,9 @@
         },
         "500": {
             "status": 500
+        },
+        "404": {
+            "status": 404
         }
     }
 }

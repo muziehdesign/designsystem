@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ExamplesModule } from './examples/examples.module';
 import { CommonModule } from 'kitchensink/common';
+import { OrderModule } from './order/order.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommonModule } from 'kitchensink/common';
     DesignModule,
     ExamplesModule,
     SharedModule,
-    CommonModule
+    CommonModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

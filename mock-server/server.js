@@ -34,7 +34,10 @@ ngApiMock.configure({
 const app = express();
 
 app.use(logger('dev'));
-app.use(cors());
+app.use(cors({
+  'allowedHeaders': ['Content-Type', 'Authorization'],
+  'origin': '*'
+}));
 app.use(ngApiMock.middleware);
 app.use('/dev-interface/', serveStatic(devInterface));
 oidc('http://localhost:' + port, app);
