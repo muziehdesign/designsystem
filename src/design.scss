@@ -268,19 +268,12 @@ form {
 }
 
 // buttons
-button {
-}
-
 .btn-primary,
 .btn-secondary,
 .btn-danger,
 .btn-warning,
 .btn-link {
-    @apply inline-flex justify-center py-1.5 px-4 border font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100;
-}
-
-.btn-icon {
-    @apply py-2 px-3;
+    @apply py-2 px-3 border font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 text-center;
 }
 
 .btn-primary {
@@ -323,10 +316,6 @@ button.loading {
 
 .btn-primary .button-loading-overlay {
     @apply bg-blue-700;
-}
-
-button .icon {
-    @apply mr-3 -ml-1 -mt-1;
 }
 
 .btn-icon .icon {
