@@ -17,7 +17,7 @@
                 <li><a routerLink="/components/item1">Item 1</a></li>
                 <li><a routerLink="/components/item2">Item 2</a></li>
                 <li><a routerLink="/components/item3">Item 3</a></li>
-                <li><a routerLink="/breadcrumbs" aria-current="page">Breadcrumbs</a></li>
+                <li>Breadcrumbs</li>
             </ol>
         </nav>
     </div>
@@ -27,8 +27,8 @@
     <h2>Best practices</h2>
     <ul class="list-inside list-disc">
         <li>Place breadcrumbs horizontally before a page's main content</li>
-        <li>Breadcrumbs should display current page as last item, not as a link - TODO: conflicts?</li>
-        <li>Breadcrumbs should not be representation of session history</li>
+        <li>Breadcrumbs should display current page as last item, not as a link</li>
+        <li>Breadcrumbs should represent hierarchical structure and not session history</li>
         <li>Page title and breadcrumb text should match to avoid confusion</li>
         <li>Consider not using breadcrumbs if the heiarchies are flat (0-2 levels deep)</li>
     </ul>

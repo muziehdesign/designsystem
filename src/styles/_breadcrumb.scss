@@ -7,6 +7,6 @@
     @apply text-gray-400 pl-4;
 }
 
-.breadcrumbs a {
+.breadcrumbs, .breadcrumbs a {
     @apply text-gray-600;
 }

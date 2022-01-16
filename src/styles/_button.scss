@@ -2,14 +2,6 @@
     @apply py-2 px-3 border font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 text-center;
 }
 
-.button-primary,
-.button-secondary,
-.button-danger,
-.button-warning,
-.button-link {
-    //@apply py-2 px-3 border font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 text-center;
-}
-
 .button-primary {
     @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-700;
 }
