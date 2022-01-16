@@ -15,7 +15,7 @@
         button, it
         should only appear once per container (not including application header, modal, or side panel).</p>
     <div class="example">
-        <button class="btn-primary">Primary button</button>
+        <button class="button button-primary">Primary button</button>
     </div>
 
     <h3>Secondary/Default</h3>
@@ -24,13 +24,13 @@
         button.
     </p>
     <div class="example">
-        <button class="btn-secondary">Secondary button</button>
+        <button class="button button-secondary">Secondary button</button>
     </div>
 
     <!--<h3>Link</h3>
     <p>Use a `link` button when the action takes a user to another page.</p>
     <div class="example">
-        <button class="btn-link">Link button</button>
+        <button class="button button-link">Link button</button>
     </div>-->
 
     <h3>Danger</h3>
@@ -38,7 +38,7 @@
         This is usually
         seen in confirmation modals.</p>
     <div class="example">
-        <button class="btn-danger">Danger button</button>
+        <button class="button button-danger">Danger button</button>
     </div>
 
     <h3>Warning</h3>
@@ -46,7 +46,7 @@
         changes. This is
         usually seen in modals.</p>
     <div class="example">
-        <button class="btn-warning">Warning button</button>
+        <button class="button button-warning">Warning button</button>
     </div>
 </article>
 
@@ -57,7 +57,7 @@
         <p>Disabled buttons can cause accessibility problems and should be avoided.</p>
         <h3>Loading</h3>
         <div class="button-list">
-            <button class="btn-primary loading" (click)="onButtonClick()">
+            <button class="button button-primary loading" (click)="onButtonClick()">
                 <div class="button-loading-overlay">
                     <svg class="animate-spin m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24">
@@ -70,7 +70,7 @@
                 </div>
                 Primary button
             </button>
-            <button class="btn-secondary loading" (click)="onButtonClick()">
+            <button class="button button-secondary loading" (click)="onButtonClick()">
                 <div class="button-loading-overlay">
                     <svg class="animate-spin m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24">
@@ -91,9 +91,9 @@
     <h2>Button group</h2>
     <div class="example">
         <div class="button-list">
-            <button class="btn-primary">Primary button</button>
-            <button class="btn-secondary">Secondary button</button>
-            <button class="btn-secondary">Secondary button</button>
+            <button class="button button-primary">Primary button</button>
+            <button class="button button-secondary">Secondary button</button>
+            <button class="button button-secondary">Secondary button</button>
         </div>
     </div>
     <p>Use <code>.button-list</code> when displaying a group of buttons to enforce consistent button spacing.</p>
@@ -106,11 +106,11 @@
         the action.</p>
     <div class="example">
         <div class="button-list">
-            <button class="btn-primary">
+            <button class="button button-primary">
                 <app-svg-icon key="pencil"></app-svg-icon>
                 Edit
             </button>
-            <button class="btn-secondary">
+            <button class="button button-secondary">
                 <app-svg-icon key="pencil"></app-svg-icon>
                 Edit
             </button>
@@ -124,10 +124,10 @@
         means, and using it without text brings benefits.</p>
     <div class="example">
         <div class="button-list">
-            <button class="btn-primary btn-icon">
+            <button class="button button-primary button-icon">
                 <app-svg-icon key="menu" type="outline"></app-svg-icon>
             </button>
-            <button class="btn-secondary btn-icon">
+            <button class="button button-secondary button-icon">
                 <app-svg-icon key="pencil"></app-svg-icon>
             </button>
         </div>
