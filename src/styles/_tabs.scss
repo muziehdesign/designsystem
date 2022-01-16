@@ -7,10 +7,10 @@
 }
 
 .nav-link {
-    @apply hover:no-underline inline-block text-gray-500 py-2 px-6 border-b border-b-transparent hover:border-b-gray-600;
+    @apply hover:no-underline inline-block text-gray-500 py-2 px-6 border-b border-b-transparent hover:border-b-primary hover:border-b-2 hover:text-primary;
     min-width: 8rem;
 }
 
 .nav-link.active {
-    @apply text-primary border-b-primary border-b font-medium;
+    @apply text-primary border-b-primary border-b-2 font-medium;
 }
