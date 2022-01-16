@@ -1,0 +1,11 @@
+.icon {
+    @apply inline-block;
+}
+
+.icon.icon-solid {
+    @apply h-5 w-5;
+}
+
+.icon.icon-outline {
+    @apply h-6 w-6;
+}

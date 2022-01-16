@@ -1,0 +1,20 @@
+.dl-horizontal dt,
+dd {
+    @apply inline-block p-3;
+}
+
+.dl-horizontal dt {
+    @apply w-48 align-top;
+}
+
+.dl-horizontal .dl-item:nth-child(odd) {
+    @apply bg-gray-100;
+}
+
+.dl-stacked dt {
+    @apply text-gray-600 mt-2 tracking-wide text-sm;
+}
+
+.dl-stacked dd {
+    @apply mb-2;
+}

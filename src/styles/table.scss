@@ -1,0 +1,39 @@
+.table-wrapper {
+    @apply max-w-full overflow-x-auto relative;
+}
+
+.table {
+    @apply w-full text-left border-collapse;
+}
+
+.table caption {
+    @apply text-left;
+}
+
+.table tbody {
+    @apply align-baseline;
+}
+
+.table tbody tr {
+    @apply border-b border-gray-200;
+}
+
+.table tbody tr:nth-child(even) {
+    @apply bg-gray-50;
+}
+
+.table td {
+    @apply py-3 px-2;
+}
+
+.table th {
+    @apply top-0 text-sm font-semibold text-gray-500 p-2;
+}
+
+.table thead tr {
+    @apply border-gray-500 py-3;
+}
+
+.table caption {
+    @apply mb-4;
+}
