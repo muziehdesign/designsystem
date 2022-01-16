@@ -29,6 +29,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            },
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -39,8 +42,8 @@
               }
             ],
             "styles": [
-              "src/design.scss",
-              "src/styles.scss"
+              "src/styles/design.scss",
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -113,41 +116,10 @@
               }
             ],
             "styles": [
-              "src/design.scss",
-              "src/styles.scss"
+              "src/styles/design.scss",
+              "src/styles/styles.scss"
             ],
             "scripts": []
-          }
-        }
-      }
-    },
-    "common": {
-      "projectType": "library",
-      "root": "projects/common",
-      "sourceRoot": "projects/common/src",
-      "prefix": "kitchensink",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/common/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/common/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/common/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/common/src/test.ts",
-            "tsConfig": "projects/common/tsconfig.spec.json",
-            "karmaConfig": "projects/common/karma.conf.js"
           }
         }
       }
