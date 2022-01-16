@@ -7,8 +7,8 @@ import { DesignModule } from './design/design.module';
 import { SharedModule } from './shared/shared.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ExamplesModule } from './examples/examples.module';
-import { CommonModule } from 'kitchensink/common';
 import { OrderModule } from './order/order.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
