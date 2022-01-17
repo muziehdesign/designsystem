@@ -16,4 +16,4 @@ import { EnumDisplayPipe } from './enum-display/enum-display.pipe';
     EnumDisplayPipe
   ]
 })
-export class EbComponentsModule { }
+export class MuziehComponentsModule { }
