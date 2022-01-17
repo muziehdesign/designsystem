@@ -1,12 +1,15 @@
-.breadcrumbs ol {
-    @apply flex space-x-4;
-}
+@layer components {
+    .breadcrumbs ol {
+        @apply flex space-x-4;
+    }
 
-.breadcrumbs li:not(:last-child):after {
-    content: '/';
-    @apply text-gray-400 pl-4;
-}
+    .breadcrumbs li:not(:last-child):after {
+        content: '/';
+        @apply text-gray-400 pl-4;
+    }
 
-.breadcrumbs, .breadcrumbs a {
-    @apply text-gray-600;
+    .breadcrumbs,
+    .breadcrumbs a {
+        @apply text-gray-600;
+    }
 }

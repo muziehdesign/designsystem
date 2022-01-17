@@ -32,15 +32,19 @@
             @apply text-gray-500 block mt-1;
         }
     }
+
+    .field-label {
+        @apply text-gray-600 font-medium;
+    }
     
     .field-checkbox {
         & input {
             @apply mr-1;
         }
-    }
-    
-    .field-label {
-        @apply text-gray-600 font-medium;
+
+        .field-label {
+            @apply text-current;
+        }
     }
     
     .field-control:not([type='checkbox']) {

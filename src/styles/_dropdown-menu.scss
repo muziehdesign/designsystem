@@ -1,17 +1,19 @@
-.dropdown-menu {
-    display: none;
-}
+@layer components {
+    .dropdown-menu {
+        display: none;
+    }
 
-.dropdown-menu.show {
-    z-index: 1000;
-    float: left;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    display: block;
-    background-color: white;
-}
+    .dropdown-menu.show {
+        z-index: 1000;
+        float: left;
+        min-width: 10rem;
+        padding: 0.5rem 0;
+        display: block;
+        background-color: white;
+    }
 
-.dropdown-item {
-    display: block;
-    padding: 0.5rem;
+    .dropdown-item {
+        display: block;
+        padding: 0.5rem;
+    }
 }

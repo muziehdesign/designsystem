@@ -1,4 +1,6 @@
+@import 'tailwindcss/base';
 @import '_base';
+@import 'tailwindcss/components';
 @import '_button';
 @import '_breadcrumb';
 @import '_dl';
@@ -7,9 +9,8 @@
 @import '_icon';
 @import '_table';
 @import '_tabs';
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 
 @layer components {
 
