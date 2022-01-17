@@ -6,7 +6,6 @@ import { ResourceDetailComponent } from './resource-detail/resource-detail.compo
 import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { ExamplesComponent } from './examples.component';
-import { EbComponentsModule } from '@eb/components';
 
 
 @NgModule({
