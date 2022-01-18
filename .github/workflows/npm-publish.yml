@@ -28,8 +28,8 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm ng -- build components
-      - run: npm build
+      - run: npm run ng -- build components
+      - run: npm run build
       - run: cd dist/components
       - run: npm publish
         env:
