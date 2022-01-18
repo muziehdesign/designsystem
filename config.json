@@ -1,0 +1,11 @@
+{
+    "application": {
+        "name": "kitchensink-ui"
+    },
+    "logging": {
+        "minimumLevel": "debug"
+    },
+    "orderApi": {
+        "url": "https://order"
+    }
+}
