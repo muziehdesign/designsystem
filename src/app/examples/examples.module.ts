@@ -7,7 +7,6 @@ import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { ExamplesComponent } from './examples.component';
 
-
 @NgModule({
   declarations: [ResourceDetailComponent, ExamplesComponent],
   imports: [

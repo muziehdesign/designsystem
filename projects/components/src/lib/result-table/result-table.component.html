@@ -1,0 +1,23 @@
+<div class="result-table">
+    <table class="table">
+        <caption class="text-left text-secondary">
+            {{ model.totalResults || model.results.length}} results
+        </caption>
+        <thead>
+            <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="!isLoading && model.results.length > 0">
+                <ng-container *ngFor="let result of model.results">
+                    <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
+                </ng-container>
+            </ng-container>
+        </tbody>
+    </table>
+    <div class="state" *ngIf="model.results.length == 0">
+        <div class="title">No results found</div>
+    </div>
+    <div class="state" *ngIf="isLoading">
+        <mz-spinner size="large"></mz-spinner>
+    </div>
+</div>

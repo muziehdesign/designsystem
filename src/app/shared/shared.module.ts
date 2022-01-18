@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageProgressBarComponent } from './page-progress-bar/page-progress-bar.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
-import { SvgIconComponent } from '../../../projects/components/src/lib/svg-icon/svg-icon.component';
-import { EnumDisplayPipe, MuziehComponentsModule, SpinnerComponent } from 'muzieh-ngcomponents';
+import { EnumDisplayPipe, MuziehComponentsModule, ResultTableComponent, SpinnerComponent, SvgIconComponent } from 'muzieh-ngcomponents';
 
 @NgModule({
-    declarations: [PageProgressBarComponent, PageLoadingIndicatorComponent, SvgIconComponent],
-    exports: [PageProgressBarComponent, SvgIconComponent, SpinnerComponent, EnumDisplayPipe],
+    declarations: [PageProgressBarComponent, PageLoadingIndicatorComponent],
+    exports: [PageProgressBarComponent, SvgIconComponent, SpinnerComponent, EnumDisplayPipe, ResultTableComponent],
     imports: [MuziehComponentsModule, CommonModule],
 })
 export class SharedModule {}

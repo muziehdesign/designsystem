@@ -38,6 +38,7 @@ import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/drop
 import { NAVIGATION_LINK_TOKEN } from '../navigation/navigation-links.token';
 import { navigationLinks } from '../navigation/navigation-links';
 import { CodeExampleComponent } from './code-example/code-example.component';
+import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 
 @NgModule({
     declarations: [
@@ -71,9 +72,9 @@ import { CodeExampleComponent } from './code-example/code-example.component';
         ModalGuidelinesComponent,
         TabChild1Component,
         DropdownMenuGuidelinesComponent,
-        CodeExampleComponent
+        CodeExampleComponent,
     ],
-    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule],
+    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
 })
 export class DesignModule {}

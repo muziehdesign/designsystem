@@ -9,13 +9,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ExamplesModule } from './examples/examples.module';
 import { OrderModule } from './order/order.module';
 import { CommonModule } from '@angular/common';
-import { ResultTableComponent } from './result-table/result-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
-    ResultTableComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,25 @@
 <article>
     <h2>States</h2>
     <h3>Loading</h3>
+
+    <div class="example">
+        <mz-result-table [isLoading]="true" [model]="defaultModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+            <ng-template #headTemplate>
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Store</th>
+                </tr>
+            </ng-template>
+            <ng-template #bodyTemplate>
+                
+            </ng-template>
+        </mz-result-table>
+    </div>
+
     <div class="example">
         <div class="table-wrapper">
             <table class="table">
