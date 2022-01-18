@@ -9,7 +9,7 @@ if (environment.production) {
     enableProdMode();
 }
 
-Promise.all(environment.configurations.map((url) => fetch(url).then((x) => x.json() as Partial<AppConfig>)))
+Promise.all(environment.configurations.map((url) => fetch(url).then((x) => {console.log(x); return x.json() as Partial<AppConfig>;})))
     .then((configs) => Object.assign({}, ...configs) as AppConfig)
     .then((config) => {
         const extraProviders = [{ provide: APP_CONFIG, useValue: Object.freeze(config) }];
