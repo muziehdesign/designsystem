@@ -28,7 +28,10 @@ module.exports = {
   },
   safelist: [
     {
-      pattern: /bg-(red|green|blue|gray|yellow|blue2)-(50|100|200|300|400|500|600|700|800|900)/,
+      pattern: /bg-(red|green|blue|gray|yellow)-(50|100|200|300|400|500|600|700|800|900)/,
+    },
+    {
+      pattern: /text-(red|green|blue|gray|yellow)-(50|100|200|300|400|500|600|700|800|900)/,
     },
     'nav-item',
     'nav-link',
