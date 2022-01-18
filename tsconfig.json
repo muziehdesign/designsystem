@@ -4,11 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "kitchensink/common": [
-        "dist/common/common",
-        "dist/common"
-      ]
-
+      "@eb/components": [
+        "dist/components/components",
+        "dist/components"
+      ],
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

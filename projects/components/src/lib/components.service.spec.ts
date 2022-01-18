@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CommonService } from './common.service';
+import { ComponentsService } from './components.service';
 
-describe('CommonService', () => {
-  let service: CommonService;
+describe('ComponentsService', () => {
+  let service: ComponentsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CommonService);
+    service = TestBed.inject(ComponentsService);
   });
 
   it('should be created', () => {

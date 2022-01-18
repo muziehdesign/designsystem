@@ -18,7 +18,7 @@
         </div>
         <div>
             <div ngbDropdown>
-                <button id="dropdownBasic1" [ngClass]="{'btn-secondary': translatedStatus == 'new', 'btn-primary': translatedStatus != 'new'}" ngbDropdownToggle>{{order.status | enumDisplay}}</button>
+                <button id="dropdownBasic1" class="button" [ngClass]="{'button-secondary': translatedStatus == 'new', 'button-primary': translatedStatus != 'new'}" ngbDropdownToggle>{{order.status | enumDisplay}}</button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                     <button ngbDropdownItem>Cancel</button>
                 </div>

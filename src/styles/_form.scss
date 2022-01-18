@@ -1,0 +1,93 @@
+@layer components {
+    form {
+        @apply max-w-md;
+    
+        // TODO
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @apply mt-3 mb-0;
+        }
+    
+        header {
+            @apply mb-2;
+        }
+    
+        .description {
+            @apply text-gray-600 text-sm;
+        }
+    
+        .footer {
+            @apply mt-4 mb-3;
+        }
+    }
+    
+    .field {
+        @apply block py-1 text-sm;
+    
+        .help-text {
+            @apply text-gray-500 block mt-1;
+        }
+    }
+
+    .field-label {
+        @apply text-gray-600 font-medium;
+    }
+    
+    .field-checkbox {
+        & input {
+            @apply mr-1;
+        }
+
+        .field-label {
+            @apply text-current;
+        }
+    }
+    
+    .field-control:not([type='checkbox']) {
+        @apply mt-1 block w-full;
+    }
+    
+    .fieldset {
+        @apply mt-6;
+    
+        legend {
+            @apply text-gray-700 tracking-wide uppercase font-medium text-sm;
+        }
+    }
+    
+    .option-list {
+        @apply block py-1;
+    
+        legend {
+            @apply text-gray-600 text-sm font-medium;
+        }
+    }
+    
+    .form-message {
+        @apply p-1 block;
+    
+        // this is temporary
+        &.success {
+            @apply text-success;
+        }
+        &.success svg {
+            @apply text-success inline-block;
+        }
+        &.failed svg {
+            @apply text-danger inline-block;
+        }
+    }
+    
+    .field-error {
+        @apply mt-1 block;
+    }
+    
+    .ng-submitted .ng-invalid:not(:focus),
+    .ng-touched.ng-invalid:not(:focus) {
+        @apply border-danger;
+    }
+}

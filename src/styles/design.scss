@@ -1,0 +1,42 @@
+@import 'tailwindcss/base';
+@import '_base';
+@import 'tailwindcss/components';
+@import '_button';
+@import '_breadcrumb';
+@import '_dl';
+@import '_dropdown-menu';
+@import '_form';
+@import '_icon';
+@import '_table';
+@import '_tabs';
+@import 'tailwindcss/utilities';
+
+
+@layer components {
+
+    .empty-state,
+    .error-state {
+        @apply py-8 text-center;
+    }
+
+    .alert {
+        @apply border-l-4 pl-8 py-4;
+
+        .title {
+            @apply font-medium py-1;
+        }
+
+        &.success {
+            @apply text-success bg-green-50 border-green-900;
+        }
+    }
+
+    .text-block {
+        max-width: 90ch;
+    } 
+}
+
+// icon
+.page > header {
+    @apply py-6;
+}

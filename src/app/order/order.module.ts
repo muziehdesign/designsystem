@@ -9,7 +9,6 @@ import { ApiModule } from '../api/api.module';
 import { API_CONFIG } from '../api/api-config';
 import { APP_CONFIG } from 'src/app-config';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-import { EnumDisplayPipe } from 'kitchensink/common';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({

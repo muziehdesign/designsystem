@@ -94,9 +94,9 @@
                     Unexpected error, try submitting the form again.
                 </div>
 
-                <button class="btn-primary" [ngClass]="{ 'loading' : isLoading}">
+                <button class="button button-primary" [ngClass]="{ 'loading' : isLoading}">
                     <div class="button-loading-overlay" *ngIf="isLoading">
-                        <kitchensink-spinner type="primary"></kitchensink-spinner>
+                        <eb-spinner type="primary"></eb-spinner>
                     </div>
                     Add delivery address
                 </button>
@@ -128,7 +128,7 @@
                 <ol class="list-outside list-decimal ml-8">
                     <li>
                         <strong>Label</strong>
-                        <p>Use concise label. Use sentence-case.</p>
+                        <p>Use concise label. Use sentence casing.</p>
                     </li>
                     <li>
                         <strong>Required field</strong>
