@@ -19,7 +19,7 @@
                 <input type="text" class="field-control" [(ngModel)]="model.recipientName" name="recipientName"
                     required>
                 <small class="field-error text-red-500" *ngIf="displayError('recipientName')">
-                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
                     Invalid value
                 </small>
                 <small class="help-text">This is what instruction text would look like</small>
@@ -29,7 +29,7 @@
                 <span class="field-label">Address 1 <span class="text-red-500">*</span></span>
                 <input type="text" class="field-control" [(ngModel)]="model.address1" name="address1" required>
                 <small class="field-error text-red-500" *ngIf="displayError('address1')">
-                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
                     Invalid value
                 </small>
             </label>
@@ -55,7 +55,7 @@
                 </label>
                 <small class="field-error text-red-500"
                     *ngIf="displayError('city') || displayError('state') || displayError('zipCode')">
-                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
                     Invalid value(s)
                 </small>
             </div>
@@ -86,17 +86,17 @@
 
             <footer class="footer">
                 <div class="form-message success" *ngIf="isSuccessful == true">
-                    <app-svg-icon key="check-circle" type="solid"></app-svg-icon>
+                    <mz-svg-icon key="check-circle" type="solid"></mz-svg-icon>
                     Saved!
                 </div>
                 <div class="form-message failed text-danger" *ngIf="isSuccessful == false">
-                    <app-svg-icon key="exclamation" type="solid"></app-svg-icon>
+                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
                     Unexpected error, try submitting the form again.
                 </div>
 
                 <button class="button button-primary" [ngClass]="{ 'loading' : isLoading}">
                     <div class="button-loading-overlay" *ngIf="isLoading">
-                        <eb-spinner type="primary"></eb-spinner>
+                        <mz-spinner type="primary"></mz-spinner>
                     </div>
                     Add delivery address
                 </button>

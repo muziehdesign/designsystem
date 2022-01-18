@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'enumDisplay'
+  name: 'mzEnumDisplay'
 })
 export class EnumDisplayPipe implements PipeTransform {
 
