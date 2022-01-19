@@ -38,6 +38,7 @@ jobs:
         working-directory: ./projects/components
       - run: npm run ng -- build components
       - run: npm run build
+      - run: cp src/styles/design/* dist/components/design
       - run: npm publish
         working-directory: ./dist/components
         env:
