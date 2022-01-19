@@ -38,5 +38,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - run: |
+          git config --global user.name 'Ruifang Li'
+          git config --global user.email 'ruifang.li09@gmail.com'
           git commit -m 'bump'
           git push
+          git push
+          
