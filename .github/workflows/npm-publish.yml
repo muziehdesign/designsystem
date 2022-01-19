@@ -30,6 +30,9 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
       - run: npm version prerelease
       - run: npm version prerelease
         working-directory: ./projects/components
@@ -40,6 +43,4 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
           git push
