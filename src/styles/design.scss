@@ -1,14 +1,14 @@
 @import 'tailwindcss/base';
-@import '_base';
+@import 'design/_base';
 @import 'tailwindcss/components';
-@import '_button';
-@import '_breadcrumb';
-@import '_dl';
-@import '_dropdown-menu';
-@import '_form';
-@import '_icon';
-@import '_table';
-@import '_tabs';
+@import 'design/_button';
+@import 'design/_breadcrumb';
+@import 'design/_dl';
+@import 'design/_dropdown-menu';
+@import 'design/_form';
+@import 'design/_icon';
+@import 'design/_table';
+@import 'design/_tabs';
 @import 'tailwindcss/utilities';
 
 
