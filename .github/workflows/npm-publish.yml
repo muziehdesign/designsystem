@@ -61,9 +61,10 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist
-      - run: ls
+          path: dist
+      - run: ls dist
       - run: npm publish
-        working-directory: ./dist/dist/components
+        working-directory: ./dist/components
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       
