@@ -38,15 +38,14 @@ jobs:
       - run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-      - run: npm version prerelease
-      - run: npm version prerelease
-        working-directory: ./projects/components
+      - run: echo '::set-output name=PACKAGE_VERSION::$(npm version)'
+      - run: npm pkg set version='${{env.PACKAGE_VERSION}}-${{github.run_attempt}}'
+        working-directory: ./dist/components
       - run: cat package.json
       - run: cat package.json
         working-directory: ./projects/components
       - run: |
           git status
-          git push
           
   publish:
     needs: version
