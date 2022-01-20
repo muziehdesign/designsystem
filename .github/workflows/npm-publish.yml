@@ -35,12 +35,12 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm version
-        id: version
+      - run: npm pkg get version
+        id: getversion
       - run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-      - run: npm pkg set version='${{steps.version.outputs.stdout}}-${{github.run_attempt}}'
+      - run: npm pkg set version='${{steps.getversion.outputs.stdout}}-${{github.run_attempt}}'
         working-directory: ./dist/components
       - run: cat package.json
       - run: cat package.json
