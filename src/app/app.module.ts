@@ -9,11 +9,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ExamplesModule } from './examples/examples.module';
 import { OrderModule } from './order/order.module';
 import { CommonModule } from '@angular/common';
+import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
     ExamplesModule,
     SharedModule,
     CommonModule,
-    OrderModule
+    OrderModule,
+    MuziehComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

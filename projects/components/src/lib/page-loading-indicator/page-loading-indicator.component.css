@@ -4,11 +4,9 @@
 
 .page-progress-bar {
     overflow: hidden;
-    @apply w-full h-0.5 bg-primary bg-opacity-50;
 }
 
 .page-progress-bar-value {
-    @apply bg-primary w-full h-full;
     animation: indeterminateAnimation 0.75s infinite linear;
     transform-origin: 0% 50%;
 }

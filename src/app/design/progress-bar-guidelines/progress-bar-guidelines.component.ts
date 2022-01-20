@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar-guidelines.component.scss']
 })
 export class ProgressBarGuidelinesComponent implements OnInit {
+  isLoading: boolean = true;
 
   constructor() { }
 
