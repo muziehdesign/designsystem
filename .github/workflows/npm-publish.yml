@@ -20,12 +20,13 @@ jobs:
         run: |
           PACKAGE_VERSION=$(npm pkg get version)
           echo "::set-output name=PACKAGE_VERSION::$PACKAGE_VERSION"
-        id: get-package-version
+        id: set-package-version
       - name: Echo package version
         run: |
-          echo "${{ steps.get-package-version.outputs.PACKAGE_VERSION }}-${{github.run_attempt}}"
-      - run: npm pkg set version "${{ steps.get-package-version.outputs.PACKAGE_VERSION }}-${{github.run_attempt}}"
-      - run: npm pkg set version "${{ steps.get-package-version.outputs.PACKAGE_VERSION }}-${{github.run_attempt}}"
+          echo "${{ steps.set-package-version.outputs.PACKAGE_VERSION }}-${{github.run_number}}"
+        id: echo-package-version
+      - run: npm pkg set version "${{ steps.echo-package-version.outputs }}-${{github.run_attempt}}"
+      - run: npm pkg set version "${{ steps.echo-package-version.outputs }}-${{github.run_attempt}}"
         working-directory: ./projects/components
       - run: npm ci
       - run: npm run ng -- build components
