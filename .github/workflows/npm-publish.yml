@@ -18,12 +18,14 @@ jobs:
           node-version: 16
       - name: Get current package version
         run: |
-          PACKAGE_VERSION=$(npm pkg get version)
-          BUILD_NUMBER=${{github.run_number}}
-          echo "::set-output name=PACKAGE_VERSION::$(PACKAGE_VERSION)-$(BUILD_NUMBER)"
+          PACKAGE_VERSION=$(npm pkg get version | tr -d '"')
+          echo "::set-output name=PACKAGE_VERSION::$(PACKAGE_VERSION)"
         id: set-package-version
-      - run: npm pkg set version "${{ steps.echo-package-version.outputs.PACKAGE_VERSION }}-${{github.run_attempt}}"
-      - run: npm pkg set version "${{ steps.echo-package-version.outputs.PACKAGE_VERSION }}-${{github.run_attempt}}"
+      - name: Echo package version
+        run: |
+          echo ${{steps.set-package-version.outputs.PACKAGE_VERSION}}
+      - run: npm pkg set version "${{ steps.set-package-version.outputs.PACKAGE_VERSION }}-${{github.run_attempt}}"
+      - run: npm pkg set version "${{ steps.set-package-version.outputs.PACKAGE_VERSION }}-${{github.run_attempt}}"
         working-directory: ./projects/components
       - run: npm ci
       - run: npm run ng -- build components
