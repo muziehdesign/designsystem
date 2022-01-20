@@ -4,13 +4,15 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { EnumDisplayPipe } from './enum-display/enum-display.pipe';
 import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { ResultTableComponent } from './result-table/result-table.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
     SvgIconComponent,
     SpinnerComponent,
     EnumDisplayPipe,
-    ResultTableComponent
+    ResultTableComponent,
+    PaginatorComponent
   ],
   imports: [
     CommonModule
