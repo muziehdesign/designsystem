@@ -45,6 +45,7 @@ jobs:
       - run: cat package.json
         working-directory: ./projects/components
       - run: |
+          git status
           git push
           
   publish:
