@@ -36,6 +36,9 @@ jobs:
       - run: npm version prerelease
       - run: npm version prerelease
         working-directory: ./projects/components
+      - run: cat package.json
+      - run: cat package-json
+        working-directory: ./projects/components
       - run: npm run ng -- build components
       - run: npm run build
       - run: npm publish
