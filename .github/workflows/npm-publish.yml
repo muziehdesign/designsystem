@@ -38,8 +38,8 @@ jobs:
       - run: npm pkg get version
         id: getversion
       - run: |
-          echo '${{steps.getversion.outputs.stdout}}-${{github.run_attempt}}'
-      - run: npm pkg set version='${{steps.getversion.outputs.stdout}}-${{github.run_attempt}}'
+          echo "${{steps.getversion.outputs.stdout}}-${{github.run_attempt}}"
+      - run: npm pkg set version="${{steps.getversion.outputs.stdout}}-${{github.run_attempt}}"
         working-directory: ./dist/components
       - run: cat package.json
       - run: cat package.json
