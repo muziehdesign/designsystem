@@ -16,6 +16,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Get and store current deploymentId
+        run: |
+          OLD_DEPLOYMENT_ID=$(npm pkg get version)
+          echo '::set-output name=OLD_DEPLOYMENT_ID::$OLD_DEPLOYMENT_ID'
+        id: old-deployment-id
+      - name: Echo old deployment before deploy
+        run: |
+          echo ${{ steps.old-deployment-id.outputs.OLD_DEPLOYMENT_ID }}
       - run: npm ci
       - run: npm run ng -- build components
       - run: npm run build
