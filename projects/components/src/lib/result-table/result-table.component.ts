@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ResultTableModel } from './table-result.model';
 
 @Component({
   selector: 'mz-result-table',
@@ -8,24 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class ResultTableComponent implements OnInit {
 
-  @Input() public model!: ResultTableModel;
+  @Input() public model!: ResultTableModel<any>;
   @Input() public headTemplate!: TemplateRef<any>;
   @Input() public bodyTemplate!: TemplateRef<any>;
-  @Input() public isLoading: boolean = false; 
-  @Output() onChange = new EventEmitter<ResultTableChangeRequest>();
+
   constructor() { }
 
   ngOnInit(): void { }
-}
-
-export interface ResultTableModel {
-  results: any;
-  page?: number;
-  pageSize?: number;
-  totalResults?: number;
-}
-
-export interface ResultTableChangeRequest {
-  page: number;
-  pageSize: number;
 }

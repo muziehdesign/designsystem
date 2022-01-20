@@ -13,12 +13,6 @@
 
 
 @layer components {
-
-    .empty-state,
-    .error-state {
-        @apply py-8 text-center;
-    }
-
     .alert {
         @apply border-l-4 pl-8 py-4;
 

@@ -1,23 +1,33 @@
 <div class="result-table">
     <table class="table">
-        <caption class="text-left text-secondary">
-            {{ model.totalResults || model.results.length}} results
+        <caption class="text-left text-secondary" *ngIf="model.state == 'succeeded'">
+            {{ model.total }} results
         </caption>
         <thead>
             <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
         </thead>
         <tbody>
-            <ng-container *ngIf="!isLoading && model.results.length > 0">
+            <ng-container *ngIf="model.state == 'succeeded'">
                 <ng-container *ngFor="let result of model.results">
                     <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
                 </ng-container>
             </ng-container>
         </tbody>
     </table>
-    <div class="state" *ngIf="model.results.length == 0">
+    <div *ngIf="model.state == 'succeeded' && model.pageSize && model.total > model.pageSize">
+        
+    </div>
+    <div class="state-message" *ngIf="model.state == 'succeeded' && model.total == 0">
         <div class="title">No results found</div>
     </div>
-    <div class="state" *ngIf="isLoading">
+    <div class="state-message" *ngIf="model.state == 'loading'">
         <mz-spinner size="large"></mz-spinner>
+    </div>
+    <div class="state-message eror-state" *ngIf="model.state == 'failed'">
+        <div class="title">
+            <mz-svg-icon key="x-circle" type="solid" class="text-danger"></mz-svg-icon>
+            Something went wrong
+        </div>
+        <div>Unexpected error, try searching again</div> <!-- TODO: try again should allow trying again -->
     </div>
 </div>

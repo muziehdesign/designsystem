@@ -1,115 +1,105 @@
 <header>
     <h1>Result table</h1>
     <p class="prose">
-        Use a result table to display search results.
+        Use a result table to display search results. It has pagination, sorting, and basic state display built in.
     </p>
 </header>
 
 <article>
     <h2>States</h2>
-    <h3>Loading</h3>
+    <h3>Default</h3>
 
     <div class="example">
-        <mz-result-table [isLoading]="true" [model]="defaultModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+        <mz-result-table [model]="defaultModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
             <ng-template #headTemplate>
                 <tr>
                     <th>Order</th>
                     <th>Customer</th>
                     <th>Date</th>
                     <th>Total</th>
-                    <th>Status</th>
-                    <th>Store</th>
                 </tr>
             </ng-template>
-            <ng-template #bodyTemplate>
-                
+            <ng-template #bodyTemplate let-order>
+                <tr>
+                    <td>{{order.orderNumber}}</td>
+                    <td>{{order.customer}}</td>
+                    <td>{{order.date | date}}</td>
+                    <td>{{order.total | currency}}</td>
+                </tr>
             </ng-template>
         </mz-result-table>
     </div>
 
+    <h3>Loading</h3>
     <div class="example">
-        <div class="table-wrapper">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Date</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Store</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            <div class="table-companion">
-                <mz-spinner size="large"></mz-spinner>
-            </div>
-        </div>
+        <mz-result-table [model]="loadingModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+            <ng-template #headTemplate>
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                </tr>
+            </ng-template>
+            <ng-template #bodyTemplate let-order>
+                <tr>
+                    <td>{{order.orderNumber}}</td>
+                    <td>{{order.customer}}</td>
+                    <td>{{order.date | date}}</td>
+                    <td>{{order.total | currency}}</td>
+                </tr>
+            </ng-template>
+        </mz-result-table>
     </div>
 
     <h3>Empty</h3>
     <div class="example">
-        <div class="table-wrapper">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Date</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Store</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            <div class="table-companion">
-                <div class="empty-state">
-                    <h3>No orders found</h3>
-                    <p>
-                        Modify your search criteria and try searching again.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <mz-result-table [model]="emptyModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+            <ng-template #headTemplate>
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                </tr>
+            </ng-template>
+            <ng-template #bodyTemplate let-order>
+                <tr>
+                    <td>{{order.orderNumber}}</td>
+                    <td>{{order.customer}}</td>
+                    <td>{{order.date | date}}</td>
+                    <td>{{order.total | currency}}</td>
+                </tr>
+            </ng-template>
+        </mz-result-table>
     </div>
 
     <h3>Error</h3>
     <div class="example">
-        <div class="table-wrapper">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Customer</th>
-                        <th>Date</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Store</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            <div class="table-companion">
-                <div class="error-state">
-                    <h3>
-                        <mz-svg-icon key="x-circle" type="solid" class="text-danger"></mz-svg-icon> Unexpected error
-                    </h3>
-                    <p>
-                        Something went wrong, try searching again.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <mz-result-table [model]="errorModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+            <ng-template #headTemplate>
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                </tr>
+            </ng-template>
+            <ng-template #bodyTemplate let-order>
+                <tr>
+                    <td>{{order.orderNumber}}</td>
+                    <td>{{order.customer}}</td>
+                    <td>{{order.date | date}}</td>
+                    <td>{{order.total | currency}}</td>
+                </tr>
+            </ng-template>
+        </mz-result-table>
     </div>
 
     <h3>Sortable</h3>
     <div class="example">
-        <div class="table-wrapper">
+        // TODO
+        <div>
             <table class="table">
                 <caption>1-4 of 4 orders</caption>
                 <thead>
@@ -161,6 +151,7 @@
     </div>
 
     <h3>Pageable</h3>
+    // TODO
 </article>
 
 <article>
