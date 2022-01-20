@@ -6,6 +6,7 @@ import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loa
     PageLoadingIndicatorComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModule
   ],
   exports: [
     EnumDisplayPipe,

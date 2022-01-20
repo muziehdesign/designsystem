@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { ResultTableModel } from './table-result.model';
 
 @Component({
@@ -15,5 +14,31 @@ export class ResultTableComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  pageEvent: PageEvent = {
+    page: 4,
+    pageSize: 20
+  }
+
+  ngOnInit(): void {
+  }
+
+
+  getPageSymbol(current: number) {
+    return ['A', 'B', 'C', 'D', 'E', 'F', 'G'][current - 1];
+  }
+
+  selectPage(page: string) {
+    this.pageEvent.page = parseInt(page, 10) || 1;
+  }
+
+  formatInput(input: HTMLInputElement) {
+    input.value = input.value.replace(FILTER_PAG_REGEX, '');
+  }
 }
+
+export interface PageEvent {
+  page: number;
+  pageSize: number;
+}
+
+const FILTER_PAG_REGEX = /[^0-9]/g;
