@@ -35,18 +35,19 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm pkg get version
-        id: getversion
       - run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-      - run: npm pkg set version='${{steps.getversion.outputs.stdout}}-${{github.run_attempt}}'
-        working-directory: ./dist/components
+      - run: npm version prerelease
+      - run: npm version prerelease
+        working-directory: ./projects/components
       - run: cat package.json
       - run: cat package.json
-        working-directory: ./dist/components
+        working-directory: ./projects/components
       - run: |
-          git status
+          git add --all
+          git commit -m 'build'
+          git push
           
   publish:
     needs: version
