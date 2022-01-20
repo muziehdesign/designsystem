@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar-guidelines.component.scss']
 })
 export class ProgressBarGuidelinesComponent implements OnInit {
+  isLoading: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  // just to keep it visible forever
+  onIsLoadingChange(_: boolean) {
+    this.isLoading = true;
   }
 
 }

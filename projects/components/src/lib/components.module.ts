@@ -5,6 +5,7 @@ import { EnumDisplayPipe } from './enum-display/enum-display.pipe';
 import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     SpinnerComponent,
     EnumDisplayPipe,
     ResultTableComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    PageLoadingIndicatorComponent,
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     EnumDisplayPipe,
     SpinnerComponent,
     SvgIconComponent,
-    ResultTableComponent
+    ResultTableComponent,
+    PageLoadingIndicatorComponent,
   ]
 })
 export class MuziehComponentsModule { }
