@@ -2,6 +2,7 @@
  * Public API Surface of components
  */
 
+export * from './lib/outcome';
 export * from './lib/enum-display/enum-display.pipe';
 export * from './lib/spinner/spinner.component';
 export * from './lib/svg-icon/svg-icon.component';
