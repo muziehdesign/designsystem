@@ -18,8 +18,8 @@ jobs:
           node-version: 16
       - name: Get current package version
         run: |
-          PACKAGE_VERSION=$(npm pkg get version | tr -d '"')
-          echo "::set-output name=PACKAGE_VERSION::$(PACKAGE_VERSION)"
+          PACKAGE_VERSION=$(npm pkg get version)
+          echo "::set-output name=PACKAGE_VERSION::$(PACKAGE_VERSION)" | tr d '"'
         id: set-package-version
       - name: Echo package version
         run: |
