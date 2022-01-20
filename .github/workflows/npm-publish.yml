@@ -61,7 +61,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist
-      - run: ls dist
+      - run: ls
       - run: npm publish
         working-directory: ./dist/dist/components
         env:
