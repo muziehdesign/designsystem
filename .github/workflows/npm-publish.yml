@@ -17,8 +17,10 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-
-  publish-npm:
+      - run: npm run ng -- build components
+      - run: npm run build
+      
+  version:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -37,13 +39,24 @@ jobs:
       - run: npm version prerelease
         working-directory: ./projects/components
       - run: cat package.json
-      - run: cat package-json
+      - run: cat package.json
         working-directory: ./projects/components
-      - run: npm run ng -- build components
-      - run: npm run build
+      - run: |
+          git push
+          
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            token: ${{ github.token }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
       - run: npm publish
         working-directory: ./dist/components
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-      - run: |
-          git push
+      
