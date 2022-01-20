@@ -2,15 +2,14 @@
     <h1>Progress bar</h1>
     <p class="prose">Use a progress bar to communicate progress to user. Only identified use case so far is when page
         transitions.</p>
-    <p class="prose">Alternatively, you can bind an <var>isLoading</var> property to force the progress bar to render and listen to the change
-        event by using <var>onIsLoadingChange</var>.</p>
+    <p class="prose">Alternatively, you can bind an <var>isLoading</var> property to force the progress bar to render.</p>
 </header>
 
 <article>
     <h2>Indeterminate</h2>
     <div class="demo">
         <div class="example">
-            <mz-page-loading-indicator [isLoading]="isLoading" (onIsLoadingChange)="onIsLoadingChange"></mz-page-loading-indicator>
+            <mz-page-loading-indicator [isLoading]="isLoading"></mz-page-loading-indicator>
         </div>
         <div class="example-template">
             <code>

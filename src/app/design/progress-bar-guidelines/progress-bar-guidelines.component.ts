@@ -13,9 +13,4 @@ export class ProgressBarGuidelinesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // just to keep it visible forever
-  onIsLoadingChange(_: boolean) {
-    this.isLoading = true;
-  }
-
 }

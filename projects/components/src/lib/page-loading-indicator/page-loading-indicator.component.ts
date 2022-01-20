@@ -11,7 +11,6 @@ import { SubSink } from 'subsink';
 })
 export class PageLoadingIndicatorComponent implements OnInit, OnDestroy {
     @Input() isLoading: boolean = false;
-    @Output() onIsLoadingChange = new EventEmitter<boolean>();
     expectedMilisecondsDelay = 1000;
     private subs = new SubSink();
 
@@ -31,18 +30,13 @@ export class PageLoadingIndicatorComponent implements OnInit, OnDestroy {
                     mapTo(true)
                 ),
                 endObs$
-            ).subscribe((value) => this.loadingFlagChanged(value))
+            ).subscribe((value) => this.isLoading = value)
         );
         // the flag need to be reset to false when the page finishes loading
-        this.subs.add(endObs$.subscribe(() => (this.loadingFlagChanged(false))));
+        this.subs.add(endObs$.subscribe(() =>this.isLoading = false));
     }
 
     ngOnDestroy(): void {
         this.subs.unsubscribe();
-    }
-
-    private loadingFlagChanged(isLoading: boolean) {
-        this.isLoading = isLoading;
-        this.onIsLoadingChange.emit(isLoading);
     }
 }

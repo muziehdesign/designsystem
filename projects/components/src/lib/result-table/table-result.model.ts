@@ -17,11 +17,9 @@ export class ResultTableModel<T> {
         this.total = total || data.length;
         this.page = page;
         this.pageSize = pageSize || 20;
-        console.log('setting as succeeded');
     }
 
     public setAsLoading() {
         this.state = 'loading';
-        console.log('setting as loading');
     }
 }
