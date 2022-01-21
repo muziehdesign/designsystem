@@ -25,7 +25,7 @@ export class PageLoadingIndicatorComponent implements OnInit, OnDestroy {
             race(
                 this.router.events.pipe(
                     filter((e) => e instanceof NavigationStart),
-                    delay(1000)
+                    delay(this.expectedMilisecondsDelay)
                 ),
                 endObs$
             ).pipe(take(1), repeat()).subscribe((x) => this.isLoading = x instanceof NavigationStart)
