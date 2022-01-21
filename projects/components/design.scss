@@ -1,16 +1,12 @@
-@import 'tailwindcss/base';
-@import 'design/_base';
-@import 'tailwindcss/components';
-@import 'design/_button';
-@import 'design/_breadcrumb';
-@import 'design/_dl';
-@import 'design/_dropdown-menu';
-@import 'design/_form';
-@import 'design/_icon';
-@import 'design/_table';
-@import 'design/_tabs';
-@import 'tailwindcss/utilities';
-
+@import 'styles/design/_base';
+@import 'styles/design/_button';
+@import 'styles/design/_breadcrumb';
+@import 'styles/design/_dl';
+@import 'styles/design/_dropdown-menu';
+@import 'styles/design/_form';
+@import 'styles/design/_icon';
+@import 'styles/design/_table';
+@import 'styles/design/_tabs';
 
 @layer components {
     .alert {

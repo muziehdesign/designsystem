@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  content: ["./src/**/*.{html,ts}", "./projects/components/src/**/*.{html,ts}", "./dist/**/*.{html,ts}"],
+  content: ["./src/**/*.{html,ts}"],
   theme: {
     screens: {
       'sm': '576px',
