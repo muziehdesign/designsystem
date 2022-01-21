@@ -5,7 +5,7 @@ import { ResultTableModel } from './table-result.model';
 @Component({
   selector: 'mz-result-table',
   templateUrl: './result-table.component.html',
-  styleUrls: ['./result-table.component.css']
+  styleUrls: ['./result-table.component.scss']
 })
 export class ResultTableComponent implements OnInit {
 
