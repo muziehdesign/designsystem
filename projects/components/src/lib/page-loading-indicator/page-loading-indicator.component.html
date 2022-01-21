@@ -1,5 +1,5 @@
-<div class="page-progress-bar-container" [hidden]="!isLoading">
-    <div class="page-progress-bar w-full h-1 bg-primary bg-opacity-50">
-        <div class="page-progress-bar-value bg-primary w-full h-full"></div>
+<div class="page-progress-bar-container" *ngIf="isLoading">
+    <div class="page-progress-bar">
+        <div class="page-progress-bar-value"></div>
     </div>
 </div>

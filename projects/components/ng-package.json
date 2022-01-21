@@ -1,4 +1,10 @@
 {
+  "assets": [
+    "./components.scss",
+    "./design.scss",
+    "./styles/design/*.scss",
+    "./src/lib/**/*.scss"
+  ],
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/components",
   "lib": {

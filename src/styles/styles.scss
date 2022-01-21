@@ -1,4 +1,11 @@
 // site specific
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '../../dist/components/components';
+@import '../../dist/components/design';
+
 .example {
     @apply bg-white mt-8 mb-8 p-8;
 
