@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { PageEvent } from '../models/page-event';
 import { ResultTableModel } from './table-result.model';
 
 @Component({
@@ -11,26 +12,14 @@ export class ResultTableComponent implements OnInit {
   @Input() public model!: ResultTableModel<any>;
   @Input() public headTemplate!: TemplateRef<any>;
   @Input() public bodyTemplate!: TemplateRef<any>;
-
+  @Output() public pageChange = new EventEmitter<PageEvent>();
   constructor() { }
 
-  pageEvent: PageEvent = {
-    page: 4,
-    pageSize: 20
-  }
-
-  pageLimit = 5;
-
   ngOnInit(): void {
+
   }
 
-
-  selectPage(page: number) {
-    console.log(page);
+  onPageChange(page: PageEvent) {
+    this.pageChange.emit(page)
   }
-}
-
-export interface PageEvent {
-  page: number;
-  pageSize: number;
 }

@@ -10,7 +10,7 @@
     <h3>Default</h3>
 
     <div class="example">
-        <mz-result-table [model]="defaultModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+        <mz-result-table [model]="defaultModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate" (pageChange)="onPageChange($event)">
             <ng-template #headTemplate>
                 <tr>
                     <th>Order</th>
