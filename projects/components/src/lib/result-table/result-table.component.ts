@@ -21,24 +21,9 @@ export class ResultTableComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-  getPageSymbol(current: number) {
-    return ['A', 'B', 'C', 'D', 'E', 'F', 'G'][current - 1];
-  }
-
-  selectPage(page: string) {
-    this.pageEvent.page = parseInt(page, 10) || 1;
-  }
-
-  formatInput(input: HTMLInputElement) {
-    input.value = input.value.replace(FILTER_PAG_REGEX, '');
-  }
 }
 
 export interface PageEvent {
   page: number;
   pageSize: number;
 }
-
-const FILTER_PAG_REGEX = /[^0-9]/g;
