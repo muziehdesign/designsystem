@@ -45,8 +45,7 @@ describe('PageLoadingIndicatorComponent', () => {
         // assert
         expect(component).toBeTruthy();
         expect(component.isLoading).toBeFalse();
-        expect(getHtmlContent()).not.toBeNull();
-        expect((getHtmlContent().nativeElement as HTMLElement).hidden).toBeTrue();
+        expect(getHtmlContent()).toBeNull();
 
         // act
         eventSubject.next(new NavigationEnd(1, 'http://test.com', 'popstate'));
@@ -54,10 +53,10 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeFalse();
-        expect((getHtmlContent().nativeElement as HTMLElement).hidden).toBeTrue();
+        expect(getHtmlContent()).toBeNull();
     }));
 
-    it('should reach content renderization when delay hits one second and then hide it', fakeAsync(() => {
+    it('should render content when delay hits one second and then hide it', fakeAsync(() => {
         // arrange
         eventSubject.next(new NavigationStart(1, 'http://test.com', 'popstate'));
 
@@ -68,7 +67,7 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeTrue();
-        expect((getHtmlContent().nativeElement as HTMLElement).hidden).toBeFalse();
+        expect(getHtmlContent()).not.toBeNull();
 
         // arrange
         eventSubject.next(new NavigationError(1, 'http://test.com', 'popstate'));
@@ -78,7 +77,7 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeFalse();
-        expect((getHtmlContent().nativeElement as HTMLElement).hidden).toBeTrue();
+        expect(getHtmlContent()).toBeNull();
     }));
 
     it('should hide content when end navigation is hit in one second', fakeAsync(() => {
@@ -93,6 +92,6 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeFalse();
-        expect((getHtmlContent().nativeElement as HTMLElement).hidden).toBeTrue();
+        expect(getHtmlContent()).toBeNull();
     }));
 });
