@@ -19,7 +19,14 @@ export class ResultTableComponent implements OnInit {
     pageSize: 20
   }
 
+  pageLimit = 5;
+
   ngOnInit(): void {
+  }
+
+
+  selectPage(page: number) {
+    console.log(page);
   }
 }
 
