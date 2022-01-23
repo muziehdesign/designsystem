@@ -2,6 +2,7 @@
 
 # project
 config.user.json
+.vscode
 
 # compiled output
 /dist
