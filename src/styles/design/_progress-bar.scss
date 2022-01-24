@@ -1,0 +1,25 @@
+.progress-bar-container {
+    @apply w-full;
+}
+
+.progress-bar.progress-bar-indeterminate {
+    @apply w-full h-1 bg-primary bg-opacity-50 overflow-hidden;
+
+    .progress-bar-value {
+        animation: indeterminateAnimation 0.75s infinite linear;
+        transform-origin: 0% 50%;
+        @apply bg-primary w-full h-full;
+    }
+}
+
+@keyframes indeterminateAnimation {
+    0% {
+        transform: translateX(0) scaleX(0);
+    }
+    40% {
+        transform: translateX(0) scaleX(0.4);
+    }
+    100% {
+        transform: translateX(100%) scaleX(0.5);
+    }
+}

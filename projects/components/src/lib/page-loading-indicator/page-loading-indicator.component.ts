@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { race } from 'rxjs';
-import { delay, filter, mapTo } from 'rxjs/operators';
+import { delay, filter, repeat, take } from 'rxjs/operators';
 import { SubSink } from 'subsink';
 
 @Component({
     selector: 'mz-page-loading-indicator',
     templateUrl: './page-loading-indicator.component.html',
-    styleUrls: ['./page-loading-indicator.component.css'],
+    styleUrls: ['./page-loading-indicator.component.scss'],
 })
 export class PageLoadingIndicatorComponent implements OnInit, OnDestroy {
     @Input() isLoading: boolean = false;
@@ -19,18 +19,16 @@ export class PageLoadingIndicatorComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         const endObs$ = this.router.events.pipe(
             filter((e) => e instanceof NavigationEnd || e instanceof NavigationCancel || e instanceof NavigationError),
-            mapTo(false)
         );
 
         this.subs.add(
             race(
                 this.router.events.pipe(
                     filter((e) => e instanceof NavigationStart),
-                    delay(this.expectedMilisecondsDelay),
-                    mapTo(true)
+                    delay(this.expectedMilisecondsDelay)
                 ),
                 endObs$
-            ).subscribe((value) => this.isLoading = value)
+            ).pipe(take(1), repeat()).subscribe((x) => this.isLoading = x instanceof NavigationStart)
         );
         // the flag need to be reset to false when the page finishes loading
         this.subs.add(endObs$.subscribe(() =>this.isLoading = false));

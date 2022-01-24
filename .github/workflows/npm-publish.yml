@@ -19,6 +19,7 @@ jobs:
       - run: npm ci
       - run: npm run ng -- build components
       - run: npm run build
+      - run: cp -r ./src/styles/design ./dist/components/design
       - uses: actions/upload-artifact@v2
         with:
           name: dist
