@@ -9,6 +9,7 @@
     "test": "ng test",
     "mock-server": "node ./mock-server/server.js"
   },
+  "files": ["./src/styles/design/*.*"],
   "private": false,
   "dependencies": {
     "@angular/animations": "~13.1.1",
