@@ -10,6 +10,7 @@ import { ExamplesModule } from './examples/examples.module';
 import { OrderModule } from './order/order.module';
 import { CommonModule } from '@angular/common';
 import { MuziehComponentsModule } from 'muzieh-ngcomponents';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MuziehComponentsModule } from 'muzieh-ngcomponents';
     SharedModule,
     CommonModule,
     OrderModule,
+    NgbModule,
     MuziehComponentsModule,
   ],
   providers: [],
