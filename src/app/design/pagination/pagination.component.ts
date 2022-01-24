@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from 'muzieh-ngcomponents';
 
 @Component({
   selector: 'app-pagination',
@@ -10,6 +11,10 @@ export class PaginationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onPageChange(page: PageEvent) {
+
   }
 
 }

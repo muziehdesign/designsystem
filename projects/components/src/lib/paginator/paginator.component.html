@@ -1,5 +1,5 @@
-<nav class="border-t border-gray-200 px-4 flex justify-center mt-10">
-  <ngb-pagination [collectionSize]="120" [maxSize]="5" [(page)]="pageEvent.page" [ellipses]="false" (pageChange)="onPageChange($event)">
+<nav class="pagination-nav">
+  <ngb-pagination [collectionSize]="180" [maxSize]="5" [(page)]="pageEvent.page" [ellipses]="false" (pageChange)="onPageChange($event)">
       <ng-template ngbPaginationPrevious>
           <div class="md:-mt-px md:flex">
               <svg class="mr-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
