@@ -1,6 +1,6 @@
 {
   "name": "kitchensink-ui",
-  "version": "0.0.6-9",
+  "version": "0.0.6-10",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,6 @@
     "test": "ng test",
     "mock-server": "node ./mock-server/server.js"
   },
-
   "private": false,
   "dependencies": {
     "@angular/animations": "~13.1.1",
