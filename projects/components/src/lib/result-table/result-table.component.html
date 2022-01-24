@@ -15,7 +15,7 @@
         </tbody>
     </table>
     <div>
-      <mz-paginator (pageChange)="onPageChange($event)"></mz-paginator>
+      <mz-pagination (pageChange)="onPageChange($event)"></mz-pagination>
     </div>
     <div class="state-message" *ngIf="model.state == 'succeeded' && model.total == 0">
         <div class="title">No results found</div>
