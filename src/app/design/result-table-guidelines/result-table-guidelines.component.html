@@ -9,25 +9,40 @@
     <h2>States</h2>
     <h3>Default</h3>
 
-    <div class="example">
-        <mz-result-table [model]="defaultModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate" (pageChange)="onPageChange($event)">
-            <ng-template #headTemplate>
-                <tr>
-                    <th>Order</th>
-                    <th>Customer</th>
-                    <th>Date</th>
-                    <th>Total</th>
-                </tr>
-            </ng-template>
-            <ng-template #bodyTemplate let-order>
-                <tr>
-                    <td>{{order.orderNumber}}</td>
-                    <td>{{order.customer}}</td>
-                    <td>{{order.date | date}}</td>
-                    <td>{{order.total | currency}}</td>
-                </tr>
-            </ng-template>
-        </mz-result-table>
+    <div class="demo">
+        <div class="example-control">
+            Control demo total results:
+            <select class="ml-2" [(ngModel)]="defaultModelTotal" [ngModelOptions]="{standalone: true}" (change)="changeDefaultModelTotal()">
+                <option>120</option>
+                <option>85</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="example">
+            <mz-result-table [model]="defaultModel" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate"
+                (pageChange)="onPageChange($event)">
+                <ng-template #headTemplate>
+                    <tr>
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Country</th>
+                    </tr>
+                </ng-template>
+                <ng-template #bodyTemplate let-order>
+                    <tr>
+                        <td>{{order.orderNumber}}</td>
+                        <td>{{order.customer}}</td>
+                        <td>{{order.status}}</td>
+                        <td>{{order.date | date}}</td>
+                        <td>{{order.total | currency}}</td>
+                        <td>{{order.country}}</td>
+                    </tr>
+                </ng-template>
+            </mz-result-table>
+        </div>
     </div>
 
     <h3>Loading</h3>

@@ -1,18 +1,24 @@
-<nav class="pagination-nav">
-  <ngb-pagination [collectionSize]="180" [maxSize]="5" [(page)]="pageEvent.page" [ellipses]="false" (pageChange)="onPageChange($event)">
-      <ng-template ngbPaginationPrevious>
-          <div class="md:-mt-px md:flex">
-              <svg class="mr-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-              </svg>
-          </div>
-      </ng-template>
-      <ng-template ngbPaginationNext>
-          <div class="md:-mt-px md:flex">
-              <svg class="ml-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-          </div>
-      </ng-template>
-  </ngb-pagination>
-</nav>
+<div class="pagination-wrapper">
+    <nav class="pagination-nav">
+        <ngb-pagination [collectionSize]="length" [ellipses]="false" [maxSize]="3" [(page)]="page" (pageChange)="changePageNumber($event)">
+            <ng-template ngbPaginationPrevious>
+                <mz-svg-icon key="chevron-left" class="page-previous">
+                    <span class="sr-only">Previous page</span>
+                </mz-svg-icon>
+            </ng-template>
+            <ng-template ngbPaginationNext>
+                <mz-svg-icon key="chevron-right" class="page-next">
+                    <span class="sr-only">Next page</span>
+                </mz-svg-icon>
+            </ng-template>
+        </ngb-pagination>
+    </nav>
+    <div class="pagination-size">
+        Show
+        <select #c (change)="changePageSize(c.value)" name="pageSizeControl" class="page-size-control">
+            <option *ngFor="let size of pageSizeOptions" [attr.selected]="pageSize == size ? true : null"
+                [value]="size">{{size}}</option>
+        </select>
+        per page
+    </div>
+</div>

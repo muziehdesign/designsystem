@@ -1,3 +1,36 @@
 .pagination-nav {
-    @apply border-t border-gray-200 px-4 flex justify-center;
+    @apply px-4 flex justify-center col-start-2;
 }
+
+.pagination {
+    @apply flex;
+}
+
+.page-link {
+    @apply text-gray-500 hover:text-primary p-4 inline-block text-center font-medium;
+}
+
+.page-next, .page-previous {
+    @apply flex;
+}
+
+.page-item.active .page-link {
+    @apply border-primary text-primary font-bold hover:no-underline;
+}
+
+.page-item.disabled .page-link {
+    @apply cursor-default text-gray-400 hover:text-gray-400 hover:border-transparent hover:no-underline;
+}
+
+.pagination-size {
+    @apply text-gray-500 text-sm p-4 ml-auto hidden lg:inline-block;
+}
+
+.page-size-control {
+    @apply py-0 pr-7 pl-0.5;
+}
+
+.pagination-wrapper {
+    @apply grid grid-cols-3 gap-20 justify-center;
+}
+

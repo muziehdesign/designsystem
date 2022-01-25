@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { PageEvent } from '../models/page-event';
 import { ResultTableModel } from './table-result.model';
 
@@ -19,7 +19,14 @@ export class ResultTableComponent implements OnInit {
 
   }
 
-  onPageChange(page: PageEvent) {
-    this.pageChange.emit(page)
+  changePage(page: PageEvent, table: HTMLElement) {
+    this.pageChange.emit(page);
+    setTimeout(()=>{
+      table.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  searchAgain() {
+    this.pageChange.emit({page: this.model.page, pageSize: this.model.pageSize});
   }
 }

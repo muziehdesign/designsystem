@@ -1,7 +1,7 @@
-<div class="result-table">
+<div class="result-table" #tableRef>
     <table class="table">
-        <caption class="text-left text-secondary" *ngIf="model.state == 'succeeded'">
-            {{ model.total }} results
+        <caption *ngIf="model.state == 'succeeded'">
+            {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
         </caption>
         <thead>
             <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
@@ -14,8 +14,8 @@
             </ng-container>
         </tbody>
     </table>
-    <div>
-      <mz-pagination (pageChange)="onPageChange($event)"></mz-pagination>
+    <div class="table-pagination" *ngIf="model.state == 'succeeded' && model.total > model.results.length">
+      <mz-pagination [length]="model.total" [page]="model.page" [pageSize]="model.pageSize" (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
     <div class="state-message" *ngIf="model.state == 'succeeded' && model.total == 0">
         <div class="title">No results found</div>
@@ -28,7 +28,6 @@
             <mz-svg-icon key="x-circle" type="solid" class="text-danger"></mz-svg-icon>
             Something went wrong
         </div>
-        <div>Unexpected error, try searching again</div>
-        <!-- TODO: try again should allow trying again -->
+        <div>Unexpected error, <a (click)="searchAgain()" class="link-action">try searching again</a>.</div>
     </div>
 </div>

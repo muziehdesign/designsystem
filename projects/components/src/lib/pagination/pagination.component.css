@@ -1,4 +1,4 @@
-::ng-deep .pagination {
+/*::ng-deep .pagination {
   display: flex;
 }
 
@@ -12,11 +12,11 @@
     border-color: transparent;
     align-items: center;
     display: inline-flex;
-}
+}*/
 
-
+/*
 ::ng-deep .active > .page-link  {
   border-top-width: 2px;
   border-color: rgb(99 102 241 / var(--tw-border-opacity));
   color: rgb(79 70 229 / var(--tw-text-opacity));
-}
+}*/
