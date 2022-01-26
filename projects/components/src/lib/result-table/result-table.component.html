@@ -1,6 +1,6 @@
 <div class="result-table" #tableRef>
     <table class="table">
-        <caption *ngIf="model.state == 'succeeded'">
+        <caption *ngIf="model.results.length > 0">
             {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
         </caption>
         <thead>

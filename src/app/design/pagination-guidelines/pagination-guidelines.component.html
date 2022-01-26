@@ -1,5 +1,31 @@
 <h1>Pagination</h1>
+<p class="prose">
+    Use pagination to divide content into smaller chunks, and allow user to page through them. The guidelines here
+    follow <a href="https://atlassian.design/components/pagination/examples">Atlassian pagination</a>.
+</p>
 
-<div class="example">
-    <mz-pagination (changePage)="onPageChange($event)"></mz-pagination>
-</div>
+<article>
+    <h2>Examples</h2>
+    <h3>Small collections</h3>
+    <div class="example">
+        <mz-pagination [length]="smallPagination.length" [page]="smallPagination.page" [pageSize]="smallPagination.pageSize" (changePage)="changePage($event, smallPagination)"></mz-pagination>
+    </div>
+    <div class="example">
+        <mz-pagination [length]="smallPagination2.length" [page]="smallPagination2.page" [pageSize]="smallPagination2.pageSize" (changePage)="changePage($event, smallPagination2)"></mz-pagination>
+    </div>
+    <div class="example">
+        <mz-pagination [length]="smallPagination3.length" [page]="smallPagination3.page" [pageSize]="smallPagination3.pageSize" (changePage)="changePage($event, smallPagination3)"></mz-pagination>
+    </div>
+    <h3>Large collections</h3>
+    <div class="example">
+        <mz-pagination [length]="largeCollection.length" [page]="largeCollection.page" [pageSize]="largeCollection.pageSize" (changePage)="changePage($event, largeCollection)"></mz-pagination>
+    </div>
+</article>
+
+<article>
+    <h2>Usage</h2>
+    <ul class="list-disc list-inside">
+        <li>Display a maximum of 7 items. Each ellipsis count as one.</li>
+        <li>Each page number should be a button.</li>
+    </ul>
+</article>
