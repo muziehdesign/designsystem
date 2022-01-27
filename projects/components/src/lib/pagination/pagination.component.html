@@ -1,6 +1,6 @@
 <div class="pagination-wrapper">
     <nav class="pagination-nav" aria-label="pagination">
-        <button class="page-link" [ngClass]="{'disabled': page == 1}">
+        <button class="page-link" [ngClass]="{'disabled': page == 1}" (click)="changePageNumber(page-1)">
             <span class="sr-only">Previous page</span>
             <mz-svg-icon key="chevron-left"></mz-svg-icon>
         </button>
