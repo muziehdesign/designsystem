@@ -188,7 +188,7 @@ describe('PaginationComponent', () => {
         expect(getNextButton().classes['disabled']).toBeUndefined();
     });
 
-    it('should change page size to 100', async () => {
+    it('should change page size to 100', () => {
         expect(component).toBeTruthy();
 
         // arrange
@@ -231,7 +231,7 @@ describe('PaginationComponent', () => {
         expect(getPageLink(2).classes['active']).toBeTrue();
     });
 
-    it('should skip page number change when matches current page or is below/above allowed boundaries', async () => {
+    it('should skip page number change when matches current page or is below/above allowed boundaries', () => {
         // act
         component.length = 30;
         component.pageSize = 20;
@@ -263,7 +263,7 @@ describe('PaginationComponent', () => {
         eventSubs.unsubscribe();
     });
 
-    it('should skip page size change when matches current page size', async () => {
+    it('should skip page size change when matches current page size', () => {
         // act
         component.length = 30;
         component.pageSize = 20;
