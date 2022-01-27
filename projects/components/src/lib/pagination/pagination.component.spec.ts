@@ -68,7 +68,6 @@ describe('PaginationComponent', () => {
         // assert
         expect(paginatorWrapper).not.toBeNull();
         expect(getPageLinksCount()).toBe(9);
-        expect(component.pages).toEqual([1, 2, 3, 4, 5, 6, 7]);
         expect(getPreviousButton()).not.toBeNull();
         expect(getNextButton()).not.toBeNull();
         expect(getPreviousButton().classes['disabled']).toBeTrue();
@@ -94,7 +93,6 @@ describe('PaginationComponent', () => {
         fixture.detectChanges();
 
         // assert
-        expect(component.pages).toEqual([1, 2, 3, 4, 5, 6, 7]);
         expect(getPageLink(4).classes['active']).toBeUndefined();
         expect(getPageLink(3).classes['active']).toBeTrue();
         expect(getPreviousButton().classes['disabled']).toBeUndefined();
@@ -115,7 +113,6 @@ describe('PaginationComponent', () => {
 
         // assert
         expect(getPageLinksCount()).toBe(9);
-        expect(component.pages).toEqual([1, 2, 3, 4, 5, -1, 14]);
         expect(getPageEllipsisCount()).toBe(1);
         expect((getPageLink(6).nativeElement as HTMLButtonElement).textContent).toBe('5');
         expect(getPreviousButton().classes['disabled']).toBeTrue();
@@ -128,7 +125,6 @@ describe('PaginationComponent', () => {
         fixture.detectChanges();
 
         // assert
-        expect(component.pages).toEqual([1, -1, 4, 5, 6, -1, 14]);
         expect(getPageEllipsisCount()).toBe(2);
         expect((getPageLink(2).nativeElement as HTMLButtonElement).textContent).toBe('1');
         expect((getPageLink(3).nativeElement as HTMLButtonElement).textContent).toBe('...');
@@ -155,7 +151,6 @@ describe('PaginationComponent', () => {
         fixture.detectChanges();
 
         // assert
-        expect(component.pages).toEqual([1, -1, 10, 11, 12, 13, 14]);
         expect(getPageEllipsisCount()).toBe(1);
         expect((getPageLink(2).nativeElement as HTMLButtonElement).textContent).toBe('1');
         expect((getPageLink(3).nativeElement as HTMLButtonElement).textContent).toBe('...');
@@ -174,7 +169,6 @@ describe('PaginationComponent', () => {
         fixture.detectChanges();
 
         // assert
-        expect(component.pages).toEqual([1, 2, 3, 4, 5, -1, 14]);
         expect(getPageEllipsisCount()).toBe(1);
         expect((getPageLink(2).nativeElement as HTMLButtonElement).textContent).toBe('1');
         expect((getPageLink(3).nativeElement as HTMLButtonElement).textContent).toBe('2');
@@ -201,7 +195,6 @@ describe('PaginationComponent', () => {
 
         // assert
         expect(getPageLinksCount()).toBe(8);
-        expect(component.pages).toEqual([1, 2, 3, 4, 5, 6]);
         expect(getPageEllipsisCount()).toBe(0);
         expect(getPreviousButton().classes['disabled']).toBeTrue();
         expect(getNextButton().classes['disabled']).toBeUndefined();
@@ -281,5 +274,69 @@ describe('PaginationComponent', () => {
 
         // clear subscription
         eventSubs.unsubscribe();
+    });
+
+    it('should match page array under 7 or less pages', () => {
+        // initial assert
+        // arrange
+        component.length = 140;
+        component.pageSize = 20;
+        component.page = 3;
+        component.ngOnChanges();
+
+        // act
+        fixture.detectChanges();
+
+        // assert
+        expect(component.pageCount).toBe(7);
+        expect(component.pages).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    });
+
+    it('should match when current page is towards the beginning and more than 7 pages', () => {
+        // initial assert
+        // arrange
+        component.length = 280;
+        component.pageSize = 20;
+        component.page = 3;
+        component.ngOnChanges();
+
+        // act
+        fixture.detectChanges();
+
+        // assert
+        expect(component.pageCount).toBe(14);
+        expect(component.pages).toEqual([1, 2, 3, 4, 5, -1, 14]);
+    });
+
+    it('should match when current page is in the middle and more than 7 pages', () => {
+        // initial assert
+        // arrange
+        component.length = 300;
+        component.pageSize = 20;
+        component.page = 6;
+        component.ngOnChanges();
+
+        // act
+        fixture.detectChanges();
+
+        // assert
+        expect(component.pageCount).toBe(15);
+        expect(component.pages).toEqual([1, -1, 5, 6, 7, -1, 15]);
+    });
+
+    it('should match when current page is towards the end and more than 7 pages', () => {
+        // initial assert
+        // arrange
+        component.length = 250;
+        component.pageSize = 20;
+        component.page = 12;
+        component.ngOnChanges();
+
+        // act
+        fixture.detectChanges();
+
+        // assert
+        expect(component.pageCount).toBe(13);
+        expect(component.pages).toEqual([1, -1, 9, 10, 11, 12, 13]);
     });
 });
