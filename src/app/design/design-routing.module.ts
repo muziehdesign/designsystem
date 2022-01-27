@@ -21,7 +21,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ProgressBarGuidelinesComponent } from './progress-bar-guidelines/progress-bar-guidelines.component';
-import { ResourceDetailComponent } from '../examples/resource-detail/resource-detail.component';
 import { ResultTableGuidelinesComponent } from './result-table-guidelines/result-table-guidelines.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
 import { SpinnerGuidelinesComponent } from './spinner-guidelines/spinner-guidelines.component';
@@ -32,6 +31,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypographyComponent } from './typography/typography.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/datetime-picker-guidelines.component';
+import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
 
 const routes: Routes = [
     {
@@ -65,6 +65,7 @@ const routes: Routes = [
             { path: 'skeletonloader', component: SkeletonLoaderComponent },
             { path: 'table', component: TableComponent },
             { path: 'tabs', component: TabsComponent, children: [{ path: 'child1', component: TabChild1Component }] },
+            { path: 'toggle', component: ToggleGuidelinesComponent },
             { path: 'tooltip', component: TooltipComponent },
             { path: 'wizard', component: WizardComponent },
         ],
@@ -75,4 +76,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class DesignRoutingModule {}
+export class DesignRoutingModule { }

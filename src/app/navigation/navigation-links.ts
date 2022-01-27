@@ -35,6 +35,7 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Spinner', link: '/design/spinner' },
         { name: 'Table', link: '/design/table' },
         { name: 'Tabs', link: '/design/tabs' },
+        { name: 'Toggle', link: '/design/toggle'},
         { name: 'Tooltip', inactive: true, link: '/design/tooltip' },
         { name: 'Wizard', inactive: true, link: '/design/wizard',  },
     ]},
