@@ -1,28 +1,31 @@
 <div class="result-table" #tableRef>
-    <table class="table">
-        <caption *ngIf="model.results.length > 0">
-            {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
-        </caption>
-        <thead>
-            <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
-        </thead>
-        <tbody>
-            <ng-container *ngIf="model.state == 'succeeded'">
-                <ng-container *ngFor="let result of model.results">
-                    <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
-                </ng-container>
-            </ng-container>
-        </tbody>
-    </table>
-    <div class="table-pagination" *ngIf="model.state == 'succeeded' && model.total > model.results.length">
+  <div class="absolute top-20 flex flex-col items-center justify-center w-full" *ngIf="model.state == 'loading'">
+    <mz-spinner size="large"></mz-spinner>
+  </div>
+  <table class="table" [ngClass]="{'opacity-10' : model.state == 'loading'}">
+      <caption *ngIf="model.results.length > 0">
+          {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
+      </caption>
+      <thead>
+          <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
+      </thead>
+      <tbody>
+          <ng-container >
+              <ng-container *ngFor="let result of model.results">
+                  <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
+              </ng-container>
+          </ng-container>
+      </tbody>
+  </table>
+    <div class="table-pagination" *ngIf="model.total > model.results.length">
       <mz-pagination [length]="model.total" [page]="model.page" [pageSize]="model.pageSize" (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
     <div class="state-message" *ngIf="model.state == 'succeeded' && model.total == 0">
         <div class="title">No results found</div>
     </div>
-    <div class="state-message" *ngIf="model.state == 'loading'">
+    <!-- <div class="state-message" *ngIf="model.state == 'loading'">
         <mz-spinner size="large"></mz-spinner>
-    </div>
+    </div> -->
     <div class="state-message eror-state" *ngIf="model.state == 'failed'">
         <div class="title">
             <mz-svg-icon key="x-circle" type="solid" class="text-danger"></mz-svg-icon>
