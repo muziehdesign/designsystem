@@ -23,10 +23,11 @@ export const navigationLinks: NavigationLink[] = [
         // badge
         { name: 'Breadcrumbs', link: '/design/breadcrumbs' },
         { name: 'Button', link: '/design/button' },
-        { name: 'Empty state', link: '/design/emptystate' },
-        { name: 'Form controls', link: '/design/formcontrols' },
+        { name: 'Date time picker', link: '/design/datetimepicker'},
         { name: 'Description lists', link: '/design/descriptionlist' },
         { name: 'Dropdown menu', link: '/design/menudropdown' },
+        { name: 'Empty state', link: '/design/emptystate' },
+        { name: 'Form controls', link: '/design/formcontrols' },
         { name: 'Modal', link: '/design/modal' },
         { name: 'Pagination', link: '/design/pagination' },
         { name: 'Progress bar', link: '/design/progressbar' },

@@ -31,6 +31,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypographyComponent } from './typography/typography.component';
 import { WizardComponent } from './wizard/wizard.component';
+import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/datetime-picker-guidelines.component';
 
 const routes: Routes = [
     {
@@ -44,6 +45,7 @@ const routes: Routes = [
             { path: 'breakpoints', component: BreakpointsComponent },
             { path: 'color', component: ColorComponent },
             { path: 'content', component: ContentComponent },
+            { path: 'datetimepicker', component: DatetimePickerGuidelinesComponent },
             { path: 'descriptionlist', component: DescriptionListComponent },
             { path: 'emptystate', component: EmptyStateComponent },
             { path: 'grid', component: GridComponent },

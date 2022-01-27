@@ -1,0 +1,29 @@
+<h1>Date time picker</h1>
+<div class="prose">
+    Use a date time picker to help user pick a date time value.
+</div>
+
+<article>
+    <h2>Default</h2>
+    <div class="example">
+        // TODO: add one for date picker
+    </div>
+    <div class="example">
+        <form class="form">
+            <label>
+                <span class="field-label">Scheduled run time</span>
+                <input type="time" class="field-control" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name"/>
+            </label>
+        </form>
+        {{ defaultScheduleInputModel | json }}
+    </div>
+    <div class="example">
+        // TODO: add one for date range
+    </div>
+
+    <h3>Best practices</h3>
+    <ul class="list-disc list-outside">
+        <li>Use mask for instructional text to set value format expectation.</li>
+        <li>Allow users entering in a date. Dates far away from today can be cubersome to enter with mouse.</li>
+    </ul>
+</article>

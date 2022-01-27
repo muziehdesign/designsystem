@@ -39,6 +39,7 @@ import { NAVIGATION_LINK_TOKEN } from '../navigation/navigation-links.token';
 import { navigationLinks } from '../navigation/navigation-links';
 import { CodeExampleComponent } from './code-example/code-example.component';
 import { MuziehComponentsModule } from 'muzieh-ngcomponents';
+import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/datetime-picker-guidelines.component';
 
 @NgModule({
     declarations: [
@@ -73,6 +74,7 @@ import { MuziehComponentsModule } from 'muzieh-ngcomponents';
         TabChild1Component,
         DropdownMenuGuidelinesComponent,
         CodeExampleComponent,
+        DatetimePickerGuidelinesComponent,
     ],
     imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],

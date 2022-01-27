@@ -11,3 +11,5 @@ export * from './lib/component.config';
 export * from './lib/component-config.token';
 export * from './lib/result-table/result-table.component';
 export * from './lib/page-loading-indicator/page-loading-indicator.component';
+export * from './lib/time-value-accessor.directive';
+export * from './lib/time-value-validator.directive';
