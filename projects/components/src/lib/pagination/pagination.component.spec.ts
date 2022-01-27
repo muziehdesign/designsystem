@@ -276,67 +276,52 @@ describe('PaginationComponent', () => {
         eventSubs.unsubscribe();
     });
 
-    it('should match page array under 7 or less pages', () => {
-        // initial assert
-        // arrange
-        component.length = 140;
-        component.pageSize = 20;
-        component.page = 3;
-        component.ngOnChanges();
+    const paginationSetup = [
+        {
+            length: 140,
+            pageSize: 20,
+            page: 3,
+            expectedPageCount: 7,
+            expectedPageArray: [1, 2, 3, 4, 5, 6, 7],
+        },
+        {
+            length: 280,
+            pageSize: 20,
+            page: 3,
+            expectedPageCount: 14,
+            expectedPageArray: [1, 2, 3, 4, 5, -1, 14],
+        },
+        {
+            length: 300,
+            pageSize: 20,
+            page: 6,
+            expectedPageCount: 15,
+            expectedPageArray: [1, -1, 5, 6, 7, -1, 15],
+        },
+        {
+            length: 250,
+            pageSize: 20,
+            page: 12,
+            expectedPageCount: 13,
+            expectedPageArray: [1, -1, 9, 10, 11, 12, 13],
+        },
+    ];
 
-        // act
-        fixture.detectChanges();
+    paginationSetup.forEach((setup) => {
+        it(`should match pages for page size ${setup.expectedPageCount}`, () => {
+            // initial assert
+            // arrange
+            component.length = setup.length;
+            component.pageSize = setup.pageSize;
+            component.page = setup.page;
+            component.ngOnChanges();
 
-        // assert
-        expect(component.pageCount).toBe(7);
-        expect(component.pages).toEqual([1, 2, 3, 4, 5, 6, 7]);
-    });
+            // act
+            fixture.detectChanges();
 
-    it('should match when current page is towards the beginning and more than 7 pages', () => {
-        // initial assert
-        // arrange
-        component.length = 280;
-        component.pageSize = 20;
-        component.page = 3;
-        component.ngOnChanges();
-
-        // act
-        fixture.detectChanges();
-
-        // assert
-        expect(component.pageCount).toBe(14);
-        expect(component.pages).toEqual([1, 2, 3, 4, 5, -1, 14]);
-    });
-
-    it('should match when current page is in the middle and more than 7 pages', () => {
-        // initial assert
-        // arrange
-        component.length = 300;
-        component.pageSize = 20;
-        component.page = 6;
-        component.ngOnChanges();
-
-        // act
-        fixture.detectChanges();
-
-        // assert
-        expect(component.pageCount).toBe(15);
-        expect(component.pages).toEqual([1, -1, 5, 6, 7, -1, 15]);
-    });
-
-    it('should match when current page is towards the end and more than 7 pages', () => {
-        // initial assert
-        // arrange
-        component.length = 250;
-        component.pageSize = 20;
-        component.page = 12;
-        component.ngOnChanges();
-
-        // act
-        fixture.detectChanges();
-
-        // assert
-        expect(component.pageCount).toBe(13);
-        expect(component.pages).toEqual([1, -1, 9, 10, 11, 12, 13]);
+            // assert
+            expect(component.pageCount).toBe(setup.expectedPageCount);
+            expect(component.pages).toEqual(setup.expectedPageArray);
+        });
     });
 });
