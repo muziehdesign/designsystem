@@ -1,8 +1,8 @@
 <div class="result-table" #tableRef>
-  <div class="loading-overlay-spinner" *ngIf="model.loadingState.loading">
+  <div class="loading-overlay-spinner" *ngIf="loadingState.loading">
     <mz-spinner size="large"></mz-spinner>
   </div>
-  <table class="table" [ngClass]="{'overlay' : model.loadingState.loading}">
+  <table class="table" [ngClass]="{'has-overlay' : loadingState.loading}">
       <caption *ngIf="model.results.length > 0">
           {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
       </caption>

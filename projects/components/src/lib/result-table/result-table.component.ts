@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
+import { LoadingState } from '../models/loading-state';
 import { PageEvent } from '../models/page-event';
 import { ResultTableModel } from './result-table.model';
 
@@ -9,6 +10,7 @@ import { ResultTableModel } from './result-table.model';
 })
 export class ResultTableComponent implements OnInit {
 
+  @Input() public loadingState!: LoadingState;
   @Input() public model!: ResultTableModel<any>;
   @Input() public headTemplate!: TemplateRef<any>;
   @Input() public bodyTemplate!: TemplateRef<any>;

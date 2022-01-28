@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from 'dist/components/lib/models/page-event';
 import { ResultTableModel } from 'muzieh-ngcomponents';
+import { LoadingState } from 'dist/components/lib/models/loading-state';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
@@ -15,23 +16,24 @@ export class ResultTableGuidelinesComponent implements OnInit {
   loadingModel = new ResultTableModel<OrderDataModel>();
   emptyModel = new ResultTableModel<OrderDataModel>();
   errorModel = new ResultTableModel<OrderDataModel>();
+  loadingState = { loading: true } as LoadingState;
   constructor() {
-    this.defaultModel.setAsSucceeded(this.getOrderListData(1, 10), this.defaultModelTotal, 1, 20);
-    this.loadingModel.setAsSucceeded(this.getOrderListData(1, 10), this.defaultModelTotal, 1, 20);
-    this.loadingModel.setAsLoading();
-    this.emptyModel.setAsSucceeded([]);
-    this.errorModel.setAsFailed(new Error());
+
+    this.setData(this.getOrderListData(1, 10), this.defaultModelTotal, 1, 20)
+    this.loadingState.loading = false;
+    this.errorModel.state = 'failed';
   }
   ngOnInit(): void { }
 
   changeDefaultModelTotal() {
+    this.loadingState.loading = true;
     const orders = this.getOrderListData(1, Math.min(this.defaultModelTotal, this.defaultModel.pageSize));
-    this.defaultModel.setAsSucceeded(orders, this.defaultModelTotal, 1, this.defaultModel.pageSize);
+    this.setData(orders, this.defaultModelTotal, 1, this.defaultModel.pageSize);
   }
 
   onPageChange(pageEvent: PageEvent) {
-    this.defaultModel.setAsLoading();
-    of(this.getOrderListData(pageEvent.page, pageEvent.pageSize)).pipe(delay(1200)).subscribe(x => this.defaultModel.setAsSucceeded(x, this.defaultModelTotal, pageEvent.page, pageEvent.pageSize));
+    this.loadingState.loading = true;
+    of(this.getOrderListData(pageEvent.page, pageEvent.pageSize)).pipe(delay(1200)).subscribe(x => this.setData(x, this.defaultModelTotal, pageEvent.page, pageEvent.pageSize));
   }
 
   getOrderListData(page: number, pageSize: number) {
@@ -49,6 +51,15 @@ export class ResultTableGuidelinesComponent implements OnInit {
     });
 
     return results;
+  }
+
+  private setData(data: OrderDataModel[], total?: number, page: number = 1, pageSize?: number) {
+    this.defaultModel.state = 'succeeded';
+    this.defaultModel.results = data
+    this.defaultModel.page = page;
+    this.defaultModel.pageSize = pageSize ?? 0;
+    this.defaultModel.total = total ?? 0;
+    this.loadingState.loading = false;
   }
 }
 
