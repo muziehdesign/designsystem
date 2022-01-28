@@ -17,6 +17,7 @@ export class ResultTableGuidelinesComponent implements OnInit {
   errorModel = new ResultTableModel<OrderDataModel>();
   constructor() {
     this.defaultModel.setAsSucceeded(this.getOrderListData(1, 10), this.defaultModelTotal, 1, 20);
+    this.loadingModel.setAsSucceeded(this.getOrderListData(1, 10), this.defaultModelTotal, 1, 20);
     this.loadingModel.setAsLoading();
     this.emptyModel.setAsSucceeded([]);
     this.errorModel.setAsFailed(new Error());
