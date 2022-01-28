@@ -17,9 +17,12 @@ export class ResultTableGuidelinesComponent implements OnInit {
   emptyModel = new ResultTableModel<OrderDataModel>();
   errorModel = new ResultTableModel<OrderDataModel>();
   loadingState = { loading: true } as LoadingState;
+  loadingStateLoadingModel = { loading: true } as LoadingState;
+
   constructor() {
 
     this.setData(this.getOrderListData(1, 10), this.defaultModelTotal, 1, 20)
+    this.loadingModel = {...this.defaultModel};
     this.loadingState.loading = false;
     this.errorModel.state = 'failed';
   }
