@@ -1,14 +1,17 @@
+import { LoadingState } from "../models/loading-state";
+
 export class ResultTableModel<T> {
-    error?: Error;
-    state: 'succeeded' | 'failed' | 'loading' = 'loading';
+    state: 'succeeded' | 'failed' = 'succeeded';
     total: number = 0;
     results: T[] = [];
     page: number = 1;
     pageSize: number = 20;
+    loadingState: LoadingState = {loading: true};
 
     public setAsFailed(error: Error): void {
         this.state = 'failed';
-        this.error = error;
+        this.loadingState.error = error;
+        this.loadingState.loading = false;
     }
 
     public setAsSucceeded(data: T[], total?: number, page: number = 1, pageSize?: number) {
@@ -17,9 +20,10 @@ export class ResultTableModel<T> {
         this.total = total || data.length;
         this.page = page;
         this.pageSize = pageSize || 20;
+        this.loadingState.loading = false;
     }
 
     public setAsLoading() {
-        this.state = 'loading';
+        this.loadingState.loading = true;
     }
 }
