@@ -1,0 +1,19 @@
+<h1>Resource list</h1>
+
+<form class="form" #searchForm="ngForm" (change)="search()" (ngSubmit)="search()">
+    <label class="field">
+        <span class="field-label">Status</span>
+        <select [(ngModel)]="model.status" name="model.status" class="field-control">
+            <option>new</option>
+            <option>active</option>
+            <option>inactive</option>
+        </select>
+    </label>
+    <label class="field">
+        <span class="field-label">Name</span>
+        <input type="text" class="field-control" [(ngModel)]="model.name" name="model.name">
+    </label>
+</form>
+<div *ngIf="paged$ | async as paged">
+    {{paged | json}}
+</div>

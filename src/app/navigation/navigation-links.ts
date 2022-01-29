@@ -40,7 +40,7 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Wizard', inactive: true, link: '/design/wizard',  },
     ]},
     { name: 'Examples', children: [
-        { name: 'Resource list', inactive: true, link: '/design/examples/resourcelist'},
+        { name: 'Resource list', link: '/examples/resourcelist'},
         { name: 'Resource detail', link: '/examples/resourcedetail'}
     ]}
 ];

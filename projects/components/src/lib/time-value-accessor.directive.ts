@@ -1,8 +1,8 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Directive({
-  selector: 'input[type=time]',
+  selector: 'mzTimeValueAccessor',  //'input[type=time]', TODO: restore and rename directive
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: TimeValueAccessorDirective,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import 'reflect-metadata';
 
 @Component({
     selector: 'app-resource-detail',
@@ -12,12 +13,18 @@ export class ResourceDetailComponent implements OnInit {
     isLoading: boolean = false;
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        const m = new ResourceDetailInputModel();
+    }
 
     onNavChange() {
-      this.isLoading = true;
-      of([])
-          .pipe(delay(1200))
-          .subscribe((x) => (this.isLoading = false));
+        this.isLoading = true;
+        of([])
+            .pipe(delay(1200))
+            .subscribe(() => (this.isLoading = false));
     }
+}
+
+export class ResourceDetailInputModel {
+    firstName?: string;
 }
