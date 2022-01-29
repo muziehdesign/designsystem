@@ -1,24 +1,25 @@
 <div class="result-table" #tableRef>
-  <div class="loading-overlay-spinner" *ngIf="loadingState.loading">
-    <mz-spinner size="large"></mz-spinner>
-  </div>
-  <table class="table" [ngClass]="{'has-overlay' : loadingState.loading}">
-      <caption *ngIf="model.results.length > 0">
-          {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
-      </caption>
-      <thead>
-          <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
-      </thead>
-      <tbody>
-          <ng-container >
-              <ng-container *ngFor="let result of model.results">
-                  <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
-              </ng-container>
-          </ng-container>
-      </tbody>
-  </table>
+    <div class="loading-overlay-spinner" *ngIf="loadingState.loading">
+        <mz-spinner size="large"></mz-spinner>
+    </div>
+    <table class="table" [ngClass]="{'has-overlay' : loadingState.loading}">
+        <caption *ngIf="model.results.length > 0">
+            {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
+        </caption>
+        <thead>
+            <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
+        </thead>
+        <tbody>
+            <ng-container>
+                <ng-container *ngFor="let result of model.results">
+                    <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
+                </ng-container>
+            </ng-container>
+        </tbody>
+    </table>
     <div class="table-pagination" *ngIf="model.total > model.results.length">
-      <mz-pagination [length]="model.total" [page]="model.page" [pageSize]="model.pageSize" (changePage)="changePage($event, tableRef)"></mz-pagination>
+        <mz-pagination [length]="model.total" [page]="model.page" [pageSize]="model.pageSize"
+            (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
     <div class="state-message" *ngIf="model.state == 'succeeded' && model.total == 0">
         <div class="title">No results found</div>
