@@ -7,6 +7,7 @@ import { ResultTableComponent } from './result-table/result-table.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TimeValueValidatorDirective } from './time-value-validator.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ResultTableComponent,
     PaginationComponent,
     PageLoadingIndicatorComponent,
+    TimeValueValidatorDirective,
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ResultTableComponent,
     PaginationComponent,
     PageLoadingIndicatorComponent,
+    TimeValueValidatorDirective
   ]
 })
 export class MuziehComponentsModule { }

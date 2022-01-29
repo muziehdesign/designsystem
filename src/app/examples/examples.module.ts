@@ -6,14 +6,17 @@ import { ResourceDetailComponent } from './resource-detail/resource-detail.compo
 import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { ExamplesComponent } from './examples.component';
+import { ResourceListComponent } from './resource-list/resource-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ResourceDetailComponent, ExamplesComponent],
+  declarations: [ResourceDetailComponent, ExamplesComponent, ResourceListComponent],
   imports: [
     CommonModule,
     ExamplesRoutingModule,
     NgbNavModule,
     NgbDropdownModule,
+    FormsModule,
     SharedModule
   ]
 })

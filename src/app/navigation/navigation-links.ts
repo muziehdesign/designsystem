@@ -23,10 +23,11 @@ export const navigationLinks: NavigationLink[] = [
         // badge
         { name: 'Breadcrumbs', link: '/design/breadcrumbs' },
         { name: 'Button', link: '/design/button' },
-        { name: 'Empty state', link: '/design/emptystate' },
-        { name: 'Form controls', link: '/design/formcontrols' },
+        { name: 'Date time picker', link: '/design/datetimepicker'},
         { name: 'Description lists', link: '/design/descriptionlist' },
         { name: 'Dropdown menu', link: '/design/menudropdown' },
+        { name: 'Empty state', link: '/design/emptystate' },
+        { name: 'Form controls', link: '/design/formcontrols' },
         { name: 'Modal', link: '/design/modal' },
         { name: 'Pagination', link: '/design/pagination' },
         { name: 'Progress bar', link: '/design/progressbar' },
@@ -34,11 +35,12 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Spinner', link: '/design/spinner' },
         { name: 'Table', link: '/design/table' },
         { name: 'Tabs', link: '/design/tabs' },
+        { name: 'Toggle', link: '/design/toggle'},
         { name: 'Tooltip', inactive: true, link: '/design/tooltip' },
         { name: 'Wizard', inactive: true, link: '/design/wizard',  },
     ]},
     { name: 'Examples', children: [
-        { name: 'Resource list', inactive: true, link: '/design/examples/resourcelist'},
+        { name: 'Resource list', link: '/examples/resourcelist'},
         { name: 'Resource detail', link: '/examples/resourcedetail'}
     ]}
 ];
