@@ -1,15 +1,15 @@
 <div class="result-table" #tableRef>
-    <div class="loading-overlay-spinner" *ngIf="loadingState.loading">
+    <div class="loading-overlay-spinner state-message loading-state" *ngIf="state == 'loading'">
         <mz-spinner size="large"></mz-spinner>
     </div>
-    <table class="table" [ngClass]="{'has-overlay' : loadingState.loading}">
-        <caption *ngIf="model.results.length > 0">
-            {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.total }} results
+    <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
+        <caption *ngIf="model && model.results.length > 0">
+            {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.totalResults }} results
         </caption>
         <thead>
             <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
         </thead>
-        <tbody>
+        <tbody *ngIf="model">
             <ng-container>
                 <ng-container *ngFor="let result of model.results">
                     <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
@@ -17,14 +17,14 @@
             </ng-container>
         </tbody>
     </table>
-    <div class="table-pagination" *ngIf="model.total > model.results.length">
-        <mz-pagination [length]="model.total" [page]="model.page" [pageSize]="model.pageSize"
+    <div class="table-pagination" *ngIf="model && model.totalResults > model.results.length">
+        <mz-pagination [length]="model.totalResults" [page]="model.page" [pageSize]="model.pageSize"
             (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
-    <div class="state-message" *ngIf="model.state == 'succeeded' && model.total == 0">
+    <div class="state-message" *ngIf="state == 'succeeded' && model?.results?.length === 0">
         <div class="title">No results found</div>
     </div>
-    <div class="state-message eror-state" *ngIf="model.state == 'failed'">
+    <div class="state-message eror-state" *ngIf="state == 'failed'">
         <div class="title">
             <mz-svg-icon key="x-circle" type="solid" class="text-danger"></mz-svg-icon>
             Something went wrong

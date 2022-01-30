@@ -1,6 +1,8 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
+// TODO: need to rename, and need to use ivy instead
+
 @Directive({
   selector: 'mzTimeValueAccessor',  //'input[type=time]', TODO: restore and rename directive
   providers: [{

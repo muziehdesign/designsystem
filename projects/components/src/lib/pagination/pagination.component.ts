@@ -12,16 +12,14 @@ export class PaginationComponent implements OnChanges {
 
   @Input() length: number = 0;
   @Input() page: number = 1;
-  @Input() pageSize: number = 20;
-  @Input() pageSizeOptions: number[] = [20, 50, 100];
+  @Input() pageSize: number;
+  @Input() pageSizeOptions: number[];
   @Output() public changePage = new EventEmitter<PageEvent>();
   pages: number[] = [];
   pageCount: number = 1;
   constructor(@Optional() @Inject(PAGINATION_DEFAULT_OPTIONS) paginationOptions: PaginationDefaultOptions) {
-    if (paginationOptions) {
-      this.pageSize = paginationOptions.pageSize;
-      this.pageSizeOptions = paginationOptions.pageSizeOptions;
-    }
+      this.pageSize = paginationOptions?.pageSize || 20;
+      this.pageSizeOptions = paginationOptions?.pageSizeOptions || [20, 50, 100];
 
     this.updatePages(this.page, this.length, this.pageSize);
   }

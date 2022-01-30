@@ -14,6 +14,17 @@
         <input type="text" class="field-control" [(ngModel)]="model.name" name="model.name">
     </label>
 </form>
-<div *ngIf="paged$ | async as paged">
-    {{paged | json}}
-</div>
+<mz-result-table [model]="paged$ | async" [loadingState]="loadingState" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+    <ng-template #headTemplate>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+        </tr>
+    </ng-template>
+    <ng-template #bodyTemplate let-result>
+        <tr>
+            <td>{{result.name}}</td>
+            <td>{{result.status}}</td>
+        </tr>
+    </ng-template>
+</mz-result-table>
