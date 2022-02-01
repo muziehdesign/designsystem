@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { PageLoadingIndicatorComponent } from 'muzieh-ngcomponents';
+import { PageLoadingIndicatorComponent, PageHeaderComponent } from 'muzieh-ngcomponents';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -12,6 +12,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         PageLoadingIndicatorComponent,
+        PageHeaderComponent
       ],
     }).compileComponents();
   });

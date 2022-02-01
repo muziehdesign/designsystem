@@ -41,6 +41,7 @@ import { CodeExampleComponent } from './code-example/code-example.component';
 import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/datetime-picker-guidelines.component';
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
+import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
 
 @NgModule({
     declarations: [
@@ -77,6 +78,7 @@ import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines
         CodeExampleComponent,
         DatetimePickerGuidelinesComponent,
         ToggleGuidelinesComponent,
+        PageHeaderGuidelinesComponent,
     ],
     imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
