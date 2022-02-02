@@ -8,6 +8,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TimeValueValidatorDirective } from './time-value-validator.directive';
     ResultTableComponent,
     PaginatorComponent,
     PageLoadingIndicatorComponent,
+    PageHeaderComponent,
     TimeValueAccessorDirective,
     TimeValueValidatorDirective,
   ],
@@ -29,6 +31,7 @@ import { TimeValueValidatorDirective } from './time-value-validator.directive';
     SvgIconComponent,
     ResultTableComponent,
     PageLoadingIndicatorComponent,
+    PageHeaderComponent,
     TimeValueAccessorDirective,
     TimeValueValidatorDirective
   ]

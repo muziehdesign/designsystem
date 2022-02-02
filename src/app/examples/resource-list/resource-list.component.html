@@ -1,6 +1,6 @@
 <h1>Resource list</h1>
 
-<form class="form" #searchForm="ngForm" (change)="search()" (ngSubmit)="search()">
+<form class="form" (change)="search()" (ngSubmit)="search()">
     <label class="field">
         <span class="field-label">Status</span>
         <select [(ngModel)]="model.status" name="model.status" class="field-control">
