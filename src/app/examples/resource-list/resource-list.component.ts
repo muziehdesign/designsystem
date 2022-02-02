@@ -15,7 +15,7 @@ import { ResourceService } from '../resource.service';
 export class ResourceListComponent implements OnInit {
     paged$: Observable<Paged<ResourceSummaryModel>>;
     model: ResourceListSearchModel = new ResourceListSearchModel();
-    constructor(private activatedRoute: ActivatedRoute, private service: ResourceService) {
+    constructor(private service: ResourceService) {
         this.paged$ = service.search(new ResourceListSearchModel());
     }
 
