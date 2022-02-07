@@ -11,7 +11,7 @@
 @import 'design/_tabs';
 @import 'design/_progress-bar';
 @import 'tailwindcss/utilities';
-
+@import 'design/_form';
 
 @layer components {
     .alert {
@@ -28,7 +28,7 @@
 
     .text-block {
         max-width: 90ch;
-    } 
+    }
 }
 
 // icon
