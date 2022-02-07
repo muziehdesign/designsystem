@@ -47,10 +47,6 @@
         }
     }
 
-    .field-control:not([type='checkbox']) {
-        @apply mt-1 block w-full;
-    }
-
     .fieldset {
         @apply mt-6;
 
@@ -99,8 +95,8 @@
         @apply text-secondary text-sm;
     }
 
-    .field-control-group input {
-        @apply block w-full sm:text-sm;
+    .field-control:not([type='checkbox']) {
+        @apply block w-full sm:text-sm pt-3 pb-3;
     }
 
     .field-control-suffix {
