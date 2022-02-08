@@ -14,11 +14,16 @@
                 <span class="field-label">Text input</span>
                 <input type="text" class="field-control" />
             </label>
+        </form>
+    </div>
 
+    <h3>Input groups</h3>
+    <div class="example">
+        <form class="form">
             <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
-                    <input type="text" class="field-control" />
+                    <input type="text" class="field-control" required [(ngModel)]="textInput" [ngModelOptions]="{standalone: true}"/>
                     <div class="field-control-addon">
                         <button class="button button-secondary button-icon">
                             <mz-svg-icon key="pencil"></mz-svg-icon>
@@ -29,17 +34,7 @@
             </label>
 
             <label class="field">
-                <span class="field-label">Amount</span>
-                <div class="field-control-group">
-                    <div class="field-control-addon">
-                        <mz-spinner></mz-spinner>
-                    </div>
-                    <input type="text" class="field-control" />
-                </div>
-            </label>
-
-            <label class="field">
-                <span class="field-label">Amount</span>
+                <span class="field-label">Username</span>
                 <div class="field-control-group">
                     <input type="text" class="field-control" />
                     <div class="field-control-addon">
@@ -49,7 +44,7 @@
             </label>
 
             <label class="field">
-                <span class="field-label">Amount</span>
+                <span class="field-label">Email</span>
                 <div class="field-control-group">
                     <div class="field-control-addon">
                         <mz-svg-icon key="check-circle"></mz-svg-icon>
@@ -62,7 +57,7 @@
             </label>
 
             <label class="field">
-                <span class="field-label">Amount</span>
+                <span class="field-label">Email</span>
                 <div class="field-control-group">
                     <div class="field-control-addon">
                         <mz-svg-icon key="check-circle"></mz-svg-icon>

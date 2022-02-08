@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormControlsComponent implements OnInit {
 
+  textInput: string = '';
   constructor() { }
 
   ngOnInit(): void {
