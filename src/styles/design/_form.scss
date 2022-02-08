@@ -1,4 +1,4 @@
-@layer components {
+
     form {
         @apply max-w-md;
 
@@ -47,6 +47,10 @@
         }
     }
 
+    .field-control:not([type='checkbox']) {
+        @apply mt-1 block w-full;
+    }
+
     .fieldset {
         @apply mt-6;
 
@@ -87,38 +91,34 @@
         @apply border-danger;
     }
 
-    .field-control-prefix {
-        @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none;
-    }
+    .field-control-addon {
+        @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
 
-    .field-control-prefix span {
-        @apply text-secondary text-sm;
-    }
+        &.field-control {
+            @apply w-full;
+        }
 
-    .field-control:not([type='checkbox']) {
-        @apply block w-full sm:text-sm pt-3 pb-3;
-    }
-
-    .field-control-suffix {
-        @apply absolute inset-y-0 right-0 pr-3 flex items-center;
-    }
-
-    .field-control-suffix-control {
-        @apply absolute inset-y-0 right-0 flex items-center;
-        select {
-            @apply h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-secondary text-sm;
+        .button {
+            @apply py-1 h-full -mr-3;
         }
     }
 
     .field-control-group {
-        @apply mt-1 relative rounded-md shadow-sm;
-    }
+        @apply flex items-stretch h-full border border-gray-500 shadow;
 
-    .field-control-group-button {
-        @apply relative flex items-stretch flex-grow;
+        .field-control {
+            @apply grow m-0 border-0 outline-0;
+        }
 
-        input {
-            @apply border-gray-300;
+        .field-control:focus {
+            @apply border-0 outline-0 ring-0;
+        }
+
+        &:focus-within {
+            @apply outline outline-1 outline-primary border-primary;
+        }
+
+        & > :first-child {
+            @apply pr-0;
         }
     }
-}

@@ -4,7 +4,10 @@
 
 <article>
     <h2>Text input</h2>
-    <p class="text-block">Use <code>input</code> with the appropriate <code>type</code> value to support accessibility and leverage native behaviors. Choose between <code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code>, and <code>url</code>. Default is <code>text</code>. Use a mask to help user with correct format when applicable.</p>
+    <p class="text-block">Use <code>input</code> with the appropriate <code>type</code> value to support accessibility
+        and leverage native behaviors. Choose between <code>text</code>, <code>email</code>, <code>number</code>,
+        <code>password</code>, <code>tel</code>, and <code>url</code>. Default is <code>text</code>. Use a mask to help
+        user with correct format when applicable.</p>
     <div class="example">
         <form class="form">
             <label class="field">
@@ -14,45 +17,32 @@
 
             <label class="field">
                 <span class="field-label">Amount</span>
-                <div class="field-control-group flex">
-                    <div class="field-control-group-button">
-                        <input type="text" class="field-control" />
+                <div class="field-control-group">
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <button class="button button-secondary button-icon">
+                            <mz-svg-icon key="pencil"></mz-svg-icon>
+                            <span>Submit</span>
+                        </button>
                     </div>
-                    <button class="button button-secondary button-icon">
-                        <mz-svg-icon key="pencil"></mz-svg-icon>
-                        <span>Submit</span>
-                    </button>
                 </div>
             </label>
 
             <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
-                    <div class="field-control-prefix">
+                    <div class="field-control-addon">
                         <mz-spinner></mz-spinner>
                     </div>
-                    <input type="text" class="field-control pl-10" />
+                    <input type="text" class="field-control" />
                 </div>
             </label>
 
             <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
-                    <input type="text" class="field-control pr-10" />
-                    <div class="field-control-suffix">
-                        <mz-spinner></mz-spinner>
-                    </div>
-                </div>
-            </label>
-
-            <label class="field">
-                <span class="field-label">Amount</span>
-                <div class="field-control-group">
-                    <div class="field-control-prefix">
-                        <mz-svg-icon key="check-circle"></mz-svg-icon>
-                    </div>
-                    <input type="text" class="field-control pl-10 pr-10" />
-                    <div class="field-control-suffix">
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
                         <mz-spinner></mz-spinner>
                     </div>
                 </div>
@@ -61,19 +51,12 @@
             <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
-                    <div class="field-control-prefix">
+                    <div class="field-control-addon">
                         <mz-svg-icon key="check-circle"></mz-svg-icon>
                     </div>
-                    <input type="text" class="field-control pl-10" />
-                </div>
-            </label>
-
-            <label class="field">
-                <span class="field-label">Amount</span>
-                <div class="field-control-group">
-                    <input type="text" class="field-control pr-10" />
-                    <div class="field-control-suffix">
-                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <mz-spinner></mz-spinner>
                     </div>
                 </div>
             </label>
@@ -81,11 +64,31 @@
             <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
-                    <div class="field-control-prefix">
+                    <div class="field-control-addon">
+                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                    </div>
+                    <input type="text" class="field-control" />
+                </div>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Amount</span>
+                <div class="field-control-group">
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                    </div>
+                </div>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Amount</span>
+                <div class="field-control-group">
+                    <div class="field-control-addon">
                         <span>$</span>
                     </div>
-                    <input type="text" class="field-control pl-5 pr-10" />
-                    <div class="field-control-suffix">
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
                         <mz-svg-icon key="check-circle"></mz-svg-icon>
                     </div>
                 </div>
@@ -94,17 +97,19 @@
             <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
-                    <div class="field-control-prefix">
+                    <div class="field-control-addon">
                         <span>$</span>
                     </div>
-                    <input type="text" class="field-control pl-5 pr-20" />
-                    <div class="field-control-suffix-control">
-                        <label for="currency" class="sr-only">Currency</label>
-                        <select id="currency" name="currency">
-                            <option>USD</option>
-                            <option>CAD</option>
-                            <option>EUR</option>
-                        </select>
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <label>
+                            <span class="sr-only">Currency</span>
+                            <select name="currency" class="field-control">
+                                <option>USD</option>
+                                <option>CAD</option>
+                                <option>EUR</option>
+                            </select>
+                        </label>
                     </div>
                 </div>
             </label>
@@ -152,7 +157,9 @@
     </section>
     <section>
         <h3>Select</h3>
-        <p>A select is similar to radio button list, but allows reducing space needs. A label should be used when using a select. Default value should be populated when it's what most users will use. Group options when it helps.</p>
+        <p>A select is similar to radio button list, but allows reducing space needs. A label should be used when using
+            a select. Default value should be populated when it's what most users will use. Group options when it helps.
+        </p>
         <div class="example">
             <form class="form">
                 <label class="field">
@@ -170,7 +177,8 @@
     <section>
         <h3>Checkbox</h3>
         <div class="example">
-            <label class="field field-checkbox"> <input type="checkbox" class="field-control" /> <span class="field-label">Single checkbox label here</span> </label>
+            <label class="field field-checkbox"> <input type="checkbox" class="field-control" /> <span
+                    class="field-label">Single checkbox label here</span> </label>
         </div>
         <div class="example">
             <fieldset class="option-list">
