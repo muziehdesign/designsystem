@@ -93,13 +93,17 @@
 .field-control-addon {
     @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
 
-    &.field-control {
+    .field-control {
         @apply w-full;
     }
 
     .button {
-        @apply py-1 h-full -mr-3;
+        @apply py-1 h-full ml-1;
     }
+}
+
+.field-control-addon.compact {
+    @apply px-0;
 }
 
 .field-control-group {
