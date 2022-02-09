@@ -106,18 +106,10 @@
     @apply flex items-stretch h-full border border-gray-500 shadow;
 
     .field-control {
-        @apply grow m-0 border-0 outline-0;
+        @apply grow m-0 border-transparent outline-0;
     }
 
     .field-control:focus {
-        @apply border-0 outline-0 ring-0;
-    }
-
-    &:focus-within {
-        @apply outline outline-1 outline-primary border-primary;
-    }
-
-    & > :first-child {
-        @apply border-r border-r-gray-300;
+        @apply border border-primary;
     }
 }
