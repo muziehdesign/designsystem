@@ -111,12 +111,11 @@
     }
 
     .field-control-group {
-        @apply mt-1 relative rounded-md shadow-sm;
+        @apply mt-1 relative h-11;
     }
 
     .field-control-group-button {
         @apply relative flex items-stretch flex-grow;
-
         input {
             @apply border-gray-300;
         }
