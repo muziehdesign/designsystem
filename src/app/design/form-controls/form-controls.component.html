@@ -1,188 +1,273 @@
 <header>
-  <h1>Form Controls</h1>
+    <h1>Form Controls</h1>
 </header>
 
 <article>
-  <h2>Text input</h2>
-  <p class="text-block">
-    Use <code>input</code> with the appropriate <code>type</code> value to support accessibility and leverage native
-    behaviors. Choose between
-    <code>text</code>, <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code>, and
-    <code>url</code>. Default is <code>text</code>. Use a mask to help
-    user with correct format when applicable.
-  </p>
-  <div class="example">
-    <form class="form">
-      <label class="field">
-        <span class="field-label">Text input</span>
-        <input type="text" class="field-control">
-      </label>
-    </form>
-  </div>
+    <h2>Text input</h2>
+    <p class="text-block">Use <code>input</code> with the appropriate <code>type</code> value to support accessibility
+        and leverage native behaviors. Choose between <code>text</code>, <code>email</code>, <code>number</code>,
+        <code>password</code>, <code>tel</code>, and <code>url</code>. Default is <code>text</code>. Use a mask to help
+        user with correct format when applicable.</p>
+    <div class="example">
+        <form class="form">
+            <label class="field">
+                <span class="field-label">Text input</span>
+                <input type="text" class="field-control" />
+            </label>
+        </form>
+    </div>
+
+    <h3>Input groups</h3>
+    <div class="example">
+        <form class="form" #inputGroupsForm="ngForm">
+            <label class="field">
+                <span class="field-label">Query</span>
+                <div class="field-control-group">
+                    <input type="text" class="field-control" required [(ngModel)]="model.query" name="model.query" />
+                    <div class="field-control-addon">
+                        <button class="button button-secondary button-icon">
+                            <mz-svg-icon key="pencil"></mz-svg-icon>
+                            <span>Submit</span>
+                        </button>
+                    </div>
+                </div>
+                <small class="field-error text-danger">{{inputGroupsForm.controls.query?.errors | json}}</small>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Username</span>
+                <div class="field-control-group">
+                    <input type="text" class="field-control" required [(ngModel)]="model.username" name="model.username" />
+                    <div class="field-control-addon">
+                        <mz-spinner></mz-spinner>
+                    </div>
+                </div>
+                <small class="field-error text-danger">{{inputGroupsForm.controls.username?.errors | json}}</small>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Email</span>
+                <div class="field-control-group">
+                    <div class="field-control-addon">
+                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                    </div>
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <mz-spinner></mz-spinner>
+                    </div>
+                </div>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Email</span>
+                <div class="field-control-group">
+                    <div class="field-control-addon">
+                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                    </div>
+                    <input type="text" class="field-control" />
+                </div>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Amount</span>
+                <div class="field-control-group">
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                    </div>
+                </div>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Amount</span>
+                <div class="field-control-group">
+                    <div class="field-control-addon">
+                        <span>$</span>
+                    </div>
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                    </div>
+                </div>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Amount</span>
+                <div class="field-control-group">
+                    <div class="field-control-addon">
+                        <span>$</span>
+                    </div>
+                    <input type="text" class="field-control" />
+                    <div class="field-control-addon">
+                        <span class="sr-only">Currency</span>
+                        <select name="currency" class="field-control">
+                            <option>USD</option>
+                            <option>CAD</option>
+                            <option>EUR</option>
+                        </select>
+                    </div>
+                </div>
+            </label>
+        </form>
+    </div>
 </article>
 
 <article>
-  <h2>Textarea</h2>
-  <p>Use textarea to collect long text content from user.</p>
-  <div class="example">
-    <form class="form">
-      <textarea class="field-control" rows="3"></textarea>
-    </form>
-  </div>
+    <h2>Textarea</h2>
+    <p>Use textarea to collect long text content from user.</p>
+    <div class="example">
+        <form class="form">
+            <textarea class="field-control" rows="3"></textarea>
+        </form>
+    </div>
 </article>
 
 <article>
-  <h2>Selects</h2>
-  <section>
-    <h3>Radio buttons</h3>
-    <p>Radio buttons allows users to scan options quickly.</p>
-    <div class="example">
+    <h2>Selects</h2>
+    <section>
+        <h3>Radio buttons</h3>
+        <p>Radio buttons allows users to scan options quickly.</p>
+        <div class="example">
+            <div class="radiobutton-list">
+                <div>
+                    <label class="inline-flex items-center">
+                        <input class="form-radio" type="radio" checked="" name="radio-direct" value="1" />
+                        <span class="ml-2">Option 1</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="inline-flex items-center">
+                        <input class="form-radio" type="radio" name="radio-direct" value="2" />
+                        <span class="ml-2">Option 2</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="inline-flex items-center">
+                        <input class="form-radio" type="radio" name="radio-direct" value="3" />
+                        <span class="ml-2">Option 3</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3>Select</h3>
+        <p>A select is similar to radio button list, but allows reducing space needs. A label should be used when using
+            a select. Default value should be populated when it's what most users will use. Group options when it helps.
+        </p>
+        <div class="example">
+            <form class="form">
+                <label class="field">
+                    <span class="field-label">Color</span>
+                    <select class="field-control">
+                        <option selected disabled>Select a color...</option>
+                        <option>Red</option>
+                        <option>Green</option>
+                    </select>
+                </label>
+            </form>
+        </div>
+    </section>
 
-      <div class="radiobutton-list">
-        <div>
-          <label class="inline-flex items-center">
-            <input class="form-radio" type="radio" checked="" name="radio-direct" value="1">
-            <span class="ml-2">Option 1</span>
-          </label>
+    <section>
+        <h3>Checkbox</h3>
+        <div class="example">
+            <label class="field field-checkbox"> <input type="checkbox" class="field-control" /> <span
+                    class="field-label">Single checkbox label here</span> </label>
         </div>
-        <div>
-          <label class="inline-flex items-center">
-            <input class="form-radio" type="radio" name="radio-direct" value="2">
-            <span class="ml-2">Option 2</span>
-          </label>
+        <div class="example">
+            <fieldset class="option-list">
+                <legend>Checkbox list label here</legend>
+                <div>
+                    <label class="inline-flex items-center">
+                        <input class="form-checkbox" type="checkbox" />
+                        <span class="ml-2">Option 1</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="inline-flex items-center">
+                        <input class="form-checkbox" type="checkbox" />
+                        <span class="ml-2">Option 2</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="inline-flex items-center">
+                        <input class="form-checkbox" type="checkbox" />
+                        <span class="ml-2">Option 3</span>
+                    </label>
+                </div>
+            </fieldset>
         </div>
-        <div>
-          <label class="inline-flex items-center">
-            <input class="form-radio" type="radio" name="radio-direct" value="3">
-            <span class="ml-2">Option 3</span>
-          </label>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <h3>Select</h3>
-    <p>A select is similar to radio button list, but allows reducing space needs. A label should be used when using a
-      select. Default value should be populated when it's what most users will use.
-      Group options when it helps.</p>
-    <div class="example">
-      <form class="form">
-        <label class="field">
-          <span class="field-label">Color</span>
-          <select class="field-control">
-            <option selected disabled>Select a color...</option>
-            <option>Red</option>
-            <option>Green</option>
-          </select>
-        </label>
-      </form>
-    </div>
-  </section>
-
-  <section>
-
-    <h3>Checkbox</h3>
-    <div class="example">
-      <label class="field field-checkbox">
-        <input type="checkbox" class="field-control"> <span class="field-label">Single checkbox label here</span>
-      </label>
-    </div>
-    <div class="example">
-      <fieldset class="option-list">
-        <legend>Checkbox list label here</legend>
-        <div>
-          <label class="inline-flex items-center">
-            <input class="form-checkbox" type="checkbox">
-            <span class="ml-2">Option 1</span>
-          </label>
-        </div>
-        <div>
-          <label class="inline-flex items-center">
-            <input class="form-checkbox" type="checkbox">
-            <span class="ml-2">Option 2</span>
-          </label>
-        </div>
-        <div>
-          <label class="inline-flex items-center">
-            <input class="form-checkbox" type="checkbox">
-            <span class="ml-2">Option 3</span>
-          </label>
-        </div>
-      </fieldset>
-    </div>
-  </section>
-  <section>
-    <h3>
-      Multiselect
-      <div class="example">
-        TODO. TBD
-      </div>
-    </h3>
-  </section>
+    </section>
+    <section>
+        <h3>
+            Multiselect
+            <div class="example">TODO. TBD</div>
+        </h3>
+    </section>
 </article>
 
 <article>
-  <h2>When to use what selection control</h2>
-  <div class="example">
+    <h2>When to use what selection control</h2>
+    <div class="example">
+        <div class="grid grid-rows-6 grid-flow-col mt-8 control-decision-table">
+            <div></div>
+            <div>how many options</div>
+            <div>how many selections user can make</div>
+            <div>is there a default option</div>
+            <div>relationship between choices</div>
+            <div>when does selection take effect</div>
 
-    <div class="grid grid-rows-6 grid-flow-col mt-8 control-decision-table">
-      <div></div>
-      <div>how many options</div>
-      <div>how many selections user can make</div>
-      <div>is there a default option</div>
-      <div>relationship between choices</div>
-      <div>when does selection take effect</div>
+            <div>Radio buttons</div>
+            <div>2-4</div>
+            <div>1</div>
+            <div>yes</div>
+            <div>mutually exclusive</div>
+            <div>after user submits form</div>
 
-      <div>Radio buttons</div>
-      <div>2-4</div>
-      <div>1</div>
-      <div>yes</div>
-      <div>mutually exclusive</div>
-      <div>after user submits form</div>
+            <div>Select</div>
+            <div>more than 4</div>
+            <div>1</div>
+            <div>no, unless there's an option that we expect almost all users will select</div>
+            <div>mutually exclusive</div>
+            <div>after user submits form</div>
 
-      <div>Select</div>
-      <div>more than 4</div>
-      <div>1</div>
-      <div>no, unless there's an option that we expect almost all users will select</div>
-      <div>mutually exclusive</div>
-      <div>after user submits form</div>
+            <div>Checkboxes</div>
+            <div>2-4</div>
+            <div>0-all</div>
+            <div>no</div>
+            <div>independent</div>
+            <div>after user submits form</div>
 
-      <div>Checkboxes</div>
-      <div>2-4</div>
-      <div>0-all</div>
-      <div>no</div>
-      <div>independent</div>
-      <div>after user submits form</div>
+            <div>Multiselect</div>
+            <div>more than 4</div>
+            <div>0-all</div>
+            <div>no</div>
+            <div>independent</div>
+            <div>after user submits form</div>
 
-      <div>Multiselect</div>
-      <div>more than 4</div>
-      <div>0-all</div>
-      <div>no</div>
-      <div>independent</div>
-      <div>after user submits form</div>
+            <div>Single checkbox</div>
+            <div>1</div>
+            <div>2 (on/off)</div>
+            <div>yes</div>
+            <div>mutually exclusive</div>
+            <div>after user submits form</div>
 
-      <div>Single checkbox</div>
-      <div>1</div>
-      <div>2 (on/off)</div>
-      <div>yes</div>
-      <div>mutually exclusive</div>
-      <div>after user submits form</div>
-
-      <div>Toggle switch</div>
-      <div>1</div>
-      <div>2 (on/off)</div>
-      <div>yes</div>
-      <div>mutually exclusive</div>
-      <div>immediately</div>
+            <div>Toggle switch</div>
+            <div>1</div>
+            <div>2 (on/off)</div>
+            <div>yes</div>
+            <div>mutually exclusive</div>
+            <div>immediately</div>
+        </div>
     </div>
-  </div>
-  <i>Decision table is revised based on https://www.nngroup.com/articles/toggle-switch-guidelines/</i>
+    <i>Decision table is revised based on https://www.nngroup.com/articles/toggle-switch-guidelines/</i>
 </article>
 
 <article>
-  <h2>Notes</h2>
-  <ul>
-    <li>May need select with typeahead, checkbox listbox</li>
-    <li>some of the css and html structure here needs cleanup</li>
-  </ul>
+    <h2>Notes</h2>
+    <ul>
+        <li>May need select with typeahead, checkbox listbox</li>
+        <li>some of the css and html structure here needs cleanup</li>
+    </ul>
 </article>

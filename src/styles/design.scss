@@ -12,7 +12,6 @@
 @import 'design/_progress-bar';
 @import 'tailwindcss/utilities';
 
-
 @layer components {
     .alert {
         @apply border-l-4 pl-8 py-4;
@@ -28,7 +27,7 @@
 
     .text-block {
         max-width: 90ch;
-    } 
+    }
 }
 
 // icon
