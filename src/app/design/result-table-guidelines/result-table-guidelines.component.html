@@ -19,7 +19,7 @@
             </select>
         </div>
         <div class="example">
-            <mz-result-table [model]="defaultModel$ | async" [loadingState]="defaultLoadingState" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate"
+            <mz-result-table [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate"
                 (pageChange)="onPageChange($event)">
                 <ng-template #headTemplate>
                     <tr>
@@ -47,7 +47,27 @@
 
     <h3>Loading</h3>
     <div class="example">
-        <mz-result-table [loadingState]="defaultLoadingState" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+        <mz-result-table [loading]="loadingExampleState.loading" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+            <ng-template #headTemplate>
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                </tr>
+            </ng-template>
+            <ng-template #bodyTemplate let-order>
+                <tr>
+                    <td>{{order.orderNumber}}</td>
+                    <td>{{order.customer}}</td>
+                    <td>{{order.date | date}}</td>
+                    <td>{{order.total | currency}}</td>
+                </tr>
+            </ng-template>
+        </mz-result-table>
+    </div>
+    <div class="example">
+        <mz-result-table [loading]="true" [model]="getPagedModel(1, 10) | async" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
             <ng-template #headTemplate>
                 <tr>
                     <th>Order</th>
@@ -69,7 +89,7 @@
 
     <h3>Empty</h3>
     <div class="example">
-        <mz-result-table [loadingState]="{ loading: false}" [model]="emptyModel$ | async" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+        <mz-result-table [model]="emptyModel$ | async" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
             <ng-template #headTemplate>
                 <tr>
                     <th>Order</th>
@@ -91,7 +111,7 @@
 
     <h3>Error</h3>
     <div class="example">
-        <mz-result-table [loadingState]="errorLoadingState" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
+        <mz-result-table [error]="error" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
             <ng-template #headTemplate>
                 <tr>
                     <th>Order</th>

@@ -9,8 +9,11 @@ import { ResultTableModel } from './result-table.model';
     styleUrls: ['./result-table.component.scss'],
 })
 export class ResultTableComponent {
-    @Input() public loadingState!: LoadingState;
-    @Input() public model: ResultTableModel<any> | undefined | null; // to deal with the flaw of angular's async pipe
+    @Input() public loading: boolean = false;
+    @Input() public error?: Error;
+
+    @Input() model: ResultTableModel<any> | undefined | null; // TODO need to deal with the flaw of angular's async pipe
+
     @Input() public headTemplate!: TemplateRef<any>;
     @Input() public bodyTemplate!: TemplateRef<any>;
     @Output() public pageChange = new EventEmitter<PageEvent>();
@@ -28,10 +31,10 @@ export class ResultTableComponent {
     }
 
     public get state(): 'loading' | 'failed' | 'succeeded' {
-        if (this.loadingState.loading) {
+        if (this.loading) {
             return 'loading';
         }
-        if (this.loadingState.error != undefined) {
+        if (this.error) {
             return 'failed';
         }
 

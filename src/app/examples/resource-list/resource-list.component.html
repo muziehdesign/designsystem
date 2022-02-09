@@ -1,34 +1,38 @@
 <div class="page style1">
-    <h1>Resource list</h1>
+    <header class="page-header">
+        <h1>Resource list</h1>
+    </header>
 
-    <form class="form" #searchForm="ngForm" (change)="search()" (ngSubmit)="search()">
-        <label class="field">
-            <span class="field-label">Status</span>
-            <select [(ngModel)]="model.status" name="model.status" class="field-control">
-                <option>new</option>
-                <option>active</option>
-                <option>inactive</option>
-            </select>
-        </label>
-        <label class="field">
-            <span class="field-label">Name</span>
-            <input type="text" class="field-control" [(ngModel)]="model.name" name="model.name">
-        </label>
-    </form>
-    <button class="btn-link" (click)="clearAll()">Clear all</button>
-    <mz-result-table [model]="paged$ | async" [loadingState]="loadingState" [headTemplate]="headTemplate"
-        [bodyTemplate]="bodyTemplate">
-        <ng-template #headTemplate>
-            <tr>
-                <th>Name</th>
-                <th>Status</th>
-            </tr>
-        </ng-template>
-        <ng-template #bodyTemplate let-result>
-            <tr>
-                <td>{{result.name}}</td>
-                <td>{{result.status}}</td>
-            </tr>
-        </ng-template>
-    </mz-result-table>
+    <div class="page-main">
+        <form class="form" #searchForm="ngForm" (change)="search()" (ngSubmit)="search()">
+            <label class="field">
+                <span class="field-label">Status</span>
+                <select [(ngModel)]="model.status" name="model.status" class="field-control">
+                    <option>new</option>
+                    <option>active</option>
+                    <option>inactive</option>
+                </select>
+            </label>
+            <label class="field">
+                <span class="field-label">Name</span>
+                <input type="text" class="field-control" [(ngModel)]="model.name" name="model.name">
+            </label>
+        </form>
+        <button class="btn-link" (click)="clearAll()">Clear all</button>
+        <mz-result-table [model]="paged$ | async" [loading]="loading" [error]="error" [headTemplate]="headTemplate"
+            [bodyTemplate]="bodyTemplate" (pageChange)="search($event)">
+            <ng-template #headTemplate>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                </tr>
+            </ng-template>
+            <ng-template #bodyTemplate let-result>
+                <tr>
+                    <td>{{result.name}}</td>
+                    <td>{{result.status}}</td>
+                </tr>
+            </ng-template>
+        </mz-result-table>
+    </div>
 </div>

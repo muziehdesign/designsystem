@@ -25,11 +25,13 @@ export class ResourceService {
                 }
         );
 
+        const filtered = data.filter((m) => (!model.name || m.name == model.name) && (!model.status || m.status == model.status));
+
         return of({
             page: page,
             pageSize: pageSize,
-            totalResults: data.length,
-            results: data.filter((m) => (!model.name || m.name == model.name) && (!model.status || m.status == model.status)).slice(page * pageSize, (page + 1) * pageSize),
+            totalResults: filtered.length,
+            results: filtered.slice(page * pageSize, (page + 1) * pageSize),
         });
     }
 }

@@ -1,5 +1,5 @@
-<div class="result-table" #tableRef>
-    <div class="loading-overlay-spinner state-message loading-state" *ngIf="state == 'loading'">
+<div class="result-table" [ngClass]="{'loading': state === 'loading', 'failed': state === 'failed'}" #tableRef>
+    <div class="loading-overlay-spinner" *ngIf="state === 'loading'">
         <mz-spinner size="large"></mz-spinner>
     </div>
     <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
@@ -9,8 +9,8 @@
         <thead>
             <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
         </thead>
-        <tbody *ngIf="model">
-            <ng-container>
+        <tbody>
+            <ng-container *ngIf="model">
                 <ng-container *ngFor="let result of model.results">
                     <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
                 </ng-container>
@@ -24,7 +24,7 @@
     <div class="state-message" *ngIf="state == 'succeeded' && model?.results?.length === 0">
         <div class="title">No results found</div>
     </div>
-    <div class="state-message eror-state" *ngIf="state == 'failed'">
+    <div class="state-message" *ngIf="state == 'failed'">
         <div class="title">
             <mz-svg-icon key="x-circle" type="solid" class="text-danger"></mz-svg-icon>
             Something went wrong
