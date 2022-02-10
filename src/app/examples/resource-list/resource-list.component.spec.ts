@@ -7,6 +7,11 @@ import { ResultTableComponent, PaginationComponent } from 'muzieh-ngcomponents';
 import { ResultTableHarness } from 'projects/components/src/lib/result-table/testing/result-table-harness';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { ResourceService } from '../resource.service';
+import { of } from 'rxjs';
 
 fdescribe('ResourceListComponent', () => {
     let component: ResourceListComponent;
@@ -17,6 +22,8 @@ fdescribe('ResourceListComponent', () => {
         await TestBed.configureTestingModule({
             imports: [RouterTestingModule, FormsModule],
             declarations: [PaginationComponent, ResultTableComponent, ResourceListComponent],
+            providers: [
+            ]
         }).compileComponents();
     });
 
@@ -27,21 +34,14 @@ fdescribe('ResourceListComponent', () => {
         loader = TestbedHarnessEnvironment.loader(fixture);
     });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
-    });
-
     it('should display results', async () => {
         /*
-      const resultTable = await loader.getHarness(ResultTableHarness);
-      const pagination = resultTable.getPaginationDetails();
-      expect(pagination.total).toBe(120);
-      const header = resultTable.getRenderedHeader();
-      const content = resultTable.getRenderedContent();
-    */
-        const tableLoader = await loader.getHarness(ResultTableHarness);
-        const headers = await tableLoader.getHeaders();
-        expect(headers).toEqual(['Name', 'Status']);
+        const resultTable = await loader.getHarness(ResultTableHarness);
+        const pagination = resultTable.getPaginationDetails();
+        expect(pagination.total).toBe(120);
+        const header = resultTable.getRenderedHeader();
+        const content = resultTable.getRenderedContent();
+        */
     });
 
     it('should display error', () => {});

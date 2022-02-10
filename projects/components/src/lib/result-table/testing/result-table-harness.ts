@@ -1,17 +1,9 @@
-import { ComponentHarness, BaseHarnessFilters, HarnessPredicate } from '@angular/cdk/testing';
-export class ResultTableHarness extends ComponentHarness {
-    static hostSelector = 'mz-result-table';
-    protected getTable = this.locatorFor('.result-table');
-    protected locateTableHeaders = this.locatorForAll('th');
+import { ResultTableComponent } from "../result-table.component";
 
-    async displays(columns: string[], rows: [string[]]) {
-        const table = await this.locatorFor('.result-table');
-    }
+export abstract class MuziehComponentHarness<T> {
 
-    async getHeaders(): Promise<string[]> {
-        const headers = await this.locateTableHeaders();
-        return Promise.all(headers.map(h=>h.text())).then(data=>{
-            return data;
-        });
-    }
- }
+}
+
+export class ResultTableHarness extends MuziehComponentHarness<ResultTableComponent> {
+    
+}
