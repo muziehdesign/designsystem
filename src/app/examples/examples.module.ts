@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ExamplesComponent } from './examples.component';
 import { ResourceListComponent } from './resource-list/resource-list.component';
 import { FormsModule } from '@angular/forms';
+import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 
 @NgModule({
   declarations: [ResourceDetailComponent, ExamplesComponent, ResourceListComponent],
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     NgbNavModule,
     NgbDropdownModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    MuziehComponentsModule
   ]
 })
 export class ExamplesModule { }
