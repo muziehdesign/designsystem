@@ -22,7 +22,7 @@ import { GridComponent } from './grid/grid.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { PaginationGuidelinesComponent } from './pagination-guidelines/pagination-guidelines.component';
 import { DescriptionListComponent } from './description-list/description-list.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
@@ -64,7 +64,7 @@ import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-hea
         EmptyStateComponent,
         TabsComponent,
         SkeletonLoaderComponent,
-        PaginationComponent,
+        PaginationGuidelinesComponent,
         DescriptionListComponent,
         AlertsComponent,
         TooltipComponent,

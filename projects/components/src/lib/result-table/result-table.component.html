@@ -1,33 +1,34 @@
-<div class="result-table">
-    <table class="table">
-        <caption class="text-left text-secondary" *ngIf="model.state == 'succeeded'">
-            {{ model.total }} results
+<div class="result-table" [ngClass]="{'loading': state === 'loading', 'failed': state === 'failed'}" #tableRef>
+    <div class="loading-overlay-spinner" *ngIf="state === 'loading'">
+        <mz-spinner size="large"></mz-spinner>
+    </div>
+    <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
+        <caption *ngIf="model && model.results.length > 0">
+            {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.totalResults }} results
         </caption>
         <thead>
             <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
         </thead>
         <tbody>
-            <ng-container *ngIf="model.state == 'succeeded'">
+            <ng-container *ngIf="model">
                 <ng-container *ngFor="let result of model.results">
                     <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
                 </ng-container>
             </ng-container>
         </tbody>
     </table>
-    <div *ngIf="model.state == 'succeeded' && model.pageSize && model.total > model.pageSize">
-        <mz-paginator></mz-paginator>
+    <div class="table-pagination" *ngIf="model && model.totalResults > model.results.length">
+        <mz-pagination [length]="model.totalResults" [page]="model.page" [pageSize]="model.pageSize"
+            (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
-    <div class="state-message" *ngIf="model.state == 'succeeded' && model.total == 0">
+    <div class="state-message" *ngIf="state == 'succeeded' && model?.results?.length === 0">
         <div class="title">No results found</div>
     </div>
-    <div class="state-message" *ngIf="model.state == 'loading'">
-        <mz-spinner size="large"></mz-spinner>
-    </div>
-    <div class="state-message eror-state" *ngIf="model.state == 'failed'">
+    <div class="state-message" *ngIf="state == 'failed'">
         <div class="title">
             <mz-svg-icon key="x-circle" type="solid" class="text-danger"></mz-svg-icon>
             Something went wrong
         </div>
-        <div>Unexpected error, try searching again</div> <!-- TODO: try again should allow trying again -->
+        <div>Unexpected error, <a (click)="searchAgain()" class="link-action">try searching again</a>.</div>
     </div>
 </div>

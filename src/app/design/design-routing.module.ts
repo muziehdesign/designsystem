@@ -19,7 +19,7 @@ import { GridComponent } from './grid/grid.component';
 import { IconographyComponent } from './iconography/iconography.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { PaginationGuidelinesComponent } from './pagination-guidelines/pagination-guidelines.component';
 import { ProgressBarGuidelinesComponent } from './progress-bar-guidelines/progress-bar-guidelines.component';
 import { ResultTableGuidelinesComponent } from './result-table-guidelines/result-table-guidelines.component';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
@@ -59,7 +59,7 @@ const routes: Routes = [
             { path: 'button', component: ButtonDesignComponent },
             { path: 'menudropdown', component: DropdownMenuGuidelinesComponent },
             { path: 'modal', component: ModalGuidelinesComponent },
-            { path: 'pagination', component: PaginationComponent },
+            { path: 'pagination', component: PaginationGuidelinesComponent },
             { path: 'progressbar', component: ProgressBarGuidelinesComponent },
             { path: 'formcontrols', component: FormControlsComponent },
             { path: 'resulttable', component: ResultTableGuidelinesComponent },

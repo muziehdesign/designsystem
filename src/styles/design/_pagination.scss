@@ -1,0 +1,27 @@
+.pagination-wrapper {
+    @apply grid grid-cols-3 gap-20 justify-center;
+}
+
+.pagination-nav {
+    @apply px-4 flex justify-center col-start-2;
+}
+
+.page-link {
+    @apply text-gray-500 hover:text-primary p-4 inline-block text-center font-medium cursor-pointer;
+}
+
+.page-link.active {
+    @apply border-primary text-primary font-bold cursor-default hover:no-underline;
+}
+
+.page-link.disabled {
+    @apply cursor-default text-gray-400 hover:text-gray-400 hover:border-transparent hover:no-underline;
+}
+
+.pagination-size, .collection-size {
+    @apply text-gray-500 text-sm p-4 ml-auto hidden lg:inline-block;
+}
+
+.page-size-control {
+    @apply py-0 pr-7 pl-0.5 mx-1;
+}

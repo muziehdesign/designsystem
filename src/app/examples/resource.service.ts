@@ -14,20 +14,24 @@ export class ResourceService {
     search(model: ResourceListSearchModel): Observable<Paged<ResourceSummaryModel>> {
         const statuses = Object.values(ResourceStatus);
         const names = ['Usagi Tsukino', 'Ami Mizuno', 'Setsuna Meioh', 'Haruka Tenoh'];
+        const page = model.page || 1;
+        const pageSize = model.pageSize || 20;
         const data = [...Array(140).keys()].map(
             (i) =>
                 <ResourceSummaryModel>{
-                    resourceSummaryId: i * model.page + 1 + model.pageSize * 100,
+                    resourceSummaryId: i * page + 1 + pageSize * 100,
                     name: names[i % names.length],
                     status: statuses[i % statuses.length],
                 }
         );
 
+        const filtered = data.filter((m) => (!model.name || m.name == model.name) && (!model.status || m.status == model.status));
+
         return of({
-            page: model.page,
-            pageSize: model.pageSize,
-            totalResults: data.length,
-            results: data.filter((m) => (!model.name || m.name == model.name) && (!model.status || m.status == model.status)).slice(model.page * model.pageSize, (model.page + 1) * model.pageSize),
+            page: page,
+            pageSize: pageSize,
+            totalResults: filtered.length,
+            results: filtered.slice(page * pageSize, (page + 1) * pageSize),
         });
     }
 }

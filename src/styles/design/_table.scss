@@ -39,6 +39,7 @@
     @apply mb-4;
 }
 
+
 .result-table {
     .state-message {
         @apply p-9 text-center;
@@ -46,5 +47,21 @@
         .title {
             @apply text-xl;
         }
+    }
+    .has-overlay {
+        @apply opacity-10;
+    }
+    .loading-overlay-spinner {
+        @apply absolute top-20 flex flex-col items-center justify-center w-full;
+    }
+}
+
+.result-table.loading, .result-table.failed {
+    min-height: 14rem;
+}
+
+.result-table.loading {
+    caption {
+        visibility: hidden;
     }
 }

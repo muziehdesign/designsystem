@@ -12,7 +12,7 @@ export class SvgIconComponent implements OnInit {
   @Input() type: string = 'outline';
   url: string;
   constructor(@Optional() @Inject(COMPONENT_CONFIG) private config: ComponentConfig) {
-    this.url = config?.svgDefinitionUrl || './assets/icondefinitions.svg';
+    this.url = config?.svgIconDefinitionUrl || './assets/icondefinitions.svg';
   }
 
   ngOnInit(): void {}
