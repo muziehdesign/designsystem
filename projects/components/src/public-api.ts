@@ -22,5 +22,5 @@ export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';
 
 // testing files
-export * from './testing/muzieh-component-harness';
-export * from './testing/result-table-harness';
+export * from './lib/testing/muzieh-component-harness';
+export * from './lib/testing/result-table-harness';

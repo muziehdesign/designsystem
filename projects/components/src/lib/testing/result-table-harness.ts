@@ -1,7 +1,7 @@
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { ResultTableComponent } from '../lib/result-table/result-table.component';
-import { ResultTableModel } from '../lib/result-table/result-table.model';
+import { ResultTableComponent } from '../result-table/result-table.component';
+import { ResultTableModel } from '../result-table/result-table.model';
 import { MuziehComponentHarness } from './muzieh-component-harness';
 
 export class ResultTableHarness extends MuziehComponentHarness<ResultTableComponent> {
