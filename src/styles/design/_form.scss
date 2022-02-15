@@ -154,3 +154,15 @@
         @apply border-danger;
     }
 }
+
+.field-control-combo {
+    @apply flex items-stretch h-full;
+
+    & > * {
+        @apply grow;
+    }
+
+    .button {
+        @apply py-1 mt-1 ml-1 inline-flex flex-col flex-shrink-0 items-center justify-center;
+    }
+}

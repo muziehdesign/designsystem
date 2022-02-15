@@ -46,6 +46,17 @@
             </label>
 
             <label class="field">
+                <span class="field-label">Query</span>
+                <div class="field-control-combo invalid">
+                    <input type="text" class="field-control" required [(ngModel)]="model.query" name="model.query" />
+                    <button class="button button-secondary" type="button">
+                        Search
+                    </button>
+                </div>
+                <small class="field-error text-danger">{{inputGroupsForm.controls.query?.errors | json}}</small>
+            </label>
+
+            <label class="field">
                 <span class="field-label">Username</span>
                 <div class="field-control-group">
                     <input type="text" class="field-control" required [(ngModel)]="model.username" name="model.username" />
@@ -53,7 +64,6 @@
                         <mz-spinner></mz-spinner>
                     </div>
                 </div>
-                <small class="field-error text-danger">{{inputGroupsForm.controls.username?.errors | json}}</small>
             </label>
 
             <label class="field">
