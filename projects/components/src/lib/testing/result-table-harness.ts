@@ -12,7 +12,8 @@ export class ResultTableHarness extends MuziehComponentHarness<ResultTableCompon
         if (!containerDebugElement) {
             throw new Error('Invalid container debug element');
         }
-        const resultTableDebugElement = containerDebugElement.query(By.directive(ResultTableComponent));
+        // we need this to default to the container if null for testing the original component
+        const resultTableDebugElement = containerDebugElement.query(By.directive(ResultTableComponent)) || containerDebugElement;
         if (!resultTableDebugElement) {
             throw new Error('Invalid result table debug element');
         }
@@ -64,6 +65,10 @@ export class ResultTableHarness extends MuziehComponentHarness<ResultTableCompon
             throw new Error('DebugElement not found');
         }
         return (errorDebugElement.nativeElement as HTMLDivElement).textContent?.trim() === 'No results found';
+    }
+
+    hasPaginationAvailable() {
+        return this.resultTableDebugElement.queryAll(By.css('.table-pagination')).length > 0;
     }
 
     hasResultsHeaderSummary() {
