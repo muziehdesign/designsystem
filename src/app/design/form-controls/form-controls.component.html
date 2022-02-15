@@ -23,11 +23,22 @@
             <label class="field">
                 <span class="field-label">Query</span>
                 <div class="field-control-group">
-                    <input type="text" class="field-control" required [(ngModel)]="model.query" name="model.query" />
+                    <input type="text" class="field-control"  />
                     <div class="field-control-addon">
                         <button class="button button-secondary button-icon">
-                            <mz-svg-icon key="pencil"></mz-svg-icon>
-                            <span>Submit</span>
+                            <mz-svg-icon key="search"></mz-svg-icon>
+                        </button>
+                    </div>
+                </div>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Query</span>
+                <div class="field-control-group">
+                    <input type="text" class="field-control" required [(ngModel)]="model.query" name="model.query" />
+                    <div class="field-control-addon">
+                        <button class="button button-secondary">
+                            Search
                         </button>
                     </div>
                 </div>
@@ -49,7 +60,7 @@
                 <span class="field-label">Email</span>
                 <div class="field-control-group">
                     <div class="field-control-addon">
-                        <mz-svg-icon key="check-circle"></mz-svg-icon>
+                        <mz-svg-icon key="at-symbol"></mz-svg-icon>
                     </div>
                     <input type="text" class="field-control" />
                     <div class="field-control-addon">
@@ -59,44 +70,18 @@
             </label>
 
             <label class="field">
-                <span class="field-label">Email</span>
-                <div class="field-control-group">
-                    <div class="field-control-addon">
-                        <mz-svg-icon key="check-circle"></mz-svg-icon>
-                    </div>
-                    <input type="text" class="field-control" />
-                </div>
-            </label>
-
-            <label class="field">
-                <span class="field-label">Amount</span>
-                <div class="field-control-group">
-                    <input type="text" class="field-control" />
-                    <div class="field-control-addon">
-                        <mz-svg-icon key="check-circle"></mz-svg-icon>
-                    </div>
-                </div>
-            </label>
-
-            <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
                     <div class="field-control-addon">
                         <span>$</span>
                     </div>
                     <input type="text" class="field-control" />
-                    <div class="field-control-addon">
-                        <mz-svg-icon key="check-circle"></mz-svg-icon>
-                    </div>
                 </div>
             </label>
 
             <label class="field">
                 <span class="field-label">Amount</span>
                 <div class="field-control-group">
-                    <div class="field-control-addon">
-                        <span>$</span>
-                    </div>
                     <input type="text" class="field-control" />
                     <div class="field-control-addon">
                         <span class="sr-only">Currency</span>
