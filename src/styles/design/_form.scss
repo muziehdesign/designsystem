@@ -90,6 +90,7 @@
     @apply border-danger;
 }
 
+/*
 .field-control-addon {
     @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
 
@@ -98,7 +99,7 @@
     }
 
     .button {
-        @apply py-1 h-full -mr-3 -ml-3;
+        @apply py-1 h-full;
     }
 }
 
@@ -111,5 +112,45 @@
 
     .field-control:focus {
         @apply border border-primary;
+    }
+}*/
+
+.field-control-addon {
+    @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
+
+    &.field-control {
+        @apply w-full;
+    }
+
+    .button {
+        @apply py-1 h-full -mr-3;
+    }
+}
+
+.field-control-group {
+    @apply flex items-stretch h-full border border-gray-500 shadow;
+
+    .field-control {
+        @apply grow m-0 border-0 outline-0;
+    }
+
+    .field-control:focus {
+        @apply border-0 outline-0 ring-0;
+    }
+
+    &:focus-within {
+        @apply outline outline-1 outline-primary border-primary;
+    }
+
+    & > :first-child.field-control-addon {
+        @apply pr-0;
+    }
+
+    & > :last-child.field-control-addon {
+        @apply pl-0;
+    }
+
+    &.invalid:not(:focus-within) {
+        @apply border-danger;
     }
 }
