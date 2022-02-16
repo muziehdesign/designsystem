@@ -90,6 +90,7 @@
     @apply border-danger;
 }
 
+
 .field-control-addon {
     @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
 
@@ -116,4 +117,12 @@
     .field-control:focus {
         @apply border border-primary;
     }
+
+    &.invalid {
+        @apply border-danger;
+    }
+}
+
+.ng-submitted .field-control.ng-invalid, .field-control.ng-touched.ng-invalid {
+    @apply border-0;
 }

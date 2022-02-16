@@ -17,7 +17,7 @@
             </ng-container>
         </tbody>
     </table>
-    <div class="table-pagination" *ngIf="model && model.totalResults > model.results.length">
+    <div class="table-pagination" *ngIf="model && model.results.length > 0 && model.totalResults > model.results.length">
         <mz-pagination [length]="model.totalResults" [page]="model.page" [pageSize]="model.pageSize"
             (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>

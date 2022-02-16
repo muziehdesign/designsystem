@@ -14,7 +14,7 @@ export class ResultTableGuidelinesComponent {
     defaultModelTotal: number = 120;
     defaultModel$: Observable<ResultTableModel<OrderDataModel>>;
     defaultLoadingState = { loading: false } as LoadingState;
-    emptyModel$ = of({ results: [], totalResults: 0, page: 1, pageSize: 20 } as ResultTableModel<OrderDataModel>);
+    emptyModel$ = of({ results: [], totalResults: 10, page: 1, pageSize: 20 } as ResultTableModel<OrderDataModel>);
     errorLoadingState = { error: new Error(), loading: false } as LoadingState;
     error = new Error();
     loadingExampleState = { loading: true } as LoadingState;

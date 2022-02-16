@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
-import { LoadingState } from '../models/loading-state';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { PageEvent } from '../models/page-event';
 import { ResultTableModel } from './result-table.model';
 

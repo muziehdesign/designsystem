@@ -1,6 +1,6 @@
 {
   "name": "kitchensink-ui",
-  "version": "0.0.6-19",
+  "version": "0.0.6-24",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

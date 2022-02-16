@@ -20,3 +20,7 @@ export * from './lib/result-table/result-table.model';
 // time value
 export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';
+
+// testing files
+export * from './lib/testing/muzieh-component-harness';
+export * from './lib/testing/result-table-harness';
