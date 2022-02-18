@@ -37,12 +37,10 @@
 }
 
 .field-checkbox {
-    & input {
-        @apply mr-1;
-    }
+    @apply flex items-center;
 
     .field-label {
-        @apply text-current;
+        @apply text-current font-normal pl-2 text-base;
     }
 }
 
@@ -117,8 +115,8 @@
     &.invalid {
         @apply border-danger;
     }
-}
 
-.ng-submitted .field-control.ng-invalid, .field-control.ng-touched.ng-invalid {
-    @apply border-0;
+    .ng-submitted .field-control.ng-invalid, .field-control.ng-touched.ng-invalid {
+        @apply border-0;
+    }
 }

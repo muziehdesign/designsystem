@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SpinnerComponent  {
 
   @Input() size: 'medium' | 'large' = 'medium';
+  @Input() type: 'default' | 'inverse' = 'default';
   constructor() { }
 
 }

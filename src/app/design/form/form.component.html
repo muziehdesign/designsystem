@@ -79,8 +79,8 @@
                 <legend>Form scenario</legend>
                 <label class="field field-checkbox">
                     <input type="checkbox" class="field-control" [(ngModel)]="model.unexpectedError"
-                        name="unexpectedError"> Unexpected
-                    error
+                        name="unexpectedError"> 
+                    <span class="field-label">Unexpected error</span>
                 </label>
             </fieldset>
 
@@ -96,7 +96,7 @@
 
                 <button class="button button-primary" [ngClass]="{ 'loading' : isLoading}">
                     <div class="button-loading-overlay" *ngIf="isLoading">
-                        <mz-spinner type="primary"></mz-spinner>
+                        <mz-spinner type="inverse"></mz-spinner>
                     </div>
                     Add delivery address
                 </button>
@@ -167,7 +167,7 @@
     <ul class="list-inside list-disc text-block">
         <li>Buttons should be sorted by importance from left to right for pages. Primary button should always be first
             button.</li>
-        <li>Buttons should be sorted by importance from right to left for modals and multi-step forms. Primary button
+        <li>Buttons should be sorted by importance from right to left for modals and multi-step forms and modal. Primary button
             should always be last.</li>
     </ul>
 
@@ -175,7 +175,7 @@
     <p>TODO: define field widths</p>
 
     <h3>References</h3>
-    <ul>
+    <ul class="list-inside list-disc">
         <li><a href="https://atlassian.design/patterns/forms">Atlassian Design System Forms Patterns</a></li>
         <!--<li><a href="https://www.nngroup.com/articles/indicators-validations-notifications/"></a></li>-->
         <li><a href="https://www.nngroup.com/articles/errors-forms-design-guidelines/">How to Report Errors in Forms: 10 Design Guidelines</a></li>

@@ -1,4 +1,4 @@
-@layer components {
+
     .button {
         @apply inline-flex px-4 py-2.5 font-medium items-center text-sm space-x-3 focus:outline-none focus:ring-2 focus:ring-offset-2;
     }
@@ -46,7 +46,6 @@
     .button-icon .icon {
         @apply m-0;
     }
-}
 
 .link-action {
     @apply cursor-pointer;
