@@ -15,7 +15,7 @@
         <div class="demo">
             <div class="example">
                 <div class="grid grid-flow-col auto-cols-auto gap-4">
-                    <div class="example-column" *ngFor="let i of [].constructor(3); let j = index">1 of 3</div>
+                    <div class="example-column" *ngFor="let i of [].constructor(3); let j = index">1 of n</div>
                 </div>
             </div>
             <div class="example-template">
@@ -60,6 +60,7 @@
     </section>
 </article>
 
+<!--
 <article>
     <section>
         <h2>Flexible grid</h2>
@@ -68,9 +69,10 @@
         </div>
     </section>
 </article>
+-->
 
 <article>
-    <section>
+    <!--<section>
         <h2>Responsive</h2>
         <div class="example">
 
@@ -81,13 +83,12 @@
             <div class="example-column">1 of 4</div>
             <div class="example-column">1 of 4</div>
         </div>
-    </section>
+    </section>-->
     <section>
         <h2>Fixed column count</h2>
         <div class="grid grid-cols-4 py-4 gap-4">
             <div class="example-column" *ngFor="let i of [].constructor(7); let j = index">1 of 9</div>
         </div>
-
     </section>
     <section>
         <h2>Gap</h2>

@@ -11,6 +11,7 @@ import 'reflect-metadata';
 export class ResourceDetailComponent implements OnInit {
     activeId: number = 1;
     isLoading: boolean = false;
+    
     constructor() {}
 
     ngOnInit(): void {
