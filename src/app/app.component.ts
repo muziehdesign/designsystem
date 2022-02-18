@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { NavigationStart, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
     selector: 'app-root',
@@ -6,9 +9,12 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'kitchensink-ui';
-
     stickyNavigation: boolean = false;
+    constructor(private ts: Title, private router: Router) {
+        router.events.pipe(filter((e) => e instanceof NavigationStart)).subscribe((x) => {
+            ts.setTitle('Muzieh Design System');
+        });
+    }
 
     toggleNavigation() {
         this.stickyNavigation = !this.stickyNavigation;

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  configurations: ['/config.json']
+  configurations: ['/designsystem/config.json']
 };

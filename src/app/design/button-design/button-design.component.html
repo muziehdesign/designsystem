@@ -1,7 +1,7 @@
 <header>
     <h1>Button</h1>
     <p class="prose">
-        Use a button to allow user to perform an action.
+        Use a button to communicate actions and allow users to take an action.
     </p>
 </header>
 
@@ -11,9 +11,9 @@
         Each button variant serves a specific purpose, they should be used accordingly.
     </p>
     <h3>Primary</h3>
-    <p class="text-block">Use `primary` for primary action of a container. While not every container requires a primary
-        button, it
-        should only appear once per container (not including application header, modal, or side panel).</p>
+    <p class="text-block">Use primary for primary action of a container. Primary actions are actions that help user
+        complete a task, or actions that users are encouraged to take. Containers should contain at most one
+        primary button (not including application header and modal).</p>
     <div class="example">
         <button class="button button-primary">Primary button</button>
     </div>
@@ -34,7 +34,7 @@
     </div>-->
 
     <h3>Danger</h3>
-    <p class="text-block">Use a `danger` button for the primary action when it would causes destruction on the data.
+    <p class="text-block">Use a danger button for the primary action when it would causes destruction on the data.
         This is usually
         seen in confirmation modals.</p>
     <div class="example">
@@ -93,7 +93,6 @@
         <div class="button-list">
             <button class="button button-primary">Primary button</button>
             <button class="button button-secondary">Secondary button</button>
-            <button class="button button-secondary">Secondary button</button>
         </div>
     </div>
     <p>Use <code>.button-list</code> when displaying a group of buttons to enforce consistent button spacing.</p>
@@ -135,10 +134,24 @@
 </article>
 
 <article>
-    <h2>Best practices</h2>
+    <h2>Usage</h2>
     <ul class="list-inside list-disc">
-        <li>Use concise active verbs or phrases that clearly indicate action </li>
-        <li>Use sentence-case captitalization, e.g. <code>Primary button</code> and not <code>Primary Button</code>
+        <li>Do not use buttons for navigational elements (this does not include moving users through a sequence of
+            screens). Use <code>&lt;a&gt;</code> when the action takes the user to another page.</li>
+    </ul>
+    <h3>Alignment</h3>
+    <ul class="list-inside list-disc">
+        <li>Default to Left align. When there are multiple, buttons should be ordered by importance from left to right
         </li>
+        <li>Right align button when it's inside a wizard or modal. When there are multiple, buttons should be ordered by
+            importance from right to left.</li>
+    </ul>
+    <h3>Content guidelines</h3>
+    <p class="text-block">See <a href="https://atlassian.design/components/button/usage#content-guidelines">Atlassin
+            content guidelines for examples</a></p>
+    <ul class="list-inside list-disc">
+        <li>Use concise, easy to scan, and clear button labels</li>
+        <li>Use sentence-case capitalization</li>
+        <li>Use active verbs or phrases that clearly indicate action</li>
     </ul>
 </article>
