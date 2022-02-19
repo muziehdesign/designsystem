@@ -23,6 +23,8 @@ jobs:
       - run: npm install -g extract-css-classes
       - run: extract-css-classes src/lib/**/*.html
         working-directory: ./projects/components
+      - run: cat css-classes.txt
+        working-directory: ./projects/components
       - run: cp ./projects/components/css-classes.txt ./dist/components/design/css-classes.txt
       - uses: actions/upload-artifact@v2
         with:
