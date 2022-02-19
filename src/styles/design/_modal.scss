@@ -1,0 +1,13 @@
+.modal-backdrop {
+    width: 100vw;
+    height: 100vh;
+    @apply fixed top-0 left-0 bg-black;
+
+    &.show {
+        @apply opacity-50;
+    }
+
+    &.fade {
+        @apply opacity-0 ease-in duration-200 opacity-100 translate-y-0 sm:scale-100 ;
+    }
+}

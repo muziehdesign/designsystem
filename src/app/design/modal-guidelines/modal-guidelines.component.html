@@ -4,11 +4,19 @@
 </header>
 
 <article>
+    <h2>Example</h2>
+    <div class="example">
+        <button class="button button-primary" (click)="open()">Open</button>
+    </div>
+</article>
+
+<article>
     <h2>Best practices</h2>
     <ul class="list-inside list-disc">
         <li>Modals are invasive and should only be used sparingly</li>
         <li>Modals should be used for short-term tasks</li>
         <li>Avoid multiple steps inside a modal</li>
+        <li>There should be at most one modal open at a given time</li>
     </ul>
 
     <h3>Content guidelines</h3>
@@ -17,6 +25,5 @@
         <li>Modal dialog title should use sentence case and prioritize keywords</li>
         <li>Modal dialog body should only contain valuable and relevant information that is both helpful and concise</li>
         <li>Label elements with action verbs that indicate what happens when the element is selected. For example, label a select menu with Choose a user instead of Users.</li>
-        <li></li>
     </ul>
 </article>

@@ -7,7 +7,7 @@
 }
 
 .button-secondary {
-    @apply text-secondary shadow-sm border-transparent bg-gray-200 hover:bg-gray-300 focus:ring-blue-500 active:bg-gray-300;
+    @apply text-secondary shadow-sm bg-gray-200 hover:bg-gray-300 focus:ring-blue-500 active:bg-gray-300;
 }
 
 .button-danger {
@@ -19,7 +19,7 @@
 }
 
 .button-link {
-    @apply hover:underline text-primary border-transparent;
+    @apply hover:underline text-primary;
 }
 
 .button-list button:not(last-child) {
