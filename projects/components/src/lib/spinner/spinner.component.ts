@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SpinnerComponent  {
 
   @Input() size: 'medium' | 'large' = 'medium';
-  @Input() type: 'default' | 'inverse' = 'default';
+  @Input() type: 'default' | 'inverse' = 'default'; // TODO: inverse will not exist one day
   constructor() { }
 
 }
