@@ -80,7 +80,7 @@
 }
 
 .field-error {
-    @apply mt-1 block;
+    @apply mt-1 block text-danger;
 }
 
 .ng-submitted .ng-invalid:not(:focus),

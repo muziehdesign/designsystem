@@ -18,7 +18,7 @@
                 <span class="field-label">Recipent name <span class="text-red-500">*</span></span>
                 <input type="text" class="field-control" [(ngModel)]="model.recipientName" name="recipientName"
                     required>
-                <small class="field-error text-red-500" *ngIf="displayError('recipientName')">
+                <small class="field-error" *ngIf="displayError('recipientName')">
                     <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
                     Invalid value
                 </small>
@@ -28,7 +28,7 @@
             <label class="field">
                 <span class="field-label">Address 1 <span class="text-red-500">*</span></span>
                 <input type="text" class="field-control" [(ngModel)]="model.address1" name="address1" required>
-                <small class="field-error text-red-500" *ngIf="displayError('address1')">
+                <small class="field-error" *ngIf="displayError('address1')">
                     <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
                     Invalid value
                 </small>
@@ -53,7 +53,7 @@
                     <span class="field-label">Zip code <span class="text-red-500">*</span></span>
                     <input type="text" class="field-control" [(ngModel)]="model.zipCode" name="zipCode" required>
                 </label>
-                <small class="field-error text-red-500"
+                <small class="field-error"
                     *ngIf="displayError('city') || displayError('state') || displayError('zipCode')">
                     <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
                     Invalid value(s)
