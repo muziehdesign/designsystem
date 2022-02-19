@@ -1,51 +1,50 @@
+.button {
+    @apply inline-flex px-4 py-2.5 font-medium items-center text-sm space-x-3 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
 
-    .button {
-        @apply inline-flex px-4 py-2.5 font-medium items-center text-sm space-x-3 focus:outline-none focus:ring-2 focus:ring-offset-2;
-    }
+.button-primary {
+    @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-700;
+}
 
-    .button-primary {
-        @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-700;
-    }
+.button-secondary {
+    @apply text-secondary shadow-sm border-transparent bg-gray-200 hover:bg-gray-300 focus:ring-blue-500 active:bg-gray-300;
+}
 
-    .button-secondary {
-        @apply text-secondary shadow-sm border-transparent bg-gray-200 hover:bg-gray-300 focus:ring-blue-500 active:bg-gray-300;
-    }
+.button-danger {
+    @apply text-white shadow-sm bg-red-500 hover:bg-red-600 focus:ring-red-500 active:bg-red-600;
+}
 
-    .button-danger {
-        @apply text-white shadow-sm bg-red-500 hover:bg-red-600 focus:ring-red-500 active:bg-red-600;
-    }
+.button-warning {
+    @apply text-white shadow-sm bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-500 active:bg-yellow-600;
+}
 
-    .button-warning {
-        @apply text-white shadow-sm bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-500 active:bg-yellow-600;
-    }
+.button-link {
+    @apply hover:underline text-primary border-transparent;
+}
 
-    .button-link {
-        @apply hover:underline text-primary border-transparent;
-    }
+.button-list button:not(last-child) {
+    @apply mr-4 mb-2;
+}
 
-    .button-list button:not(last-child) {
-        @apply mr-4 mb-2;
-    }
+button.loading {
+    @apply pointer-events-none cursor-wait relative;
+}
 
-    button.loading {
-        @apply pointer-events-none cursor-wait relative;
-    }
+.button-loading-overlay {
+    @apply absolute inset-0 flex items-center justify-center;
+}
 
-    .button-loading-overlay {
-        @apply absolute inset-0 flex items-center justify-center;
-    }
+.button-secondary .button-loading-overlay {
+    @apply bg-gray-200;
+}
 
-    .button-secondary .button-loading-overlay {
-        @apply bg-gray-200;
-    }
+.button-primary .button-loading-overlay {
+    @apply bg-blue-700;
+}
 
-    .button-primary .button-loading-overlay {
-        @apply bg-blue-700;
-    }
-
-    .button-icon .icon {
-        @apply m-0;
-    }
+.button-icon .icon {
+    @apply m-0;
+}
 
 .link-action {
     @apply cursor-pointer;
