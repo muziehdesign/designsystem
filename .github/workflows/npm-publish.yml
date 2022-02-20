@@ -20,6 +20,10 @@ jobs:
       - run: npm run ng -- build components
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/components/design
+      - run: npm install -g extract-css-classes
+      - run: extract-css-classes ./projects/components/src/lib/**/*.html
+      - run: cat css-classes.txt
+      - run: cp css-classes.txt ./dist/components/design/css-classes.txt
       - uses: actions/upload-artifact@v2
         with:
           name: dist
