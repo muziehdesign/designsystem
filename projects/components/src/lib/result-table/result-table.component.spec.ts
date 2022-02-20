@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { PageEvent } from '../models/page-event';
+import { PaginationComponent } from '../pagination/pagination.component';
 import { ResultTableHarness } from '../testing/result-table-harness';
 import { ResultTableComponent } from './result-table.component';
 import { ResultTableModel } from './result-table.model';
@@ -8,7 +9,6 @@ import { ResultTableModel } from './result-table.model';
 describe('ResultTableComponent', () => {
     let component: ResultTableComponent;
     let fixture: ComponentFixture<ResultTableComponent>;
-    let resultTableHarness: ResultTableHarness;
 
     const results = {
         totalResults: 3,
@@ -25,7 +25,7 @@ describe('ResultTableComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ResultTableComponent],
+            declarations: [ResultTableComponent, PaginationComponent],
         }).compileComponents();
     });
 
@@ -34,11 +34,6 @@ describe('ResultTableComponent', () => {
         component = fixture.componentInstance;
         fixture.detectChanges();
         component.model = results;
-        resultTableHarness = new ResultTableHarness(() => fixture.debugElement.query(By.css('.result-table')));
-    });
-
-    it('should create', () => {
-        expect(component).toBeTruthy();
     });
 
     it('should emit PageEvent', () => {
@@ -66,7 +61,7 @@ describe('ResultTableComponent', () => {
         expect(component.pageChange.emit).toHaveBeenCalledWith(Object({ page: 1, pageSize: 10 }));
     });
 
-    it('should get states depending on loanding and error', () => {
+    it('should get states depending on loading and error', () => {
         // arrange
         component.loading = false;
         component.error = undefined;
@@ -89,65 +84,79 @@ describe('ResultTableComponent', () => {
         expect(component.state).toEqual('failed');
     });
 
-    const paginationTestSetup = [
-        { totalResults: 10, results: [], paginatorVisible: false },
-        { totalResults: 0, results: [], paginatorVisible: false },
-        { totalResults: 10, results: [{ name: 'myname' }], paginatorVisible: true },
+    const testCases = [
+        {
+            model: { page: 2, pageSize: 10, totalResults: 35, results: [...Array(10).keys()] },
+            caption: '11 - 20 of 35 results',
+            pagination: true,
+        },
+        {
+            model: { page: 1, pageSize: 10, totalResults: 10, results: [...Array(10).keys()] },
+            caption: '1 - 10 of 10 results',
+            pagination: false,
+        },
+        {
+            model: { page: 1, pageSize: 5, totalResults: 10, results: [...Array(10).keys()] },
+            caption: '1 - 5 of 10 results',
+            pagination: false,
+        },
     ];
-
-    paginationTestSetup.forEach((pageSetup) => {
-        it(`should ${pageSetup.paginatorVisible ? 'show' : 'hide'} pagination for totalResults ${pageSetup.totalResults} and results count ${pageSetup.results.length}`, () => {
+    testCases.forEach((testCase, i) => {
+        it(`should display results - ${i}`, async () => {
             // arrange
-            component.model = {
-                page: 8,
-                pageSize: 20,
-                totalResults: pageSetup.totalResults as number,
-                results: pageSetup.results as unknown[],
-            };
+            component.model = testCase.model;
 
             // act
             fixture.detectChanges();
+            await fixture.whenStable();
 
             // assert
-            expect(resultTableHarness.hasPaginationAvailable()).toBe(pageSetup.paginatorVisible);
+            const paginations = fixture.debugElement.queryAll(By.css('.table-pagination'));
+            expect(paginations.length).toEqual(testCase.pagination ? 1 : 0);
+            const caption = fixture.debugElement.query(By.css('caption')).nativeElement as HTMLElement;
+            expect(caption.textContent?.trim()).toEqual(testCase.caption);
+            const stateMessage = fixture.debugElement.query(By.css('.state-message'));
+            expect(stateMessage).toBeNull();
         });
     });
 
-    it('should display no results', () => {
+    it('should display no result state', async () => {
         // arrange
         component.model = {
-            page: 8,
-            pageSize: 20,
-            totalResults: 10,
+            page: 1,
+            pageSize: 10,
+            totalResults: 0,
             results: [],
         };
 
         // act
         fixture.detectChanges();
+        await fixture.whenStable();
 
         // assert
-        expect(resultTableHarness.hasNoResultsMessage()).toBeTrue();
-        expect(resultTableHarness.hasErrorMessage()).toBeFalse();
+        const pagination = fixture.debugElement.query(By.css('.table-pagination'));
+        expect(pagination).toBeNull();
+        const caption = fixture.debugElement.query(By.css('caption'));
+        expect(caption).toBeNull();
+        const stateMessage = fixture.debugElement.query(By.css('.state-message .title')).nativeElement as HTMLElement;
+        expect(stateMessage.innerText?.trim()).toEqual('No results found');
     });
 
-    it('should display error', () => {
+    it('should display error state', fakeAsync(() => {
         // arrange
+        component.model = { page: 2, pageSize: 10, totalResults: 35, results: [...Array(10).keys()] };
         component.error = new Error();
 
         // act
         fixture.detectChanges();
+        fixture.whenStable();
 
         // assert
-        expect(resultTableHarness.hasErrorMessage()).toBeTrue();
-        expect(resultTableHarness.hasNoResultsMessage()).toBeFalse();
-    });
-
-    it('should display results summary message', () => {
-        // act
-        fixture.detectChanges();
-
-        // assert
-        expect(resultTableHarness.hasPaginationAvailable()).toBeTrue();
-        expect(resultTableHarness.getResultsHeaderSummary()).toBe('1 - 10 of 3 results');
-    });
+        const pagination = fixture.debugElement.query(By.css('.table-pagination'));
+        expect(pagination).toBeNull();
+        const caption = fixture.debugElement.query(By.css('caption'));
+        expect(caption).toBeNull();
+        const stateMessage = fixture.debugElement.query(By.css('.state-message .title')).nativeElement as HTMLElement;
+        expect(stateMessage.innerText?.trim()).toEqual('Something went wrong'); 
+    }));
 });

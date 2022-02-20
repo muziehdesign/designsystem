@@ -3,7 +3,7 @@
         <mz-spinner size="large"></mz-spinner>
     </div>
     <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
-        <caption *ngIf="model && model.results.length > 0">
+        <caption *ngIf="state === 'succeeded' && model?.results?.length > 0">
             {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.totalResults }} results
         </caption>
         <thead>
@@ -17,7 +17,7 @@
             </ng-container>
         </tbody>
     </table>
-    <div class="table-pagination" *ngIf="model && model.results.length > 0 && model.totalResults > model.results.length">
+    <div class="table-pagination" *ngIf="state === 'succeeded' && model && model.results.length > 0 && model.totalResults > model.results.length">
         <mz-pagination [length]="model.totalResults" [page]="model.page" [pageSize]="model.pageSize"
             (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
