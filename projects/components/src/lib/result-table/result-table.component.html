@@ -10,7 +10,7 @@
             <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
         </thead>
         <tbody>
-            <ng-container *ngIf="model">
+            <ng-container *ngIf="state == 'succeeded' && model">
                 <ng-container *ngFor="let result of model.results">
                     <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
                 </ng-container>

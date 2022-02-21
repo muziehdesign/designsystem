@@ -8,7 +8,7 @@
 }
 
 .table caption {
-    @apply text-left text-secondary;
+    @apply text-left text-sm text-secondary mb-2;
 }
 
 .table tbody {
@@ -34,11 +34,6 @@
 .table thead tr {
     @apply py-3 border-b border-gray-500;
 }
-
-.table caption {
-    @apply mb-4;
-}
-
 
 .result-table {
     .state-message {
