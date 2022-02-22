@@ -13,8 +13,8 @@ export class ResultTableComponent {
 
     @Input() model: ResultTableModel<any> | undefined | null; // TODO need to deal with the flaw of angular's async pipe
 
-    @Input() public headTemplate!: TemplateRef<any>;
-    @Input() public bodyTemplate!: TemplateRef<any>;
+    @Input() public head!: TemplateRef<any>;
+    @Input() public body!: TemplateRef<any>;
     @Output() public pageChange = new EventEmitter<PageEvent>();
     constructor() {}
 

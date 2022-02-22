@@ -7,12 +7,12 @@
             {{(model.page-1) * model.pageSize + 1}} - {{model.page * model.pageSize}} of {{ model.totalResults }} results
         </caption>
         <thead>
-            <ng-container *ngTemplateOutlet="headTemplate"></ng-container>
+            <ng-container *ngTemplateOutlet="head"></ng-container>
         </thead>
         <tbody>
             <ng-container *ngIf="state == 'succeeded' && model">
                 <ng-container *ngFor="let result of model.results">
-                    <ng-container *ngTemplateOutlet="bodyTemplate; context: { $implicit: result }"></ng-container>
+                    <ng-container *ngTemplateOutlet="body; context: { $implicit: result }"></ng-container>
                 </ng-container>
             </ng-container>
         </tbody>
