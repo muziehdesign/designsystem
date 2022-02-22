@@ -19,9 +19,9 @@
             </select>
         </div>
         <div class="example">
-            <mz-result-table [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate"
+            <mz-result-table [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate"
                 (pageChange)="onPageChange($event)">
-                <ng-template #headTemplate>
+                <ng-template #headerTemplate>
                     <tr>
                         <th>Order</th>
                         <th>Customer</th>
@@ -47,8 +47,8 @@
 
     <h3>Loading</h3>
     <div class="example">
-        <mz-result-table [loading]="loadingExampleState.loading" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
-            <ng-template #headTemplate>
+        <mz-result-table [loading]="loadingExampleState.loading" [header]="headerTemplate" [body]="bodyTemplate">
+            <ng-template #headerTemplate>
                 <tr>
                     <th>Order</th>
                     <th>Customer</th>
@@ -67,8 +67,8 @@
         </mz-result-table>
     </div>
     <div class="example">
-        <mz-result-table [loading]="true" [model]="getPagedModel(1, 10) | async" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
-            <ng-template #headTemplate>
+        <mz-result-table [loading]="true" [model]="getPagedModel(1, 10) | async" [header]="headerTemplate" [body]="bodyTemplate">
+            <ng-template #headerTemplate>
                 <tr>
                     <th>Order</th>
                     <th>Customer</th>
@@ -89,8 +89,8 @@
 
     <h3>Empty</h3>
     <div class="example">
-        <mz-result-table [model]="emptyModel$ | async" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
-            <ng-template #headTemplate>
+        <mz-result-table [model]="emptyModel$ | async" [header]="headerTemplate" [body]="bodyTemplate">
+            <ng-template #headerTemplate>
                 <tr>
                     <th>Order</th>
                     <th>Customer</th>
@@ -111,8 +111,8 @@
 
     <h3>Error</h3>
     <div class="example">
-        <mz-result-table [error]="error" [headTemplate]="headTemplate" [bodyTemplate]="bodyTemplate">
-            <ng-template #headTemplate>
+        <mz-result-table [error]="error" [header]="headerTemplate" [body]="bodyTemplate">
+            <ng-template #headerTemplate>
                 <tr>
                     <th>Order</th>
                     <th>Customer</th>
