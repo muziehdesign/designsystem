@@ -19,9 +19,9 @@
             </label>
         </form>
         <button class="btn-link mb-8 mt-4" (click)="clearAll()">Clear all</button>
-        <mz-result-table [model]="paged$ | async" [loading]="loading" [error]="error" [headTemplate]="headTemplate"
-            [bodyTemplate]="bodyTemplate" (pageChange)="search($event)">
-            <ng-template #headTemplate>
+        <mz-result-table [model]="paged$ | async" [loading]="loading" [error]="error" [header]="headerTemplate"
+            [body]="bodyTemplate" (pageChange)="search($event)">
+            <ng-template #headerTemplate>
                 <tr>
                     <th>Name</th>
                     <th>Status</th>
