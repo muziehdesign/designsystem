@@ -13,7 +13,6 @@ export const navigationLinks: NavigationLink[] = [
     ]},
     { name: 'Patterns', children: [
         { name: 'Content', link: '/design/content' },
-        { name: 'Page header', link: '/design/pageheader'},
         { name: 'Form', link: '/design/form' },
         { name: 'Result table', link: '/design/resulttable'}
     ]},
@@ -29,6 +28,7 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Empty state', link: '/design/emptystate' },
         { name: 'Form controls', link: '/design/formcontrols' },
         { name: 'Modal', link: '/design/modal' },
+        { name: 'Page header', link: '/design/pageheader'},
         { name: 'Pagination', link: '/design/pagination' },
         { name: 'Progress bar', link: '/design/progressbar' },
         { name: 'Skeleton loader', link: '/design/skeletonloader' },

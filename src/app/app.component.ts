@@ -13,6 +13,7 @@ export class AppComponent {
     constructor(private ts: Title, private router: Router) {
         router.events.pipe(filter((e) => e instanceof NavigationStart)).subscribe((x) => {
             ts.setTitle('Muzieh Design System');
+            this.stickyNavigation = false;
         });
     }
 
