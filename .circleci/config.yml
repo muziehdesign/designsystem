@@ -24,13 +24,13 @@ jobs:
           command: "echo Hello, World!"
       - run: npm ci
       - run:
-          name: version
-          shell: pwsh 
+          name: version 
           command: |
-            ./version.ps1 -prefix alpha -build ${CIRCLE_BUILD_NUM}
+            npm version "0.1.0-alpha.${CIRCLE_BUILD_NUM}" -- json
       - run: cat package.json
       - run: npm run ng -- build components
       - run: npm run build
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
