@@ -23,7 +23,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run: npm ci
-      - run: ./version.ps1 -prefix alpha -build $CIRCLE_BUILD_NUM
+      - run: ./version.ps1 -prefix alpha -build ${CIRCLE_BUILD_NUM}
       - run: npm run ng -- build components
       - run: npm run build
   release:
