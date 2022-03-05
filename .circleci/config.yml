@@ -30,7 +30,7 @@ jobs:
   prerelease:
     <<: *defaults
     steps: 
-      - run: ./version -prefix alpha -build $CIRCLE_BUILD_NUM
+      - run: ./version.ps1 -prefix alpha -build $CIRCLE_BUILD_NUM
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
