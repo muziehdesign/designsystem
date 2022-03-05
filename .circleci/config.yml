@@ -19,9 +19,6 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-  build:
-    <<: *defaults
-    steps:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
@@ -30,7 +27,7 @@ jobs:
       - run: npm run build
       - run: npm version prerelease from-git
       - run: cat package.json
-  prerelease:
+  release:
     <<: *defaults
     steps: 
       - run: ls
@@ -41,6 +38,7 @@ jobs:
 workflows:
   publish:
     jobs:
-      - say-hello
       - build
-      - prerelease
+      - release:
+          requires: 
+            - build
