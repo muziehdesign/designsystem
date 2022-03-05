@@ -38,7 +38,7 @@ jobs:
 workflows:
   publish:
     jobs:
-      - build
+      - say-hello
       - release:
           requires: 
-            - build
+            - say-hello
