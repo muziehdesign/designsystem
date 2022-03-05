@@ -4,6 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 [![Node.js Package](https://github.com/ruifang/kitchensink-ui/actions/workflows/npm-publish.yml/badge.svg?branch=develop)](https://github.com/ruifang/kitchensink-ui/actions/workflows/npm-publish.yml)
 
+## Design system todo
+- select best practices
+
 ## Todo
 
 -   [ ] css framework
