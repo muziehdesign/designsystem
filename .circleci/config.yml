@@ -26,6 +26,7 @@ jobs:
       - run: npm run ng -- build components
       - run: npm run build
       - run: npm version prerelease from-git
+      - run: cat package.json
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
