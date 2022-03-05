@@ -26,7 +26,8 @@ jobs:
       - run:
           name: version 
           command: |
-            npm version "0.1.0-alpha.${CIRCLE_BUILD_NUM}" -- json
+            echo ${CIRCLE_BUILD_NUM}
+            # npm version "0.1.0-alpha.${CIRCLE_BUILD_NUM}" -- json
       - run: cat package.json
       - run: npm run ng -- build components
       - run: npm run build
