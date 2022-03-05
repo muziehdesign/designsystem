@@ -25,7 +25,7 @@ jobs:
       - run: npm ci
       - run:
           name: version
-          shell: powershell.exe
+          shell: pwsh 
           command: |
             ./version.ps1 -prefix alpha -build ${CIRCLE_BUILD_NUM}
       - run: cat package.json
