@@ -30,6 +30,7 @@ jobs:
   prerelease:
     <<: *defaults
     steps: 
+      - run: ls
       - run: ./version.ps1 -prefix alpha -build $CIRCLE_BUILD_NUM
 
 # Invoke jobs via workflows
