@@ -23,10 +23,14 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run: npm ci
-      - run: ./version.ps1 -prefix alpha -build ${CIRCLE_BUILD_NUM}
+      - run:
+          name: version
+          shell: powershell.exe
+          command: |
+            ./version.ps1 -prefix alpha -build ${CIRCLE_BUILD_NUM}
       - run: npm run ng -- build components
       - run: npm run build
-  release:
+   release:
     <<: *defaults
     steps:
       - run: cat package.json
