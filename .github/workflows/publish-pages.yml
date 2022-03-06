@@ -1,0 +1,29 @@
+name: publish-github-pages
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run ng -- build components
+      - run: npm run build -- --base-href "https://ruifang.github.io/designsystem/"
+      - run: cp LICENSE ./dist/kitchensink-ui
+      - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
+      - uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: './dist/kitchensink-ui'
+          destination-github-username: 'ruifang'
+          destination-repository-name: 'designsystem'
+          target-branch: gh-pages
+          user-email: ruifang.li09@gmail.com
+          

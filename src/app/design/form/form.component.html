@@ -84,7 +84,7 @@
                 </label>
             </fieldset>
 
-            <footer class="footer">
+            <div class="footer">
                 <div class="form-message success" *ngIf="isSuccessful == true">
                     <mz-svg-icon key="check-circle" type="solid"></mz-svg-icon>
                     Saved!
@@ -100,7 +100,7 @@
                     </div>
                     Add delivery address
                 </button>
-            </footer>
+            </div>
         </form>
     </div>
 </article>
@@ -108,17 +108,20 @@
 <article>
     <h2>Usage</h2>
 
-    <h3>Elements</h3>
+    <h3>Anatomy</h3>
     <div class="text-block">
         <ol class="list-outside list-decimal ml-4">
             <li class="mb-2">
                 <strong>Form title</strong>
-                <p>Concise text that describes the form. Use appropriate heading element based on where form is on page.
-                    Optionally, follow the title with a short description.</p>
+                <p>Concise text that describes the form. Use appropriate heading element based on where form is on page.</p>
+            </li>
+            <li class="mb-2">
+                <strong>Form description</strong>
+                <p>Optional. Use a form description to provide additional context.</p>
             </li>
             <li class="mb-2">
                 <strong>Form section</strong>
-                <p>A group of controls and fields that are logically related. There can be multiple form sections in one
+                <p>Use form sections to group information that are logically related. There can be multiple form sections in one
                     form. They should be grouped using <code>&lt;fieldset&gt;</code>, with <code>&lt;legend&gt;</code> as the headline.
                 </p>
             </li>
@@ -128,7 +131,7 @@
                 <ol class="list-outside list-decimal ml-8">
                     <li>
                         <strong>Label</strong>
-                        <p>Use concise label. Use sentence casing.</p>
+                        <p>Use a label to communicate what the field is for. Use sentence casing.</p>
                     </li>
                     <li>
                         <strong>Required field</strong>
@@ -146,14 +149,16 @@
             </li>
             <li class="mb-2">
                 <strong>Form footer</strong>
-                <p>It should always contain one primary action button, and form errors above button.</p>
+                <p>Use footer section to communicate available actions. It should always contain exactly one primary action button, and form errors above button.</p>
             </li>
         </ol>
     </div>
 
     <h3>Best practices</h3>
-    <p>General rule of thumb is to treat form as a conversation with user. Practice good communication -- be helpful, concise, and timely.</p>
+    <p>A form is a conversation between the system and the user. Practice good communication -- be helpful, concise, and timely.</p>
     <ul class="list-disc list-inside text-block">
+        <li>Use sentence casing for labels</li>
+        <li>Use clear and concise text for labels to make things clear and simple to understand</li>
         <li>Button text should state the action that the button performs when clicked.</li>
         <li>Avoid multiple action buttons. Forms usually should have 1-2 buttons.</li>
         <li>Avoid reset button, and cancel button to avoid misclicks, unless they add value.</li>
@@ -161,6 +166,18 @@
         <li>Never disable a submit button.</li>
         <li>Present fields in a single column layout to keep users in flow.</li>
         <li>Use logical grouping and sequencing for form field arrangements.</li>
+    </ul>
+
+    <h3>Error messages</h3>
+    <ul class="list-inside list-disc text-block">
+        <li>Error message should be clear, precise, and constructive to help user understand what the error is and how to correct it.</li>
+        <li>Place error message right underneath the field being validated. Keeping them close makes the error noticeable and helps user make the association.</li>
+        <li>
+            Validate and display error messages as soon as user completes input to provide quick feedback
+            <ul class="list-inside list-disc text-block ml-8">
+                <li>Always perform simple validations on client side</li>
+            </ul>
+        </li>
     </ul>
 
     <h3>Button positioning</h3>
@@ -171,14 +188,12 @@
             should always be last.</li>
     </ul>
 
-    <h3>Field widths</h3>
-    <p>TODO: define field widths</p>
-
     <h3>References</h3>
     <ul class="list-inside list-disc">
         <li><a href="https://atlassian.design/patterns/forms">Atlassian Design System Forms Patterns</a></li>
         <!--<li><a href="https://www.nngroup.com/articles/indicators-validations-notifications/"></a></li>-->
         <li><a href="https://www.nngroup.com/articles/errors-forms-design-guidelines/">How to Report Errors in Forms: 10 Design Guidelines</a></li>
+        <li><a href="https://www.nngroup.com/articles/error-message-guidelines/">Error Message Guidelines</a></li>
         <li><a href="https://www.nngroup.com/articles/web-form-design/">Website Forms Usability: Top 10 Recommendations</a></li>
         <li><a href="https://uxdesign.cc/title-case-vs-sentence-case-in-ux-writing-212087192261">Title case vs sentence case in UX writing</a></li>
         <li><a href="https://uxplanet.org/why-letter-casing-is-important-to-consider-during-design-decisions-50402acd0a4e">Why letter casing is important to consider during design decisions</a></li>
@@ -187,8 +202,13 @@
 </article>
 
 <article>
-    <h2>TODO</h2>
+    <h2>Work in progress</h2>
+    <p>Form is still work in progress, with the following known TODOs.</p>
     <ul class="list-disc list-inside">
         <li>Autofocus the first field by default.</li>
+        <li>Finalize styles</li>
+        <li>Define field widths to use</li>
+        <li>Accessible readonly form</li>
+        <li>Form validation framework</li>
     </ul>
 </article>
