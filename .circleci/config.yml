@@ -35,13 +35,14 @@ jobs:
       #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
       #- run: cat css-classes.txt
       #- run: cp css-classes.txt ./dist/components/design/css-classes.txt
+      - run: echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       - run:
           name: "npm publish"
           command: |
-            sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+            sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
             npm pkg get version
-            echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-            npm publish ./dist/components
+            npm publish
+          working_directory: ./dist/components
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
