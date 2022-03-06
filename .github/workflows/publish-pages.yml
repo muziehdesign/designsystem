@@ -27,12 +27,12 @@ jobs:
           destination-repository-name: 'designsystem'
           target-branch: gh-pages
           user-email: ruifang.li09@gmail.com
-      - name: publish pages to kitchensink-ui
-        run: |
-          npm run build -- --base-href "https://ruifang.github.io/kitchensink-ui/"
-          cp LICENSE ./dist/kitchensink-ui
-          cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
-          npx angular-cli-ghpages --dir=dist/kitchensink-ui
+      - run: npm run build -- --base-href "https://ruifang.github.io/kitchensink-ui/"
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
         env:
-          GITHUB_TOKEN: ${{secrets.API_TOKEN_GITHUB}}
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: ./dist/kitchensink-ui
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           
