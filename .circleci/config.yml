@@ -38,7 +38,7 @@ jobs:
           name: "npm publish prep"
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-      - run:
+      - deploy:
           name: "npm publish"
           command: |
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
