@@ -26,26 +26,12 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  publish:
-    <<: *defaults
-    steps:
-      - run: 
-          name: "npm publish prep"
-          command: |
-            touch .npmrc
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - deploy:
-          name: "npm publish"
-          command: |
-            sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
-            npm pkg get version
-            npm publish
-          working_directory: ./dist/components
   test:
     <<: *defaults
     steps:
       - checkout
       - browser-tools/install-browser-tools
+      - run: npm ci
       - run: npm run ng -- test components 
   build:
     <<: *defaults
@@ -62,8 +48,30 @@ jobs:
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/components
       - run: npm ci
+      - run: npm run ng -- build components
       - run: npm run build
-      - run: npm run ng -- build components 
+      - store_artifacts:
+          path: /dist/components
+          destination: muzieh-ngcomponents
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - "muzieh-ngcomponents"
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run: 
+          name: "npm publish prep"
+          command: |
+            touch .npmrc
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - deploy:
+          name: "npm publish"
+          command: |
+            npm pkg get version
+            npm publish /tmp/workspace/muzieh-ngcomponents
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
