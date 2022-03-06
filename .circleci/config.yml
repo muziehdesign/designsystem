@@ -24,11 +24,11 @@ jobs:
           command: "echo Hello, World!"
       - run:
           command: |
-            sh ./version.sh ${CIRCLE_BUILD_NUM} alpha
+            sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
             npm pkg get version
       - run: npm ci
       - run: npm run ng -- build components
-      - run: npm run ng -- test components
+      - run: npm run ng -- test components --watch=false
       - run: npm run build
       #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
       #- run: cat css-classes.txt
