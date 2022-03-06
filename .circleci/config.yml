@@ -29,11 +29,9 @@ jobs:
           command: "echo Hello, World!"
       - run: npm ci
       - run: npm run ng -- build components
-      - browser-tools/install-browser-tools
-      #- run: npm run build
-      #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
-      #- run: cat css-classes.txt
-      #- run: cp css-classes.txt ./dist/components/design/css-classes.txt
+  publish:
+    <<: *defaults
+    steps:
       - run: 
           name: "npm publish prep"
           command: |
@@ -49,12 +47,23 @@ jobs:
   test:
     <<: *defaults
     steps:
+      - browser-tools/install-browser-tools
       - run: npm run ng -- test components 
   build:
     <<: *defaults
     steps:
-      - run: npm run lint 
+      #- run: npm run lint
+      - run:
+          name: "version"
+          command: |
+            sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+      - run:
+          name: "version components"
+          command: |
+            sh ./../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+          working_directory: ./projects/components
       - run: npm run build
+      - run: npm run ng -- build components 
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -62,3 +71,15 @@ workflows:
   publish:
     jobs:
       - say-hello
+      - test:
+          requires:
+            - say-hello
+      - build:
+          requires:
+            - say-hello
+      - publish:
+          requires:
+            - test
+            - build
+
+      
