@@ -4,7 +4,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: circleci/node
+    - image: cimg/node:17.6.0-browsers
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
