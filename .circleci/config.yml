@@ -26,8 +26,10 @@ jobs:
       - run:
           name: version 
           command: |
-            echo "export VERSION=$(npm pkg get version)" >> $VERSION
+            VERSION={{npm pkg get version}}
             echo $VERSION
+            # echo "export VERSION=$(npm pkg get version)" >> $VERSION
+            # echo $VERSION
             # npm version '0.1.0-alpha.${CIRCLE_BUILD_NUM}' -- json
       - run: cat package.json
       # - run: npm run ng -- build components
