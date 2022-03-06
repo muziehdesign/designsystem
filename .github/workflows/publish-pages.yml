@@ -1,0 +1,24 @@
+name: Github pages
+on:
+  push:
+    branches:
+      - feature/deploy-pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run ng -- build components
+      - run: npm run build -- --base-href "https://ruifang.github.io/kitchensink-ui/"
+      - run: cp LICENSE ./dist/kitchensink-ui
+      - run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+          git checkout gh-pages
+          find -maxdepth 1 ! -name . !name dist -exec rm -rv {} \;
+          git status
