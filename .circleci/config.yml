@@ -25,13 +25,8 @@ jobs:
       # - run: npm ci
       - run:
           command: |
-            node -v
-            VERSION=$(npm pkg get version) | tr -d '"'
-            VERSION = "${VERSION}-{CIRCLE_BUILD_NUM}"
-            echo ${VERSION}
-            # echo "export VERSION=$(npm pkg get version)" >> $VERSION
-            # echo $VERSION
-            # npm version '0.1.0-alpha.${CIRCLE_BUILD_NUM}' -- json
+            sh version.sh
+            cat package.json
       - run: cat package.json
       # - run: npm run ng -- build components
       # - run: npm run build
