@@ -61,7 +61,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ./dist
+          at: .
       - run: 
           name: "npm publish prep"
           command: |
