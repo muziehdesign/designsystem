@@ -22,16 +22,19 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run: npm ci
+      # - run: npm ci
       - run:
-          name: version 
           command: |
-            #echo "${CIRCLE_BUILD_NUM}
-            #npm version '0.1.0-alpha.${CIRCLE_BUILD_NUM}' -- json
-            sh version.sh
+            node -v
+            VERSION=$(npm pkg get version) | tr -d '"'
+            VERSION = "${VERSION}-{CIRCLE_BUILD_NUM}"
+            echo ${VERSION}
+            # echo "export VERSION=$(npm pkg get version)" >> $VERSION
+            # echo $VERSION
+            # npm version '0.1.0-alpha.${CIRCLE_BUILD_NUM}' -- json
       - run: cat package.json
-      - run: npm run ng -- build components
-      - run: npm run build
+      # - run: npm run ng -- build components
+      # - run: npm run build
 
 
 # Invoke jobs via workflows
