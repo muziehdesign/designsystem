@@ -54,14 +54,14 @@ jobs:
           path: /dist/components
           destination: muzieh-ngcomponents
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths:
-            - /dist/components
+            - dist
   publish:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: workspace
+          at: ./dist
       - run: 
           name: "npm publish prep"
           command: |
@@ -71,7 +71,7 @@ jobs:
           name: "npm publish"
           command: |
             npm pkg get version
-            npm publish /tmp/workspace/muzieh-ngcomponents
+            npm publish ./dist/muzieh-ngcomponents
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
