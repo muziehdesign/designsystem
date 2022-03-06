@@ -23,8 +23,8 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       # - run: npm ci
+      - run: node -v
       - run:
-          name: version 
           command: |
             node -v
             VERSION=$(npm pkg get version)
