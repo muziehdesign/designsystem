@@ -27,10 +27,6 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run:
-          command: |
-            sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
-            npm pkg get version
       - run: npm ci
       - run: npm run ng -- build components
       - browser-tools/install-browser-tools
@@ -42,11 +38,11 @@ jobs:
       - run:
           name: "npm publish"
           command: |
-            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            sh ./../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+            npm pkg get version
+            echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
             npm publish
           working_directory: ./dist/components
-
-
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
