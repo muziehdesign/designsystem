@@ -1,10 +1,11 @@
 #!/bin/sh
 BUILD=$1
-PREFIX=$2
+BRANCH=$2
 
-if [ -n "${2}" ] 
+PREFIX=""
+if [ "${2}" != "develop" ]
 then
-    PREFIX="${PREFIX}."
+    PREFIX="alpha."
     fi
 
 VERSION=$(npm pkg get version)
