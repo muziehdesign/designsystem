@@ -38,7 +38,7 @@ jobs:
           name: "npm publish prep"
           command: |
             touch .npmrc
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - deploy:
           name: "npm publish"
           command: |
