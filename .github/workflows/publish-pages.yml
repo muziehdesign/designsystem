@@ -33,4 +33,6 @@ jobs:
           cp LICENSE ./dist/kitchensink-ui
           cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
           npx angular-cli-ghpages --dir=dist/kitchensink-ui
+        with:
+          github-token: ${{secrets.API_TOKEN_GITHUB}}
           
