@@ -43,6 +43,7 @@ import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
 import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
 import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.component';
+import { ChangelogComponent } from './changelog/changelog.component';
 
 @NgModule({
     declarations: [
@@ -81,6 +82,7 @@ import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.compon
         ToggleGuidelinesComponent,
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
+        ChangelogComponent,
     ],
     imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
