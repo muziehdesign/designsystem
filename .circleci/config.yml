@@ -22,11 +22,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      # - run: npm ci
       - run:
           command: |
             sh ./version.sh ${CIRCLE_BUILD_NUM} alpha
             npm pkg get version
+      - run: npm ci
       - run: npm run ng -- build components
       - run: npm run build
       - run: npx extract-css-classes ./projects/components/src/lib/**/*.html
