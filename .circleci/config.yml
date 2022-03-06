@@ -30,7 +30,8 @@ jobs:
       - run: npm run ng -- build components
       - run: npm run build
       - run: npx extract-css-classes ./projects/components/src/lib/**/*.html
-      - run: cp css-classes.txt ./dist/components/design/css-classes.txt
+      - run: cat css-classes.txt
+      #- run: cp css-classes.txt ./dist/components/design/css-classes.txt
   publish:
     <<: *defaults
     steps:
