@@ -43,6 +43,7 @@ jobs:
       - run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
+      - run: npm run ng -- test components
       - run: npm version prerelease
       - run: npm version prerelease
         working-directory: ./projects/components
