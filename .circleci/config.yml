@@ -30,13 +30,14 @@ jobs:
       - run: npm ci
       - run: npm run ng -- build components
       - browser-tools/install-browser-tools
-      - run: npm run build
+      #- run: npm run build
       #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
       #- run: cat css-classes.txt
       #- run: cp css-classes.txt ./dist/components/design/css-classes.txt
       - run: 
           name: "npm publish prep"
           command: |
+            touch .npmrc
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - deploy:
           name: "npm publish"
