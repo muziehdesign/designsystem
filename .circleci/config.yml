@@ -35,7 +35,10 @@ jobs:
       #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
       #- run: cat css-classes.txt
       #- run: cp css-classes.txt ./dist/components/design/css-classes.txt
-      - run: echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run: 
+          name: "npm publish prep"
+          command: |
+            echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: "npm publish"
           command: |
