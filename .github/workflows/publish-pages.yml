@@ -17,7 +17,8 @@ jobs:
       - run: npm run build -- --base-href "https://ruifang.github.io/designsystem/"
       - run: cp LICENSE ./dist/kitchensink-ui
       - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
-      - uses: cpina/github-action-push-to-another-repository@main
+      - name: publish pages to designsystem
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
@@ -26,4 +27,6 @@ jobs:
           destination-repository-name: 'designsystem'
           target-branch: gh-pages
           user-email: ruifang.li09@gmail.com
+      - name: publish pages to kitchensink-ui
+        run: ./publish.ps1
           
