@@ -8,8 +8,7 @@ then
     fi
 
 VERSION=$(npm pkg get version)
-VERSION=${VERSION::-1}
 VERSION="${VERSION}-${PREFIX}${BUILD}"
-VERSION=${VERSION:1}
-echo $VERSION
+VERSION=$(echo "$VERSION" | tr -d '"')
+echo ${VERSION}
 npm version "${VERSION}" --no-commit-hooks --no-git-tag-version
