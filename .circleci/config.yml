@@ -22,14 +22,24 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      # - run: npm ci
       - run:
           command: |
-            sh version.sh
-            cat package.json
-      - run: cat package.json
-      # - run: npm run ng -- build components
-      # - run: npm run build
+            sh ./version.sh ${CIRCLE_BUILD_NUM} alpha
+            npm pkg get version
+      - run: npm ci
+      - run: npm run ng -- build components
+      - run: npm run ng -- test components
+      - run: npm run build
+      #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
+      #- run: cat css-classes.txt
+      #- run: cp css-classes.txt ./dist/components/design/css-classes.txt
+      - run:
+          name: "npm publish"
+          command: |
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm publish
+          working_directory: ./dist/components
+
 
 
 # Invoke jobs via workflows
