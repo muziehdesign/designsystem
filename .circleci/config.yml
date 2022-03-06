@@ -70,8 +70,7 @@ jobs:
       - deploy:
           name: "npm publish"
           command: |
-            npm pkg get version
-            npm publish ./dist/muzieh-ngcomponents
+            npm publish ./dist/components
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
