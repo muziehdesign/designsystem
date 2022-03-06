@@ -28,5 +28,7 @@ jobs:
           target-branch: gh-pages
           user-email: ruifang.li09@gmail.com
       - name: publish pages to kitchensink-ui
-        run: ./publish.ps1
+        run: |
+          chmod +x ./publish.ps1
+          ./publish.ps1
           
