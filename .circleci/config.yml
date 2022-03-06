@@ -78,6 +78,10 @@ workflows:
   publish:
     jobs:
       - say-hello
+          filters:
+            branches:
+              ignore:
+                gh-pages
       - test:
           requires:
             - say-hello
