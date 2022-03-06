@@ -2,7 +2,7 @@ name: publish-github-pages
 on:
   push:
     branches:
-      - feature/deploy-pages
+      - develop
 
 jobs:
   build:
