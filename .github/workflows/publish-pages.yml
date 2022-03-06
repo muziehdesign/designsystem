@@ -1,4 +1,4 @@
-name: publish github pages
+name: publish-github-pages
 on:
   push:
     branches:
@@ -17,12 +17,13 @@ jobs:
       - run: npm run build -- --base-href "https://ruifang.github.io/kitchensink-ui/"
       - run: cp LICENSE ./dist/kitchensink-ui
       - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
-      - uses: dmnemec/copy_file_to_another_repo_action@main
+      - uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: './dist/kitchensink-ui'
-          destination_repo: 'ruifang/designsystem'
-          destination_branch: 'gh-pages'
-          user_email: 'ruifang.li09@gmail.com'
-          user_name: 'ruifang'
+          source-directory: './dist/kitchensink-ui'
+          destination-github-username: 'ruifang'
+          destination-repository-name: 'designsystem'
+          target-branch: gh-pages
+          user-email: ruifang.li09@gmail.com
+          
