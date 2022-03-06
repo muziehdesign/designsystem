@@ -77,7 +77,7 @@ jobs:
 workflows:
   publish:
     jobs:
-      - say-hello
+      - say-hello:
           filters:
             branches:
               ignore:
