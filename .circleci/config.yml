@@ -30,7 +30,6 @@ jobs:
       - run: npm ci
       - run: npm run ng -- build components
       - browser-tools/install-browser-tools
-      - run: npm run ng -- test components
       - run: npm run build
       #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
       #- run: cat css-classes.txt
@@ -38,7 +37,7 @@ jobs:
       - run: 
           name: "npm publish prep"
           command: |
-            echo "//packagecloud.io/armando/node-test-package/npm/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: "npm publish"
           command: |
@@ -46,6 +45,15 @@ jobs:
             npm pkg get version
             npm publish
           working_directory: ./dist/components
+  test:
+    <<: *defaults
+    steps:
+      - run: npm run ng -- test components 
+  build:
+    <<: *defaults
+    steps:
+      - run: npm run lint 
+      - run: npm run build
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
