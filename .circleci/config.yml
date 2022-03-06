@@ -27,9 +27,19 @@ jobs:
           command: |
             sh ./version.sh ${CIRCLE_BUILD_NUM} alpha
             npm pkg get version
-      - run: cat package.json
-      # - run: npm run ng -- build components
-      # - run: npm run build
+      - run: npm run ng -- build components
+      - run: npm run build
+      - run: npx extract-css-classes ./projects/components/src/lib/**/*.html
+      - run: cp css-classes.txt ./dist/components/design/css-classes.txt
+  publish:
+    <<: *defaults
+    steps:
+      - run:
+          name: "npm publish"
+          command: |
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm publish
+
 
 
 # Invoke jobs via workflows
@@ -38,3 +48,6 @@ workflows:
   publish:
     jobs:
       - say-hello
+      - publish:
+          requires:
+            - say-hello
