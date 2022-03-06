@@ -29,6 +29,8 @@ jobs:
           user-email: ruifang.li09@gmail.com
       - name: publish pages to kitchensink-ui
         run: |
-          chmod +x ./publish.ps1
-          ./publish.ps1
+          npm run build -- --base-href "https://ruifang.github.io/kitchensink-ui/"
+          cp LICENSE ./dist/kitchensink-ui
+          cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
+          npx angular-cli-ghpages --dir=dist/kitchensink-ui
           
