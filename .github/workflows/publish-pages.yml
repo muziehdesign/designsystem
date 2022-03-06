@@ -22,7 +22,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: './dist/kitchensink-ui'
-          destination_repo: 'ruifang/designsystem',
+          destination_repo: 'ruifang/designsystem'
           destination_branch: 'gh-pages'
-          user_email: 'ruifang.li09@gmail.com',
+          user_email: 'ruifang.li09@gmail.com'
           user_name: 'ruifang'
