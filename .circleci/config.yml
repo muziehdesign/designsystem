@@ -27,7 +27,8 @@ jobs:
           command: |
             node -v
             VERSION=$(npm pkg get version) | tr -d '"'
-            echo $VERSION
+            VERSION = "${VERSION}-{CIRCLE_BUILD_NUM}"
+            echo ${VERSION}
             # echo "export VERSION=$(npm pkg get version)" >> $VERSION
             # echo $VERSION
             # npm version '0.1.0-alpha.${CIRCLE_BUILD_NUM}' -- json
