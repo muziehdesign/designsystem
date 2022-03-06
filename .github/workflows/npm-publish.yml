@@ -16,7 +16,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+      - uses: browser-actions/setup-chrome@latest
       - run: npm ci
+      - run: npm run ng -- test components
       - run: npm run ng -- build components
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/components/design
