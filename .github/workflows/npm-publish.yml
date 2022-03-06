@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+      - run: npm run ng -- test components
       - run: npm run ng -- build components
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/components/design
@@ -43,7 +44,6 @@ jobs:
       - run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-      - run: npm run ng -- test components
       - run: npm version prerelease
       - run: npm version prerelease
         working-directory: ./projects/components
