@@ -28,7 +28,6 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run: npm ci
-      - run: npm run ng -- build components
   publish:
     <<: *defaults
     steps:
@@ -47,11 +46,13 @@ jobs:
   test:
     <<: *defaults
     steps:
+      - checkout
       - browser-tools/install-browser-tools
       - run: npm run ng -- test components 
   build:
     <<: *defaults
     steps:
+      - checkout
       #- run: npm run lint
       - run:
           name: "version"
@@ -62,6 +63,7 @@ jobs:
           command: |
             sh ./../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/components
+      - run: npm ci
       - run: npm run build
       - run: npm run ng -- build components 
 
