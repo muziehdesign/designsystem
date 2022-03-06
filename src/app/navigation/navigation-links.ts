@@ -1,8 +1,8 @@
 export const navigationLinks: NavigationLink[] = [
-    {
+    /*{
         children: [
         { name: 'About', link: '/design/about' },
-    ]},
+    ]},*/
     { name: 'Foundations', children: [
         { name: 'Accessibility', link: '/design/accessibility' },
         { name: 'Color', link: '/design/color' },
