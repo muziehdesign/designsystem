@@ -28,7 +28,7 @@ jobs:
             npm pkg get version
       - run: npm ci
       - run: npm run ng -- build components
-      - run: npm run ng -- test components --browsers=ChromeHeadlessNoSandbox
+      - run: npm run ng -- test components
       - run: npm run build
       #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
       #- run: cat css-classes.txt
