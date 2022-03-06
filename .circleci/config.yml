@@ -56,12 +56,12 @@ jobs:
       - persist_to_workspace:
           root: workspace
           paths:
-            - "muzieh-ngcomponents"
+            - /dist/components
   publish:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: workspace
       - run: 
           name: "npm publish prep"
           command: |
