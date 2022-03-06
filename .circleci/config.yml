@@ -28,13 +28,11 @@ jobs:
             npm pkg get version
       - run: npm ci
       - run: npm run ng -- build components
+      - run: npm run ng -- test components
       - run: npm run build
-      - run: npx extract-css-classes ./projects/components/src/lib/**/*.html
-      - run: cat css-classes.txt
+      #- run: npx extract-css-classes ./projects/components/src/lib/**/*.html
+      #- run: cat css-classes.txt
       #- run: cp css-classes.txt ./dist/components/design/css-classes.txt
-  publish:
-    <<: *defaults
-    steps:
       - run:
           name: "npm publish"
           command: |
@@ -49,6 +47,3 @@ workflows:
   publish:
     jobs:
       - say-hello
-      - publish:
-          requires:
-            - say-hello
