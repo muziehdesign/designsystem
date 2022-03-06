@@ -1,0 +1,92 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+orbs: 
+  browser-tools: circleci/browser-tools@1.2.4
+
+defaults: &defaults
+  docker:
+    - image: cimg/node:17.6.0-browsers
+      environment:
+        CHROME_BIN: /usr/bin/google-chrome
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  say-hello:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    #docker:
+    #  - image: circleci/node
+    <<: *defaults
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - browser-tools/install-browser-tools
+      - run: npm ci
+      - run: npm run ng -- test components 
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      #- run: npm run lint
+      - run:
+          name: "version"
+          command: |
+            sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+      - run:
+          name: "version components"
+          command: |
+            sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+          working_directory: ./projects/components
+      - run: npm ci
+      - run: npm run ng -- build components
+      - run: npm run build
+      - store_artifacts:
+          path: /dist/components
+          destination: muzieh-ngcomponents
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dist
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run: 
+          name: "npm publish prep"
+          command: |
+            touch .npmrc
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - deploy:
+          name: "npm publish"
+          command: |
+            npm publish ./dist/components
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  publish:
+    jobs:
+      - say-hello
+      - test:
+          requires:
+            - say-hello
+      - build:
+          requires:
+            - say-hello
+      - publish:
+          requires:
+            - test
+            - build
+
+      

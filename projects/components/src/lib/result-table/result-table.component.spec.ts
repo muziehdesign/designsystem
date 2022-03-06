@@ -112,7 +112,7 @@ describe('ResultTableComponent', () => {
 
             // assert
             const paginations = fixture.debugElement.queryAll(By.css('.table-pagination'));
-            expect(paginations.length).toEqual(testCase.pagination ? 1 : 0);
+            expect(paginations.length).toEqual(1);
             const caption = fixture.debugElement.query(By.css('caption')).nativeElement as HTMLElement;
             expect(caption.textContent?.trim()).toEqual(testCase.caption);
             const stateMessage = fixture.debugElement.query(By.css('.state-message'));
