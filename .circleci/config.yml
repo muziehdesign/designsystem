@@ -22,11 +22,12 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run: npm ci
+      # - run: npm ci
       - run:
           name: version 
           command: |
-            VERSION={{npm pkg get version}}
+            node -v
+            VERSION=$(npm pkg get version)
             echo $VERSION
             # echo "export VERSION=$(npm pkg get version)" >> $VERSION
             # echo $VERSION
