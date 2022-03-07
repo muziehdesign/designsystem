@@ -4,7 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 // TODO: need to rename, and need to use ivy instead
 
 @Directive({
-  selector: 'mzTimeValueAccessor',  //'input[type=time]', TODO: restore and rename directive
+  selector: 'input[type=time]',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: TimeValueAccessorDirective,
@@ -21,6 +21,7 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
   }
 
   writeValue(obj?: TimeValue): void {
+    console.log('writing value', obj);
     if (!obj) {
       this.renderer.setProperty(this.elementRef.nativeElement, 'value', null);
       return;
@@ -32,6 +33,7 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
 
   registerOnChange(fn: (x: TimeValue | null) => void): void {
     this.onChange = (value) => {
+      console.log('onchange', value);
       if (value == null || value == '') {
         fn(null);
       } else {
