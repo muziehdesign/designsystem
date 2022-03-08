@@ -18,7 +18,14 @@
         {{ defaultScheduleInputModel | json }}
     </div>
     <div class="example">
-        // TODO: add one for date range
+      <form class="form">
+        <label>
+            <span class="field-label">Scheduled run time</span>
+            <input type="text" class="field-control"/>
+            <input type="time" class="field-control" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name"/>
+        </label>
+      </form>
+      {{ defaultScheduleInputModel | json }}
     </div>
 
     <h3>Best practices</h3>

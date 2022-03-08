@@ -21,7 +21,6 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
   }
 
   writeValue(obj?: TimeValue): void {
-    console.log('writing value', obj);
     if (!obj) {
       this.renderer.setProperty(this.elementRef.nativeElement, 'value', null);
       return;
@@ -33,8 +32,7 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
 
   registerOnChange(fn: (x: TimeValue | null) => void): void {
     this.onChange = (value) => {
-      console.log('onchange', value);
-      if (value == null || value == '') {
+      if (value === null || value === '') {
         fn(null);
       } else {
         const parts = value.split(':');
