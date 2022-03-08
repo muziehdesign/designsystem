@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TimeValue } from 'muzieh-ngcomponents';
+import { TimeValue } from 'projects/components/src/lib/models/time-value';
 
 @Component({
   selector: 'app-datetime-picker-guidelines',

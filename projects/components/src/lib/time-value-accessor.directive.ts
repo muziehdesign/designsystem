@@ -1,5 +1,6 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { TimeValue } from './models/time-value';
 
 // TODO: need to rename, and need to use ivy instead
 
@@ -44,9 +45,4 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
-}
-
-export interface TimeValue {
-  hour: number;
-  minute: number;
 }
