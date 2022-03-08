@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TimeValue } from 'muzieh-ngcomponents';
+import { TimeValue } from 'dist/components/muzieh-ngcomponents';
 
 @Component({
   selector: 'app-datetime-picker-guidelines',
@@ -17,8 +17,6 @@ export class DatetimePickerGuidelinesComponent implements OnInit {
   changeScheduledRunTime(e: any) {
     console.log(e);
     console.log(this.defaultScheduleInputModel.time);
-
-    const a = new Date();
   }
 }
 
