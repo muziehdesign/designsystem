@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomErrorHandler } from './custom-error-handler';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CustomErrorHandler } from './custom-error-handler';
     OrderModule,
     NgbModule,
     MuziehComponentsModule,
+    NoopAnimationsModule,
   ],
   providers: [CustomErrorHandler],
   bootstrap: [AppComponent]

@@ -13,3 +13,12 @@
         </div>
     </div>
 </div>
+
+<div class="example">
+  <button class="button button-secondary" [matMenuTriggerFor]="menu">...</button>
+  <mat-menu #menu="matMenu" class="!min-h-0">
+    <button class="dropdown-menu-item" mat-menu-item>Lock</button>
+    <button class="dropdown-menu-item" mat-menu-item>Unlock</button>
+    <button class="dropdown-menu-item" mat-menu-item>Activate</button>
+  </mat-menu>
+</div>
