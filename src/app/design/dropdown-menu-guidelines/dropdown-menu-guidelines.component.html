@@ -15,7 +15,9 @@
 </div>
 
 <div class="example">
-  <button class="button button-secondary" [matMenuTriggerFor]="menu">...</button>
+  <button class="button button-secondary" [matMenuTriggerFor]="menu">
+    <mz-svg-icon key="dots-horizontal"></mz-svg-icon>
+  </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item>Lock</button>
     <button mat-menu-item>Unlock</button>
