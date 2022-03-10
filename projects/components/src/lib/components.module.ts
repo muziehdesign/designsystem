@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
+import { DatetimeComponent } from './datetime/datetime.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TimeValueAccessorDirective } from './time-value-accessor.directive';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueAccessorDirective,
+    DatetimeComponent,
   ],
   imports: [
     CommonModule,

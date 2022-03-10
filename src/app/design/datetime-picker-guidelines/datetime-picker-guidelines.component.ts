@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DefaultMatCalendarRangeStrategy, MatDateRangePicker } from '@angular/material/datepicker';
 import { TimeValue } from 'projects/components/src/lib/models/time-value';
 
 @Component({
@@ -24,6 +25,10 @@ export class DatetimePickerGuidelinesComponent implements OnInit {
   setScheduleRunTime(s: TimeValue) {
     console.log(s);
     this.defaultScheduleInputModel.time = s;
+  }
+
+  onDeactivationDateChange() {
+    console.log(this.deactivationDate);
   }
 }
 

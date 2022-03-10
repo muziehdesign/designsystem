@@ -6,11 +6,13 @@
 <article>
     <h2>Default</h2>
     <div class="example">
-      <mat-form-field appearance="outline" floatLabel="auto">
-        <input matInput [ngModel]="deactivationDate"  name="deactivationDate" [matDatepicker]="deactivationDatePicker">
-        <mat-datepicker-toggle matSuffix [for]="deactivationDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #deactivationDatePicker></mat-datepicker>
-      </mat-form-field>
+        <form class="form">
+            <input matInput [(ngModel)]="deactivationDate" (ngModelChange)="onDeactivationDateChange()" name="deactivationDate" [matDatepicker]="deactivationDatePicker">
+            <button class="button button-secondary button-icon" (click)="deactivationDatePicker.open()">
+                <mz-svg-icon key="calendar" type="outline"></mz-svg-icon>
+            </button>
+            <mat-datepicker #deactivationDatePicker></mat-datepicker>
+        </form>
     </div>
     <div class="example">
 
