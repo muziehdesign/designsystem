@@ -39,3 +39,34 @@ code {
     @apply pt-0.5 pb-4 max-w-7xl mx-auto;
 }
 
+.mat-calendar-body-cell-content {
+  border-radius: 0px!important;
+  border-width: 0px!important;
+  border: 1px solid #E5E7EB!important;
+  width: 95%!important;
+  height: 95%!important;
+}
+
+.mat-calendar-body-selected {
+  background-color: #000!important;
+  color: white;
+  border-radius: 999px!important;
+  border: none!important;
+  width: 30px!important;
+  height: 30px!important;
+  margin-left: 10%!important;
+  margin-top: 10%!important;
+  padding-top: 5%!important;
+}
+
+.mat-calendar-body-label {
+  opacity: 0;
+}
+
+.mat-calendar-body-label[colspan="7"] {
+  display: none;
+}
+
+.mat-calendar-body-disabled {
+  background-color: #F9FAFB!important;
+}

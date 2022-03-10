@@ -9,6 +9,8 @@ import { TimeValue } from 'projects/components/src/lib/models/time-value';
 export class DatetimePickerGuidelinesComponent implements OnInit {
 
   defaultScheduleInputModel: ScheduleInputModel = { time: { hour: 10, minute: 30 } };
+  deactivationDate: Date = new Date();
+
   constructor() { }
 
   ngOnInit(): void {
