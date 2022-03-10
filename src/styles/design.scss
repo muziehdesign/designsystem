@@ -33,6 +33,14 @@ $kitchensink-ui-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($kitchensink-ui-theme);
 
+.mat-menu-panel {
+    @apply min-h-0 #{!important};
+}
+
+.mat-menu-item {
+    @apply text-gray-700 block px-4 py-2 text-sm h-9 leading-3 #{!important};
+}  
+
 @import 'tailwindcss/base';
 @import 'design/_base';
 @import 'tailwindcss/components';
