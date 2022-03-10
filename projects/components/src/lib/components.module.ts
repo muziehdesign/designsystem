@@ -9,6 +9,7 @@ import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loa
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueValidatorDirective,
+    AlertComponent,
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { PageHeaderComponent } from './page-header/page-header.component';
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
-    TimeValueValidatorDirective
+    TimeValueValidatorDirective,
+    AlertComponent
   ]
 })
 export class MuziehComponentsModule { }

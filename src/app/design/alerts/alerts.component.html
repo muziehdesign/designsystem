@@ -7,29 +7,40 @@
 
 <article>
     <h2>Info</h2>
-    <div class="alert info" role="alert">
-        <div class="title">Optional title</div>
-        <div>A simple alert with text</div>
-    </div>
+    <mz-alert title="Optional title" type="info" [body]="bodyTemplate">
+        <ng-template #bodyTemplate>
+            <div class="body">
+                <p>A simple alert with text.</p>
+            </div>
+        </ng-template>
+    </mz-alert>
+
     <h2>Success</h2>
-    <div class="alert success" role="alert">
-        <div class="title">Optional title</div>
-        <div>A simple alert with text</div>
-    </div>
+    <mz-alert title="Optional title" type="success" [body]="bodyTemplate">
+        <ng-template #bodyTemplate>
+            <div class="body">
+                <p>A simple alert with text.</p>
+            </div>
+        </ng-template>
+    </mz-alert>
+
     <h2>Error</h2>
-    <div class="alert error" role="alert">
-        <div class="title">Optional title</div>
-        <div>A simple alert with text</div>
-    </div>
+    <mz-alert title="Optional title" type="error" [body]="bodyTemplate">
+        <ng-template #bodyTemplate>
+            <div class="body">
+                <p>A simple alert with text.</p>
+            </div>
+        </ng-template>
+    </mz-alert>
+
     <h2>Warning</h2>
-    <div class="alert alert-warning">
-        <div class="header text-warning">
-            <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
-            <div class="alert-title">Your bill is overdue</div>
-        </div>
-        <div class="alert-body">Make a payment by 3/20/2022 to avoid service outage.</div>
-        <div class="alert-actions"><button class="button button-secondary">Pay bill</button></div>
-    </div>
+    <mz-alert title="Optional title" type="warning" [body]="bodyTemplate">
+        <ng-template #bodyTemplate>
+            <div class="body">
+                <p>A simple alert with text.</p>
+            </div>
+        </ng-template>
+    </mz-alert>
 </article>
 
 <article>

@@ -24,3 +24,6 @@ export * from './lib/time-value-accessor.directive';
 // testing files
 export * from './lib/testing/muzieh-component-harness';
 export * from './lib/testing/result-table-harness';
+
+// alert
+export * from './lib/alert/alert.component';
