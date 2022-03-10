@@ -11,6 +11,8 @@ import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
 import { DatetimeComponent } from './datetime/datetime.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { DatetimeComponent } from './datetime/datetime.component';
   ],
   imports: [
     CommonModule,
+    MatDatepickerModule,
+    FormsModule,
     NgbModule
   ],
   exports: [

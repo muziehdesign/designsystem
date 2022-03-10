@@ -1,1 +1,11 @@
-<p>datetime works!</p>
+<input matInput [(ngModel)]="deactivationDate" (ngModelChange)="onDeactivationDateChange()" name="deactivationDate"
+    [matDatepicker]="deactivationDatePicker">
+<button class="button button-secondary button-icon" (click)="deactivationDatePicker.open()">
+    <mz-svg-icon key="calendar" type="outline"></mz-svg-icon>
+</button>
+<mat-datepicker #deactivationDatePicker></mat-datepicker>
+
+<label>
+    <span class="field-label">Scheduled run time</span>
+    <input type="time" class="field-control" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name"/>
+</label>
