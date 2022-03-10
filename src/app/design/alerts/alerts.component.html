@@ -22,8 +22,29 @@
         <div>A simple alert with text</div>
     </div>
     <h2>Warning</h2>
-    <div class="alert warning" role="alert">
-        <div class="title">Optional title</div>
-        <div>A simple alert with text</div>
+    <div class="alert alert-warning">
+        <div class="header text-warning">
+            <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
+            <div class="alert-title">Your bill is overdue</div>
+        </div>
+        <div class="alert-body">Make a payment by 3/20/2022 to avoid service outage.</div>
+        <div class="alert-actions"><button class="button button-secondary">Pay bill</button></div>
     </div>
+</article>
+
+<article>
+    <h2>Anatomy</h2>
+    <ul class="list-disc list-inside">
+        <li>Icon - should use solid style icon, each type with different shape</li>
+        <li>Title - text</li>
+        <li>Body - text</li>
+        <li>Actions - optional</li>        
+    </ul>
+</article>
+
+<article>
+    <h2>TODOs</h2>
+    <ul class="list-disc list-inside">
+        <li>Accessibility support</li>
+    </ul>
 </article>
