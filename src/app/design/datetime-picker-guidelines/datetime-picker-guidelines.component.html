@@ -6,7 +6,11 @@
 <article>
     <h2>Default</h2>
     <div class="example">
-        // TODO: add one for date picker
+      <mat-form-field appearance="outline" floatLabel="auto">
+        <input matInput [ngModel]="deactivationDate"  name="deactivationDate" [matDatepicker]="deactivationDatePicker">
+        <mat-datepicker-toggle matSuffix [for]="deactivationDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #deactivationDatePicker></mat-datepicker>
+      </mat-form-field>
     </div>
     <div class="example">
 

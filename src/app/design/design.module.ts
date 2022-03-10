@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
 import { DesignRoutingModule } from './design-routing.module';
 import { FormControlsComponent } from './form-controls/form-controls.component';
 import { DesignComponent } from './design.component';
@@ -43,6 +45,8 @@ import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
 import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
 import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
     declarations: [
@@ -82,7 +86,7 @@ import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.compon
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
     ],
-    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule],
-    providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
+    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule],
+    providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }, MatDatepickerModule],
 })
 export class DesignModule {}
