@@ -9,6 +9,12 @@
         // TODO: add one for date picker
     </div>
     <div class="example">
+
+        <div class="button-list">
+            <button class="button button-secondary" (click)="setScheduleRunTime({ 'hour': 10, 'minute': 0 })">Set time to 10:00 AM</button>
+            <button class="button button-secondary" (click)="setScheduleRunTime({ 'hour': 20, 'minute': 0 })">Set time to 8:00 PM</button>
+        </div>
+
         <form class="form">
             <label>
                 <span class="field-label">Scheduled run time</span>
@@ -16,16 +22,6 @@
             </label>
         </form>
         {{ defaultScheduleInputModel | json }}
-    </div>
-    <div class="example">
-      <form class="form">
-        <label>
-            <span class="field-label">Scheduled run time</span>
-            <input type="text" class="field-control"/>
-            <input type="time" class="field-control" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name"/>
-        </label>
-      </form>
-      {{ defaultScheduleInputModel | json }}
     </div>
 
     <h3>Best practices</h3>

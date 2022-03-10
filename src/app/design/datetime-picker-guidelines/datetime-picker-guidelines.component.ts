@@ -18,6 +18,11 @@ export class DatetimePickerGuidelinesComponent implements OnInit {
     console.log(e);
     console.log(this.defaultScheduleInputModel.time);
   }
+
+  setScheduleRunTime(s: TimeValue) {
+    console.log(s);
+    this.defaultScheduleInputModel.time = s;
+  }
 }
 
 export interface ScheduleInputModel {
