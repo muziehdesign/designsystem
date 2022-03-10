@@ -88,7 +88,7 @@
     @apply border-danger;
 }
 
-
+/*
 .field-control-addon {
     @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
 
@@ -108,8 +108,13 @@
         @apply grow m-0 border-transparent outline-0;
     }
 
+    /*
     .field-control:focus {
         @apply border border-primary;
+    }
+
+    &:focus-within {
+        @apply border-primary outline-2 outline outline-offset-2;
     }
 
     &.invalid {
@@ -118,5 +123,29 @@
 
     .ng-submitted .field-control.ng-invalid, .field-control.ng-touched.ng-invalid {
         @apply border-0;
+    }
+}*/
+
+.field-control-addon {
+    @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
+
+    &.field-control {
+        @apply w-full;
+    }
+
+    .button {
+        @apply py-1 h-full -mr-3;
+    }
+}
+
+.field-control-group {
+    @apply flex items-stretch h-full border border-gray-500 shadow;
+
+    .field-control {
+        @apply grow m-0 border-transparent outline-0;
+    }
+
+    &:focus-within {
+        @apply outline outline-1 outline-primary;
     }
 }
