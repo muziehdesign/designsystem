@@ -100,6 +100,21 @@ describe('ResultTableComponent', () => {
             caption: '1 - 10 of 10 results',
             pagination: false,
         },
+        {
+          model: { page: 2, pageSize: 100, totalResults: 113, results: [...Array(13).keys()] },
+          caption: '101 - 113 of 113 results',
+          pagination: true,
+        },
+        {
+          model: { page: 1, pageSize: 100, totalResults: 100, results: [...Array(100).keys()] },
+          caption: '1 - 100 of 100 results',
+          pagination: true,
+        },
+        {
+          model: { page: 2, pageSize: 100, totalResults: 200, results: [...Array(100).keys()] },
+          caption: '101 - 200 of 200 results',
+          pagination: true,
+        },
     ];
     testCases.forEach((testCase, i) => {
         it(`should display results - ${i}`, async () => {
