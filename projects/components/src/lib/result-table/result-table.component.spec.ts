@@ -97,8 +97,23 @@ describe('ResultTableComponent', () => {
         },
         {
             model: { page: 1, pageSize: 5, totalResults: 10, results: [...Array(10).keys()] },
-            caption: '1 - 5 of 10 results',
+            caption: '1 - 10 of 10 results',
             pagination: false,
+        },
+        {
+          model: { page: 2, pageSize: 100, totalResults: 113, results: [...Array(13).keys()] },
+          caption: '101 - 113 of 113 results',
+          pagination: true,
+        },
+        {
+          model: { page: 1, pageSize: 100, totalResults: 100, results: [...Array(100).keys()] },
+          caption: '1 - 100 of 100 results',
+          pagination: true,
+        },
+        {
+          model: { page: 2, pageSize: 100, totalResults: 200, results: [...Array(100).keys()] },
+          caption: '101 - 200 of 200 results',
+          pagination: true,
         },
     ];
     testCases.forEach((testCase, i) => {
@@ -157,6 +172,6 @@ describe('ResultTableComponent', () => {
         const caption = fixture.debugElement.query(By.css('caption'));
         expect(caption).toBeNull();
         const stateMessage = fixture.debugElement.query(By.css('.state-message .title')).nativeElement as HTMLElement;
-        expect(stateMessage.innerText?.trim()).toEqual('Something went wrong'); 
+        expect(stateMessage.innerText?.trim()).toEqual('Something went wrong');
     }));
 });
