@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DesignModule } from './design/design.module';
@@ -12,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomErrorHandler } from './custom-error-handler';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { CustomErrorHandler } from './custom-error-handler';
     OrderModule,
     NgbModule,
     MuziehComponentsModule,
+    NoopAnimationsModule,
   ],
   providers: [CustomErrorHandler],
   bootstrap: [AppComponent]
