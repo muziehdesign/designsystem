@@ -44,9 +44,7 @@ $muzieh-theme: mat.define-light-theme((
 @import 'tailwindcss/base';
 @import 'design/_base';
 @import 'tailwindcss/components';
-
 @import 'design/_material';
-
 @import 'design/_button';
 @import 'design/_breadcrumb';
 @import 'design/_dl';
@@ -58,79 +56,14 @@ $muzieh-theme: mat.define-light-theme((
 @import 'design/_table';
 @import 'design/_tabs';
 @import 'design/_progress-bar';
+@import 'design/_alert';
 @import 'tailwindcss/utilities';
-
-@layer components {
-    .alert {
-        @apply rounded-md p-4;
-
-        .title {
-            @apply text-sm font-medium mt-0 py-1;
-        }
-    
-        .description {
-            @apply ml-2;
-        }
-
-        .body {
-            @apply mt-2 text-sm;
-        }
-    }
-
-    .alert-info {
-        @apply bg-blue-50;
-
-        .title {
-            @apply text-blue-800;
-        }
-
-        .body {
-            @apply text-blue-700;
-        }
-    }
-
-    .alert-success {
-        @apply bg-green-50;
-
-        .title {
-            @apply text-green-800;
-        }
-
-        .body {
-            @apply text-green-700;
-        }
-    }
-
-    .alert-error {
-        @apply bg-red-50;
-
-        .title {
-            @apply text-red-800;
-        }
-
-        .body {
-            @apply text-red-700;
-        }
-    }
-
-    .alert-warning {
-        @apply bg-yellow-50;
-
-        .title {
-            @apply text-yellow-800;
-        }
-
-        .body {
-            @apply text-yellow-700;
-        }
-    }
-
-    .text-block {
-        max-width: 90ch;
-    }
-}
 
 // icon
 .page > header {
     @apply py-6;
+}
+
+.text-block {
+  max-width: 90ch;
 }

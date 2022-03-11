@@ -1,0 +1,64 @@
+.alert {
+    @apply rounded-md p-4;
+
+    .title {
+        @apply text-sm font-medium mt-0 py-1;
+    }
+
+    .description {
+        @apply ml-2;
+    }
+
+    .body {
+        @apply mt-2 text-sm;
+    }
+}
+
+.alert-info {
+    @apply bg-blue-50;
+
+    .title, .icon-solid {
+        @apply text-blue-800;
+    }
+
+    .body {
+        @apply text-blue-700;
+    }
+}
+
+.alert-success {
+    @apply bg-green-50;
+
+    .title, .icon-solid {
+        @apply text-green-800;
+    }
+
+    .body {
+        @apply text-green-700;
+    }
+}
+
+.alert-error {
+    @apply bg-red-50;
+
+    .title, .icon-solid {
+        @apply text-red-800;
+    }
+
+    .body {
+        @apply text-red-700;
+    }
+}
+
+.alert-warning {
+    @apply bg-yellow-50;
+
+    .title, .icon-solid {
+        @apply text-yellow-800;
+    }
+
+    .body {
+        @apply text-yellow-700;
+    }
+
+}
