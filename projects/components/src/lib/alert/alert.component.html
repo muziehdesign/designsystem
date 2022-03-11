@@ -1,16 +1,24 @@
 <div [className]="'alert alert-' + type">
-    <div class="flex">
-        <div class="icon" [className]="'text-' + type">
-            <mz-svg-icon [key]="getAlertIcon()" type="solid"></mz-svg-icon>
+
+    <div>
+        <div class="alert-icon" [className]="'text-' + type">
+          <mz-svg-icon [key]="getAlertIcon()" type="solid"></mz-svg-icon>
         </div>
-        <div class="description">
-            <h3 class="title">{{ title }}</h3>
-            <ng-container *ngIf="body">
-                <ng-container *ngTemplateOutlet="body"></ng-container>
-            </ng-container>
-            <ng-container *ngIf="footer">
-                <ng-container *ngTemplateOutlet="footer"></ng-container>
-            </ng-container>
+        <div class="">
+          <h3 class="title">{{ title }}</h3>
         </div>
     </div>
+
+    <ng-container *ngIf="body">
+      <div class="body">
+        <ng-container *ngTemplateOutlet="body"></ng-container>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="footer">
+      <div class="footer">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+      </div>
+    </ng-container>
+
 </div>

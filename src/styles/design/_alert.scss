@@ -2,7 +2,7 @@
     @apply rounded-md p-4;
 
     .title {
-        @apply text-sm font-medium mt-0 py-1;
+        @apply inline-block align-middle text-sm font-medium mt-0 py-1;
     }
 
     .description {
@@ -11,6 +11,10 @@
 
     .body {
         @apply mt-2 text-sm;
+    }
+
+    .alert-icon {
+      @apply inline-block align-middle;
     }
 }
 
