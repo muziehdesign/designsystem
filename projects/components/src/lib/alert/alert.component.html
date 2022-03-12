@@ -1,22 +1,22 @@
 <div [className]="'alert alert-' + type">
 
     <div>
-        <div class="alert-icon" [className]="'text-' + type">
+        <div class="alert-icon">
           <mz-svg-icon [key]="getAlertIcon()" type="solid"></mz-svg-icon>
         </div>
-        <div class="">
-          <h3 class="title">{{ title }}</h3>
+        <div class="alert-title">
+          <span>{{ title }}</span>
         </div>
     </div>
 
     <ng-container *ngIf="body">
-      <div class="body">
+      <div class="alert-body">
         <ng-container *ngTemplateOutlet="body"></ng-container>
       </div>
     </ng-container>
 
     <ng-container *ngIf="footer">
-      <div class="footer">
+      <div class="alert-footer">
         <ng-container *ngTemplateOutlet="footer"></ng-container>
       </div>
     </ng-container>

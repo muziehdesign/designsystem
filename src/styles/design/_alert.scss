@@ -1,67 +1,51 @@
 .alert {
     @apply rounded-md p-4;
 
-    .title {
-        @apply inline-block align-middle text-sm font-medium mt-0 py-1;
-    }
-
     .description {
         @apply ml-2;
     }
 
-    .body {
-        @apply mt-2 text-sm;
-    }
-
-    .alert-icon {
-      @apply inline-block align-middle;
+    .alert-body {
+        @apply mt-2 text-sm ml-7;
     }
 }
 
+.alert-icon {
+    @apply inline-block align-middle w-7;
+}
+
+.alert-title {
+    @apply inline-block align-middle text-sm font-medium mt-0 py-1;
+}
+
 .alert-info {
-    @apply bg-blue-50;
+    @apply bg-blue-50 text-primary;
 
-    .title, .icon-solid {
+    .alert-title, .alert-icon {
         @apply text-blue-800;
-    }
-
-    .body {
-        @apply text-blue-700;
     }
 }
 
 .alert-success {
-    @apply bg-green-50;
+    @apply bg-green-50 text-success;
 
     .title, .icon-solid {
         @apply text-green-800;
     }
-
-    .body {
-        @apply text-green-700;
-    }
 }
 
 .alert-error {
-    @apply bg-red-50;
+    @apply bg-red-50 text-danger;
 
     .title, .icon-solid {
         @apply text-red-800;
     }
-
-    .body {
-        @apply text-red-700;
-    }
 }
 
 .alert-warning {
-    @apply bg-yellow-50;
+    @apply bg-yellow-50 text-warning;
 
     .title, .icon-solid {
         @apply text-yellow-800;
-    }
-
-    .body {
-        @apply text-yellow-700;
     }
 }
