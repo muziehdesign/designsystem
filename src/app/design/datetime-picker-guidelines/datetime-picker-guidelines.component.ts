@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DefaultMatCalendarRangeStrategy, MatDateRangePicker } from '@angular/material/datepicker';
 import { TimeValue } from 'projects/components/src/lib/models/time-value';
 
 @Component({
   selector: 'app-datetime-picker-guidelines',
   templateUrl: './datetime-picker-guidelines.component.html',
-  styleUrls: ['./datetime-picker-guidelines.component.scss']
+  styleUrls: ['./datetime-picker-guidelines.component.scss'],
 })
 export class DatetimePickerGuidelinesComponent implements OnInit {
+
+  dateTime: Date = new Date();
 
   defaultScheduleInputModel: ScheduleInputModel = { time: { hour: 10, minute: 30 } };
   deactivationDate: Date = new Date();

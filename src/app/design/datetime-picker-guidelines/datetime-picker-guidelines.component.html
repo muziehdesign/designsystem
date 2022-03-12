@@ -2,9 +2,12 @@
 <div class="prose">
     Use a date time picker to help user pick a date time value.
 </div>
-
 <article>
     <h2>Default</h2>
+    <div class="example">
+      <mz-datetime [(ngModel)]="dateTime"></mz-datetime>
+      {{ dateTime | json }}
+    </div>
     <div class="example">
         <form class="form">
             <input matInput [(ngModel)]="deactivationDate" (ngModelChange)="onDeactivationDateChange()" name="deactivationDate" [matDatepicker]="deactivationDatePicker">

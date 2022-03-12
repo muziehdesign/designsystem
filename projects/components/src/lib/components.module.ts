@@ -40,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
-    TimeValueAccessorDirective
+    TimeValueAccessorDirective,
+    DatetimeComponent
   ]
 })
 export class MuziehComponentsModule { }

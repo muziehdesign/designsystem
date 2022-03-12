@@ -21,7 +21,7 @@ export * from './lib/result-table/result-table.model';
 export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';
 
-export {DatetimeComponent, TimeValue} from './lib/datetime/datetime.component';
+export * from './lib/datetime/datetime.component';
 
 // testing files
 export * from './lib/testing/muzieh-component-harness';
