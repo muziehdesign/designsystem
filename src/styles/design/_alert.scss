@@ -1,51 +1,51 @@
 .alert {
-    @apply rounded-md p-4;
+    @apply rounded-sm p-5 text-secondary;
+}
 
-    .description {
-        @apply ml-2;
-    }
+.alert-title {
+    @apply inline-block align-middle;
+}
 
-    .alert-body {
-        @apply mt-2 text-sm ml-7;
-    }
+.alert-body {
+    @apply pb-0.5 ml-7;
 }
 
 .alert-icon {
     @apply inline-block align-middle w-7;
 }
 
-.alert-title {
-    @apply inline-block align-middle text-sm font-medium mt-0 py-1;
-}
-
 .alert-info {
-    @apply bg-blue-50 text-primary;
+    @apply bg-blue-50;
 
-    .alert-title, .alert-icon {
+    .alert-icon {
         @apply text-blue-800;
     }
 }
 
 .alert-success {
-    @apply bg-green-50 text-success;
+    @apply bg-green-50;
 
-    .title, .icon-solid {
+    .alert-icon {
         @apply text-green-800;
     }
 }
 
 .alert-error {
-    @apply bg-red-50 text-danger;
+    @apply bg-red-50;
 
-    .title, .icon-solid {
+    .alert-icon {
         @apply text-red-800;
     }
 }
 
 .alert-warning {
-    @apply bg-yellow-50 text-warning;
+    @apply bg-yellow-50;
 
-    .title, .icon-solid {
+    .alert-icon {
         @apply text-yellow-800;
     }
+}
+
+.alert-footer {
+    @apply mt-3 ml-3;
 }

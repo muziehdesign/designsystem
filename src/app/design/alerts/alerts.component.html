@@ -7,42 +7,72 @@
 
 <article>
     <h2>Info</h2>
-    <mz-alert title="Optional title" type="info" [body]="bodyTemplate">
-        <ng-template #bodyTemplate>
-            <p>A simple alert with text.</p>
-        </ng-template>
-    </mz-alert>
-
-    <h2>Success</h2>
-    <mz-alert title="Optional title" type="success" [body]="bodyTemplate">
-        <ng-template #bodyTemplate>
-            <p>A simple alert with text.</p>
-        </ng-template>
-    </mz-alert>
-
-    <h2>Error</h2>
-    <mz-alert title="Optional title" type="error" [body]="bodyTemplate">
-        <ng-template #bodyTemplate>
-            <p>A simple alert with text.</p>
-        </ng-template>
-    </mz-alert>
-
-    <h2>Warning</h2>
-    <mz-alert title="Optional title" type="warning" [body]="bodyTemplate">
-        <ng-template #bodyTemplate>
-            <p>A simple alert with text.</p>
-        </ng-template>
-    </mz-alert>
+    <div class="example">
+        <p class="text-block">Use an info alert to provide important information. This is the default to use.</p>
+        <mz-alert title="Alert title" type="info" [body]="bodyTemplate" [footer]="infoFooterTemplate">
+            <ng-template #bodyTemplate>
+                <p>A simple alert with text.</p>
+            </ng-template>
+            <ng-template #infoFooterTemplate>
+                <button class="button button-link">Lorem ipsum</button>
+            </ng-template>
+        </mz-alert>
+    
+        <h2>Success</h2>
+        <p class="text-block">Use a success alert to inform about successful system events or user actions.</p>
+        <mz-alert title="Alert title" type="success" [body]="successBodyTemplate" [footer]="successFooterTemplate">
+            <ng-template #successBodyTemplate>
+                <p class="text-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </ng-template>
+            <ng-template #successFooterTemplate>
+                <button class="button button-link">Lorem ipsum</button>
+            </ng-template>
+        </mz-alert>
+    
+        <h2>Error</h2>
+        <p class="text-block">Use an error alert for critical errors, whether that be caused by user or system.</p>
+        <mz-alert title="Optional title" type="error" [body]="bodyTemplate" [footer]="errorFooterTemplate">
+            <ng-template #bodyTemplate>
+                <p>A simple alert with text.</p>
+            </ng-template>
+            <ng-template #errorFooterTemplate>
+                <button class="button button-link">Lorem ipsum</button>
+            </ng-template>
+        </mz-alert>
+    
+        <h2>Warning</h2>
+        <p class="text-block">Use a warning alert to warn possible issue that requires attention.</p>
+        <mz-alert title="Account locked" type="warning" [body]="warningBodyTemplate" [footer]="warningFooterTemplate">
+            <ng-template #warningBodyTemplate>
+                <p>Account was locked due to excessive login attempts.</p>
+            </ng-template>
+            <ng-template #warningFooterTemplate>
+                <button class="button button-link">Unlock account</button>
+            </ng-template>
+        </mz-alert>
+    </div>
 </article>
 
 <article>
     <h2>Anatomy</h2>
-    <ul class="list-disc list-inside">
-        <li>Icon - should use solid style icon, each type with different shape</li>
-        <li>Title - text</li>
-        <li>Body - text</li>
-        <li>Actions - optional</li>
-    </ul>
+    <ol class="list-decimal list-inside">
+        <li>
+            <strong>Icon and background color</strong>
+            <p>Icon and background color help user identify alert type.</p>
+        </li>
+        <li>
+            <strong>Title</strong>
+            <p>Title is clear and concise text that indicate purpose of alert message. Required.</p>
+        </li>
+        <li>
+            <strong>Body (optional)</strong>
+            <p>Body should be concise and informative text that describes the issue and actions user needs to take.</p>
+        </li>
+        <li>
+            <strong>Footer (optional)</strong>
+            <p>Footer should contain One or more link buttons to enable the user to act on the issue. Use either <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> with link appearance.</p>
+        </li>
+    </ol>
 </article>
 
 <article>
