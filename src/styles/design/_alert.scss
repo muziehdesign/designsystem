@@ -1,5 +1,5 @@
 .alert {
-    @apply rounded-sm p-5 text-secondary;
+    @apply rounded-sm p-5;
 }
 
 .alert-title {
@@ -15,7 +15,7 @@
 }
 
 .alert-info {
-    @apply bg-blue-50;
+    @apply bg-blue-50 text-primary;
 
     .alert-icon {
         @apply text-blue-800;
@@ -23,7 +23,7 @@
 }
 
 .alert-success {
-    @apply bg-green-50;
+    @apply bg-green-50 text-success;
 
     .alert-icon {
         @apply text-green-800;
@@ -31,7 +31,7 @@
 }
 
 .alert-error {
-    @apply bg-red-50;
+    @apply bg-red-50 text-danger;
 
     .alert-icon {
         @apply text-red-800;
@@ -39,7 +39,7 @@
 }
 
 .alert-warning {
-    @apply bg-yellow-50;
+    @apply bg-yellow-50 text-warning;
 
     .alert-icon {
         @apply text-yellow-800;
