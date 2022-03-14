@@ -11,6 +11,7 @@ export * from './lib/component-config.token';
 export * from './lib/page-loading-indicator/page-loading-indicator.component';
 export * from './lib/page-header/page-header.component';
 export * from './lib/phone-number/phone-number.pipe';
+export * from './lib/date-display/date-display.pipe';
 
 // table
 export * from './lib/result-table/result-table.component';

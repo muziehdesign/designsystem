@@ -8,7 +8,7 @@
 <article>
     <h2>Info</h2>
     <div class="example">
-        <p class="text-block">Use an info alert to provide important information. This is the default to use.</p>
+        <p class="text-block">Use an info alert to provide important information. This is the default to use. {{todayDate | mzDateDisplay: 'concise'}}</p>
         <mz-alert title="Alert title" type="info" [body]="bodyTemplate" [footer]="infoFooterTemplate">
             <ng-template #bodyTemplate>
                 <p>A simple alert with text.</p>
@@ -17,7 +17,7 @@
                 <button class="button button-link">Lorem ipsum</button>
             </ng-template>
         </mz-alert>
-    
+
         <h2>Success</h2>
         <p class="text-block">Use a success alert to inform about successful system events or user actions.</p>
         <mz-alert title="Alert title" type="success" [body]="successBodyTemplate" [footer]="successFooterTemplate">
@@ -28,7 +28,7 @@
                 <button class="button button-link">Lorem ipsum</button>
             </ng-template>
         </mz-alert>
-    
+
         <h2>Error</h2>
         <p class="text-block">Use an error alert for critical errors, whether that be caused by user or system.</p>
         <mz-alert title="Optional title" type="error" [body]="bodyTemplate" [footer]="errorFooterTemplate">
@@ -39,7 +39,7 @@
                 <button class="button button-link">Lorem ipsum</button>
             </ng-template>
         </mz-alert>
-    
+
         <h2>Warning</h2>
         <p class="text-block">Use a warning alert to warn possible issue that requires attention.</p>
         <mz-alert title="Account locked" type="warning" [body]="warningBodyTemplate" [footer]="warningFooterTemplate">
