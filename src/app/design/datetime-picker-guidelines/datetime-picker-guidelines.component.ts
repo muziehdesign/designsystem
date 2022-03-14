@@ -31,6 +31,11 @@ export class DatetimePickerGuidelinesComponent implements OnInit {
   onDeactivationDateChange() {
     console.log(this.deactivationDate);
   }
+
+  setDatetime(s: string) {
+    console.log('setting to ', s);
+    this.dateTime = new Date(s);
+  }
 }
 
 export interface ScheduleInputModel {

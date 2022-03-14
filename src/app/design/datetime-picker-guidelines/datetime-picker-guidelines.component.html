@@ -5,6 +5,10 @@
 <article>
     <h2>Default</h2>
     <div class="example">
+        <div class="button-list">
+            <button class="button button-secondary" (click)="setDatetime('2011-10-10T14:48:00')">Set value to 1/1/2022 10:00 AM</button>
+            <button class="button button-secondary" (click)="setDatetime('2011-10-10T04:48:00')">Set value to 1/1/2022 8:00 PM</button>
+        </div>
       <mz-datetime [(ngModel)]="dateTime"></mz-datetime>
       {{ dateTime | json }}
     </div>
@@ -18,12 +22,10 @@
         </form>
     </div>
     <div class="example">
-
         <div class="button-list">
             <button class="button button-secondary" (click)="setScheduleRunTime({ 'hour': 10, 'minute': 0 })">Set time to 10:00 AM</button>
             <button class="button button-secondary" (click)="setScheduleRunTime({ 'hour': 20, 'minute': 0 })">Set time to 8:00 PM</button>
         </div>
-
         <form class="form">
             <label>
                 <span class="field-label">Scheduled run time</span>
