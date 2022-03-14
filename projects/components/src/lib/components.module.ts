@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { EnumDisplayPipe } from './enum-display/enum-display.pipe';
@@ -11,6 +11,7 @@ import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
+import { DateDisplayPipe } from './date-display/date-display.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueValidatorDirective,
+    DateDisplayPipe,
     PhoneNumberPipe,
     AlertComponent
   ],
@@ -38,8 +40,12 @@ import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueValidatorDirective,
+    DateDisplayPipe,
     AlertComponent,
     PhoneNumberPipe
+  ],
+  providers: [
+    DatePipe
   ]
 })
 export class MuziehComponentsModule { }
