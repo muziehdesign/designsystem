@@ -51,6 +51,20 @@
             </ng-template>
         </mz-alert>
     </div>
+    <div class="example-template">
+        <code>
+            <pre>
+                &lt;mz-alert title="Account locked" type="warning" [body]="warningBodyTemplate" [footer]="warningFooterTemplate"&gt;
+                    &lt;ng-template #warningBodyTemplate&gt;
+                        &lt;p&gt;Account was locked due to excessive login attempts.&lt;p&gt;
+                    &lt;ng-template&gt;
+                    &lt;ng-template #warningFooterTemplate&gt;
+                        &lt;button class="button button-link"&gt;Unlock account&lt;/button&gt;
+                    &lt;ng-template&gt;
+                &lt;/mz-alert&gt;
+            </pre>
+        </code>
+    </div>
 </article>
 
 <article>
