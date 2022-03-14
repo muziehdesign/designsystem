@@ -9,6 +9,7 @@ import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loa
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
     PageHeaderComponent,
     TimeValueValidatorDirective,
     PhoneNumberPipe,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueValidatorDirective,
+    AlertComponent,
     PhoneNumberPipe
   ]
 })

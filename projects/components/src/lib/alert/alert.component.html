@@ -1,0 +1,21 @@
+<div [className]="'alert alert-' + type">
+
+  <div>
+    <div class="alert-icon">
+      <mz-svg-icon [key]="getAlertIcon()" type="solid"></mz-svg-icon>
+    </div>
+
+    <div class="alert-title">
+      <strong>{{ title }}</strong>
+    </div>
+  </div>
+
+  <div class="alert-body" *ngIf="body">
+    <ng-container *ngTemplateOutlet="body"></ng-container>
+  </div>
+
+  <div class="alert-footer" *ngIf="footer">
+    <ng-container *ngTemplateOutlet="footer"></ng-container>
+  </div>
+
+</div>

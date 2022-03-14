@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { PageEvent } from '../models/page-event';
@@ -26,6 +27,7 @@ describe('ResultTableComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [ResultTableComponent, PaginationComponent],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents();
     });
 

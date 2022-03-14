@@ -15,8 +15,8 @@ module.exports = {
         primary: colors.blue[700],
         secondary: colors.gray[700],
         success: colors.green[700],
-        warning: colors.yellow[500],
-        danger: colors.red[500],
+        warning: colors.yellow[700],
+        danger: colors.red[700],
       },
       fontFamily: {
         sans: ['Roboto', 'system-ui', '-apple-system', 'ui-sans-serif', 'BlinkMacSystemFont', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
