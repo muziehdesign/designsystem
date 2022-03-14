@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EnumDisplayPipe, MuziehComponentsModule, ResultTableComponent, SpinnerComponent, SvgIconComponent, AlertComponent } from 'muzieh-ngcomponents';
+import { AlertComponent, EnumDisplayPipe, MuziehComponentsModule, PhoneNumberPipe, ResultTableComponent, SpinnerComponent, SvgIconComponent } from 'muzieh-ngcomponents';
 
 @NgModule({
-    exports: [SvgIconComponent, SpinnerComponent, EnumDisplayPipe, ResultTableComponent, AlertComponent],
+    exports: [SvgIconComponent, SpinnerComponent, EnumDisplayPipe, ResultTableComponent, PhoneNumberPipe, AlertComponent],
     imports: [MuziehComponentsModule, CommonModule],
 })
 export class SharedModule {}

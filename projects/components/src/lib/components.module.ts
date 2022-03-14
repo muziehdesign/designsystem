@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { AlertComponent } from './alert/alert.component';
+import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AlertComponent } from './alert/alert.component';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueValidatorDirective,
-    AlertComponent,
+    PhoneNumberPipe,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { AlertComponent } from './alert/alert.component';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueValidatorDirective,
-    AlertComponent
+    AlertComponent,
+    PhoneNumberPipe
   ]
 })
 export class MuziehComponentsModule { }
