@@ -4,6 +4,6 @@
   <button class="button button-secondary button-icon" (click)="deactivationDatePicker.open()">
     <mz-svg-icon key="calendar" type="outline"></mz-svg-icon>
   </button>
-  <mat-datepicker #deactivationDatePicker></mat-datepicker>
-  <input type="time" class="field-control" [value]="model" (change)="updateTime($any($event).target.value)">
+  <mat-datepicker #deactivationDatePicker (change)="updateDate($any($event).target.value)"></mat-datepicker>
+  <input *ngIf="model" type="time" class="field-control" [value]="model" (change)="updateTime($any($event).target.value)">
 </div>

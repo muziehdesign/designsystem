@@ -8,7 +8,7 @@ import { TimeValue } from 'projects/components/src/lib/models/time-value';
 })
 export class DatetimePickerGuidelinesComponent implements OnInit {
 
-  dateTime: Date = new Date();
+  dateTime: Date | undefined;
 
   defaultScheduleInputModel: ScheduleInputModel = { time: { hour: 10, minute: 30 } };
   deactivationDate: Date = new Date();
@@ -16,6 +16,7 @@ export class DatetimePickerGuidelinesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.setDatetime('2022-06-12T21:00');
   }
 
   changeScheduledRunTime(e: any) {
@@ -33,7 +34,7 @@ export class DatetimePickerGuidelinesComponent implements OnInit {
   }
 
   setDatetime(s: string) {
-    console.log('setting to ', s);
+    //console.log('setting to ', s);
     this.dateTime = new Date(s);
   }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, forwardRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, forwardRef, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -14,41 +14,55 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class DatetimeComponent implements OnInit, ControlValueAccessor, OnChanges {
 
   model: Date | undefined;
-  defaultScheduleInputModel: ScheduleInputModel = { time: { hour: 10, minute: 30 } };
+  //time: TimeValue = { hour: 10, minute: 30 } ;
+  time: TimeValue | undefined;
   deactivationDate: Date = new Date();
 
   constructor(private _cd: ChangeDetectorRef) { }
 
+  @HostListener('input', ['$event.target.value'])
   onChange = (_: any) => {};
   onTouched = () => {};
 
-  registerOnChange(fn: any): void {
-
-  }
   registerOnTouched(fn: any): void {
 
   }
 
-  writeValue(value: any) {
-    this.model = value;
-    this._cd.markForCheck();
+  writeValue(value: Date) {
+    if (value) {
+      this.model = value;
+      //this.time = `${value.getHours()}:${value.getMinutes()}`;
+      this.time = { hour: value.getHours(), minute: value.getMinutes() } as TimeValue;
+      //console.log(this.time)
+      this._cd.markForCheck();
+    }
+  }
+
+  registerOnChange(fn: (x: TimeValue | null) => void): void {
+    this.onChange = (value) => {
+      console.log(value)
+      /*if (value === null || value === '') {
+        fn(null);
+      } else {
+        const parts = value.split(':');
+        fn({ hour: Number(parts[0]), minute: Number(parts[1]) } as TimeValue);
+      }*/
+    };
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.model)
+    console.log('On changes', this.model)
   }
 
   ngOnInit(): void {
-    console.log(this.model)
+    //console.log(this.model)
   }
 
   changeScheduledRunTime(e: any) {
     console.log(e);
-    //console.log(this.defaultScheduleInputModel.time);
   }
 
   setScheduleRunTime(s: TimeValue) {
-    //this.defaultScheduleInputModel.time = s;
   }
 
   onDeactivationDateChange() {
@@ -56,11 +70,11 @@ export class DatetimeComponent implements OnInit, ControlValueAccessor, OnChange
   }
 
   updateTime(val: any):void {
-
+    console.log('Time change:', val);
   }
 
   updateDate(val: any): void {
-
+    console.log('Date change:', val);
   }
 }
 
