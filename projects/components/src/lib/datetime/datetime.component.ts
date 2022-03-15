@@ -1,8 +1,9 @@
-import { ChangeDetectorRef, Component, forwardRef, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, forwardRef, HostListener, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'mz-datetime',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './datetime.component.html',
   styleUrls: ['./datetime.component.css'],
   providers: [{
@@ -11,21 +12,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     multi: true
   }]
 })
-export class DatetimeComponent implements ControlValueAccessor, OnChanges {
+export class DatetimeComponent implements ControlValueAccessor {
 
   model: Date | undefined;
   time: String | undefined;
-  deactivationDate: Date = new Date();
+  tempDate: string | null = null;
+  tempTime: string | null = null;
 
   constructor(private _cd: ChangeDetectorRef) { }
 
-  @HostListener('input', ['$event.target.value'])
   onChange = (_: any) => {};
   onTouched = () => {};
-
-  registerOnTouched(fn: any): void {
-
-  }
 
   writeValue(value: Date) {
     if (value) {
@@ -37,28 +34,27 @@ export class DatetimeComponent implements ControlValueAccessor, OnChanges {
     }
   }
 
-  registerOnChange(fn: (x: any | null) => void): void {
-    this.onChange = (value) => {
-      console.log(value)
-      /*if (value === null || value === '') {
-        fn(null);
-      } else {
-        const parts = value.split(':');
-        fn({ hour: Number(parts[0]), minute: Number(parts[1]) } as TimeValue);
-      }*/
-    };
+  registerOnChange(fn: (value: any) => any): void { this.onChange = fn; }
+
+  registerOnTouched(fn: any): void { this.onTouched = fn; }
+
+  updateDate(val: string): void {
+    this.tempDate = val.toString();
+    this.propagateModelCahnge();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('On changes', this.model)
+  updateTime(val: string):void {
+    this.tempTime = val.toString();
+    this.propagateModelCahnge();
   }
 
-  updateTime(val: any):void {
-    console.log('Time change:', val);
-  }
-
-  updateDate(val: any): void {
-    console.log('Date change:', val);
+  private propagateModelCahnge(): void {
+    if (this.tempDate && this.tempTime) {
+      const dateString = `${this.tempDate} ${this.tempTime}`;
+      this.onChange(new Date(dateString));
+    } else {
+      this.onChange(null);
+    }
   }
 }
 

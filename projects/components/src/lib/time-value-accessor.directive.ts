@@ -29,7 +29,6 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
     const hourPrefix = obj?.hour > 9 ? '' : '0';
     const minutePrefix = obj.minute > 9 ? '' : '0';
     this.renderer.setProperty(this.elementRef.nativeElement, 'value', `${hourPrefix}${obj.hour}:${minutePrefix}${obj.minute}`);
-    //this.renderer.setProperty(this.elementRef.nativeElement, 'value', obj);
   }
 
   registerOnChange(fn: (x: TimeValue | null) => void): void {
