@@ -11,11 +11,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     multi: true
   }]
 })
-export class DatetimeComponent implements OnInit, ControlValueAccessor, OnChanges {
+export class DatetimeComponent implements ControlValueAccessor, OnChanges {
 
   model: Date | undefined;
-  //time: TimeValue = { hour: 10, minute: 30 } ;
-  time: TimeValue | undefined;
+  time: String | undefined;
   deactivationDate: Date = new Date();
 
   constructor(private _cd: ChangeDetectorRef) { }
@@ -31,14 +30,14 @@ export class DatetimeComponent implements OnInit, ControlValueAccessor, OnChange
   writeValue(value: Date) {
     if (value) {
       this.model = value;
-      //this.time = `${value.getHours()}:${value.getMinutes()}`;
-      this.time = { hour: value.getHours(), minute: value.getMinutes() } as TimeValue;
-      //console.log(this.time)
+      const hourPrefix = value.getHours() > 9 ? '' : '0';
+      const minutePrefix = value.getMinutes() > 9 ? '' : '0';
+      this.time = `${hourPrefix}${value.getHours()}:${minutePrefix}${value.getMinutes()}`;
       this._cd.markForCheck();
     }
   }
 
-  registerOnChange(fn: (x: TimeValue | null) => void): void {
+  registerOnChange(fn: (x: any | null) => void): void {
     this.onChange = (value) => {
       console.log(value)
       /*if (value === null || value === '') {
@@ -52,21 +51,6 @@ export class DatetimeComponent implements OnInit, ControlValueAccessor, OnChange
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('On changes', this.model)
-  }
-
-  ngOnInit(): void {
-    //console.log(this.model)
-  }
-
-  changeScheduledRunTime(e: any) {
-    console.log(e);
-  }
-
-  setScheduleRunTime(s: TimeValue) {
-  }
-
-  onDeactivationDateChange() {
-    console.log(this.deactivationDate);
   }
 
   updateTime(val: any):void {
