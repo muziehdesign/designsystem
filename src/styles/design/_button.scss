@@ -1,5 +1,5 @@
 .button {
-    @apply inline-flex px-4 py-2.5 font-medium items-center text-sm space-x-3 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply inline-flex px-4 py-2.5 font-medium items-center text-sm space-x-3 focus:outline-none focus:ring-2 focus:ring-offset-2 text-secondary;
 }
 
 .button-primary {
@@ -8,6 +8,10 @@
 
 .button-secondary {
     @apply text-secondary shadow-sm bg-gray-200 hover:bg-gray-300 focus:ring-blue-500 active:bg-gray-300;
+}
+
+.button-tertiary {
+    @apply text-secondary;
 }
 
 .button-danger {

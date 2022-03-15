@@ -1,0 +1,51 @@
+.alert {
+    @apply rounded-sm p-5;
+}
+
+.alert-title {
+    @apply inline-block align-middle;
+}
+
+.alert-body {
+    @apply pb-0.5 ml-7;
+}
+
+.alert-icon {
+    @apply inline-block align-middle w-7 -mt-0.5;
+}
+
+.alert-info {
+    @apply bg-blue-50 text-primary;
+
+    .alert-icon {
+        @apply text-blue-800;
+    }
+}
+
+.alert-success {
+    @apply bg-green-50 text-success;
+
+    .alert-icon {
+        @apply text-green-800;
+    }
+}
+
+.alert-error {
+    @apply bg-red-50 text-danger;
+
+    .alert-icon {
+        @apply text-red-800;
+    }
+}
+
+.alert-warning {
+    @apply bg-yellow-50 text-warning;
+
+    .alert-icon {
+        @apply text-yellow-800;
+    }
+}
+
+.alert-footer {
+    @apply mt-3 ml-3;
+}

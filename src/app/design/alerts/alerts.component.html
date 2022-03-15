@@ -7,48 +7,91 @@
 
 <article>
     <h2>Info</h2>
-    <div class="alert info" role="alert">
-        <div class="flex">
-            <div class="title">Optional title</div>
-            <div>A simple alert with text</div>
-        </div>
+    <div class="example">
+        <p class="text-block">Use an info alert to provide important information. This is the default to use. {{todayDate | mzDateDisplay: 'concise'}}</p>
+        <mz-alert title="Alert title" type="info" [body]="bodyTemplate" [footer]="infoFooterTemplate">
+            <ng-template #bodyTemplate>
+                <p>A simple alert with text.</p>
+            </ng-template>
+            <ng-template #infoFooterTemplate>
+                <button class="button button-link">Lorem ipsum</button>
+            </ng-template>
+        </mz-alert>
+
+        <h2>Success</h2>
+        <p class="text-block">Use a success alert to inform about successful system events or user actions.</p>
+        <mz-alert title="Alert title" type="success" [body]="successBodyTemplate" [footer]="successFooterTemplate">
+            <ng-template #successBodyTemplate>
+                <p class="text-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </ng-template>
+            <ng-template #successFooterTemplate>
+                <button class="button button-link">Lorem ipsum</button>
+            </ng-template>
+        </mz-alert>
+
+        <h2>Error</h2>
+        <p class="text-block">Use an error alert for critical errors, whether that be caused by user or system.</p>
+        <mz-alert title="Optional title" type="error" [body]="bodyTemplate" [footer]="errorFooterTemplate">
+            <ng-template #bodyTemplate>
+                <p>A simple alert with text.</p>
+            </ng-template>
+            <ng-template #errorFooterTemplate>
+                <button class="button button-link">Lorem ipsum</button>
+            </ng-template>
+        </mz-alert>
+
+        <h2>Warning</h2>
+        <p class="text-block">Use a warning alert to warn possible issue that requires attention.</p>
+        <mz-alert title="Account locked" type="warning" [body]="warningBodyTemplate" [footer]="warningFooterTemplate">
+            <ng-template #warningBodyTemplate>
+                <p>Account was locked due to excessive login attempts.</p>
+            </ng-template>
+            <ng-template #warningFooterTemplate>
+                <button class="button button-link">Unlock account</button>
+            </ng-template>
+        </mz-alert>
     </div>
-    <h2>Success</h2>
-    <div class="alert success" role="alert">
-        <div class="title">Optional title</div>
-        <div>A simple alert with text</div>
-    </div>
-    <h2>Error</h2>
-    <div class="alert error" role="alert">
-        <div class="title">Optional title</div>
-        <div>A simple alert with text</div>
-    </div>
-    <h2>Warning</h2>
-    <div class="alert warning" role="alert">
-        <div class="flex">
-            <div class="flex-shrink-0">
-                <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                </svg>
-            </div>
-        </div>
-        <div class="title">Optional title</div>
-        <div>A simple alert with text</div>
+    <div class="example-template">
+        <code>
+            <pre>
+                &lt;mz-alert title="Account locked" type="warning" [body]="warningBodyTemplate" [footer]="warningFooterTemplate"&gt;
+                    &lt;ng-template #warningBodyTemplate&gt;
+                        &lt;p&gt;Account was locked due to excessive login attempts.&lt;p&gt;
+                    &lt;ng-template&gt;
+                    &lt;ng-template #warningFooterTemplate&gt;
+                        &lt;button class="button button-link"&gt;Unlock account&lt;/button&gt;
+                    &lt;ng-template&gt;
+                &lt;/mz-alert&gt;
+            </pre>
+        </code>
     </div>
 </article>
 
 <article>
     <h2>Anatomy</h2>
-    <ol class="list-inside list-decimal">
-        <li>Title</li>
-        <li>Content</li>
-        <li>Actions</li>
+    <ol class="list-decimal list-inside">
+        <li>
+            <strong>Icon and background color</strong>
+            <p>Icon and background color help user identify alert type.</p>
+        </li>
+        <li>
+            <strong>Title</strong>
+            <p>Title is clear and concise text that indicate purpose of alert message. Required.</p>
+        </li>
+        <li>
+            <strong>Body (optional)</strong>
+            <p>Body should be concise and informative text that describes the issue and actions user needs to take.</p>
+        </li>
+        <li>
+            <strong>Footer (optional)</strong>
+            <p>Footer should contain One or more link buttons to enable the user to act on the issue. Use either <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> with link appearance.</p>
+        </li>
     </ol>
 </article>
 
 <article>
-    <h2>Work in progress</h2>
-    <ul class="list-inside list-disc">
-        <li>Add accessibility support</li>
+    <h2>TODOs</h2>
+    <ul class="list-disc list-inside">
+        <li>Accessibility support</li>
     </ul>
 </article>

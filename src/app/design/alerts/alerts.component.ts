@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertsComponent implements OnInit {
 
+  todayDate = new Date();
+
   constructor() { }
 
   ngOnInit(): void {

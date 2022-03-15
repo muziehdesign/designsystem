@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
@@ -15,6 +16,7 @@ describe('PageLoadingIndicatorComponent', () => {
         eventSubject = new ReplaySubject<RouterEvent>(1);
         await TestBed.configureTestingModule({
             declarations: [PageLoadingIndicatorComponent],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 {
                     provide: Router,

@@ -1,15 +1,9 @@
 # Kitchensinkui
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
+## Components
+[muzieh-ngcomponents package](https://www.npmjs.com/package/muzieh-ngcomponents) [![<ORG_NAME>](https://circleci.com/gh/ruifang/kitchensink-ui.svg?style=shield)](https://github.com/ruifang/kitchensink-ui?branch=develop)
 
-Components:
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://github.com/ruifang/kitchensink-ui?branch=develop)
-
-Pages:
-[![publish-pages](https://github.com/ruifang/kitchensink-ui/actions/workflows/publish-pages/badge.svg?branch=develop)](https://github.com/ruifang/kitchensink-ui/actions/workflows/publish-pages)
-
-## Design system todo
-- select best practices
+[muzieh design system pages](https://ruifang.github.io/designsystem/design/about) [![publish-github-pages](https://github.com/ruifang/kitchensink-ui/actions/workflows/publish-pages.yml/badge.svg?branch=develop)](https://github.com/ruifang/kitchensink-ui/actions/workflows/publish-pages.yml)
 
 ## Todo
 
@@ -41,5 +35,4 @@ Pages:
 
 ## Extensions
 - tailwind
-- angular
 - formatting

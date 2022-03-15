@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Title } from '@angular/platform-browser';
 import { PageHeaderComponent } from './page-header.component';
@@ -10,6 +11,7 @@ describe('PageHeaderComponent', () => {
         await TestBed.configureTestingModule({
             declarations: [PageHeaderComponent],
             providers: [{ provide: Title, useValue: jasmine.createSpyObj(Title.name, ['setTitle']) }],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents();
     });
 
