@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, forwardRef, HostListener, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'mz-datetime',
@@ -16,7 +17,7 @@ export class DatetimeComponent implements ControlValueAccessor {
 
   model: Date | undefined;
   time: String | undefined;
-  tempDate: string | null = null;
+  tempDate: string | undefined | null = null;
   tempTime: string | null = null;
 
   constructor(private _cd: ChangeDetectorRef) { }
@@ -38,13 +39,19 @@ export class DatetimeComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: any): void { this.onTouched = fn; }
 
-  updateDate(val: string): void {
-    this.tempDate = val.toString();
+  updateDate(val: any): void {
+    this.tempDate = val.target.value.toString();
     this.propagateModelCahnge();
   }
 
   updateTime(val: string):void {
     this.tempTime = val.toString();
+    this.propagateModelCahnge();
+  }
+
+  updateDateEvent(event: MatDatepickerInputEvent<Date>) {
+    const date = `${event.value?.getMonth()}/${event.value?.getDate()}/${event.value?.getFullYear()}`;
+    this.tempDate = date;
     this.propagateModelCahnge();
   }
 

@@ -29,7 +29,7 @@
         <form class="form">
             <label>
                 <span class="field-label">Scheduled run time</span>
-                <!--<input type="time" class="field-control" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name"/>-->
+                <input type="time" class="field-control" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name"/>
             </label>
         </form>
         {{ defaultScheduleInputModel | json }}

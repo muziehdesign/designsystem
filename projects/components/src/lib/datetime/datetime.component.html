@@ -1,9 +1,8 @@
 <div>
-  <input matInput [value]="model" (change)="updateDate($any($event).target.value)"
-    [matDatepicker]="deactivationDatePicker">
-  <button class="button button-secondary button-icon" (click)="deactivationDatePicker.open()">
+  <input [value]="model" (change)="updateDate($event)" [matDatepicker]="datePicker" (dateChange)="updateDateEvent($event)">
+  <button class="button button-secondary button-icon" (click)="datePicker.open()">
     <mz-svg-icon key="calendar" type="outline"></mz-svg-icon>
   </button>
-  <mat-datepicker #deactivationDatePicker (change)="updateDate($any($event).target.value)"></mat-datepicker>
+  <mat-datepicker #datePicker></mat-datepicker>
   <input type="time" class="field-control" [value]="time" (change)="updateTime($any($event).target.value)">
 </div>
