@@ -20,6 +20,12 @@ export class DatetimeComponent implements ControlValueAccessor {
   tempDate: string | undefined | null = null;
   tempTime: string | null = null;
 
+  @Input()
+  min?: Date | undefined;
+
+  @Input()
+  max?: Date | undefined;
+
   constructor(private _cd: ChangeDetectorRef) { }
 
   onChange = (_: any) => {};

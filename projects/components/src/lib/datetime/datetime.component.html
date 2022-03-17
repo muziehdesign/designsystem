@@ -1,5 +1,5 @@
 <div>
-  <input [value]="model" (change)="updateDate($event)" [matDatepicker]="datePicker" (dateChange)="updateDateEvent($event)">
+  <input [value]="model" (change)="updateDate($event)" [min]="min" [max]="max" [matDatepicker]="datePicker" (dateChange)="updateDateEvent($event)">
   <button class="button button-secondary button-icon" (click)="datePicker.open()">
     <mz-svg-icon key="calendar" type="outline"></mz-svg-icon>
   </button>

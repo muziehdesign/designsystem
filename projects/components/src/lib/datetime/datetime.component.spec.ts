@@ -68,5 +68,23 @@ describe('DatetimeComponent', () => {
       expectToDisplayDateTime(fixture.nativeElement, '16:20', '11/12/2022');
     }));
 
+    it('should update inputs value on model change', fakeAsync(() => {
+      const html = `<mz-datetime [(ngModel)]="dateTime"></mz-datetime>`;
+
+      const fixture = createTestComponent(html);
+      const date = new Date('12/12/2022 13:50');
+      fixture.componentInstance.dateTime = date;
+      fixture.detectChanges();
+      tick();
+      fixture.detectChanges();
+      expectToDisplayDateTime(fixture.nativeElement, '13:50', '11/12/2022');
+
+
+      fixture.componentInstance.dateTime = new Date('09/11/2022 09:10');
+      fixture.detectChanges();
+      tick();
+      fixture.detectChanges();
+      expectToDisplayDateTime(fixture.nativeElement, '09:10', '8/11/2022');
+    }));
   });
 });

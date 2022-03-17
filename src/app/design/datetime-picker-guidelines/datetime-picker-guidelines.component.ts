@@ -9,6 +9,8 @@ import { TimeValue } from 'projects/components/src/lib/models/time-value';
 export class DatetimePickerGuidelinesComponent {
 
   dateTime: Date | undefined | null =  null;
+  min: Date = new Date('03/10/2022');
+  max: Date = new Date('03/20/2022');
 
   defaultScheduleInputModel: ScheduleInputModel = { time: { hour: 10, minute: 30 } };
   deactivationDate: Date = new Date();
@@ -31,10 +33,6 @@ export class DatetimePickerGuidelinesComponent {
 
   setDatetime(s: string) {
     this.dateTime = new Date(s);
-  }
-
-  onDateTimeChange(): void {
-    console.log("Data: ", this.dateTime);
   }
 }
 
