@@ -15,7 +15,7 @@ export class SortDirective implements OnInit {
     constructor(private sortable: SortableDirective) {}
 
     ngOnInit(): void {
-        this.updatedSort = this.mzSort === this.sortable.sortKey ? this.sortable.mzSortable : this.mzSort;
+        this.updatedSort = this.mzSort === this.sortable.active ? this.sortable.mzSortable : this.mzSort;
         this.setOrder(this.updatedSort);
     }
 
