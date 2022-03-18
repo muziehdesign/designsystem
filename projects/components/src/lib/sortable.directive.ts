@@ -1,17 +1,18 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Directive({
-  selector: '[mzSortable]'
+    selector: '[mzSortable]',
 })
 export class SortableDirective implements OnInit {
+    @Input('mzSortable') mzSortable!: string;
+    @Output() sort = new EventEmitter<string>();
+    sortKey = '';
+    active = '';
 
-  @Input('mzSortable') mzSortable!: string;
-  @Output() sort = new EventEmitter<string>();
+    constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit():any {
-    this.sort.emit(this.mzSortable);
-  }
+    ngOnInit(): any {
+        this.sortKey = this.mzSortable.includes('-') ? this.mzSortable.slice(1) : this.mzSortable;
+        this.active = this.sortKey;
+    }
 }

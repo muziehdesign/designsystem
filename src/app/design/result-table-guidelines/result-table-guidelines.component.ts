@@ -80,8 +80,14 @@ export class ResultTableGuidelinesComponent {
     }
 
     onSort(value: any) {
+        console.log('component sort ' + value)
         this.sortKey = value;
-        this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey);
+        this.defaultLoadingState.loading = true;
+        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
+          tap(() => {
+              this.defaultLoadingState.loading = false;
+          })
+      );
     }
 
     // generic sorting function
@@ -90,9 +96,9 @@ export class ResultTableGuidelinesComponent {
         key = key.includes('-') ? key.slice(1) : key;
 
         return function innerSort(a: any, b: any) {
-            console.log(key);
             if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
                 // property doesn't exist on either object
+                console.log('not found sort key')
                 return 0;
             }
 

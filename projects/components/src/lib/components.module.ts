@@ -12,6 +12,8 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 import { DateDisplayPipe } from './date-display/date-display.pipe';
+import { SortDirective } from './sort.directive';
+import { SortableDirective } from './sortable.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
     TimeValueValidatorDirective,
     DateDisplayPipe,
     PhoneNumberPipe,
-    AlertComponent
+    AlertComponent,
+    SortDirective,
+    SortableDirective
   ],
   imports: [
     CommonModule,
@@ -42,7 +46,9 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
     TimeValueValidatorDirective,
     DateDisplayPipe,
     AlertComponent,
-    PhoneNumberPipe
+    PhoneNumberPipe,
+    SortDirective,
+    SortableDirective
   ],
   providers: [
     DatePipe
