@@ -60,3 +60,7 @@
         visibility: hidden;
     }
 }
+
+th.sort-active{
+    @apply text-primary;
+}

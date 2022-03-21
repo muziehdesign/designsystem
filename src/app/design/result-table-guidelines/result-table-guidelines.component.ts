@@ -18,7 +18,7 @@ export class ResultTableGuidelinesComponent {
     errorLoadingState = { error: new Error(), loading: false } as LoadingState;
     error = new Error();
     loadingExampleState = { loading: true } as LoadingState;
-    sortKey = '-orderNumber';
+    sortKey = 'orderNumber';
     pagination: PageEvent = { page: 1, pageSize: 20 };
 
     constructor() {

@@ -19,16 +19,16 @@
             </select>
         </div>
         <div class="example">
-            <mz-result-table mzSortable="-orderNumber" (sort)="onSort($event)" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate"
+            <mz-result-table [mzSortable]="sortKey" (sort)="onSort($event)" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate"
                 (pageChange)="onPageChange($event)">
                 <ng-template #headerTemplate>
                     <tr>
                         <th mzSort="orderNumber">Order</th>
                         <th mzSort="customer">Customer</th>
-                        <th>Status</th>
-                        <th>Date</th>
-                        <th>Total</th>
-                        <th>Country</th>
+                        <th mzSort="status">Status</th>
+                        <th mzSort="date">Date</th>
+                        <th mzSort="total">Total</th>
+                        <th mzSort="country">Country</th>
                     </tr>
                 </ng-template>
                 <ng-template #bodyTemplate let-order>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <!-- <h3>Loading</h3>
+    <h3>Loading</h3>
     <div class="example">
         <mz-result-table [loading]="loadingExampleState.loading" [header]="headerTemplate" [body]="bodyTemplate">
             <ng-template #headerTemplate>
@@ -67,7 +67,7 @@
         </mz-result-table>
     </div>
     <div class="example">
-        <mz-result-table [loading]="true" [model]="getPagedModel(1, 10) | async" [header]="headerTemplate" [body]="bodyTemplate">
+        <mz-result-table [loading]="true" [model]="getPagedModel(1, 10, 'order') | async" [header]="headerTemplate" [body]="bodyTemplate">
             <ng-template #headerTemplate>
                 <tr>
                     <th>Order</th>
@@ -129,9 +129,9 @@
                 </tr>
             </ng-template>
         </mz-result-table>
-    </div> -->
+    </div>
 
-    <!-- <h3>Sortable</h3>
+    <h3>Sortable</h3>
     <div class="example">
         // TODO
         <div>
@@ -184,7 +184,7 @@
             </table>
         </div>
     </div>
-</article> -->
+</article>
 
 <article>
     <h2>Usage</h2>

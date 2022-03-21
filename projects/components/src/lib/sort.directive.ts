@@ -1,10 +1,13 @@
-import { Directive, EventEmitter, HostListener, Input, OnInit, Optional, Output } from '@angular/core';
+import { Directive, Input, OnInit } from '@angular/core';
 import { SortableDirective } from './sortable.directive';
 
 @Directive({
     selector: '[mzSort]',
     host: {
       '[attr.aria-sort]': 'getAriaSortAttribute()',
+      'role': 'button',
+      '(click)': 'onClick()',
+      '[class.sort-active]' : 'isSorted()'
     }
 })
 export class SortDirective implements OnInit {
@@ -19,12 +22,12 @@ export class SortDirective implements OnInit {
         this.setOrder(this.updatedSort);
     }
 
-    @HostListener('click', ['$event']) onClick($event: Event) {
-        this.setOrder(this.updatedSort);
-        this.updatedSort = this.order === 'desc' ? this.updatedSort.slice(1) : `-${this.updatedSort}`;
+    onClick($event: Event) {
+      this.setOrder(this.updatedSort);
+      this.updatedSort = this.order === 'desc' ? this.updatedSort.slice(1) : `-${this.updatedSort}`;
 
-        this.sortable.active = this.mzSort;
-        this.sortable.sort.emit(this.updatedSort);
+      this.sortable.active = this.mzSort;
+      this.sortable.sort.emit(this.updatedSort);
     }
 
     isSorted() {
@@ -43,3 +46,5 @@ export class SortDirective implements OnInit {
         this.order = sort.includes('-') ? 'desc' : 'asc';
     }
 }
+
+
