@@ -23,6 +23,7 @@ export * from './lib/result-table/result-table.model';
 // time value
 export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';
+export * from './lib/datetime/datetime.component';
 
 export * from './lib/datetime/datetime.component';
 
