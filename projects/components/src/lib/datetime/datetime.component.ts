@@ -1,15 +1,14 @@
-import { ChangeDetectorRef, Component, forwardRef, HostListener, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'mz-datetime',
-  encapsulation: ViewEncapsulation.None,
   templateUrl: './datetime.component.html',
   styleUrls: ['./datetime.component.css'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => DatetimeComponent),
+    useExisting: DatetimeComponent,
     multi: true
   }]
 })
