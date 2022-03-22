@@ -3,7 +3,8 @@ import { PageEvent } from 'dist/components/lib/models/page-event';
 import { ResultTableModel } from 'muzieh-ngcomponents';
 import { LoadingState } from 'dist/components/lib/models/loading-state';
 import { Observable, of } from 'rxjs';
-import { delay, finalize, map, tap } from 'rxjs/operators';
+import { delay, map, tap } from 'rxjs/operators';
+import { SortEvent } from 'projects/components/src/lib/models/sort-event';
 
 @Component({
     selector: 'app-result-table-guidelines',
@@ -79,9 +80,8 @@ export class ResultTableGuidelinesComponent {
         );
     }
 
-    onSort(value: any) {
-        console.log('component sort ' + value)
-        this.sortKey = value;
+    onSort(sortEvent: SortEvent) {
+        this.sortKey = sortEvent.sort;
         this.defaultLoadingState.loading = true;
         this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
           tap(() => {
@@ -98,7 +98,6 @@ export class ResultTableGuidelinesComponent {
         return function innerSort(a: any, b: any) {
             if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
                 // property doesn't exist on either object
-                console.log('not found sort key')
                 return 0;
             }
 

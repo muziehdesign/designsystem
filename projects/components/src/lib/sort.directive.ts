@@ -4,11 +4,11 @@ import { SortableDirective } from './sortable.directive';
 @Directive({
     selector: '[mzSort]',
     host: {
-      '[attr.aria-sort]': 'getAriaSortAttribute()',
-      'role': 'button',
-      '(click)': 'onClick()',
-      '[class.sort-active]' : 'isSorted()'
-    }
+        '[attr.aria-sort]': 'getAriaSortAttribute()',
+        role: 'button',
+        '(click)': 'onClick()',
+        '[class.sort-active]': 'isSorted()',
+    },
 })
 export class SortDirective implements OnInit {
     @Input() mzSort!: string;
@@ -23,11 +23,11 @@ export class SortDirective implements OnInit {
     }
 
     onClick($event: Event) {
-      this.setOrder(this.updatedSort);
-      this.updatedSort = this.order === 'desc' ? this.updatedSort.slice(1) : `-${this.updatedSort}`;
+        this.setOrder(this.updatedSort);
+        this.updatedSort = this.order === 'desc' ? this.updatedSort.slice(1) : `-${this.updatedSort}`;
 
-      this.sortable.active = this.mzSort;
-      this.sortable.sort.emit(this.updatedSort);
+        this.sortable.active = this.mzSort;
+        this.sortable.sort.emit({ sort: this.updatedSort });
     }
 
     isSorted() {
@@ -46,5 +46,3 @@ export class SortDirective implements OnInit {
         this.order = sort.includes('-') ? 'desc' : 'asc';
     }
 }
-
-

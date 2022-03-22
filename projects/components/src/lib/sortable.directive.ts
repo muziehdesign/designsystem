@@ -1,11 +1,12 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SortEvent } from './models/sort-event';
 
 @Directive({
     selector: '[mzSortable]',
 })
 export class SortableDirective implements OnInit {
     @Input('mzSortable') mzSortable!: string;
-    @Output() sort = new EventEmitter<string>();
+    @Output() sort = new EventEmitter<SortEvent>();
     active = '';
 
     constructor() {}
