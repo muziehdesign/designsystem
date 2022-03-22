@@ -52,7 +52,8 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
     PhoneNumberPipe
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    DatetimeComponent
   ]
 })
 export class MuziehComponentsModule { }

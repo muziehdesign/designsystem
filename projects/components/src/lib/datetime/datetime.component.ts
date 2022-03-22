@@ -1,14 +1,23 @@
-import { ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'mz-datetime',
-  templateUrl: './datetime.component.html',
+  // templateUrl: './datetime.component.html',
+  template: `
+    <div>
+      <input [value]="date" (change)="updateDate($event)" [min]="min" [max]="max" [matDatepicker]="datePicker" (dateChange)="updateDateEvent($event)" ngDefaultControl>
+      <button class="button button-secondary button-icon" (click)="datePicker.open()">
+        <mz-svg-icon key="calendar" type="outline"></mz-svg-icon>
+      </button>
+      <mat-datepicker #datePicker></mat-datepicker>
+      <input type="time" class="field-control" [value]="time" (change)="updateTime($any($event).target.value)" ngDefaultControl>
+    </div>`,
   styleUrls: ['./datetime.component.css'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: DatetimeComponent,
+    useExisting: forwardRef(() => DatetimeComponent),
     multi: true
   }]
 })
@@ -16,8 +25,8 @@ export class DatetimeComponent implements ControlValueAccessor {
 
   date: Date | undefined;
   time: String | undefined;
-  tempDate: string | undefined | null = null;
-  tempTime: string | null = null;
+  private tempDate: string | undefined | null = null;
+  private tempTime: string | null = null;
 
   @Input()
   min?: Date | undefined;
