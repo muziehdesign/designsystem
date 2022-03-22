@@ -14,7 +14,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 })
 export class DatetimeComponent implements ControlValueAccessor {
 
-  model: Date | undefined;
+  date: Date | undefined;
   time: String | undefined;
   tempDate: string | undefined | null = null;
   tempTime: string | null = null;
@@ -32,7 +32,7 @@ export class DatetimeComponent implements ControlValueAccessor {
 
   writeValue(value: Date) {
     if (value) {
-      this.model = value;
+      this.date = value;
       const hourPrefix = value.getHours() > 9 ? '' : '0';
       const minutePrefix = value.getMinutes() > 9 ? '' : '0';
       this.time = `${hourPrefix}${value.getHours()}:${minutePrefix}${value.getMinutes()}`;
