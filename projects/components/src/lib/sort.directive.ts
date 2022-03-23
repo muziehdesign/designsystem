@@ -18,13 +18,12 @@ export class SortDirective implements OnInit {
     constructor(private sortable: SortableDirective) {}
 
     ngOnInit(): void {
-        if(this.sortable.mzSortable) {
-          this.updatedSort = this.mzSort === this.sortable.active ? this.sortable.mzSortable : this.mzSort;
-          this.setOrder(this.updatedSort);
-        }
+        this.refresh();
     }
 
     onClick($event: Event) {
+        this.sortable.refresh();
+        this.refresh();
         this.setOrder(this.updatedSort);
         this.updatedSort = this.order === 'desc' ? this.updatedSort.slice(1) : `-${this.updatedSort}`;
 
@@ -42,6 +41,11 @@ export class SortDirective implements OnInit {
             return 'none';
         }
         return this.order === 'asc' ? 'ascending' : 'descending';
+    }
+
+    private refresh() {
+        this.updatedSort = this.mzSort === this.sortable.active ? this.sortable.mzSortable : this.mzSort;
+        this.setOrder(this.updatedSort);
     }
 
     private setOrder(sort: string) {

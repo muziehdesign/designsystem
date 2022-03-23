@@ -12,8 +12,12 @@ export class SortableDirective implements OnInit {
     constructor() {}
 
     ngOnInit(): any {
-        if(this.mzSortable) {
-          this.active = this.mzSortable.includes('-') ? this.mzSortable.slice(1) : this.mzSortable;
-        }
+      this.refresh();
+    }
+
+    refresh() {
+      if(this.mzSortable) {
+        this.active = this.mzSortable.includes('-') ? this.mzSortable.slice(1) : this.mzSortable;
+      }
     }
 }
