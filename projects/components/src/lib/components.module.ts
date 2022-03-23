@@ -53,7 +53,6 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
   ],
   providers: [
     DatePipe,
-    DatetimeComponent
   ]
 })
 export class MuziehComponentsModule { }

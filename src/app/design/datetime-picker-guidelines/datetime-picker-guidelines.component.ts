@@ -9,6 +9,7 @@ import { TimeValue } from 'projects/components/src/lib/models/time-value';
 export class DatetimePickerGuidelinesComponent {
 
   dateTime: Date | undefined | null =  null;
+  dateTimeMinMax: Date | undefined | null =  null;
   min: Date = new Date('03/10/2022');
   max: Date = new Date('03/20/2022');
 

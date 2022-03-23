@@ -5,21 +5,24 @@
 <article>
     <h2>Default</h2>
     <div class="example">
-        <div class="button-list">
-            <button class="button button-secondary" (click)="setDatetime('2022-01-12T20:00')">Set value to 12/1/2022 8:00 PM</button>
-            <button class="button button-secondary" (click)="setDatetime('2022-04-12T16:20')">Set value to 12/04/2022 4:20 PM</button>
-        </div>
+      <div class="button-list">
+          <button class="button button-secondary" (click)="setDatetime('2022-01-12T20:00')">Set value to 12/1/2022 8:00 PM</button>
+          <button class="button button-secondary" (click)="setDatetime('2022-04-12T16:20')">Set value to 12/04/2022 4:20 PM</button>
+      </div>
       <div>
         <form class="form">
             <h3>Date Time</h3>
             <mz-datetime [(ngModel)]="dateTime" name="test"></mz-datetime>
-            {{ dateTime | json }}
+            Date Time: {{ dateTime | json }}
         </form>
       </div>
+      <hr style="margin: 10px 0 10px 0">
       <div>
-        <h3>Date Time with min-max date</h3>
-        <mz-datetime [(ngModel)]="dateTime" [min]="min" [max]="max"></mz-datetime>
-        {{ dateTime | json }}
+        <form class="form">
+          <h3>Date Time with min-max date</h3>
+          <mz-datetime [(ngModel)]="dateTimeMinMax" name="minMax" [min]="min" [max]="max"></mz-datetime>
+          Min Max: {{ dateTimeMinMax | json }}
+        </form>
       </div>
     </div>
     <div class="example">
