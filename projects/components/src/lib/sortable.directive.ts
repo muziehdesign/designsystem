@@ -5,17 +5,20 @@ import { SortEvent } from './models/sort-event';
     selector: '[mzSortable]',
 })
 export class SortableDirective implements OnInit {
-    @Input('mzSortable') mzSortable!: string;
+    @Input() set mzSortable(val: string) {
+      this.refresh();
+    }
     @Output() sort = new EventEmitter<SortEvent>();
     active = '';
 
     constructor() {}
 
     ngOnInit(): any {
-      this.refresh();
+      //this.refresh();
     }
 
     refresh() {
+      console.log('refresh');
       if(this.mzSortable) {
         this.active = this.mzSortable.includes('-') ? this.mzSortable.slice(1) : this.mzSortable;
       }

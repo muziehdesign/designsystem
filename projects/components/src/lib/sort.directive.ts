@@ -18,11 +18,11 @@ export class SortDirective implements OnInit {
     constructor(private sortable: SortableDirective) {}
 
     ngOnInit(): void {
-        this.refresh();
+        //this.refresh();
     }
 
     onClick($event: Event) {
-        this.sortable.refresh();
+        //this.sortable.refresh();
         this.refresh();
         this.setOrder(this.updatedSort);
         this.updatedSort = this.order === 'desc' ? this.updatedSort.slice(1) : `-${this.updatedSort}`;
