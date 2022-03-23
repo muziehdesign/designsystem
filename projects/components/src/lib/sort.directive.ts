@@ -4,8 +4,8 @@ import { SortableDirective } from './sortable.directive';
 @Directive({
     selector: '[mzSort]',
     host: {
+        'role': 'button',
         '[attr.aria-sort]': 'getAriaSortAttribute()',
-        role: 'button',
         '(click)': 'onClick()',
         '[class.sort-active]': 'isSorted()',
     },
@@ -18,8 +18,10 @@ export class SortDirective implements OnInit {
     constructor(private sortable: SortableDirective) {}
 
     ngOnInit(): void {
-        this.updatedSort = this.mzSort === this.sortable.active ? this.sortable.mzSortable : this.mzSort;
-        this.setOrder(this.updatedSort);
+        if(this.sortable.mzSortable) {
+          this.updatedSort = this.mzSort === this.sortable.active ? this.sortable.mzSortable : this.mzSort;
+          this.setOrder(this.updatedSort);
+        }
     }
 
     onClick($event: Event) {
