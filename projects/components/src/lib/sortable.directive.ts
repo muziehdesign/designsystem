@@ -1,23 +1,17 @@
-import { ChangeDetectorRef, Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SortEvent } from './models/sort-event';
 
 @Directive({
     selector: '[mzSortable]',
 })
-export class SortableDirective {
-    @Input() set mzSortable(val: string) {
-        this.setActiveValue();
-        this.cd.markForCheck();
-    }
+export class SortableDirective implements OnInit {
+    @Input('mzSortable') mzSortable!: string;
     @Output() sort = new EventEmitter<SortEvent>();
     active = '';
 
-    constructor(private cd: ChangeDetectorRef) {}
+    constructor() {}
 
-    setActiveValue() {
-        console.log('refresh');
-        if (this.mzSortable) {
-            this.active = this.mzSortable.includes('-') ? this.mzSortable.slice(1) : this.mzSortable;
-        }
+    ngOnInit(): any {
+        this.active = this.mzSortable.includes('-') ? this.mzSortable.slice(1) : this.mzSortable;
     }
 }
