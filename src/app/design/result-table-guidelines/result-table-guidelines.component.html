@@ -19,16 +19,16 @@
             </select>
         </div>
         <div class="example">
-            <mz-result-table [mzSortable]="sortKey" (sort)="onSort($event)" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate"
+            <mz-result-table [mzSort]="sortKey" (sort)="onSort($event)" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate"
                 (pageChange)="onPageChange($event)">
                 <ng-template #headerTemplate>
                     <tr>
-                        <th mzSort="orderNumber">Order</th>
-                        <th mzSort="customer">Customer</th>
-                        <th mzSort="status">Status</th>
-                        <th mzSort="date">Date</th>
-                        <th mzSort="total">Total</th>
-                        <th mzSort="country">Country</th>
+                        <th mzSortKey="orderNumber">Order</th>
+                        <th mzSortKey="customer">Customer</th>
+                        <th mzSortKey="status">Status</th>
+                        <th mzSortKey="date">Date</th>
+                        <th mzSortKey="total">Total</th>
+                        <th mzSortKey="country">Country</th>
                     </tr>
                 </ng-template>
                 <ng-template #bodyTemplate let-order>

@@ -32,5 +32,5 @@ export * from './lib/testing/result-table-harness';
 export * from './lib/alert/alert.component';
 
 // sort
+export * from './lib/sort-key.directive';
 export * from './lib/sort.directive';
-export * from './lib/sortable.directive';

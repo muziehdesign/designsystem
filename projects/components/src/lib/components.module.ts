@@ -13,7 +13,7 @@ import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 import { DateDisplayPipe } from './date-display/date-display.pipe';
 import { SortDirective } from './sort.directive';
-import { SortableDirective } from './sortable.directive';
+import { SortKeyDirective } from './sort-key.directive';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { SortableDirective } from './sortable.directive';
     DateDisplayPipe,
     PhoneNumberPipe,
     AlertComponent,
-    SortDirective,
-    SortableDirective
+    SortKeyDirective,
+    SortDirective
   ],
   imports: [
     CommonModule,
@@ -47,8 +47,8 @@ import { SortableDirective } from './sortable.directive';
     DateDisplayPipe,
     AlertComponent,
     PhoneNumberPipe,
-    SortDirective,
-    SortableDirective
+    SortKeyDirective,
+    SortDirective
   ],
   providers: [
     DatePipe
