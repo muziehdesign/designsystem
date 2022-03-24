@@ -51,7 +51,8 @@
     }
 }
 
-.result-table.loading, .result-table.failed {
+.result-table.loading,
+.result-table.failed {
     min-height: 14rem;
 }
 
@@ -61,6 +62,11 @@
     }
 }
 
-th.sort-active{
-    @apply text-primary;
+th[role='button'] {
+    @apply bg-gray-100 hover:bg-gray-200;
+    &.sort-active {
+        background: url('/assets/arrow-up.svg');
+        background-size: 1rem;
+        @apply bg-gray-200 bg-no-repeat bg-center;
+    }
 }
