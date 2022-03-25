@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { TimeValue } from '../models/time-value';
 
 @Component({
   selector: 'mz-datetime',
@@ -72,9 +73,4 @@ export class DateTimeComponent implements ControlValueAccessor {
 
 export interface ScheduleInputModel {
   time: TimeValue
-}
-
-export interface TimeValue {
-  hour: number;
-  minute: number;
 }

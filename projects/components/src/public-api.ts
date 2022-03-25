@@ -28,8 +28,8 @@ export * from './lib/time-value-accessor.directive';
 export {
   MuziehDateTimeModule,
   DateTimeComponent,
-  TimeValue,
 } from './lib/date-time/date-time.module';
+export * from './lib/models/time-value';
 
 // testing files
 export * from './lib/testing/muzieh-component-harness';
