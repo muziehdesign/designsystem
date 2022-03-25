@@ -9,12 +9,12 @@ import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loa
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
-import { DatetimeComponent } from './datetime/datetime.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 import { DateDisplayPipe } from './date-display/date-display.pipe';
+import { MuziehDateTimeModule } from './date-time/date-time.module';
 
 @NgModule({
   declarations: [
@@ -26,10 +26,9 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueAccessorDirective,
-    DatetimeComponent,
     DateDisplayPipe,
     PhoneNumberPipe,
-    AlertComponent
+    AlertComponent,
   ],
   imports: [
     CommonModule,
@@ -46,10 +45,10 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     TimeValueAccessorDirective,
-    DatetimeComponent,
     DateDisplayPipe,
     AlertComponent,
-    PhoneNumberPipe
+    PhoneNumberPipe,
+    MuziehDateTimeModule,
   ],
   providers: [
     DatePipe,

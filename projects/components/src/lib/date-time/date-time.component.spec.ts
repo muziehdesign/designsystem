@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
-import { DatetimeComponent } from './datetime.component';
+import { DateTimeComponent } from './date-time.component';
 
 
 @Component({selector: 'test-cmp', template: ''})
@@ -46,7 +45,7 @@ describe('DatetimeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DatetimeComponent, TestComponent ],
+      declarations: [ DateTimeComponent, TestComponent ],
       imports: [
         FormsModule
       ],

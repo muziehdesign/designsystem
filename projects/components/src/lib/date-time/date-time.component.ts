@@ -4,15 +4,15 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'mz-datetime',
-  templateUrl: './datetime.component.html',
-  styleUrls: ['./datetime.component.css'],
+  templateUrl: './date-time.component.html',
+  styleUrls: ['./date-time.component.css'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => DatetimeComponent),
+    useExisting: forwardRef(() => DateTimeComponent),
     multi: true
   }]
 })
-export class DatetimeComponent implements ControlValueAccessor {
+export class DateTimeComponent implements ControlValueAccessor {
 
   date: Date | undefined;
   time: String | undefined;
