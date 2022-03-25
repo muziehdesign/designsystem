@@ -1,17 +1,29 @@
-import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { SortEvent } from './models/sort-event';
 
 @Directive({
     selector: '[mzSort]',
 })
-export class SortDirective implements OnInit {
-    @Input('mzSort') mzSort!: string;
+export class SortDirective implements OnChanges {
+
     @Output() sort = new EventEmitter<SortEvent>();
-    active = '';
+    @Input('mzSort') set mzSort(value: string) {
+        this._mzSort = value;
+        this.setActiveHeaderSort();
+    }
+
+    mzSortOnChange$ = new BehaviorSubject<string>('');
+    _mzSort!: string;
+    active!: string;
 
     constructor() {}
 
-    ngOnInit(): any {
-        this.active = this.mzSort.includes('-') ? this.mzSort.slice(1) : this.mzSort;
+    ngOnChanges(): any {
+        this.mzSortOnChange$.next(this.active);
+    }
+
+    setActiveHeaderSort() {
+        this.active = this._mzSort.includes('-') ? this._mzSort.slice(1) : this._mzSort;
     }
 }

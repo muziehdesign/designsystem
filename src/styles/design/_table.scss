@@ -62,11 +62,32 @@
     }
 }
 
-th[role='button'] {
+.sort-trigger {
     @apply bg-gray-100 hover:bg-gray-200;
-    &.sort-active {
-        background: url('/assets/arrow-up.svg');
-        background-size: 1rem;
-        @apply bg-gray-200 bg-no-repeat bg-center;
-    }
+}
+
+.sort-ascending span {
+    width: 10px;
+    display: inline-flex;
+    margin-bottom: -7px;
+    margin-left: 10px;
+    height: 23px;
+    mask-image: url('/assets/arrow-up.svg');
+    mask-repeat: no-repeat;
+    mask-size: 1rem;
+    mask-position: center;
+    @apply bg-gray-500;
+}
+
+.sort-descending span {
+    width: 10px;
+    display: inline-flex;
+    margin-bottom: -7px;
+    margin-left: 10px;
+    height: 23px;
+    mask-image: url('/assets/arrow-down.svg');
+    mask-repeat: no-repeat;
+    mask-size: 1rem;
+    mask-position: center;
+    @apply bg-gray-500;
 }
