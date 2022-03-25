@@ -33,11 +33,9 @@ export class DatetimeComponent implements ControlValueAccessor {
   writeValue(value: Date) {
     if (value) {
       this.date = value;
-      if (value.getHours() && value.getMinutes()) {
-        const hourPrefix = value.getHours() > 9 ? '' : '0';
-        const minutePrefix = value.getMinutes() > 9 ? '' : '0';
-        this.time = `${hourPrefix}${value.getHours()}:${minutePrefix}${value.getMinutes()}`;
-      }
+      const hourPrefix = value.getHours() > 9 ? '' : '0';
+      const minutePrefix = value.getMinutes() > 9 ? '' : '0';
+      this.time = `${hourPrefix}${value.getHours()}:${minutePrefix}${value.getMinutes()}`;
       this._cd.markForCheck();
     }
   }

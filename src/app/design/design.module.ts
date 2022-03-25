@@ -86,7 +86,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
     ],
-    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule],
+    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }, MatDatepickerModule],
 })
 export class DesignModule {}
