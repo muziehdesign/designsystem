@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 import { DesignRoutingModule } from './design-routing.module';
 import { FormControlsComponent } from './form-controls/form-controls.component';
 import { DesignComponent } from './design.component';
@@ -82,7 +83,7 @@ import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.compon
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
     ],
-    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule],
+    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDialogModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
 })
 export class DesignModule {}
