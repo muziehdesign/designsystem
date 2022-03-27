@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { fakeAsync, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { ScheduleInputModel } from 'src/app/design/datetime-picker-guidelines/datetime-picker-guidelines.component';
+import { ScheduleInputModel } from './date-time/date-time.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
 
 @Component({
