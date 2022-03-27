@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { TimeValue } from '../models/time-value';
+import { TimeValue } from './time-value';
 
 @Component({
   selector: 'mz-datetime',

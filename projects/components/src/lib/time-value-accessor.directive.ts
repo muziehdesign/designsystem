@@ -1,6 +1,6 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import { TimeValue } from './models/time-value';
+import { TimeValue } from './date-time/time-value';
 
 // TODO: need to rename, and need to use ivy instead
 

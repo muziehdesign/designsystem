@@ -29,7 +29,7 @@ export {
   MuziehDateTimeModule,
   DateTimeComponent,
 } from './lib/date-time/date-time.module';
-export * from './lib/models/time-value';
+export * from './lib/date-time/time-value';
 
 // testing files
 export * from './lib/testing/muzieh-component-harness';
