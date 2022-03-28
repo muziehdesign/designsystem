@@ -19,6 +19,7 @@ export class DateTimeComponent implements ControlValueAccessor {
   time: String | undefined;
   private tempDate: string | undefined | null = null;
   private tempTime: string | null = null;
+  type = 'outline';
 
   @Input()
   min?: Date | undefined;
