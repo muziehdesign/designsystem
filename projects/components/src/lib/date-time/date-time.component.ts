@@ -56,9 +56,13 @@ export class DateTimeComponent implements ControlValueAccessor {
   }
 
   updateDateEvent(event: MatDatepickerInputEvent<Date>) {
-    const date = `${event.value?.getMonth()}/${event.value?.getDate()}/${event.value?.getFullYear()}`;
-    this.tempDate = date;
-    this.propagateModelCahnge();
+    let value;
+    if (event.value) {
+      value = event.value;
+      const date = `${value.getMonth() + 1}/${value.getDate()}/${value.getFullYear()}`;
+      this.tempDate = date;
+      this.propagateModelCahnge();
+    }
   }
 
   private propagateModelCahnge(): void {
