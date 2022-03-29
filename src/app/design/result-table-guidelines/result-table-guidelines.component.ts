@@ -3,7 +3,8 @@ import { PageEvent } from 'dist/components/lib/models/page-event';
 import { ResultTableModel } from 'muzieh-ngcomponents';
 import { LoadingState } from 'dist/components/lib/models/loading-state';
 import { Observable, of } from 'rxjs';
-import { delay, finalize, map, tap } from 'rxjs/operators';
+import { delay, map, tap } from 'rxjs/operators';
+import { SortEvent } from 'projects/components/src/lib/models/sort-event';
 
 @Component({
     selector: 'app-result-table-guidelines',
@@ -18,10 +19,12 @@ export class ResultTableGuidelinesComponent {
     errorLoadingState = { error: new Error(), loading: false } as LoadingState;
     error = new Error();
     loadingExampleState = { loading: true } as LoadingState;
+    sortKey = 'orderNumber';
+    pagination: PageEvent = { page: 1, pageSize: 20 };
 
     constructor() {
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel(1, 20).pipe(
+        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
@@ -30,7 +33,7 @@ export class ResultTableGuidelinesComponent {
 
     changeDefaultModelTotal() {
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel(1, 20).pipe(
+        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
@@ -39,14 +42,15 @@ export class ResultTableGuidelinesComponent {
 
     onPageChange(pageEvent: PageEvent) {
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel(pageEvent.page, pageEvent.pageSize).pipe(
+        this.pagination = pageEvent;
+        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
         );
     }
 
-    getPagedModel(page: number, pageSize: number): Observable<ResultTableModel<OrderDataModel>> {
+    getPagedModel(page: number, pageSize: number, sort: string): Observable<ResultTableModel<OrderDataModel>> {
         const orders = [
             { orderNumber: 10000001, customer: 'Usagi Tsukino', total: 50145.55, date: new Date(), country: 'USA', status: 'Fulfilled' },
             { orderNumber: 10000002, customer: 'Ami Mizuno', total: 968088.5, date: new Date(), country: 'USA', status: 'Fulfilled' },
@@ -60,6 +64,8 @@ export class ResultTableGuidelinesComponent {
             return Object.assign({}, order, { orderNumber: order.orderNumber + i * page * 10 });
         });
 
+        results.sort(this.compareValues(sort));
+
         return of(results).pipe(
             delay(1200),
             map((x) => {
@@ -68,9 +74,44 @@ export class ResultTableGuidelinesComponent {
                     page: page,
                     pageSize: pageSize,
                     totalResults: this.defaultModelTotal,
+                    sort: sort,
                 };
             })
         );
+    }
+
+    onSort(sortEvent: SortEvent) {
+        this.sortKey = sortEvent.sort;
+        this.defaultLoadingState.loading = true;
+        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
+          tap(() => {
+              this.defaultLoadingState.loading = false;
+          })
+      );
+    }
+
+    // generic sorting function
+    private compareValues(key: string) {
+        const orderDesc = key.includes('-');
+        key = key.includes('-') ? key.slice(1) : key;
+
+        return function innerSort(a: any, b: any) {
+            if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+                // property doesn't exist on either object
+                return 0;
+            }
+
+            const varA = typeof a[key] === 'string' ? a[key].toUpperCase() : a[key];
+            const varB = typeof b[key] === 'string' ? b[key].toUpperCase() : b[key];
+
+            let comparison = 0;
+            if (varA > varB) {
+                comparison = 1;
+            } else if (varA < varB) {
+                comparison = -1;
+            }
+            return orderDesc ? comparison * -1 : comparison;
+        };
     }
 }
 
