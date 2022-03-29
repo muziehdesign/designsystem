@@ -1,7 +1,8 @@
-import { ChangeDetectorRef, Component, forwardRef, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, forwardRef, Input, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { TimeValue } from './time-value';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'mz-datetime',
@@ -20,6 +21,7 @@ export class DateTimeComponent implements ControlValueAccessor {
   private tempDate: string | undefined | null = null;
   private tempTime: string | null = null;
   type = 'outline';
+  @ViewChild('datePicker') datepicker!: MatDatepicker<Date>;
 
   @Input()
   min?: Date | undefined;
@@ -64,6 +66,10 @@ export class DateTimeComponent implements ControlValueAccessor {
       this.tempDate = date;
       this.propagateModelCahnge();
     }
+  }
+
+  focusOnDateInput() {
+    this.datepicker.open();
   }
 
   private propagateModelCahnge(): void {
