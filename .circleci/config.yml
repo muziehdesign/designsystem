@@ -76,7 +76,7 @@ jobs:
       - deploy:
           name: "npm publish"
           command: |
-            npm publish ./dist/components
+            npm publish ./dist/components --tag latest
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
