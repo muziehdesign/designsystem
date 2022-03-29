@@ -51,7 +51,8 @@
     }
 }
 
-.result-table.loading, .result-table.failed {
+.result-table.loading,
+.result-table.failed {
     min-height: 14rem;
 }
 
@@ -59,4 +60,34 @@
     caption {
         visibility: hidden;
     }
+}
+
+.sort-trigger {
+    @apply bg-gray-100 hover:bg-gray-200;
+}
+
+.sort-ascending span {
+    width: 10px;
+    display: inline-flex;
+    margin-bottom: -7px;
+    margin-left: 10px;
+    height: 23px;
+    mask-image: url('/assets/arrow-up.svg');
+    mask-repeat: no-repeat;
+    mask-size: 1.2rem;
+    mask-position: center;
+    @apply bg-gray-500;
+}
+
+.sort-descending span {
+    width: 10px;
+    display: inline-flex;
+    margin-bottom: -7px;
+    margin-left: 10px;
+    height: 23px;
+    mask-image: url('/assets/arrow-down.svg');
+    mask-repeat: no-repeat;
+    mask-size: 1.2rem;
+    mask-position: center;
+    @apply bg-gray-500;
 }
