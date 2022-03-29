@@ -1,0 +1,23 @@
+.mat-calendar-body-cell-content {
+  border-radius: 0px!important;
+  border-width: 0px!important;
+  border: 1px solid #E5E7EB!important;
+  width: 95%!important;
+  height: 95%!important;
+}
+
+.mat-calendar-body-selected {
+  @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 active:bg-blue-700;
+}
+
+.mat-calendar-body-label {
+  opacity: 0;
+}
+
+.mat-calendar-body-label[colspan="7"] {
+  display: none;
+}
+
+.mat-calendar-body-disabled {
+  background-color: #F9FAFB!important;
+}
