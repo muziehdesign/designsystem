@@ -2,13 +2,43 @@
 <div class="prose">
     Use a date time picker to help user pick a date time value.
 </div>
-
 <article>
     <h2>Default</h2>
     <div class="example">
-        // TODO: add one for date picker
+      <div class="button-list">
+          <button class="button button-secondary" (click)="setDatetime('2022-01-12T20:00')">Set value to 12/1/2022 8:00 PM</button>
+          <button class="button button-secondary" (click)="setDatetime('2022-04-12T16:20')">Set value to 12/04/2022 4:20 PM</button>
+      </div>
+      <div>
+        <form class="form">
+            <h3>Date Time</h3>
+            <mz-datetime [(ngModel)]="dateTime" name="test"></mz-datetime>
+            Date Time: {{ dateTime | json }}
+        </form>
+      </div>
+      <hr style="margin: 10px 0 10px 0">
+      <div>
+        <form class="form">
+          <h3>Date Time with min-max date</h3>
+          <mz-datetime [(ngModel)]="dateTimeMinMax" name="minMax" [min]="min" [max]="max"></mz-datetime>
+          Min Max: {{ dateTimeMinMax | json }}
+        </form>
+      </div>
     </div>
     <div class="example">
+        <form class="form">
+            <input matInput [(ngModel)]="deactivationDate" (ngModelChange)="onDeactivationDateChange()" name="deactivationDate" [matDatepicker]="deactivationDatePicker">
+            <button class="button button-secondary button-icon" (click)="deactivationDatePicker.open()">
+                <mz-svg-icon key="calendar" type="outline"></mz-svg-icon>
+            </button>
+            <mat-datepicker #deactivationDatePicker></mat-datepicker>
+        </form>
+    </div>
+    <div class="example">
+        <div class="button-list">
+            <button class="button button-secondary" (click)="setScheduleRunTime({ 'hour': 10, 'minute': 0 })">Set time to 10:00 AM</button>
+            <button class="button button-secondary" (click)="setScheduleRunTime({ 'hour': 20, 'minute': 0 })">Set time to 8:00 PM</button>
+        </div>
         <form class="form">
             <label>
                 <span class="field-label">Scheduled run time</span>
@@ -16,9 +46,6 @@
             </label>
         </form>
         {{ defaultScheduleInputModel | json }}
-    </div>
-    <div class="example">
-        // TODO: add one for date range
     </div>
 
     <h3>Best practices</h3>

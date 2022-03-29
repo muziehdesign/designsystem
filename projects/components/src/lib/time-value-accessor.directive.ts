@@ -1,10 +1,11 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { TimeValue } from './date-time/time-value';
 
 // TODO: need to rename, and need to use ivy instead
 
 @Directive({
-  selector: 'mzTimeValueAccessor',  //'input[type=time]', TODO: restore and rename directive
+  selector: 'input[type=time]',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: TimeValueAccessorDirective,
@@ -32,7 +33,7 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
 
   registerOnChange(fn: (x: TimeValue | null) => void): void {
     this.onChange = (value) => {
-      if (value == null || value == '') {
+      if (value === null || value === '') {
         fn(null);
       } else {
         const parts = value.split(':');
@@ -44,9 +45,4 @@ export class TimeValueAccessorDirective implements ControlValueAccessor {
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
-}
-
-export interface TimeValue {
-  hour: number;
-  minute: number;
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatMenuModule} from '@angular/material/menu';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DesignRoutingModule } from './design-routing.module';
 import { FormControlsComponent } from './form-controls/form-controls.component';
 import { DesignComponent } from './design.component';
@@ -33,7 +33,7 @@ import { SpinnerGuidelinesComponent } from './spinner-guidelines/spinner-guideli
 import { ResultTableGuidelinesComponent } from './result-table-guidelines/result-table-guidelines.component';
 import { ProgressBarGuidelinesComponent } from './progress-bar-guidelines/progress-bar-guidelines.component';
 import { ModalGuidelinesComponent } from './modal-guidelines/modal-guidelines.component';
-import { NgbDropdown, NgbDropdownMenu, NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TabChild1Component } from './tab-child1/tab-child1.component';
 import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
 import { NAVIGATION_LINK_TOKEN } from '../navigation/navigation-links.token';
@@ -44,6 +44,9 @@ import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
 import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
 import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
+
 
 @NgModule({
     declarations: [
@@ -83,7 +86,7 @@ import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.compon
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
     ],
-    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDialogModule],
-    providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }],
+    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule, MuziehDateTimeModule],
+    providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }, MatDatepickerModule],
 })
 export class DesignModule {}

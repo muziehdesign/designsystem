@@ -24,6 +24,13 @@ export * from './lib/result-table/result-table.model';
 export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';
 
+// Datetime
+export {
+  MuziehDateTimeModule,
+  DateTimeComponent,
+} from './lib/date-time/date-time.module';
+export * from './lib/date-time/time-value';
+
 // testing files
 export * from './lib/testing/muzieh-component-harness';
 export * from './lib/testing/result-table-harness';

@@ -7,11 +7,14 @@ import { ResultTableComponent } from './result-table/result-table.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { TimeValueAccessorDirective } from './time-value-accessor.directive';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 import { DateDisplayPipe } from './date-display/date-display.pipe';
+import { MuziehDateTimeModule } from './date-time/date-time.module';
 import { SortDirective } from './sort.directive';
 import { SortKeyDirective } from './sort-key.directive';
 
@@ -24,7 +27,7 @@ import { SortKeyDirective } from './sort-key.directive';
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
-    TimeValueValidatorDirective,
+    TimeValueAccessorDirective,
     DateDisplayPipe,
     PhoneNumberPipe,
     AlertComponent,
@@ -33,6 +36,8 @@ import { SortKeyDirective } from './sort-key.directive';
   ],
   imports: [
     CommonModule,
+    MatDatepickerModule,
+    FormsModule,
     NgbModule
   ],
   exports: [
@@ -43,15 +48,16 @@ import { SortKeyDirective } from './sort-key.directive';
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
-    TimeValueValidatorDirective,
+    TimeValueAccessorDirective,
     DateDisplayPipe,
     AlertComponent,
     PhoneNumberPipe,
+    MuziehDateTimeModule,
     SortKeyDirective,
     SortDirective
   ],
   providers: [
-    DatePipe
+    DatePipe,
   ]
 })
 export class MuziehComponentsModule { }
