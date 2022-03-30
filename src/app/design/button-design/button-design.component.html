@@ -64,7 +64,10 @@
     <h3>Loading</h3>
     <div class="example">
         <div class="button-list">
-            <button mzButton [variant]="'primary'" [busy]="true" (click)="onButtonClick()">
+            <button mzButton [variant]="'primary'" [busy]="true">
+                mzButton
+            </button>
+            <button class="button button-primary loading" (click)="onButtonClick()">
                 <div class="button-loading-overlay">
                     <svg class="animate-spin m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24">

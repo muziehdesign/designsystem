@@ -31,7 +31,7 @@
 }
 
 button.loading {
-    @apply pointer-events-none cursor-wait relative;
+    @apply cursor-wait relative;
 }
 
 .button-loading-overlay {
@@ -53,3 +53,32 @@ button.loading {
 .link-action {
     @apply cursor-pointer;
 }
+
+.spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spinner:after {
+    content: ' ';
+    border-radius: 50%;
+    border-width: 3px;
+    @apply block border-blue-600 border-solid border-b-current h-5 w-5;
+    animation: spinner 1s linear infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
