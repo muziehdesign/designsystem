@@ -94,10 +94,7 @@
                     Unexpected error, try submitting the form again.
                 </div>
 
-                <button class="button button-primary" [ngClass]="{ 'loading' : isLoading}">
-                    <div class="button-loading-overlay" *ngIf="isLoading">
-                        <mz-spinner type="inverse"></mz-spinner>
-                    </div>
+                <button mzButton variant="primary" [busy]="isLoading">
                     Add delivery address
                 </button>
             </div>

@@ -5,6 +5,7 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnChanges, OnI
     host: {
         role: 'button',
         '[attr.tabindex]': '0',
+        '[attr.aria-disabled]': 'busy',
     },
 })
 export class ButtonDirective implements OnChanges {

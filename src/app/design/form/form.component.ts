@@ -25,6 +25,7 @@ export class FormComponent implements OnInit {
     }
 
     onSubmit() {
+        console.log('is submitting event only when is not busy', this.isLoading)
         this.isSuccessful = undefined;
 
         if (this.addressForm!.invalid) {
