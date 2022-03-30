@@ -14,6 +14,7 @@ export class FormComponent implements OnInit {
     error: string | undefined;
     isSuccessful: boolean | undefined;
     @ViewChild('addressForm', { static: true }) addressForm?: NgForm;
+    submitCount = 0;
     constructor() {}
 
     ngOnInit(): void {}
@@ -25,6 +26,7 @@ export class FormComponent implements OnInit {
     }
 
     onSubmit() {
+        this.submitCount++;
         console.log('is submitting event only when is not busy', this.isLoading)
         this.isSuccessful = undefined;
 

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ControlContainer, FormsModule, NgForm } from '@angular/forms';
 
 import { FormControlsComponent } from './form-controls.component';
 
@@ -8,7 +9,15 @@ describe('FormControlsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormControlsComponent ]
+      imports: [FormsModule],
+      declarations: [ FormControlsComponent ],
+      providers: [
+        NgForm,
+        {
+            provide: ControlContainer,
+            useClass: NgForm,
+        },
+      ]
     })
     .compileComponents();
   });

@@ -7,7 +7,7 @@ import { ResultTableComponent, PaginationComponent } from 'muzieh-ngcomponents';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 
-fdescribe('ResourceListComponent', () => {
+describe('ResourceListComponent', () => {
     let component: ResourceListComponent;
     let fixture: ComponentFixture<ResourceListComponent>;
     let loader: HarnessLoader;
