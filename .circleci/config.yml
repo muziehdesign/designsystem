@@ -83,13 +83,23 @@ jobs:
                   npm publish ./dist/components --tag latest
       - when:
           condition:
-            not: 
-              equal: [develop, <<pipeline.git.branch>>]
+              equal: [master, <<pipeline.git.branch>>]
           steps:
             - deploy:
                 name: "npm publish"
                 command: |
                   npm publish ./dist/components
+      - when:
+          condition:
+            not:
+              and:  
+               - equal: [develop, <<pipeline.git.branch>>]
+               - equal: [master, <<pipeline.git.branch>>]
+          steps:
+            - deploy:
+                name: "npm publish"
+                command: |
+                  npm publish ./dist/components --tag next
           
 
 # Invoke jobs via workflows
