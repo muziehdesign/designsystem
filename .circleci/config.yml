@@ -92,7 +92,6 @@ jobs:
       - when:
           condition:
             not:
-              and:  
                - equal: [develop, <<pipeline.git.branch>>]
                - equal: [master, <<pipeline.git.branch>>]
           steps:
