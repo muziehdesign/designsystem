@@ -74,16 +74,10 @@ jobs:
             touch .npmrc
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
       - when:
-          condition: 
-            equal: [develop, <<pipeline.git.branch>>]
-          steps:
-            - deploy:
-                name: "npm publish"
-                command: |
-                  npm publish ./dist/components --tag latest
-      - when:
           condition:
+            or:
               equal: [master, <<pipeline.git.branch>>]
+              equal: [develop, <<pipeline.git.branch>>]
           steps:
             - deploy:
                 name: "npm publish"
@@ -91,14 +85,15 @@ jobs:
                   npm publish ./dist/components
       - when:
           condition:
-            not:
-               - equal: [develop, <<pipeline.git.branch>>]
-               - equal: [master, <<pipeline.git.branch>>]
+            and:
+              not:
+                - equal: [develop, <<pipeline.git.branch>>]
+                - equal: [master, <<pipeline.git.branch>>]
           steps:
             - deploy:
                 name: "npm publish"
                 command: |
-                  npm publish ./dist/components --tag next
+                  npm publish ./dist/components --tag alpha
           
 
 # Invoke jobs via workflows
