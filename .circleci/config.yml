@@ -73,11 +73,33 @@ jobs:
           command: |
             touch .npmrc
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - deploy:
-          name: "npm publish"
-          command: |
-            npm publish ./dist/components
-
+      - when:
+          condition:
+            and:
+              - not:
+                  matches:
+                    pattern: "^master$"
+                    value: << pipeline.git.branch >>
+              - not:
+                  matches:
+                    pattern: "^develop$"
+                    value: << pipeline.git.branch >>
+          steps:
+            - deploy:
+                name: "npm publish"
+                command: |
+                  npm publish ./dist/components --tag alpha
+      - unless:
+          condition:
+            or:
+              - equal: [master, << pipeline.git.branch >>]
+              - equal: [develop, << pipeline.git.branch >>]
+          steps:
+            - deploy:
+                name: "npm publish"
+                command: |
+                  npm publish ./dist/components
+          
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
