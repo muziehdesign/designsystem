@@ -14,7 +14,7 @@ export class ButtonDirective implements OnChanges, OnDestroy {
     @Input()
     variant? = 'secondary';
     @Input()
-    busy?: boolean;
+    busy?: boolean = false;
     private svgContent = `
     <svg class="animate-spin m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
         viewBox="0 0 24 24">
@@ -50,6 +50,7 @@ export class ButtonDirective implements OnChanges, OnDestroy {
             const innerSpinnerElement = this.renderer.createElement('div');
             innerSpinnerElement.innerHTML = this.svgContent;
             this.renderer.addClass(loadingElement, 'button-loading-overlay');
+            this.renderer.addClass(innerSpinnerElement, 'svg-spinner-container');
             this.renderer.appendChild(loadingElement, innerSpinnerElement);
             this.renderer.appendChild(this.hostElement.nativeElement, loadingElement);
             this.addEventSubscription();
@@ -62,7 +63,7 @@ export class ButtonDirective implements OnChanges, OnDestroy {
     private addEventSubscription() {
         const el = this.hostElement.nativeElement;
         this.subscription = fromEvent(el.parentNode, 'click', { capture: true })
-            .pipe(filter((e: any) => Boolean(this.busy && this.getElementsToOmit().includes(e.target))))
+            .pipe(filter((e: any) => Boolean(this.busy && this.getElementsToVerify().includes(e.target))))
             .subscribe((e: any) => {
                 e.stopPropagation();
             });
@@ -72,8 +73,8 @@ export class ButtonDirective implements OnChanges, OnDestroy {
         return this.hostElement.nativeElement.querySelector(query);
     }
 
-    private getElementsToOmit() {
-        return [this.hostElement.nativeElement, this.getOverlayDiv(), this.getChildElement('div:not(.button-loading-overlay)'), this.getChildElement('div div svg'), this.getChildElement('div div svg circle'), this.getChildElement('div div svg path')];
+    private getElementsToVerify() {
+        return [this.hostElement.nativeElement, this.getOverlayDiv(), this.getChildElement('.button-loading-overlay .svg-spinner-container'), this.getChildElement('.button-loading-overlay .svg-spinner-container svg'), this.getChildElement('.button-loading-overlay .svg-spinner-container svg circle'), this.getChildElement('.button-loading-overlay .svg-spinner-container svg path')];
     }
 
     private getOverlayDiv() {
