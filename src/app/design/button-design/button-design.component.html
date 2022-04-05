@@ -64,8 +64,11 @@
     <h3>Loading</h3>
     <div class="example">
         <div class="button-list">
-            <button mzButton [variant]="'primary'" [busy]="true" (click)="onButtonClick()">
+            <button mzButton [variant]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 mzButton
+            </button>
+            <button mzButton [variant]="'primary'" [busy]="busy2" (click)="testBusyEvent2()">
+                mzButton 2
             </button>
             <button class="button button-primary loading" (click)="onButtonClick()">
                 <div class="button-loading-overlay">

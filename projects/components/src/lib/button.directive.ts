@@ -1,5 +1,6 @@
-import { Directive, ElementRef, HostBinding, Input, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges } from '@angular/core';
+import { Directive, ElementRef, HostBinding, Input, OnChanges, OnDestroy, Renderer2, SimpleChanges } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Directive({
     selector: '[mzButton]',
@@ -9,12 +10,11 @@ import { fromEvent, Subscription } from 'rxjs';
         '[attr.aria-disabled]': 'busy',
     },
 })
-export class ButtonDirective implements OnInit, OnChanges, OnDestroy {
+export class ButtonDirective implements OnChanges, OnDestroy {
     @Input()
     variant? = 'secondary';
     @Input()
     busy?: boolean;
-    private loadingElement?: Node;
     private svgContent = `
     <svg class="animate-spin m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
         viewBox="0 0 24 24">
@@ -29,15 +29,6 @@ export class ButtonDirective implements OnInit, OnChanges, OnDestroy {
 
     constructor(private renderer: Renderer2, private hostElement: ElementRef) {}
 
-    ngOnInit(): void {
-        const el = this.hostElement.nativeElement;
-        this.subscription = fromEvent(el.parentNode, 'click', { capture: true }).subscribe((e: any) => {
-            if (this.busy && (e.target === el || e.target === this.loadingElement)) {
-                e.stopPropagation();
-            }
-        });
-    }
-
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['busy'] && Boolean(changes['busy'].previousValue) !== Boolean(changes['busy'].currentValue)) {
             this.attachOrDeattachSpinner();
@@ -45,7 +36,7 @@ export class ButtonDirective implements OnInit, OnChanges, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+        this.subscription?.unsubscribe();
     }
 
     @HostBinding('class')
@@ -55,14 +46,37 @@ export class ButtonDirective implements OnInit, OnChanges, OnDestroy {
 
     attachOrDeattachSpinner() {
         if (this.busy) {
-            this.loadingElement = this.renderer.createElement('div') as Node;
-            const innerSpinner = this.renderer.createElement('div');
-            innerSpinner.innerHTML = this.svgContent;
-            this.renderer.addClass(this.loadingElement, 'button-loading-overlay');
-            this.renderer.appendChild(this.loadingElement, innerSpinner);
-            this.renderer.appendChild(this.hostElement.nativeElement, this.loadingElement);
+            const loadingElement = this.renderer.createElement('div') as Node;
+            const innerSpinnerElement = this.renderer.createElement('div');
+            innerSpinnerElement.innerHTML = this.svgContent;
+            this.renderer.addClass(loadingElement, 'button-loading-overlay');
+            this.renderer.appendChild(loadingElement, innerSpinnerElement);
+            this.renderer.appendChild(this.hostElement.nativeElement, loadingElement);
+            this.addEventSubscription();
         } else {
-            this.renderer.removeChild(this.hostElement.nativeElement, this.loadingElement);
+            this.renderer.removeChild(this.hostElement.nativeElement, this.getOverlayDiv());
+            this.subscription?.unsubscribe();
         }
+    }
+
+    private addEventSubscription() {
+        const el = this.hostElement.nativeElement;
+        this.subscription = fromEvent(el.parentNode, 'click', { capture: true })
+            .pipe(filter((e: any) => Boolean(this.busy && this.getElementsToOmit().includes(e.target))))
+            .subscribe((e: any) => {
+                e.stopPropagation();
+            });
+    }
+
+    private getChildElement(query: string) {
+        return this.hostElement.nativeElement.querySelector(query);
+    }
+
+    private getElementsToOmit() {
+        return [this.hostElement.nativeElement, this.getOverlayDiv(), this.getChildElement('div:not(.button-loading-overlay)'), this.getChildElement('div div svg'), this.getChildElement('div div svg circle'), this.getChildElement('div div svg path')];
+    }
+
+    private getOverlayDiv() {
+        return this.getChildElement('div.button-loading-overlay');
     }
 }
