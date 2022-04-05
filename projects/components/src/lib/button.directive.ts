@@ -1,4 +1,5 @@
-import { Directive, ElementRef, HostBinding, HostListener, Input, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
+import { Directive, ElementRef, HostBinding, Input, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges } from '@angular/core';
+import { fromEvent, Subscription } from 'rxjs';
 
 @Directive({
     selector: '[mzButton]',
@@ -8,7 +9,7 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnChanges, OnI
         '[attr.aria-disabled]': 'busy',
     },
 })
-export class ButtonDirective implements OnChanges {
+export class ButtonDirective implements OnInit, OnChanges, OnDestroy {
     @Input()
     variant? = 'secondary';
     @Input()
@@ -24,8 +25,18 @@ export class ButtonDirective implements OnChanges {
         </path>
     </svg>
     `;
+    private subscription = new Subscription();
 
     constructor(private renderer: Renderer2, private hostElement: ElementRef) {}
+
+    ngOnInit(): void {
+        const el = this.hostElement.nativeElement;
+        this.subscription = fromEvent(el.parentNode, 'click', { capture: true }).subscribe((e: any) => {
+            if (this.busy && (e.target === el || e.target === this.loadingElement)) {
+                e.stopPropagation();
+            }
+        });
+    }
 
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['busy'] && Boolean(changes['busy'].previousValue) !== Boolean(changes['busy'].currentValue)) {
@@ -33,21 +44,13 @@ export class ButtonDirective implements OnChanges {
         }
     }
 
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
+
     @HostBinding('class')
     get elementClass(): string {
         return ['button', `button-${this.variant}`, this.busy ? 'loading' : ''].join(' ');
-    }
-
-    @HostListener('click', ['$event'])
-    @HostListener('keydown', ['$event'])
-    @HostListener('keypress', ['$event'])
-    keyEvent(event: KeyboardEvent) {
-        if (this.busy) {
-            event.stopPropagation();
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            return;
-        }
     }
 
     attachOrDeattachSpinner() {

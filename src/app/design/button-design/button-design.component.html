@@ -64,7 +64,7 @@
     <h3>Loading</h3>
     <div class="example">
         <div class="button-list">
-            <button mzButton [variant]="'primary'" [busy]="true">
+            <button mzButton [variant]="'primary'" [busy]="true" (click)="onButtonClick()">
                 mzButton
             </button>
             <button class="button button-primary loading" (click)="onButtonClick()">
