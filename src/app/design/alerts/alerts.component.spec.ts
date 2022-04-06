@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MuziehComponentsModule } from 'projects/components/src/public-api';
 
 import { AlertsComponent } from './alerts.component';
 
@@ -8,6 +9,7 @@ describe('AlertsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MuziehComponentsModule],
       declarations: [ AlertsComponent ]
     })
     .compileComponents();

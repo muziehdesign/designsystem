@@ -17,6 +17,7 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
 import { MuziehDateTimeModule } from './date-time/date-time.module';
 import { SortDirective } from './sort.directive';
 import { SortKeyDirective } from './sort-key.directive';
+import { ButtonDirective } from './button.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SortKeyDirective } from './sort-key.directive';
     PhoneNumberPipe,
     AlertComponent,
     SortKeyDirective,
-    SortDirective
+    SortDirective,
+    ButtonDirective,
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,8 @@ import { SortKeyDirective } from './sort-key.directive';
     PhoneNumberPipe,
     MuziehDateTimeModule,
     SortKeyDirective,
-    SortDirective
+    SortDirective,
+    ButtonDirective,
   ],
   providers: [
     DatePipe,

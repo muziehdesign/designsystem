@@ -31,7 +31,7 @@
 }
 
 button.loading {
-    @apply pointer-events-none cursor-wait relative;
+    @apply cursor-wait relative;
 }
 
 .button-loading-overlay {

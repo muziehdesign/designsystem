@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines.component';
 
@@ -8,6 +9,7 @@ describe('DropdownMenuGuidelinesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatMenuModule],
       declarations: [ DropdownMenuGuidelinesComponent ]
     })
     .compileComponents();
