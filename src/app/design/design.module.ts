@@ -46,6 +46,7 @@ import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-hea
 import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
+import { SortGuidelinesComponent } from './sort-guidelines/sort.component';
 
 
 @NgModule({
@@ -85,6 +86,7 @@ import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
         ToggleGuidelinesComponent,
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
+        SortGuidelinesComponent,
     ],
     imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule, MuziehDateTimeModule],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }, MatDatepickerModule],

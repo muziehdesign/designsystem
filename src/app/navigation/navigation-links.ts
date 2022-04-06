@@ -32,6 +32,7 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Pagination', link: '/design/pagination' },
         { name: 'Progress bar', link: '/design/progressbar' },
         { name: 'Skeleton loader', link: '/design/skeletonloader' },
+        { name: 'Sort', link: '/design/sort' },
         { name: 'Spinner', link: '/design/spinner' },
         { name: 'Table', link: '/design/table' },
         { name: 'Tabs', link: '/design/tabs' },

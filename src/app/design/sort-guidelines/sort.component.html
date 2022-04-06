@@ -1,0 +1,29 @@
+<header>
+    <h1>Sort</h1>
+    <p>To add sorting behavior to table headers, add <code>mzSort</code> directive to <code>mz-result-table</code> component and also add the <code>mzSortKey</code> directive to each table header and provide an id that will identify it.</p>
+    <p>Users can trigger the sort event through a mouse click. When this happens, the output <code>(sort)</code> will emit a <code>sort-event</code> that contains the ID of the header triggered</p>
+</header>
+
+<article>
+    <h2 class="mb-10">Example</h2>
+    <div class="example-template">
+        <code>
+          <pre>
+            &lt;mz-result-table [mzSort]="sort" (sort)="onSort($event)"&gt;
+          </pre>
+            <pre>
+              &lt;th mzSortKey="orderNumber"&gt;Order&lt;/th&gt;
+          </pre>
+          <pre>
+            &lt;/mz-result-table&gt;
+        </pre>
+        </code>
+    </div>
+
+    <section>
+        <h2>Best practices</h2>
+        <ul class="list-inside list-disc">
+            <li>Default sort is defined in the <code>mzSort</code> directive.</li>
+        </ul>
+    </section>
+</article>

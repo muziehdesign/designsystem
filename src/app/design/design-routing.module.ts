@@ -33,6 +33,7 @@ import { WizardComponent } from './wizard/wizard.component';
 import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/datetime-picker-guidelines.component';
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
 import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
+import { SortGuidelinesComponent } from './sort-guidelines/sort.component';
 
 const routes: Routes = [
     {
@@ -69,6 +70,7 @@ const routes: Routes = [
             { path: 'tabs', component: TabsComponent, children: [{ path: 'child1', component: TabChild1Component }] },
             { path: 'toggle', component: ToggleGuidelinesComponent },
             { path: 'tooltip', component: TooltipComponent },
+            { path: 'sort', component: SortGuidelinesComponent },
             { path: 'wizard', component: WizardComponent },
         ],
     },
