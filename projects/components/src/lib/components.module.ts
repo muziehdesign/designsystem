@@ -6,7 +6,6 @@ import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -40,7 +39,6 @@ import { ButtonDirective } from './button.directive';
     CommonModule,
     MatDatepickerModule,
     FormsModule,
-    NgbModule
   ],
   exports: [
     EnumDisplayPipe,
