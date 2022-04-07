@@ -30,8 +30,12 @@
     @apply mr-4 mb-2;
 }
 
-button.loading {
+.button.loading {
     @apply cursor-wait relative;
+}
+
+.button-loading-spinner {
+    @apply h-5 w-5;
 }
 
 .button-loading-overlay {

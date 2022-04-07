@@ -89,7 +89,7 @@ jobs:
                 name: "npm publish"
                 command: |
                   npm publish ./dist/components --tag alpha
-      - unless:
+      - when:
           condition:
             or:
               - equal: [master, << pipeline.git.branch >>]
