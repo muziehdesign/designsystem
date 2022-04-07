@@ -46,12 +46,9 @@ export class ButtonDirective implements OnChanges, OnDestroy {
 
     attachOrDeattachSpinner() {
         if (this.busy) {
-            const loadingElement = this.renderer.createElement('div') as Node;
-            const innerSpinnerElement = this.renderer.createElement('div');
-            innerSpinnerElement.innerHTML = this.svgContent;
+            const loadingElement = this.renderer.createElement('div');
+            loadingElement.innerHTML = this.svgContent;
             this.renderer.addClass(loadingElement, 'button-loading-overlay');
-            this.renderer.addClass(innerSpinnerElement, 'svg-spinner-container');
-            this.renderer.appendChild(loadingElement, innerSpinnerElement);
             this.renderer.appendChild(this.hostElement.nativeElement, loadingElement);
             this.addEventSubscription();
         } else {
@@ -74,10 +71,10 @@ export class ButtonDirective implements OnChanges, OnDestroy {
     }
 
     private getElementsToVerify() {
-        return [this.hostElement.nativeElement, this.getOverlayDiv(), this.getChildElement('.button-loading-overlay .svg-spinner-container'), this.getChildElement('.button-loading-overlay .svg-spinner-container svg'), this.getChildElement('.button-loading-overlay .svg-spinner-container svg circle'), this.getChildElement('.button-loading-overlay .svg-spinner-container svg path')];
+        return [this.hostElement.nativeElement, this.getOverlayDiv(), this.getChildElement('.button-loading-overlay'), this.getChildElement('.button-loading-overlay svg'), this.getChildElement('.button-loading-overlay svg circle'), this.getChildElement('.button-loading-overlay svg path')];
     }
 
     private getOverlayDiv() {
-        return this.getChildElement('div.button-loading-overlay');
+        return this.getChildElement('.button-loading-overlay');
     }
 }
