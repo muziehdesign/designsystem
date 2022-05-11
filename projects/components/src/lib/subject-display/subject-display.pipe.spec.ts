@@ -1,7 +1,7 @@
 import { Subject } from '../models/subject';
 import { SubjectDisplayPipe } from './subject-display.pipe';
 
-fdescribe('SubjectDisplayPipe', () => {
+describe('SubjectDisplayPipe', () => {
     let pipe: SubjectDisplayPipe;
 
     beforeEach(() => {
