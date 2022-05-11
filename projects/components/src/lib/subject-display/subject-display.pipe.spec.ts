@@ -1,7 +1,7 @@
-import { SubjectDto } from '@app/models/dto/subject.dto';
+import { Subject } from '../models/subject';
 import { SubjectDisplayPipe } from './subject-display.pipe';
 
-describe('SubjectDisplayPipe', () => {
+fdescribe('SubjectDisplayPipe', () => {
     let pipe: SubjectDisplayPipe;
 
     beforeEach(() => {
@@ -13,9 +13,8 @@ describe('SubjectDisplayPipe', () => {
     });
 
     it('should map values', () => {
-        expect(pipe.transform(null)).toBe('');
-        expect(pipe.transform({ givenName: 'Elthon', familyName: 'John', userPrincipalName: 'elthonjohn' } as SubjectDto)).toBe('Elthon John');
-        expect(pipe.transform({ givenName: 'Elthon', userPrincipalName: 'elthonjohn' } as SubjectDto)).toBe('elthonjohn');
-        expect(pipe.transform({ familyName: 'John', userPrincipalName: 'elthonjohn' } as SubjectDto)).toBe('elthonjohn');
+        expect(pipe.transform({ givenName: 'Elthon', familyName: 'John', userPrincipalName: 'elthonjohn' } as Subject)).toBe('Elthon John');
+        expect(pipe.transform({ givenName: 'Elthon', userPrincipalName: 'elthonjohn' } as Subject)).toBe('elthonjohn');
+        expect(pipe.transform({ familyName: 'John', userPrincipalName: 'elthonjohn' } as Subject)).toBe('elthonjohn');
     });
 });
