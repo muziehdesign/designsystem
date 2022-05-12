@@ -13,6 +13,10 @@ export * from './lib/page-header/page-header.component';
 export * from './lib/phone-number/phone-number.pipe';
 export * from './lib/date-display/date-display.pipe';
 
+// subject
+export * from './lib/subject-display/subject-display.pipe';
+export * from './lib/models/subject';
+
 // table
 export * from './lib/result-table/result-table.component';
 export * from './lib/pagination/pagination.component';
