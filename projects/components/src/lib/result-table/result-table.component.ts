@@ -15,7 +15,7 @@ export class ResultTableComponent {
     @Input() public header!: TemplateRef<any>;
     @Input() public body!: TemplateRef<any>;
     @Input() public pagination: TemplateRef<any> | undefined | null;
-    @Input() public options!: ResultTableOptions | undefined | null;
+    @Input() public options: ResultTableOptions = { hidePagination: false };
     @Output() public pageChange = new EventEmitter<PageEvent>();
 
     constructor() {}
