@@ -20,7 +20,7 @@
     <ng-container *ngIf="pagination">
       <ng-container *ngTemplateOutlet="pagination"></ng-container>
     </ng-container>
-    <div class="table-pagination" *ngIf="state === 'succeeded' && model && model.results.length > 0 && !pagination">
+    <div class="table-pagination" *ngIf="state === 'succeeded' && model && model.results.length > 0 && !pagination && !options?.hidePagination">
         <mz-pagination [length]="model.totalResults" [page]="model.page" [pageSize]="model.pageSize"
             (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
