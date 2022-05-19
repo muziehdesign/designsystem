@@ -14,7 +14,6 @@ export class ResultTableComponent {
     @Input() public model: ResultTableModel<any> | undefined | null; // TODO need to deal with the flaw of angular's async pipe
     @Input() public header!: TemplateRef<any>;
     @Input() public body!: TemplateRef<any>;
-    @Input() public pagination: TemplateRef<any> | undefined | null;
     @Input() public options: ResultTableOptions = { hidePagination: false };
     @Output() public pageChange = new EventEmitter<PageEvent>();
 
