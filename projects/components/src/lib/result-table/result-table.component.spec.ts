@@ -3,7 +3,6 @@ import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { PageEvent } from '../models/page-event';
 import { PaginationComponent } from '../pagination/pagination.component';
-import { ResultTableHarness } from '../testing/result-table-harness';
 import { ResultTableComponent } from './result-table.component';
 import { ResultTableModel } from './result-table.model';
 
@@ -135,6 +134,32 @@ describe('ResultTableComponent', () => {
             const stateMessage = fixture.debugElement.query(By.css('.state-message'));
             expect(stateMessage).toBeNull();
         });
+    });
+
+    it('should display pagination based on options', async () => {
+        // arrange
+        component.model = testCases[0].model;
+        component.options = {hidePagination: false};
+        // act
+        fixture.detectChanges();
+        await fixture.whenStable();
+
+        // assert
+        const paginations = fixture.debugElement.query(By.css('.table-pagination'));
+        expect(paginations).not.toBeNull();
+    });
+
+    it('should hide pagination based on options', async () => {
+        // arrange
+        component.model = testCases[0].model;
+        component.options = {hidePagination: true};
+        // act
+        fixture.detectChanges();
+        await fixture.whenStable();
+
+        // assert
+        const paginations = fixture.debugElement.query(By.css('.table-pagination'));
+        expect(paginations).toBeNull();
     });
 
     it('should display no result state', async () => {

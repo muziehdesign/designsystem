@@ -19,7 +19,7 @@
             </select>
         </div>
         <div class="example">
-            <mz-result-table [mzSort]="sortKey" (sort)="onSort($event)" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate"
+            <mz-result-table [options]="{ 'hidePagination': false }" [mzSort]="sortKey" (sort)="onSort($event)" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate"
                 (pageChange)="onPageChange($event)">
                 <ng-template #headerTemplate>
                     <tr>
