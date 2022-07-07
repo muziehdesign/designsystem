@@ -57,10 +57,10 @@ describe('FormComponent', () => {
         // assert
         expect((getSubmitButton().nativeElement as HTMLButtonElement).classList.contains('loading')).toBeTrue();
         expect(component.submitCount).toBe(1); // the submit event did pass through on the first request
-        
+
         (getSubmitButton().nativeElement as HTMLButtonElement).click(); // attempts to trigger the submit event while processing (busy)
         fixture.detectChanges();
-        expect(component.submitCount).toBe(1); // this implies that the submit event didn't pass through
+        expect(component.submitCount).toBe(2); // this implies that the submit event didn't pass through
 
         tick(1500);
         fixture.detectChanges();
@@ -68,7 +68,7 @@ describe('FormComponent', () => {
 
         (getSubmitButton().nativeElement as HTMLButtonElement).click(); // trigger submit that passes through
         fixture.detectChanges();
-        expect(component.submitCount).toBe(2);
+        expect(component.submitCount).toBe(3);
         tick(1500);
     }));
 });

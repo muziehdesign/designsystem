@@ -14,6 +14,7 @@ export const navigationLinks: NavigationLink[] = [
     { name: 'Patterns', children: [
         { name: 'Content', link: '/design/content' },
         { name: 'Form', link: '/design/form' },
+        { name: 'Address form', link: '/design/address-form' },
         { name: 'Result table', link: '/design/resulttable'}
     ]},
     { name: 'Components', children: [
