@@ -46,6 +46,8 @@ import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-hea
 import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
+import { AddressFormComponent } from './address-form/address-form.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -85,8 +87,22 @@ import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
         ToggleGuidelinesComponent,
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
+        AddressFormComponent,
     ],
-    imports: [CommonModule, FormsModule, DesignRoutingModule, SharedModule, NgbModule, MuziehComponentsModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule, MuziehDateTimeModule],
+    imports: [
+        CommonModule,
+        FormsModule,
+        DesignRoutingModule,
+        SharedModule,
+        NgbModule,
+        MuziehComponentsModule,
+        MatMenuModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MuziehDateTimeModule,
+        MatAutocompleteModule,
+        MatMenuModule
+    ],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }, MatDatepickerModule],
 })
 export class DesignModule {}

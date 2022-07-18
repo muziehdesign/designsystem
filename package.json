@@ -25,6 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
+    "@types/google.maps": "^3.49.2",
     "bootstrap": "^4.5.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",

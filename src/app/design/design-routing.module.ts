@@ -33,6 +33,7 @@ import { WizardComponent } from './wizard/wizard.component';
 import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/datetime-picker-guidelines.component';
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
 import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
+import { AddressFormComponent } from './address-form/address-form.component';
 
 const routes: Routes = [
     {
@@ -54,6 +55,7 @@ const routes: Routes = [
             { path: 'iconography', component: IconographyComponent },
             { path: 'layout', component: LayoutComponent },
             { path: 'form', component: FormComponent },
+            { path: 'address-form', component: AddressFormComponent },
             { path: 'pageheader', component: PageHeaderGuidelinesComponent },
             { path: 'accordion', component: AccordionComponent },
             { path: 'button', component: ButtonDesignComponent },
