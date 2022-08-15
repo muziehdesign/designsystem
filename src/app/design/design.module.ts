@@ -38,7 +38,6 @@ import { TabChild1Component } from './tab-child1/tab-child1.component';
 import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
 import { NAVIGATION_LINK_TOKEN } from '../navigation/navigation-links.token';
 import { navigationLinks } from '../navigation/navigation-links';
-import { CodeExampleComponent } from './code-example/code-example.component';
 import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/datetime-picker-guidelines.component';
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
@@ -82,7 +81,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
         ModalGuidelinesComponent,
         TabChild1Component,
         DropdownMenuGuidelinesComponent,
-        CodeExampleComponent,
         DatetimePickerGuidelinesComponent,
         ToggleGuidelinesComponent,
         PageHeaderGuidelinesComponent,
