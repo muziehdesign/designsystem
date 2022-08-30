@@ -31,7 +31,7 @@ export class DateTimeComponent implements ControlValueAccessor {
     max?: Date | undefined;
 
     @Input()
-    disabled?: boolean;
+    disabled = false;
 
     constructor(private _cd: ChangeDetectorRef) {}
 
