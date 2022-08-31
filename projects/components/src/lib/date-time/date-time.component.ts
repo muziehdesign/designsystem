@@ -58,8 +58,6 @@ export class DateTimeComponent implements ControlValueAccessor {
 
     updateDate(val: any): void {
         this.tempDate = val.target.value.toString();
-        console.log(this.tempDate);
-        console.log('1');
         this.propagateModelChange();
     }
 
@@ -79,8 +77,6 @@ export class DateTimeComponent implements ControlValueAccessor {
             value = event.value;
             const date = `${value.getMonth() + 1}/${value.getDate()}/${value.getFullYear()}`;
             this.tempDate = date;
-            console.log(this.tempDate);
-            console.log('2');
             this.propagateModelChange();
         }
     }
