@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 
-@Component({
-  selector: 'app-page-header-guidelines',
-  templateUrl: './page-header-guidelines.component.html',
-  styleUrls: ['./page-header-guidelines.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class PageHeaderGuidelinesComponent implements OnInit {
+export class DemoService {
 
   constructor() { }
 
-  ngOnInit(): void {
-    sdk.embedProject(
+  // Expects demoComponentFileContent to selector `app-demo`
+  embed(element: string, demoComponentFileContent: string): Promise<void> {
+    return sdk.embedProject(
       'page-header-demo',
       {
         title: 'Angular starter',
         description: 'A basic Node.js project',
         template: 'angular-cli',
         files: {
-          'index.html': `<app-demo>test</app-demo>`,
+          'index.html': `<app-demo></app-demo>`,
           'polyfills.ts': `import 'zone.js/dist/zone';`,
           'app/app.component.ts': `
 import { Component, VERSION } from '@angular/core';
@@ -104,5 +103,4 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
       },
     );
   }
-
 }
