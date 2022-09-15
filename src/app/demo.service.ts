@@ -8,8 +8,8 @@ export class DemoService {
 
   constructor() { }
 
-  // Expects demoComponentFileContent to selector `app-demo`
-  embed(element: string, demoComponentFileContent: string): Promise<void> {
+  embed(element: string, demoComponentFileContent: string, demoComponentSelector: string = 'app-demo'): Promise<void> {
+    const selector = `<${demo}`
     return sdk.embedProject(
       'page-header-demo',
       {
