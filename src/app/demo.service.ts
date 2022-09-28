@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewContainerRef } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 
 @Injectable({
@@ -6,10 +6,13 @@ import sdk from '@stackblitz/sdk';
 })
 export class DemoService {
 
-  constructor() { }
+  constructor(private container: ViewContainerRef) {
 
-  embed(element: string, demoComponentFileContent: string, demoComponentSelector: string = 'app-demo'): Promise<void> {
-    const selector = `<${demo}`
+   }
+
+  embed(element: string, demoComponentFileContent: string, demoComponentSelector: string = 'component-demo'): Promise<void> {
+
+    /*
     return sdk.embedProject(
       'page-header-demo',
       {
@@ -101,6 +104,6 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
         openFile: 'app/app.component.ts',
         terminalHeight: 50,
       },
-    );
-  }
+    ).then();
+  }*/
 }
