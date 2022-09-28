@@ -5,7 +5,6 @@ import { DemoService } from 'src/app/demo.service';
 import { DemoButtonButtonsComponent } from './demo-button-buttons/demo-button-buttons.component';
 
 @Component({
-    selector: 'app-button-design',
     templateUrl: './button-design.component.html',
     styleUrls: ['./button-design.component.scss'],
 })
