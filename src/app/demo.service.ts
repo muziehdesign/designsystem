@@ -6,13 +6,11 @@ import sdk from '@stackblitz/sdk';
 })
 export class DemoService {
 
-  constructor(private container: ViewContainerRef) {
+  constructor() {
 
    }
 
   embed(element: string, demoComponentFileContent: string, demoComponentSelector: string = 'component-demo'): Promise<void> {
-
-    /*
     return sdk.embedProject(
       'page-header-demo',
       {
@@ -105,5 +103,5 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
         terminalHeight: 50,
       },
     ).then();
-  }*/
+  }
 }
