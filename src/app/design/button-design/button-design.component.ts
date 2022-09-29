@@ -1,8 +1,8 @@
 import { AfterViewChecked, Component, OnDestroy, OnInit, Type, ViewContainerRef } from '@angular/core';
 import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { DemoButtonsComponent } from 'src/app/button-design/demo-buttons/demo-buttons.component';
 import { DemoService } from 'src/app/demo.service';
-import { DemoButtonButtonsComponent } from './demo-button-buttons/demo-button-buttons.component';
 
 @Component({
     templateUrl: './button-design.component.html',
@@ -13,7 +13,7 @@ export class ButtonDesignComponent implements OnInit, OnDestroy, AfterViewChecke
     busy2?: boolean;
     private subscription: Subscription = new Subscription();
 
-    buttonsDemo = DemoButtonButtonsComponent;
+    buttonsDemo = DemoButtonsComponent;
     constructor(private service:DemoService, private container:ViewContainerRef) {
         
     }

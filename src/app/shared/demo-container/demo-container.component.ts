@@ -42,8 +42,13 @@ export class DemoButtonsComponent implements OnInit {
         `;
         const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
         project.files['src/demo.ts'] = file;
-
-        console.log(project);
+        project.files['src/main.ts'] = `
+        import './polyfills';
+        import { bootstrapApplication } from '@angular/platform-browser';
+        import { ${this.component.name} } from './demo';
+        
+        bootstrapApplication(${this.component.name});
+        `;
 
         sdk.openProject(project, { view: 'preview' });
     }
