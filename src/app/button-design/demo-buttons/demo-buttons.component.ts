@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-demo-buttons',
+  standalone: true,
   template: `
     <p>
       demo-buttons works!

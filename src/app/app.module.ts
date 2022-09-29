@@ -12,14 +12,11 @@ import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomErrorHandler } from './custom-error-handler';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DemoContainerComponent } from './shared/demo-container/demo-container.component';
-import { DemoButtonsComponent } from './button-design/demo-buttons/demo-buttons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
-    DemoButtonsComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
