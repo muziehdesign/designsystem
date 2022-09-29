@@ -8,22 +8,25 @@ import { EmbedDirective } from '../embed.directive';
     templateUrl: './demo-container.component.html',
     styleUrls: ['./demo-container.component.scss'],
 })
-export class DemoContainerComponent implements OnInit, AfterViewInit {
+export class DemoContainerComponent implements OnInit {
     @Input() component!: Type<unknown>;
-    @ViewChild(EmbedDirective, {static: true}) embed!: EmbedDirective;
-    constructor(private container: ViewContainerRef) {
-    }
+    @ViewChild(EmbedDirective, { static: true }) embed!: EmbedDirective;
+    constructor(private container: ViewContainerRef) {}
 
     ngOnInit(): void {
-      this.embed.viewContainerRef.clear();
-      this.embed.viewContainerRef.createComponent(this.component);
+        this.embed.viewContainerRef.clear();
+        this.embed.viewContainerRef.createComponent(this.component);
+    }
 
+    openSource() {
         const file = `
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-demo-buttons',
+  imports: [CommonModule],
   template: '<p>demo-buttons works!</p>',
   styles: [
   ]
@@ -38,18 +41,10 @@ export class DemoButtonsComponent implements OnInit {
 
         `;
         const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
-        project.files['demo.ts'] = file;
+        project.files['src/demo.ts'] = file;
 
         console.log(project);
 
-        sdk.embedProject(
-            'demo',
-            project,
-            { view: 'preview' }
-        );
-    }
-
-    ngAfterViewInit(): void {
-
+        sdk.openProject(project, { view: 'preview' });
     }
 }

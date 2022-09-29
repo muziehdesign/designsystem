@@ -5,15 +5,16 @@ export const STACKBLITZ_PROJECT_OPTIONS = <Project> {
     description: 'Muzieh Design System demo',
     template: 'angular-cli',
     files: {
-        'index.html': `<app-demo-buttons></app-demo-buttons>`,
-        'styles.scss': ``,
-        'main.ts': `
+        'src/index.html': `<app-demo-buttons></app-demo-buttons>`,
+        'src/styles.scss': ``,
+        'src/main.ts': `
 import './polyfills';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { DemoButtonsComponent } from './demo';
 
-import { DemoButtonsComponent } from './demo.ts';
 bootstrapApplication(DemoButtonsComponent);
         `,
-        'pollyfill.ts': `import 'zone.js/dist/zone';`,
+        'src/polyfills.ts': `import 'zone.js/dist/zone';`,
         'angular.json': `
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
@@ -115,7 +116,7 @@ bootstrapApplication(DemoButtonsComponent);
         }
     },
     "defaultProject": "demo"
-}
+    }
         `,
         'tsconfig.json': `
 {
