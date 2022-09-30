@@ -12,7 +12,6 @@ import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomErrorHandler } from './custom-error-handler';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ColorsComponent } from './components/colors/colors.component';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, InjectionToken, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import sdk from '@stackblitz/sdk';
+import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
 import { STACKBLITZ_PROJECT_OPTIONS } from 'src/app/demonstration/stackblitz-options';
 import { EmbedDirective } from '../embed.directive';
 
@@ -11,7 +12,9 @@ import { EmbedDirective } from '../embed.directive';
 export class DemoContainerComponent implements OnInit {
     @Input() component!: Type<unknown>;
     @ViewChild(EmbedDirective, { static: true }) embed!: EmbedDirective;
-    constructor(private container: ViewContainerRef) {}
+    constructor(@Inject(DEMONSTRATIONS) private d: string) {
+      console.log('demo container:', d);
+    }
 
     ngOnInit(): void {
         this.embed.viewContainerRef.clear();
