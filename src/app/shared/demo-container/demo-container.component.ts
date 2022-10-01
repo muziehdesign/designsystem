@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Inject, InjectionToken, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import sdk from '@stackblitz/sdk';
+import { CodeDemonstration } from 'src/app/demonstration/code-demonstration';
 import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
 import { STACKBLITZ_PROJECT_OPTIONS } from 'src/app/demonstration/stackblitz-options';
 import { EmbedDirective } from '../embed.directive';
@@ -12,8 +13,8 @@ import { EmbedDirective } from '../embed.directive';
 export class DemoContainerComponent implements OnInit {
     @Input() component!: Type<unknown>;
     @ViewChild(EmbedDirective, { static: true }) embed!: EmbedDirective;
-    constructor(@Inject(DEMONSTRATIONS) private d: any) {
-      console.log('demo container:', d);
+    constructor(@Inject(DEMONSTRATIONS) private demonstrations: CodeDemonstration[]) {
+      console.log('demo container:', demonstrations);
     }
 
     ngOnInit(): void {
@@ -22,38 +23,24 @@ export class DemoContainerComponent implements OnInit {
     }
 
     openSource() {
-        const file = `
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
 
-@Component({
-  standalone: true,
-  selector: 'app-demo-buttons',
-  imports: [CommonModule],
-  template: '<p>demo-buttons works!</p>',
-  styles: [
-  ]
-})
-export class DemoButtonsComponent implements OnInit {
+      const demo = this.demonstrations.find(d=>d.name.toLowerCase() === this.component.name.toLowerCase());
+      if(!demo) {
+        window.alert('Sorry, this demo appears to be broken. Please notify admin.');
+      }
+      const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
+      Object.keys(demo!.files).forEach(key=> {
+        project.files[key] = demo!.files[key];
+      });
+      project.files['src/main.ts'] = `
+      import './polyfills';
+      import { bootstrapApplication } from '@angular/platform-browser';
+      import { ${this.component.name} } from './demo';
+      
+      bootstrapApplication(${this.component.name});
+      `;
+      project.files['src/index.html'] = `<${demo?.selector}></${demo?.selector}>`;
 
-  constructor() { }
-
-  ngOnInit(): void {}
-
-}
-
-        `;
-        const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
-        project.files['src/buttons-demo.component.ts'] = this.d[0]['buttons-demo.component.ts'];
-        project.files['src/demo.ts'] = file;
-        project.files['src/main.ts'] = `
-        import './polyfills';
-        import { bootstrapApplication } from '@angular/platform-browser';
-        import { ${this.component.name} } from './demo';
-        
-        bootstrapApplication(${this.component.name});
-        `;
-
-        sdk.openProject(project, { view: 'preview' });
+      sdk.openProject(project, { view: 'preview' });
     }
 }
