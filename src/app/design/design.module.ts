@@ -47,7 +47,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { DemoButtonButtonsComponent } from './button-design/demo-button-buttons/demo-button-buttons.component';
 
 @NgModule({
     declarations: [
@@ -85,8 +84,7 @@ import { DemoButtonButtonsComponent } from './button-design/demo-button-buttons/
         ToggleGuidelinesComponent,
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
-        AddressFormComponent,
-        DemoButtonButtonsComponent,
+        AddressFormComponent
     ],
     imports: [
         CommonModule,
