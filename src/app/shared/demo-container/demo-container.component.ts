@@ -12,7 +12,7 @@ import { EmbedDirective } from '../embed.directive';
 export class DemoContainerComponent implements OnInit {
     @Input() component!: Type<unknown>;
     @ViewChild(EmbedDirective, { static: true }) embed!: EmbedDirective;
-    constructor(@Inject(DEMONSTRATIONS) private d: string) {
+    constructor(@Inject(DEMONSTRATIONS) private d: any) {
       console.log('demo container:', d);
     }
 
@@ -44,6 +44,7 @@ export class DemoButtonsComponent implements OnInit {
 
         `;
         const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
+        project.files['src/buttons-demo.component.ts'] = this.d[0]['buttons-demo.component.ts'];
         project.files['src/demo.ts'] = file;
         project.files['src/main.ts'] = `
         import './polyfills';
