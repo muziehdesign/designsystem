@@ -12,13 +12,13 @@
   "private": false,
   "dependencies": {
     "@angular/animations": "^14.2.4",
-    "@angular/cdk": "^14.0.4",
+    "@angular/cdk": "^14.2.3",
     "@angular/common": "^14.2.4",
     "@angular/compiler": "^14.2.4",
     "@angular/core": "^14.2.4",
     "@angular/forms": "^14.2.4",
     "@angular/localize": "^14.2.4",
-    "@angular/material": "^14.0.4",
+    "@angular/material": "^14.2.3",
     "@angular/platform-browser": "^14.2.4",
     "@angular/platform-browser-dynamic": "^14.2.4",
     "@angular/router": "^14.2.4",
@@ -35,8 +35,8 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.0.4",
-    "@angular/cli": "^14.0.4",
+    "@angular-devkit/build-angular": "^14.2.4",
+    "@angular/cli": "^14.2.4",
     "@angular/compiler-cli": "^14.2.4",
     "@ng-apimock/core": "^3.4.0",
     "@ng-apimock/dev-interface": "^3.1.0",
