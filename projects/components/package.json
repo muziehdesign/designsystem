@@ -1,6 +1,6 @@
 {
   "name": "muzieh-ngcomponents",
-  "version": "0.0.7",
+  "version": "0.2.0",
   "peerDependencies": {
     "@angular/common": "^14.0.4",
     "@angular/core": "^14.0.4",
