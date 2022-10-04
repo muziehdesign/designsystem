@@ -6,7 +6,7 @@ export const STACKBLITZ_PROJECT_OPTIONS = <Project> {
     description: 'Muzieh Design System demo',
     template: 'angular-cli',
     files: {
-        'src/index.html': `<app-demo-buttons></app-demo-buttons>`,
+        'src/index.html': `<div><a href="https://ruifang.github.io/kitchensink-ui/">Muzieh Design System</a></div><app-demo-buttons></app-demo-buttons>`,
         'src/styles.scss': ``,
         'src/main.ts': `
 
