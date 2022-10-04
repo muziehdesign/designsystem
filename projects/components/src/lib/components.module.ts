@@ -16,8 +16,8 @@ import { DateDisplayPipe } from './date-display/date-display.pipe';
 import { MuziehDateTimeModule } from './date-time/date-time.module';
 import { SortDirective } from './sort.directive';
 import { SortKeyDirective } from './sort-key.directive';
-import { ButtonDirective } from './button.directive';
 import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
+import { ButtonDirective } from './button.directive';
 
 @NgModule({
   declarations: [
@@ -34,13 +34,14 @@ import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
     AlertComponent,
     SortKeyDirective,
     SortDirective,
-    ButtonDirective,
     SubjectDisplayPipe
   ],
   imports: [
     CommonModule,
     MatDatepickerModule,
     FormsModule,
+
+    ButtonDirective
   ],
   exports: [
     EnumDisplayPipe,
@@ -57,8 +58,9 @@ import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
     MuziehDateTimeModule,
     SortKeyDirective,
     SortDirective,
-    ButtonDirective,
-    SubjectDisplayPipe
+    SubjectDisplayPipe,
+
+    ButtonDirective
   ],
   providers: [
     DatePipe,
