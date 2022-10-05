@@ -4,6 +4,7 @@ import { filter } from 'rxjs/operators';
 
 @Directive({
     selector: '[mzButton]',
+    standalone: true,
     host: {
         role: 'button',
         '[attr.tabindex]': '0',
