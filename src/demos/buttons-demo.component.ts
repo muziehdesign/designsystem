@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { ButtonDirective } from 'muzieh-ngcomponents';
 
 @Component({
     selector: 'app-buttons-demo',
     standalone: true,
-    imports: [CommonModule, SharedModule],
+    imports: [CommonModule, ButtonDirective],
     template: `
         <div class="grid grid-cols-3 gap-4 max-w-2xl">
             <div>

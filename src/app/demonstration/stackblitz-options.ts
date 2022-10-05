@@ -160,16 +160,19 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
         `
     },
     dependencies: {
-        "@angular/animations": "^14.0.0",
-        "@angular/common": "^14.0.0",
-        "@angular/compiler": "^14.0.0",
-        "@angular/core": "^14.0.0",
-        "@angular/forms": "^14.0.0",
-        "@angular/platform-browser": "^14.0.0",
-        "@angular/platform-browser-dynamic": "^14.0.0",
-        "@angular/router": "^14.0.0",
+        "@angular/animations": "^14.2.4",
+        "@angular/cdk": "^14.2.3",
+        "@angular/common": "^14.2.4",
+        "@angular/compiler": "^14.2.4",
+        "@angular/core": "^14.2.4",
+        "@angular/forms": "^14.2.4",
+        "@angular/platform-browser": "^14.2.4",
+        "@angular/platform-browser-dynamic": "^14.2.4",
+        "@angular/material": "^14.2.3",
+        "@angular/router": "^14.2.4",
         "muzieh-ngcomponents": "^0.2.0",
         "rxjs": "~7.5.0",
+        "subsink": "^1.0.2",
         "tslib": "^2.3.0",
         "zone.js": "~0.11.4"
     }
