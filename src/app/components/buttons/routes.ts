@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { DEMONSTRATIONS } from "src/app/demonstration/demonstrations.token";
 import { demoOf } from "src/app/demonstration/utilities";
-import { ButtonsDemoComponent } from "./demos/buttons-demo.component";
+import { ButtonsDemoComponent } from "../../../demos/buttons-demo.component";
 
 export const buttonRoutes: Routes = [
     {

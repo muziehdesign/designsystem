@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ButtonsDemoComponent } from './demos/buttons-demo.component';
+import { ButtonsDemoComponent } from '../../../demos/buttons-demo.component';
 import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 

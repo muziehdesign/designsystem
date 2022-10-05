@@ -35,6 +35,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/demos",
               {
                 "glob": "config*.json",
                 "input": "src/",

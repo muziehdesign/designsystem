@@ -11,7 +11,7 @@
       "muzieh-ngcomponents": [
         "dist/components/components",
         "dist/components"
-      ],
+      ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
