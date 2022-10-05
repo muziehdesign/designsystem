@@ -168,6 +168,7 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
         "@angular/platform-browser": "^14.0.0",
         "@angular/platform-browser-dynamic": "^14.0.0",
         "@angular/router": "^14.0.0",
+        "muzieh-ngcomponents": "^0.2.0",
         "rxjs": "~7.5.0",
         "tslib": "^2.3.0",
         "zone.js": "~0.11.4"
