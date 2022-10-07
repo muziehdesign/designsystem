@@ -19,7 +19,9 @@ import { ButtonDirective } from 'muzieh-ngcomponents';
             </div>
         </div>
     `,
-    styles: [],
+    styles: [`
+      @import 'design/_button';
+    `],
 })
 export class ButtonsDemoComponent implements OnInit {
     constructor() {}

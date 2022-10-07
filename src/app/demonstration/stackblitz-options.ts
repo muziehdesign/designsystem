@@ -26,6 +26,15 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
 
         `,
         'src/polyfills.ts': `import 'zone.js/dist/zone';`,
+        'tailwind.config.js': `
+        module.exports = {
+            content: [],
+            theme: {
+              extend: {},
+            },
+            plugins: [],
+          }
+        `,
         'angular.json': `
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
@@ -48,6 +57,9 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
                 "polyfills": "src/polyfills.ts",
                 "tsConfig": "src/tsconfig.app.json",
                 "inlineStyleLanguage": "scss",
+                "stylePreprocessorOptions": {
+                    "includePaths": ["node_modules/muzieh-ngcomponents"]
+                },
                 "assets": [
                 "src/favicon.ico",
                 "src/assets"
@@ -173,6 +185,7 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
         "muzieh-ngcomponents": "^0.2.0",
         "rxjs": "~7.5.0",
         "subsink": "^1.0.2",
+        "tailwindcss": "^3.0.15",
         "tslib": "^2.3.0",
         "zone.js": "~0.11.4"
     }
