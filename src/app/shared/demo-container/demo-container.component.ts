@@ -54,23 +54,4 @@ bootstrapApplication(${this.component.name});`;
             .subscribe();
         this.sink.add(x);
     }
-
-    openSource2() {
-        const demo = this.demonstrations.find((d) => d.name.toLowerCase() === this.component.name.toLowerCase());
-        if (!demo) {
-            window.alert('Sorry, this demo is broken. Please notify admin.');
-        }
-        const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
-        Object.keys(demo!.files).forEach((key) => {
-            project.files[key] = demo!.files[key];
-        });
-        project.files['src/main.ts'] = `import './polyfills';
-import { bootstrapApplication } from '@angular/platform-browser';
-import { ${this.component.name} } from './demo';
-
-bootstrapApplication(${this.component.name});`;
-        project.files['src/index.html'] = `<${demo?.selector}></${demo?.selector}>`;
-
-        sdk.openProject(project, { view: 'preview' });
-    }
 }
