@@ -4,12 +4,28 @@
         Use a button to communicate actions and allow users to take an action.
     </p>
 </header>
-
 <article>
     <h2>Overview</h2>
-    <app-demo-container [component]="buttonsDemo"></app-demo-container>
+    <ul ngbNav #nav="ngbNav" (activeId)="1" class="nav-tabs pt-4">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>Example</a>
+        <ng-template ngbNavContent>
+          <app-demo-container [component]="buttonsDemo"></app-demo-container>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>Code</a>
+        <ng-template ngbNavContent>
+          <pre><code [highlight]="code" [languages]="langs"></code></pre>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-4 p-4"></div>
+    <!-- <app-demo-container [component]="buttonsDemo"></app-demo-container> -->
 </article>
-
+<!-- <div class="example-template">
+  <pre><code [highlight]="code" [languages]="langs"></code></pre>
+</div> -->
 <article>
     <h2>Variants</h2>
     <p>

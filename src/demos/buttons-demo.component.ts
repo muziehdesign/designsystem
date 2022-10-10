@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChildren, QueryList, OnInit } from '@angular/core';
 import { ButtonDirective } from 'muzieh-ngcomponents';
 
 @Component({
@@ -24,7 +24,12 @@ import { ButtonDirective } from 'muzieh-ngcomponents';
     `],
 })
 export class ButtonsDemoComponent implements OnInit {
+
     constructor() {}
 
     ngOnInit(): void {}
+
+    ngAfterContentInit(): void {
+
+    }
 }
