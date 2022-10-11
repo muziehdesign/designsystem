@@ -48,7 +48,7 @@ import { ${this.component.name} } from './demo';
 
 bootstrapApplication(${this.component.name});`;
                     console.log('opening project');
-                    sdk.openProject(project, { view: 'preview' });
+                    sdk.openProject(project, { view: 'preview', openFile: 'src/demo.ts'});
                 })
             )
             .subscribe();
