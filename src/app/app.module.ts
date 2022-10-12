@@ -38,7 +38,6 @@ import { HighlightModule, HIGHLIGHT_OPTIONS, HighlightOptions } from 'ngx-highli
       useValue: <HighlightOptions>{
         lineNumbers: true,
         coreLibraryLoader: () => import('highlight.js/lib/core'),
-        themePath: 'node_modules/highlight.js/styles/github.css',
         languages: {
           typescript: () => import('highlight.js/lib/languages/typescript'),
           css: () => import('highlight.js/lib/languages/css'),

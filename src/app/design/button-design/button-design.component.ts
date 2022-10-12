@@ -14,7 +14,7 @@ export class ButtonDesignComponent implements OnInit, OnDestroy, AfterViewChecke
 
     buttonsDemo = DemoButtonsComponent;
     constructor() {
-        
+
     }
     ngAfterViewChecked(): void {
     }

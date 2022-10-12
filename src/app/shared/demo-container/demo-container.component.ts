@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, Inject, InjectionToken, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ComponentRef, ElementRef, Inject, InjectionToken, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import sdk from '@stackblitz/sdk';
+import { forkJoin } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { CodeDemonstration } from 'src/app/demonstration/code-demonstration';
 import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
@@ -16,14 +17,17 @@ import { EmbedDirective } from '../embed.directive';
 export class DemoContainerComponent implements OnInit {
     @Input() component!: Type<unknown>;
     @ViewChild(EmbedDirective, { static: true }) embed!: EmbedDirective;
+    private demoComponent: ComponentRef<unknown> | undefined;
     private sink = new SubSink();
+    public code:string = "";
     constructor(@Inject(DEMONSTRATIONS) private demonstrations: CodeDemonstration[], private http: HttpClient) {
         console.log('demo container:', demonstrations);
     }
 
     ngOnInit(): void {
         this.embed.viewContainerRef.clear();
-        this.embed.viewContainerRef.createComponent(this.component);
+        this.demoComponent = this.embed.viewContainerRef.createComponent(this.component);
+        this.code = (<any>this.demoComponent.instance).templateText;
     }
 
     openSource() {
@@ -31,27 +35,29 @@ export class DemoContainerComponent implements OnInit {
             .substring(0, this.component.name.length - 'component'.length)
             .match(/[A-Z][a-z]+/g)
             ?.map((x) => x.toLowerCase());
-        const filename = (parts?.join('-') + '.component.ts').toLowerCase();
-        console.log('getting ', filename);
-        const x = this.http
-            .get(`/demos/${filename}`, { responseType: 'text' })
-            .pipe(
-                tap((x) => {
-                    const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
-                    project.files['src/demo.ts'] = x;
-                    const selector = 'app-' + parts?.join('-');
-                    project.files['src/index.html'] = `<${selector}></${selector}>`;
-                    project.files['src/main.ts'] = `
+        const filenameTS = (parts?.join('-') + '.component.ts').toLowerCase();
+        const filenameHTML = (parts?.join('-') + '.component.html').toLowerCase();
+
+        forkJoin(
+          this.http.get(`/demos/${filenameTS}`, { responseType: 'text' }),
+          this.http.get(`/demos/${filenameHTML}`, { responseType: 'text' }))
+          .subscribe(([tsFile,htmlFile]) => {
+            const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
+            //Doing this to filter out lines related to the code text for examples
+            project.files['src/demo.ts'] = tsFile.split('\n').filter(function(line){ return (line.indexOf("templateText") == -1 && line.indexOf("{ Example }") == -1)})
+                                            .join('\n').replace(', Example','').replace(`/${filenameHTML}`,'/demo.html');
+            console.log(tsFile.split('\n'));
+            project.files['src/demo.html'] = htmlFile;
+            const selector = 'app-' + parts?.join('-');
+            project.files['src/index.html'] = `<${selector}></${selector}>`;
+            project.files['src/main.ts'] = `
 import './polyfills';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { ${this.component.name} } from './demo';
 
 bootstrapApplication(${this.component.name});`;
-                    console.log('opening project');
-                    sdk.openProject(project, { view: 'preview', openFile: 'src/demo.ts'});
-                })
-            )
-            .subscribe();
-        this.sink.add(x);
+            console.log('opening project');
+            sdk.openProject(project, { view: 'preview', openFile: 'src/demo.ts'});
+        });
     }
 }

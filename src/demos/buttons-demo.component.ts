@@ -1,31 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component, ContentChildren, QueryList, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ButtonDirective } from 'muzieh-ngcomponents';
-
+import { Example } from 'src/app/example';
 @Component({
     selector: 'app-buttons-demo',
     standalone: true,
     imports: [CommonModule, ButtonDirective],
-    template: `
-        <div class="grid grid-cols-3 gap-4 max-w-2xl">
-            <div>
-              <button mzButton [variant]="'primary'">Primary button</button>
-            </div>
-            <div>
-              <button mzButton [variant]="'secondary'">Secondary button</button>
-            </div>
-            <div>
-              <button mzButton [variant]="'tertiary'">Tertiary button</button>
-            </div>
-        </div>
-    `,
+    templateUrl: "./buttons-demo.component.html",
     styles: [`
       @import 'design/_button';
     `],
 })
-export class ButtonsDemoComponent implements OnInit {
+export class ButtonsDemoComponent implements OnInit, Example {
 
-    constructor() {}
+    public templateText:any = "";
+
+    constructor() {
+      this.templateText = require('html-loader!./buttons-demo.component.html').default;
+     }
 
     ngOnInit(): void {}
 
