@@ -1,3 +1,8 @@
+# Extensions
+- Prettier
+- Angular Language Service
+- Tailwind CSS IntelliSense
+
 # Css
 
 https://stackblitz.com/edit/web-platform-4rgi2e?file=index.html
