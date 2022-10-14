@@ -28,21 +28,21 @@
                         <button class="button button-secondary button-icon">
                             <mz-svg-icon key="search"></mz-svg-icon>
                         </button>
-                    </div>                    
+                    </div>
                 </div>
             </label>
 
             <label class="field">
                 <span class="field-label">Query</span>
                 <div class="field-control-group invalid">
-                    <input type="text" class="field-control" required [(ngModel)]="model.query" name="model.query" />
+                    <input type="text" class="field-control" required [(ngModel)]="model.query" name="model.query" name="query" />
                     <div class="field-control-addon">
                         <button class="button button-secondary" type="button">
                             Search
                         </button>
                     </div>
                 </div>
-                <small class="field-error text-danger">{{inputGroupsForm.controls.query.errors | json}}</small>
+                <small *ngIf="inputGroupsForm.controls.query?.errors" class="field-error text-danger">{{inputGroupsForm.controls.query.errors | json}}</small>
             </label>
 
             <label class="field">
