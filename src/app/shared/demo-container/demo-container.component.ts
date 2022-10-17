@@ -30,6 +30,10 @@ export class DemoContainerComponent implements OnInit {
         this.code = (<any>this.demoComponent.instance).templateText;
     }
 
+    viewSource() {
+
+    }
+
     openSource() {
         const parts = this.component.name
             .substring(0, this.component.name.length - 'component'.length)
