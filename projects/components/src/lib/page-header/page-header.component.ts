@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'mz-page-header',
+    standalone: true,
     templateUrl: './page-header.component.html',
     styleUrls: ['./page-header.component.scss'],
 })

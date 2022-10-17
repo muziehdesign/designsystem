@@ -27,7 +27,6 @@ import { ButtonDirective } from './button.directive';
     ResultTableComponent,
     PaginationComponent,
     PageLoadingIndicatorComponent,
-    PageHeaderComponent,
     TimeValueAccessorDirective,
     DateDisplayPipe,
     PhoneNumberPipe,
@@ -41,7 +40,8 @@ import { ButtonDirective } from './button.directive';
     MatDatepickerModule,
     FormsModule,
 
-    ButtonDirective
+    ButtonDirective,
+    PageHeaderComponent
   ],
   exports: [
     EnumDisplayPipe,
@@ -60,7 +60,8 @@ import { ButtonDirective } from './button.directive';
     SortDirective,
     SubjectDisplayPipe,
 
-    ButtonDirective
+    ButtonDirective,
+    PageHeaderComponent
   ],
   providers: [
     DatePipe,
