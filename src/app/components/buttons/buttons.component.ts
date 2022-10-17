@@ -14,11 +14,10 @@ import { delay } from 'rxjs/operators';
 })
 export class ButtonsComponent implements OnInit {
     buttonsDemo = ButtonsDemoComponent;
-    langs:string[] = ["xml"];
+    langs: string[] = ['xml'];
     busy?: boolean = true;
     busy2?: boolean;
     private subscription: Subscription = new Subscription();
-
 
     constructor() {}
     ngAfterViewChecked(): void {}

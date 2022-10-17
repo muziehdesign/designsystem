@@ -15,36 +15,23 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightModule, HIGHLIGHT_OPTIONS, HighlightOptions } from 'ngx-highlightjs';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DesignModule,
-    ExamplesModule,
-    SharedModule,
-    CommonModule,
-    OrderModule,
-    NgbModule,
-    HighlightModule,
-    MuziehComponentsModule,
-    NoopAnimationsModule,
-  ],
-  providers: [CustomErrorHandler,
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: <HighlightOptions>{
-        lineNumbers: true,
-        coreLibraryLoader: () => import('highlight.js/lib/core'),
-        languages: {
-          typescript: () => import('highlight.js/lib/languages/typescript'),
-          css: () => import('highlight.js/lib/languages/css'),
-          xml: () => import('highlight.js/lib/languages/xml')
+    declarations: [AppComponent, NavigationComponent],
+    imports: [BrowserModule, AppRoutingModule, DesignModule, ExamplesModule, SharedModule, CommonModule, OrderModule, NgbModule, HighlightModule, MuziehComponentsModule, NoopAnimationsModule],
+    providers: [
+        CustomErrorHandler,
+        {
+            provide: HIGHLIGHT_OPTIONS,
+            useValue: <HighlightOptions>{
+                lineNumbers: true,
+                coreLibraryLoader: () => import('highlight.js/lib/core'),
+                languages: {
+                    typescript: () => import('highlight.js/lib/languages/typescript'),
+                    css: () => import('highlight.js/lib/languages/css'),
+                    xml: () => import('highlight.js/lib/languages/xml'),
+                },
+            },
         },
-      },
-    }],
-  bootstrap: [AppComponent]
+    ],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
