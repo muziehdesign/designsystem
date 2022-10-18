@@ -20,6 +20,7 @@ export class DemoContainerComponent implements OnInit {
     private demoComponent: ComponentRef<unknown> | undefined;
     private sink = new SubSink();
     private fileParts: string[] | undefined = [];
+    public showCode = false;
     public code: string = '';
     constructor(@Inject(DEMONSTRATIONS) private demonstrations: CodeDemonstration[], private http: HttpClient) {
         console.log('demo container:', demonstrations);
@@ -41,7 +42,9 @@ export class DemoContainerComponent implements OnInit {
         const filenameHTML = (this.fileParts?.join('-') + '.component.html').toLowerCase();
         return this.http.get(`/demos/${filenameHTML}`, { responseType: 'text' });
     }
-    viewSource() {}
+    viewSource() {
+        this.showCode = !this.showCode;
+    }
 
     openSource() {
         const filenameTS = (this.fileParts?.join('-') + '.component.ts').toLowerCase();

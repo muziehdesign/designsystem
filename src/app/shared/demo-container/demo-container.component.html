@@ -1,8 +1,20 @@
-<div class="example">
+
+<div class="example flexContainer">
+  <div class="button-list flexRight">
+    <button class="button button-primary button-icon" [ngClass]="!showCode ? 'button-primary' : 'button-secondary'" (click)="viewSource()">
+      <mz-svg-icon key="code" type="outline"></mz-svg-icon>&nbsp;Code
+    </button>
+    <button class="button button-secondary button-icon" (click)="openSource()">
+      <mz-svg-icon key="arrow-top-right-on-square" type="outline"></mz-svg-icon>&nbsp;Stackblitz
+    </button>
+  </div>
+  <div class="flexFullRow">
     <ng-template appEmbed></ng-template>
+  </div>
+  <div *ngIf="showCode" class="flexFullRow">
+    <pre><code [highlight]="code" [languages]="['xml']"></code></pre>
+  </div>
 </div>
-<div>
-  <pre><code [highlight]="code" [languages]="['xml']"></code></pre>
-</div>
-<button (click)="viewSource()">View source</button>
-<button (click)="openSource()"><img src="../../../assets/open_in_stackblitz.svg"></button>
+
+
+

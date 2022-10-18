@@ -1,1 +1,12 @@
 a img {cursor: pointer}
+
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flexRight {
+  margin-left: auto;
+}
+.flexFullRow {
+  flex: 0 0 100%;
+}
