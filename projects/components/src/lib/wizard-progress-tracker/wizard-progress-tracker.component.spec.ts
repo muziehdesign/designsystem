@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { WizardStepLink } from 'muzieh-ngcomponents';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 import { WizardProgressTrackerComponent } from './wizard-progress-tracker.component';
@@ -85,5 +86,23 @@ describe('WizardProgressTrackerComponent', () => {
 
         // assert
         expect(component.toggled).toBeFalse();
+    }));
+
+    it('should emit event', fakeAsync(async () => {
+        // act
+        fixture.detectChanges();
+        await fixture.whenStable();
+
+        let navigatedStep: WizardStepLink | undefined;
+        const sub = component.notifyStepSelected.subscribe(data => navigatedStep = data);
+
+        const navigateTo: WizardStepLink = { name: 'tst', route: '/myroute' };
+        component.goToStep(navigateTo);
+
+        // assert
+        expect(navigatedStep).toEqual(navigateTo);
+
+        // clean sub
+        sub.unsubscribe();
     }));
 });
