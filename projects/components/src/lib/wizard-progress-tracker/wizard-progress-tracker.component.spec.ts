@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 import { WizardProgressTrackerComponent } from './wizard-progress-tracker.component';
 
@@ -8,7 +10,7 @@ describe('WizardProgressTrackerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WizardProgressTrackerComponent ]
+      imports: [ CommonModule, WizardProgressTrackerComponent, SvgIconComponent ],
     })
     .compileComponents();
   });

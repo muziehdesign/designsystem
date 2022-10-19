@@ -21,7 +21,8 @@ describe('PaginationComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [PaginationComponent, SvgIconComponent],
+            declarations: [PaginationComponent],
+            imports: [SvgIconComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 {
