@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { WizardStepLink } from 'muzieh-ngcomponents';
+import { WizardStepLink } from '../models/wizard-step-link';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 import { WizardProgressTrackerComponent } from './wizard-progress-tracker.component';
