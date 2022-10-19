@@ -23,7 +23,7 @@
                         <div *ngIf="i < (steps.length - 1)" class="step-line step-line-right"></div>
                         <div class="spacer right"></div>
                     </div>
-                    <a *ngIf="i < currentStep" class="navigatable-link" (click)="goToStep(step)"> {{
+                    <a *ngIf="i < currentStep" class="step-desc" (click)="goToStep(step)"> {{
                         step.name
                         }}</a>
                     <div *ngIf=" i === currentStep" class="step-desc"> {{ step.name }}

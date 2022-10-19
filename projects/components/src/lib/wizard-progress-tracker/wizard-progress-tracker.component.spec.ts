@@ -13,7 +13,7 @@ describe('WizardProgressTrackerComponent', () => {
     const getPrevioustSteps = (): DebugElement[] => fixture.debugElement.queryAll(By.css('.wizard-step.previous'));
     const getCurrentSteps = (): DebugElement[] => fixture.debugElement.queryAll(By.css('.wizard-step.current'));
     const getNextSteps = (): DebugElement[] => fixture.debugElement.queryAll(By.css('.unvisited'));
-    const getStepName = (index: number): DebugElement => fixture.debugElement.query(By.css(`.wizard-steps-container .wizard-step:nth-child(${index}) .px-5`));
+    const getStepName = (index: number): DebugElement => fixture.debugElement.query(By.css(`.wizard-steps-container .wizard-step:nth-child(${index}) .step-desc`));
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({

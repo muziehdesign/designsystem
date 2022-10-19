@@ -1,5 +1,11 @@
-.wizard-step.previous .wizard-step-icon {
-    @apply  text-primary;
+.wizard-step.previous {
+    .step-desc {
+        @apply px-5 text-secondary font-semibold;
+    }
+
+    .wizard-step-icon {
+        @apply text-primary;
+    }
 }
 
 .wizard-step:not(.previous) .wizard-step-icon {
@@ -23,10 +29,6 @@
     .wizard-step-icon {
         @apply flex items-center justify-center h-8 w-8 mx-0 lg:mx-1 my-1 border-primary border-2 rounded-2xl;
     }
-}
-
-.navigatable-link {
-    @apply px-5 text-secondary font-semibold;
 }
 
 .step-inner-circle {
