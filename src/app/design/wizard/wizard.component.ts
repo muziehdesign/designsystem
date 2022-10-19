@@ -11,7 +11,7 @@ export class WizardComponent {
 
     constructor(private router: Router) { }
 
-    currentStep = 4;
+    currentStep = 2;
     steps: WizardStepLink[] = [
         { route: '/design/pageheader', name: 'Page header' },
         { route: '/design/pagination', name: 'Pagination' },
