@@ -1,3 +1,7 @@
+.wizard-step.previous .wizard-step-icon {
+    @apply  text-primary;
+}
+
 .wizard-step:not(.previous) .wizard-step-icon {
     @apply lg:mt-1 lg:mb-1;
 }
@@ -11,8 +15,18 @@
     @apply hidden h-4 border-l-2 border-transparent;
 }
 
-.wizard-step.current .wizard-step-icon {
-    @apply flex items-center justify-center h-8 w-8 mx-0 lg:mx-1 my-1 border-primary border-2 rounded-2xl;
+.wizard-step.current {
+    .step-desc {
+        @apply px-5 font-semibold text-primary;
+    }
+
+    .wizard-step-icon {
+        @apply flex items-center justify-center h-8 w-8 mx-0 lg:mx-1 my-1 border-primary border-2 rounded-2xl;
+    }
+}
+
+.navigatable-link {
+    @apply px-5 text-secondary font-semibold;
 }
 
 .step-inner-circle {
@@ -23,8 +37,18 @@
     @apply border-solid border-gray-400 border-l-2 h-4 lg:border-l-0 lg:border-t-2 lg:flex-1 lg:mt-3.5;
 }
 
-.wizard-step.unvisited .wizard-step-icon {
-    @apply h-8 w-8 rounded-2xl border-2 border-gray-400 mx-0 lg:mx-1 my-1;
+.toggable-icon {
+    @apply lg:hidden ml-16;
+}
+
+.wizard-step.unvisited {
+    .step-desc {
+        @apply px-5;
+    }
+    
+    .wizard-step-icon {
+        @apply h-8 w-8 rounded-2xl border-2 border-gray-400 mx-0 lg:mx-1 my-1;
+    }
 }
 
 .wizard-step {
@@ -33,6 +57,16 @@
     &:not(.previous) {
         @apply ml-1 lg:ml-0;
     }
+}
+
+.wizard-progress-tracker {
+    .direction-container {
+        @apply flex flex-col;
+    }
+}
+
+.steps-count {
+    @apply text-sm text-secondary lg:ml-5;
 }
 
 .wizard-steps-container {

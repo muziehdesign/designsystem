@@ -1,6 +1,6 @@
 <div class="wizard-progress-tracker">
-    <div class="flex flex-col">
-        <span class="text-sm text-secondary lg:ml-5">Step {{ currentStep + 1 }} of {{ steps.length }}</span>
+    <div class="direction-container">
+        <span class="steps-count">Step {{ currentStep + 1 }} of {{ steps.length }}</span>
         <div class="wizard-steps-container" [ngClass]="{'toggled': toggled}">
             <div *ngFor="let step of steps; index as i;" class="wizard-step"
                 [ngClass]="{ 'previous': i < currentStep, 'current': i === currentStep, 'unvisited': i > currentStep }">
@@ -10,7 +10,7 @@
                         </div>
                         <div *ngIf="i > 0" class="step-line left"></div>
 
-                        <div *ngIf="i < currentStep" class="wizard-step-icon text-primary">
+                        <div *ngIf="i < currentStep" class="wizard-step-icon">
                             <mz-svg-icon key="check-circle" type="solid">
                             </mz-svg-icon>
                         </div>
@@ -23,17 +23,17 @@
                         <div *ngIf="i < (steps.length - 1)" class="step-line step-line-right"></div>
                         <div class="spacer right"></div>
                     </div>
-                    <a *ngIf="i < currentStep" class="px-5 text-secondary font-semibold" (click)="goToStep(step)"> {{
+                    <a *ngIf="i < currentStep" class="navigatable-link" (click)="goToStep(step)"> {{
                         step.name
                         }}</a>
-                    <div *ngIf=" i === currentStep" class="px-5 font-semibold text-primary"> {{ step.name }}
+                    <div *ngIf=" i === currentStep" class="step-desc"> {{ step.name }}
                     </div>
-                    <div *ngIf=" i > currentStep" class="px-5"> {{ step.name }}
+                    <div *ngIf=" i > currentStep" class="step-desc"> {{ step.name }}
                     </div>
                 </ng-container>
             </div>
         </div>
-        <div class="lg:hidden ml-16">
+        <div class="toggable-icon">
             <button *ngIf="!toggled" (click)="toggle()">
                 <mz-svg-icon key="chevron-down"></mz-svg-icon>
             </button>
