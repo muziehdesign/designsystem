@@ -4,4 +4,6 @@
     <p class="prose">
         Use wizards to communicate a clear mental model for infrequent process. This may be needed in the future.
     </p>
+
+    <mz-wizard-progress-tracker [currentStep]="currentStep" [steps]="steps" (stepChange)="stepSelected($event)"></mz-wizard-progress-tracker>
 </header>

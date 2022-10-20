@@ -47,6 +47,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -99,7 +100,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
         MatNativeDateModule,
         MuziehDateTimeModule,
         MatAutocompleteModule,
-        MatMenuModule
+        MatMenuModule,
+        RouterModule,
     ],
     providers: [{ provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }, MatDatepickerModule],
 })

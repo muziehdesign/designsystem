@@ -1,0 +1,131 @@
+.wizard-step.previous {
+    .step-desc {
+        @apply px-5 text-secondary font-semibold;
+    }
+
+    .wizard-step-icon {
+        @apply text-primary;
+    }
+}
+
+.wizard-step:not(.previous) .wizard-step-icon {
+    @apply lg:mt-1 lg:mb-1;
+}
+
+.wizard-step.previous .step-line,
+.wizard-step.current .step-line.left {
+    @apply border-primary;
+}
+
+.spacer {
+    @apply hidden h-4 border-l-2 border-transparent;
+}
+
+.wizard-step.current {
+    .step-desc {
+        @apply px-5 font-semibold text-primary;
+    }
+
+    .wizard-step-icon {
+        @apply flex items-center justify-center h-8 w-8 mx-0 lg:mx-1 my-1 border-primary border-2 rounded-2xl;
+    }
+}
+
+.step-inner-circle {
+    @apply h-2.5 w-2.5 bg-primary rounded-2xl;
+}
+
+.step-line {
+    @apply border-solid border-gray-400 border-l-2 h-4 lg:border-l-0 lg:border-t-2 lg:flex-1 lg:mt-3.5;
+}
+
+.toggable-icon {
+    @apply lg:hidden ml-16;
+}
+
+.wizard-step.unvisited {
+    .step-desc {
+        @apply px-5;
+    }
+    
+    .wizard-step-icon {
+        @apply h-8 w-8 rounded-2xl border-2 border-gray-400 mx-0 lg:mx-1 my-1;
+    }
+}
+
+.wizard-step {
+    @apply flex flex-row items-center lg:flex-col;
+
+    &:not(.previous) {
+        @apply ml-1 lg:ml-0;
+    }
+}
+
+.wizard-progress-tracker {
+    .direction-container {
+        @apply flex flex-col;
+    }
+}
+
+.steps-count {
+    @apply text-sm text-secondary lg:ml-5;
+}
+
+.wizard-steps-container {
+    @apply flex flex-col mt-1 lg:flex-row;
+
+    &:not(.previous) {
+        @apply lg:pl-1;
+    }
+
+    &.toggled {
+        .wizard-step.current {
+            .spacer.left,
+            .spacer.right {
+                @apply flex lg:hidden;
+            }
+        }
+
+        .wizard-step:first-of-type {
+            .spacer.left {
+                @apply flex lg:flex-1;
+            }
+        }
+
+        .wizard-step:last-of-type {
+            .spacer.right {
+                @apply flex lg:flex-1;
+            }
+        }
+
+        .wizard-step:not(.current) {
+            @apply hidden lg:flex;
+        }
+
+        .wizard-step.current .step-line {
+            @apply hidden lg:flex;
+        }
+    }
+
+    &:not(.toggled) {
+        .wizard-step:first-of-type {
+            .spacer.left {
+                @apply flex lg:flex-1;
+            }
+        }
+
+        .wizard-step:last-of-type {
+            .spacer.right {
+                @apply flex lg:flex-1;
+            }
+        }
+    }
+}
+
+.wizard-step-icon-container {
+    @apply flex flex-col items-center lg:mb-3 lg:flex-row lg:w-full;
+}
+
+.wizard-step-icon .icon.icon-solid {
+    @apply h-10 w-10;
+}
