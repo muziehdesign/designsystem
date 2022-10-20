@@ -14,12 +14,12 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 export class WizardProgressTrackerComponent {
   @Input() steps: WizardStepLink[] = [];
   @Input() currentStep = 0;
-  @Output() notifyStepSelected = new EventEmitter<WizardStepLink>();
+  @Output() stepChange = new EventEmitter<WizardStepLink>();
   toggled = true;
   subs = new SubSink();
 
   goToStep(step: WizardStepLink) {
-    this.notifyStepSelected.emit(step);
+    this.stepChange.emit(step);
   }
 
   toggle(): void {

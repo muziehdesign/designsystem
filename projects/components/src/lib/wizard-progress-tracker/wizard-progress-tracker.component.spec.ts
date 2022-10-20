@@ -94,7 +94,7 @@ describe('WizardProgressTrackerComponent', () => {
         await fixture.whenStable();
 
         let navigatedStep: WizardStepLink | undefined;
-        const sub = component.notifyStepSelected.subscribe(data => navigatedStep = data);
+        const sub = component.stepChange.subscribe(data => navigatedStep = data);
 
         const navigateTo: WizardStepLink = { name: 'tst', route: '/myroute' };
         component.goToStep(navigateTo);
