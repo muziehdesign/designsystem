@@ -3,6 +3,10 @@
 - Angular Language Service
 - Tailwind CSS IntelliSense
 
+# Naming conventions
+## EventEmitter
+Event emitter names should be the event name, camelCase. For example, an EventEmitter that emits the event of opening a card should be called `open`. An EventEmitter that emits the event of a page change should be called `pageChange`.
+
 # Css
 
 https://stackblitz.com/edit/web-platform-4rgi2e?file=index.html
