@@ -32,6 +32,8 @@ https://stackblitz.com/edit/web-platform-4rgi2e?file=index.html
 # Birthdate
 Api returns birthdates in ISO 8601 format, such as `1994-01-01T00:00:00Z`. Because Angular formats dates in local time automatically, for birthdates to be displayed correctly, we'd need the date object to retain month, day, and year but with the browser's local timezone. Function below does the conversion:
 ```
+import { parseISO } from 'date-fns';
+
 export function parseBirthdate(iso: string) : Date {
   const date = parseISO(iso);
   return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
