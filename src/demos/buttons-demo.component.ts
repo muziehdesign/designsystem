@@ -6,11 +6,7 @@ import { ButtonDirective } from 'muzieh-ngcomponents';
     standalone: true,
     imports: [CommonModule, ButtonDirective],
     templateUrl: './buttons-demo.component.html',
-    styles: [
-        `
-            @import 'design/_button';
-        `,
-    ],
+    styleUrls: ['./buttons-demo.component.scss']
 })
 export class ButtonsDemoComponent implements OnInit {
     constructor() {}

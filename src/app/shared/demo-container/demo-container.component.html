@@ -11,8 +11,11 @@
   <div class="flexFullRow">
     <ng-template appEmbed></ng-template>
   </div>
-  <div *ngIf="showCode" class="flexFullRow">
-    <pre><code [highlight]="code" [languages]="['xml']"></code></pre>
+
+  <div>
+    <pre *ngFor="let code of code$ | async">
+      <code [highlight]="code.content" [languages]="[code.language]"></code>
+    </pre>
   </div>
 </div>
 
