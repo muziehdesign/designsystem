@@ -10,3 +10,15 @@ a img {cursor: pointer}
 .flexFullRow {
   flex: 0 0 100%;
 }
+
+.example {
+  @apply bg-white mt-8 mb-8 p-8;
+
+  .example-control {
+      @apply border-b-2 pb-4;
+  }
+}
+
+.demo-container {
+  @apply bg-white border-gray-600;
+}

@@ -1,14 +1,14 @@
 
-<div class="example flexContainer">
-  <div class="button-list flexRight">
-    <button class="button button-primary button-icon" [ngClass]="!showCode ? 'button-primary' : 'button-secondary'" (click)="viewSource()">
+<div class="max-w-5xl">
+  <div class="flex justify-end">
+    <button class="button button-tertiary button-icon" (click)="viewSource()">
       <mz-svg-icon key="code" type="outline"></mz-svg-icon>&nbsp;Code
     </button>
-    <button class="button button-secondary button-icon" (click)="openSource()">
+    <button class="button button-tertiary button-icon" (click)="openSource()">
       <mz-svg-icon key="arrow-top-right-on-square" type="outline"></mz-svg-icon>&nbsp;Stackblitz
     </button>
   </div>
-  <div class="flexFullRow">
+  <div class="bg-white">
     <ng-template appEmbed></ng-template>
   </div>
 
