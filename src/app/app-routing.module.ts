@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonsComponent } from './components/buttons/buttons.component';
-import { buttonRoutes } from './components/buttons/routes';
+import { buttonRoutes } from './components/component-routes';
 import { DEMONSTRATIONS } from './demonstration/demonstrations.token';
 import { demoOf } from './demonstration/utilities';
 

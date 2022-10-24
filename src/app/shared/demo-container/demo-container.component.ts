@@ -23,7 +23,6 @@ export class DemoContainerComponent implements OnInit {
     public showCode = false;
     public code: string = '';
     constructor(@Inject(DEMONSTRATIONS) private demonstrations: CodeDemonstration[], private http: HttpClient) {
-        console.log('demo container:', demonstrations);
     }
 
     ngOnInit(): void {
@@ -66,7 +65,6 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { ${this.component.name} } from './demo';
 
 bootstrapApplication(${this.component.name});`;
-                    console.log('opening project');
                     sdk.openProject(project, { view: 'preview', openFile: 'src/demo.ts' });
                 })
             )
