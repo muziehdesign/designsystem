@@ -18,10 +18,10 @@ import { SortDirective } from './sort.directive';
 import { SortKeyDirective } from './sort-key.directive';
 import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
 import { ButtonDirective } from './button.directive';
+import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard-progress-tracker.component';
 
 @NgModule({
   declarations: [
-    SvgIconComponent,
     SpinnerComponent,
     EnumDisplayPipe,
     ResultTableComponent,
@@ -40,8 +40,9 @@ import { ButtonDirective } from './button.directive';
     CommonModule,
     MatDatepickerModule,
     FormsModule,
-
-    ButtonDirective
+    ButtonDirective,
+    SvgIconComponent,
+    WizardProgressTrackerComponent,
   ],
   exports: [
     EnumDisplayPipe,
@@ -59,8 +60,8 @@ import { ButtonDirective } from './button.directive';
     SortKeyDirective,
     SortDirective,
     SubjectDisplayPipe,
-
-    ButtonDirective
+    ButtonDirective,
+    WizardProgressTrackerComponent,
   ],
   providers: [
     DatePipe,

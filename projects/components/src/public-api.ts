@@ -46,3 +46,6 @@ export * from './lib/alert/alert.component';
 export * from './lib/sort-key.directive';
 export * from './lib/sort.directive';
 export * from './lib/button.directive';
+
+export * from './lib/models/wizard-step-link';
+export * from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
