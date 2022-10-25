@@ -76,7 +76,12 @@ export class DemoContainerComponent implements OnInit {
             files.forEach(file=>{
                 project.files[`src/${file.filename}`] = file.content;
             });
-            project.files['src/index.html'] = `<app-${this.componentName}></app-${this.componentName}>`;
+            project.files['src/index.html'] = `
+<app-${this.componentName}></app-${this.componentName}>
+<div class="block mt-12 mb-8 text-center">
+    <a href="https://ruifang.github.io/kitchensink-ui">Muzieh Design System</a>
+</div>
+`;
             project.files['src/main.ts'] = `
 import './polyfills';
 import { bootstrapApplication } from '@angular/platform-browser';
