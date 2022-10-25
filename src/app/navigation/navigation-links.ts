@@ -5,8 +5,7 @@ export const navigationLinks: NavigationLink[] = [
     ]},*/
     { name: 'Foundations', children: [
         { name: 'Accessibility', link: '/design/accessibility' },
-        //{ name: 'Color', link: '/design/color' },
-        { name: 'Color', link: '/colors2' },
+        { name: 'Color', link: '/design/color' },
         { name: 'Grid', link: '/design/grid' },
         { name: 'Breakpoints', link: '/design/breakpoints' },
         { name: 'Iconography', link: '/design/iconography' },
