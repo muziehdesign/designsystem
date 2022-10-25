@@ -49,7 +49,6 @@ import { AddressFormComponent } from './address-form/address-form.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
     declarations: [
         FormControlsComponent,
@@ -86,7 +85,7 @@ import { RouterModule } from '@angular/router';
         ToggleGuidelinesComponent,
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
-        AddressFormComponent,
+        AddressFormComponent
     ],
     imports: [
         CommonModule,

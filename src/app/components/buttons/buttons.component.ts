@@ -1,23 +1,26 @@
-import { AfterViewChecked, Component, OnDestroy, OnInit, Type, ViewContainerRef } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ButtonsDemoComponent } from '../../../demos/buttons-demo.component';
 import { of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { DemoButtonsComponent } from 'src/app/button-design/demo-buttons/demo-buttons.component';
 
 @Component({
-    templateUrl: './button-design.component.html',
-    styleUrls: ['./button-design.component.scss'],
+    selector: 'app-buttons',
+    standalone: true,
+    imports: [CommonModule, SharedModule],
+    templateUrl: './buttons.component.html',
 })
-export class ButtonDesignComponent implements OnInit, OnDestroy, AfterViewChecked {
+export class ButtonsComponent implements OnInit {
+    buttonsDemo = ButtonsDemoComponent;
+    langs: string[] = ['xml'];
     busy?: boolean = true;
     busy2?: boolean;
     private subscription: Subscription = new Subscription();
 
-    buttonsDemo = DemoButtonsComponent;
-    constructor() {
-
-    }
-    ngAfterViewChecked(): void {
-    }
+    constructor() {}
+    ngAfterViewChecked(): void {}
 
     ngOnInit(): void {}
 

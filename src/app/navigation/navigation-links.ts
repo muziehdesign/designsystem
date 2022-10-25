@@ -5,7 +5,8 @@ export const navigationLinks: NavigationLink[] = [
     ]},*/
     { name: 'Foundations', children: [
         { name: 'Accessibility', link: '/design/accessibility' },
-        { name: 'Color', link: '/design/color' },
+        //{ name: 'Color', link: '/design/color' },
+        { name: 'Color', link: '/colors2' },
         { name: 'Grid', link: '/design/grid' },
         { name: 'Breakpoints', link: '/design/breakpoints' },
         { name: 'Iconography', link: '/design/iconography' },
@@ -22,7 +23,8 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Alerts', link: '/design/alerts' },
         // badge
         { name: 'Breadcrumbs', link: '/design/breadcrumbs' },
-        { name: 'Button', link: '/design/button' },
+        //{ name: 'Button', link: '/design/button' },
+        { name: 'Button', link: '/buttons2' },
         { name: 'Date time picker', link: '/design/datetimepicker'},
         { name: 'Description lists', link: '/design/descriptionlist' },
         { name: 'Dropdown menu', link: '/design/menudropdown' },

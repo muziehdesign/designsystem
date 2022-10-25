@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent } from 'dist/components/lib/models/page-event';
+import { PageEvent } from '../../../../projects/components/src/lib/models/page-event';
 import { ResultTableModel } from 'muzieh-ngcomponents';
-import { LoadingState } from 'dist/components/lib/models/loading-state';
+import { LoadingState } from '../../../../projects/components/src/lib/models/loading-state';
 import { Observable, of } from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';
 import { SortEvent } from 'projects/components/src/lib/models/sort-event';
