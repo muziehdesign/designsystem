@@ -1,23 +1,22 @@
-
-<div class="max-w-5xl">
-  <div class="flex justify-end">
-    <button class="button button-tertiary button-icon" (click)="viewSource()">
-      <mz-svg-icon key="code" type="outline"></mz-svg-icon>&nbsp;Code
-    </button>
-    <button class="button button-tertiary button-icon" (click)="openSource()">
-      <mz-svg-icon key="arrow-top-right-on-square" type="outline"></mz-svg-icon>&nbsp;Stackblitz
-    </button>
-  </div>
-  <div class="bg-white">
-    <ng-template appEmbed></ng-template>
-  </div>
-
-  <div>
-    <pre *ngFor="let code of code$ | async">
-      <code [highlight]="code.content" [languages]="[code.language]"></code>
-    </pre>
-  </div>
+<div class="flex justify-end">
+  <button class="button button-icon" (click)="viewSource()">
+    <mz-svg-icon key="code" type="outline"></mz-svg-icon>
+    Code
+  </button>
+  <button class="button button-icon" (click)="openSource()">
+    <mz-svg-icon key="arrow-top-right-on-square" type="outline"></mz-svg-icon>Stackblitz
+  </button>
+</div>
+<div class="bg-white">
+  <ng-template appEmbed></ng-template>
 </div>
 
-
-
+<div class="bg-white mt-2" *ngIf="showCode">
+  <mat-tab-group>
+    <mat-tab *ngFor="let code of code$ | async" [label]="code.filename">
+      <pre>
+          <code [highlight]="code.content" [languages]="[code.language]"></code>
+        </pre>
+    </mat-tab>
+  </mat-tab-group>
+</div>
