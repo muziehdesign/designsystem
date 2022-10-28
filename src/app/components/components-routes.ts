@@ -12,10 +12,31 @@ export const componentRoutes: Routes = [
     },
     {
         path: 'formcontrols',
-        loadComponent: () => import('./form-controls/form-controls.component').then((c) => c.FormControlsComponent),
+        children: [
+            {
+                path: '',
+                loadComponent: () => import('./form-controls/form-controls.component').then((c) => c.FormControlsComponent),
+            },
+            {
+                path: 'textinput',
+                loadComponent: () => import('./form-controls/text-input/text-input.component').then((c) => c.TextInputComponent),
+            },
+            {
+                path: 'textarea',
+                loadComponent: () => import('./form-controls/textarea/textarea.component').then((c) => c.TextareaComponent),
+            },
+            {
+                path: 'select',
+                loadComponent: () => import('./form-controls/select/select.component').then((c) => c.SelectComponent),
+            },
+            {
+                path: 'radio',
+                loadComponent: () => import('./form-controls/radio/radio.component').then((c) => c.RadioComponent),
+            },
+            {
+                path: 'checkbox',
+                loadComponent: () => import('./form-controls/checkbox/checkbox.component').then((c) => c.CheckboxComponent),
+            }
+        ],
     },
-    {
-        path: 'formcontrols/textinput',
-        loadComponent: () => import('./form-controls/text-input/text-input.component').then((c) => c.TextInputComponent),
-    }
 ];

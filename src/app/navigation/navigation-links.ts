@@ -32,7 +32,11 @@ export const navigationLinks: NavigationLink[] = [
             name: 'Form controls', 
             link: '/components/formcontrols',
             children: [
-                //{ name: 'Text input', link: '/components/formcontrols/textinput' }
+                { name: 'Text input', link: '/components/formcontrols/textinput' },
+                { name: 'Text area', link: '/components/formcontrols/textarea' },
+                { name: 'Radio', link: '/components/formcontrols/radio' },
+                { name: 'Checkbox', link: '/components/formcontrols/checkbox' },
+                { name: 'Select', link: '/components/formcontrols/select' }
             ]
         },
         { name: 'Modal', link: '/design/modal' },

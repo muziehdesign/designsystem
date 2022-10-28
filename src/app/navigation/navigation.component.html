@@ -26,10 +26,10 @@
             <div class="title" *ngIf="parent.name">{{parent.name}}</div>
             <ul *ngIf="parent.children">
                 <li *ngFor="let child of parent.children">
-                    <a routerLink="{{child.link}}" routerLinkActive="active" [ngClass]="{'italic': child.inactive}">{{child.name}}</a>
+                    <a routerLink="{{child.link}}" routerLinkActive="active" [ngClass]="{'italic': child.inactive, 'parent': child.children && child.children.length > 0}">{{child.name}}</a>
                     <ul *ngIf="child.children">
-                        <li *ngFor="let grandchild of child.children" class="pl-4">
-                            <a routerLink="{{grandchild.link}}" routerLinkActive="active" [ngClass]="{'italic': grandchild.inactive}">{{grandchild.name}}</a>
+                        <li *ngFor="let grandchild of child.children">
+                            <a routerLink="{{grandchild.link}}" routerLinkActive="active" [ngClass]="{'italic': grandchild.inactive}" class="grandchild">{{grandchild.name}}</a>
                         </li>
                     </ul>
                 </li>
