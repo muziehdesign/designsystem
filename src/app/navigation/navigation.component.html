@@ -27,6 +27,11 @@
             <ul *ngIf="parent.children">
                 <li *ngFor="let child of parent.children">
                     <a routerLink="{{child.link}}" routerLinkActive="active" [ngClass]="{'italic': child.inactive}">{{child.name}}</a>
+                    <ul *ngIf="child.children">
+                        <li *ngFor="let grandchild of child.children" class="pl-4">
+                            <a routerLink="{{grandchild.link}}" routerLinkActive="active" [ngClass]="{'italic': grandchild.inactive}">{{grandchild.name}}</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>

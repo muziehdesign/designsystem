@@ -28,7 +28,13 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Description lists', link: '/design/descriptionlist' },
         { name: 'Dropdown menu', link: '/design/menudropdown' },
         { name: 'Empty state', link: '/design/emptystate' },
-        { name: 'Form controls', link: '/components/formcontrols' },
+        { 
+            name: 'Form controls', 
+            link: '/components/formcontrols',
+            children: [
+                //{ name: 'Text input', link: '/components/formcontrols/textinput' }
+            ]
+        },
         { name: 'Modal', link: '/design/modal' },
         { name: 'Page header', link: '/design/pageheader'},
         { name: 'Pagination', link: '/design/pagination' },
