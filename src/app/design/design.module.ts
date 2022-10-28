@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DesignRoutingModule } from './design-routing.module';
-import { FormControlsComponent } from './form-controls/form-controls.component';
 import { DesignComponent } from './design.component';
 import { AboutComponent } from './about/about.component';
 import { ContentComponent } from './content/content.component';
@@ -51,7 +50,6 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
-        FormControlsComponent,
         DesignComponent,
         AboutComponent,
         ContentComponent,

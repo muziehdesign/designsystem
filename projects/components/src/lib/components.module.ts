@@ -22,7 +22,6 @@ import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard
 
 @NgModule({
   declarations: [
-    SpinnerComponent,
     EnumDisplayPipe,
     ResultTableComponent,
     PaginationComponent,
@@ -42,6 +41,7 @@ import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard
     FormsModule,
     ButtonDirective,
     SvgIconComponent,
+    SpinnerComponent,
     WizardProgressTrackerComponent,
   ],
   exports: [

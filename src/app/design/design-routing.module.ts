@@ -13,7 +13,6 @@ import { DescriptionListComponent } from './description-list/description-list.co
 import { DesignComponent } from './design.component';
 import { DropdownMenuGuidelinesComponent } from './dropdown-menu-guidelines/dropdown-menu-guidelines.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
-import { FormControlsComponent } from './form-controls/form-controls.component';
 import { FormComponent } from './form/form.component';
 import { GridComponent } from './grid/grid.component';
 import { IconographyComponent } from './iconography/iconography.component';
@@ -63,7 +62,6 @@ const routes: Routes = [
             { path: 'modal', component: ModalGuidelinesComponent },
             { path: 'pagination', component: PaginationGuidelinesComponent },
             { path: 'progressbar', component: ProgressBarGuidelinesComponent },
-            { path: 'formcontrols', component: FormControlsComponent },
             { path: 'resulttable', component: ResultTableGuidelinesComponent },
             { path: 'spinner', component: SpinnerGuidelinesComponent },
             { path: 'skeletonloader', component: SkeletonLoaderComponent },
