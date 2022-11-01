@@ -24,12 +24,13 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Breadcrumbs', link: '/design/breadcrumbs' },
         //{ name: 'Button', link: '/design/button' },
         { name: 'Button', link: '/components/buttons' },
+        { name: 'Modal', link: '/components/modal' },
         { name: 'Date time picker', link: '/design/datetimepicker'},
         { name: 'Description lists', link: '/design/descriptionlist' },
         { name: 'Dropdown menu', link: '/design/menudropdown' },
         { name: 'Empty state', link: '/design/emptystate' },
-        { 
-            name: 'Form controls', 
+        {
+            name: 'Form controls',
             link: '/components/formcontrols',
             children: [
                 { name: 'Text input', link: '/components/formcontrols/textinput' },
@@ -39,7 +40,6 @@ export const navigationLinks: NavigationLink[] = [
                 { name: 'Select', link: '/components/formcontrols/select' }
             ]
         },
-        { name: 'Modal', link: '/design/modal' },
         { name: 'Page header', link: '/design/pageheader'},
         { name: 'Pagination', link: '/design/pagination' },
         { name: 'Progress bar', link: '/design/progressbar' },

@@ -11,6 +11,10 @@ export const componentRoutes: Routes = [
         providers: [{ provide: DEMONSTRATIONS, useValue: demoOf(ButtonsDemoComponent), multi: true }],
     },
     {
+        path: 'modal',
+        loadComponent: () => import('./modal/modal.component').then((b) => b.ModalComponent),
+    },
+    {
         path: 'formcontrols',
         children: [
             {

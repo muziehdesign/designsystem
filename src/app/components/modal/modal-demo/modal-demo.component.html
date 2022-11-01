@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Open link demo modal</h1>
+<mat-dialog-content>
+    <h3>You are about to open a new tab: {{data.url}}</h3>
+    <p class="text-block">
+        To access the data in your dialog component, you have to use the MAT_DIALOG_DATA injection token
+    </p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="button-list">
+        <button [mat-dialog-close]="true" class="button button-secondary">Cancel</button>
+        <button (click)="openLink()" class="button button-primary">Continue</button>
+    </div>
+</mat-dialog-actions>
