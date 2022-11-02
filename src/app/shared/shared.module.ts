@@ -11,6 +11,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
     declarations: [DemoContainerComponent, EmbedDirective],
     exports: [DemoContainerComponent, SvgIconComponent, SpinnerComponent, EnumDisplayPipe, DateDisplayPipe, SubjectDisplayPipe, ResultTableComponent, PhoneNumberPipe, MuziehDateTimeModule, ButtonDirective],
-    imports: [MuziehComponentsModule, CommonModule, HighlightModule, NgbModule, MatTabsModule, MatDialogModule],
+    imports: [MuziehComponentsModule, CommonModule, HighlightModule, NgbModule, MatTabsModule],
 })
 export class SharedModule {}
