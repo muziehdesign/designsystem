@@ -20,7 +20,7 @@ export class DemoContainerComponent implements OnInit {
     @ViewChild(EmbedDirective, { static: true }) embed!: EmbedDirective;
     private demoComponent: ComponentRef<unknown> | undefined;
     private sink = new SubSink();
-    private componentName: string | undefined;
+    public componentName: string | undefined;
     public showCode = false;
     public code$?: Observable<CodeFile[]>;
     constructor(@Inject(DEMONSTRATIONS) private demonstrations: CodeDemonstration[], private http: HttpClient) {}
@@ -28,12 +28,7 @@ export class DemoContainerComponent implements OnInit {
     ngOnInit(): void {
         this.embed.viewContainerRef.clear();
         this.demoComponent = this.embed.viewContainerRef.createComponent(this.component);
-
-        this.componentName = this.component.name
-            .substring(0, this.component.name.length - 'component'.length)
-            .match(/[A-Z][a-z]+/g)
-            ?.map((x) => x.toLowerCase())
-            .join('-');
+        this.componentName = this.demoComponent.location.nativeElement.localName.replace('app-', '');
 
         this.code$ = forkJoin([
             this.http.get(`/demos/${this.componentName}.component.ts`, { responseType: 'text' }).pipe(
@@ -73,7 +68,12 @@ export class DemoContainerComponent implements OnInit {
     openSource() {
         const s = this.code$?.subscribe((files: CodeFile[]) => {
             const project = structuredClone(STACKBLITZ_PROJECT_OPTIONS);
-            files.forEach(file=>{
+            const componentImportName = (
+                this.componentName?.split('-').map((element) => {
+                    return element[0].toUpperCase() + element.slice(1);
+                }) + 'Component'
+            ).replace(',', '');
+            files.forEach((file) => {
                 project.files[`src/${file.filename}`] = file.content;
             });
             project.files['src/index.html'] = `
@@ -85,9 +85,9 @@ export class DemoContainerComponent implements OnInit {
             project.files['src/main.ts'] = `
 import './polyfills';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { ${this.component.name} } from './${this.componentName}.component';
+import { ${componentImportName} } from './${this.componentName}.component';
 
-bootstrapApplication(${this.component.name});`;
+bootstrapApplication(${componentImportName});`;
             sdk.openProject(project, { view: 'preview', openFile: `src/${this.componentName}.component.ts` });
         });
         this.sink.add(s);
