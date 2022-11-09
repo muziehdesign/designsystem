@@ -1,4 +1,11 @@
-# Extensions
+# Setting up new project
+1. Use angular-cli to generate project, with routing and scss
+1. Add tailwind
+2. Add prettier config
+3. Add eslint package
+
+## Extensions
+Project should be setup using extensions
 - Prettier
 - Angular Language Service
 - Tailwind CSS IntelliSense
