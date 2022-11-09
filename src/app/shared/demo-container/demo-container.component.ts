@@ -31,7 +31,7 @@ export class DemoContainerComponent implements OnInit {
         this.componentName = this.demoComponent.location.nativeElement.localName.replace('app-', '');
 
         this.code$ = forkJoin([
-            this.http.get(`/demos/${this.componentName}.component.ts`, { responseType: 'text' }).pipe(
+            this.http.get(`demos/${this.componentName}.component.ts`, { responseType: 'text' }).pipe(
                 map((x) => {
                     return {
                         language: 'typescript',
@@ -40,7 +40,7 @@ export class DemoContainerComponent implements OnInit {
                     } as CodeFile;
                 })
             ),
-            this.http.get(`/demos/${this.componentName}.component.html`, { responseType: 'text' }).pipe(
+            this.http.get(`demos/${this.componentName}.component.html`, { responseType: 'text' }).pipe(
                 map((x) => {
                     return {
                         language: 'html',
@@ -49,7 +49,7 @@ export class DemoContainerComponent implements OnInit {
                     } as CodeFile;
                 })
             ),
-            this.http.get(`/demos/${this.componentName}.component.scss`, { responseType: 'text' }).pipe(
+            this.http.get(`demos/${this.componentName}.component.scss`, { responseType: 'text' }).pipe(
                 map((x) => {
                     return {
                         language: 'css',
