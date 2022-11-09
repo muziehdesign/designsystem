@@ -20,7 +20,7 @@ export class DemoContainerComponent implements OnInit {
     @ViewChild(EmbedDirective, { static: true }) embed!: EmbedDirective;
     private demoComponent: ComponentRef<unknown> | undefined;
     private sink = new SubSink();
-    public componentName: string | undefined;
+    private componentName: string | undefined;
     public showCode = false;
     public code$?: Observable<CodeFile[]>;
     constructor(@Inject(DEMONSTRATIONS) private demonstrations: CodeDemonstration[], private http: HttpClient) {}
