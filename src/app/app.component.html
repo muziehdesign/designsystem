@@ -9,7 +9,7 @@
       </button>
       <a href="/" class="flex-auto no-underline pt-2 pl-2"><img class="h-8" src="./assets/logo-isolated-layout.svg"></a>
     </div>
-  
+
     <div *ngIf="stickyNavigation" class="fixed z-50 inset-0 overflow-y-auto">
       <div class="fixed inset-0 bg-gray-50 backdrop-blur-sm" id="headlessui-dialog-overlay-12"
         aria-hidden="true"></div>
@@ -26,7 +26,7 @@
           </div>
       </div>
     </div>
-  
+
     <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0" *ngIf="!stickyNavigation">
       <div class="flex flex-col flex-grow border-gray-50 pt-5 bg-white overflow-y-auto">
         <div class="flex-grow flex flex-col">
@@ -36,10 +36,8 @@
     </div>
     <div class="md:pl-64 flex flex-col flex-1">
       <main class="flex-1">
-        <div class="md:py-6">
-          <div class="page">
-            <router-outlet></router-outlet>
-          </div>
+        <div class="md:py-6 px-4">
+          <router-outlet></router-outlet>
         </div>
       </main>
     </div>

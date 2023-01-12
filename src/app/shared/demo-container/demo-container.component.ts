@@ -23,7 +23,7 @@ export class DemoContainerComponent implements OnInit {
     private componentName: string | undefined;
     public showCode = false;
     public code$?: Observable<CodeFile[]>;
-    constructor(@Inject(DEMONSTRATIONS) private demonstrations: CodeDemonstration[], private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
     ngOnInit(): void {
         this.embed.viewContainerRef.clear();
