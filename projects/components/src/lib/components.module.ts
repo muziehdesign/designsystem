@@ -19,6 +19,7 @@ import { SortKeyDirective } from './sort-key.directive';
 import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
 import { ButtonDirective } from './button.directive';
 import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard-progress-tracker.component';
+import { InlineMessageModule } from './inline-message/inline-mesage.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard
     SvgIconComponent,
     SpinnerComponent,
     WizardProgressTrackerComponent,
+    InlineMessageModule
   ],
   exports: [
     EnumDisplayPipe,
@@ -62,6 +64,7 @@ import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard
     SubjectDisplayPipe,
     ButtonDirective,
     WizardProgressTrackerComponent,
+    InlineMessageModule
   ],
   providers: [
     DatePipe,
