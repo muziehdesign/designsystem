@@ -44,7 +44,6 @@ import { InlineMessageModule } from './inline-message/inline-mesage.module';
     SvgIconComponent,
     SpinnerComponent,
     WizardProgressTrackerComponent,
-    InlineMessageModule
   ],
   exports: [
     EnumDisplayPipe,

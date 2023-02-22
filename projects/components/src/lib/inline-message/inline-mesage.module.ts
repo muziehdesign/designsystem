@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCommonModule } from '@angular/material/core';
 import { InlineMessageBodyComponent } from './inline-message-body/inline-message-body.component';
-import { InlineMessageTitleComponent } from './inline-message-title/inline-message-title.component';
 import { InlineMessageComponent } from './inline-message.component';
 import { InlineMessageService } from './inline-message.service';
 import { RouterModule } from '@angular/router';
+import { InlineMessageTitleComponent } from './inline-message-title/inline-message-title.component';
 
 const COMPONENTS = [
   InlineMessageComponent,
-  InlineMessageTitleComponent,
-  InlineMessageBodyComponent
-];
+  InlineMessageBodyComponent,
+  InlineMessageTitleComponent
+]
 
 @NgModule({
   declarations: COMPONENTS,
