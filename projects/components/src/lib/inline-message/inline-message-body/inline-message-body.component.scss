@@ -1,6 +1,7 @@
 section {
     visibility: hidden;
     opacity: 0;
+    z-index: 999;
   
     &.open {
       visibility: inherit;

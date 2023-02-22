@@ -1,3 +1,10 @@
+.wrapper {
+    display: inline;
+}
+
+.title {
+    display: inline;
+}
 .button {
     cursor: pointer;
     border-radius: 50%;
@@ -8,8 +15,4 @@
     height: 20px;
     text-align: center;
     margin: 0 5px;
-}
-
-.title {
-    display: inline;
 }
