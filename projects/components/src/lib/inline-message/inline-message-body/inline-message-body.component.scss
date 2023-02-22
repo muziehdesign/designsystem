@@ -25,9 +25,24 @@ section {
       left: 50%;
       transform: translate(-50%, -50%);
       background: white;
-      padding: 10px;
+      padding: 15px 10px 10px 10px;
       border-radius: 8px;
       text-align: center;
       box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button.close {
+      background: none;
+      color: inherit;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: none;
+  
+      position: absolute;
+      top: 0;
+      left: 0;
+  
+      padding: 13px;
     }
   }
