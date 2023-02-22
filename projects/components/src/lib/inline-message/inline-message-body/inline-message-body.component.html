@@ -2,8 +2,9 @@
   <section [class.open]="display === 'open'" (click)="close()">
     <div (click)="$event.stopPropagation()">
       <button class="close" type="button"  (click)="close()">X</button>
-
-      <ng-content></ng-content>
+      <div class="body">
+        <ng-content></ng-content>
+      </div>
     </div>
   </section>
 </ng-container>
