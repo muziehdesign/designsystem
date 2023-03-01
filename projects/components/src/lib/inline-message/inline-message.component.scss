@@ -5,3 +5,14 @@
 .title {
     display: inline;
 }
+
+.inline-message-btn {
+    cursor: pointer;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(75 85 99);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: 0 5px;
+}
