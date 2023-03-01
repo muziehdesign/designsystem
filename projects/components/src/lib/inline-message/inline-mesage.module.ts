@@ -2,22 +2,19 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCommonModule } from '@angular/material/core';
-import { InlineMessageBodyComponent } from './inline-message-body/inline-message-body.component';
+import { InlineMessageDialogComponent } from './inline-message-dialog/inline-message-dialog.component';
 import { InlineMessageComponent } from './inline-message.component';
-import { InlineMessageService } from './inline-message.service';
 import { RouterModule } from '@angular/router';
-import { InlineMessageTitleComponent } from './inline-message-title/inline-message-title.component';
+import { DialogModule } from '@angular/cdk/dialog';
 
 const COMPONENTS = [
   InlineMessageComponent,
-  InlineMessageBodyComponent,
-  InlineMessageTitleComponent
+  InlineMessageDialogComponent,
 ]
 
 @NgModule({
   declarations: COMPONENTS,
-  imports: [MatCommonModule, CommonModule, RouterModule],
-  exports: [COMPONENTS, MatCommonModule],
-  providers: [InlineMessageService], 
+  imports: [MatCommonModule, CommonModule, RouterModule, DialogModule],
+  exports: [COMPONENTS, MatCommonModule, DialogModule],
 })
 export class InlineMessageModule { }
