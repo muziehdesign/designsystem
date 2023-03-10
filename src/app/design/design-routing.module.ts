@@ -33,7 +33,7 @@ import { DatetimePickerGuidelinesComponent } from './datetime-picker-guidelines/
 import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines.component';
 import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
 import { AddressFormComponent } from './address-form/address-form.component';
-import { InlineMessageComponent } from './inline-message/inline-message.component';
+import { InlineMessageComponent } from '../components/inline-message/inline-message/inline-message.component';
 
 const routes: Routes = [
     {
@@ -55,10 +55,10 @@ const routes: Routes = [
             { path: 'iconography', component: IconographyComponent },
             { path: 'layout', component: LayoutComponent },
             { path: 'form', component: FormComponent },
+            { path: 'inline-message', component: InlineMessageComponent },
             { path: 'address-form', component: AddressFormComponent },
             { path: 'pageheader', component: PageHeaderGuidelinesComponent },
             { path: 'accordion', component: AccordionComponent },
-            { path: 'inline-message', component: InlineMessageComponent },
             { path: 'button', component: ButtonDesignComponent },
             { path: 'menudropdown', component: DropdownMenuGuidelinesComponent },
             { path: 'modal', component: ModalGuidelinesComponent },

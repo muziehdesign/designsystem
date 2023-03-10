@@ -47,7 +47,6 @@ import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { RouterModule } from '@angular/router';
-import { InlineMessageComponent } from './inline-message/inline-message.component';
 
 @NgModule({
     declarations: [
@@ -85,7 +84,6 @@ import { InlineMessageComponent } from './inline-message/inline-message.componen
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
         AddressFormComponent,
-        InlineMessageComponent
     ],
     imports: [
         CommonModule,
