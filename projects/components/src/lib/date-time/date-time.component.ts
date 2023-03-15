@@ -17,10 +17,10 @@ import { MatDatepicker } from '@angular/material/datepicker';
     ],
 })
 export class DateTimeComponent implements ControlValueAccessor {
-    date: Date | undefined;
-    time: String | undefined;
+    date: Date | undefined | null;
+    time: String | undefined | null;
     private tempDate: string | undefined | null = null;
-    private tempTime: string | null = null;
+    private tempTime: string | undefined | null = null;
     type = 'outline';
     @ViewChild('datePicker') datepicker!: MatDatepicker<Date>;
 
@@ -39,13 +39,19 @@ export class DateTimeComponent implements ControlValueAccessor {
     onTouched = () => {};
 
     writeValue(value: Date) {
-        if (value) {
-            this.date = value;
-            const hourPrefix = value.getHours() > 9 ? '' : '0';
-            const minutePrefix = value.getMinutes() > 9 ? '' : '0';
-            this.time = `${hourPrefix}${value.getHours()}:${minutePrefix}${value.getMinutes()}`;
-            this._cd.markForCheck();
-        }
+      if (value) {
+        this.date = value;
+        const hourPrefix = value.getHours() > 9 ? '' : '0';
+        const minutePrefix = value.getMinutes() > 9 ? '' : '0';
+        this.time = `${hourPrefix}${value.getHours()}:${minutePrefix}${value.getMinutes()}`;
+        this._cd.markForCheck();
+      }
+      else {
+        this.date = null;
+        this.time = null;
+        this.tempTime = null;
+        this.tempDate = null;
+      }
     }
 
     registerOnChange(fn: (value: any) => any): void {
