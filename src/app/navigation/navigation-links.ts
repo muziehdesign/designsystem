@@ -39,6 +39,7 @@ export const navigationLinks: NavigationLink[] = [
                 { name: 'Select', link: '/components/formcontrols/select' }
             ]
         },
+        { name: 'Inline Message', link: '/design/inline-message' },
         { name: 'Modal', link: '/design/modal' },
         { name: 'Page header', link: '/design/pageheader'},
         { name: 'Pagination', link: '/design/pagination' },
