@@ -36,6 +36,10 @@ export const componentRoutes: Routes = [
             {
                 path: 'checkbox',
                 loadComponent: () => import('./form-controls/checkbox/checkbox.component').then((c) => c.CheckboxComponent),
+            },
+            {
+                path: 'inline-message',
+                loadComponent: () => import('./inline-message/inline-message/inline-message.component').then((c) => c.InlineMessageComponent),
             }
         ],
     },

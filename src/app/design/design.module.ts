@@ -83,7 +83,7 @@ import { RouterModule } from '@angular/router';
         ToggleGuidelinesComponent,
         PageHeaderGuidelinesComponent,
         ModalAddOrderComponent,
-        AddressFormComponent
+        AddressFormComponent,
     ],
     imports: [
         CommonModule,

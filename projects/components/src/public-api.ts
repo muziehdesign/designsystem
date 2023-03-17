@@ -49,3 +49,4 @@ export * from './lib/button.directive';
 
 export * from './lib/models/wizard-step-link';
 export * from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
+export * from './lib/inline-message/index';
