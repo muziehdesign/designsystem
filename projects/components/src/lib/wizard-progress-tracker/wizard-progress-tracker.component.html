@@ -30,16 +30,16 @@
                     </div>
                     <div *ngIf=" i > currentStep" class="step-desc"> {{ step.name }}
                     </div>
+                    <div class="toggable-icon" [ngClass]="{ 'first-row': i === 0 }">
+                        <button *ngIf="!toggled" (click)="toggle()">
+                            <mz-svg-icon key="chevron-down"></mz-svg-icon>
+                        </button>
+                        <button *ngIf="toggled" (click)="toggle()">
+                            <mz-svg-icon key="chevron-up"></mz-svg-icon>
+                        </button>
+                    </div>
                 </ng-container>
             </div>
-        </div>
-        <div class="toggable-icon">
-            <button *ngIf="!toggled" (click)="toggle()">
-                <mz-svg-icon key="chevron-down"></mz-svg-icon>
-            </button>
-            <button *ngIf="toggled" (click)="toggle()">
-                <mz-svg-icon key="chevron-up"></mz-svg-icon>
-            </button>
         </div>
     </div>
 </div>
