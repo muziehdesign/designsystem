@@ -55,7 +55,7 @@ export class DateTimeComponent implements ControlValueAccessor {
 
     writeValue(value: Date) {
         if (value) {
-            const dt = this.limitDate(new Date(value));
+            const dt = new Date(value);
 
             this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
             this.time = this.formatTime(value);
