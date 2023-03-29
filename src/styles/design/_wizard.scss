@@ -124,7 +124,7 @@
             }
         }
 
-        .toggable-icon:not(.first-row) {
+        .wizard-step:not(:first-of-type) .toggable-icon {
             @apply hidden;
         }
     }
