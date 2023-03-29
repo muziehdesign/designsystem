@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="field-control-group mt-1 ml-6">
-    <input class="field-control" type="time" [value]="time" (change)="updateTime($any($event).target.value)"
+    <input class="field-control" type="time" [value]="time" (change)="updateTime($event)"
       ngDefaultControl [disabled]="disabled">
   </div>
 </div>
