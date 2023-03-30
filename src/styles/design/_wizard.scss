@@ -40,7 +40,7 @@
 }
 
 .toggable-icon {
-    @apply lg:hidden ml-16;
+    @apply lg:hidden;
 }
 
 .wizard-step.unvisited {
@@ -100,6 +100,10 @@
 
         .wizard-step:not(.current) {
             @apply hidden lg:flex;
+
+            .toggable-icon {
+                @apply hidden;
+            }
         }
 
         .wizard-step.current .step-line {
@@ -118,6 +122,10 @@
             .spacer.right {
                 @apply flex lg:flex-1;
             }
+        }
+
+        .wizard-step:not(:first-of-type) .toggable-icon {
+            @apply hidden;
         }
     }
 }
