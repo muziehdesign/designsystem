@@ -75,10 +75,23 @@ export class DateTimeComponent implements ControlValueAccessor {
         this.onTouched = fn;
     }
 
-    updateDate(val: any): void {
-        const dt = this.limitDate(new Date(val.target.value));
+    updateDate(e: Event): void {
+        const input = e.target as HTMLInputElement;
 
-        this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+        let dt = new Date(input.value);
+
+        if (!isNaN(dt.getTime())) {
+            dt = this.limitDate(dt);
+
+            this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+
+            if (this.time === null || this.time === '') {
+                this.time = this.formatTime(new Date());
+            }
+        } else {
+            this.date = null;
+            this.time = null;
+        }
 
         this.propagateModelChange();
         this._cd.markForCheck();
@@ -105,8 +118,8 @@ export class DateTimeComponent implements ControlValueAccessor {
 
             this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
 
-            if (this.time === null) {
-                this.time = this.formatTime(this.min ?? new Date());
+            if (this.time === null || this.time === '') {
+                this.time = this.formatTime(new Date());
             }
         } else {
             this.date = null;
