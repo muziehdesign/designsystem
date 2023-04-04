@@ -139,7 +139,7 @@ export class DateTimeComponent implements ControlValueAccessor {
             const dateString = this.formatDateTime(this.date, this.time);
             this.onChange(new Date(dateString));
         } else {
-            this.onChange(null);
+            this.onChange(undefined);
         }
     }
 }
