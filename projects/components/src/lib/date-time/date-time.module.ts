@@ -5,15 +5,8 @@ import { DateTimeComponent } from './date-time.component';
 export { DateTimeComponent } from './date-time.component';
 
 @NgModule({
-  declarations: [
-    DateTimeComponent,
-  ],
-  imports: [
-    CommonModule,
-    MatDatepickerModule
-  ],
-  exports: [
-    DateTimeComponent,
-  ],
+    declarations: [DateTimeComponent],
+    imports: [CommonModule, MatDatepickerModule],
+    exports: [DateTimeComponent],
 })
-export class MuziehDateTimeModule { }
+export class MuziehDateTimeModule {}
