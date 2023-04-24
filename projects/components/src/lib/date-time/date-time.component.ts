@@ -17,8 +17,8 @@ import { MatDatepicker } from '@angular/material/datepicker';
     ],
 })
 export class DateTimeComponent implements ControlValueAccessor {
-    date: Date | undefined | null;
-    time: string | undefined | null;
+    date: Date | undefined;
+    time: string | undefined;
 
     private lz = (n: number) => ('0' + n).slice(-2);
     private formatDate = (dt: Date) => `${dt.getMonth() + 1}/${dt.getDate()}/${dt.getFullYear()}`;
@@ -60,8 +60,8 @@ export class DateTimeComponent implements ControlValueAccessor {
             this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
             this.time = this.formatTime(value);
         } else {
-            this.date = null;
-            this.time = null;
+            this.date = undefined;
+            this.time = undefined;
         }
 
         this._cd.markForCheck();
@@ -85,12 +85,12 @@ export class DateTimeComponent implements ControlValueAccessor {
 
             this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
 
-            if (this.time === null || this.time === '') {
+            if (this.time === undefined || this.time === '') {
                 this.time = this.formatTime(new Date());
             }
         } else {
-            this.date = null;
-            this.time = null;
+            this.date = undefined;
+            this.time = undefined;
         }
 
         this.propagateModelChange();
@@ -101,7 +101,7 @@ export class DateTimeComponent implements ControlValueAccessor {
         const input = e.target as HTMLInputElement;
 
         if (!input.value) {
-            this.date = null;
+            this.date = undefined;
         } else if (!this.date || isNaN(this.date.getTime())) {
             const dt = this.limitDate(this.min ?? new Date());
 
@@ -118,12 +118,12 @@ export class DateTimeComponent implements ControlValueAccessor {
 
             this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
 
-            if (this.time === null || this.time === '') {
+            if (this.time === undefined || this.time === '') {
                 this.time = this.formatTime(new Date());
             }
         } else {
-            this.date = null;
-            this.time = null;
+            this.date = undefined;
+            this.time = undefined;
         }
 
         this.propagateModelChange();

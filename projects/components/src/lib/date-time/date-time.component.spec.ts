@@ -7,7 +7,7 @@ import { MuziehDateTimeModule } from './date-time.module';
 
 @Component({ selector: 'test-cmp', template: '' })
 class TestComponent {
-    dateTime: Date | undefined | null;
+    dateTime: Date | undefined;
 }
 
 function createGenericTestComponent<T>(html: string, type: { new (...args: any[]): T }, detectChanges = true): ComponentFixture<T> {
@@ -93,14 +93,14 @@ describe('DatetimeComponent', () => {
             fixture.detectChanges();
             expectToDisplayDateTime(fixture.nativeElement, '13:50', '12/12/2022');
 
-            fixture.componentInstance.dateTime = null;
+            fixture.componentInstance.dateTime = undefined;
             fixture.detectChanges();
             tick();
             fixture.detectChanges();
-           
+
             expectToDisplayDateTime(fixture.nativeElement, '', '');
         }));
-        
+
         it('should clear time input when clear date input', fakeAsync(() => {
             const html = `<mz-datetime [(ngModel)]="dateTime"></mz-datetime>`;
 
@@ -117,8 +117,8 @@ describe('DatetimeComponent', () => {
             inputs[0].dispatchEvent(new InputEvent('change'));
 
             fixture.detectChanges();
-           
-            expect(inputs[1].value).toEqual('')
+
+            expect(inputs[1].value).toEqual('');
         }));
 
         it('should clear date input when clear time input', fakeAsync(() => {
@@ -137,7 +137,7 @@ describe('DatetimeComponent', () => {
             inputs[1].dispatchEvent(new InputEvent('change'));
 
             fixture.detectChanges();
-           
+
             expect(inputs[0].value).toEqual('');
         }));
 
@@ -152,7 +152,7 @@ describe('DatetimeComponent', () => {
             inputs[0].dispatchEvent(new InputEvent('change'));
 
             fixture.detectChanges();
-           
+
             expect(inputs[1].value).toBeTruthy();
         }));
 
@@ -167,7 +167,7 @@ describe('DatetimeComponent', () => {
             inputs[1].dispatchEvent(new InputEvent('change'));
 
             fixture.detectChanges();
-           
+
             expect(inputs[0].value).toBeTruthy();
         }));
     });
