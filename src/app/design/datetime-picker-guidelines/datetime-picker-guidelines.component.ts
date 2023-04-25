@@ -32,8 +32,8 @@ export class DatetimePickerGuidelinesComponent {
     console.log(this.deactivationDate);
   }
 
-  setDatetime(s: string) {
-    this.dateTime = new Date(s);
+  setDatetime(s: string | null) {
+    this.dateTime = (s !== null) ? new Date(s) : null;
   }
 }
 

@@ -18,9 +18,24 @@ import { MatDatepicker } from '@angular/material/datepicker';
 })
 export class DateTimeComponent implements ControlValueAccessor {
     date: Date | undefined;
-    time: String | undefined;
-    private tempDate: string | undefined | null = null;
-    private tempTime: string | null = null;
+    time: string | undefined;
+
+    private lz = (n: number) => ('0' + n).slice(-2);
+    private formatDate = (dt: Date) => `${dt.getMonth() + 1}/${dt.getDate()}/${dt.getFullYear()}`;
+    private formatTime = (t: Date) => `${this.lz(t.getHours())}:${this.lz(t.getMinutes())}`;
+    private formatDateTime = (dt: Date, t: string) => `${this.formatDate(dt)} ${t}`;
+    private limitDate = (dt: Date) => {
+        if (this.min) {
+            dt = new Date(Math.max(dt.getTime(), this.min.getTime()));
+        }
+
+        if (this.max) {
+            dt = new Date(Math.min(dt.getTime(), this.max.getTime()));
+        }
+
+        return dt;
+    };
+
     type = 'outline';
     @ViewChild('datePicker') datepicker!: MatDatepicker<Date>;
 
@@ -40,12 +55,16 @@ export class DateTimeComponent implements ControlValueAccessor {
 
     writeValue(value: Date) {
         if (value) {
-            this.date = value;
-            const hourPrefix = value.getHours() > 9 ? '' : '0';
-            const minutePrefix = value.getMinutes() > 9 ? '' : '0';
-            this.time = `${hourPrefix}${value.getHours()}:${minutePrefix}${value.getMinutes()}`;
-            this._cd.markForCheck();
+            const dt = new Date(value);
+
+            this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+            this.time = this.formatTime(value);
+        } else {
+            this.date = undefined;
+            this.time = undefined;
         }
+
+        this._cd.markForCheck();
     }
 
     registerOnChange(fn: (value: any) => any): void {
@@ -56,29 +75,59 @@ export class DateTimeComponent implements ControlValueAccessor {
         this.onTouched = fn;
     }
 
-    updateDate(val: any): void {
-        this.tempDate = val.target.value.toString();
+    updateDate(e: Event): void {
+        const input = e.target as HTMLInputElement;
+
+        let dt = new Date(input.value);
+
+        if (!isNaN(dt.getTime())) {
+            dt = this.limitDate(dt);
+
+            this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+
+            if (this.time === undefined || this.time === '') {
+                this.time = this.formatTime(new Date());
+            }
+        } else {
+            this.date = undefined;
+            this.time = undefined;
+        }
+
         this.propagateModelChange();
+        this._cd.markForCheck();
     }
 
-    updateTime(val: string): void {
-        if (!this.tempDate && this.date) {
-            this.date = new Date(this.date);
-            const date = `${this.date.getMonth() + 1}/${this.date.getDate()}/${this.date.getFullYear()}`;
-            this.tempDate = date;
+    updateTime(e: Event): void {
+        const input = e.target as HTMLInputElement;
+
+        if (!input.value) {
+            this.date = undefined;
+        } else if (!this.date || isNaN(this.date.getTime())) {
+            const dt = this.limitDate(this.min ?? new Date());
+
+            this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
         }
-        this.tempTime = val.toString();
+        this.time = input.value;
+
         this.propagateModelChange();
     }
 
     updateDateEvent(event: MatDatepickerInputEvent<Date>) {
-        let value;
         if (event.value) {
-            value = event.value;
-            const date = `${value.getMonth() + 1}/${value.getDate()}/${value.getFullYear()}`;
-            this.tempDate = date;
-            this.propagateModelChange();
+            const dt = this.limitDate(new Date(event.value));
+
+            this.date = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+
+            if (this.time === undefined || this.time === '') {
+                this.time = this.formatTime(new Date());
+            }
+        } else {
+            this.date = undefined;
+            this.time = undefined;
         }
+
+        this.propagateModelChange();
+        this._cd.markForCheck();
     }
 
     focusOnDateInput() {
@@ -86,11 +135,11 @@ export class DateTimeComponent implements ControlValueAccessor {
     }
 
     private propagateModelChange(): void {
-        if (this.tempTime) {
-            const dateString = `${this.tempDate} ${this.tempTime}`;
+        if (this.time && this.date) {
+            const dateString = this.formatDateTime(this.date, this.time);
             this.onChange(new Date(dateString));
         } else {
-            this.onChange(null);
+            this.onChange(undefined);
         }
     }
 }
