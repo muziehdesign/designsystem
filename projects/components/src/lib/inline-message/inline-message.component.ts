@@ -8,7 +8,6 @@ import { InlineMessageDialogComponent } from './inline-message-dialog/inline-mes
     styleUrls: ['./inline-message.component.scss'],
 })
 export class InlineMessageComponent {
-  @Input() title: TemplateRef<any> | undefined | null;
   @Input() body: TemplateRef<any> | undefined | null;
 
     constructor(public dialog: Dialog) {}
