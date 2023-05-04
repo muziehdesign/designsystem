@@ -1,5 +1,5 @@
 import { DIALOG_DATA } from '@angular/cdk/dialog';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
     selector: 'mz-inline-message-dialog',
@@ -7,7 +7,7 @@ import { Component, Inject, OnInit } from '@angular/core';
     styleUrls: ['./inline-message-dialog.component.scss'],
 })
 export class InlineMessageDialogComponent implements OnInit {
-    body: string = '';
+    body: TemplateRef<any> | undefined | null;
 
     constructor(@Inject(DIALOG_DATA) public data: any) { }
 

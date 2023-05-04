@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { Dialog } from '@angular/cdk/dialog';
 import { InlineMessageDialogComponent } from './inline-message-dialog/inline-message-dialog.component';
 
@@ -8,7 +8,7 @@ import { InlineMessageDialogComponent } from './inline-message-dialog/inline-mes
     styleUrls: ['./inline-message.component.scss'],
 })
 export class InlineMessageComponent {
-    @Input() body: string = '';
+  @Input() body: TemplateRef<any> | undefined | null;
 
     constructor(public dialog: Dialog) {}
 
