@@ -43,7 +43,6 @@ import { ToggleGuidelinesComponent } from './toggle-guidelines/toggle-guidelines
 import { PageHeaderGuidelinesComponent } from './page-header-guidelines/page-header-guidelines.component';
 import { ModalAddOrderComponent } from './modal-add-order/modal-add-order.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MuziehDateTimeModule } from 'muzieh-ngcomponents';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { RouterModule } from '@angular/router';
@@ -95,7 +94,6 @@ import { RouterModule } from '@angular/router';
         MatMenuModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MuziehDateTimeModule,
         MatAutocompleteModule,
         MatMenuModule,
         RouterModule,

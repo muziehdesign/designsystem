@@ -1,9 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 @Component({
     selector: 'mz-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.css'],
+    imports: [CommonModule, SvgIconComponent],
+    standalone: true,
 })
 export class AlertComponent implements OnInit {
     @Input() title: string = '';

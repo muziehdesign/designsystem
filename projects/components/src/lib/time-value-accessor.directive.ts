@@ -10,7 +10,8 @@ import { TimeValue } from './date-time/time-value';
     provide: NG_VALUE_ACCESSOR,
     useExisting: TimeValueAccessorDirective,
     multi: true
-  }]
+  }],
+  standalone: true,
 })
 export class TimeValueAccessorDirective implements ControlValueAccessor {
 

@@ -1,12 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Inject, Input, OnChanges, OnInit, Optional, Output, SimpleChanges } from '@angular/core';
 import { PageEvent } from '../models/page-event';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { PaginationDefaultOptions } from './pagination-default-options';
 import { PAGINATION_DEFAULT_OPTIONS } from './pagination-default-options.token';
 
 @Component({
   selector: 'mz-pagination',
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.css']
+  styleUrls: ['./pagination.component.css'],
+  imports: [CommonModule, SvgIconComponent],
+  standalone: true,
 })
 export class PaginationComponent implements OnChanges {
 

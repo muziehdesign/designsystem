@@ -1,12 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { PageEvent } from '../models/page-event';
 import { ResultTableOptions } from '../models/result-table-options';
+import { PaginationComponent } from '../pagination/pagination.component';
+import { SpinnerComponent } from '../spinner/spinner.component';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { ResultTableModel } from './result-table.model';
 
 @Component({
     selector: 'mz-result-table',
     templateUrl: './result-table.component.html',
     styleUrls: ['./result-table.component.scss'],
+    imports: [CommonModule, PaginationComponent, SpinnerComponent, SvgIconComponent],
+    standalone: true,
 })
 export class ResultTableComponent {
     @Input() public loading: boolean = false;

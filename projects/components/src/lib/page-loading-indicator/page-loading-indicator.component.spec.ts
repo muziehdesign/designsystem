@@ -15,7 +15,7 @@ describe('PageLoadingIndicatorComponent', () => {
     beforeEach(async () => {
         eventSubject = new ReplaySubject<RouterEvent>(1);
         await TestBed.configureTestingModule({
-            declarations: [PageLoadingIndicatorComponent],
+            imports: [PageLoadingIndicatorComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 {

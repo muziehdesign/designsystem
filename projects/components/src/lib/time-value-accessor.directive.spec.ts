@@ -17,10 +17,10 @@ describe('TimeValueAccessorDirective', () => {
     TestBed.configureTestingModule({
       declarations: [
         TestTimeInputComponent,
-        TimeValueAccessorDirective
       ],
       imports: [
-        FormsModule
+        FormsModule,
+        TimeValueAccessorDirective,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });

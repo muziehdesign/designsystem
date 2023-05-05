@@ -3,6 +3,7 @@ import { Subject } from '../models/subject';
 
 @Pipe({
   name: 'mzSubjectDisplay',
+  standalone: true,
 })
 export class SubjectDisplayPipe implements PipeTransform {
     transform(subject: Subject): string {

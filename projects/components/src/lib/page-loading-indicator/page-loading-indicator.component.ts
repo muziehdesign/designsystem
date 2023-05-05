@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { race } from 'rxjs';
@@ -8,6 +9,8 @@ import { SubSink } from 'subsink';
     selector: 'mz-page-loading-indicator',
     templateUrl: './page-loading-indicator.component.html',
     styleUrls: ['./page-loading-indicator.component.scss'],
+    imports: [CommonModule],
+    standalone: true,
 })
 export class PageLoadingIndicatorComponent implements OnInit, OnDestroy {
     @Input() isLoading: boolean = false;

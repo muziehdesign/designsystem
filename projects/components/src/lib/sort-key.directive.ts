@@ -8,6 +8,7 @@ import { SortDirective } from './sort.directive';
         '[attr.aria-sort]': 'getAriaSortAttribute()',
         '(click)': 'onClick()',
     },
+    standalone: true,
 })
 export class SortKeyDirective implements OnInit {
     @Input() mzSortKey!: string;

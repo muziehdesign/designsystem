@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EnumDisplayPipe, MuziehComponentsModule, PhoneNumberPipe, DateDisplayPipe, ResultTableComponent, SubjectDisplayPipe, SpinnerComponent, SvgIconComponent, MuziehDateTimeModule, ButtonDirective } from 'muzieh-ngcomponents';
+import { EnumDisplayPipe, MuziehComponentsModule, PhoneNumberPipe, DateDisplayPipe, ResultTableComponent, SubjectDisplayPipe, SpinnerComponent, SvgIconComponent, ButtonDirective } from 'muzieh-ngcomponents';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { EmbedDirective } from './embed.directive';
 import { HighlightModule } from 'ngx-highlightjs';
@@ -9,7 +9,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
     declarations: [DemoContainerComponent, EmbedDirective],
-    exports: [DemoContainerComponent, SvgIconComponent, SpinnerComponent, EnumDisplayPipe, DateDisplayPipe, SubjectDisplayPipe, ResultTableComponent, PhoneNumberPipe, MuziehDateTimeModule, ButtonDirective],
+    exports: [DemoContainerComponent, SvgIconComponent, SpinnerComponent, EnumDisplayPipe, DateDisplayPipe, SubjectDisplayPipe, ResultTableComponent, PhoneNumberPipe, ButtonDirective],
     imports: [MuziehComponentsModule, CommonModule, HighlightModule, NgbModule, MatTabsModule],
 })
 export class SharedModule {}
