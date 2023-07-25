@@ -25,7 +25,7 @@ describe('ResultTableComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ResultTableComponent, PaginationComponent],
+            imports: [ResultTableComponent, PaginationComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents();
     });

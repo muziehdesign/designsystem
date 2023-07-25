@@ -8,21 +8,29 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 import { DateDisplayPipe } from './date-display/date-display.pipe';
-import { MuziehDateTimeModule } from './date-time/date-time.module';
 import { SortDirective } from './sort.directive';
 import { SortKeyDirective } from './sort-key.directive';
 import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
 import { ButtonDirective } from './button.directive';
 import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard-progress-tracker.component';
-import { InlineMessageModule } from './inline-message/inline-mesage.module';
+import { DateTimeComponent } from './date-time/date-time.component';
+import { InlineMessageComponent } from './inline-message/inline-message.component';
+import { InlineMessageDialogComponent } from './inline-message/inline-message-dialog/inline-message-dialog.component';
+import { TimeValueValidatorDirective } from './time-value-validator.directive';
 
 @NgModule({
-  declarations: [
+  imports: [
+    CommonModule,
+    FormsModule,
+    ButtonDirective,
+    SvgIconComponent,
+    SpinnerComponent,
+    WizardProgressTrackerComponent,
+    AlertComponent,
     EnumDisplayPipe,
     ResultTableComponent,
     PaginationComponent,
@@ -31,19 +39,13 @@ import { InlineMessageModule } from './inline-message/inline-mesage.module';
     TimeValueAccessorDirective,
     DateDisplayPipe,
     PhoneNumberPipe,
-    AlertComponent,
     SortKeyDirective,
     SortDirective,
-    SubjectDisplayPipe
-  ],
-  imports: [
-    CommonModule,
-    MatDatepickerModule,
-    FormsModule,
-    ButtonDirective,
-    SvgIconComponent,
-    SpinnerComponent,
-    WizardProgressTrackerComponent,
+    SubjectDisplayPipe,
+    DateTimeComponent,
+    InlineMessageComponent,
+    InlineMessageDialogComponent,
+    TimeValueValidatorDirective,
   ],
   exports: [
     EnumDisplayPipe,
@@ -57,13 +59,15 @@ import { InlineMessageModule } from './inline-message/inline-mesage.module';
     DateDisplayPipe,
     AlertComponent,
     PhoneNumberPipe,
-    MuziehDateTimeModule,
     SortKeyDirective,
     SortDirective,
     SubjectDisplayPipe,
     ButtonDirective,
     WizardProgressTrackerComponent,
-    InlineMessageModule
+    DateTimeComponent,
+    InlineMessageComponent,
+    InlineMessageDialogComponent,
+    TimeValueValidatorDirective,
   ],
   providers: [
     DatePipe,

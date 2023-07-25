@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, forwardRef, Input, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { MatDatepickerInputEvent, MatDatepickerModule } from '@angular/material/datepicker';
 import { TimeValue } from './time-value';
 import { MatDatepicker } from '@angular/material/datepicker';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'mz-datetime',
@@ -15,6 +16,8 @@ import { MatDatepicker } from '@angular/material/datepicker';
             multi: true,
         },
     ],
+    imports: [CommonModule, MatDatepickerModule],
+    standalone: true,
 })
 export class DateTimeComponent implements ControlValueAccessor {
     date: Date | undefined;

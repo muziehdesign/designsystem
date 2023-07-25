@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
     selector: 'mz-page-header',
     templateUrl: './page-header.component.html',
     styleUrls: ['./page-header.component.scss'],
+    standalone: true,
 })
 export class PageHeaderComponent implements OnInit {
     private pageTitleValue = 'Servicing Web';

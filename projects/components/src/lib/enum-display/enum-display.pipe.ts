@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'mzEnumDisplay',
+    standalone: true,
 })
 export class EnumDisplayPipe implements PipeTransform {
     transform(value: string): unknown {

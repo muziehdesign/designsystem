@@ -29,11 +29,9 @@ export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';
 
 // Datetime
-export {
-  MuziehDateTimeModule,
-  DateTimeComponent,
-} from './lib/date-time/date-time.module';
+export * from './lib/date-time/date-time.component';
 export * from './lib/date-time/time-value';
+export * from './lib/time-value-accessor.directive';
 
 // testing files
 export * from './lib/testing/muzieh-component-harness';
@@ -49,4 +47,5 @@ export * from './lib/button.directive';
 
 export * from './lib/models/wizard-step-link';
 export * from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
-export * from './lib/inline-message/index';
+export * from './lib/inline-message/inline-message.component';
+export * from './lib/inline-message/inline-message-dialog/inline-message-dialog.component';

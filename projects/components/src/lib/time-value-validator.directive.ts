@@ -7,7 +7,8 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@an
     provide: NG_VALIDATORS,
     useExisting: TimeValueValidatorDirective,
     multi: true
-  }]
+  }],
+  standalone: true,
 })
 export class TimeValueValidatorDirective implements Validator {
 

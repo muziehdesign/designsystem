@@ -4,6 +4,7 @@ import { SortEvent } from './models/sort-event';
 
 @Directive({
     selector: '[mzSort]',
+    standalone: true,
 })
 export class SortDirective implements OnChanges {
 

@@ -9,7 +9,7 @@ describe('PageHeaderComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [PageHeaderComponent],
+            imports: [PageHeaderComponent],
             providers: [{ provide: Title, useValue: jasmine.createSpyObj(Title.name, ['setTitle']) }],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents();

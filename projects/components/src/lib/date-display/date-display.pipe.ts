@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'mzDateDisplay',
+    standalone: true,
 })
 export class DateDisplayPipe implements PipeTransform {
     constructor(private datePipe: DatePipe) {}

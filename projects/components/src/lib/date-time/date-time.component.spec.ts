@@ -3,7 +3,6 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DateTimeComponent } from './date-time.component';
-import { MuziehDateTimeModule } from './date-time.module';
 
 @Component({ selector: 'test-cmp', template: '' })
 class TestComponent {
@@ -47,8 +46,8 @@ function convertDate(dateValue: string) {
 describe('DatetimeComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DateTimeComponent, TestComponent],
-            imports: [FormsModule, MuziehDateTimeModule, MatNativeDateModule],
+            declarations: [TestComponent],
+            imports: [FormsModule, DateTimeComponent, MatNativeDateModule],
         }).compileComponents();
     });
 
