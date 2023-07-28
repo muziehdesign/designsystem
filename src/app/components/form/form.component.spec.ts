@@ -12,8 +12,7 @@ describe('FormComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [MuziehComponentsModule, FormsModule],
-            declarations: [FormComponent],
+            imports: [MuziehComponentsModule, FormsModule, FormComponent],
             providers: [
                 NgForm,
                 {

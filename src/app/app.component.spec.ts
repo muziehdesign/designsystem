@@ -7,12 +7,12 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
+        PageLoadingIndicatorComponent,
+        PageHeaderComponent,
         RouterTestingModule
       ],
       declarations: [
         AppComponent,
-        PageLoadingIndicatorComponent,
-        PageHeaderComponent
       ],
     }).compileComponents();
   });

@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ComponentRef, ElementRef, Inject, InjectionToken, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentRef, Input, OnInit, Type, ViewChild } from '@angular/core';
 import sdk from '@stackblitz/sdk';
-import { forkJoin, Observable, of } from 'rxjs';
-import { map, shareReplay, tap } from 'rxjs/operators';
-import { CodeDemonstration } from 'src/app/demonstration/code-demonstration';
-import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
+import { forkJoin, Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { STACKBLITZ_PROJECT_OPTIONS } from 'src/app/demonstration/stackblitz-options';
 import { SubSink } from 'subsink';
 import { CodeFile } from '../code-file';
