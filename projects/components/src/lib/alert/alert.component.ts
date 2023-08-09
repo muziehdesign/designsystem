@@ -11,6 +11,7 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 })
 export class AlertComponent implements OnInit {
     @Input() title: string = '';
+    @Input() iconType: 'solid' | 'outline' = 'solid';
     @Input() type: 'info' | 'success' | 'error' | 'warning' = 'info';
     @Input() body: TemplateRef<any> | undefined | null;
     @Input() footer: TemplateRef<any> | undefined | null;
