@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { componentRoutes } from './components/components-routes';
-import { DEMONSTRATIONS } from './demonstration/demonstrations.token';
 
 const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'design/about' },
+    { path: '', pathMatch: 'full', redirectTo: 'components/about' },
     {
         path: 'components',
-        children: componentRoutes
+        loadComponent: () => import('./components/components.component').then((b) => b.ComponentsComponent),
+        children: componentRoutes,
     }
 ];
 

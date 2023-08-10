@@ -14,8 +14,8 @@ describe('ResourceListComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [RouterTestingModule, FormsModule],
-            declarations: [PaginationComponent, ResultTableComponent, ResourceListComponent],
+            imports: [RouterTestingModule, FormsModule, PaginationComponent, ResultTableComponent],
+            declarations: [ResourceListComponent],
             providers: [
             ]
         }).compileComponents();

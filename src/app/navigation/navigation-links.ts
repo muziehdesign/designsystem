@@ -1,33 +1,33 @@
 export const navigationLinks: NavigationLink[] = [
     /*{
         children: [
-        { name: 'About', link: '/design/about' },
+        { name: 'About', link: '/components/about' },
     ]},*/
     { name: 'Foundations', children: [
-        { name: 'Accessibility', link: '/design/accessibility' },
-        { name: 'Color', link: '/design/color' },
-        { name: 'Grid', link: '/design/grid' },
-        { name: 'Breakpoints', link: '/design/breakpoints' },
-        { name: 'Iconography', link: '/design/iconography' },
-        { name: 'Typography', link: '/design/typography' }
+        { name: 'Accessibility', link: '/components/accessibility' },
+        { name: 'Color', link: '/components/color' },
+        { name: 'Grid', link: '/components/grid' },
+        { name: 'Breakpoints', link: '/components/breakpoints' },
+        { name: 'Iconography', link: '/components/iconography' },
+        { name: 'Typography', link: '/components/typography' }
     ]},
     { name: 'Patterns', children: [
-        { name: 'Content', link: '/design/content' },
-        { name: 'Form', link: '/design/form' },
-        // { name: 'Address form', link: '/design/address-form' }, TODO: move and set google maps api key
-        { name: 'Result table', link: '/design/resulttable'}
+        { name: 'Content', link: '/components/content' },
+        { name: 'Form', link: '/components/form' },
+        // { name: 'Address form', link: '/components/address-form' }, TODO: move and set google maps api key
+        { name: 'Result table', link: '/components/resulttable'}
     ]},
     { name: 'Components', children: [
-        { name: 'Accordion', link: '/design/accordion' },
-        { name: 'Alerts', link: '/design/alerts' },
+        { name: 'Accordion', link: '/components/accordion' },
+        { name: 'Alerts', link: '/components/alerts' },
         // badge
-        { name: 'Breadcrumbs', link: '/design/breadcrumbs' },
-        //{ name: 'Button', link: '/design/button' },
+        { name: 'Breadcrumbs', link: '/components/breadcrumbs' },
+        //{ name: 'Button', link: '/components/button' },
         { name: 'Button', link: '/components/buttons' },
-        { name: 'Date time picker', link: '/design/datetimepicker'},
-        { name: 'Description lists', link: '/design/descriptionlist' },
-        { name: 'Dropdown menu', link: '/design/menudropdown' },
-        { name: 'Empty state', link: '/design/emptystate' },
+        { name: 'Date time picker', link: '/components/datetimepicker'},
+        { name: 'Description lists', link: '/components/descriptionlist' },
+        { name: 'Dropdown menu', link: '/components/menudropdown' },
+        { name: 'Empty state', link: '/components/emptystate' },
         { 
             name: 'Form controls', 
             link: '/components/formcontrols',
@@ -39,18 +39,18 @@ export const navigationLinks: NavigationLink[] = [
                 { name: 'Select', link: '/components/formcontrols/select' }
             ]
         },
-        { name: 'Inline Message', link: '/design/inline-message' },
-        { name: 'Modal', link: '/design/modal' },
-        { name: 'Page header', link: '/design/pageheader'},
-        { name: 'Pagination', link: '/design/pagination' },
-        { name: 'Progress bar', link: '/design/progressbar' },
-        { name: 'Skeleton loader', link: '/design/skeletonloader' },
-        { name: 'Spinner', link: '/design/spinner' },
-        { name: 'Table', link: '/design/table' },
-        { name: 'Tabs', link: '/design/tabs' },
-        { name: 'Toggle', link: '/design/toggle'},
-        { name: 'Tooltip', inactive: true, link: '/design/tooltip' },
-        { name: 'Wizard', inactive: true, link: '/design/wizard',  },
+        { name: 'Inline Message', link: '/components/inline-message' },
+        { name: 'Modal', link: '/components/modal' },
+        { name: 'Page header', link: '/components/pageheader'},
+        { name: 'Pagination', link: '/components/pagination' },
+        { name: 'Progress bar', link: '/components/progressbar' },
+        { name: 'Skeleton loader', link: '/components/skeletonloader' },
+        { name: 'Spinner', link: '/components/spinner' },
+        { name: 'Table', link: '/components/table' },
+        { name: 'Tabs', link: '/components/tabs' },
+        { name: 'Toggle', link: '/components/toggle'},
+        { name: 'Tooltip', inactive: true, link: '/components/tooltip' },
+        { name: 'Wizard', inactive: true, link: '/components/wizard',  },
     ]},
     { name: 'Examples', children: [
         { name: 'Resource list', link: '/examples/resourcelist'},

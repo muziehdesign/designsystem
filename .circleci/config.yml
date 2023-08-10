@@ -8,7 +8,7 @@ general:
       - gh-pages
 
 orbs: 
-  browser-tools: circleci/browser-tools@1.2.4
+  browser-tools: circleci/browser-tools@1.4.3
 
 defaults: &defaults
   docker:

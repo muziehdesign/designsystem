@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DesignModule } from './design/design.module';
 import { SharedModule } from './shared/shared.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ExamplesModule } from './examples/examples.module';
@@ -13,10 +12,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomErrorHandler } from './custom-error-handler';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightModule, HIGHLIGHT_OPTIONS, HighlightOptions } from 'ngx-highlightjs';
+import { navigationLinks } from './navigation/navigation-links';
+import { NAVIGATION_LINK_TOKEN } from './navigation/navigation-links.token';
 
 @NgModule({
     declarations: [AppComponent, NavigationComponent],
-    imports: [BrowserModule, AppRoutingModule, DesignModule, ExamplesModule, SharedModule, CommonModule, OrderModule, NgbModule, HighlightModule, MuziehComponentsModule, NoopAnimationsModule],
+    imports: [BrowserModule, AppRoutingModule, ExamplesModule, SharedModule, CommonModule, OrderModule, NgbModule, HighlightModule, MuziehComponentsModule, NoopAnimationsModule],
     providers: [
         CustomErrorHandler,
         {
@@ -31,6 +32,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS, HighlightOptions } from 'ngx-highli
                 },
             },
         },
+        { provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }
     ],
     bootstrap: [AppComponent],
 })
