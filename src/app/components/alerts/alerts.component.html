@@ -9,7 +9,7 @@
     <h2>Info</h2>
     <div class="example">
         <p class="text-block">Use an info alert to provide important information. This is the default to use. {{todayDate | mzDateDisplay: 'concise'}}</p>
-        <mz-alert title="Alert title" type="info" iconType="outline" [body]="bodyTemplate" [footer]="infoFooterTemplate">
+        <mz-alert title="Alert title" type="info" [body]="bodyTemplate" [footer]="infoFooterTemplate">
             <ng-template #bodyTemplate>
                 <p>A simple alert with text.</p>
             </ng-template>
