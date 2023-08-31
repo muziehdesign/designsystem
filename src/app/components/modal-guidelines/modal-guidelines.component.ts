@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAddOrderComponent } from '../modal-add-order/modal-add-order.component';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatLegacyDialog as MatDialog, MatLegacyDialogModule as MatDialogModule} from '@angular/material/legacy-dialog';
 
 @Component({
     selector: 'app-modal-guidelines',
