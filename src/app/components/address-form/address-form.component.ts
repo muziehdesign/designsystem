@@ -93,7 +93,7 @@ export class AddressFormComponent implements OnInit, AfterViewInit {
     // approach #2 angular material
     onInputChanged() {
         this.loading = true;
-        this.addressChanged.next(this.model.address2);
+        this.addressChanged.next(this.model.address2 || '');
     }
 
     // approach #2 angular material
