@@ -31,7 +31,7 @@
     "highlight.js": "^11.6.0",
     "ngx-highlightjs": "^7.0.1",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "~6.6.0",
+    "rxjs": "~7.8.0",
     "subsink": "^1.0.2",
     "tslib": "^2.3.0",
     "zone.js": "^0.13.1"
