@@ -264,7 +264,7 @@ module.exports = {
         "rxjs": "~7.8.0",
         "subsink": "^1.0.2",
         "tailwindcss": "^3.1.8",
-        "tslib": "^2.3.0",
+        "tslib": "^2.6.2",
         "zone.js": "^0.13.1"
       },
       "devDependencies": {
