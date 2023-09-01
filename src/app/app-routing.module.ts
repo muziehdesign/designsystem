@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { StyleGuideComponent } from 'projects/components/src/lib/style-guide/style-guide.component';
 import { componentRoutes } from './components/components-routes';
+import { screens } from './styles';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'components/about' },
@@ -8,11 +10,19 @@ const routes: Routes = [
         path: 'components',
         loadComponent: () => import('./components/components.component').then((b) => b.ComponentsComponent),
         children: componentRoutes,
-    }
+    },
+    {
+        path: 'styleguide',
+        component: StyleGuideComponent,
+    },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
+    imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' }), StyleGuideComponent],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+    constructor() {
+        console.log(screens);
+    }
+}
