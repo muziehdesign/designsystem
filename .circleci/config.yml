@@ -14,7 +14,7 @@ orbs:
       steps:
         - browser-tools/install-browser-tools:
             chrome-version: 116.0.5845.96
-            replace-existing-chrome: true 
+            replace-existing-chrome: true
             # TODO: remove until: https://github.com/CircleCI-Public/browser-tools-orb/issues/75
 
 
