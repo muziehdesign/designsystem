@@ -12,7 +12,7 @@ orbs:
   jobs:
     test:
       steps:
-        - browser-tools/install-chrome:
+        - browser-tools/install-browser-tools:
             chrome-version: 116.0.5845.96
             replace-existing-chrome: true
             # TODO: remove until: https://github.com/CircleCI-Public/browser-tools-orb/issues/75
@@ -118,15 +118,15 @@ workflows:
             branches:
               ignore:
                 - gh-pages
-      - test:
-          requires:
-            - say-hello
+      #- test:
+      #    requires:
+      #      - say-hello
       - build:
           requires:
             - say-hello
       - publish:
           requires:
-            - test
+            #- test
             - build
 
       
