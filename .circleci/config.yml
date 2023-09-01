@@ -14,8 +14,9 @@ orbs:
       executor: browser-tools/default
       steps:
         - browser-tools/install-chrome:
-            chrome-version: 116.0.5845.96 # TODO: remove until: https://github.com/CircleCI-Public/browser-tools-orb/issues/75
-            replace-existing: true # TODO: remove until: https://github.com/CircleCI-Public/browser-tools-orb/issues/75
+            chrome-version: 116.0.5845.96
+            replace-existing: true 
+            # TODO: remove until: https://github.com/CircleCI-Public/browser-tools-orb/issues/75
 
 
 defaults: &defaults
