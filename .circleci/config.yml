@@ -98,7 +98,7 @@ jobs:
             - deploy:
                 name: "npm publish"
                 command: |
-                  npm publish ./dist/components --tag alpha
+                  npm publish ./dist/components --tag beta
       - when:
           condition:
             or:
