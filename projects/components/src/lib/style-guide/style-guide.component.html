@@ -56,13 +56,22 @@
             <span class="text-black inline-block w-24">text-base</span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         </div>
-        <div class="text-2xl">
-            <span class="text-black inline-block w-24">text-2xl</span>
+        <div class="text-sm">
+            <span class="text-black inline-block w-24">text-sm</span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         </div>
-        <h6>
-            <span class="text-black inline-block w-12">h6</span>
+        <div class="text-xs">
+            <span class="text-black inline-block w-12">xs</span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        </h6>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Colors</h2>
+    <div class="border-r-4 p-8 text-gray-600 bg-white">
+        <div *ngFor="let color of colors" class="w-20 h-8 text-{{color}}">
+            {{color}}
+        </div>
     </div>
 </section>
