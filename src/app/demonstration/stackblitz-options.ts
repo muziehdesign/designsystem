@@ -250,28 +250,27 @@ module.exports = {
       },
       "private": true,
       "dependencies": {
-        "@angular/animations": "~14.0.0",
-        "@angular/cdk": "14.2.4",
-        "@angular/common": "~14.0.0",
-        "@angular/compiler": "~14.0.0",
-        "@angular/core": "~14.0.0",
-        "@angular/forms": "~14.0.0",
-        "@angular/material": "14.2.4",
-        "@angular/material-moment-adapter": "14.2.4",
-        "@angular/platform-browser": "~14.0.0",
-        "@angular/platform-browser-dynamic": "~14.0.0",
-        "@angular/router": "~14.0.0",
+        "@angular/animations": "^16.2.3",
+        "@angular/cdk": "^16.2.2",
+        "@angular/common": "^16.2.3",
+        "@angular/compiler": "^16.2.3",
+        "@angular/core": "^16.2.3",
+        "@angular/forms": "^16.2.3",
+        "@angular/material": "^16.2.2",
+        "@angular/platform-browser": "^16.2.3",
+        "@angular/platform-browser-dynamic": "^16.2.3",
+        "@angular/router": "^16.2.3",
         "moment": "^2.18.1",
-        "rxjs": "~7.4.0",
+        "rxjs": "~7.8.0",
         "subsink": "^1.0.2",
         "tailwindcss": "^3.1.8",
-        "tslib": "^2.3.0",
-        "zone.js": "~0.11.5"
+        "tslib": "^2.6.2",
+        "zone.js": "^0.13.1"
       },
       "devDependencies": {
-        "@angular-devkit/build-angular": "~14.0.0",
-        "@angular/cli": "~14.0.0",
-        "@angular/compiler-cli": "~14.0.0",
+        "@angular-devkit/build-angular": "^16.2.1",
+        "@angular/cli": "^16.2.1",
+        "@angular/compiler-cli": "^16.2.3",
         "@types/jasmine": "~3.10.0",
         "@types/node": "^12.11.1",
         "jasmine-core": "~3.10.0",
@@ -281,7 +280,7 @@ module.exports = {
         "karma-jasmine": "~4.0.0",
         "karma-jasmine-html-reporter": "~1.7.0",
         "muzieh-ngcomponents": "^0.2.947",
-        "typescript": "~4.7.2"
+        "typescript": "^4.9.3"
       }
     }
     `

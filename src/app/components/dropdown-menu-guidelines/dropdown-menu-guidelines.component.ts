@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SvgIconComponent } from 'muzieh-ngcomponents';
 

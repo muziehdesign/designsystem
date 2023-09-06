@@ -2,28 +2,28 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
-import { ReplaySubject } from 'rxjs';
+import { ReplaySubject, Subject } from 'rxjs';
 
 import { PageLoadingIndicatorComponent } from './page-loading-indicator.component';
 
 describe('PageLoadingIndicatorComponent', () => {
     let component: PageLoadingIndicatorComponent;
     let fixture: ComponentFixture<PageLoadingIndicatorComponent>;
-    let eventSubject: ReplaySubject<RouterEvent>;
+    let eventSubject: Subject<RouterEvent>;
     const getHtmlContent = () => fixture.debugElement.query(By.css('div'));
 
     beforeEach(async () => {
-        eventSubject = new ReplaySubject<RouterEvent>(1);
+        eventSubject = new Subject<RouterEvent>();
+
+        const router = jasmine.createSpyObj(Router.name, { navigate: true }, { events: eventSubject.asObservable() });
+
         await TestBed.configureTestingModule({
             imports: [PageLoadingIndicatorComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 {
                     provide: Router,
-                    useValue: {
-                        navigate: () => new Promise((resolve) => resolve(true)),
-                        events: eventSubject.asObservable(),
-                    } as Partial<Router>,
+                    useValue: router,
                 },
             ],
         }).compileComponents();
