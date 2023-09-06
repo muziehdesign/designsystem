@@ -63,8 +63,10 @@ jobs:
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/components
       - run: npm ci
+      - run: npm run ng -- build design
       - run: npm run ng -- build components
       - run: npm run build
+      - run: cp -r ./src/styles/design ./dist/design
       - run: cp -r ./src/styles/design ./dist/components/design
       - store_artifacts:
           path: /dist/components
@@ -99,6 +101,7 @@ jobs:
                 name: "npm publish"
                 command: |
                   npm publish ./dist/components --tag beta
+                  npm publish ./dist/design --tag beta
       - when:
           condition:
             or:
@@ -109,6 +112,7 @@ jobs:
                 name: "npm publish"
                 command: |
                   npm publish ./dist/components
+                  npm publish ./dist/design
           
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
