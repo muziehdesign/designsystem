@@ -6,6 +6,7 @@
     "paths": {
       "design": [
         "dist/design/design",
+        "dist/design",
         "dist/design"
       ],
       "muzieh-ngcomponents": [
