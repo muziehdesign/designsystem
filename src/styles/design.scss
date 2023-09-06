@@ -22,3 +22,11 @@
 .page > header {
     @apply py-6;
 }
+
+@layer base {
+    :root {
+        // colors
+        --color-primary: rgb(29, 78, 216);
+        --color-secondary: rgb(55, 65, 81);
+    }
+}
