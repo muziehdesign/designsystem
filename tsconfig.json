@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@muziehdesign/design": [
+      "muzieh-design": [
         "dist/design"
       ],
       "muzieh-ngcomponents": [

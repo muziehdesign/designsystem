@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { StyleGuideComponent } from '@muziehdesign/design';
+import { StyleGuideComponent } from 'muzieh-design';
 import { componentRoutes } from './components/components-routes';
 
 const routes: Routes = [
