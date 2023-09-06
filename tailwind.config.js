@@ -14,9 +14,9 @@ module.exports = {
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
-        success: colors.green[700],
-        warning: colors.yellow[700],
-        danger: colors.red[700],
+        success: 'var(--color-success)',
+        warning: 'var(--color-warning)',
+        danger: 'var(--color-danger)',
       },
       fontFamily: {
         sans: ['Roboto', 'system-ui', '-apple-system', 'ui-sans-serif', 'BlinkMacSystemFont', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
