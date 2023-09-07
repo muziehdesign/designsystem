@@ -62,9 +62,16 @@ jobs:
           command: |
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/components
+      - run:
+          name: "version design"
+          command: |
+            sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+          working_directory: ./projects/design
       - run: npm ci
+      - run: npm run ng -- build design
       - run: npm run ng -- build components
       - run: npm run build
+      - run: cp -r ./src/styles/design ./dist/design
       - run: cp -r ./src/styles/design ./dist/components/design
       - store_artifacts:
           path: /dist/components
@@ -79,7 +86,7 @@ jobs:
       - attach_workspace:
           at: .
       - run: 
-          name: "npm publish prep"
+          name: "npm publish beta"
           command: |
             touch .npmrc
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
@@ -96,9 +103,13 @@ jobs:
                     value: << pipeline.git.branch >>
           steps:
             - deploy:
-                name: "npm publish"
+                name: "npm publish components"
                 command: |
                   npm publish ./dist/components --tag beta
+            - deploy:
+                name: "npm publish design"
+                command: |
+                  npm publish ./dist/design --tag beta
       - when:
           condition:
             or:
@@ -106,10 +117,14 @@ jobs:
               - equal: [develop, << pipeline.git.branch >>]
           steps:
             - deploy:
-                name: "npm publish"
+                name: "npm publish components"
                 command: |
                   npm publish ./dist/components
-          
+            - deploy:
+                name: "npm publish design"
+                command: |
+                  npm publish ./dist/design
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
