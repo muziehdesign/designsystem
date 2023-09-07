@@ -15,6 +15,7 @@ export class StyleGuideComponent implements OnInit {
         const rule = this.getRootStyles();
         const styles = Array.from(rule?.style || []).filter((style) => style.startsWith('--'));
         this.colors = styles.filter((s) => s.startsWith('--color')).map((s) => s.replace('--color-', ''));
+        console.log(rule!.style.getPropertyValue('--color-primary'));
     }
 
     getRootStyles(): CSSStyleRule | null {
