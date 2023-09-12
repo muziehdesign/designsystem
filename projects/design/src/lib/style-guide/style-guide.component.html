@@ -70,8 +70,8 @@
 <section>
     <h2>Colors</h2>
     <div class="border-r-4 p-8 text-gray-600 bg-white">
-        <div *ngFor="let color of colors" class="w-20 h-8 text-{{color}}">
-            {{color}}
+        <div *ngFor="let color of colors | keyvalue" class="w-20 h-8 text-{{color.key}}">
+            {{color|json}}
         </div>
     </div>
 </section>

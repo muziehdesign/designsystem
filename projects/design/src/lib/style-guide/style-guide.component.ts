@@ -9,12 +9,14 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./style-guide.component.css'],
 })
 export class StyleGuideComponent implements OnInit {
-    colors: string[] = [];
+    colors: Map<string, string> = new Map<string, string>();
 
     ngOnInit(): void {
         const rule = this.getRootStyles();
         const styles = Array.from(rule?.style || []).filter((style) => style.startsWith('--'));
-        this.colors = styles.filter((s) => s.startsWith('--color')).map((s) => s.replace('--color-', ''));
+        styles.filter((s) => s.startsWith('--color')).map((key) => {
+            this.colors.set(key.replace('--color-', ''), rule!.style.getPropertyValue(key))
+        });
         console.log(rule!.style.getPropertyValue('--color-primary'));
     }
 
