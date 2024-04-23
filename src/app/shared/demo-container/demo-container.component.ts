@@ -77,7 +77,7 @@ export class DemoContainerComponent implements OnInit {
             project.files['src/index.html'] = `
 <app-${this.componentName}></app-${this.componentName}>
 <div class="block mt-12 mb-8 text-center">
-    <a href="https://ruifang.github.io/kitchensink-ui">Muzieh Design System</a>
+    <a href="https://ruifang.github.io/designsystem">Muzieh Design System</a>
 </div>
 `;
             project.files['src/main.ts'] = `

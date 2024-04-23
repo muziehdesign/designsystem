@@ -1,9 +1,9 @@
-# Kitchensinkui
+# Muzieh Design System
 
 ## Components
-[muzieh-ngcomponents package](https://www.npmjs.com/package/muzieh-ngcomponents) [![<ORG_NAME>](https://circleci.com/gh/muziehdesign/kitchensink-ui.svg?style=shield)](https://github.com/muziehdesign/kitchensink-ui?branch=develop)
+[muzieh-ngcomponents package](https://www.npmjs.com/package/muzieh-ngcomponents) [![<ORG_NAME>](https://circleci.com/gh/muziehdesign/designsystem.svg?style=shield)](https://github.com/muziehdesign/designsystem?branch=develop)
 
-[muzieh design system pages](https://ruifang.github.io/designsystem/design/about) [![publish-github-pages](https://github.com/muziehdesign/kitchensink-ui/actions/workflows/publish-pages.yml/badge.svg?branch=develop)](https://github.com/muziehdesign/kitchensink-ui/actions/workflows/publish-pages.yml)
+[muzieh design system pages](https://ruifang.github.io/designsystem/design/about) [![publish-github-pages](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml/badge.svg?branch=develop)](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml)
 
 ## Todo
 
