@@ -94,6 +94,8 @@ jobs:
               npm publish ./dist/components --tag beta
               npm publish ./dist/design --tag beta
             fi
+            npm publish ./dist/muziehdesign/components --tag alpha
+            npm publish ./dist/muziehdesign/design --tag alpha
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
