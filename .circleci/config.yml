@@ -59,15 +59,33 @@ jobs:
           command: |
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/design
+      - run:
+          name: "version @muziehdesign/designsystem"
+          command: |
+            sh ./../../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+          working_directory: ./projects/muziehdesign/designsystem
+      - run:
+          name: "version @muziehdesign/components"
+          command: |
+            sh ./../../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+          working_directory: ./projects/muziehdesign/components
       - run: npm ci
       - run: npm run ng -- build design
       - run: npm run ng -- build components
+      - run: npm run ng -- build @muziehdesign/designsystem
+      - run: npm run ng -- build @muziehdesign/components
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/design
       - run: cp -r ./src/styles/design ./dist/components/design
       - store_artifacts:
           path: /dist/components
           destination: muzieh-ngcomponents
+      - store_artifacts:
+          path: /dist/muziehdesign/components
+          destination: muziehdesign-components
+      - store_artifacts:
+          path: /dist/muziehdesign/designsystem
+          destination: muziehdesign-designsystem
       - persist_to_workspace:
           root: .
           paths:
@@ -95,7 +113,7 @@ jobs:
               npm publish ./dist/design --tag beta
             fi
             npm publish ./dist/muziehdesign/components --tag alpha
-            npm publish ./dist/muziehdesign/design --tag alpha
+            npm publish ./dist/muziehdesign/designsystem --tag alpha
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
