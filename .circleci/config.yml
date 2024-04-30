@@ -82,10 +82,10 @@ jobs:
           destination: muzieh-ngcomponents
       - store_artifacts:
           path: /dist/muziehdesign/components
-          destination: muziehdesign-components
+          destination: muziehdesign/components
       - store_artifacts:
           path: /dist/muziehdesign/designsystem
-          destination: muziehdesign-designsystem
+          destination: muziehdesign/designsystem
       - persist_to_workspace:
           root: .
           paths:
