@@ -1,18 +1,16 @@
-#!/bin/sh
+#!/bin/bash
+
 BUILD=$1
 BRANCH=$2
 
 VERSION=$(npm pkg get version | tr -d '"')
-MAJOR=$(echo $VERSION | awk -F '[/.]' '{ print $1 }')
-ECHO $MAJOR
-MINOR=$(echo $VERSION | awk -F '[/.]' '{ print $2 }')
-ECHO $MINOR
+MAJOR=$(echo "$VERSION" | awk -F '[/.]' '{ print $1 }')
+MINOR=$(echo "$VERSION" | awk -F '[/.]' '{ print $2 }')
 PATCH=$BUILD
-SUFFIX=''
 
-npm version "${MAJOR}.${MINOR}.${PATCH}" --no-commit-hooks --no-git-tag-version
-
-if [ $BRANCH != "master" ] && [ $BRANCH != "develop" ]
+if [ "$BRANCH" = "master" ] || [ "$BRANCH" = "develop" ] ||  [[ "$BRANCH" = \release\/* ]]
 then
-    npm version prerelease --preid beta --no-commit-hooks --no-git-tag-version
+    npm version "${MAJOR}.${MINOR}.${PATCH:="0"}" --no-commit-hooks --no-git-tag-version
+else
+    npm version "${MAJOR}.${MINOR}.${PATCH:="0"}-beta" --no-commit-hooks --no-git-tag-version
 fi
