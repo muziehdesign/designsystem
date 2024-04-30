@@ -4,6 +4,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@muziehdesign/components": [
+        "./dist/muziehdesign/components"
+      ],
+      "@muziehdesign/designsystem": [
+        "dist/muziehdesign/designsystem"
+      ],
       "muzieh-design": [
         "dist/design"
       ],

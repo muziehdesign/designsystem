@@ -24,17 +24,9 @@ defaults: &defaults
       environment:
         CHROME_BIN: /usr/bin/google-chrome
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    #docker:
-    #  - image: circleci/node
     <<: *defaults
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - run:
           name: "Say hello"
@@ -67,15 +59,33 @@ jobs:
           command: |
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/design
+      - run:
+          name: "version @muziehdesign/designsystem"
+          command: |
+            sh ./../../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+          working_directory: ./projects/muziehdesign/designsystem
+      - run:
+          name: "version @muziehdesign/components"
+          command: |
+            sh ./../../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+          working_directory: ./projects/muziehdesign/components
       - run: npm ci
       - run: npm run ng -- build design
       - run: npm run ng -- build components
+      - run: npm run ng -- build @muziehdesign/designsystem
+      - run: npm run ng -- build @muziehdesign/components
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/design
       - run: cp -r ./src/styles/design ./dist/components/design
       - store_artifacts:
           path: /dist/components
           destination: muzieh-ngcomponents
+      - store_artifacts:
+          path: /dist/muziehdesign/components
+          destination: muziehdesign/components
+      - store_artifacts:
+          path: /dist/muziehdesign/designsystem
+          destination: muziehdesign/designsystem
       - persist_to_workspace:
           root: .
           paths:
@@ -86,44 +96,24 @@ jobs:
       - attach_workspace:
           at: .
       - run: 
-          name: "npm publish beta"
+          name: "npm publish prep"
           command: |
             touch .npmrc
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - when:
-          condition:
-            and:
-              - not:
-                  matches:
-                    pattern: "^master$"
-                    value: << pipeline.git.branch >>
-              - not:
-                  matches:
-                    pattern: "^develop$"
-                    value: << pipeline.git.branch >>
-          steps:
-            - deploy:
-                name: "npm publish components"
-                command: |
-                  npm publish ./dist/components --tag beta
-            - deploy:
-                name: "npm publish design"
-                command: |
-                  npm publish ./dist/design --tag beta
-      - when:
-          condition:
-            or:
-              - equal: [master, << pipeline.git.branch >>]
-              - equal: [develop, << pipeline.git.branch >>]
-          steps:
-            - deploy:
-                name: "npm publish components"
-                command: |
-                  npm publish ./dist/components
-            - deploy:
-                name: "npm publish design"
-                command: |
-                  npm publish ./dist/design
+      - run: 
+          name: 'npm publish'
+          command: |
+            if [ "$BRANCH" = "master" ] || [ "$BRANCH" = "develop" ] ||  [[ "$BRANCH" = \release\/* ]]; then
+              echo "publishing non-beta package"
+              npm publish ./dist/components
+              npm publish ./dist/design
+            else
+              echo "publishing beta package"
+              npm publish ./dist/components --tag beta
+              npm publish ./dist/design --tag beta
+            fi
+            npm publish ./dist/muziehdesign/components --tag alpha
+            npm publish ./dist/muziehdesign/designsystem --tag alpha
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
