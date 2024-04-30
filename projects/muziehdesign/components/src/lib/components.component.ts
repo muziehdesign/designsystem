@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       components works!
     </p>
   `,
-  styles: ``
+  styles: []
 })
 export class ComponentsComponent {
 
