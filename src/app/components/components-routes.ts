@@ -78,10 +78,6 @@ export const componentRoutes: Routes = [
         loadComponent: () => import('./inline-message/inline-message/inline-message.component').then((b) => b.InlineMessageComponent),
     },
     {
-        path: 'address-form',
-        loadComponent: () => import('./address-form/address-form.component').then((b) => b.AddressFormComponent),
-    },
-    {
         path: 'formcontrols',
         children: [
             {
