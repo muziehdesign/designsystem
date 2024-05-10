@@ -10,10 +10,6 @@
     @apply text-secondary shadow-sm bg-gray-200 hover:bg-gray-300 focus:ring-blue-500 active:bg-gray-300;
 }
 
-.button-tertiary {
-    @apply text-secondary;
-}
-
 .button-danger {
     @apply text-white shadow-sm bg-red-500 hover:bg-red-600 focus:ring-red-500 active:bg-red-600;
 }

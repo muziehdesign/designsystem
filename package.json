@@ -3,7 +3,7 @@
   "version": "16.0.2",
   "scripts": {
     "ng": "ng",
-    "start": "ng build design && ng build components && ng serve",
+    "start": "ng build design && ng build components && ng serve --port 5200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch",
