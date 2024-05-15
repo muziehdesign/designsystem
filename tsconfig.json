@@ -10,6 +10,9 @@
       "@muziehdesign/designsystem": [
         "dist/muziehdesign/designsystem"
       ],
+      "@muziehdesign/ui": [
+        "dist/muziehdesign/ui"
+      ],
       "muzieh-design": [
         "dist/design"
       ],

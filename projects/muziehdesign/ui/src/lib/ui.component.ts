@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-designsystem',
+  selector: 'lib-ui',
   template: `
     <p>
-      designsystem works!
+      ui works!
     </p>
   `,
   styles: [
   ]
 })
-export class DesignsystemComponent {
+export class UiComponent {
 
 }
