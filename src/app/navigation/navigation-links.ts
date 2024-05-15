@@ -4,18 +4,17 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'About', link: '/components/about' },
     ]},*/
     { name: 'Foundations', children: [
-        { name: 'Accessibility', link: '/components/accessibility' },
-        { name: 'Color', link: '/components/color' },
-        { name: 'Grid', link: '/components/grid' },
-        { name: 'Breakpoints', link: '/components/breakpoints' },
-        { name: 'Iconography', link: '/components/iconography' },
-        { name: 'Typography', link: '/components/typography' }
+        { name: 'Accessibility', link: '/foundations/accessibility' },
+        { name: 'Color', link: '/foundations/colors' },
+        { name: 'Grid', link: '/foundations/grid' },
+        { name: 'Breakpoints', link: '/foundations/breakpoints' },
+        { name: 'Iconography', link: '/foundations/iconography' },
+        { name: 'Typography', link: '/foundations/typography' }
     ]},
     { name: 'Patterns', children: [
-        { name: 'Content', link: '/components/content' },
-        { name: 'Form', link: '/components/form' },
-        // { name: 'Address form', link: '/components/address-form' }, TODO: move and set google maps api key
-        { name: 'Result table', link: '/components/resulttable'}
+        { name: 'Content', link: '/patterns/content' },
+        { name: 'Form', link: '/patterns/form' },
+        { name: 'Result table', link: '/patterns/resulttable'}
     ]},
     { name: 'Components', children: [
         { name: 'Accordion', link: '/components/accordion' },
