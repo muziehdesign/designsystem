@@ -85,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "kitchensink-ui:build:production"
+              "buildTarget": "kitchensink-ui:build:production"
             },
             "development": {
-              "browserTarget": "kitchensink-ui:build:development"
+              "buildTarget": "kitchensink-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kitchensink-ui:build"
+            "buildTarget": "kitchensink-ui:build"
           }
         },
         "test": {

@@ -5,7 +5,7 @@ import { DemoContainerComponent } from './demo-container/demo-container.componen
 import { EmbedDirective } from './embed.directive';
 import { HighlightModule } from 'ngx-highlightjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
     declarations: [DemoContainerComponent, EmbedDirective],
