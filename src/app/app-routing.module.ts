@@ -11,6 +11,14 @@ const routes: Routes = [
         children: componentRoutes,
     },
     {
+        path: 'patterns',
+        loadChildren: () => import('./patterns/patterns-routes').then((x) => x.patternsRoutes),
+    },
+    {
+        path: 'foundations',
+        loadChildren: () => import('./foundations/foundations-routes').then((x) => x.foundationsRoutes),
+    },
+    {
         path: 'styleguide',
         component: StyleGuideComponent,
     },

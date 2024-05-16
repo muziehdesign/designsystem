@@ -8,10 +8,7 @@ export const componentRoutes: Routes = [
         path: 'about',
         loadComponent: () => import('./about/about.component').then((b) => b.AboutComponent),
     },
-    {
-        path: 'accessibility',
-        loadComponent: () => import('./accessibility/accessibility.component').then((b) => b.AccessibilityComponent),
-    },
+
     {
         path: 'accordion',
         loadComponent: () => import('./accordion/accordion.component').then((b) => b.AccordionComponent),
@@ -25,21 +22,9 @@ export const componentRoutes: Routes = [
         loadComponent: () => import('./breadcrumbs/breadcrumbs.component').then((b) => b.BreadcrumbsComponent),
     },
     {
-        path: 'breakpoints',
-        loadComponent: () => import('./breakpoints/breakpoints.component').then((b) => b.BreakpointsComponent),
-    },
-    {
         path: 'buttons',
         loadComponent: () => import('./buttons/buttons.component').then((b) => b.ButtonsComponent),
         providers: [{ provide: DEMONSTRATIONS, useValue: demoOf(ButtonsDemoComponent), multi: true }],
-    },
-    {
-        path: 'color',
-        loadComponent: () => import('./color/color.component').then((b) => b.ColorComponent),
-    },
-    {
-        path: 'content',
-        loadComponent: () => import('./content/content.component').then((b) => b.ContentComponent),
     },
     {
         path: 'datetimepicker',
@@ -54,24 +39,8 @@ export const componentRoutes: Routes = [
         loadComponent: () => import('./empty-state/empty-state.component').then((b) => b.EmptyStateComponent),
     },
     {
-        path: 'grid',
-        loadComponent: () => import('./grid/grid.component').then((b) => b.GridComponent),
-    },
-    {
-        path: 'typography',
-        loadComponent: () => import('./typography/typography.component').then((b) => b.TypographyComponent),
-    },
-    {
-        path: 'iconography',
-        loadComponent: () => import('./iconography/iconography.component').then((b) => b.IconographyComponent),
-    },
-    {
         path: 'layout',
         loadComponent: () => import('./layout/layout.component').then((b) => b.LayoutComponent),
-    },
-    {
-        path: 'form',
-        loadComponent: () => import('./form/form.component').then((b) => b.FormComponent),
     },
     {
         path: 'inline-message',
@@ -129,10 +98,6 @@ export const componentRoutes: Routes = [
     {
         path: 'progressbar',
         loadComponent: () => import('./progress-bar-guidelines/progress-bar-guidelines.component').then((b) => b.ProgressBarGuidelinesComponent),
-    },
-    {
-        path: 'resulttable',
-        loadComponent: () => import('./result-table-guidelines/result-table-guidelines.component').then((b) => b.ResultTableGuidelinesComponent),
     },
     {
         path: 'spinner',
