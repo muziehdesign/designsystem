@@ -120,7 +120,7 @@ describe('DatetimeComponent', () => {
             expect(inputs[1].value).toEqual('');
         }));
 
-        it('should clear date input when clear time input', fakeAsync(() => {
+        it('should keep date input and time input when entering null time value', fakeAsync(() => {
             const html = `<mz-datetime [(ngModel)]="dateTime"></mz-datetime>`;
 
             const fixture = createTestComponent(html);
@@ -132,12 +132,19 @@ describe('DatetimeComponent', () => {
 
             let inputs = getInputs(fixture.nativeElement);
 
-            inputs[1].value = '';
+            inputs[1].value = '00:12';
             inputs[1].dispatchEvent(new InputEvent('change'));
 
             fixture.detectChanges();
 
-            expect(inputs[0].value).toEqual('');
+            expectToDisplayDateTime(fixture.nativeElement, '00:12', '12/12/2022');
+
+            inputs[1].value = '01:12';
+            inputs[1].dispatchEvent(new InputEvent('change'));
+
+            fixture.detectChanges();
+
+            expectToDisplayDateTime(fixture.nativeElement, '01:12', '12/12/2022');
         }));
 
         it('should populate time when enter date', fakeAsync(() => {

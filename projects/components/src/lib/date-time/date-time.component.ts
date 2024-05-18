@@ -38,6 +38,7 @@ export class DateTimeComponent implements ControlValueAccessor {
 
         return dt;
     };
+    private onTimeHourPending = false; 
 
     type = 'outline';
     @ViewChild('datePicker') datepicker!: MatDatepicker<Date>;
@@ -102,6 +103,15 @@ export class DateTimeComponent implements ControlValueAccessor {
 
     updateTime(e: Event): void {
         const input = e.target as HTMLInputElement;
+
+        // this is just a listener event in case the end user types in "0". We wait for
+        // the next entered value for the time input field to self fix the problem.
+        if (!this.onTimeHourPending && !input.value) {
+            this.onTimeHourPending = true;
+            return;
+        }
+
+        this.onTimeHourPending = false;
 
         if (!input.value) {
             this.date = undefined;
