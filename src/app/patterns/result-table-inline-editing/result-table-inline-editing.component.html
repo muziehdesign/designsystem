@@ -1,0 +1,48 @@
+<header>
+    <h1>Inline editing result table</h1>
+    <p class="prose">Use a result table to display search results. It has pagination, sorting, and basic state display built in.</p>
+</header>
+
+<div class="example">
+    <mz-result-table [options]="{ hidePagination: true }" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate">
+        <ng-template #headerTemplate>
+            <tr>
+                <th>Order</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Country</th>
+                <th>Edit</th>
+            </tr>
+        </ng-template>
+        <ng-template #bodyTemplate let-order>
+            <tr ngForm #editForm="ngForm">
+                <td>{{ order.orderNumber }}</td>
+                <td class="inline-edit-column">
+                    <ng-container *ngIf="editingRow === order.orderNumber; else rawValue">
+                        <input type="text" [(ngModel)]="model.customer" name="customer" #customerField="ngModel" class="field-control" />
+                        <div class="field-error-container">
+                            <mz-field-errors [field]="customerField" *ngIf="customerField.touched && customerField.invalid"></mz-field-errors>
+                        </div>
+                    </ng-container>
+                    <ng-template #rawValue>
+                        {{ order.customer }}
+                    </ng-template>
+                </td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.date | date }}</td>
+                <td>{{ order.total | currency }}</td>
+                <td>{{ order.country }}</td>
+                <td>
+                    <button class="button button-secondary button-icon" (click)="editingRow === order.orderNumber ? stopEditing() : startEditing(order)">
+                        <mz-svg-icon [key]="getIconKey(order.orderNumber)"></mz-svg-icon>
+                    </button>
+                    <!-- <button mzButton [variant]="'primary'" [busy]="busy" (click)="editingRow === order.orderNumber ? stopEditing() : startEditing(order)">
+                        <mz-svg-icon [key]="getIconKey(order.orderNumber)"></mz-svg-icon>
+                    </button> -->
+                </td>
+            </tr>
+        </ng-template>
+    </mz-result-table>
+</div>

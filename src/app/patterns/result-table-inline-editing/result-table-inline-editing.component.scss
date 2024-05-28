@@ -1,0 +1,15 @@
+.button-icon ::ng-deep svg {
+    @apply h-4;
+}
+
+.button-icon {
+   @apply p-1;
+}
+
+.inline-edit-column {
+    @apply p-1;
+}
+
+.field-error-container {
+    height: 20px;
+}

@@ -14,7 +14,9 @@ export const navigationLinks: NavigationLink[] = [
     { name: 'Patterns', children: [
         { name: 'Content', link: '/patterns/content' },
         { name: 'Form', link: '/patterns/form' },
-        { name: 'Result table', link: '/patterns/resulttable'}
+        { name: 'Result table', link: '/patterns/resulttable'},
+        { name: 'Inline Editing', link: '/patterns/inlineediting'}
+
     ]},
     { name: 'Components', children: [
         { name: 'Accordion', link: '/components/accordion' },
