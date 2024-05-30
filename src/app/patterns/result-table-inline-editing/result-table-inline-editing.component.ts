@@ -15,7 +15,6 @@ import { FormsModule as MuziehFormsModule } from '@muziehdesign/forms';
 })
 export class ResultTableInlineEditingComponent {
     @ViewChild('editForm') editForm!: NgForm;
-
     defaultModelTotal: number = 10;
     defaultModel$: Observable<ResultTableModel<OrderDataModel>>;
     model: OrderDataModel;
@@ -63,15 +62,17 @@ export class ResultTableInlineEditingComponent {
     }
 
     startEditing(order: any): void {
+        if (this.editingRow == order.orderNumber) {
+            return;
+        }
         this.model.customer = order.customer;
         this.editingRow = order.orderNumber;
         this.modelState = this.modelStateFactory.create(this.editForm, this.model);
     }
 
     stopEditing(): void {
-        console.log(this.model);
         this.editingRow = null;
-        
+
         // call to api / fetch data
         this.defaultLoadingState.loading = true;
         this.defaultModel$ = this.getPagedModel().pipe(
@@ -81,8 +82,12 @@ export class ResultTableInlineEditingComponent {
         );
     }
 
+    cancelEditing() {
+        this.editingRow = null;
+    }
+
     getIconKey(orderNumber: number): string {
-        return this.editingRow === orderNumber ? 'check-circle' : 'pencil'; // Replace 'check-mark' with the actual key for your check mark icon
+        return this.editingRow === orderNumber ? 'check-circle' : 'pencil';
     }
 }
 

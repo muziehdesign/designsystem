@@ -16,19 +16,30 @@
                 <th>Edit</th>
             </tr>
         </ng-template>
-        <ng-template #bodyTemplate let-order>
-            <tr ngForm #editForm="ngForm">
+        <ng-template #bodyTemplate let-order ngForm #editForm="ngForm">
+            <tr>
                 <td>{{ order.orderNumber }}</td>
-                <td class="inline-edit-column">
-                    <ng-container *ngIf="editingRow === order.orderNumber; else rawValue">
-                        <input type="text" [(ngModel)]="model.customer" name="customer" #customerField="ngModel" class="field-control" />
+                <td class="inline-edit-column" >
+                    <ng-container *ngIf="editingRow === order.orderNumber">
+                        <input type="text" [(ngModel)]="model.customer" name="customer" #customerField="ngModel" class="field-control"/>
                         <div class="field-error-container">
-                            <mz-field-errors [field]="customerField" *ngIf="customerField.touched && customerField.invalid"></mz-field-errors>
+                            <mz-field-errors [field]="customerField"></mz-field-errors>
                         </div>
                     </ng-container>
-                    <ng-template #rawValue>
+                    <ng-container *ngIf="editingRow !== order.orderNumber">
                         {{ order.customer }}
-                    </ng-template>
+                    </ng-container>
+                </td>
+                <td class="inline-edit-column" >
+                    <div [ngClass]="{'hidden': editingRow !== order.orderNumber}">
+                        <input type="text" [(ngModel)]="model.customer" name="customer" #customerField="ngModel" class="field-control"/>
+                        <div class="field-error-container">
+                            <mz-field-errors [field]="customerField"></mz-field-errors>
+                        </div>
+                    </div>
+                    <ng-container *ngIf="editingRow !== order.orderNumber">
+                        {{ order.customer }}
+                    </ng-container>
                 </td>
                 <td>{{ order.status }}</td>
                 <td>{{ order.date | date }}</td>
@@ -38,9 +49,9 @@
                     <button class="button button-secondary button-icon" (click)="editingRow === order.orderNumber ? stopEditing() : startEditing(order)">
                         <mz-svg-icon [key]="getIconKey(order.orderNumber)"></mz-svg-icon>
                     </button>
-                    <!-- <button mzButton [variant]="'primary'" [busy]="busy" (click)="editingRow === order.orderNumber ? stopEditing() : startEditing(order)">
-                        <mz-svg-icon [key]="getIconKey(order.orderNumber)"></mz-svg-icon>
-                    </button> -->
+                    <button class="button button-secondary button-icon" (click)="cancelEditing()" *ngIf="editingRow === order.orderNumber">
+                        <mz-svg-icon key="x-circle" type="solid"></mz-svg-icon>
+                    </button>
                 </td>
             </tr>
         </ng-template>
