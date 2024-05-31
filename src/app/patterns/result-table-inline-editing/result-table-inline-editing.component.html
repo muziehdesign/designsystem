@@ -1,8 +1,6 @@
 <header>
     <h1>Inline editing result table</h1>
-    <p class="prose">Use a result table to display search results. It has pagination, sorting, and basic state display built in.</p>
 </header>
-
 <div class="example">
     <mz-result-table [options]="{ hidePagination: true }" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate">
         <ng-template #headerTemplate>
