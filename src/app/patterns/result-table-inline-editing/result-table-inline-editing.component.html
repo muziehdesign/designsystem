@@ -28,17 +28,6 @@
                         {{ order.customer }}
                     </ng-container>
                 </td>
-                <td class="inline-edit-column" >
-                    <div [ngClass]="{'hidden': editingRow !== order.orderNumber}">
-                        <input type="text" [(ngModel)]="model.customer" name="customer" #customerField="ngModel" class="field-control"/>
-                        <div class="field-error-container">
-                            <mz-field-errors [field]="customerField"></mz-field-errors>
-                        </div>
-                    </div>
-                    <ng-container *ngIf="editingRow !== order.orderNumber">
-                        {{ order.customer }}
-                    </ng-container>
-                </td>
                 <td>{{ order.status }}</td>
                 <td>{{ order.date | date }}</td>
                 <td>{{ order.total | currency }}</td>
