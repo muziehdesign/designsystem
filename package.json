@@ -34,7 +34,8 @@
     "rxjs": "~7.8.0",
     "subsink": "^1.0.2",
     "tslib": "^2.6.2",
-    "zone.js": "^0.14.5"
+    "zone.js": "^0.14.5",
+    "@muziehdesign/forms": "^17.0.717-beta"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.7",

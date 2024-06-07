@@ -1,0 +1,46 @@
+<header>
+    <h1>Inline editing result table</h1>
+</header>
+<div class="example">
+    <mz-result-table [options]="{ hidePagination: true }" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate">
+        <ng-template #headerTemplate>
+            <tr>
+                <th>Order</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Country</th>
+                <th>Edit</th>
+            </tr>
+        </ng-template>
+        <ng-template #bodyTemplate let-order ngForm #editForm="ngForm">
+            <tr>
+                <td>{{ order.orderNumber }}</td>
+                <td class="inline-edit-column" >
+                    <ng-container *ngIf="editingRow === order.orderNumber">
+                        <input type="text" [(ngModel)]="model.customer" name="customer" #customerField="ngModel" class="field-control"/>
+                        <div class="field-error-container">
+                            <mz-field-errors [field]="customerField"></mz-field-errors>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="editingRow !== order.orderNumber">
+                        {{ order.customer }}
+                    </ng-container>
+                </td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.date | date }}</td>
+                <td>{{ order.total | currency }}</td>
+                <td>{{ order.country }}</td>
+                <td>
+                    <button class="button button-secondary button-icon" (click)="editingRow === order.orderNumber ? stopEditing() : startEditing(order)">
+                        <mz-svg-icon [key]="getIconKey(order.orderNumber)"></mz-svg-icon>
+                    </button>
+                    <button class="button button-secondary button-icon" (click)="cancelEditing()" *ngIf="editingRow === order.orderNumber">
+                        <mz-svg-icon key="x-circle" type="solid"></mz-svg-icon>
+                    </button>
+                </td>
+            </tr>
+        </ng-template>
+    </mz-result-table>
+</div>

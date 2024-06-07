@@ -13,4 +13,8 @@ export const patternsRoutes: Routes = [
         path: 'resulttable',
         loadComponent: () => import('./result-table-guidelines/result-table-guidelines.component').then((b) => b.ResultTableGuidelinesComponent),
     },
+    {
+        path: 'inlineediting',
+        loadComponent: () => import('./result-table-inline-editing/result-table-inline-editing.component').then((b) => b.ResultTableInlineEditingComponent),
+    },
 ];
