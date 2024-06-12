@@ -31,7 +31,7 @@
 }
 
 .button-loading-spinner {
-    @apply h-5 w-5;
+    @apply h-5 w-5 animate-spin m-auto;
 }
 
 .button-loading-overlay {
