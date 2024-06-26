@@ -30,6 +30,22 @@
 </article>
 
 <article>
+    <div class="example">
+        <!-- your navs bound to current route fragments -->
+        <ul ngbNav #nav2="ngbNav" [activeId]="route.fragment | async" class="nav-tabs">
+            <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+                <button ngbNavLink>{{ link.title }}</button>
+                <ng-template ngbNavContent>
+                    {{link.link}}
+                </ng-template>
+            </li>
+        </ul>
+
+        <div [ngbNavOutlet]="nav2"></div>
+    </div>
+</article>
+
+<article>
     <h2>Usage</h2>
     <ul class="list-inside list-disc">
         <li>Tabs should be parallel in nature</li>
