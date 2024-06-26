@@ -14,3 +14,7 @@
 .nav-link.active {
     @apply text-primary border-b-primary border-b-2 font-medium;
 }
+
+.tab-pane {
+    @apply py-3;
+}

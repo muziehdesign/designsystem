@@ -32,11 +32,17 @@
 <article>
     <div class="example">
         <!-- your navs bound to current route fragments -->
-        <ul ngbNav #nav2="ngbNav" [activeId]="route.fragment | async" class="nav-tabs">
-            <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
-                <button ngbNavLink>{{ link.title }}</button>
+        <ul ngbNav #nav2="ngbNav" [activeId]="'tab1'" class="nav-tabs">
+            <li [ngbNavItem]="'tab1'">
+                <button ngbNavLink>Tab 1</button>
                 <ng-template ngbNavContent>
-                    {{link.link}}
+                    Morbi id nunc ex. Praesent molestie risus odio, vitae interdum enim tristique id. Nullam feugiat convallis facilisis. Aliquam in condimentum nisl. Integer dui risus, consectetur ac rhoncus nec, lobortis interdum mi. Sed eget nisi ac enim bibendum facilisis. Aliquam vitae sem a eros ullamcorper rhoncus. Sed lobortis, massa ac pharetra molestie, dolor ex tincidunt dui, at semper massa nulla ut lacus. Nam varius risus massa, ac bibendum diam cursus vel. Proin euismod facilisis porta. Maecenas quam nunc, tempor sit amet euismod in, egestas eu ante. Pellentesque vel risus fringilla, vehicula quam a, maximus risus. Mauris venenatis magna orci. Praesent in mollis magna.
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="'tab2'">
+                <button ngbNavLink>Tab 2</button>
+                <ng-template ngbNavContent>
+                    Donec eu luctus augue, at pharetra sem. Ut mi elit, ornare consectetur enim non, vehicula iaculis justo. 
                 </ng-template>
             </li>
         </ul>
