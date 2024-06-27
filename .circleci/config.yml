@@ -96,8 +96,8 @@ jobs:
           command: |
             if [ "$BRANCH" = "master" ] || [ "$BRANCH" = "develop" ] ||  [[ "$BRANCH" = \release\/* ]]; then
               echo "publishing non-beta package"
-              npm publish ./dist/components
-              npm publish ./dist/design
+              npm publish ./dist/components --tag latest
+              npm publish ./dist/design --tag latest
             else
               echo "publishing beta package"
               npm publish ./dist/components --tag beta
