@@ -71,7 +71,8 @@ jobs:
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/design
       - run: cp -r ./src/styles/design ./dist/components/design
-      - run: cp -r ./src/assets/icons ./dist/components/assets
+      - run: mkdir -p ./dist/components/assets/icons
+      - run: cp -r ./src/assets/icons ./dist/components/assets/icons
       - store_artifacts:
           path: /dist/components
           destination: muzieh-ngcomponents
