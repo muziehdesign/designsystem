@@ -7,7 +7,7 @@
 }
 
 .nav-link {
-    @apply hover:no-underline inline-block text-gray-500 py-2 px-6 border-b border-b-transparent hover:border-b-primary hover:border-b-2 hover:text-primary;
+    @apply hover:no-underline inline-block text-gray-500 py-2 px-6 border-b border-b-transparent hover:text-primary;
     min-width: 8rem;
 }
 
