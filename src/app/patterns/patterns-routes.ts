@@ -17,4 +17,8 @@ export const patternsRoutes: Routes = [
         path: 'inlineediting',
         loadComponent: () => import('./result-table-inline-editing/result-table-inline-editing.component').then((b) => b.ResultTableInlineEditingComponent),
     },
+    {
+        path: 'infinitescroll',
+        loadComponent: () => import('./infinite-scroll-guidelines/infinite-scroll-guidelines.component').then((b) => b.InfiniteScrollGuidelinesComponent),
+    },
 ];

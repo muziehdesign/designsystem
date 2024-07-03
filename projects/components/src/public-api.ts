@@ -24,6 +24,9 @@ export * from './lib/models/page-event';
 export * from './lib/models/loading-state';
 export * from './lib/result-table/result-table.model';
 
+// infinite scroll
+export * from './lib/infinite-scroll/infinite-scroll.component'
+
 // time value
 export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';

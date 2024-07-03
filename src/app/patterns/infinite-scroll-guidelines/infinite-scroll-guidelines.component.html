@@ -1,0 +1,12 @@
+<header>
+    <h1>Infinite scroll</h1>
+    <p class="prose">
+        Use the InfiniteScrollComponent to display a list of items with an infinite scroll feature. This component is designed to load more items dynamically as the user scrolls to the bottom of the list. It supports external control of item loading and selection handling.
+    </p>
+</header>
+
+<article>
+    <div class="demo bg-white p-5">
+        <mz-infinite-scroll [items]="items" [isLoading]="isLoading" (itemSelected)="onItemSelected($event)" (loadMore)="loadMoreItems()"></mz-infinite-scroll>
+    </div>
+</article>

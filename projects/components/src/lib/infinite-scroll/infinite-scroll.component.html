@@ -1,0 +1,11 @@
+<div class="infinite-scroll-container overflow-auto" [style.height]="containerHeight" (scroll)="onContainerScroll($event)">
+  <div>
+    <div *ngFor="let item of items" class="item-scroll" [class.hover:bg-blue-100]="selectedItem !== item.label" [class.bg-blue-100]="selectedItem === item.label" (click)="onItemClick(item)">
+        {{ item.label }}
+    </div>
+    <!-- Spinner -->
+    <div *ngIf="isLoading" class="spinner-container">
+      <mz-spinner size="medium"></mz-spinner>
+    </div>
+  </div>
+</div>
