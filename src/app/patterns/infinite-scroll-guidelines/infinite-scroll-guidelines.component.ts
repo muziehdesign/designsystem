@@ -27,7 +27,7 @@ export class InfiniteScrollGuidelinesComponent {
             for (let i = 0; i < this.pageSize; i++) {
                 const itemDate = new Date();
                 itemDate.setHours(itemDate.getHours() - (i + this.page * this.pageSize));
-                this.items.push({ label: 'Effective ' + itemDate.toLocaleString() });
+                this.items.push({ label: 'Date ' + itemDate.toLocaleString() });
             }
             this.page++;
             this.isLoading = false;
