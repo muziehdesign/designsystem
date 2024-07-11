@@ -31,7 +31,7 @@ export class InfiniteScrollGuidelinesComponent {
                 itemDate.setHours(itemDate.getHours() - (i + this.page * this.pageSize * 24));
                 return {
                     id: `item-${this.page * this.pageSize + i}`, // Unique ID for each item
-                    label: 'Effective ' + itemDate.toLocaleString(),
+                    label: 'Date: ' + itemDate.toLocaleString(),
                 };
             });
 
