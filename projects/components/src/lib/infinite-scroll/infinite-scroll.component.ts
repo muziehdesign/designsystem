@@ -15,8 +15,8 @@ export class InfiniteScrollComponent {
     @Input() containerHeight: string = '24rem';
     @Output() itemSelected = new EventEmitter<any>();
     @Output() loadMore = new EventEmitter<boolean>();
-    selectedItem: any = null;
     @ContentChild('itemTemplate') itemTemplate!: TemplateRef<any>; 
+    selectedItem: any = null;
 
     onContainerScroll(event: any): void {
         const target = event.target;

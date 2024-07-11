@@ -1,14 +1,16 @@
-.item-scroll {
-    @apply cursor-pointer p-2 border-b border-gray-300; 
-    &:hover {
-      @apply bg-blue-100;
+.infinite-scroll-container {
+    .scroll-item {
+        @apply cursor-pointer p-2 border-b border-gray-300;
+        &:hover {
+            @apply bg-blue-100;
+        }
     }
-}
 
-.item-selected {
-    @apply bg-blue-100; 
-}
+    .scroll-item-selected {
+        @apply bg-blue-100;
+    }
 
-.spinner-container {
-    @apply mt-5;
+    .scroll-spinner-container {
+        @apply mt-5;
+    }
 }

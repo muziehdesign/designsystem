@@ -10,7 +10,7 @@
     <div class="demo bg-white p-5">
         <mz-infinite-scroll [items]="items" [isLoading]="isLoading" [containerHeight]="'300px'" (itemSelected)="onItemSelected($event)" (loadMore)="loadMoreItems()">
             <ng-template #itemTemplate let-item>
-                <div class="item-scroll" [ngClass]="{'item-selected': selectedItem === item}" (click)="onItemSelected(item)">Custom Content: {{ item.label }}</div>
+                <div class="scroll-item" [ngClass]="{'scroll-item-selected': selectedItem === item}" (click)="onItemSelected(item)">Custom Content: {{ item.label }}</div>
             </ng-template>
         </mz-infinite-scroll>
     </div>

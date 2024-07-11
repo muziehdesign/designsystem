@@ -5,13 +5,13 @@
         </ng-container>
     </ng-container>
     <ng-template #defaultItems>
-        <div *ngFor="let item of items" class="item-scroll" [ngClass]="{'item-selected': selectedItem === item}" (click)="onItemClick(item)">
+        <div *ngFor="let item of items" class="scroll-item" [ngClass]="{'scroll-item-selected': selectedItem === item}" (click)="onItemClick(item)">
             {{ item.label }}
         </div>
     </ng-template>
 
     <!-- Spinner -->
-    <div *ngIf="isLoading" class="spinner-container">
+    <div *ngIf="isLoading" class="scroll-spinner-container">
         <mz-spinner size="medium"></mz-spinner>
     </div>
 </div>
