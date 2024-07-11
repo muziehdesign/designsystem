@@ -15,26 +15,34 @@ export class InfiniteScrollGuidelinesComponent {
     isLoading: boolean = false;
     private page: number = 0;
     private pageSize: number = 10;
+    selectedItem: any = null;
 
     constructor() {
-        this.loadMoreItems();
+        this.loadMoreItems(); 
     }
 
-    loadMoreItems() {
+    loadMoreItems(): void {
+        if (this.isLoading) return; 
         this.isLoading = true;
         setTimeout(() => {
             // Simulate asynchronous data fetching
-            for (let i = 0; i < this.pageSize; i++) {
+            const newItems = Array.from({ length: this.pageSize }, (_, i) => {
                 const itemDate = new Date();
-                itemDate.setHours(itemDate.getHours() - (i + this.page * this.pageSize));
-                this.items.push({ label: 'Date ' + itemDate.toLocaleString() });
-            }
+                itemDate.setHours(itemDate.getHours() - (i + this.page * this.pageSize * 24));
+                return {
+                    id: `item-${this.page * this.pageSize + i}`, // Unique ID for each item
+                    label: 'Effective ' + itemDate.toLocaleString(),
+                };
+            });
+
+            this.items = [...this.items, ...newItems]; // Append new items to existing
             this.page++;
             this.isLoading = false;
         }, 1000); // Simulating network delay
     }
 
-    onItemSelected(item: any) {
-        console.log('Item selected from parent:', item);
+    onItemSelected(item: any): void {
+        this.selectedItem = item;  
+        console.log('Item selected:', item);
     }
 }

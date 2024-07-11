@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ContentChild, EventEmitter, Input, Output } from '@angular/core';
 import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
@@ -7,7 +7,7 @@ import { SpinnerComponent } from '../spinner/spinner.component';
     standalone: true,
     imports: [CommonModule, SpinnerComponent],
     templateUrl: './infinite-scroll.component.html',
-    styleUrl: './infinite-scroll.component.scss',
+    styleUrls: ['./infinite-scroll.component.scss'],
 })
 export class InfiniteScrollComponent {
     @Input() items: any[] = [];
@@ -17,6 +17,12 @@ export class InfiniteScrollComponent {
     @Output() loadMore = new EventEmitter<boolean>();
     selectedItem: any = null;
 
+    @ContentChild('itemTemplate') customItemTemplate: any;
+
+    get hasCustomTemplate() {
+        return !!this.customItemTemplate;
+    }
+
     onContainerScroll(event: any): void {
         const target = event.target;
         if (!this.isLoading && target.offsetHeight + target.scrollTop >= target.scrollHeight) {
@@ -24,7 +30,7 @@ export class InfiniteScrollComponent {
         }
     }
 
-    onItemClick(item: any) {
+    onItemClick(item: any): void {
         this.selectedItem = item;
         this.itemSelected.emit(item);
     }

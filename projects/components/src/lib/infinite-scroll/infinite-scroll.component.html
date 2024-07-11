@@ -1,11 +1,15 @@
+<!-- InfiniteScrollComponent Template -->
 <div class="infinite-scroll-container overflow-auto" [style.height]="containerHeight" (scroll)="onContainerScroll($event)">
-  <div>
-    <div *ngFor="let item of items" class="item-scroll" [ngClass]="{'item-hover': selectedItem !== item, 'item-selected': selectedItem === item}" (click)="onItemClick(item)">
-        {{ item.label }}
+    <ng-content select="[item-template]"></ng-content>
+
+    <div *ngIf="!hasCustomTemplate">
+        <div *ngFor="let item of items" class="item-scroll" [ngClass]="{ 'item-hover': selectedItem !== item, 'item-selected': selectedItem === item }" (click)="onItemClick(item)">
+            {{ item.label }}
+        </div>
     </div>
+
     <!-- Spinner -->
     <div *ngIf="isLoading" class="spinner-container">
-      <mz-spinner size="medium"></mz-spinner>
+        <mz-spinner size="medium"></mz-spinner>
     </div>
-  </div>
 </div>
