@@ -25,7 +25,7 @@ export class InfiniteScrollComponent {
     }
 
     onItemClick(item: any) {
-        this.selectedItem = item.label;
+        this.selectedItem = item;
         this.itemSelected.emit(item);
     }
 }
