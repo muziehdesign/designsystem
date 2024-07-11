@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ContentChild, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
@@ -16,12 +16,7 @@ export class InfiniteScrollComponent {
     @Output() itemSelected = new EventEmitter<any>();
     @Output() loadMore = new EventEmitter<boolean>();
     selectedItem: any = null;
-
-    @ContentChild('itemTemplate') customItemTemplate: any;
-
-    get hasCustomTemplate() {
-        return !!this.customItemTemplate;
-    }
+    @ContentChild('itemTemplate') itemTemplate!: TemplateRef<any>; 
 
     onContainerScroll(event: any): void {
         const target = event.target;
