@@ -1,0 +1,15 @@
+.details {
+    @apply my-2.5;
+}
+.summary {
+    @apply relative list-none;
+} 
+
+.summary::after {
+    @apply w-4 h-4 inline-block absolute right-6 top-1/2 -translate-y-1/2;
+    content: url('/assets/icons/chevron-up-solid.svg');
+}
+
+.details[open] .summary::after {
+    content: url('/assets/icons/chevron-down-solid.svg');
+}

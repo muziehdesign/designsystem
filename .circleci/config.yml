@@ -71,6 +71,8 @@ jobs:
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/design
       - run: cp -r ./src/styles/design ./dist/components/design
+      - run: mkdir -p ./dist/components/assets/icons
+      - run: cp -r ./src/assets/icons ./dist/components/assets
       - store_artifacts:
           path: /dist/components
           destination: muzieh-ngcomponents
@@ -94,10 +96,10 @@ jobs:
       - run: 
           name: 'npm publish'
           command: |
-            if [ "$BRANCH" = "master" ] || [ "$BRANCH" = "develop" ] ||  [[ "$BRANCH" = \release\/* ]]; then
+            if [ "${CIRCLE_BRANCH}" = "master" ] || [ "${CIRCLE_BRANCH}" = "develop" ] ||  [[ "${CIRCLE_BRANCH}" = \release\/* ]]; then
               echo "publishing non-beta package"
-              npm publish ./dist/components
-              npm publish ./dist/design
+              npm publish ./dist/components --tag latest
+              npm publish ./dist/design --tag latest
             else
               echo "publishing beta package"
               npm publish ./dist/components --tag beta

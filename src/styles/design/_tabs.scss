@@ -1,18 +1,20 @@
-@layer components {
-    .nav-tabs {
-        @apply block border-b-gray-300 border-b;
-    }
+.nav-tabs {
+    @apply block border-b-gray-300 border-b;
+}
 
-    .nav-item {
-        @apply inline-block text-center;
-    }
+.nav-item {
+    @apply inline-block text-center;
+}
 
-    .nav-link {
-        @apply hover:no-underline inline-block text-gray-500 py-2 px-6 border-b border-b-transparent hover:border-b-primary hover:border-b-2 hover:text-primary;
-        min-width: 8rem;
-    }
+.nav-link {
+    @apply hover:no-underline inline-block text-gray-500 py-2 px-6 border-b border-b-transparent hover:text-primary;
+    min-width: 8rem;
+}
 
-    .nav-link.active {
-        @apply text-primary border-b-primary border-b-2 font-medium;
-    }
+.nav-link.active {
+    @apply text-primary border-b-primary border-b-2 font-medium;
+}
+
+.tab-pane {
+    @apply py-3;
 }

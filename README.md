@@ -1,38 +1,17 @@
 # Muzieh Design System
 
+Muzieh Design System is an evolving framework crafted to streamline the creation of modern projects with minimalistic CSS styles. Our focus is on providing foundational elements that emphasize structure and functionality, allowing developers easy bootstrap and customization.
+
 ## Components
 [muzieh-ngcomponents package](https://www.npmjs.com/package/muzieh-ngcomponents) [![<ORG_NAME>](https://circleci.com/gh/muziehdesign/designsystem.svg?style=shield)](https://github.com/muziehdesign/designsystem?branch=develop)
 
 [muzieh design system pages](https://ruifang.github.io/designsystem/design/about) [![publish-github-pages](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml/badge.svg?branch=develop)](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml)
 
-## Todo
-
--   [ ] css framework
--   [ ] support local configuration
--   [ ] api client
--   [ ] logging
--   [ ] path setup
--   [ ] formatting
--   [ ] schematics
--   [ ] cypress
--   [ ] module configuration
--   [ ] analytics
--   [ ] authentication
--   [ ] forms
--   [ ] component styles
--   [ ] layout
--   [ ] loading behavior
--   [ ] css, responsiveness
--   [ ] health
--   [ ] lazy module
--   [ ] commands
--   [ ] build
--   [ ] error handling
 
 ## Setup
-
 -   config.user.json, environment.ts
 
 ## Extensions
-- tailwind
-- formatting
+- Tailwind CSS IntelliSense
+- Angular Language Service
+- Prettier
