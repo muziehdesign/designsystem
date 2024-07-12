@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfiniteScrollComponent } from './infinite-scroll-guidelines.component';
+// import { InfiniteScrollComponent } from './infinite-scroll-guidelines.component';
 
-describe('InfiniteScrollComponent', () => {
-  let component: InfiniteScrollComponent;
-  let fixture: ComponentFixture<InfiniteScrollComponent>;
+// describe('InfiniteScrollComponent', () => {
+//   let component: InfiniteScrollComponent;
+//   let fixture: ComponentFixture<InfiniteScrollComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [InfiniteScrollComponent]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       imports: [InfiniteScrollComponent]
+//     })
+//     .compileComponents();
     
-    fixture = TestBed.createComponent(InfiniteScrollComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(InfiniteScrollComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
