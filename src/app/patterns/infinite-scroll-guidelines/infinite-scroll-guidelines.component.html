@@ -1,0 +1,24 @@
+<header>
+    <h1>Infinite scroll component</h1>
+    <p>
+        The InfiniteScrollComponent provides an efficient way to display a dynamically-loading list of items, enabling a seamless infinite scroll experience. This component supports content projection, allowing for extensive customization of item displays. It is designed to handle the dynamic loading of additional items as the user scrolls to the bottom of the container. External control over item loading and event handling for item selection is also supported. 
+    </p>
+</header>
+
+<article>
+    <h1>Infinite scroll custom content</h1>
+    <div class="demo bg-white p-5">
+        <mz-infinite-scroll [items]="items" [isLoading]="isLoading" [containerHeight]="'300px'" (itemSelected)="onItemSelected($event)" (loadMore)="loadMoreItems()">
+            <ng-template #itemTemplate let-item>
+                <div class="scroll-item" [ngClass]="{'scroll-item-selected': selectedItem === item}" (click)="onItemSelected(item)">Custom Content: {{ item.label }}</div>
+            </ng-template>
+        </mz-infinite-scroll>
+    </div>
+</article>
+
+<article>
+    <h1>Infinite scroll default content</h1>
+    <div class="demo bg-white p-5">
+        <mz-infinite-scroll [items]="items" [isLoading]="isLoading" [containerHeight]="'300px'" (itemSelected)="onItemSelected($event)" (loadMore)="loadMoreItems()"></mz-infinite-scroll>
+    </div>
+</article>

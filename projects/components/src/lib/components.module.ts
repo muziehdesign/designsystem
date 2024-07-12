@@ -21,6 +21,7 @@ import { DateTimeComponent } from './date-time/date-time.component';
 import { InlineMessageComponent } from './inline-message/inline-message.component';
 import { InlineMessageDialogComponent } from './inline-message/inline-message-dialog/inline-message-dialog.component';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { TimeValueValidatorDirective } from './time-value-validator.directive';
     AlertComponent,
     EnumDisplayPipe,
     ResultTableComponent,
+    InfiniteScrollComponent,
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
@@ -52,6 +54,7 @@ import { TimeValueValidatorDirective } from './time-value-validator.directive';
     SpinnerComponent,
     SvgIconComponent,
     ResultTableComponent,
+    InfiniteScrollComponent,
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,

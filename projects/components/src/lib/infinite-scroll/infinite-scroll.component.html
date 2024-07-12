@@ -1,0 +1,17 @@
+<div class="infinite-scroll-container overflow-auto" [style.height]="containerHeight" (scroll)="onContainerScroll($event)">
+    <ng-container *ngIf="itemTemplate; else defaultItems">
+        <ng-container *ngFor="let item of items">
+            <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: item }"></ng-container>
+        </ng-container>
+    </ng-container>
+    <ng-template #defaultItems>
+        <div *ngFor="let item of items" class="scroll-item" [ngClass]="{'scroll-item-selected': selectedItem === item}" (click)="onItemClick(item)">
+            {{ item.label }}
+        </div>
+    </ng-template>
+
+    <!-- Spinner -->
+    <div *ngIf="isLoading" class="scroll-spinner-container">
+        <mz-spinner size="medium"></mz-spinner>
+    </div>
+</div>

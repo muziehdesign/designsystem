@@ -15,8 +15,8 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Content', link: '/patterns/content' },
         { name: 'Form', link: '/patterns/form' },
         { name: 'Result table', link: '/patterns/resulttable'},
-        { name: 'Inline Editing', link: '/patterns/inlineediting'}
-
+        { name: 'Inline Editing', link: '/patterns/inlineediting'},
+        { name: 'Infinite scroll', link: '/patterns/infinitescroll'},
     ]},
     { name: 'Components', children: [
         { name: 'Accordion', link: '/components/accordion' },
