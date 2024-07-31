@@ -27,6 +27,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - browser-tools/install-chrome
       - run: npm ci
       - run: npm run ng -- test components 
   build:
@@ -116,5 +117,3 @@ workflows:
           requires:
             - test
             - build
-
-      
