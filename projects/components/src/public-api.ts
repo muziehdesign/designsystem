@@ -32,11 +32,9 @@ export * from './lib/time-value-validator.directive';
 export * from './lib/time-value-accessor.directive';
 
 // Datetime
-/*
 export * from './lib/date-time/date-time.component';
 export * from './lib/date-time/time-value';
 export * from './lib/time-value-accessor.directive';
-*/
 
 // testing files
 export * from './lib/testing/muzieh-component-harness';
