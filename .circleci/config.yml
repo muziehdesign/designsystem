@@ -8,14 +8,7 @@ general:
       - gh-pages
 
 orbs: 
-  browser-tools: circleci/browser-tools@1.4.4
-  jobs:
-    test:
-      steps:
-        - browser-tools/install-browser-tools:
-            chrome-version: 116.0.5845.96
-            replace-existing-chrome: true
-            # TODO: remove until: https://github.com/CircleCI-Public/browser-tools-orb/issues/75
+  browser-tools: circleci/browser-tools@1.4.8
 
 
 defaults: &defaults
@@ -35,9 +28,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - browser-tools/install-browser-tools:
-          chrome-version: 116.0.5845.96
-          replace-existing-chrome: true
       - run: npm ci
       - run: npm run ng -- test components 
   build:
