@@ -22,6 +22,11 @@ jobs:
     steps:
       - checkout
       - run: npm ci
+      - run:
+          name: "version"
+          command: |
+            sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+            cat foo.txt
       - persist_to_workspace:
           root: .
           paths:
@@ -39,20 +44,19 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run:
-          name: "version"
+      - run: 
+          name: "get version"
           command: |
-            sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
-            cat foo.txt
+            npm pkg get version
       - run:
           name: "version components"
           command: |
-            sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+            npm pkg get version
           working_directory: ./projects/components
       - run:
           name: "version design"
           command: |
-            sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+            npm pkg get version
           working_directory: ./projects/design
       - run: npm run ng -- build design
       - run: npm run ng -- build components
@@ -107,7 +111,7 @@ workflows:
       - build:
           requires:
             - say-hello
-      - publish:
-          requires:
-            - test
-            - build
+      #- publish:
+      #    requires:
+      #      - test
+      #      - build
