@@ -43,6 +43,7 @@ jobs:
           name: "version"
           command: |
             sh ./version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
+            cat foo.txt
       - run:
           name: "version components"
           command: |
