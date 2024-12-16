@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 BUILD=$1
 BRANCH=$2
@@ -27,11 +27,10 @@ echo "$TAG" >> foo.txt
 
 DIRECTORIES="./ ./projects/components ./projects/design"
 
-npm version "${MAJOR}.${MINOR}.${PATCH:="0"}-beta" --no-commit-hooks --no-git-tag-version
-for DIR in "${DIRECTORIES[@]}"; do
+for DIR in $DIRECTORIES; do
   if [ -d "$DIR" ]; then
     echo "Entering $DIR"
-    cd "$DIR" || exit  # Navigate to the directory
+    cd "$DIR" || exit  # Navigate into the directory
     npm version "${VERSION}" --no-commit-hooks --no-git-tag-version
     cd - || exit  # Return to the previous directory
   else
