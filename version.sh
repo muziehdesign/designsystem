@@ -3,6 +3,8 @@
 BUILD=$1
 BRANCH=$2
 
+set -e
+
 VERSION=$(npm pkg get version | tr -d '"')
 MAJOR=$(echo "$VERSION" | awk -F '[/.]' '{ print $1 }')
 MINOR=$(echo "$VERSION" | awk -F '[/.]' '{ print $2 }')
@@ -31,7 +33,7 @@ for DIR in $DIRECTORIES; do
   if [ -d "$DIR" ]; then
     echo "Entering $DIR"
     cd "$DIR" || exit  # Navigate into the directory
-    npm version "${VERSION}" --no-commit-hooks --no-git-tag-version
+    npm version "${PACKAGEVERSION}" --no-commit-hooks --no-git-tag-version
     cd - || exit  # Return to the previous directory
   else
     echo "Directory $DIR does not exist. Skipping..."
