@@ -1,9 +1,9 @@
 #!/bin/sh
 
+set -e
+
 BUILD=$1
 BRANCH=$2
-
-set -e
 
 VERSION=$(npm pkg get version | tr -d '"')
 MAJOR=$(echo "$VERSION" | awk -F '[/.]' '{ print $1 }')
@@ -12,6 +12,7 @@ PATCH=$BUILD
 
 PACKAGEVERSION=$VERSION
 TAG=$MAJOR
+
 
 if [ "$BRANCH" = "next" ] || [ "$BRANCH" = "develop" ] ||  [ "$BRANCH" = \release\/* ]
 then

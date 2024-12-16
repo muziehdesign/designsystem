@@ -85,10 +85,18 @@ jobs:
       - run: 
           name: 'npm publish'
           command: |
-            if [ "${CIRCLE_BRANCH}" = "master" ] || [ "${CIRCLE_BRANCH}" = "develop" ] ||  [ "${CIRCLE_BRANCH}" = \release\/* ]; then
-              echo "publishing non-beta package"
+            if [ "${CIRCLE_BRANCH}" = "next" ]; then
+              echo "publishing next package"
+              npm publish ./dist/components --tag next
+              npm publish ./dist/design --tag next
+            elif [ "${CIRCLE_BRANCH}" = "develop" ]; then
+              echo "publishing latest package"
               npm publish ./dist/components --tag latest
-              npm publish ./dist/design --tag latest
+              npm publish ./dist/design --tag latest            
+            elif echo "$BRANCH" | grep -q "^release/"; then
+              echo "publishing non-beta package"
+              npm publish ./dist/components
+              npm publish ./dist/design 
             else
               echo "publishing beta package"
               npm publish ./dist/components --tag beta
@@ -111,7 +119,7 @@ workflows:
       - build:
           requires:
             - say-hello
-      #- publish:
-      #    requires:
-      #      - test
-      #      - build
+      - publish:
+          requires:
+            - test
+            - build
