@@ -25,7 +25,7 @@ echo "TAG=$TAG"
 echo "$PACKAGEVERSION" > foo.txt
 echo "$TAG" >> foo.txt
 
-DIRECTORIES=("." "./projects/components" "./projects/design")
+DIRECTORIES="./ ./projects/components ./projects/design"
 
 npm version "${MAJOR}.${MINOR}.${PATCH:="0"}-beta" --no-commit-hooks --no-git-tag-version
 for DIR in "${DIRECTORIES[@]}"; do
