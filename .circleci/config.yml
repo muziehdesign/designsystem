@@ -21,9 +21,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+      - run: npm ci
       - persist_to_workspace:
           root: .
           paths:
@@ -35,7 +33,6 @@ jobs:
           at: .
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - run: npm ci
       - run: npm run ng -- test components 
   build:
     <<: *defaults
@@ -56,7 +53,6 @@ jobs:
           command: |
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/design
-      - run: npm ci
       - run: npm run ng -- build design
       - run: npm run ng -- build components
       - run: npm run build
