@@ -8,7 +8,7 @@ general:
       - gh-pages
 
 orbs: 
-  browser-tools: circleci/browser-tools@1.4.4
+  browser-tools: circleci/browser-tools@1.4.8
 
 defaults: &defaults
   docker:
@@ -28,6 +28,7 @@ jobs:
     steps:
       - checkout
       - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - run: npm ci
       - run: npm run ng -- test components 
   build:
@@ -49,15 +50,9 @@ jobs:
           command: |
             sh ./../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
           working_directory: ./projects/design
-      - run:
-          name: "version @muziehdesign/ui"
-          command: |
-            sh ./../../../version.sh ${CIRCLE_BUILD_NUM} ${CIRCLE_BRANCH}
-          working_directory: ./projects/muziehdesign/ui
       - run: npm ci
       - run: npm run ng -- build design
       - run: npm run ng -- build components
-      - run: npm run ng -- build @muziehdesign/ui
       - run: npm run build
       - run: cp -r ./src/styles/design ./dist/design
       - run: cp -r ./src/styles/design ./dist/components/design
@@ -66,9 +61,6 @@ jobs:
       - store_artifacts:
           path: /dist/components
           destination: muzieh-ngcomponents
-      - store_artifacts:
-          path: /dist/muziehdesign/ui
-          destination: muziehdesign/ui
       - persist_to_workspace:
           root: .
           paths:
@@ -95,7 +87,6 @@ jobs:
               npm publish ./dist/components --tag beta
               npm publish ./dist/design --tag beta
             fi
-            # npm publish ./dist/muziehdesign/ui --tag alpha
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
