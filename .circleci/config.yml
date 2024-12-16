@@ -93,8 +93,8 @@ jobs:
               echo "publishing latest package"
               npm publish ./dist/components --tag latest
               npm publish ./dist/design --tag latest            
-            elif echo "$BRANCH" | grep -q "^release/"; then
-              echo "publishing non-beta package"
+            elif (echo "$BRANCH" | grep -q "^release/"); then
+              echo "publishing release package"
               npm publish ./dist/components
               npm publish ./dist/design 
             else
@@ -120,6 +120,7 @@ workflows:
           requires:
             - say-hello
       - publish:
+          context: SharedContext
           requires:
             - test
             - build
