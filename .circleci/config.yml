@@ -17,7 +17,7 @@ defaults: &defaults
         CHROME_BIN: /usr/bin/google-chrome
 
 jobs:
-  say-hello:
+  prep:
     <<: *defaults
     steps:
       - checkout
@@ -108,17 +108,17 @@ jobs:
 workflows:
   publish:
     jobs:
-      - say-hello:
+      - prep:
           filters:
             branches:
               ignore:
                 - gh-pages
       - test:
           requires:
-            - say-hello
+            - prep
       - build:
           requires:
-            - say-hello
+            - prep
       - publish:
           context: SharedContext
           requires:
