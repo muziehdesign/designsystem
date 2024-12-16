@@ -81,7 +81,7 @@ jobs:
       - run: 
           name: 'npm publish'
           command: |
-            if [ "${CIRCLE_BRANCH}" = "master" ] || [ "${CIRCLE_BRANCH}" = "develop" ] ||  [[ "${CIRCLE_BRANCH}" = \release\/* ]]; then
+            if [ "${CIRCLE_BRANCH}" = "master" ] || [ "${CIRCLE_BRANCH}" = "develop" ] ||  [ "${CIRCLE_BRANCH}" = \release\/* ]; then
               echo "publishing non-beta package"
               npm publish ./dist/components --tag latest
               npm publish ./dist/design --tag latest
