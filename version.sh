@@ -14,7 +14,7 @@ PACKAGEVERSION=$VERSION
 TAG=$MAJOR
 
 
-if echo "$BRANCH" | grep -q "^release" || echo "$BRANCH" | grep -q "^develop" || echo "$BRANCH" | grep -q "^next";
+if (echo "$BRANCH" | grep -q "^release") || [ "$CIRCLE_BRANCH" = "develop" ] || [ "$CIRCLE_BRANCH" = "next" ]; then
 then
     PACKAGEVERSION="${MAJOR}.${MINOR}.${PATCH:="0"}"
 else
