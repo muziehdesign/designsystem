@@ -20,13 +20,19 @@ jobs:
   say-hello:
     <<: *defaults
     steps:
+      - checkout
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
   test:
     <<: *defaults
     steps:
-      - checkout
+      - attach_workspace:
+          at: .
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - run: npm ci
@@ -34,8 +40,8 @@ jobs:
   build:
     <<: *defaults
     steps:
-      - checkout
-      #- run: npm run lint
+      - attach_workspace:
+          at: .
       - run:
           name: "version"
           command: |
