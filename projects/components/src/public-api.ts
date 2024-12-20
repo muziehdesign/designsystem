@@ -2,53 +2,50 @@
  * Public API Surface of components
  */
 
-export * from './lib/enum-display/enum-display.pipe';
-export * from './lib/spinner/spinner.component';
-export * from './lib/svg-icon/svg-icon.component';
-export * from './lib/components.module';
-export * from './lib/component.config';
-export * from './lib/component-config.token';
-export * from './lib/page-loading-indicator/page-loading-indicator.component';
-export * from './lib/page-header/page-header.component';
-export * from './lib/phone-number/phone-number.pipe';
-export * from './lib/date-display/date-display.pipe';
+export { EnumDisplayPipe } from './lib/enum-display/enum-display.pipe';
+export { SpinnerComponent } from './lib/spinner/spinner.component';
+export { SvgIconComponent } from './lib/svg-icon/svg-icon.component';
+export { MuziehComponentsModule } from './lib/components.module';
+export { ComponentConfig } from './lib/component.config';
+export { COMPONENT_CONFIG } from './lib/component-config.token';
+export { PageLoadingIndicatorComponent } from './lib/page-loading-indicator/page-loading-indicator.component';
+export { PageHeaderComponent } from './lib/page-header/page-header.component';
+export { PhoneNumberPipe } from './lib/phone-number/phone-number.pipe';
+export { DateDisplayPipe } from './lib/date-display/date-display.pipe';
 
 // subject
-export * from './lib/subject-display/subject-display.pipe';
-export * from './lib/models/subject';
+export { SubjectDisplayPipe } from './lib/subject-display/subject-display.pipe';
+export { Subject } from './lib/models/subject';
 
 // table
-export * from './lib/result-table/result-table.component';
-export * from './lib/pagination/pagination.component';
-export * from './lib/models/page-event';
-export * from './lib/models/loading-state';
-export * from './lib/result-table/result-table.model';
+export { ResultTableComponent } from './lib/result-table/result-table.component';
+export { PaginationComponent } from './lib/pagination/pagination.component';
+export { PageEvent } from './lib/models/page-event';
+export { LoadingState } from './lib/models/loading-state';
+export { ResultTableModel } from './lib/result-table/result-table.model';
 
 // infinite scroll
-export * from './lib/infinite-scroll/infinite-scroll.component'
-
-// time value
-export * from './lib/time-value-validator.directive';
-export * from './lib/time-value-accessor.directive';
+export { InfiniteScrollComponent } from './lib/infinite-scroll/infinite-scroll.component';
 
 // Datetime
-export * from './lib/date-time/date-time.component';
-export * from './lib/date-time/time-value';
-export * from './lib/time-value-accessor.directive';
+export { DateTimeComponent } from './lib/date-time/date-time.component';
+export { TimeValue } from './lib/date-time/time-value';
+export { TimeValueAccessorDirective } from './lib/time-value-accessor.directive';
+export { TimeValueValidatorDirective } from './lib/time-value-validator.directive';
 
 // testing files
-export * from './lib/testing/muzieh-component-harness';
-export * from './lib/testing/result-table-harness';
+export { MuziehComponentHarness } from './lib/testing/muzieh-component-harness';
+export { ResultTableHarness } from './lib/testing/result-table-harness';
 
 // alert
-export * from './lib/alert/alert.component';
+export { AlertComponent } from './lib/alert/alert.component';
 
 // sort
-export * from './lib/sort-key.directive';
-export * from './lib/sort.directive';
-export * from './lib/button.directive';
+export { SortKeyDirective } from './lib/sort-key.directive';
+export { SortDirective } from './lib/sort.directive';
+export { ButtonDirective } from './lib/button.directive';
 
-export * from './lib/models/wizard-step-link';
-export * from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
-export * from './lib/inline-message/inline-message.component';
-export * from './lib/inline-message/inline-message-dialog/inline-message-dialog.component';
+export { WizardStepLink } from './lib/models/wizard-step-link';
+export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
+export { InlineMessageComponent } from './lib/inline-message/inline-message.component';
+export { InlineMessageDialogComponent } from './lib/inline-message/inline-message-dialog/inline-message-dialog.component';
