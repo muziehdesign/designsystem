@@ -1,5 +1,5 @@
 {
-  "name": "muzieh-ngcomponents",
+  "name": "@muziehdesign/angularcomponents",
   "version": "18.1.1",
   "peerDependencies": {
     "@angular/common": "^18.1.1",
