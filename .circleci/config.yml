@@ -90,9 +90,9 @@ jobs:
               npm publish ./dist/components --tag next
               npm publish ./dist/design --tag next
             elif [ "${CIRCLE_BRANCH}" = "develop" ]; then
-              echo "publishing latest package"
-              npm publish ./dist/components --tag latest
-              npm publish ./dist/design --tag latest            
+              echo "publishing next package"
+              npm publish ./dist/components --tag next
+              npm publish ./dist/design --tag next            
             elif (echo "$BRANCH" | grep -q "^release/"); then
               echo "publishing release package"
               npm publish ./dist/components
