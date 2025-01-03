@@ -4,5 +4,4 @@ export interface Subject {
     givenName: string;
     familyName: string;
     userPrincipalName: string;
-    createdDate: Date;
 }
