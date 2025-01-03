@@ -6,7 +6,7 @@ import { Subject } from '../models/subject';
   standalone: true,
 })
 export class SubjectDisplayPipe implements PipeTransform {
-    transform(subject: Subject): string {
+    transform(subject?: Subject): string {
         if (!subject) {
             return '';
         }
