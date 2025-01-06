@@ -13,7 +13,7 @@ jobs:
       - run: npm ci
       - run: npm run ng -- build design
       - run: npm run ng -- build components
-      - run: npm run build -- --base-href "https://ruifang.github.io/designsystem/"
+      - run: npm run build --verbose -- --base-href "https://ruifang.github.io/designsystem/"
       - run: cp LICENSE ./dist/kitchensink-ui
       - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
       - name: publish pages to designsystem
@@ -26,7 +26,7 @@ jobs:
           destination-repository-name: 'designsystem'
           target-branch: gh-pages
           user-email: ruifang.li09@gmail.com
-      - run: npm run build -- --base-href "https://ruifang.github.io/kitchensink-ui/"
+      - run: npm run build --verbose -- --base-href "https://ruifang.github.io/kitchensink-ui/"
       - run: cp LICENSE ./dist/kitchensink-ui
       - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
       - name: Deploy
