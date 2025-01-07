@@ -1,0 +1,2 @@
+import{Cb as o,Db as i,Yb as a,fc as c,na as r}from"./chunk-BXRIWIV5.js";import"./chunk-EQDQRRRY.js";var p=(()=>{let t=class t{constructor(){}ngOnInit(){}};t.\u0275fac=function(n){return new(n||t)},t.\u0275cmp=r({type:t,selectors:[["app-layout"]],standalone:!0,features:[c],decls:4,vars:0,template:function(n,l){n&1&&(o(0,"h1"),a(1,"Layout"),i(),o(2,"p"),a(3,` Navigation bar, content, side content
+`),i())}});let e=t;return e})();export{p as LayoutComponent};
