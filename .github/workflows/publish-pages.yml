@@ -14,26 +14,26 @@ jobs:
       - run: npm run ng -- build design
       - run: npm run ng -- build components
       - run: npm run build --verbose -- --base-href "https://ruifang.github.io/designsystem/"
-      - run: cp LICENSE ./dist/muziehdesign/designsystem
-      - run: cp ./dist/muziehdesign/designsystem/index.html ./dist/muziehdesign/designsystem/404.html
+      - run: cp LICENSE ./dist/kitchensink-ui
+      - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
       - name: publish pages to designsystem
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: './dist/muziehdesign/designsystem'
+          source-directory: './dist/kitchensink-ui'
           destination-github-username: 'ruifang'
           destination-repository-name: 'designsystem'
           target-branch: gh-pages
           user-email: ruifang.li09@gmail.com
-      - run: npm run build --verbose -- --base-href "https://ruifang.github.io/designsystem/"
-      - run: cp LICENSE ./dist/muziehdesign/designsystem
-      - run: cp ./dist/muziehdesign/designsystem/index.html ./dist/muziehdesign/designsystem/404.html
+      - run: npm run build --verbose -- --base-href "https://ruifang.github.io/kitchensink-ui/"
+      - run: cp LICENSE ./dist/kitchensink-ui
+      - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
           BRANCH: gh-pages
-          FOLDER: ./dist/designsystem
+          FOLDER: ./dist/kitchensink-ui
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           
