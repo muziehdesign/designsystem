@@ -14,8 +14,9 @@ jobs:
       - run: npm run ng -- build design
       - run: npm run ng -- build components
       - run: npm run build --verbose -- --base-href "https://ruifang.github.io/designsystem/"
+      - run: mv ./dist/kitchensink-ui/browser ./dist/kitchensink-ui
       - run: cp LICENSE ./dist/kitchensink-ui
-      - run: cp ./dist/kitchensink-ui/browser/index.html ./dist/kitchensink-ui/browser/404.html
+      - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
       - name: publish pages to designsystem
         uses: cpina/github-action-push-to-another-repository@main
         env:
@@ -28,12 +29,12 @@ jobs:
           user-email: ruifang.li09@gmail.com
       - run: npm run build --verbose -- --base-href "https://ruifang.github.io/kitchensink-ui/"
       - run: cp LICENSE ./dist/kitchensink-ui
-      - run: cp ./dist/kitchensink-ui/browser/index.html ./dist/kitchensink-ui/browser/404.html
+      - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
           BRANCH: gh-pages
-          FOLDER: ./dist/kitchensink-ui/browser
+          FOLDER: ./dist/kitchensink-ui
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           
