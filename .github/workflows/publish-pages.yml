@@ -28,6 +28,7 @@ jobs:
           target-branch: gh-pages
           user-email: ruifang.li09@gmail.com
       - run: npm run build --verbose -- --base-href "https://ruifang.github.io/kitchensink-ui/"
+      - run: mv ./dist/kitchensink-ui/browser/** ./dist/kitchensink-ui
       - run: cp LICENSE ./dist/kitchensink-ui
       - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
       - name: Deploy
