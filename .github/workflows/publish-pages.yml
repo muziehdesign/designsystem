@@ -34,6 +34,6 @@ jobs:
         env:
           REPO: self
           BRANCH: gh-pages
-          FOLDER: ./dist/kitchensink-ui
+          FOLDER: ./dist/kitchensink-ui/browser
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           
