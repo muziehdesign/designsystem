@@ -5,12 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class PhoneNumberPipe implements PipeTransform {
-  transform(number: string, ...args: unknown[]): unknown {
+
+  transform(number?: string): string | null {
         if (!number) {
             return null;
         }
 
-        const phoneNumber = number.replace(/\D/g, '');
+        const phoneNumber = number.replace(/^\+1/, '').replace(/\D/g, '');
         if (phoneNumber.length === 10) {
             return phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
         }
