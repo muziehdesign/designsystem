@@ -12,8 +12,9 @@ import { ComponentConfig } from '../component.config';
 })
 export class SvgIconComponent implements OnInit {
   @Input() key!: string;
-  @Input() type: string = 'outline';
+  @Input() type: 'outline' | 'solid' | string = 'outline';
   url: string;
+  
   constructor(@Optional() @Inject(COMPONENT_CONFIG) private config: ComponentConfig) {
     this.url = config?.svgIconDefinitionUrl || './assets/icondefinitions.svg';
   }
