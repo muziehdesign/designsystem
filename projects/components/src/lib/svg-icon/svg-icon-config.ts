@@ -1,7 +1,7 @@
 import { InjectionToken } from "@angular/core";
 
-export interface MzSvgIconOptions {
+export interface SvgIconOptions {
     svgIconDefinitionUrl: string;
 }
 
-export const MZ_SVG_ICON_DEFAULT_OPTIONS = new InjectionToken<MzSvgIconOptions>('MzSvgIconOptions');
+export const SVG_ICON_DEFAULT_OPTIONS = new InjectionToken<SvgIconOptions>('MzSvgIconOptions');
