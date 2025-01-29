@@ -1,6 +1,6 @@
 {
   "name": "designsystem",
-  "version": "18.1.1",
+  "version": "18.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng build design && ng build components && ng serve --port 8200",
