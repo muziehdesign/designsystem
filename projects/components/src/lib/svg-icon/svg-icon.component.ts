@@ -1,5 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { Component, HostBinding, Inject, Input, OnInit, Optional, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
 import { COMPONENT_CONFIG } from '../component-config.token';
 import { ComponentConfig } from '../component.config';
 
@@ -8,16 +7,23 @@ import { ComponentConfig } from '../component.config';
   templateUrl: './svg-icon.component.svg',
   styleUrls: ['./svg-icon.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: []
 })
-export class SvgIconComponent implements OnInit {
+export class SvgIconComponent {
   @Input() key!: string;
   @Input() type: 'outline' | 'solid' | string = 'outline';
-  url: string;
+  @Input() size: string = 'medium';
+  fileUrl: string;
   
-  constructor(@Optional() @Inject(COMPONENT_CONFIG) private config: ComponentConfig) {
-    this.url = config?.svgIconDefinitionUrl || './assets/icondefinitions.svg';
+  constructor(@Optional() @Inject(COMPONENT_CONFIG) public config: ComponentConfig) {
+    this.fileUrl = config?.svgIconDefinitionUrl || './assets/icondefinitions.svg';
   }
 
-  ngOnInit(): void {}
+  get url(): string {
+    if(this.type) {
+      return this.fileUrl + '#' + this.key + '-' + this.type;
+    }
+
+    return this.fileUrl + '#' + this.key;
+  }
 }
