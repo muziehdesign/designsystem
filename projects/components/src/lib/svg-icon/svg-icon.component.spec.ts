@@ -2,21 +2,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SvgIconComponent } from './svg-icon.component';
 import { By } from '@angular/platform-browser';
-import { COMPONENT_CONFIG } from '../component-config.token';
-import { ComponentConfig } from '../component.config';
+import { SVG_ICON_DEFAULT_OPTIONS, SvgIconOptions } from './svg-icon-config';
 
 describe('SvgIconComponent', () => {
   let component: SvgIconComponent;
   let fixture: ComponentFixture<SvgIconComponent>;
   const config = {
     svgIconDefinitionUrl: 'abc'
-  } satisfies ComponentConfig;
+  } satisfies SvgIconOptions;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ SvgIconComponent ],
       providers: [
-        {provide: COMPONENT_CONFIG, useValue: config}
+        {provide: SVG_ICON_DEFAULT_OPTIONS, useValue: config}
       ]
     })
     .compileComponents();

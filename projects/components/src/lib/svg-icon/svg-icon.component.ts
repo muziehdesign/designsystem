@@ -1,6 +1,5 @@
 import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
-import { COMPONENT_CONFIG } from '../component-config.token';
-import { ComponentConfig } from '../component.config';
+import { SVG_ICON_DEFAULT_OPTIONS, SvgIconOptions } from './svg-icon-config';
 
 @Component({
   selector: 'mz-svg-icon',
@@ -15,7 +14,7 @@ export class SvgIconComponent {
   @Input() size: string = 'medium';
   fileUrl: string;
   
-  constructor(@Optional() @Inject(COMPONENT_CONFIG) public config: ComponentConfig) {
+  constructor(@Optional() @Inject(SVG_ICON_DEFAULT_OPTIONS) public config: SvgIconOptions) {
     this.fileUrl = config?.svgIconDefinitionUrl || './assets/icondefinitions.svg';
   }
 
