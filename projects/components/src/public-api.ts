@@ -2,12 +2,13 @@
  * Public API Surface of components
  */
 
+export { SvgIconComponent } from './lib/svg-icon/svg-icon.component';
+export { SvgIconOptions, SVG_ICON_DEFAULT_OPTIONS } from './lib/svg-icon/svg-icon-config';
+
 export { EnumDisplayPipe } from './lib/enum-display/enum-display.pipe';
 export { SpinnerComponent } from './lib/spinner/spinner.component';
-export { SvgIconComponent } from './lib/svg-icon/svg-icon.component';
+
 export { MuziehComponentsModule } from './lib/components.module';
-export { ComponentConfig } from './lib/component.config';
-export { COMPONENT_CONFIG } from './lib/component-config.token';
 export { PageLoadingIndicatorComponent } from './lib/page-loading-indicator/page-loading-indicator.component';
 export { PageHeaderComponent } from './lib/page-header/page-header.component';
 export { PhoneNumberPipe } from './lib/phone-number/phone-number.pipe';
