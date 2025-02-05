@@ -86,19 +86,19 @@ jobs:
             if [ "${CIRCLE_BRANCH}" = "next" ]; then
               echo "publishing next package"
               npm publish ./dist/components --tag next
-              npm publish ./dist/design --tag next
+              #npm publish ./dist/design --tag next
             elif [ "${CIRCLE_BRANCH}" = "develop" ]; then
               echo "publishing next package"
               npm publish ./dist/components --tag next
-              npm publish ./dist/design --tag next            
+              #npm publish ./dist/design --tag next            
             elif (echo "$BRANCH" | grep -q "^release/"); then
               echo "publishing release package"
               npm publish ./dist/components
-              npm publish ./dist/design 
+              #npm publish ./dist/design 
             else
               echo "publishing beta package"
               npm publish ./dist/components --tag beta
-              npm publish ./dist/design --tag beta
+              #npm publish ./dist/design --tag beta
             fi
 
 # Invoke jobs via workflows
