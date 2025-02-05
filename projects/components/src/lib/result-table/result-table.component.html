@@ -10,8 +10,8 @@
             <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
         </thead>
         <tbody>
-            @if(state === 'succeeded' && isEmpty) {
-                <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+            @if(state === 'succeeded' && !isEmpty) {
+                <ng-container *ngTemplateOutlet="bodyTemplate; context: model?.items"></ng-container>
             }
         </tbody>
     </table>
