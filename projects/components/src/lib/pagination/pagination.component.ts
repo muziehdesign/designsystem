@@ -41,14 +41,14 @@ export class PaginationComponent implements OnChanges {
     if (newValue == this.page || newValue < 1 || newValue > this.pageCount) {
       return;
     }
-    this.changePage.emit({ page: newValue, pageSize: this.pageSize } as PageEvent)
+    this.changePage.emit({ pageNumber: newValue, pageSize: this.pageSize } as PageEvent)
   }
 
   changePageSize(newValue: string) {
     if (Number(newValue) == this.pageSize) {
       return;
     }
-    this.changePage.emit({ page: 1, pageSize: Number(newValue) } as PageEvent);
+    this.changePage.emit({ pageNumber: 1, pageSize: Number(newValue) } as PageEvent);
   }
 
   private updatePages(currentPage: number, lengthOfItems: number, currentPageSize: number) {

@@ -11,10 +11,10 @@ describe('ResultTableComponent', () => {
     let fixture: ComponentFixture<ResultTableComponent>;
 
     const results = {
-        totalResults: 3,
-        page: 1,
+        totalItems: 3,
+        pageNumber: 1,
         pageSize: 10,
-        results: [
+        items: [
             {
                 name: 'prod1',
                 number: 1,
@@ -39,7 +39,7 @@ describe('ResultTableComponent', () => {
 
     it('should emit PageEvent', () => {
         // arrange
-        const pageEvent = { page: 1, pageSize: 20 } as PageEvent;
+        const pageEvent = { pageNumber: 1, pageSize: 20 } as PageEvent;
         const table = fixture.debugElement.nativeElement.querySelector('.result-table');
 
         spyOn(component.pageChange, 'emit');
@@ -165,10 +165,10 @@ describe('ResultTableComponent', () => {
     it('should display no result state', async () => {
         // arrange
         component.model = {
-            page: 1,
+            pageNumber: 1,
             pageSize: 10,
-            totalResults: 0,
-            results: [],
+            totalItems: 0,
+            items: [],
         };
 
         // act
@@ -186,7 +186,7 @@ describe('ResultTableComponent', () => {
 
     it('should display error state', fakeAsync(() => {
         // arrange
-        component.model = { page: 2, pageSize: 10, totalResults: 35, results: [...Array(10).keys()] };
+        component.model = { pageNumber: 2, pageSize: 10, totalItems: 35, items: [...Array(10).keys()] };
         component.error = new Error();
 
         // act

@@ -19,16 +19,16 @@ export class ResultTableGuidelinesComponent {
     defaultModelTotal: number = 120;
     defaultModel$: Observable<ResultTableModel<OrderDataModel>>;
     defaultLoadingState = { loading: false } as LoadingState;
-    emptyModel$ = of({ results: [], totalResults: 10, page: 1, pageSize: 20 } as ResultTableModel<OrderDataModel>);
+    emptyModel$ = of({ items: [], totalItems: 10, pageNumber: 1, pageSize: 20 } as ResultTableModel<OrderDataModel>);
     errorLoadingState = { error: new Error(), loading: false } as LoadingState;
     error = new Error();
     loadingExampleState = { loading: true } as LoadingState;
     sortKey = 'orderNumber';
-    pagination: PageEvent = { page: 1, pageSize: 20 };
+    pagination: PageEvent = { pageNumber: 1, pageSize: 20 };
 
     constructor() {
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
+        this.defaultModel$ = this.getPagedModel(this.pagination.pageNumber, this.pagination.pageSize, this.sortKey).pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
@@ -37,7 +37,7 @@ export class ResultTableGuidelinesComponent {
 
     changeDefaultModelTotal() {
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
+        this.defaultModel$ = this.getPagedModel(this.pagination.pageNumber, this.pagination.pageSize, this.sortKey).pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
@@ -47,7 +47,7 @@ export class ResultTableGuidelinesComponent {
     onPageChange(pageEvent: PageEvent) {
         this.defaultLoadingState.loading = true;
         this.pagination = pageEvent;
-        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
+        this.defaultModel$ = this.getPagedModel(this.pagination.pageNumber, this.pagination.pageSize, this.sortKey).pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
@@ -74,10 +74,10 @@ export class ResultTableGuidelinesComponent {
             delay(1200),
             map((x) => {
                 return <ResultTableModel<OrderDataModel>>{
-                    results: x,
-                    page: page,
+                    items: x,
+                    pageNumber: page,
                     pageSize: pageSize,
-                    totalResults: this.defaultModelTotal,
+                    totalItems: this.defaultModelTotal,
                     sort: sort,
                 };
             })
@@ -87,7 +87,7 @@ export class ResultTableGuidelinesComponent {
     onSort(sortEvent: SortEvent) {
         this.sortKey = sortEvent.sort;
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel(this.pagination.page, this.pagination.pageSize, this.sortKey).pipe(
+        this.defaultModel$ = this.getPagedModel(this.pagination.pageNumber, this.pagination.pageSize, this.sortKey).pipe(
           tap(() => {
               this.defaultLoadingState.loading = false;
           })

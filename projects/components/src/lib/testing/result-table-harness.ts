@@ -37,7 +37,7 @@ export class ResultTableHarness extends MuziehComponentHarness<ResultTableCompon
         const contentDebugElement = this.resultTableDebugElement;
         const componentInstance = this.evaluateComponentInstance(contentDebugElement);
         const results = contentDebugElement.queryAll(By.css('tbody tr')).map((el) => el.queryAll(By.css('td')).map((td) => (td.nativeElement as HTMLTableCellElement).textContent?.trim()));
-        const { page, pageSize, totalResults: total } = componentInstance.model as ResultTableModel<unknown>;
+        const { pageNumber: page, pageSize, totalItems: total } = componentInstance.model as ResultTableModel<unknown>;
 
         return {
             results,

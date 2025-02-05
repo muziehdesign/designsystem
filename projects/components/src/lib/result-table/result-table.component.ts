@@ -33,7 +33,7 @@ export class ResultTableComponent {
     }
 
     searchAgain() {
-        this.pageChange.emit({ page: this.model?.page || 1, pageSize: this.model?.pageSize || 20 }); // TODO
+        this.pageChange.emit({ pageNumber: this.model?.pageNumber || 1, pageSize: this.model?.pageSize || 20 }); // TODO
     }
 
     public get state(): 'loading' | 'failed' | 'succeeded' {
