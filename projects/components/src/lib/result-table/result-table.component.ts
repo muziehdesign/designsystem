@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { PageEvent } from '../models/page-event';
 import { ResultTableOptions } from '../models/result-table-options';
 import { PaginationComponent } from '../pagination/pagination.component';
@@ -15,21 +15,28 @@ import { ResultTableModel } from './result-table.model';
     standalone: true,
 })
 export class ResultTableComponent {
+
     @Input() public loading: boolean = false;
     @Input() public error?: Error;
-    @Input() public model: ResultTableModel<any> | undefined | null; // TODO need to deal with the flaw of angular's async pipe
-    @Input() public header!: TemplateRef<any>;
-    @Input() public body!: TemplateRef<any>;
-    @Input() public options: ResultTableOptions = { hidePagination: false };
+    @Input() public model: ResultTableModel<any> | undefined | null;
+
+    @ContentChild(TemplateRef) headerTemplate!: TemplateRef<any>;
+    @ContentChild(TemplateRef) bodyTemplate!: TemplateRef<any>;
+
+    @Input() pageSizeOptions?: number[];
     @Output() public pageChange = new EventEmitter<PageEvent>();
+
+    @Input() public options: ResultTableOptions = { hidePagination: false, skipScrolling: false };
 
     constructor() {}
 
     changePage(page: PageEvent, table: HTMLElement) {
         this.pageChange.emit(page);
-        setTimeout(() => {
-            table.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+        if(!this.options.skipScrolling) {
+            setTimeout(() => {
+                table.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
     }
 
     searchAgain() {
@@ -45,5 +52,9 @@ export class ResultTableComponent {
         }
 
         return 'succeeded';
+    }
+
+    public get isEmpty(): boolean {
+        return !this.model || this.model.items.length === 0;
     }
 }

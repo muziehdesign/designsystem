@@ -19,7 +19,7 @@ export class PaginationComponent implements OnChanges {
   @Input() pageSize: number;
   @Output() public changePage = new EventEmitter<PageEvent>();
 
-  @Input() pageSizeOptions: number[];
+  @Input() pageSizeOptions?: number[];
   pages: number[] = [];
   pageCount: number = 1;
   constructor(@Optional() @Inject(PAGINATION_DEFAULT_OPTIONS) paginationOptions: PaginationDefaultOptions) {

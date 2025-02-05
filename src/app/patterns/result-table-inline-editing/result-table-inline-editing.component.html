@@ -2,7 +2,7 @@
     <h1>Inline editing result table</h1>
 </header>
 <div class="example">
-    <mz-result-table [options]="{ hidePagination: true }" [model]="defaultModel$ | async" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" [header]="headerTemplate" [body]="bodyTemplate">
+    <mz-result-table [options]="{ hidePagination: true }" [model]="(defaultModel$ | async)!" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error">
         <ng-template #headerTemplate>
             <tr>
                 <th>Order</th>

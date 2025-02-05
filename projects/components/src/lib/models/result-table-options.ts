@@ -1,3 +1,4 @@
 export interface ResultTableOptions {
-  hidePagination: boolean;
+  hidePagination?: boolean;
+  skipScrolling?: boolean;
 }
