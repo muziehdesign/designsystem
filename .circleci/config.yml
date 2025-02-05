@@ -38,7 +38,7 @@ jobs:
           at: .
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - run: npm run ng -- test components 
+      - run: npm run test:ci
   build:
     <<: *defaults
     steps:

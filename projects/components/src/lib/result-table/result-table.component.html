@@ -4,7 +4,7 @@
     </div>
     <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
         <caption *ngIf="state === 'succeeded' && model && model.items.length > 0">
-            {{(model.pageNumber-1) * model.pageSize + 1}} - {{((model.pageNumber) * model.pageSize) + model.items.length}} of {{ model.totalItems }} results
+            {{(model.pageNumber-1) * model.pageSize + 1}} - {{(model.pageNumber-1) * model.pageSize + model.items.length}} of {{ model.totalItems }} results
         </caption>
         <thead>
             <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>

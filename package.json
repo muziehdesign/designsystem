@@ -6,7 +6,8 @@
     "start": "ng build design && ng build components && ng serve --port 8200",
     "build": "ng build design && ng build components && ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch",
+    "test": "ng test components --watch",
+    "test:ci": "ng test components --watch false",
     "mock-server": "node ./mock-server/server.js"
   },
   "private": false,
