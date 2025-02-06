@@ -7,14 +7,14 @@
 
 <article>
     <h2>States</h2>
-    <h3>Default</h3>
+    <h3>Success</h3>
 
     <div class="demo">
 
         <div class="example">
             <mz-result-table [options]="{ 'hidePagination': false }" [mzSort]="sortKey" (sort)="onSort($event)" [model]="defaultModel()" [loading]="defaultLoadingState.loading" [error]="defaultLoadingState.error" 
                 (pageChange)="onPageChange($event)">
-                <ng-template #headerRow>
+                <ng-template #headerTemplate>
                     <tr>
                         <th mzSortKey="orderNumber">Order</th>
                         <th mzSortKey="customer">Customer</th>
@@ -24,15 +24,17 @@
                         <th mzSortKey="country">Country</th>
                     </tr>
                 </ng-template>
-                <ng-template #bodyRow let-order>
-                    <tr>
-                        <td>{{order.orderNumber}}</td>
-                        <td>{{order.customer}}</td>
-                        <td>{{order.status}}</td>
-                        <td>{{order.date | date}}</td>
-                        <td>{{order.total | currency}}</td>
-                        <td>{{order.country}}</td>
-                    </tr>
+                <ng-template #bodyTemplate>
+                    @for(order of defaultModel()?.items; track order) {
+                        <tr>
+                            <td>{{order.orderNumber}}</td>
+                            <td>{{order.customer}}</td>
+                            <td>{{order.status}}</td>
+                            <td>{{order.date | date}}</td>
+                            <td>{{order.total | currency}}</td>
+                            <td>{{order.country}}</td>
+                        </tr>
+                    }
                 </ng-template>
             </mz-result-table>
         </div>
@@ -40,8 +42,8 @@
 
     <h3>Loading</h3>
     <div class="example">
-        <mz-result-table [loading]="loadingExampleState.loading">
-            <ng-template #headerRow>
+        <mz-result-table [loading]="true">
+            <ng-template #headerTemplate>
                 <tr>
                     <th>Order</th>
                     <th>Customer</th>
@@ -49,7 +51,7 @@
                     <th>Total</th>
                 </tr>
             </ng-template>
-            <ng-template #bodyRow>
+            <ng-template #bodyTemplate>
                 <tr *ngFor="let order of defaultModel()?.items">
                     <td>{{order.orderNumber}}</td>
                     <td>{{order.customer}}</td>

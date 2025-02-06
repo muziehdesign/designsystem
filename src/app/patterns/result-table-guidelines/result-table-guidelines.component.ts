@@ -106,4 +106,6 @@ interface OrderDataModel {
     customer: string;
     total: number;
     date: Date;
+    status: string;
+    country: string;
 }

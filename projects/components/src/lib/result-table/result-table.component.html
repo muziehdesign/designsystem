@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             @if(state === 'succeeded' && !isEmpty) {
-                <ng-container *ngTemplateOutlet="bodyTemplate; context: model?.items"></ng-container>
+                <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
             }
         </tbody>
     </table>

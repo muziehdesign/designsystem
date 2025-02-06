@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { AfterViewInit, Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { PageEvent } from '../models/page-event';
 import { ResultTableOptions } from '../models/result-table-options';
 import { PaginationComponent } from '../pagination/pagination.component';
@@ -14,14 +14,14 @@ import { ResultTableModel } from './result-table.model';
     imports: [CommonModule, PaginationComponent, SpinnerComponent, SvgIconComponent],
     standalone: true,
 })
-export class ResultTableComponent {
+export class ResultTableComponent implements AfterViewInit {
 
     @Input() public loading: boolean = false;
     @Input() public error?: Error;
     @Input() public model: ResultTableModel<any> | undefined | null;
 
-    @ContentChild(TemplateRef) headerTemplate!: TemplateRef<any>;
-    @ContentChild(TemplateRef) bodyTemplate!: TemplateRef<any>;
+    @ContentChild('headerTemplate') headerTemplate!: TemplateRef<any>;
+    @ContentChild('bodyTemplate') bodyTemplate!: TemplateRef<any>;
 
     @Input() pageSizeOptions?: number[];
     @Output() public pageChange = new EventEmitter<PageEvent>();
@@ -29,6 +29,12 @@ export class ResultTableComponent {
     @Input() public options: ResultTableOptions = { hidePagination: false, skipScrolling: false };
 
     constructor() {}
+
+    ngAfterViewInit(): void {
+        if(!this.headerTemplate || !this.bodyTemplate) {
+            throw new Error('<mz-result-table> requires a `headerTemplate` and a `bodyTemplate`.');
+        }
+    }
 
     changePage(page: PageEvent, table: HTMLElement) {
         this.pageChange.emit(page);
