@@ -31,9 +31,7 @@ export class ResultTableComponent implements AfterViewInit {
     constructor() {}
 
     ngAfterViewInit(): void {
-        if(!this.headerTemplate || !this.bodyTemplate) {
-            throw new Error('<mz-result-table> requires a `headerTemplate` and a `bodyTemplate`.');
-        }
+
     }
 
     changePage(page: PageEvent, table: HTMLElement) {
