@@ -45,6 +45,7 @@ export { AlertComponent } from './lib/alert/alert.component';
 export { SortKeyDirective } from './lib/sort-key.directive';
 export { SortDirective } from './lib/sort.directive';
 export { ButtonDirective } from './lib/button.directive';
+export { SortEvent } from './lib/models/sort-event';
 
 export { WizardStepLink } from './lib/models/wizard-step-link';
 export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
