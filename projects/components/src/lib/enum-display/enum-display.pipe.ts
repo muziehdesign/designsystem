@@ -5,11 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
     standalone: true,
 })
 export class EnumDisplayPipe implements PipeTransform {
-    transform(value: string): unknown {
+
+    
+    transform(value?: string): string {
         return this.transformValue(value).join(' ');
     }
 
-    transformValue(value: string): string[] {
+    private transformValue(value?: string): string[] {
         if (!value) {
             return [];
         }
