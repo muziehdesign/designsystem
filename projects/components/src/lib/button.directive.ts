@@ -47,7 +47,7 @@ export class ButtonDirective implements OnChanges, OnDestroy {
 
     attachOrDeattachSpinner() {
         if (this.busy) {
-            const loadingElement = this.renderer.createElement('div');
+            const loadingElement = this.renderer.createElement('span');
             loadingElement.innerHTML = this.svgContent;
             this.renderer.addClass(loadingElement, 'button-loading-overlay');
             this.renderer.appendChild(this.hostElement.nativeElement, loadingElement);
