@@ -22,7 +22,7 @@ describe('InlineEditComponent', () => {
     it('should display', () => {
         expect(component).toBeTruthy();
 
-        const wrapper = fixture.debugElement.query(By.css('.inline-edit')).nativeElement;
+        const wrapper = fixture.debugElement.query(By.css('.mz-inline-edit')).nativeElement;
         expect(wrapper.textContent).toContain('initialValue');
 
         const inputDebugElement = fixture.debugElement.query(By.css('input'));
