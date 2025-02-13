@@ -4,14 +4,14 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'mz-spinner',
   templateUrl: './spinner.component.html',
-  styleUrls: ['./spinner.component.css'],
+  styleUrls: ['./spinner.component.scss'],
   standalone: true,
   imports: [CommonModule]
 })
 export class SpinnerComponent  {
 
   @Input() size: 'medium' | 'large' = 'medium';
-  @Input() type: 'default' | 'inverse' = 'default'; // TODO: inverse will not exist one day
+  @Input() type: 'primary' | 'secondary' | 'custom' = 'secondary';
   constructor() { }
 
 }

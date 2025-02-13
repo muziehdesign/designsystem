@@ -1,6 +1,6 @@
 <div class="result-table" [ngClass]="{'loading': state === 'loading', 'failed': state === 'failed'}" #tableRef>
     <div class="loading-overlay-spinner" *ngIf="state === 'loading'">
-        <mz-spinner size="large"></mz-spinner>
+        <mz-spinner size="large" type="secondary"></mz-spinner>
     </div>
     <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
         <caption *ngIf="state === 'succeeded' && model && model.items.length > 0">

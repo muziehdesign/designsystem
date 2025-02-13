@@ -129,6 +129,11 @@
     },
     "components": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/components",
       "sourceRoot": "projects/components/src",
       "prefix": "mz",
