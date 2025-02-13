@@ -14,6 +14,9 @@ export { PageHeaderComponent } from './lib/page-header/page-header.component';
 export { PhoneNumberPipe } from './lib/phone-number/phone-number.pipe';
 export { DateDisplayPipe } from './lib/date-display/date-display.pipe';
 
+// inline edit
+export { InlineEditComponent } from './lib/inline-edit/inline-edit.component';
+
 // subject
 export { SubjectDisplayPipe } from './lib/subject-display/subject-display.pipe';
 export { Subject } from './lib/models/subject';
