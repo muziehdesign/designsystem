@@ -10,3 +10,14 @@
         flex-direction: column;
     }
 }
+
+.label-button {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
