@@ -11,10 +11,10 @@ describe('ResultTableComponent', () => {
     let fixture: ComponentFixture<ResultTableComponent>;
 
     const results = {
-        totalResults: 3,
-        page: 1,
+        totalItems: 3,
+        pageNumber: 1,
         pageSize: 10,
-        results: [
+        items: [
             {
                 name: 'prod1',
                 number: 1,
@@ -39,7 +39,7 @@ describe('ResultTableComponent', () => {
 
     it('should emit PageEvent', () => {
         // arrange
-        const pageEvent = { page: 1, pageSize: 20 } as PageEvent;
+        const pageEvent = { pageNumber: 1, pageSize: 20 } as PageEvent;
         const table = fixture.debugElement.nativeElement.querySelector('.result-table');
 
         spyOn(component.pageChange, 'emit');
@@ -48,7 +48,7 @@ describe('ResultTableComponent', () => {
         component.changePage(pageEvent, table);
 
         // assert
-        expect(component.pageChange.emit).toHaveBeenCalledWith(Object({ page: 1, pageSize: 20 }));
+        expect(component.pageChange.emit).toHaveBeenCalledWith({ pageNumber: 1, pageSize: 20 } satisfies PageEvent);
     });
 
     it('should emit PageEvent on searchAgain', () => {
@@ -59,7 +59,7 @@ describe('ResultTableComponent', () => {
         component.searchAgain();
 
         // assert
-        expect(component.pageChange.emit).toHaveBeenCalledWith(Object({ page: 1, pageSize: 10 }));
+        expect(component.pageChange.emit).toHaveBeenCalledWith({ pageNumber: 1, pageSize: 10 } satisfies PageEvent);
     });
 
     it('should get states depending on loading and error', () => {
@@ -86,33 +86,31 @@ describe('ResultTableComponent', () => {
     });
 
     const testCases = [
+
+
         {
-            model: { page: 2, pageSize: 10, totalResults: 35, results: [...Array(10).keys()] },
+            model: { pageNumber: 1, pageSize: 10, totalItems: 10, items: [...Array(10).keys()] } satisfies ResultTableModel<number>,
+            caption: '1 - 10 of 10 results',
+            pagination: false,
+        },
+        {
+            model: { pageNumber: 1, pageSize: 10, totalItems: 5, items: [...Array(5).keys()] } satisfies ResultTableModel<number>,
+            caption: '1 - 5 of 5 results',
+            pagination: false,
+        },
+
+        {
+            model: { pageNumber: 2, pageSize: 10, totalItems: 35, items: [...Array(10).keys()] } satisfies ResultTableModel<number>,
             caption: '11 - 20 of 35 results',
             pagination: true,
         },
         {
-            model: { page: 1, pageSize: 10, totalResults: 10, results: [...Array(10).keys()] },
-            caption: '1 - 10 of 10 results',
-            pagination: false,
-        },
-        {
-            model: { page: 1, pageSize: 5, totalResults: 10, results: [...Array(10).keys()] },
-            caption: '1 - 10 of 10 results',
-            pagination: false,
-        },
-        {
-          model: { page: 2, pageSize: 100, totalResults: 113, results: [...Array(13).keys()] },
+          model: { pageNumber: 2, pageSize: 100, totalItems: 113, items: [...Array(13).keys()] } satisfies ResultTableModel<number>,
           caption: '101 - 113 of 113 results',
           pagination: true,
         },
         {
-          model: { page: 1, pageSize: 100, totalResults: 100, results: [...Array(100).keys()] },
-          caption: '1 - 100 of 100 results',
-          pagination: true,
-        },
-        {
-          model: { page: 2, pageSize: 100, totalResults: 200, results: [...Array(100).keys()] },
+          model: { pageNumber: 2, pageSize: 100, totalItems: 200, items: [...Array(100).keys()] } satisfies ResultTableModel<number>,
           caption: '101 - 200 of 200 results',
           pagination: true,
         },
@@ -165,10 +163,10 @@ describe('ResultTableComponent', () => {
     it('should display no result state', async () => {
         // arrange
         component.model = {
-            page: 1,
+            pageNumber: 1,
             pageSize: 10,
-            totalResults: 0,
-            results: [],
+            totalItems: 0,
+            items: [],
         };
 
         // act
@@ -186,7 +184,7 @@ describe('ResultTableComponent', () => {
 
     it('should display error state', fakeAsync(() => {
         // arrange
-        component.model = { page: 2, pageSize: 10, totalResults: 35, results: [...Array(10).keys()] };
+        component.model = { pageNumber: 2, pageSize: 10, totalItems: 35, items: [...Array(10).keys()] };
         component.error = new Error();
 
         // act

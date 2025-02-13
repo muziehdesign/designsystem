@@ -14,8 +14,8 @@ export class SvgIconComponent {
   @Input() size: string = 'medium';
   fileUrl: string;
   
-  constructor(@Optional() @Inject(SVG_ICON_DEFAULT_OPTIONS) public config: SvgIconOptions) {
-    this.fileUrl = config?.svgIconDefinitionUrl || './assets/icondefinitions.svg';
+  constructor(@Inject(SVG_ICON_DEFAULT_OPTIONS) public config: SvgIconOptions) {
+    this.fileUrl = config.svgIconDefinitionUrl;
   }
 
   get url(): string {

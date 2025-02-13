@@ -40,7 +40,7 @@ describe('PaginationComponent', () => {
         component = fixture.componentInstance;
         subs = component.changePage.subscribe((event) => {
             // this mimics what then component would eventually do.
-            component.page = event.page;
+            component.page = event.pageNumber;
             component.pageSize = event.pageSize;
             component.ngOnChanges();
         });

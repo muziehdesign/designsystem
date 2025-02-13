@@ -1,5 +1,5 @@
 {
-  "name": "muzieh-design",
+  "name": "@muziedhdesign/styles",
   "version": "18.2.0-next.0",
   "peerDependencies": {
     "@angular/common": "^18.1.1",

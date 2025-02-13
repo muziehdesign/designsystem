@@ -6,9 +6,9 @@ import { Subject } from '../models/subject';
   standalone: true,
 })
 export class SubjectDisplayPipe implements PipeTransform {
-    transform(subject?: Subject): string {
+    transform(subject?: Subject, defaultValue?: string): string | null {
         if (!subject) {
-            return '';
+            return defaultValue || null;
         }
         return subject.givenName && subject.familyName ? `${subject.givenName} ${subject.familyName}` : subject.userPrincipalName;
     }

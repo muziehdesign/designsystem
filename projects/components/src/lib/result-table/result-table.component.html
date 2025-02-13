@@ -3,25 +3,24 @@
         <mz-spinner size="large"></mz-spinner>
     </div>
     <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
-        <caption *ngIf="state === 'succeeded' && model && model.results.length > 0">
-            {{(model.page-1) * model.pageSize + 1}} - {{((model.page-1) * model.pageSize) + model.results.length}} of {{ model.totalResults }} results
+        <caption *ngIf="state === 'succeeded' && model && model.items.length > 0">
+            {{(model.pageNumber-1) * model.pageSize + 1}} - {{(model.pageNumber-1) * model.pageSize + model.items.length}} of {{ model.totalItems }} results
         </caption>
         <thead>
-            <ng-container *ngTemplateOutlet="header"></ng-container>
+            <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
         </thead>
         <tbody>
-            <ng-container *ngIf="state == 'succeeded' && model">
-                <ng-container *ngFor="let result of model.results">
-                    <ng-container *ngTemplateOutlet="body; context: { $implicit: result }"></ng-container>
-                </ng-container>
-            </ng-container>
+            @if(state === 'succeeded' && !isEmpty) {
+                <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+            }
         </tbody>
     </table>
-    <div class="table-pagination" *ngIf="state === 'succeeded' && model && model.results.length > 0 && !options?.hidePagination">
-        <mz-pagination [length]="model.totalResults" [page]="model.page" [pageSize]="model.pageSize"
+    <div class="table-pagination" *ngIf="state === 'succeeded' && !options?.hidePagination && !isEmpty">
+        <mz-pagination [length]="model!.totalItems" [page]="model!.pageNumber" [pageSize]="model!.pageSize"
+            [pageSizeOptions]="pageSizeOptions"
             (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
-    <div class="state-message" *ngIf="state == 'succeeded' && model?.results?.length === 0">
+    <div class="state-message" *ngIf="state == 'succeeded' && isEmpty">
         <div class="title">No results found</div>
     </div>
     <div class="state-message" *ngIf="state == 'failed'">

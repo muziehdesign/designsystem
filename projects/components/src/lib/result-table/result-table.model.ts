@@ -1,7 +1,7 @@
 
-export interface ResultTableModel<T> {
-    totalResults: number;
-    results: T[];
-    page: number;
+export type ResultTableModel<T> = {
+    totalItems: number;
+    items: T[];
+    pageNumber: number;
     pageSize: number;
 }

@@ -69,6 +69,7 @@ export class SortKeyDirective implements OnInit {
 
     private addSortClass() {
         const spanElement = this.renderer.createElement('span');
+        spanElement.classList.add("sort-icon");
         this.renderer.appendChild(this.hostElement.nativeElement, spanElement);
         this.renderer.addClass(this.hostElement.nativeElement, 'sort-trigger');
     }

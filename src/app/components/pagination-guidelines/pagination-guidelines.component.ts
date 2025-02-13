@@ -20,7 +20,7 @@ export class PaginationGuidelinesComponent implements OnInit {
   }
 
   changePage(page: PageEvent, model: PaginationModel) {
-    model.page = page.page;
+    model.page = page.pageNumber;
     model.pageSize = page.pageSize;
   }
 

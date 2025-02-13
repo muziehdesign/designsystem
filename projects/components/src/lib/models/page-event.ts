@@ -1,4 +1,4 @@
-export interface PageEvent {
-  page: number;
+export type PageEvent = {
+  pageNumber: number;
   pageSize: number;
 }

@@ -52,10 +52,10 @@ export class ResultTableInlineEditingComponent {
             delay(1200),
             map((x) => {
                 return <ResultTableModel<OrderDataModel>>{
-                    results: x,
-                    page: 1,
+                    items: x,
+                    pageNumber: 1,
                     pageSize: 10,
-                    totalResults: this.defaultModelTotal,
+                    totalItems: this.defaultModelTotal,
                 };
             })
         );

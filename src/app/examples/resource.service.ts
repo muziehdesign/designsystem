@@ -4,6 +4,7 @@ import { Paged } from './models/paged.model';
 import { ResourceListSearchModel } from './models/resource-list-search.model';
 import { ResourceStatus } from './models/resource-status.enum';
 import { ResourceSummaryModel } from './models/resource-summary.model';
+import { ResultTableModel } from 'muzieh-ngcomponents';
 
 @Injectable({
     providedIn: 'root',
@@ -28,10 +29,10 @@ export class ResourceService {
         const filtered = data.filter((m) => (!model.name || m.name == model.name) && (!model.status || m.status == model.status));
 
         return of({
-            page: page,
+            pageNumber: page,
             pageSize: pageSize,
-            totalResults: filtered.length,
-            results: filtered.slice(page * pageSize, (page + 1) * pageSize),
-        });
+            totalItems: filtered.length,
+            items: filtered.slice(page * pageSize, (page + 1) * pageSize),
+        } satisfies ResultTableModel<ResourceSummaryModel>);
     }
 }
