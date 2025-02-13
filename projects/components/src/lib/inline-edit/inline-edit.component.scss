@@ -1,13 +1,14 @@
 .mz-inline-edit {
     display: flex;
-    gap: 1rem;
 
     &.horizontal {
         flex-direction: row;
+        gap: 1rem;
     }
 
     &.vertical {
         flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
