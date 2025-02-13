@@ -14,7 +14,7 @@ export class InlineEditComponent implements AfterViewInit {
     isEditing = false;
     busy = false;
     @Input() label?: string;
-    @Input() layout: 'form' | 'field' = 'field';
+    @Input() layout: 'horizontal' | 'vertical' = 'horizontal';
     @Output() save = new EventEmitter();
 
     @ContentChild(NgModel) ngModel!: NgModel;
