@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InlineEditComponent } from './inline-edit.component';
+import { MzInlineEditComponent } from './inline-edit.component';
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
@@ -11,7 +11,7 @@ describe('InlineEditComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [InlineEditComponent, TestComponent],
+            imports: [MzInlineEditComponent, TestComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(TestComponent);
@@ -91,7 +91,7 @@ describe('InlineEditComponent', () => {
             <input type="text" [(ngModel)]="model" name="model" />
         </mz-inline-edit>
     `,
-    imports: [InlineEditComponent, FormsModule],
+    imports: [MzInlineEditComponent, FormsModule],
 })
 class TestComponent {
     model = 'my model value';

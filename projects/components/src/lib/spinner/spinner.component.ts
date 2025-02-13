@@ -11,7 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SpinnerComponent  {
 
   @Input() size: 'medium' | 'large' = 'medium';
-  @Input() type: 'primary' | 'secondary' | 'custom' = 'secondary';
+  @Input() type: 'primary' | 'secondary' | 'custom' = 'primary';
   constructor() { }
 
 }

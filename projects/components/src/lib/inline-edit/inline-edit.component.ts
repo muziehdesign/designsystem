@@ -10,7 +10,7 @@ import { ButtonDirective } from '../button.directive';
     templateUrl: './inline-edit.component.html',
     styleUrl: './inline-edit.component.scss',
 })
-export class InlineEditComponent implements AfterViewInit {
+export class MzInlineEditComponent implements AfterViewInit {
     isEditing = false;
     busy = false;
     @Input() label?: string;

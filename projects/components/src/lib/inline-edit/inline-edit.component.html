@@ -1,4 +1,4 @@
-<form class="inline-edit" [ngClass]="{ horizontal: layout === 'horizontal', vertical: layout === 'vertical' }">
+<form class="mz-inline-edit" [ngClass]="{ 'horizontal': layout === 'horizontal', 'vertical': layout === 'vertical' }">
     @if (isEditing || !label) {
     <ng-content></ng-content>
     } @else if (label && !isEditing) {

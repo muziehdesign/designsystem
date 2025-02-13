@@ -15,7 +15,7 @@ export { PhoneNumberPipe } from './lib/phone-number/phone-number.pipe';
 export { DateDisplayPipe } from './lib/date-display/date-display.pipe';
 
 // inline edit
-export { InlineEditComponent } from './lib/inline-edit/inline-edit.component';
+export { MzInlineEditComponent } from './lib/inline-edit/inline-edit.component';
 
 // subject
 export { SubjectDisplayPipe } from './lib/subject-display/subject-display.pipe';

@@ -76,7 +76,7 @@ export const componentRoutes: Routes = [
             {
                 path: 'inline-message',
                 loadComponent: () => import('./inline-message/inline-message/inline-message.component').then((c) => c.InlineMessageComponent),
-            }
+            },
         ],
     },
     {
@@ -126,5 +126,9 @@ export const componentRoutes: Routes = [
     {
         path: 'wizard',
         loadComponent: () => import('./wizard/wizard.component').then((b) => b.WizardComponent),
+    },
+    {
+        path: 'inlineedit',
+        loadComponent: () => import('./inline-edit/inline-edit.component').then((b) => b.InlineEditComponent),
     },
 ];
