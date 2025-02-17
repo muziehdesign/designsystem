@@ -23,7 +23,7 @@ export class ResultTableComponent implements AfterViewInit {
     @ContentChild('headerTemplate') headerTemplate!: TemplateRef<any>;
     @ContentChild('bodyTemplate') bodyTemplate!: TemplateRef<any>;
 
-    @Input() pageSizeOptions?: number[];
+    @Input() pageSizeOptions: number[] = [20, 50, 100];
     @Output() public pageChange = new EventEmitter<PageEvent>();
 
     @Input() public options: ResultTableOptions = { hidePagination: false, skipScrolling: false };
