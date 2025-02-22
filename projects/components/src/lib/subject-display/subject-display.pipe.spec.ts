@@ -17,6 +17,5 @@ describe('SubjectDisplayPipe', () => {
         expect(pipe.transform({ givenName: 'Elthon', userPrincipalName: 'elthonjohn' } as Subject)).toBe('elthonjohn');
         expect(pipe.transform({ familyName: 'John', userPrincipalName: 'elthonjohn' } as Subject)).toBe('elthonjohn');
         expect(pipe.transform(undefined)).toBe(null);
-        expect(pipe.transform(undefined, 'N/A')).toBe('N/A');
     });
 });

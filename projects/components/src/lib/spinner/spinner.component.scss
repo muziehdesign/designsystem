@@ -1,0 +1,23 @@
+.mz-spinner {
+    animation: spin 1s linear infinite;
+    margin: auto;
+
+    &.medium {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    &.large {
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
+/*
+.opacity-25 {
+    opacity: 0.25;
+}
+
+.opacity-75 {
+    opacity: 0.75;
+}*/

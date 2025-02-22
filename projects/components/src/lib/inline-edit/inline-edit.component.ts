@@ -10,11 +10,11 @@ import { ButtonDirective } from '../button.directive';
     templateUrl: './inline-edit.component.html',
     styleUrl: './inline-edit.component.scss',
 })
-export class InlineEditComponent implements AfterViewInit {
+export class MzInlineEditComponent implements AfterViewInit {
     isEditing = false;
     busy = false;
     @Input() label?: string;
-    @Input() layout: 'form' | 'field' = 'field';
+    @Input() layout: 'horizontal' | 'vertical' = 'horizontal';
     @Output() save = new EventEmitter();
 
     @ContentChild(NgModel) ngModel!: NgModel;

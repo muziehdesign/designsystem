@@ -1,0 +1,29 @@
+.mz-inline-edit {
+    display: flex;
+
+    &.horizontal {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    &.vertical {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+.label-button {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.label-button-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
