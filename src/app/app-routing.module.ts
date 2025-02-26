@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StyleGuideComponent } from 'muzieh-design';
 import { componentRoutes } from './components/components-routes';
+import { GuidelinePageComponent } from './layout/guideline-page/guideline-page.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'components/about' },
@@ -17,6 +18,7 @@ const routes: Routes = [
     {
         path: 'foundations',
         loadChildren: () => import('./foundations/foundations-routes').then((x) => x.foundationsRoutes),
+        component: GuidelinePageComponent
     },
     {
         path: 'styleguide',

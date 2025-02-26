@@ -1,4 +1,46 @@
+@import 'tailwindcss/base';
+@import 'design/_base';
+@import 'tailwindcss/components';
+@import 'design/_material';
+@import 'design/_button';
+@import 'design/_breadcrumb';
+@import 'design/_dl';
+@import 'design/_dropdown-menu';
+@import 'design/_form';
+@import 'design/_modal';
+@import 'design/_pagination';
+@import 'design/_table';
+@import 'design/_tabs';
+@import 'design/_progress-bar';
+@import 'design/_alert';
+@import 'design/date-picker';
+@import 'design/wizard';
+@import 'design/_infinite-scroll';
+@import 'design/accordion';
+@import 'tailwindcss/utilities';
+@import 'design/_typography';
 @import 'highlight.js/styles/github.css';
+
+// pages
+@import 'guideline-page';
+
+// icon
+.page > header {
+    @apply py-6;
+}
+
+@layer base {
+    :root {
+        // colors
+        --color-primary: rgb(29, 78, 216);
+        --color-secondary: rgb(55, 65, 81);
+        --color-success: rgb(21, 128, 61);
+        --color-danger: rgb(185, 28, 28);
+        --color-warning: rgb(161, 98, 7);
+
+        --text-block-width: 95ch;
+    }
+}
 
 // site specific
 .example {
