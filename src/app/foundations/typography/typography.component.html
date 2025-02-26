@@ -3,188 +3,188 @@
 </header>
 
 <article>
-    <app-anchor-link anchor="font">
-        <h2>Font</h2>
-    </app-anchor-link>
+    <app-anchor-link anchor="font"><h2>Font</h2></app-anchor-link>
+    <section>
+        <h3>Font Family</h3>
+        <p>Roboto</p>
+    </section>
+
+    <section>
+        <h3>Font formats</h3>
+        <div class="example">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Style</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>em</code></td>
+                        <td><em>Use this to stress emphasis.</em></td>
+                    </tr>
+                    <tr>
+                        <td><code>strong</code></td>
+                        <td><strong>Use this to stress importance.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><code>small</code></td>
+                        <td><small>Use this for secondary supporting text such as help text in form fields.
+                                It should be used sparingly.</small></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Link</a></td>
+                        <td>
+                            <p class="text-block">Use this to take user to another location. Do not use for actions.
+                                Link text should reflect
+                                purpose of link.
+                                Link should default to open within the same tab, but allow user the option of opening
+                                the link in a new tab. Open in a new table when it serves a purpose to keep the original
+                                context.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h3>Font sizes</h3>
+        <p>
+            See complete list on <a href="https://tailwindcss.com/docs/font-size">Tailwindcss</a>.
+        </p>
+        <div class="example">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>text-xs</code></td>
+                        <td><span class="text-xs">text-xs text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>text-sm</code></td>
+                        <td><span class="text-sm">text-sm text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>text-base</code></td>
+                        <td><span class="text-base">text-base text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>text-lg</code></td>
+                        <td><span class="text-lg">text-lg text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>text-xl</code></td>
+                        <td><span class="text-xl">text-xl text</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h3>Font weights</h3>
+        <p>
+            See complete list on <a href="https://tailwindcss.com/docs/font-weight">Tailwindcss</a>.
+        </p>
+        <div class="example">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>font-light</code></td>
+                        <td><span class="font-light">font-light text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>font-normal</code></td>
+                        <td><span class="font-normal">font-normal text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>font-medium</code></td>
+                        <td><span class="font-medium">font-medium text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>font-semibold</code></td>
+                        <td><span class="font-semibold">font-semibold text</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>font-bold</code></td>
+                        <td><span class="font-bold">font-bold text</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article>
+    <h2>Headings</h2>
+    <p class="text-block">Use headings h1 - h6 for titles and subtitles. Each page should have one h1. Heading ranks
+        should
+        not be skipped. All headings should reflect the document or section's content and purpose.</p>
+    <div class="example">
+        <h1>Main page title</h1>
+        <p>Use <code>h1</code> for main title of the page. Each page should have exactly one.</p>
+        <h2>Key functionality headings</h2>
+        <p>Use <code>h2</code> to idenfiy key functionality on a page</p>
+        <h3>Sub-section and field group headings</h3>
+        <p>Use <code>h3</code> if you have multiple logical groupings of content on the page.</p>
+        <h4>H4 headings</h4>
+        <p>Need use case of <code>h4</code></p>
+        <h5>H5 headings</h5>
+        <p>Need use case of <code>h5</code></p>
+        <h6>H6 headings</h6>
+        <p>Need use case of <code>h6</code></p>
+    </div>
+</article>
+<article>
+    <app-anchor-link anchor="lists"><h2>Lists</h2></app-anchor-link>
+    <div class="example">
+        <ul class="list-disc list-inside">
+            <li>This is a <code>ul</code> styled with <code>`list-disc list-inside`</code></li>
+            <li>It should be used for bulleted unordered lists</li>
+        </ul>
+        <ol class="list-decimal list-inside">
+            <li>This is a <code>ol</code> styled with <code>`list-decimal list-inside`</code></li>
+            <li>It should be used when sequence is important for the list items</li>
+        </ol>
+    </div>
+</article>
+<article>
+    <h2>Content</h2>
+    <ul class="list-disc list-inside">
+        <li>
+            <div class="inline-block align-top text-block">Blocks of text shoud be no more than 80 characters. Use
+                <code>text-block</code> to enforce max width. See <a
+                    href="https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html">WCAG 2.1 Understanding
+                    success criterion 1.4.8: Visual Presentation</a> for reasoning.
+            </div>
+        </li>
+        <li>Should default to left justified, since English readers read from left to right</li>
+    </ul>
 </article>
 
-<section>
-    <h3>Font Family</h3>
-    <p>Roboto</p>
-</section>
-
-<section>
-    <h3>Font formats</h3>
-    <div class="example">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Style</th>
-                    <th>Usage</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>em</code></td>
-                    <td><em>Use this to stress emphasis.</em></td>
-                </tr>
-                <tr>
-                    <td><code>strong</code></td>
-                    <td><strong>Use this to stress importance.</strong></td>
-                </tr>
-                <tr>
-                    <td><code>small</code></td>
-                    <td><small>Use this for secondary supporting text such as help text in form fields.
-                            It should be used sparingly.</small></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Link</a></td>
-                    <td>
-                        <p class="text-block">Use this to take user to another location. Do not use for actions.
-                            Link text should reflect
-                            purpose of link.
-                            Link should default to open within the same tab, but allow user the option of opening
-                            the link in a new tab. Open in a new table when it serves a purpose to keep the original
-                            context.</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section>
-    <h3>Font sizes</h3>
-    <p>
-        See complete list on <a href="https://tailwindcss.com/docs/font-size">Tailwindcss</a>.
-    </p>
-    <div class="example">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Class</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>text-xs</code></td>
-                    <td><span class="text-xs">text-xs text</span></td>
-                </tr>
-                <tr>
-                    <td><code>text-sm</code></td>
-                    <td><span class="text-sm">text-sm text</span></td>
-                </tr>
-                <tr>
-                    <td><code>text-base</code></td>
-                    <td><span class="text-base">text-base text</span></td>
-                </tr>
-                <tr>
-                    <td><code>text-lg</code></td>
-                    <td><span class="text-lg">text-lg text</span></td>
-                </tr>
-                <tr>
-                    <td><code>text-xl</code></td>
-                    <td><span class="text-xl">text-xl text</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section>
-    <h3>Font weights</h3>
-    <p>
-        See complete list on <a href="https://tailwindcss.com/docs/font-weight">Tailwindcss</a>.
-    </p>
-    <div class="example">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Class</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>font-light</code></td>
-                    <td><span class="font-light">font-light text</span></td>
-                </tr>
-                <tr>
-                    <td><code>font-normal</code></td>
-                    <td><span class="font-normal">font-normal text</span></td>
-                </tr>
-                <tr>
-                    <td><code>font-medium</code></td>
-                    <td><span class="font-medium">font-medium text</span></td>
-                </tr>
-                <tr>
-                    <td><code>font-semibold</code></td>
-                    <td><span class="font-semibold">font-semibold text</span></td>
-                </tr>
-                <tr>
-                    <td><code>font-bold</code></td>
-                    <td><span class="font-bold">font-bold text</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<h2>Headings</h2>
-<p class="text-block">Use headings h1 - h6 for titles and subtitles. Each page should have one h1. Heading ranks
-    should
-    not be skipped. All headings should reflect the document or section's content and purpose.</p>
-<div class="example">
-    <h1>Main page title</h1>
-    <p>Use <code>h1</code> for main title of the page. Each page should have exactly one.</p>
-    <h2>Key functionality headings</h2>
-    <p>Use <code>h2</code> to idenfiy key functionality on a page</p>
-    <h3>Sub-section and field group headings</h3>
-    <p>Use <code>h3</code> if you have multiple logical groupings of content on the page.</p>
-    <h4>H4 headings</h4>
-    <p>Need use case of <code>h4</code></p>
-    <h5>H5 headings</h5>
-    <p>Need use case of <code>h5</code></p>
-    <h6>H6 headings</h6>
-    <p>Need use case of <code>h6</code></p>
-</div>
-
-<app-anchor-link anchor="lists">
-    <h2>Lists</h2>
-</app-anchor-link>
-<div class="example">
-    <ul class="list-disc list-inside">
-        <li>This is a <code>ul</code> styled with <code>`list-disc list-inside`</code></li>
-        <li>It should be used for bulleted unordered lists</li>
+<article>
+    <h2>TODO</h2>
+    <ul>
+        <li>Notes: Line height (line spacing) to at least 1.5 times the font size;
+            Spacing following paragraphs to at least 2 times the font size;
+            Letter spacing (tracking) to at least 0.12 times the font size;
+            Word spacing to at least 0.16 times the font size.</li>
     </ul>
-    <ol class="list-decimal list-inside">
-        <li>This is a <code>ol</code> styled with <code>`list-decimal list-inside`</code></li>
-        <li>It should be used when sequence is important for the list items</li>
-    </ol>
-</div>
-
-<h2>Content</h2>
-<ul class="list-disc list-inside">
-    <li>
-        <div class="inline-block align-top text-block">Blocks of text shoud be no more than 80 characters. Use
-            <code>text-block</code> to enforce max width. See <a
-                href="https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html">WCAG 2.1 Understanding
-                success criterion 1.4.8: Visual Presentation</a> for reasoning.
-        </div>
-    </li>
-    <li>Should default to left justified, since English readers read from left to right</li>
-</ul>
-
-<h2>TODO</h2>
-<ul>
-    <li>Notes: Line height (line spacing) to at least 1.5 times the font size;
-        Spacing following paragraphs to at least 2 times the font size;
-        Letter spacing (tracking) to at least 0.12 times the font size;
-        Word spacing to at least 0.16 times the font size.</li>
-</ul>
-<h2>References</h2>
-<ul class="list-inside list-disc">
-    <li><a href="https://www.nngroup.com/articles/new-browser-windows-and-tabs/">Opening Links in New Browser
-            Windows and Tabs</a></li>
-</ul>
+    <h2>References</h2>
+    <ul class="list-inside list-disc">
+        <li><a href="https://www.nngroup.com/articles/new-browser-windows-and-tabs/">Opening Links in New Browser
+                Windows and Tabs</a></li>
+    </ul>
+</article>
