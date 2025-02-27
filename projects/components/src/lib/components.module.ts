@@ -18,8 +18,6 @@ import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
 import { ButtonDirective } from './button.directive';
 import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard-progress-tracker.component';
 import { DateTimeComponent } from './date-time/date-time.component';
-import { InlineMessageComponent } from './inline-message/inline-message.component';
-import { InlineMessageDialogComponent } from './inline-message/inline-message-dialog/inline-message-dialog.component';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 
@@ -45,8 +43,6 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     SortDirective,
     SubjectDisplayPipe,
     DateTimeComponent,
-    InlineMessageComponent,
-    InlineMessageDialogComponent,
     TimeValueValidatorDirective,
   ],
   exports: [
@@ -68,8 +64,6 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     ButtonDirective,
     WizardProgressTrackerComponent,
     DateTimeComponent,
-    InlineMessageComponent,
-    InlineMessageDialogComponent,
     TimeValueValidatorDirective,
   ],
   providers: [

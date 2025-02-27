@@ -12,15 +12,9 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   styleUrl: './drawer-container.component.scss'
 })
 export class DrawerContainerComponent extends CdkDialogContainer{
-
-  /**
-   *    this.dialog.open(ComponentHere, {
-          data: {
-            model: this.model()!.items[0]
-          },
-          container: DrawerContainerComponent,
-          panelClass: 'drawer-panel',
-          positionStrategy: this.overlay.position().global().right('0px').top('0px')
-        });
-   */
+  open = false;
+  protected override _contentAttached(): void {
+    super._contentAttached();
+    this.open = true;
+  }
 }

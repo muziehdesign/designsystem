@@ -73,15 +73,9 @@
 .cdk-global-scrollblock {
     position: fixed;
     width: 100%;
-    /*overflow-y: scroll;*/
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
-.drawer-panel {
-    height: 100%;
-}
-
-.drawer-panel .cdk-dialog-container {
-    height: 100%;
-    display: flex;
+.cdk-dialog-container {
+    background-color: white;
 }

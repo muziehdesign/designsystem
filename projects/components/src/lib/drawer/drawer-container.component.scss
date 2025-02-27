@@ -1,0 +1,17 @@
+.drawer-container {
+    background-color: white;
+    min-width: 300px;
+    max-width: 90%;
+    padding: 0.5rem 1rem;
+    overflow: auto;
+    height:100vh;
+    position:absolute;
+    right: 0;
+    top:0;
+    transition: translate 0.3s ease-out;
+    translate: 100%;
+}
+
+.drawer-container.open {
+    translate: 0%;
+}

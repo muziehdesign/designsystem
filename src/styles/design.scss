@@ -1,7 +1,7 @@
+@use 'theme';
 @import 'tailwindcss/base';
 @import 'design/_base';
 @import 'tailwindcss/components';
-@import 'design/_material';
 @import 'design/_button';
 @import 'design/_breadcrumb';
 @import 'design/_dl';
@@ -18,19 +18,9 @@
 @import 'design/_infinite-scroll';
 @import 'design/accordion';
 @import 'tailwindcss/utilities';
+@import 'design/_cdk-overlay.css';
 
 // icon
 .page > header {
     @apply py-6;
-}
-
-@layer base {
-    :root {
-        // colors
-        --color-primary: rgb(29, 78, 216);
-        --color-secondary: rgb(55, 65, 81);
-        --color-success: rgb(21, 128, 61);
-        --color-danger: rgb(185, 28, 28);
-        --color-warning: rgb(161, 98, 7);
-    }
 }

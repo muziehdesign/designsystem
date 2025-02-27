@@ -1,37 +1,28 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnDestroy } from '@angular/core';
 import { ModalAddOrderComponent } from '../modal-add-order/modal-add-order.component';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { Dialog } from '@angular/cdk/dialog';
+import { Overlay, ScrollStrategyOptions } from '@angular/cdk/overlay';
 
 @Component({
     selector: 'app-modal-guidelines',
     templateUrl: './modal-guidelines.component.html',
     styleUrls: ['./modal-guidelines.component.scss'],
     standalone: true,
-    imports: [MatDialogModule],
+    imports: [],
 })
-export class ModalGuidelinesComponent implements OnInit, OnDestroy {
-    modal?: NgbModalRef;
-    constructor(private modalService: NgbModal, private dialog: MatDialog) {}
+export class ModalGuidelinesComponent implements OnDestroy {
 
-    ngOnInit(): void {}
+    constructor(private dialog: Dialog, private overlay: Overlay) {}
 
     open(): void {
-        /*this.modal = this.modalService.open(ModalAddOrderComponent, {backdrop: 'static'});
-        this.modal.result.then(
-            (result) => {
-                console.log(result);
-            },
-            (reason) => {
-                console.log(reason);
-            }
-        );*/
-        this.dialog.open(ModalAddOrderComponent).afterClosed().subscribe(x=>{
+        const ref = this.dialog.open(ModalAddOrderComponent, {
+            scrollStrategy: this.overlay.scrollStrategies.block()
+        });
+        ref.closed.subscribe(x=>{
             console.log('result: ', x);
         });
     }
 
     ngOnDestroy(): void {
-        this.modal?.dismiss();
     }
 }

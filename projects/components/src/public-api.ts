@@ -52,5 +52,6 @@ export { SortEvent } from './lib/models/sort-event';
 
 export { WizardStepLink } from './lib/models/wizard-step-link';
 export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
-export { InlineMessageComponent } from './lib/inline-message/inline-message.component';
-export { InlineMessageDialogComponent } from './lib/inline-message/inline-message-dialog/inline-message-dialog.component';
+
+// drawer
+export { DrawerContainerComponent } from './lib/drawer/drawer-container.component';
