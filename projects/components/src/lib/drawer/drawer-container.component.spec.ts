@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DrawerContainerComponent } from './drawer-container.component';
+import { DialogModule } from '@angular/cdk/dialog';
 
 describe('DrawerContainerComponent', () => {
   let component: DrawerContainerComponent;
@@ -8,7 +9,7 @@ describe('DrawerContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DrawerContainerComponent]
+      imports: [DrawerContainerComponent, DialogModule],
     })
     .compileComponents();
 

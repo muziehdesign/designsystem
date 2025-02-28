@@ -1,4 +1,4 @@
-import { CdkDialogContainer } from '@angular/cdk/dialog';
+import { CdkDialogContainer, DialogConfig } from '@angular/cdk/dialog';
 import { CdkPortalOutlet } from '@angular/cdk/portal';
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 
@@ -11,8 +11,9 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   templateUrl: './drawer-container.component.html',
   styleUrl: './drawer-container.component.scss'
 })
-export class DrawerContainerComponent extends CdkDialogContainer{
+export class DrawerContainerComponent extends CdkDialogContainer<DialogConfig>{
   open = false;
+
   protected override _contentAttached(): void {
     super._contentAttached();
     this.open = true;
