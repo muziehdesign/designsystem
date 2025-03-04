@@ -1,3 +1,5 @@
+@use 'theme';
+@forward 'design/_mixins';
 @import 'tailwindcss/base';
 @import 'design/_base';
 @import 'tailwindcss/components';
@@ -18,11 +20,13 @@
 @import 'design/_infinite-scroll';
 @import 'design/accordion';
 @import 'tailwindcss/utilities';
-@import 'design/_typography';
+@import 'design/_utilities';
 @import 'highlight.js/styles/github.css';
+@import 'theme';
 
 // pages
 @import 'guideline-page';
+
 
 // icon
 .page > header {

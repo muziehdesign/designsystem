@@ -1,0 +1,13 @@
+@layer utilities {
+    .text-block {
+        max-width: var(--text-block-width, 90ch);
+    }
+
+    .text-subtle {
+        @apply text-gray-700;
+    }
+
+    .text-subtler {
+        @apply text-gray-600;
+    }
+}

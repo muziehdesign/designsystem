@@ -1,3 +1,45 @@
+@use "mixins" as *;
+
+.form-input {
+    border-color: var(--input-border-color, --color-neutral-500);
+
+    &:focus {
+        --tw-ring-color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+}
+
+.input-group {
+    @apply flex gap-2 items-center;
+    @include field-control();
+
+    &:focus-within {
+        @include field-control-focused();
+    }
+
+    .form-input {
+        @apply grow;
+    }
+
+    .form-input, .form-input:focus, .form-select, .form-select:focus, .button, .button:focus {
+        border-color: transparent;
+        --tw-ring-color: transparent;
+        --tw-ring-offset-width: 0px;
+    }
+
+    & > *:first-child {
+        @apply pl-3;
+    }
+
+    & > *:last-child {
+        @apply pr-3;
+    }
+}
+
+.checkbox-label {
+    @apply ml-2 text-base;
+}
+
 .form {
     @apply max-w-md;
 
@@ -16,7 +58,7 @@
     }
 
     .description {
-        @apply text-gray-600 text-sm;
+        @apply text-subtler text-sm;
     }
 
     .footer {
@@ -25,45 +67,36 @@
 }
 
 .field {
-    @apply block py-1 text-sm;
+    @apply block py-3 text-sm;
 
     .help-text {
-        @apply text-gray-500 block mt-1;
+        @apply text-subtler block mt-1;
     }
+}
+
+.option-list .field {
+    @apply py-1;
 }
 
 .field-label {
-    @apply text-gray-600 font-medium;
+    @apply text-subtle font-medium block mb-1;
 }
 
-.field-checkbox {
-    @apply flex items-center;
-
-    .field-label {
-        @apply text-current font-normal pl-2 text-base;
-    }
-}
-
-.field-control:not([type='checkbox']) {
-    @apply mt-1 block w-full;
+.form-input,
+.form-select,
+.form-textarea {
+    @apply w-full;
 }
 
 .fieldset {
     @apply mt-6;
 
     legend {
-        @apply text-gray-700 tracking-wide uppercase font-medium text-sm;
+        @apply text-subtle tracking-wide uppercase font-medium text-sm;
     }
 }
 
-.option-list {
-    @apply block py-1;
-
-    legend {
-        @apply text-gray-600 text-sm font-medium;
-    }
-}
-
+// code below needs to be validated again
 .form-message {
     @apply p-1 block;
 
@@ -87,93 +120,5 @@
     .ng-submitted .ng-invalid:not(:focus),
     .ng-touched.ng-invalid:not(:focus) {
         @apply border-danger;
-    }
-}
-
-/*
-.field-control-addon {
-    @apply px-3 inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary;
-
-    &.field-control {
-        @apply w-full;
-    }
-
-    .button {
-        @apply py-1 h-full -ml-2.5 -mr-3;
-    }
-}
-
-.field-control-group {
-    @apply flex items-stretch h-full border border-gray-500 shadow;
-
-    .field-control {
-        @apply grow m-0 border-transparent outline-0;
-    }
-
-    /*
-    .field-control:focus {
-        @apply border border-primary;
-    }
-
-    &:focus-within {
-        @apply border-primary outline-2 outline outline-offset-2;
-    }
-
-    &.invalid {
-        @apply border-danger;
-    }
-
-    .ng-submitted .field-control.ng-invalid, .field-control.ng-touched.ng-invalid {
-        @apply border-0;
-    }
-}*/
-
-
-.field-control-addon {
-    @apply inline-flex flex-col flex-shrink-0 items-center justify-center text-secondary px-3;
-
-    &.field-control {
-        @apply w-full;
-    }
-
-    .button {
-        @apply py-1 h-full -mr-3;
-    }
-}
-
-.field-control-group {
-    @apply flex items-stretch h-full border border-gray-500 shadow;
-
-    .field-control {
-        box-shadow: none;
-        @apply grow m-0 border-0 outline-0;
-    }
-
-    &:focus-within {
-        @apply outline outline-1 outline-primary;
-    }
-
-    &.invalid:not(:focus-within) {
-        @apply border-danger;
-    }
-
-    > *:not(:first-child).field-control-addon {
-        @apply pl-0;
-    }
-
-    > *:not(:last-child).field-control-addon {
-        @apply pr-0;
-    }
-}
-
-.field-control-combo {
-    @apply flex items-stretch;
-
-    .field-control {
-        @apply grow border;
-    }
-
-    .button {
-        @apply -mx-2 mt-1;
     }
 }
