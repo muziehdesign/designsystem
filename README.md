@@ -22,6 +22,8 @@ Muzieh Design System is an evolving framework crafted to streamline the creation
 1. Moved svg icon config `svgIconDefinitionUrl` from `ComponentConfig` to `SvgIconOptions`
 1. ResultTableModel changed to match interfaces of backend
 1. Spinner `type` now supports primary, secondary, or custom
+1. Form controls use different css classes
+1. Input groups now have different css classes and structure
 
 ### New additions
 1. mz-inline-edit

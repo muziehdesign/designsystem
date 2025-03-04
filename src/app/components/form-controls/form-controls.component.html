@@ -1,11 +1,83 @@
 <header>
     <h1>Form controls</h1>
-    <p class="prose">
-        Use form controls in a form to collect user inputs. Different types of form controls are for different types of user inputs.
-    </p>
+    <p class="prose">Use form controls in a form to collect user inputs. Different types of form controls are for different types of user inputs.</p>
 </header>
 
+<article>
+    <h2>Overview</h2>
 
+    <form class="form">
+        <header>
+            <h3>Form header</h3>
+            <div class="description">This is the form description.</div>
+        </header>
+
+        <label class="field">
+            <span class="field-label">Full name <span class="text-red-500">*</span></span>
+            <input type="text" class="form-input" />
+            <div class="help-text">
+                This is instruction text for the field.
+            </div>
+        </label>
+
+        <label class="field">
+            <span class="field-label">Email address <span class="text-red-500">*</span></span>
+            <input type="email" class="form-input" />
+        </label>
+
+        <label class="field">
+            <span class="field-label">Ship date <span class="text-red-500">*</span></span>
+            <input type="date" class="form-input" />
+        </label>
+
+        <label class="field">
+            <span class="field-label">Shipment method <span class="text-red-500">*</span></span>
+            <select class="form-select">
+                <option>Free shipping</option>
+                <option>1-2 weeks</option>
+                <option>3-5 days</option>
+            </select>
+        </label>
+
+        <label class="field">
+            <span class="field-label">Additional details</span>
+            <textarea rows="3" class="form-textarea"></textarea>
+        </label>
+        
+        <label class="field">
+            <input type="checkbox" class="form-checkbox">
+            <span class="checkbox-label">Notify me once it's shipped</span>
+        </label>
+
+        <fieldset class="fieldset">
+            <legend>Payment method</legend>
+            <label class="field">
+                <span class="field-label">Card number <span class="text-red-500">*</span></span>
+                <input type="text" class="form-input" />
+                <div class="help-text">
+                    Debit cards are not accepted.
+                </div>
+            </label>
+        </fieldset>
+
+        <fieldset class="fieldset option-list">
+            <legend>Send me promotions</legend>
+            <label class="field">
+                <input type="checkbox" class="form-checkbox">
+                <span class="checkbox-label">Weekly promotions</span>
+            </label>
+            <label class="field">
+                <input type="checkbox" class="form-checkbox">
+                <span class="checkbox-label">Special deals</span>
+            </label>
+            <label class="field">
+                <input type="checkbox" class="form-checkbox">
+                <span class="checkbox-label">Monthly savings</span>
+            </label>
+        </fieldset>
+
+    </form>
+</article>
 
 <article>
     <h2>When to use what selection control</h2>
