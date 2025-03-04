@@ -1,5 +1,6 @@
 @mixin field-control() {
     border-color: var(--input-border-color, --color-neutral-500);
+    border-radius: var(--input-border-radius, 0px);
     @apply border;
 }
 

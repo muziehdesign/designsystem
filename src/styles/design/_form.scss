@@ -1,11 +1,11 @@
 @use "mixins" as *;
 
+
 .form-input {
-    border-color: var(--input-border-color, --color-neutral-500);
+    @include field-control();
 
     &:focus {
-        --tw-ring-color: var(--color-primary);
-        border-color: var(--color-primary);
+        @include field-control-focused();
     }
 }
 
