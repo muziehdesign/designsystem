@@ -1,7 +1,7 @@
 @use "mixins" as *;
 
 
-.form-input {
+.form-input, .form-textarea, .form-select {
     @include field-control();
 
     &:focus {
