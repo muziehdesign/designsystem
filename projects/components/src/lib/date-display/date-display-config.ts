@@ -8,7 +8,7 @@ export const DATE_PIPE_CONFIG_OPTIONS = Object.freeze({
         ['shortDate', 'MM/dd/yyyy'],
         ['mediumDate', 'MMM d y']
     ]),
-    dateFormat: 'short'
+    dateFormat: 'MM/dd/yyyy hh:mm a'
 } satisfies MzDatePipeConfig);
 
 export interface MzDatePipeConfig extends DatePipeConfig {

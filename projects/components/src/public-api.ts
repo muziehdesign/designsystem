@@ -14,6 +14,7 @@ export { PageHeaderComponent } from './lib/page-header/page-header.component';
 export { PhoneNumberPipe } from './lib/phone-number/phone-number.pipe';
 export { DateDisplayPipe } from './lib/date-display/date-display.pipe';
 export { MzDatePipe } from './lib/date-display/date.pipe';
+export { MzDatePipeConfig, MZ_DATE_PIPE_DEFAULT_OPTIONS } from './lib/date-display/date-display-config';
 
 // inline edit
 export { MzInlineEditComponent } from './lib/inline-edit/inline-edit.component';
