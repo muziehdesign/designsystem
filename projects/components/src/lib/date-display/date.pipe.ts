@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Inject, LOCALE_ID, Pipe } from '@angular/core';
+import { Inject, LOCALE_ID, Optional, Pipe } from '@angular/core';
 import { DATE_PIPE_CONFIG_OPTIONS, MZ_DATE_PIPE_DEFAULT_OPTIONS, MzDatePipeConfig } from './date-display-config';
 
 @Pipe({
@@ -8,7 +8,7 @@ import { DATE_PIPE_CONFIG_OPTIONS, MZ_DATE_PIPE_DEFAULT_OPTIONS, MzDatePipeConfi
 })
 export class MzDatePipe extends DatePipe {
     private options: MzDatePipeConfig;
-    constructor(@Inject(LOCALE_ID) locale: string, @Inject(MZ_DATE_PIPE_DEFAULT_OPTIONS) defaultMzOptions?: (MzDatePipeConfig | null) | undefined) {
+    constructor(@Inject(LOCALE_ID) locale: string, @Optional() @Inject(MZ_DATE_PIPE_DEFAULT_OPTIONS) defaultMzOptions?: (MzDatePipeConfig | null) | undefined) {
         const o = defaultMzOptions || DATE_PIPE_CONFIG_OPTIONS;
         super(locale, null, o);
         this.options = o;
