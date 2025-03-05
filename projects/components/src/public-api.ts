@@ -13,6 +13,7 @@ export { PageLoadingIndicatorComponent } from './lib/page-loading-indicator/page
 export { PageHeaderComponent } from './lib/page-header/page-header.component';
 export { PhoneNumberPipe } from './lib/phone-number/phone-number.pipe';
 export { DateDisplayPipe } from './lib/date-display/date-display.pipe';
+export { MzDatePipe } from './lib/date-display/date.pipe';
 
 // inline edit
 export { MzInlineEditComponent } from './lib/inline-edit/inline-edit.component';
