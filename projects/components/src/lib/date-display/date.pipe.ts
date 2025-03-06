@@ -8,7 +8,7 @@ import { DATE_PIPE_CONFIG_OPTIONS, MZ_DATE_PIPE_DEFAULT_OPTIONS, MzDatePipeConfi
 })
 export class MzDatePipe extends DatePipe {
     private options: MzDatePipeConfig;
-    constructor(@Inject(LOCALE_ID) locale: string, @Optional() @Inject(MZ_DATE_PIPE_DEFAULT_OPTIONS) defaultMzOptions?: (MzDatePipeConfig | null) | undefined) {
+    constructor(@Inject(LOCALE_ID) locale: string, @Optional() @Inject(MZ_DATE_PIPE_DEFAULT_OPTIONS) defaultMzOptions?: MzDatePipeConfig | null) {
         const o = defaultMzOptions || DATE_PIPE_CONFIG_OPTIONS;
         super(locale, null, o);
         this.options = o;
