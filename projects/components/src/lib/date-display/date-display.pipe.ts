@@ -1,6 +1,9 @@
 import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 
+/**
+ * @deprecated use mzDate instead
+ */
 @Pipe({
     name: 'mzDateDisplay',
     standalone: true,
@@ -8,7 +11,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DateDisplayPipe implements PipeTransform {
     constructor(private datePipe: DatePipe) {}
 
-    transform(value: Date | string, format: string): string | null {
+    transform(value: Date | string, format?: string): string | null {
         let redefinedDate;
         if (format === 'concise') {
             redefinedDate = this.datePipe.transform(value, 'MM/dd/yyyy');
