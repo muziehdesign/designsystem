@@ -40,16 +40,16 @@ export const componentRoutes: Routes = [
                 loadComponent: () => import('./description-list/description-list.component').then((b) => b.DescriptionListComponent),
             },
             {
+                path: 'drawer',
+                loadComponent: () => import('./drawer/drawer.component').then((b) => b.DrawerComponent),
+            },
+            {
                 path: 'emptystate',
                 loadComponent: () => import('./empty-state/empty-state.component').then((b) => b.EmptyStateComponent),
             },
             {
                 path: 'layout',
                 loadComponent: () => import('./layout/layout.component').then((b) => b.LayoutComponent),
-            },
-            {
-                path: 'inline-message',
-                loadComponent: () => import('./inline-message/inline-message/inline-message.component').then((b) => b.InlineMessageComponent),
             },
             {
                 path: 'formcontrols',
@@ -77,10 +77,6 @@ export const componentRoutes: Routes = [
                     {
                         path: 'checkbox',
                         loadComponent: () => import('./form-controls/checkbox/checkbox.component').then((c) => c.CheckboxComponent),
-                    },
-                    {
-                        path: 'inline-message',
-                        loadComponent: () => import('./inline-message/inline-message/inline-message.component').then((c) => c.InlineMessageComponent),
                     },
                 ],
             },

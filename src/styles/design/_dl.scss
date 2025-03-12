@@ -1,4 +1,12 @@
 @layer components {
+    .dl-item {
+        @apply flex;
+    }
+
+    .dl-horizontal dt {
+        @apply flex-shrink-0;
+    }
+
     .dl-horizontal dt,
     .dl-horizontal dd {
         @apply inline-block p-3;
