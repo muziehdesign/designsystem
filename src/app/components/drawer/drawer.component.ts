@@ -19,8 +19,6 @@ export class DrawerComponent  implements OnInit {
   openDrawer(): void {
     this.dialog.open(DrawerContentComponent, {
       container: DrawerContainerComponent,
-      panelClass: 'drawer-panel',
-      positionStrategy: this.overlay.position().global().right('0px').top('0px')
     });
   }
 }
