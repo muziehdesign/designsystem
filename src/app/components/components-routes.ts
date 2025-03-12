@@ -35,6 +35,10 @@ export const componentRoutes: Routes = [
         loadComponent: () => import('./description-list/description-list.component').then((b) => b.DescriptionListComponent),
     },
     {
+        path: 'drawer',
+        loadComponent: () => import('./drawer/drawer.component').then((b) => b.DrawerComponent),
+    },
+    {
         path: 'emptystate',
         loadComponent: () => import('./empty-state/empty-state.component').then((b) => b.EmptyStateComponent),
     },
