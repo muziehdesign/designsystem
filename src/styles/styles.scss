@@ -3,12 +3,10 @@
 @import 'tailwindcss/base';
 @import 'design/_base';
 @import 'tailwindcss/components';
-@import 'design/_material';
 @import 'design/_button';
 @import 'design/_breadcrumb';
 @import 'design/_dl';
 @import 'design/_dropdown-menu';
-@import 'design/_form';
 @import 'design/_modal';
 @import 'design/_pagination';
 @import 'design/_table';
@@ -21,8 +19,10 @@
 @import 'design/accordion';
 @import 'tailwindcss/utilities';
 @import 'design/_utilities';
+@import 'design/_form';
+@import 'design/_cdk-overlay.css';
+
 @import 'highlight.js/styles/github.css';
-@import 'theme';
 
 // pages
 @import 'guideline-page';

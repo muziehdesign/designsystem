@@ -3,7 +3,7 @@
   "version": "18.2.0-next.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng build design && ng build components && ng serve --port 8200",
+    "start": "ng build design && ng build components && ng serve --port 8200 --open",
     "build": "ng build design && ng build components && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test components --watch",
