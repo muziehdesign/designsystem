@@ -6,7 +6,6 @@
 @import 'design/_breadcrumb';
 @import 'design/_dl';
 @import 'design/_dropdown-menu';
-@import 'design/_form';
 @import 'design/_modal';
 @import 'design/_pagination';
 @import 'design/_table';
@@ -18,9 +17,24 @@
 @import 'design/_infinite-scroll';
 @import 'design/accordion';
 @import 'tailwindcss/utilities';
+@import 'design/_typography';
+@import 'design/_form';
 @import 'design/_cdk-overlay.css';
 
 // icon
 .page > header {
     @apply py-6;
+}
+
+@layer base {
+    :root {
+        // colors
+        --color-primary: rgb(29, 78, 216);
+        --color-secondary: rgb(55, 65, 81);
+        --color-success: rgb(21, 128, 61);
+        --color-danger: rgb(185, 28, 28);
+        --color-warning: rgb(161, 98, 7);
+
+        --text-block-width: 95ch;
+    }
 }
