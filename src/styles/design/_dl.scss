@@ -13,7 +13,7 @@
     }
 
     .dl-horizontal dt {
-        @apply w-48 align-top font-medium;
+        @apply w-48 self-start font-medium;
     }
 
     .dl-horizontal .dl-item:nth-child(odd) {
