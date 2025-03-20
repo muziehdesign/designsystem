@@ -37,7 +37,7 @@
 }
 
 .checkbox-label {
-    @apply ml-2 text-base;
+    @apply ml-2;
 }
 
 .form {
@@ -67,11 +67,11 @@
 }
 
 .field {
-    @apply block py-3 text-sm;
+    @apply block py-3;
+}
 
-    .help-text {
-        @apply text-subtler block mt-1;
-    }
+.field-helper {
+    @apply text-subtler block mt-1 text-sm;
 }
 
 .option-list .field {
@@ -79,7 +79,7 @@
 }
 
 .field-label {
-    @apply text-subtle font-medium block mb-1;
+    @apply text-sm text-subtle font-medium block mb-1;
 }
 
 .form-input,
