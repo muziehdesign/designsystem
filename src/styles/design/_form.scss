@@ -58,7 +58,7 @@
     }
 
     .description {
-        @apply text-subtler text-sm;
+        @apply text-subtle text-sm;
     }
 
     .footer {
@@ -70,7 +70,11 @@
     @apply block py-3;
 }
 
-.field-helper {
+.field-option {
+    @apply block py-0.5;
+}
+
+.field-instructions {
     @apply text-subtler block mt-1 text-sm;
 }
 
