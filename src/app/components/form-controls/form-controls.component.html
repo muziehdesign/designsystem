@@ -15,9 +15,7 @@
         <label class="field">
             <span class="field-label">Full name <span class="text-red-500">*</span></span>
             <input type="text" class="form-input" />
-            <div class="help-text">
-                This is instruction text for the field.
-            </div>
+            <div class="field-instructions">This is instruction text for the field.</div>
         </label>
 
         <label class="field">
@@ -43,9 +41,27 @@
             <span class="field-label">Additional details</span>
             <textarea rows="3" class="form-textarea"></textarea>
         </label>
-        
+
+        <div class="field">
+            <div class="field-label">Checkbox list</div>
+            <label class="field-option">
+                <input class="form-checkbox" type="checkbox" />
+                <span class="checkbox-label">Option 1</span>
+            </label>
+
+            <label class="field-option">
+                <input class="form-checkbox" type="checkbox" />
+                <span class="checkbox-label">Option 2</span>
+            </label>
+
+            <label class="field-option">
+                <input class="form-checkbox" type="checkbox" />
+                <span class="checkbox-label">Option 3</span>
+            </label>
+        </div>
+
         <label class="field">
-            <input type="checkbox" class="form-checkbox">
+            <input type="checkbox" class="form-checkbox" />
             <span class="checkbox-label">Notify me once it's shipped</span>
         </label>
 
@@ -54,28 +70,30 @@
             <label class="field">
                 <span class="field-label">Card number <span class="text-red-500">*</span></span>
                 <input type="text" class="form-input" />
-                <div class="help-text">
-                    Debit cards are not accepted.
-                </div>
+                <div class="field-instructions">Debit cards are not accepted.</div>
             </label>
         </fieldset>
 
         <fieldset class="fieldset option-list">
             <legend>Send me promotions</legend>
-            <label class="field">
-                <input type="checkbox" class="form-checkbox">
-                <span class="checkbox-label">Weekly promotions</span>
-            </label>
-            <label class="field">
-                <input type="checkbox" class="form-checkbox">
-                <span class="checkbox-label">Special deals</span>
-            </label>
-            <label class="field">
-                <input type="checkbox" class="form-checkbox">
-                <span class="checkbox-label">Monthly savings</span>
-            </label>
-        </fieldset>
 
+            <div class="field">
+                <label class="field-option">
+                    <input class="form-checkbox" type="checkbox" />
+                    <span class="checkbox-label">Weekly promotions</span>
+                </label>
+    
+                <label class="field-option">
+                    <input class="form-checkbox" type="checkbox" />
+                    <span class="checkbox-label">Special deals</span>
+                </label>
+    
+                <label class="field-option">
+                    <input class="form-checkbox" type="checkbox" />
+                    <span class="checkbox-label">Monthly savings</span>
+                </label>
+            </div>
+        </fieldset>
     </form>
 </article>
 
