@@ -15,12 +15,12 @@ jobs:
       - run: npm run ng -- build components
       - run: npm run build -- --base-href "https://muziehdesign.github.io/designsystem/"
       - run: cp LICENSE ./dist/kitchensink-ui
-      - run: cp ./dist/kitchensink-ui/index.html ./dist/kitchensink-ui/404.html
+      - run: cp ./dist/kitchensink-ui/browser/index.html ./dist/kitchensink-ui/browser/404.html
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
           BRANCH: gh-pages
-          FOLDER: ./dist/kitchensink-ui
+          FOLDER: ./dist/kitchensink-ui/browser
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           
