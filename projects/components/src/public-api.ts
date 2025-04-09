@@ -57,3 +57,7 @@ export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wi
 
 // drawer
 export { DrawerContainerComponent } from './lib/drawer/drawer-container.component';
+
+// filter
+export { FilterComponent } from './lib/filter/filter.component';
+export { FilterOptionModel } from './lib/filter/filter-option.model';

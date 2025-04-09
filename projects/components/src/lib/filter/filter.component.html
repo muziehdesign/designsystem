@@ -1,0 +1,8 @@
+<div class="filter-component-wrapper">
+    <div cdkOverlayOrigin #trigger>
+      <ng-container *ngTemplateOutlet="filterButtonTemplate"></ng-container>
+    </div>
+    <ng-container *ngTemplateOutlet="filterDropdownTemplate; context: { trigger: trigger }"></ng-container>
+  </div>
+
+  
