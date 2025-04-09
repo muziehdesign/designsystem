@@ -1,4 +1,4 @@
-name: publish-github-pages
+name: publish-legacy-github-pages
 on:
   workflow_dispatch
 
