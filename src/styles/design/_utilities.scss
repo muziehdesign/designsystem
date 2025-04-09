@@ -1,7 +1,8 @@
 @layer utilities {
     .text-block {
         max-width: var(--text-block-width, 90ch);
-        word-break: break-all;
+        text-wrap: wrap;
+        overflow-wrap: break-word;
     }
 
     .text-subtle {
