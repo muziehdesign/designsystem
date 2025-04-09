@@ -14,7 +14,7 @@ jobs:
       - run: npm run ng -- build design
       - run: npm run ng -- build components
       - run: npm run build -- --base-href "https://muziehdesign.github.io/designsystem/"
-      - run: cp LICENSE ./dist/kitchensink-ui
+      - run: cp LICENSE ./dist/kitchensink-ui/browser
       - run: cp ./dist/kitchensink-ui/browser/index.html ./dist/kitchensink-ui/browser/404.html
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
