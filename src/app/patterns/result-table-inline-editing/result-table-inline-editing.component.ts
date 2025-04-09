@@ -1,10 +1,11 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component, Injector, Signal, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LoadingState, MuziehComponentsModule, ResultTableComponent, ResultTableModel, SortDirective } from 'muzieh-ngcomponents';
 import { Observable, delay, map, of, tap } from 'rxjs';
 import { NumberType, required, maxLength, StringType, DateType, NgFormModelState, NgFormModelStateFactory } from '@muziehdesign/forms';
 import { FormsModule as MuziehFormsModule } from '@muziehdesign/forms';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'app-result-table-inline-editing',
@@ -16,22 +17,22 @@ import { FormsModule as MuziehFormsModule } from '@muziehdesign/forms';
 export class ResultTableInlineEditingComponent {
     @ViewChild('editForm') editForm!: NgForm;
     defaultModelTotal: number = 10;
-    defaultModel$: Observable<ResultTableModel<OrderDataModel>>;
+    defaultModel: Signal<ResultTableModel<OrderDataModel> | undefined>;
     model: OrderDataModel;
     modelState!: NgFormModelState<OrderDataModel>;
     defaultLoadingState = { loading: false } as LoadingState;
     editingRow: number | null = null;
     busy = false;
 
-    constructor(private modelStateFactory: NgFormModelStateFactory) {
+    constructor(private modelStateFactory: NgFormModelStateFactory, private injector: Injector) {
         this.model = new OrderDataModel();
 
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel().pipe(
+        this.defaultModel = toSignal(this.getPagedModel().pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
-        );
+        ));
     }
 
     getPagedModel(): Observable<ResultTableModel<OrderDataModel>> {
@@ -51,12 +52,12 @@ export class ResultTableInlineEditingComponent {
         return of(orders).pipe(
             delay(1200),
             map((x) => {
-                return <ResultTableModel<OrderDataModel>>{
+                return {
                     items: x,
                     pageNumber: 1,
                     pageSize: 10,
                     totalItems: this.defaultModelTotal,
-                };
+                } satisfies ResultTableModel<OrderDataModel>
             })
         );
     }
@@ -75,11 +76,11 @@ export class ResultTableInlineEditingComponent {
 
         // call to api / fetch data
         this.defaultLoadingState.loading = true;
-        this.defaultModel$ = this.getPagedModel().pipe(
+        this.defaultModel = toSignal(this.getPagedModel().pipe(
             tap(() => {
                 this.defaultLoadingState.loading = false;
             })
-        );
+        ), {injector: this.injector});
     }
 
     cancelEditing() {
@@ -100,4 +101,7 @@ export class OrderDataModel {
     total?: number;
     @DateType(required('Please enter date'))
     date?: Date;
+
+    status?: string;
+    country?: string;
 }
