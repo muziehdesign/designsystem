@@ -2,11 +2,12 @@ import { Component, ContentChild, EventEmitter, Input, Output, TemplateRef } fro
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FilterOptionModel } from './filter-option.model';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @Component({
     selector: 'mz-filter',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, OverlayModule],
     templateUrl: './filter.component.html',
     styleUrls: ['./filter.component.scss'],
 })

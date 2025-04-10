@@ -4,7 +4,7 @@
 
 <mz-filter #filter [options]="options" [allowMultipleSelect]="true" (selectionChange)="onFilterChanged($event)">
     <ng-template #filterButtonTemplate>
-        <button class="daisy-btn" type="button" (click)="filter.isOpen = !filter.isOpen">
+        <button class="daisy-btn" type="button">
             @if (options) {
             {{ filter.filterLabel }}
             } @else {
@@ -13,33 +13,30 @@
         </button>
     </ng-template>
 
-    <ng-template #filterDropdownTemplate let-trigger="trigger">
-        <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="filter.isOpen" (detach)="filter.isOpen = false">
-            
-            <ul class="daisy-dropdown-content daisy-menu p-2 shadow bg-base-100 rounded-box w-52 mt-2 z-10">
-                <li class="p-2">
-                    <input type="text" [(ngModel)]="filter.search" placeholder="Search..." class="daisy-input w-full" />
+    <ng-template #filterDropdownTemplate>
+        <ul class="daisy-dropdown-content daisy-menu p-2 shadow bg-base-100 rounded-box w-52 mt-2 z-10">
+            <li class="p-2">
+                <input type="text" [(ngModel)]="filter.search" placeholder="Search..." class="daisy-input w-full" />
+            </li>
+            @for (option of filter.filteredOptions; track $index) {
+                <li>
+                    <label class="cursor-pointer label justify-start">
+                        <input type="checkbox" class="daisy-checkbox mr-2" [(ngModel)]="option.selected" (ngModelChange)="filter.onOptionChange(option)" />
+                        <span>{{ option.label }}</span>
+                    </label>
                 </li>
-                @for (option of filter.filteredOptions; track $index) {
-                    <li>
-                        <label class="cursor-pointer label justify-start">
-                            <input type="checkbox" class="daisy-checkbox mr-2" [(ngModel)]="option.selected" (ngModelChange)="filter.onOptionChange(option)" />
-                            <span>{{ option.label }}</span>
-                        </label>
-                    </li>
-                }
+            }
 
-                @if (filter.allowMultipleSelect) {
-                    <li class="m-2">
-                        <div class="flex-initial justify-center">
-                            <div>
-                                <button mzButton (click)="filter.applySelection()" variant="primary">Apply</button>
-                                <button mzButton (click)="filter.resetSelection()" variant="tertiary">Reset</button>
-                            </div>
+            @if (filter.allowMultipleSelect) {
+                <li class="m-2">
+                    <div class="flex-initial justify-center">
+                        <div>
+                            <button mzButton (click)="filter.applySelection()" variant="primary">Apply</button>
+                            <button mzButton (click)="filter.resetSelection()" variant="tertiary">Reset</button>
                         </div>
-                    </li>
-                }
-            </ul>
-        </ng-template>
+                    </div>
+                </li>
+            }
+        </ul>
     </ng-template>
 </mz-filter>
