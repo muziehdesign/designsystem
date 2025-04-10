@@ -1,8 +1,13 @@
-.icon {
+:host.icon-medium {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+:host.icon {
     display: inline-block;
 }
 
-.icon-size-medium {
-    width: 1.25rem;
-    height: 1.25rem;
+svg {
+    height:100%;
+    width: 100%;
 }

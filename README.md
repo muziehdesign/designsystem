@@ -24,6 +24,7 @@ Muzieh Design System is an evolving framework crafted to streamline the creation
 1. Spinner `type` now supports primary, secondary, or custom
 1. Form controls use different css classes
 1. Input groups now have different css classes and structure
+1. Remove use of `.button-icon`
 
 ### New additions
 1. mz-inline-edit

@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
+import { Component, HostBinding, Inject, Input, OnInit, Optional } from '@angular/core';
 import { SVG_ICON_DEFAULT_OPTIONS, SvgIconOptions } from './svg-icon-config';
 
 @Component({
@@ -24,5 +24,10 @@ export class SvgIconComponent {
     }
 
     return this.fileUrl + '#' + this.key;
+  }
+
+  @HostBinding('class')
+  get classes(): string {
+    return `icon icon-${this.type} icon-${this.size}`;
   }
 }
