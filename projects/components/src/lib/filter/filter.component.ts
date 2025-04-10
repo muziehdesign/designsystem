@@ -16,14 +16,14 @@ export class FilterComponent {
     search: string = '';
     @Input() allowMultipleSelect = false;
     @Input({ required: true }) options!: FilterOptionModel<string | number>[];
-    @Input() label: string = 'Filter: ';
+    @Input() label: string = 'Filter';
     @Output() selectionChange = new EventEmitter<FilterOptionModel<string | number>[]>();
     @ContentChild('filterButtonTemplate', { static: true }) filterButtonTemplate!: TemplateRef<any>;
     @ContentChild('filterDropdownTemplate', { static: true }) filterDropdownTemplate!: TemplateRef<any>;
 
     get filterLabel(): string {
         const selected = this.options.filter((option) => option.selected).map((option) => option.label);
-        return selected.length ? `${this.label} ${selected.join(', ')}` : this.label;
+        return selected.length ? `${this.label}: ${selected.join(', ')}` : this.label;
     }
 
     get filteredOptions(): FilterOptionModel<string | number>[] {
