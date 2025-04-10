@@ -28,6 +28,6 @@ export class SvgIconComponent {
 
   @HostBinding('class')
   get classes(): string {
-    return `icon icon-${this.type} ${this.size}`;
+    return `icon icon-${this.type} icon-${this.size}`;
   }
 }
