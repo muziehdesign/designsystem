@@ -1,5 +1,5 @@
 import { OverlayModule } from '@angular/cdk/overlay';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FilterComponent, FilterOptionModel, MuziehComponentsModule } from 'muzieh-ngcomponents';
@@ -7,7 +7,7 @@ import { FilterComponent, FilterOptionModel, MuziehComponentsModule } from 'muzi
 @Component({
     selector: 'filter-options',
     standalone: true,
-    imports: [CommonModule, FormsModule, MuziehComponentsModule, FilterComponent, OverlayModule],
+    imports: [CommonModule, FormsModule, MuziehComponentsModule, FilterComponent, OverlayModule, JsonPipe],
     templateUrl: './filter-options.component.html',
     styleUrls: ['./filter-options.component.scss'],
 })

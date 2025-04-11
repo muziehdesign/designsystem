@@ -1,42 +1,60 @@
 <header>
     <h1>Filter options component</h1>
+    <p class="prose">
+        Use this component to search and select options. It allows for both single and multiple selections.
+    </p>
 </header>
 
-<mz-filter #filter [options]="options" [allowMultipleSelect]="true" (selectionChange)="onFilterChanged($event)">
-    <ng-template #filterButtonTemplate>
-        <button class="daisy-btn" type="button">
-            @if (options) {
-            {{ filter.filterLabel }}
-            } @else {
-            <mz-spinner></mz-spinner>
-            }
-        </button>
-    </ng-template>
+<article>
+    <div class="example">
+        <mz-filter #filter [options]="options" [allowMultipleSelect]="true" (selectionChange)="onFilterChanged($event)">
+            <ng-template #filterButtonTemplate>
+                <button class="daisy-btn" type="button">
+                    @if (options) {
+                    {{ filter.filterLabel }}
+                    } @else {
+                    <mz-spinner></mz-spinner>
+                    }
+                </button>
+            </ng-template>
 
-    <ng-template #filterDropdownTemplate>
-        <ul class="daisy-dropdown-content daisy-menu p-2 shadow bg-base-100 rounded-box w-52 mt-2 z-10">
-            <li class="p-2">
-                <input type="text" [(ngModel)]="filter.search" placeholder="Search..." class="daisy-input w-full" />
-            </li>
-            @for (option of filter.filteredOptions; track $index) {
-                <li>
-                    <label class="cursor-pointer label justify-start">
-                        <input type="checkbox" class="daisy-checkbox mr-2" [(ngModel)]="option.selected" (ngModelChange)="filter.onOptionChange(option)" />
-                        <span>{{ option.label }}</span>
-                    </label>
-                </li>
-            }
+            <ng-template #filterDropdownTemplate>
+                <ul class="daisy-dropdown-content daisy-menu p-2 shadow bg-base-100 rounded-box w-52 mt-2 z-10">
+                    <li class="p-2">
+                        <input type="text" [(ngModel)]="filter.search" placeholder="Search..." class="daisy-input w-full" />
+                    </li>
+                    <span class="max-h-80 overflow-y-auto">
+                        @for (option of filter.filteredOptions; track $index) {
+                            <li>
+                                <label class="cursor-pointer label justify-start">
+                                    <input type="checkbox" class="daisy-checkbox mr-2" [(ngModel)]="option.selected" (ngModelChange)="filter.onOptionChange(option)" />
+                                    <span>{{ option.label }}</span>
+                                </label>
+                            </li>
+                        }
+                    </span>
+                    @if (filter.allowMultipleSelect) {
+                        <li class="m-2">
+                            <div class="flex-initial justify-center">
+                                <div>
+                                    <button mzButton (click)="filter.applySelection()" variant="primary">Apply</button>
+                                    <button mzButton (click)="filter.resetSelection()" variant="tertiary">Reset</button>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </ng-template>
+        </mz-filter>
+        
+    </div>
+</article>
 
-            @if (filter.allowMultipleSelect) {
-                <li class="m-2">
-                    <div class="flex-initial justify-center">
-                        <div>
-                            <button mzButton (click)="filter.applySelection()" variant="primary">Apply</button>
-                            <button mzButton (click)="filter.resetSelection()" variant="tertiary">Reset</button>
-                        </div>
-                    </div>
-                </li>
-            }
-        </ul>
-    </ng-template>
-</mz-filter>
+<article>
+    <div class="example">
+        <code>
+            <pre>{{ options | json }}</pre>
+        </code>
+    </div>
+</article>
+
