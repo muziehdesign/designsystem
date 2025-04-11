@@ -22,7 +22,7 @@ describe('FilterComponent', () => {
 
         fixture = TestBed.createComponent(FilterComponent);
         component = fixture.componentInstance;
-        component.options = Object.assign([], testOptions);
+        component.options = testOptions.map(option => Object.assign({}, option));
         fixture.detectChanges();
     });
 
