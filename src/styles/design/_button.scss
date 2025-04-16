@@ -36,7 +36,8 @@
 }
 
 .button-loading-overlay {
-    @apply absolute inset-0 flex items-center justify-center bg-inherit z-10;
+    @apply absolute inset-0 flex items-center justify-center z-10;
+    background-color: inherit;
 }
 
 .link-action {
