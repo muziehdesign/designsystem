@@ -14,4 +14,8 @@
 .dropdown-item {
     display: block;
     padding: 0.5rem;
+
+    &:hover {
+        @apply bg-neutral-200;
+    }
 }

@@ -1,13 +1,14 @@
 import { CdkTrapFocus } from '@angular/cdk/a11y';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'mz-dropdown',
     standalone: true,
     imports: [CdkOverlayOrigin, CdkConnectedOverlay, CdkTrapFocus],
     templateUrl: './dropdown.component.html',
-    styleUrl: './dropdown.component.scss'
+    styleUrl: './dropdown.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class DropdownComponent {
     @Input() label: string = '';

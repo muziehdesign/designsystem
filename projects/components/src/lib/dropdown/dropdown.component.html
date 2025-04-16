@@ -6,8 +6,8 @@
     </svg>
 </button>
 <ng-template 
-    cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkconnectedoverlaydes] [cdkConnectedOverlayOpen]="open" [cdkConnectedOverlayPanelClass]="'dropdown-body'" (overlayOutsideClick)="collapse()">
-    <div cdkTrapFocus [cdkTrapFocusAutoCapture]="true">
+    cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkconnectedoverlaydes] [cdkConnectedOverlayOpen]="open" (overlayOutsideClick)="collapse()">
+    <div cdkTrapFocus [cdkTrapFocusAutoCapture]="true" class="dropdown-body">
         <ng-content></ng-content>
     </div>
 </ng-template>

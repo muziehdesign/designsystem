@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatMenuModule } from '@angular/material/menu';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DropDownItemDirective, DropdownComponent, SvgIconComponent } from 'muzieh-ngcomponents';
 
 @Component({
@@ -8,7 +6,7 @@ import { DropDownItemDirective, DropdownComponent, SvgIconComponent } from 'muzi
   templateUrl: './dropdown-menu-guidelines.component.html',
   styleUrls: ['./dropdown-menu-guidelines.component.scss'],
   standalone: true,
-  imports: [MatMenuModule, NgbModule, SvgIconComponent, DropdownComponent, DropDownItemDirective],
+  imports: [SvgIconComponent, DropdownComponent, DropDownItemDirective],
 })
 export class DropdownMenuGuidelinesComponent implements OnInit {
 

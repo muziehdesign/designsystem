@@ -11,7 +11,7 @@ import { JsonPipe } from '@angular/common';
     templateUrl: './options-filter.component.html',
     styleUrl: './options-filter.component.scss',
 })
-export class OptionsFilterComponent implements AfterContentInit {
+export class OptionsFilterComponent {
     @Input() options?: FilterOptionModel<string>[];
     @Input() values: string[] = [];
     @Input() multiselect = false;
@@ -22,10 +22,6 @@ export class OptionsFilterComponent implements AfterContentInit {
 
     constructor() {
         console.log('options filter');
-    }
-
-    ngAfterContentInit(): void {
-        //this.form.valueChanges?.subscribe(x=>console.log('form value:', x));
     }
 
     apply() {

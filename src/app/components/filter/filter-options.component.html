@@ -51,6 +51,17 @@
 
         </mz-options-filter>
         
+        <mz-filter2>
+            <form [ngFormOptions]="{updateOn: 'submit'}">
+                @for (option of options2; track $index) {
+                    <label class="field-option">
+                        <input type="checkbox" class="form-checkbox" [(ngModel)]="option.selected" name="option-{{option.value}}" />
+                        <span class="checkbox-label">{{ option.label }}</span>
+                    </label>
+                }
+            </form>
+        </mz-filter2>
+
     </div>
 </article>
 
