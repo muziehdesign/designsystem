@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   template: `
       <mz-filter2>
-        <form>
+        <form #myForm="ngForm">
           <input type="text" [(ngModel)]="name" name="name" />
         </form>
       </mz-filter2>
@@ -19,8 +19,8 @@ class TestHostComponent {
 
 
 describe('Filter2Component', () => {
-  let component: Filter2Component;
-  let fixture: ComponentFixture<Filter2Component>;
+  let component: TestHostComponent;
+  let fixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -29,12 +29,13 @@ describe('Filter2Component', () => {
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Filter2Component);
+    fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', async() => {
+    await fixture.whenStable();
     expect(component).toBeTruthy();
   });
 });
