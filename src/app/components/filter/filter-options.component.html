@@ -46,6 +46,10 @@
                 </ul>
             </ng-template>
         </mz-filter>
+
+        <mz-options-filter [options]="options2" [values]="values">
+
+        </mz-options-filter>
         
     </div>
 </article>
@@ -53,7 +57,7 @@
 <article>
     <div class="example">
         <code>
-            <pre>{{ options | json }}</pre>
+            <pre>{{ values | json }}</pre>
         </code>
     </div>
 </article>

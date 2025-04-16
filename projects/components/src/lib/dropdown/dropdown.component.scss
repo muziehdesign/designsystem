@@ -1,0 +1,22 @@
+.icon {
+    height:1.5rem;
+    width:1.5rem;
+    display: inline-block;
+    padding-left: 0.5rem;
+}
+
+.dropdown-trigger {
+    --tw-ring-offset-width: 0;
+
+    &:focus, &:active {
+        outline: none;
+    }
+
+    &:active {
+        
+    }
+}
+
+.dropdown-body {
+    margin-top: 0.5rem;
+}

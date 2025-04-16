@@ -58,6 +58,11 @@ export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wi
 // drawer
 export { DrawerContainerComponent } from './lib/drawer/drawer-container.component';
 
+// dropdown
+export { DropdownComponent } from './lib/dropdown/dropdown.component';
+export { DropDownItemDirective } from './lib/dropdown/drop-down-item.directive';
+
 // filter
 export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';
+export { OptionsFilterComponent } from './lib/filter/options-filter/options-filter.component';

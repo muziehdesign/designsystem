@@ -4,11 +4,15 @@
 }
 
 .button-primary {
-    @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 active:bg-blue-700;
+    @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 active:bg-blue-800/95;
 }
 
 .button-secondary {
-    @apply text-secondary shadow-sm bg-gray-200 hover:bg-gray-300 active:bg-gray-300;
+    @apply text-secondary shadow-sm bg-gray-200 hover:bg-gray-300 active:bg-gray-400/65;
+}
+
+.button-secondary.active {
+    @apply bg-gray-400/65;
 }
 
 .button-danger {
