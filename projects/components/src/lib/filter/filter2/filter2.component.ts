@@ -17,7 +17,6 @@ export class Filter2Component implements AfterContentInit {
 
     ngAfterContentInit(): void {
       this.initialValues = this.menuForm.value;
-      console.log(this.initialValues);
     }
 
     toggleOverlay() {

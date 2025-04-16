@@ -10,7 +10,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
     styleUrl: './dropdown.component.scss',
     encapsulation: ViewEncapsulation.None
 })
-export class DropdownComponent {
+export class MzDropdownComponent {
     @Input() label: string = '';
     @Input() open = false;
 

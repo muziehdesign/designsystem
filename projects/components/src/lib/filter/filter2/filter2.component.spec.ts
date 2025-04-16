@@ -1,6 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Filter2Component } from './filter2.component';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  template: `
+      <mz-filter2>
+        <form>
+          <input type="text" [(ngModel)]="name" name="name" />
+        </form>
+      </mz-filter2>
+  `,
+})
+class TestHostComponent {
+  name = '';
+}
+
 
 describe('Filter2Component', () => {
   let component: Filter2Component;
@@ -8,7 +24,8 @@ describe('Filter2Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Filter2Component]
+      declarations: [TestHostComponent],
+      imports: [Filter2Component, FormsModule]
     })
     .compileComponents();
 

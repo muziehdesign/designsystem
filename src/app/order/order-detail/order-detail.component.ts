@@ -8,14 +8,13 @@ import { CommonModule } from '@angular/common';
 import { ApiModule } from 'src/app/api/api.module';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { DropdownComponent } from 'muzieh-ngcomponents';
 
 @Component({
     selector: 'app-order-detail',
     templateUrl: './order-detail.component.html',
     styleUrls: ['./order-detail.component.scss'],
     standalone: true,
-    imports: [CommonModule, ApiModule, NgbDropdownModule, SharedModule, DropdownComponent]
+    imports: [CommonModule, ApiModule, NgbDropdownModule, SharedModule]
 })
 export class OrderDetailComponent implements OnInit {
     order$: Observable<OrderModel>;
