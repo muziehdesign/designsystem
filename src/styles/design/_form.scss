@@ -1,6 +1,4 @@
-@forward 'theme';
 @use "mixins" as *;
-
 
 .form-input, .form-textarea, .form-select {
     @include field-control();
