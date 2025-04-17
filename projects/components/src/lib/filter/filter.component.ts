@@ -1,69 +1,42 @@
-import { Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { FilterOptionModel } from './filter-option.model';
-import { OverlayModule } from '@angular/cdk/overlay';
+import { AfterContentInit, Component, ContentChild, Input } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
     selector: 'mz-filter',
     standalone: true,
-    imports: [CommonModule, FormsModule, OverlayModule],
+    imports: [CdkOverlayOrigin, CdkConnectedOverlay, FormsModule, CommonModule],
     templateUrl: './filter.component.html',
-    styleUrls: ['./filter.component.scss'],
+    styleUrl: './filter.component.scss',
 })
-export class FilterComponent {
-    isOpen = false;
-    search: string = '';
-    @Input() allowMultipleSelect = false;
-    @Input({ required: true }) options!: FilterOptionModel<string | number>[];
-    @Input() label: string = 'Filter';
-    @Output() selectionChange = new EventEmitter<FilterOptionModel<string | number>[]>();
-    @ContentChild('filterButtonTemplate', { static: true }) filterButtonTemplate!: TemplateRef<any>;
-    @ContentChild('filterDropdownTemplate', { static: true }) filterDropdownTemplate!: TemplateRef<any>;
+export class FilterComponent implements AfterContentInit {
+    @Input() label = 'Filter';
+    @ContentChild(NgForm) menuForm!: NgForm;
+    protected open = false;
+    private initialValues: any;
 
-    get filterLabel(): string {
-        const selected = this.options.filter((option) => option.selected).map((option) => option.label);
-        return selected.length ? `${this.label}: ${selected.join(', ')}` : this.label;
+    ngAfterContentInit(): void {
+      this.initialValues = this.menuForm.value;
     }
 
-    get filteredOptions(): FilterOptionModel<string | number>[] {
-        if (!this.search.trim()) {
-            return this.options;
-        }
-        return this.options.filter((option) => option.label.toLowerCase().includes(this.search.toLowerCase()));
+    toggleOverlay() {
+        this.open = !this.open;
     }
 
-    onOptionChange(changedOption: FilterOptionModel<string | number>): void {
-        if (!this.allowMultipleSelect) {
-            this.options.forEach((option) => {
-                if (option !== changedOption) {
-                    option.selected = false;
-                }
-            });
-            this.applySelection();
+    dismiss() {
+        this.open = false;
+        if(this.menuForm.options.updateOn === 'submit') {
+          this.menuForm.resetForm(this.initialValues);
         }
     }
 
-    applySelection(): void {
-        this.closeDropdown();
-        this.emitSelectionChange();
+    clear() {
+      this.open = false;
     }
 
-    resetSelection(): void {
-        this.options.forEach((option) => (option.selected = false));
-        this.applySelection();
-    }
-
-    openDropdown(): void {
-        this.isOpen = true;
-    }
-
-    closeDropdown(): void {
-        this.isOpen = false;
-    }
-
-    private emitSelectionChange(): void {
-        const selectedOptions = this.options.filter((option) => option.selected);
-        this.selectionChange.emit(selectedOptions);
+    apply() {
+      this.open = false;
+      console.log('applied', this.menuForm.value);
     }
 }

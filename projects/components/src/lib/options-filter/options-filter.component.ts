@@ -1,13 +1,12 @@
-import { AfterContentInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { FilterOptionModel } from '../filter-option.model';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { FilterOptionModel } from '../filter/filter-option.model';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { JsonPipe } from '@angular/common';
 
 @Component({
     selector: 'mz-options-filter',
     standalone: true,
-    imports: [FormsModule, CdkOverlayOrigin, CdkConnectedOverlay, JsonPipe],
+    imports: [FormsModule, CdkOverlayOrigin, CdkConnectedOverlay],
     templateUrl: './options-filter.component.html',
     styleUrl: './options-filter.component.scss',
 })
@@ -17,8 +16,8 @@ export class OptionsFilterComponent {
     @Input() multiselect = false;
     @Input() label = 'Filter';
     @Output() change = new EventEmitter<string[]>();
-    protected open = false;
     @ViewChild(NgForm) form!: NgForm;
+    protected open = false;
 
     constructor() {
         console.log('options filter');

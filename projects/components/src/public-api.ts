@@ -64,7 +64,6 @@ export { MzDropdownItemDirective } from './lib/dropdown/dropdown-item.directive'
 export { MzDropdownModule } from './lib/dropdown/dropdown.module';
 
 // filter
-export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';
-export { OptionsFilterComponent } from './lib/filter/options-filter/options-filter.component';
-export { Filter2Component } from './lib/filter/filter2/filter2.component';
+export { OptionsFilterComponent } from './lib/options-filter/options-filter.component';
+export { FilterComponent } from './lib/filter/filter.component';
