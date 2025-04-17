@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { Filter2Component } from './filter.component';
+import { FilterComponent } from './filter.component';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -18,14 +17,14 @@ class TestHostComponent {
 }
 
 
-describe('Filter2Component', () => {
+describe('FilterComponent', () => {
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TestHostComponent],
-      imports: [Filter2Component, FormsModule]
+      imports: [FilterComponent, FormsModule]
     })
     .compileComponents();
 
