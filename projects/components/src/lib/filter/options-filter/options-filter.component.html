@@ -6,7 +6,7 @@
     </svg>
 </button>
 <ng-template 
-    cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkconnectedoverlaydes] [cdkConnectedOverlayOpen]="open" [cdkConnectedOverlayPanelClass]="'dropdown-body'" (overlayOutsideClick)="dismiss()">
+    cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="open" [cdkConnectedOverlayPanelClass]="'dropdown-body'" (overlayOutsideClick)="dismiss()">
     <div>
         <form #myForm="ngForm" (submit)="apply()" [ngFormOptions]="{updateOn: 'submit'}"> 
             <div>
