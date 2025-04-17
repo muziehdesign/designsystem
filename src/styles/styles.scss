@@ -3,6 +3,7 @@
 @import 'tailwindcss/base';
 @import 'design/_base';
 @import 'tailwindcss/components';
+
 @import 'design/_button';
 @import 'design/_breadcrumb';
 @import 'design/_dl';
@@ -18,10 +19,11 @@
 @import 'design/_infinite-scroll';
 @import 'design/accordion';
 @import 'tailwindcss/utilities';
+
 @import 'design/_utilities';
 @import 'design/_form';
 @import 'design/_dialog';
-@import 'design/_cdk-overlay.css';
+@import 'design/_cdk-overlay';
 
 @import 'highlight.js/styles/github.css';
 

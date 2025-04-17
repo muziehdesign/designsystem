@@ -3,13 +3,13 @@
   "dest": "../../dist/components",
   "lib": {
     "entryFile": "src/public-api.ts",
-    "styleIncludePaths": ["src/lib/design"]
+    "styleIncludePaths": ["src/styles"]
   },
   "assets": [
     {
       "glob": "**/*.scss",
-      "input": "src/lib/design",
-      "output": "design"
+      "input": "src/styles",
+      "output": "styles"
     }
   ]
 }

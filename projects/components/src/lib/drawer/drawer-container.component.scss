@@ -1,4 +1,4 @@
-@use 'mixins/dialog' as *;
+@use 'mixins/dialog' as dialog;
 
 .drawer-container {
     background-color: white;
@@ -18,5 +18,5 @@
 }
 
 .dialog-content > :first-child {
-    @include dialog-content();
+    @include dialog.dialog-content();
 }

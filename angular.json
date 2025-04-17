@@ -35,7 +35,7 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/styles", 
-                "dist/components/design"
+                "dist/components/styles"
               ]
             },
             "assets": [
@@ -146,7 +146,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/components/ng-package.json",
+            "project": "projects/components/ng-package.json"
           },
           "configurations": {
             "production": {
@@ -165,7 +165,7 @@
             "tsConfig": "projects/components/tsconfig.spec.json",
             "karmaConfig": "projects/components/karma.conf.js",
             "stylePreprocessorOptions": {
-              "includePaths": ["projects/components/src/lib/design"]
+              "includePaths": ["projects/components/src/styles"]
             }
           }
         }
