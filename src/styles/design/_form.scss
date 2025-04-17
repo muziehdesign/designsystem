@@ -1,19 +1,19 @@
-@use "mixins" as *;
+@use "mixins/form" as form;
 
 .form-input, .form-textarea, .form-select {
-    @include field-control();
+    @include form.field-control();
 
     &:focus {
-        @include field-control-focused();
+        @include form.field-control-focused();
     }
 }
 
 .input-group {
     @apply flex gap-2 items-center;
-    @include field-control();
+    @include form.field-control();
 
     &:focus-within {
-        @include field-control-focused();
+        @include form.field-control-focused();
     }
 
     .form-input {

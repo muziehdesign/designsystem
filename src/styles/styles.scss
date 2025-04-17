@@ -1,5 +1,5 @@
 @use 'theme';
-@forward 'design/_mixins';
+
 @import 'tailwindcss/base';
 @import 'design/_base';
 @import 'tailwindcss/components';
@@ -20,6 +20,7 @@
 @import 'tailwindcss/utilities';
 @import 'design/_utilities';
 @import 'design/_form';
+@import 'design/_dialog';
 @import 'design/_cdk-overlay.css';
 
 @import 'highlight.js/styles/github.css';

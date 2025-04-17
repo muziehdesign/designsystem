@@ -1,8 +1,9 @@
+@use 'mixins/dialog' as *;
+
 .drawer-container {
     background-color: white;
-    min-width: 500px;
+    width: 500px;
     max-width: 90%;
-    padding: 0.5rem 1rem;
     overflow: auto;
     height:100vh;
     position:absolute;
@@ -14,4 +15,8 @@
 
 .drawer-container.open {
     translate: 0%;
+}
+
+.dialog-content > :first-child {
+    @include dialog-content();
 }
