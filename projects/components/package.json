@@ -12,7 +12,7 @@
   },
   "exports": {
     "./mixins": {
-      "sass": "./src/components/src/design/mixins/_index.scss"
+      "sass": "./design/mixins/_index.scss"
     }
   }
 }

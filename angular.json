@@ -35,7 +35,7 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/styles", 
-                "dist/components/src/design"
+                "dist/components/design"
               ]
             },
             "assets": [

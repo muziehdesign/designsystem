@@ -9,7 +9,7 @@
     {
       "glob": "**/*.scss",
       "input": "src/lib/design",
-      "output": "src/design"
+      "output": "design"
     }
   ]
 }
