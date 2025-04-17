@@ -1,7 +1,7 @@
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { CommonModule, JsonPipe } from '@angular/common';
-import { AfterContentInit, Component, ContentChild, ContentChildren, QueryList, TemplateRef, ViewChild } from '@angular/core';
-import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { AfterContentInit, Component, ContentChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
     selector: 'mz-filter2',
