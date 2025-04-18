@@ -3,6 +3,8 @@ import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
 import { demoOf } from 'src/app/demonstration/utilities';
 import { ButtonsDemoComponent } from '../../demos/buttons-demo.component';
 import { ComponentsComponent } from './components.component';
+import { CanDeactivateComponent, MzDialog, hasImplementation } from 'muzieh-ngcomponents';
+import { inject } from '@angular/core';
 
 export const componentRoutes: Routes = [
     {
@@ -42,6 +44,13 @@ export const componentRoutes: Routes = [
             {
                 path: 'drawer',
                 loadComponent: () => import('./drawer/drawer.component').then((b) => b.DrawerComponent),
+                canDeactivate: [(component: unknown)=>{
+                    if(hasImplementation<CanDeactivateComponent>(component, 'canDeactivate')) {
+                        return component.canDeactivate() || component.confirmDeactivation();
+                    }
+
+                    return true;
+                }]
             },
             {
                 path: 'emptystate',

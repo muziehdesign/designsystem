@@ -1,0 +1,31 @@
+@use 'mixins/dialog' as dialog;
+@use 'mixins/icon' as icon;
+
+// drawer
+:host(.mz-dialog-container) {
+    background-color: var(--surface-bg);
+    width: 500px;
+    max-width: 90%;
+    overflow: auto;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: translate 0.3s ease-out;
+    translate: 100%;
+
+    &.open {
+        translate: 0%;
+    }
+}
+
+.button-close {
+    @include icon.icon();
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.mz-dialog > :first-child {
+    @include dialog.dialog-article();
+}

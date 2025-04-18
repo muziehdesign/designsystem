@@ -1,7 +1,7 @@
 @use './mixins/dialog' as dialog;
 
 @layer utilities {
-    .dialog-content:not(:has( > .dialog-content)) {
-        @include dialog.dialog-content();
+    .dialog-article:not(:has( > .dialog-article)) {
+        @include dialog.dialog-article();
     }
 }

@@ -1,24 +1,36 @@
-import { Dialog } from '@angular/cdk/dialog';
-import { Overlay } from '@angular/cdk/overlay';
-import { Component, OnInit } from '@angular/core';
-import { DrawerContainerComponent } from 'muzieh-ngcomponents';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CanDeactivateComponent, MzDialog, MzDialogModule } from 'muzieh-ngcomponents';
 import { DrawerExampleComponent } from './examples/drawer-example.component';
+import { DummyComponent } from './examples/dummy/dummy.component';
 
 @Component({
-  selector: 'app-drawer',
-  standalone: true,
-  templateUrl: './drawer.component.html',
-  styleUrl: './drawer.component.scss'
+    selector: 'app-drawer',
+    standalone: true,
+    templateUrl: './drawer.component.html',
+    styleUrl: './drawer.component.scss',
+    imports: [MzDialogModule, DummyComponent],
+    providers: [MzDialog]
 })
-export class DrawerComponent  implements OnInit {
+export class DrawerComponent implements OnInit, CanDeactivateComponent, OnDestroy {
+    constructor(private mzDialog: MzDialog) {
+        console.log('DrawerComponent constructor', mzDialog.myCounter);
+    }
 
-  constructor(private dialog: Dialog, private overlay: Overlay) { }
+    ngOnInit(): void {}
 
-  ngOnInit(): void {}
+    openDrawer(): void {
+        const ref = this.mzDialog.open(DrawerExampleComponent);
+    }
 
-  openDrawer(): void {
-    this.dialog.open(DrawerExampleComponent, {
-      container: DrawerContainerComponent,
-    });
-  }
+    canDeactivate(): boolean {
+        return false;
+    }
+
+    confirmDeactivation(): boolean {
+        return this.mzDialog.confirmDeactivation();
+    }
+
+    ngOnDestroy(): void {
+
+    }
 }
