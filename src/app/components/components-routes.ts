@@ -132,6 +132,10 @@ export const componentRoutes: Routes = [
                 path: 'inlineedit',
                 loadComponent: () => import('./inline-edit/inline-edit.component').then((b) => b.InlineEditComponent),
             },
+            {
+                path: 'filter',
+                loadComponent: () => import('./filter/filter-options.component').then((b) => b.FilterOptionsComponent),
+            },
         ],
     },
 ];

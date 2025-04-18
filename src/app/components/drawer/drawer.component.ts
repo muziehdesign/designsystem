@@ -2,7 +2,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { Overlay } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
 import { DrawerContainerComponent } from 'muzieh-ngcomponents';
-import { DrawerContentComponent } from './drawer-content/drawer-content.component';
+import { DrawerExampleComponent } from './examples/drawer-example.component';
 
 @Component({
   selector: 'app-drawer',
@@ -17,7 +17,7 @@ export class DrawerComponent  implements OnInit {
   ngOnInit(): void {}
 
   openDrawer(): void {
-    this.dialog.open(DrawerContentComponent, {
+    this.dialog.open(DrawerExampleComponent, {
       container: DrawerContainerComponent,
     });
   }

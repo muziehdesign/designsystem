@@ -1,26 +1,27 @@
 <header>
-  <h1>Dropdown menu</h1>
-  <p class="prose">Use a dropdown menu to group related commands.</p>
+    <h1>Dropdown menu</h1>
+    <p class="prose">Use a dropdown menu to group related commands.</p>
 </header>
 
 <div class="example">
-    <div ngbDropdown class="d-inline-block">
-        <button class="button button-secondary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown <mz-svg-icon key="chevron-down" class="ml-4"></mz-svg-icon></button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
-        </div>
-    </div>
-</div>
+    <div class="flex gap-5 items-center">
+        <mz-dropdown label="Dropdown">
+            <ul>
+                <li role="button" tabindex="0" mzDropDownItem (click)="openItem()">item 1</li>
+                <li role="button" tabindex="0" mzDropDownItem (click)="openItem()">item 2</li>
+            </ul>
+        </mz-dropdown>
 
-<div class="example">
-  <button class="button button-secondary" [matMenuTriggerFor]="menu">
-    <mz-svg-icon key="dots-horizontal"></mz-svg-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Lock</button>
-    <button mat-menu-item>Unlock</button>
-    <button mat-menu-item>Activate</button>
-  </mat-menu>
+        <mz-dropdown label="Dropdown">
+            <button mzDropdownItem (click)="openItem()">item 1</button>
+            <button mzDropdownItem (click)="openItem()">item 2</button>
+        </mz-dropdown>
+
+        <form class="form">
+            <label class="field">
+                <span class="field-label">For testing focus and tab index</span>
+                <input type="text" class="form-input" />
+            </label>
+        </form>
+    </div>
 </div>

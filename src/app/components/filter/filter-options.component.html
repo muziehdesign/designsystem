@@ -1,0 +1,28 @@
+<header>
+    <h1>Filter options component</h1>
+    <p class="prose">
+        Use this component to search and select options. It allows for both single and multiple selections.
+    </p>
+</header>
+
+<article>
+    <div class="example">        
+        <mz-filter>
+            <form [ngFormOptions]="{updateOn: 'submit'}">
+                @for (option of options; track $index) {
+                    <label class="field-option">
+                        <input type="checkbox" class="form-checkbox" [(ngModel)]="option.selected" name="option-{{option.value}}" />
+                        <span class="checkbox-label">{{ option.label }}</span>
+                    </label>
+                }
+            </form>
+        </mz-filter>
+    </div>
+</article>
+
+<article>
+    <div class="example">
+        <mz-options-filter [options]="options" [values]="values"> </mz-options-filter>
+    </div>
+</article>
+

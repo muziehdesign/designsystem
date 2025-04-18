@@ -1,6 +1,6 @@
 @mixin field-control() {
     border-radius: var(--input-border-radius, 0px);
-    border: 1px solid var(--input-border-color, --color-neutral-500);
+    border: 1px solid var(--input-border-color, var(--color-neutral-500));
 }
 
 @mixin field-control-focused() {

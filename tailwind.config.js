@@ -34,5 +34,18 @@ module.exports = {
       pattern: /text-(red|green|blue|gray|yellow)-(50|100|200|300|400|500|600|700|800|900)/,
     }
   ],
-  plugins: ['postcss-import', require("@tailwindcss/forms")({strategy: 'class'}), require("@tailwindcss/typography")],
+  plugins: ['postcss-import', require("@tailwindcss/forms")({strategy: 'class'}), require("@tailwindcss/typography"), require('daisyui')],
+  daisyui: {
+    themes: [
+        {
+            light: {
+                neutral: '#e5e7eb',
+                'neutral-content': '#374151',
+                'base-100': '#ffffff',
+            },
+        },
+    ],
+    styled: true,
+    prefix: 'daisy-'
+  },
 };

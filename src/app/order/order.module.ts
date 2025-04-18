@@ -12,8 +12,7 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-    declarations: [OrderDetailComponent],
-    imports: [CommonModule, OrderRoutingModule, ApiModule, NgbDropdownModule, SharedModule],
+    imports: [OrderDetailComponent, CommonModule, OrderRoutingModule, ApiModule, NgbDropdownModule, SharedModule],
     providers: [OrderService, OrderResolver, { provide: API_CONFIG, useExisting: APP_CONFIG }],
 })
 export class OrderModule {}
