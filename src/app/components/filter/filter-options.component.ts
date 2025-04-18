@@ -2,8 +2,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FilterOptionModel, MuziehComponentsModule, OptionsFilterComponent } from 'muzieh-ngcomponents';
-import { FilterComponent } from "../../../../projects/components/src/lib/filter/filter.component";
+import { FilterOptionModel, MuziehComponentsModule, OptionsFilterComponent, FilterComponent } from 'muzieh-ngcomponents';
 
 @Component({
     selector: 'filter-options',
