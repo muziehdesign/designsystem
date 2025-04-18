@@ -1,0 +1,22 @@
+@use "./mixins/icon" as icon;
+
+.dropdown-icon {
+    @include icon.icon();
+}
+
+.dropdown-body {
+    background-color: var(--surface-bg, white);
+    min-width: 5rem;
+    margin-top: 0.25rem;
+    padding: 0.75rem; 
+}
+
+.dropdown-buttons {
+    display: flex;
+    margin-top: 0.25rem;;
+}
+
+.dropdown-options {
+    max-height: 15rem;
+    overflow-y: auto;
+}
