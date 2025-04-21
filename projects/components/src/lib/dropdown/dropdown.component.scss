@@ -1,8 +1,7 @@
+@use "./mixins/icon" as icon;
+
 .icon {
-    height:1.5rem;
-    width:1.5rem;
-    display: inline-block;
-    padding-left: 0.5rem;
+    @include icon.icon();
 }
 
 .dropdown-body {

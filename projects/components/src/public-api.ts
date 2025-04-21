@@ -69,7 +69,6 @@ export { MzDropdownModule } from './lib/dropdown/dropdown.module';
 export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';
 export { OptionsFilterComponent } from './lib/filter/options-filter/options-filter.component';
-export { Filter2Component } from './lib/filter/filter2/filter2.component';
 
 // utilities
 export { CanDeactivateComponent, hasImplementation } from './lib/guard-deactivate';
