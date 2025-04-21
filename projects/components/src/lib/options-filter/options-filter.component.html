@@ -16,11 +16,11 @@
         <form #myForm="ngForm" > 
             <div>
                 <label class="field">
-                    <input type="text" [(ngModel)]="search" placeholder="Search..." name="search" class="form-input" />
+                    <input type="text" [(ngModel)]="search" placeholder="Search..." name="search" class="form-input" autocomplete="off" />
                 </label>
                 <div class="dropdown-options">
                     @for(option of filteredOptions; track option.value) {
-                        <label class="field-option">
+                        <label class="field-option" [class.active]="selected === option.value">
                             <input class="form-radio" type="radio" [(ngModel)]="selected" name="option" [value]="option.value" (ngModelChange)="apply()"/>
                             <span class="radio-label">{{ option.label }}</span>
                         </label>
