@@ -1,0 +1,30 @@
+// roughly buttons, need to match background color and use tailwind variables for spacing
+@mixin button() {
+    display: inline-flex; 
+    position: relative; 
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem; 
+    padding-left: 1rem;
+    padding-right: 1rem; 
+    gap: 0.25rem; 
+    align-items: center; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    font-weight: 500;     
+    cursor: pointer;
+}
+
+@mixin button-secondary() {
+    color: var(--color-neutral-700);
+    background-color: var(--color-neutral-200);
+
+    &:hover{
+        background-color: var(--color-neutral-300);
+    }
+
+    &:active, &.active {
+        background-color: var(--color-neutral-400);
+    }
+
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
