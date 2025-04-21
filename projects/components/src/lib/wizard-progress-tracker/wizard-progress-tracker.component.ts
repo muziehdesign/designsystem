@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SubSink } from 'subsink';
 import { WizardStepLink } from '../models/wizard-step-link';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
@@ -16,7 +15,6 @@ export class WizardProgressTrackerComponent {
   @Input() currentStep = 0;
   @Output() stepChange = new EventEmitter<WizardStepLink>();
   toggled = true;
-  subs = new SubSink();
 
   goToStep(step: WizardStepLink) {
     this.stepChange.emit(step);
