@@ -10,25 +10,23 @@
     align-items: center; 
     font-size: 0.875rem;
     line-height: 1.25rem; 
-    font-weight: 500;
-    background-color: transparent;     
+    font-weight: 500;    
+    border-radius: var(--button-border-radius);
     cursor: pointer;
 }
 
 @mixin button-secondary() {
     color: var(--color-neutral-700);
     background-color: var(--color-neutral-200);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 
     &:hover{
         background-color: var(--color-neutral-300);
     }
 
-    @include button-secondary-active();
-}
-
-@mixin button-secondary-active() {
     &:active, &.active {
-        background-color: rgb(var(--color-neutral-400), 0.65);
+        background-color: var(--color-neutral-400);
     }
+
+    border-radius: var(--button-border-radius);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
