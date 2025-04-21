@@ -11,7 +11,7 @@
     margin-top: 0.25rem;
     padding: 0.75rem;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-    border-radius: var(--surface-border-radius);
+    border-radius: var(--button-border-radius, 0.375rem);
 }
 
 .dropdown-buttons {
