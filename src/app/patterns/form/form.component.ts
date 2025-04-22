@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { BooleanType, ModelSchema, ModelSchemaFactory, MzFormsModule, required, StringType } from '@muziehdesign/forms';
 import { ButtonDirective, SvgIconComponent } from 'muzieh-ngcomponents';
 import { of } from 'rxjs';
 import { delay, finalize } from 'rxjs/operators';
@@ -10,28 +11,27 @@ import { delay, finalize } from 'rxjs/operators';
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.scss'],
     standalone: true,
-    imports: [ButtonDirective, CommonModule, FormsModule, SvgIconComponent],
+    imports: [ButtonDirective, CommonModule, FormsModule, MzFormsModule, SvgIconComponent],
 })
-export class FormComponent implements OnInit {
-    model: DeliveryAddressInputModel = { unexpectedError: false };
+export class FormComponent {
+    schema: ModelSchema<DeliveryAddressInputModel>;
+    model = new DeliveryAddressInputModel();
     isLoading: boolean = false;
-    error: string | undefined;
     isSuccessful: boolean | undefined;
     @ViewChild('addressForm', { static: true }) addressForm?: NgForm;
-    submitCount = 0;
-    constructor() {}
 
-    ngOnInit(): void {}
+    constructor(private factory: ModelSchemaFactory) {
+        this.model.unexpectedError = false;
+        this.schema = factory.build(this.model);
+    }
 
     onFormChange() {
-        if(this.isSuccessful == true) {
+        if (this.isSuccessful == true) {
             this.isSuccessful = undefined;
         }
     }
 
     onSubmit() {
-        this.submitCount++;
-        console.log('is submitting event only when is not busy', this.isLoading)
         this.isSuccessful = undefined;
 
         if (this.addressForm!.invalid) {
@@ -54,14 +54,23 @@ export class FormComponent implements OnInit {
     }
 }
 
-interface DeliveryAddressInputModel {
+export class DeliveryAddressInputModel {
+    @StringType(required('Name is required'))
     recipientName?: string;
+    @StringType(required('Street is required'))
     address1?: string;
+    @StringType()
     address2?: string;
+    @StringType(required('City is required'))
     city?: string;
+    @StringType(required('State is required'))
     state?: string;
+    @StringType(required('Zip code is required'))
     zipCode?: string;
+    @StringType()
     navigationInstructions?: string;
+    @StringType()
     securityCode?: string;
-    unexpectedError: boolean;
+    @BooleanType()
+    unexpectedError?: boolean;
 }
