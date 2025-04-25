@@ -5,14 +5,13 @@
 
 <div class="example">
     <div class="flex gap-5 items-center">
-        <mz-dropdown label="Dropdown">
-            <ul>
-                <li role="button" tabindex="0" mzDropDownItem (click)="openItem()">item 1</li>
-                <li role="button" tabindex="0" mzDropDownItem (click)="openItem()">item 2</li>
-            </ul>
-        </mz-dropdown>
 
         <mz-dropdown label="Dropdown">
+            <button mzDropdownItem (click)="openItem()">item 1</button>
+            <button mzDropdownItem (click)="openItem()">item 2</button>
+        </mz-dropdown>
+
+        <mz-dropdown label="Dropdown 2">
             <button mzDropdownItem (click)="openItem()">item 1</button>
             <button mzDropdownItem (click)="openItem()">item 2</button>
         </mz-dropdown>

@@ -1,16 +1,16 @@
 @use './mixins/icon' as icon;
 
-.dropdown-icon {
+.mz-dropdown-icon {
     @include icon.icon();
 }
 
-.dropdown-body {
+.mz-dropdown-body {
     background-color: var(--surface-bg, white);
     min-width: 5rem;
     margin-top: 0.25rem; // TODO: because of outline
 }
 
-.dropdown-item {
+.mz-dropdown-item {
     display: block;
     width: 100%;
     padding: 0.5rem;

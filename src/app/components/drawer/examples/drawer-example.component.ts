@@ -27,7 +27,7 @@ import { CanDeactivateComponent, MzDialog, MzDialogModule } from 'muzieh-ngcompo
             </div>
             <div>
                 <label class="field">
-                    <input type="checkbox" class="form-checkbox" [checked]="confirmOnClose" (change)="confirmOnClose != confirmOnClose" />
+                    <input type="checkbox" class="form-checkbox" [checked]="confirmOnClose" (change)="confirmOnClose = !confirmOnClose" />
                     <span class="checkbox-label">Confirm on close</span>
                 </label>
             </div>
@@ -40,7 +40,7 @@ import { CanDeactivateComponent, MzDialog, MzDialogModule } from 'muzieh-ngcompo
             <div>
                 <a [routerLink]="['/components']">Link</a>
             </div>
-            <button class="button button-secondary" (click)="alert()">Open alert dialog</button>
+            <button class="button button-secondary" (click)="openAnother()">Open another</button>
         </div>
         <footer>
             <button class="button button-primary">Done</button>
@@ -54,7 +54,7 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
 
     paragraphs = new Array(1);
     constructor(private mzDialog: MzDialog) {
-        console.log('DrawerExampleComponent constructor', mzDialog.myCounter);
+
     }
     
     confirmDeactivation(): boolean {
@@ -62,7 +62,8 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
     }
 
     canDeactivate(): boolean {
-        return this.confirmOnClose;
+        console.log('canDeactivate', this.confirmOnClose);
+        return this.confirmOnClose !== true;
     }
 
     useLongContent() {
@@ -73,7 +74,7 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
         this.paragraphs = new Array(1);
     }
 
-    alert() {
+    openAnother() {
         this.mzDialog.open(DrawerExampleComponent);
     }
 

@@ -14,17 +14,9 @@ import { DrawerContainerComponent } from './container/drawer-container.component
 export class MzDialog implements OnDestroy {
     private cdkDialog: Dialog;
     private openDialogs: MzDialogRef<any>[] = [];
-    //private viewContainerRef?: ViewContainerRef | null = null;
-    static counter = 0;
-    readonly myCounter;
 
     constructor(private injector: Injector, private overlay: Overlay, @Optional() @Inject(DEFAULT_MZ_DIALOG_CONFIG) private configuredOptions: MzDialogConfig, @Optional() private viewContainerRef?: ViewContainerRef | null) {
         this.cdkDialog = injector.get(Dialog);
-        //this.viewContainerRef = injector.get(ViewContainerRef,null);
-
-        MzDialog.counter++;
-        this.myCounter = MzDialog.counter;
-        console.log('------------mzdialog constructor:', this.myCounter, injector, this.viewContainerRef);
     }
 
     /**
@@ -43,17 +35,14 @@ export class MzDialog implements OnDestroy {
     open<R = any, D = any, T = any>(template: TemplateRef<T>, config?: MzDialogConfig<D>): MzDialogRef<R, T>;
     open<R = any, D = any, T = any>(componentOrTemplateRef: ComponentType<T> | TemplateRef<T>, config?: MzDialogConfig<D>): MzDialogRef<R, T>;
     open<R = any, D = any, T = any>(componentOrTemplateRef: ComponentType<T> | TemplateRef<T>, config?: MzDialogConfig<D>): MzDialogRef<R, T> {
-        //this.viewContainerRef = this.injector.get(ViewContainerRef, null);
 
         const defaultOptions = new MzDialogConfig<D>();
         const options = { ...(this.configuredOptions || defaultOptions), ...config };
 
         // compute closeOnNavigation if left undefined. dialogs need to be destroyed either via navigation or component destruction
         if (options.closeOnNavigation === undefined) {
-            options.closeOnNavigation = options.viewContainerRef === undefined && !this.viewContainerRef;
+            options.closeOnNavigation = options.viewContainerRef === undefined && (this.viewContainerRef === undefined || this.viewContainerRef === null);
         }
-
-        console.log('opening dialog', this.myCounter, this.openDialogs.length, this.viewContainerRef, options.closeOnNavigation);
 
         let dialogRef: MzDialogRef<R, T>;
         const cdkRef = this.cdkDialog.open<R, D, T>(componentOrTemplateRef, {
@@ -93,7 +82,6 @@ export class MzDialog implements OnDestroy {
             cdkRef.containerInstance.associateDialogRef(dialogRef!);
         }
 
-        console.log('viewContainerRef', cdkRef.config.viewContainerRef);
         return dialogRef!;
     }
 
@@ -101,13 +89,10 @@ export class MzDialog implements OnDestroy {
      * Gets an array of currently opened dialogs that were opened with this instance of service.
      */
     getDialogs(): MzDialogRef<any>[] {
-        console.log('getting open dialogs', this.myCounter, this.openDialogs.length);
         return this.openDialogs;
     }
 
     confirmDeactivation(): boolean {
-        console.log('confirmDeactivation', this.myCounter, this.openDialogs.length);
-
         // We assume all dialogs belong to the same component tree, so we can just check the first one/last opened
         const i = this.openDialogs.findLastIndex((ref) => !ref.canDeactivate());
 
@@ -123,7 +108,6 @@ export class MzDialog implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-        console.log('destroying open dialogs', this.myCounter, this.openDialogs.length);
         this.closeDialogs(this.openDialogs);
     }
 
@@ -241,7 +225,7 @@ export class MzDialogConfig<D = any, C extends BasePortalOutlet = BasePortalOutl
     /**
      * Whether the dialog should close when the user goes backwards/forwards in history.
      */
-    closeOnNavigation?: boolean = true;
+    closeOnNavigation?: boolean;
 
     /**
      * Component into which the dialog content will be rendered. Defaults to `CdkDialogContainer`.
@@ -282,7 +266,7 @@ export class MzDialogRef<R, C = any> {
      * @returns
      */
     tryClose(result?: R, options?: DialogCloseOptions): boolean {
-        if (this.confirmDeactivation()) {
+        if (this.canDeactivate() || this.confirmDeactivation()) {
             this.cdkRef.close(result, options);
             return true;
         }
@@ -300,8 +284,8 @@ export class MzDialogRef<R, C = any> {
     }
 
     confirmDeactivation(): boolean {
-        if (hasImplementation<CanDeactivateComponent>(this.cdkRef.componentInstance, 'canDeactivate')) {
-            return this.cdkRef.componentInstance.canDeactivate() || this.cdkRef.componentInstance.confirmDeactivation();
+        if (hasImplementation<CanDeactivateComponent>(this.cdkRef.componentInstance, 'canDeactivate') && !this.cdkRef.componentInstance.canDeactivate()) {
+            return this.cdkRef.componentInstance.confirmDeactivation();
         }
 
         return true;
