@@ -8,7 +8,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
     imports: [CdkOverlayOrigin, CdkConnectedOverlay, CdkTrapFocus],
     templateUrl: './dropdown.component.html',
     styleUrl: './dropdown.component.scss',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.ShadowDom
 })
 export class MzDropdownComponent {
     @Input() label: string = '';

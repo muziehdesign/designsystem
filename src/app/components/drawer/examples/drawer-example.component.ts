@@ -7,7 +7,7 @@ import { CanDeactivateComponent, MzDialog, MzDialogModule } from 'muzieh-ngcompo
     standalone: true,
     imports: [RouterLink],
     host: {
-        class: 'dialog-article',
+        class: 'article',
     },
     template: `
         <header>

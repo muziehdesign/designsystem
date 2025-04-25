@@ -6,11 +6,10 @@
     background-color: var(--surface-bg);
     width: 500px;
     max-width: 90%;
-    overflow: auto;
-    height: 100vh;
     position: absolute;
     right: 0;
     top: 0;
+    height: 100vh;
     transition: translate 0.3s ease-out;
     translate: 100%;
 
@@ -24,8 +23,11 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    z-index: 10;
 }
 
-.mz-dialog > :first-child {
-    @include dialog.dialog-article();
+.mz-dialog {
+    height: 100%;
+    position: relative;
+    overflow: auto;
 }

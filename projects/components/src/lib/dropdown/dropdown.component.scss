@@ -1,6 +1,6 @@
-@use "./mixins/icon" as icon;
+@use './mixins/icon' as icon;
 
-.icon {
+.dropdown-icon {
     @include icon.icon();
 }
 
@@ -18,6 +18,6 @@
     line-height: 1.25rem;
 
     &:hover {
-       background-color: var(--color-neutral-200);
+        background-color: var(--color-neutral-200);
     }
 }
