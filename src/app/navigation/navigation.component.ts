@@ -10,10 +10,6 @@ import { ButtonsComponent } from '../components/buttons/buttons.component';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-openDialog() {
-  console.log('openDialog');
-this.mzDialog.open(ButtonsComponent);
-}
 
   links: NavigationLink[];
   constructor(@Inject (NAVIGATION_LINKS_TOKEN) nav: NavigationLink[], private mzDialog: MzDialog) { 
