@@ -1,5 +1,5 @@
 import { InjectionToken } from "@angular/core";
-import { MzDialogConfig } from "./mz-dialog.service";
+import { MzDialogConfig } from "./dialog-config";
 
 /** Injection token that can be used to provide default options for the dialog module. */
 export const DEFAULT_MZ_DIALOG_CONFIG = new InjectionToken<MzDialogConfig>('DefaultMzDialogConfig');

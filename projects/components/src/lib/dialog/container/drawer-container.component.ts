@@ -4,7 +4,8 @@ import { Component, ElementRef, HostListener, Inject, NgZone, Optional } from '@
 import { DOCUMENT } from '@angular/common';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
-import { MzDialogConfig, MzDialogRef } from '../mz-dialog.service';
+import { MzDialogConfig } from '../dialog-config';
+import { MzDialogRef } from '../dialog-ref';
 
 @Component({
     selector: 'mz-drawer-container',
@@ -22,7 +23,7 @@ export class DrawerContainerComponent extends CdkDialogContainer<MzDialogConfig>
     private dialogRef?: MzDialogRef<any>;
     protected open = false;
 
-    constructor(private elementRef: ElementRef, private focusTrapFactory: FocusTrapFactory, @Optional() @Inject(DOCUMENT) _document: any, readonly dialogConfig: MzDialogConfig, protected interactivityChecker: InteractivityChecker, protected ngZone: NgZone, protected overlayRef: OverlayRef) {
+    constructor(elementRef: ElementRef, focusTrapFactory: FocusTrapFactory, readonly dialogConfig: MzDialogConfig, protected interactivityChecker: InteractivityChecker, protected ngZone: NgZone, protected overlayRef: OverlayRef, @Optional() @Inject(DOCUMENT) _document: any) {
         super(elementRef, focusTrapFactory, _document, dialogConfig, interactivityChecker, ngZone, overlayRef);
     }
 
