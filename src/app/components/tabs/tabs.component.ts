@@ -4,11 +4,10 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss'],
-  standalone: true,
-  imports: [CommonModule, NgbNavModule, RouterModule],
+    selector: 'app-tabs',
+    templateUrl: './tabs.component.html',
+    styleUrls: ['./tabs.component.scss'],
+    imports: [CommonModule, NgbNavModule, RouterModule]
 })
 export class TabsComponent implements OnInit {
 

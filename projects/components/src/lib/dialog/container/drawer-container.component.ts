@@ -9,7 +9,6 @@ import { MzDialogRef } from '../dialog-ref';
 
 @Component({
     selector: 'mz-drawer-container',
-    standalone: true,
     imports: [CdkPortalOutlet],
     templateUrl: './drawer-container.component.html',
     styleUrl: './drawer-container.component.scss',

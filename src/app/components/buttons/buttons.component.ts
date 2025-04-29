@@ -7,9 +7,8 @@ import { delay } from 'rxjs/operators';
 
 @Component({
     selector: 'app-buttons',
-    standalone: true,
     imports: [CommonModule, SharedModule],
-    templateUrl: './buttons.component.html',
+    templateUrl: './buttons.component.html'
 })
 export class ButtonsComponent implements OnInit {
     buttonsDemo = ButtonsDemoComponent;

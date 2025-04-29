@@ -9,10 +9,9 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'app-result-table-inline-editing',
-    standalone: true,
     imports: [CommonModule, CurrencyPipe, DatePipe, FormsModule, ResultTableComponent, SortDirective, MuziehFormsModule, MuziehComponentsModule],
     templateUrl: './result-table-inline-editing.component.html',
-    styleUrl: './result-table-inline-editing.component.scss',
+    styleUrl: './result-table-inline-editing.component.scss'
 })
 export class ResultTableInlineEditingComponent {
     @ViewChild('editForm') editForm!: NgForm;

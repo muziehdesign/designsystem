@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PageEvent, PaginationComponent } from 'muzieh-ngcomponents';
 
 @Component({
-  selector: 'app-pagination-guidelines',
-  templateUrl: './pagination-guidelines.component.html',
-  styleUrls: ['./pagination-guidelines.component.scss'],
-  standalone: true,
-  imports: [PaginationComponent],
+    selector: 'app-pagination-guidelines',
+    templateUrl: './pagination-guidelines.component.html',
+    styleUrls: ['./pagination-guidelines.component.scss'],
+    imports: [PaginationComponent]
 })
 export class PaginationGuidelinesComponent implements OnInit {
 

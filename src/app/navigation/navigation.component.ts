@@ -5,9 +5,10 @@ import { MzDialog } from 'muzieh-ngcomponents';
 import { ButtonsComponent } from '../components/buttons/buttons.component';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+    selector: 'app-navigation',
+    templateUrl: './navigation.component.html',
+    styleUrls: ['./navigation.component.scss'],
+    standalone: false
 })
 export class NavigationComponent implements OnInit {
 

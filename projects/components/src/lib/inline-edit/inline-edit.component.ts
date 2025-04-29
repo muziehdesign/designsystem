@@ -5,10 +5,9 @@ import { ButtonDirective } from '../button.directive';
 
 @Component({
     selector: 'mz-inline-edit',
-    standalone: true,
     imports: [ButtonDirective, FormsModule, CommonModule],
     templateUrl: './inline-edit.component.html',
-    styleUrl: './inline-edit.component.scss',
+    styleUrl: './inline-edit.component.scss'
 })
 export class MzInlineEditComponent implements AfterViewInit {
     isEditing = false;

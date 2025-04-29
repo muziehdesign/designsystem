@@ -16,8 +16,7 @@ import { CommonModule } from '@angular/common';
             multi: true,
         },
     ],
-    imports: [CommonModule, MatDatepickerModule],
-    standalone: true,
+    imports: [CommonModule, MatDatepickerModule]
 })
 export class DateTimeComponent implements ControlValueAccessor {
     date: Date | undefined;

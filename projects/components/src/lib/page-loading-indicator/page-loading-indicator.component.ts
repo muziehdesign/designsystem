@@ -8,8 +8,7 @@ import { delay, filter, repeat, take } from 'rxjs/operators';
     selector: 'mz-page-loading-indicator',
     templateUrl: './page-loading-indicator.component.html',
     styleUrls: ['./page-loading-indicator.component.scss'],
-    imports: [CommonModule],
-    standalone: true,
+    imports: [CommonModule]
 })
 export class PageLoadingIndicatorComponent implements OnInit {
     @Input() isLoading: boolean = false;

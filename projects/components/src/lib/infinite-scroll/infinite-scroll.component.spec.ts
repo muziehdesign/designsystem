@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
             </ng-template>
         </mz-infinite-scroll>
     `,
+    standalone: false
 })
 class TestHostComponent {
     testItems = [

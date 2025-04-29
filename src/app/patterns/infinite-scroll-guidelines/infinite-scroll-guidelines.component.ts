@@ -5,10 +5,9 @@ import { MuziehComponentsModule, ResultTableComponent, SortDirective } from 'muz
 
 @Component({
     selector: 'app-infinite-scroll',
-    standalone: true,
     imports: [CommonModule, CurrencyPipe, DatePipe, FormsModule, ResultTableComponent, SortDirective, MuziehComponentsModule],
     templateUrl: './infinite-scroll-guidelines.component.html',
-    styleUrl: './infinite-scroll-guidelines.component.scss',
+    styleUrl: './infinite-scroll-guidelines.component.scss'
 })
 export class InfiniteScrollGuidelinesComponent {
     items: any[] = [];

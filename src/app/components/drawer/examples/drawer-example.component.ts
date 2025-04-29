@@ -4,7 +4,6 @@ import { CanDeactivateComponent, MzDialog, MzDialogModule } from 'muzieh-ngcompo
 
 @Component({
     selector: 'app-drawer-example',
-    standalone: true,
     imports: [RouterLink],
     host: {
         class: 'article',

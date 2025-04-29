@@ -6,10 +6,9 @@ import { FilterOptionModel, MuziehComponentsModule, OptionsFilterComponent, Filt
 
 @Component({
     selector: 'filter-options',
-    standalone: true,
     imports: [CommonModule, FormsModule, MuziehComponentsModule, OverlayModule, OptionsFilterComponent, FilterComponent],
     templateUrl: './filter-options.component.html',
-    styleUrls: ['./filter-options.component.scss'],
+    styleUrls: ['./filter-options.component.scss']
 })
 export class FilterOptionsComponent {
     options: FilterOptionModel<string>[] = [

@@ -4,11 +4,10 @@ import { WizardStepLink } from '../models/wizard-step-link';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 @Component({
-  selector: 'mz-wizard-progress-tracker',
-  templateUrl: './wizard-progress-tracker.component.html',
-  styleUrls: ['./wizard-progress-tracker.component.scss'],
-  standalone:  true,
-  imports: [CommonModule, SvgIconComponent]
+    selector: 'mz-wizard-progress-tracker',
+    templateUrl: './wizard-progress-tracker.component.html',
+    styleUrls: ['./wizard-progress-tracker.component.scss'],
+    imports: [CommonModule, SvgIconComponent]
 })
 export class WizardProgressTrackerComponent {
   @Input() steps: WizardStepLink[] = [];
