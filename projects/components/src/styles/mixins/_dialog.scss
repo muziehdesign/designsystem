@@ -1,17 +1,19 @@
-@mixin dialog-content() {
+@mixin dialog-article() {
     display: flex;
     flex-direction: column;
-    padding: 0.5rem 1rem 0 1rem;
+    padding: 0 1rem 0 1rem;
     height:100vh;
+    overflow-y: auto;
 
     & > *:not(header, footer) {
         flex-grow: 1;
+        padding: 0.5rem 0;
     }
 
     header, footer {
         padding: 0.75rem 0;
         position: sticky;
-        background-color: white;
+        background-color: var(--surface-bg, #fff);
     }
 
     header {

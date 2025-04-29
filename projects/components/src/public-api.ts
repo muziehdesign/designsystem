@@ -55,8 +55,12 @@ export { SortEvent } from './lib/models/sort-event';
 export { WizardStepLink } from './lib/models/wizard-step-link';
 export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
 
-// drawer
-export { DrawerContainerComponent } from './lib/drawer/drawer-container.component';
+// dialog
+export { MzDialog } from './lib/dialog/mz-dialog.service';
+export { MzDialogConfig } from './lib/dialog/dialog-config';
+export { MzDialogRef } from './lib/dialog/dialog-ref';
+export { DrawerContainerComponent } from './lib/dialog/container/drawer-container.component';
+export { MzDialogModule } from './lib/dialog/dialog.module';
 
 // dropdown
 export { MzDropdownComponent } from './lib/dropdown/dropdown.component';
@@ -64,6 +68,9 @@ export { MzDropdownItemDirective } from './lib/dropdown/dropdown-item.directive'
 export { MzDropdownModule } from './lib/dropdown/dropdown.module';
 
 // filter
+export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';
 export { OptionsFilterComponent } from './lib/options-filter/options-filter.component';
-export { FilterComponent } from './lib/filter/filter.component';
+
+// utilities
+export { CanDeactivateComponent, hasImplementation } from './lib/guard-deactivate';

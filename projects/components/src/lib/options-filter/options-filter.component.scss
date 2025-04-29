@@ -1,16 +1,13 @@
 @use 'mixins/icon' as icon;
+@use 'mixins/dropdown' as dropdown;
 
 .dropdown-icon {
     @include icon.icon();
+    padding-left: 0.5rem;
 }
 
 .dropdown-body {
-    background-color: var(--surface-bg);
-    min-width: 5rem;
-    margin-top: 0.25rem;
-    padding: 0.75rem;
-    border-radius: var(--surface-border-radius);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+    @include dropdown.overlay();
 }
 
 .dropdown-buttons {
