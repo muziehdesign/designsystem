@@ -16,17 +16,19 @@
 @use 'design/utilities';
 @use 'design/form';
 @use 'design/dialog';
-@use 'design/cdk-overlay';
-@use 'guideline-page';
 @use 'design/base';
+@use 'design/cdk-overlay';
 
+// pages
+@use 'guideline-page';
+
+// tailwind
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import 'highlight.js/styles/github.css';
 
-// pages
 
 
 // icon
