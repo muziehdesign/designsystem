@@ -8,7 +8,7 @@ import { filter } from 'rxjs/operators';
     host: {
         role: 'button',
         '[attr.tabindex]': '0',
-        '[attr.aria-disabled]': 'busy',
+        '[attr.aria-busy]': 'busy',
     },
 })
 export class ButtonDirective implements OnChanges, OnDestroy {

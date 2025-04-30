@@ -1,9 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ButtonsDemoComponent } from '../../../demos/buttons-demo.component';
 import { of, Subscription } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { delay, take } from 'rxjs/operators';
 
 @Component({
     selector: 'app-buttons',
@@ -11,38 +11,23 @@ import { delay } from 'rxjs/operators';
     imports: [CommonModule, SharedModule],
     templateUrl: './buttons.component.html',
 })
-export class ButtonsComponent implements OnInit {
+export class ButtonsComponent{
     buttonsDemo = ButtonsDemoComponent;
     langs: string[] = ['xml'];
-    busy?: boolean = true;
-    busy2?: boolean;
+    counter: number = 0;
+    busy: boolean = false;
     private subscription: Subscription = new Subscription();
 
     constructor() {}
-    ngAfterViewChecked(): void {}
-
-    ngOnInit(): void {}
-
-    ngOnDestroy(): void {
-        this.subscription?.unsubscribe();
-    }
 
     testBusyEvent(): void {
-        console.log('clicked busy');
-    }
-
-    testBusyEvent2(): void {
-        this.busy2 = true;
-        console.log('test2 is now busy for 5 seconds');
-        this.subscription = of(true)
-            .pipe(delay(5000))
+        this.counter++;
+        this.busy = true;
+        of(true)
+            .pipe(delay(3000), take(1))
             .subscribe(() => {
-                this.busy2 = false;
+                this.busy = false;
                 this.subscription.unsubscribe();
             });
-    }
-
-    onButtonClick(): void {
-        console.log('clicked');
     }
 }

@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { MzDropdownItemDirective, MzDropdownComponent } from 'muzieh-ngcomponents';
+import { ButtonDirective, SvgIconComponent } from 'muzieh-ngcomponents';
+import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 
 @Component({
-  selector: 'app-dropdown-menu-guidelines',
-  templateUrl: './dropdown-menu-guidelines.component.html',
-  styleUrls: ['./dropdown-menu-guidelines.component.scss'],
-  standalone: true,
-  imports: [MzDropdownComponent, MzDropdownItemDirective],
+    selector: 'app-dropdown-menu-guidelines',
+    templateUrl: './dropdown-menu-guidelines.component.html',
+    styleUrls: ['./dropdown-menu-guidelines.component.scss'],
+    standalone: true,
+    imports: [CdkMenuTrigger, CdkMenu, CdkMenuItem, ButtonDirective, SvgIconComponent],
 })
-export class DropdownMenuGuidelinesComponent implements OnInit {
+export class DropdownMenuGuidelinesComponent {
+    constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  openItem() {
-    window.alert('You clicked on a menu item!');
-  }
+    openItem() {
+        window.alert('You clicked on a menu item!');
+    }
 }

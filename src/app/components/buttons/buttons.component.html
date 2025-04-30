@@ -70,36 +70,21 @@
             <button mzButton [variant]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 <mz-svg-icon key="pencil"></mz-svg-icon>
             </button>
-            <button mzButton [variant]="'primary'" [busy]="busy2" (click)="testBusyEvent2()">
+            <button mzButton [variant]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 <mz-svg-icon key="pencil"></mz-svg-icon>
             </button>
-            <button class="button button-primary loading" (click)="onButtonClick()">
-                <div class="button-loading-overlay">
-                    <svg class="animate-spin m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
-                        </circle>
-                        <path class="opacity-75" fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                        </path>
-                    </svg>
-                </div>
-                Primary button
+            <button mzButton variant="primary" [busy]="busy" (click)="testBusyEvent()">
+                Primary
             </button>
-            <button class="button button-secondary loading" (click)="onButtonClick()">
-                <div class="button-loading-overlay">
-                    <svg class="animate-spin m-auto h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
-                        </circle>
-                        <path class="opacity-75" fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                        </path>
-                    </svg>
-                </div>
-                Secondary button
+            <button mzButton [busy]="busy" (click)="testBusyEvent()">
+                Default
             </button>
+            <button mzButton variant="tertiary" [busy]="busy" (click)="testBusyEvent()">
+                Default
+            </button>
+            
         </div>
+        <div class="text-sm text-subtle mt-2">Button click handler has been called {{counter}} times.</div>
     </div>
 </article>
 

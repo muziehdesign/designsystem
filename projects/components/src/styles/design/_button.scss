@@ -5,13 +5,17 @@
 
 .button-primary {
     @apply text-white shadow-sm bg-blue-600 hover:bg-blue-700 active:bg-blue-800/95;
+
+    .button-loading-overlay {
+        @apply text-white;
+    }
 }
 
 .button-secondary {
     @apply text-secondary shadow-sm bg-gray-200 hover:bg-gray-300 active:bg-gray-400/65;
 }
 
-.button-secondary.active {
+.button-secondary.active, .button-secondary[aria-expanded=true] {
     @apply bg-gray-400/65;
 }
 
@@ -28,7 +32,7 @@
 }
 
 .button.loading {
-    @apply cursor-wait;
+    @apply cursor-wait text-transparent;
 }
 
 .button-loading-spinner {
@@ -36,7 +40,7 @@
 }
 
 .button-loading-overlay {
-    @apply absolute inset-0 flex items-center justify-center z-10;
+    @apply absolute inset-0 flex items-center justify-center z-10 text-secondary;
     background-color: inherit;
 }
 
