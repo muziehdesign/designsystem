@@ -1,6 +1,6 @@
 {
   "name": "designsystem",
-  "version": "18.3.0-next.0",
+  "version": "19.2.0-next.0",
   "scripts": {
     "ng": "ng",
     "start": "concurrently -k \"ng build components --watch\" \"wait-on ./dist/components/index.d.ts && ng serve --open\"",
