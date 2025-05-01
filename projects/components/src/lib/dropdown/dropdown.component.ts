@@ -4,7 +4,6 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'mz-dropdown',
-    standalone: true,
     imports: [CdkOverlayOrigin, CdkConnectedOverlay, CdkTrapFocus],
     templateUrl: './dropdown.component.html',
     styleUrl: './dropdown.component.scss',

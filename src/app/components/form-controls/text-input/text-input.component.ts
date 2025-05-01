@@ -6,11 +6,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { TextInputDemoComponent } from 'src/demos/text-input-demo.component';
 
 @Component({
-  selector: 'app-text-input',
-  templateUrl: './text-input.component.html',
-  standalone: true,
-  styleUrls: ['./text-input.component.scss'],
-  imports: [CommonModule, FormsModule, SvgIconComponent, SpinnerComponent, SharedModule]
+    selector: 'app-text-input',
+    templateUrl: './text-input.component.html',
+    styleUrls: ['./text-input.component.scss'],
+    imports: [CommonModule, FormsModule, SvgIconComponent, SpinnerComponent, SharedModule]
 })
 export class TextInputComponent implements OnInit {
 

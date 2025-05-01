@@ -85,13 +85,12 @@ describe('InlineEditComponent', () => {
 
 @Component({
     selector: 'app-inline-edit-test',
-    standalone: true,
     template: `
         <mz-inline-edit (save)="onSave()" [label]="display()">
             <input type="text" [(ngModel)]="model" name="model" />
         </mz-inline-edit>
     `,
-    imports: [MzInlineEditComponent, FormsModule],
+    imports: [MzInlineEditComponent, FormsModule]
 })
 class TestComponent {
     model = 'my model value';

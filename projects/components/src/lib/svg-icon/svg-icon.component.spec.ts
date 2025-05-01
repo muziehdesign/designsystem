@@ -5,7 +5,8 @@ import { By } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 
 @Component({
-  template: `<mz-svg-icon key="x-circle" [type]="type"></mz-svg-icon>`
+    template: `<mz-svg-icon key="x-circle" [type]="type"></mz-svg-icon>`,
+    standalone: false
 })
 class TestHostComponent {
   type = 'outline';

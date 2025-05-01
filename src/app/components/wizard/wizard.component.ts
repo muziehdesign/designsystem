@@ -6,8 +6,7 @@ import { WizardProgressTrackerComponent, WizardStepLink } from 'muzieh-ngcompone
     selector: 'app-wizard',
     templateUrl: './wizard.component.html',
     styleUrls: ['./wizard.component.scss'],
-    standalone: true,
-    imports: [WizardProgressTrackerComponent],
+    imports: [WizardProgressTrackerComponent]
 })
 export class WizardComponent {
 

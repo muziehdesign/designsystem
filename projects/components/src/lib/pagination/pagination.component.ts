@@ -6,11 +6,10 @@ import { PaginationDefaultOptions } from './pagination-default-options';
 import { PAGINATION_DEFAULT_OPTIONS } from './pagination-default-options.token';
 
 @Component({
-  selector: 'mz-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.css'],
-  imports: [CommonModule, SvgIconComponent],
-  standalone: true,
+    selector: 'mz-pagination',
+    templateUrl: './pagination.component.html',
+    styleUrls: ['./pagination.component.css'],
+    imports: [CommonModule, SvgIconComponent]
 })
 export class PaginationComponent implements OnChanges {
 

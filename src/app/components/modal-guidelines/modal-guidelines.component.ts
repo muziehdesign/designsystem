@@ -1,23 +1,20 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ModalAddOrderComponent } from '../modal-add-order/modal-add-order.component';
-import { Dialog } from '@angular/cdk/dialog';
-import { Overlay, ScrollStrategyOptions } from '@angular/cdk/overlay';
+import { Overlay } from '@angular/cdk/overlay';
+import { MzDialog, MzDialogModule } from 'muzieh-ngcomponents';
 
 @Component({
     selector: 'app-modal-guidelines',
     templateUrl: './modal-guidelines.component.html',
     styleUrls: ['./modal-guidelines.component.scss'],
-    standalone: true,
-    imports: [],
+    imports: [MzDialogModule]
 })
 export class ModalGuidelinesComponent implements OnDestroy {
 
-    constructor(private dialog: Dialog, private overlay: Overlay) {}
+    constructor(private dialog: MzDialog, private overlay: Overlay) {}
 
     open(): void {
-        const ref = this.dialog.open(ModalAddOrderComponent, {
-            scrollStrategy: this.overlay.scrollStrategies.block()
-        });
+        const ref = this.dialog.open(ModalAddOrderComponent);
         ref.closed.subscribe(x=>{
             console.log('result: ', x);
         });

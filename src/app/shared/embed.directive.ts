@@ -1,7 +1,8 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appEmbed]'
+    selector: '[appEmbed]',
+    standalone: false
 })
 export class EmbedDirective {
 

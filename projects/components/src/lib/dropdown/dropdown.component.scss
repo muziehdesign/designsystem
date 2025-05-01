@@ -1,23 +1,25 @@
-@use "./mixins/icon" as icon;
+@use './mixins/icon' as icon;
+@use 'mixins/dropdown' as dropdown;
 
-.icon {
+.mz-dropdown-icon {
     @include icon.icon();
+    padding-left: 0.5rem;
 }
 
-.dropdown-body {
-    background-color: var(--surface-bg, white);
-    min-width: 5rem;
-    margin-top: 0.25rem; // TODO: because of outline
+.mz-dropdown-body {
+    @include dropdown.overlay();
 }
 
-.dropdown-item {
+.mz-dropdown-item {
     display: block;
     width: 100%;
     padding: 0.5rem;
     font-size: 0.875rem; // TODO: text-sm
     line-height: 1.25rem;
+    text-align: left;
+    border-radius: var(--button-border-radius);
 
     &:hover {
-       background-color: var(--color-neutral-200);
+        background-color: var(--color-neutral-200);
     }
 }

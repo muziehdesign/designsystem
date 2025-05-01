@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ButtonDirective } from 'muzieh-ngcomponents';
 @Component({
     selector: 'app-buttons-demo',
-    standalone: true,
     imports: [CommonModule, ButtonDirective],
     templateUrl: './buttons-demo.component.html',
     styleUrls: ['./buttons-demo.component.scss']
