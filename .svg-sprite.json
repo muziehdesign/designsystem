@@ -24,7 +24,9 @@
             "inline": true,
             "sprite": "icondefinitions.svg",
             "dest": ".",
-            "example": true
+            "example": {
+                "dest": "icondefinitions.html"
+            }
         },
         "svg": {
             "xmlDeclaration": false,  
