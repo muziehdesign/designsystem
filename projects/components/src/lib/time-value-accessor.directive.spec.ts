@@ -6,7 +6,8 @@ import { ScheduleInputModel } from './date-time/date-time.component';
 import { TimeValueAccessorDirective } from './time-value-accessor.directive';
 
 @Component({
-  template: `<input type="time" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name">`
+    template: `<input type="time" [(ngModel)]="defaultScheduleInputModel.time" (change)="changeScheduledRunTime($event)" name="defaultScheduleInputModel.name">`,
+    standalone: false
 })
 class TestTimeInputComponent {
   defaultScheduleInputModel: ScheduleInputModel = { time: { hour: 6, minute: 20 } };

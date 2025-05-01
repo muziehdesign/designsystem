@@ -6,11 +6,10 @@ import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
     selector: 'mz-options-filter',
-    standalone: true,
     imports: [FormsModule, CdkOverlayOrigin, CdkConnectedOverlay, SpinnerComponent],
     templateUrl: './options-filter.component.html',
     styleUrl: './options-filter.component.scss',
-    encapsulation: ViewEncapsulation.None,
+    encapsulation: ViewEncapsulation.None
 })
 export class OptionsFilterComponent {
     @Input() options?: FilterOptionModel<string>[];

@@ -2,11 +2,10 @@ import { Component, HostBinding, Inject, Input, OnInit, Optional } from '@angula
 import { SVG_ICON_DEFAULT_OPTIONS, SvgIconOptions } from './svg-icon-config';
 
 @Component({
-  selector: 'mz-svg-icon',
-  templateUrl: './svg-icon.component.svg',
-  styleUrls: ['./svg-icon.component.scss'],
-  standalone: true,
-  imports: []
+    selector: 'mz-svg-icon',
+    templateUrl: './svg-icon.component.svg',
+    styleUrls: ['./svg-icon.component.scss'],
+    imports: []
 })
 export class SvgIconComponent {
   @Input() key!: string;

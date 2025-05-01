@@ -5,10 +5,9 @@ import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
     selector: 'mz-filter',
-    standalone: true,
     imports: [CdkOverlayOrigin, CdkConnectedOverlay, FormsModule, CommonModule],
     templateUrl: './filter.component.html',
-    styleUrl: './filter.component.scss',
+    styleUrl: './filter.component.scss'
 })
 export class FilterComponent implements AfterContentInit {
     @Input() label = 'Filter';

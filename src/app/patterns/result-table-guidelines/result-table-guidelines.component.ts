@@ -13,8 +13,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     selector: 'app-result-table-guidelines',
     templateUrl: './result-table-guidelines.component.html',
     styleUrls: ['./result-table-guidelines.component.scss'],
-    standalone: true,
-    imports: [CommonModule, CurrencyPipe, DatePipe, FormsModule, ResultTableComponent, SortDirective],
+    imports: [CommonModule, CurrencyPipe, DatePipe, FormsModule, ResultTableComponent, SortDirective]
 })
 export class ResultTableGuidelinesComponent {
     defaultModelTotal: number = 120;

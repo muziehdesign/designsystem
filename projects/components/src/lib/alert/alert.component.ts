@@ -6,8 +6,7 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
     selector: 'mz-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.css'],
-    imports: [CommonModule, SvgIconComponent],
-    standalone: true,
+    imports: [CommonModule, SvgIconComponent]
 })
 export class AlertComponent implements OnInit {
     @Input() title: string = '';

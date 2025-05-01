@@ -3,11 +3,10 @@ import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from 'muzieh-ngcomponents';
 
 @Component({
-  selector: 'app-spinner-guidelines',
-  templateUrl: './spinner-guidelines.component.html',
-  styleUrls: ['./spinner-guidelines.component.scss'],
-  standalone: true,
-  imports: [RouterModule, SpinnerComponent],
+    selector: 'app-spinner-guidelines',
+    templateUrl: './spinner-guidelines.component.html',
+    styleUrls: ['./spinner-guidelines.component.scss'],
+    imports: [RouterModule, SpinnerComponent]
 })
 export class SpinnerGuidelinesComponent implements OnInit {
 

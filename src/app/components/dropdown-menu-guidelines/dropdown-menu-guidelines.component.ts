@@ -6,7 +6,6 @@ import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
     selector: 'app-dropdown-menu-guidelines',
     templateUrl: './dropdown-menu-guidelines.component.html',
     styleUrls: ['./dropdown-menu-guidelines.component.scss'],
-    standalone: true,
     imports: [CdkMenuTrigger, CdkMenu, CdkMenuItem, ButtonDirective, SvgIconComponent],
 })
 export class DropdownMenuGuidelinesComponent {

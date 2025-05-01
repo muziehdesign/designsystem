@@ -4,7 +4,6 @@ import { DrawerExampleComponent } from './examples/drawer-example.component';
 
 @Component({
     selector: 'app-drawer',
-    standalone: true,
     templateUrl: './drawer.component.html',
     styleUrl: './drawer.component.scss',
     imports: [MzDialogModule],

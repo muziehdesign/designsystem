@@ -11,8 +11,7 @@ import { ResultTableModel } from './result-table.model';
     selector: 'mz-result-table',
     templateUrl: './result-table.component.html',
     styleUrls: ['./result-table.component.scss'],
-    imports: [CommonModule, PaginationComponent, SpinnerComponent, SvgIconComponent],
-    standalone: true,
+    imports: [CommonModule, PaginationComponent, SpinnerComponent, SvgIconComponent]
 })
 export class ResultTableComponent implements AfterViewInit {
 
