@@ -14,6 +14,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     selector: 'app-resource-list',
     templateUrl: './resource-list.component.html',
     styleUrls: ['./resource-list.component.scss'],
+    standalone: false
 })
 export class ResourceListComponent implements OnInit {
     paged: Signal<Paged<ResourceSummaryModel> | undefined>;

@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DateTimeComponent } from './date-time.component';
 
-@Component({ selector: 'test-cmp', template: '' })
+@Component({
+    selector: 'test-cmp', template: '',
+    standalone: false
+})
 class TestComponent {
     dateTime: Date | undefined;
 }

@@ -3,11 +3,10 @@ import sdk from '@stackblitz/sdk';
 import { PageHeaderComponent } from 'muzieh-ngcomponents';
 
 @Component({
-  selector: 'app-page-header-guidelines',
-  templateUrl: './page-header-guidelines.component.html',
-  styleUrls: ['./page-header-guidelines.component.scss'],
-  standalone: true,
-  imports: [PageHeaderComponent],
+    selector: 'app-page-header-guidelines',
+    templateUrl: './page-header-guidelines.component.html',
+    styleUrls: ['./page-header-guidelines.component.scss'],
+    imports: [PageHeaderComponent]
 })
 export class PageHeaderGuidelinesComponent implements OnInit {
 

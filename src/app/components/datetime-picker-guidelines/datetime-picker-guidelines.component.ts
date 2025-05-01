@@ -6,11 +6,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateTimeComponent, SvgIconComponent, TimeValue } from 'muzieh-ngcomponents';
 
 @Component({
-  selector: 'app-datetime-picker-guidelines',
-  templateUrl: './datetime-picker-guidelines.component.html',
-  styleUrls: ['./datetime-picker-guidelines.component.scss'],
-  standalone: true,
-  imports: [CommonModule, DateTimeComponent, FormsModule, MatDatepickerModule, MatNativeDateModule, SvgIconComponent],
+    selector: 'app-datetime-picker-guidelines',
+    templateUrl: './datetime-picker-guidelines.component.html',
+    styleUrls: ['./datetime-picker-guidelines.component.scss'],
+    imports: [CommonModule, DateTimeComponent, FormsModule, MatDatepickerModule, MatNativeDateModule, SvgIconComponent]
 })
 export class DatetimePickerGuidelinesComponent {
 

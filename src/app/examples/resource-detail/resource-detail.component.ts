@@ -7,6 +7,7 @@ import 'reflect-metadata';
     selector: 'app-resource-detail',
     templateUrl: './resource-detail.component.html',
     styleUrls: ['./resource-detail.component.scss'],
+    standalone: false
 })
 export class ResourceDetailComponent implements OnInit {
     activeId: number = 1;

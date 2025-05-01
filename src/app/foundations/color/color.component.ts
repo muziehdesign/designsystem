@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-color',
-  templateUrl: './color.component.html',
-  styleUrls: ['./color.component.scss'],
-  standalone: true,
-  imports: [CommonModule],
+    selector: 'app-color',
+    templateUrl: './color.component.html',
+    styleUrls: ['./color.component.scss'],
+    imports: [CommonModule]
 })
 export class ColorComponent implements OnInit {
 

@@ -4,13 +4,14 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  template: `
+    template: `
       <mz-filter2>
         <form #myForm="ngForm">
           <input type="text" [(ngModel)]="name" name="name" />
         </form>
       </mz-filter2>
   `,
+    standalone: false
 })
 class TestHostComponent {
   name = '';

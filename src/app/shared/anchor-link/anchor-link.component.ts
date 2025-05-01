@@ -3,12 +3,11 @@ import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: '[app-anchor-link]',
-    standalone: true,
     imports: [RouterModule],
     templateUrl: './anchor-link.component.html',
     styleUrl: './anchor-link.component.scss',
     host: {
-      "(click)": "navigate()"
+        "(click)": "navigate()"
     }
 })
 export class AnchorLinkComponent {

@@ -4,10 +4,9 @@ import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
     selector: 'mz-infinite-scroll',
-    standalone: true,
     imports: [CommonModule, SpinnerComponent],
     templateUrl: './infinite-scroll.component.html',
-    styleUrls: ['./infinite-scroll.component.scss'],
+    styleUrls: ['./infinite-scroll.component.scss']
 })
 export class InfiniteScrollComponent {
     @Input() items: any[] = [];

@@ -1,14 +1,13 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MuziehComponentsModule, ResultTableComponent, SortDirective } from 'muzieh-ngcomponents';
+import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 
 @Component({
     selector: 'app-infinite-scroll',
-    standalone: true,
-    imports: [CommonModule, CurrencyPipe, DatePipe, FormsModule, ResultTableComponent, SortDirective, MuziehComponentsModule],
+    imports: [CommonModule, FormsModule, MuziehComponentsModule],
     templateUrl: './infinite-scroll-guidelines.component.html',
-    styleUrl: './infinite-scroll-guidelines.component.scss',
+    styleUrl: './infinite-scroll-guidelines.component.scss'
 })
 export class InfiniteScrollGuidelinesComponent {
     items: any[] = [];

@@ -12,6 +12,7 @@ import { EmbedDirective } from '../embed.directive';
     selector: 'app-demo-container',
     templateUrl: './demo-container.component.html',
     styleUrls: ['./demo-container.component.scss'],
+    standalone: false
 })
 export class DemoContainerComponent implements OnInit {
     @Input() component!: Type<unknown>;

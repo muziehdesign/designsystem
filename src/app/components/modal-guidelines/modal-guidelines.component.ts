@@ -7,8 +7,7 @@ import { MzDialog, MzDialogModule } from 'muzieh-ngcomponents';
     selector: 'app-modal-guidelines',
     templateUrl: './modal-guidelines.component.html',
     styleUrls: ['./modal-guidelines.component.scss'],
-    standalone: true,
-    imports: [MzDialogModule],
+    imports: [MzDialogModule]
 })
 export class ModalGuidelinesComponent implements OnDestroy {
 
