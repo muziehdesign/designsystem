@@ -5,10 +5,6 @@
     </p>
 </header>
 <article>
-    <h2>Overview</h2>
-      <app-demo-container [component]="buttonsDemo"></app-demo-container>
-</article>
-<article>
     <h2>Variants</h2>
     <p>
         Each button variant serves a specific purpose, they should be used accordingly.
@@ -68,10 +64,10 @@
     <div class="example">
         <div class="button-list">
             <button mzButton [variant]="'primary'" [busy]="busy" (click)="testBusyEvent()">
-                <mz-svg-icon key="pencil"></mz-svg-icon>
+                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
             </button>
             <button mzButton [variant]="'primary'" [busy]="busy" (click)="testBusyEvent()">
-                <mz-svg-icon key="pencil"></mz-svg-icon>
+                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
             </button>
             <button mzButton variant="primary" [busy]="busy" (click)="testBusyEvent()">
                 Primary
@@ -107,11 +103,11 @@
     <div class="example">
         <div class="button-list">
             <button class="button button-primary">
-                <mz-svg-icon key="pencil"></mz-svg-icon>
+                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
                 Edit
             </button>
             <button class="button button-secondary">
-                <mz-svg-icon key="pencil"></mz-svg-icon>
+                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
                 Edit
             </button>
         </div>
@@ -125,13 +121,13 @@
     <div class="example">
         <div class="button-list">
             <button mzButton variant="primary">
-                <mz-svg-icon key="menu" type="outline"></mz-svg-icon>
+                <mz-svg-icon key="menu-outline"></mz-svg-icon>
             </button>
             <button mzButton>
-                <mz-svg-icon key="pencil"></mz-svg-icon>
+                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
             </button>
             <button mzButton>
-                <mz-svg-icon key="menu" type="outline"></mz-svg-icon>
+                <mz-svg-icon key="menu-outline"></mz-svg-icon>
                 Menu
             </button>
         </div>

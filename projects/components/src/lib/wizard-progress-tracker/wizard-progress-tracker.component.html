@@ -11,7 +11,7 @@
                         <div *ngIf="i > 0" class="step-line left"></div>
 
                         <div *ngIf="i < currentStep" class="wizard-step-icon">
-                            <mz-svg-icon key="check-circle" type="solid">
+                            <mz-svg-icon key="check-circle-solid">
                             </mz-svg-icon>
                         </div>
                         <div *ngIf="i === currentStep" class="wizard-step-icon">
@@ -32,10 +32,10 @@
                     </div>
                     <div class="toggable-icon">
                         <button *ngIf="!toggled" (click)="toggle()">
-                            <mz-svg-icon key="chevron-down"></mz-svg-icon>
+                            <mz-svg-icon key="chevron-down-solid"></mz-svg-icon>
                         </button>
                         <button *ngIf="toggled" (click)="toggle()">
-                            <mz-svg-icon key="chevron-up"></mz-svg-icon>
+                            <mz-svg-icon key="chevron-up-solid"></mz-svg-icon>
                         </button>
                     </div>
                 </ng-container>

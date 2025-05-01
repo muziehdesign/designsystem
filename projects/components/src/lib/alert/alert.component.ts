@@ -32,7 +32,7 @@ export class AlertComponent implements OnInit {
         } else if (this.type === 'error') {
             icon = 'x-circle-solid';
         } else if (this.type === 'warning') {
-            icon = 'exclamation-solid';
+            icon = 'exclamation-triangle-solid';
         }
         return icon;
     }

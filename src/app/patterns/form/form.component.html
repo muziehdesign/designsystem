@@ -19,7 +19,7 @@
                 <input type="text" class="field-control" [(ngModel)]="model.recipientName" name="recipientName"
                     required>
                 <small class="field-error" *ngIf="displayError('recipientName')">
-                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
+                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
                     Invalid value
                 </small>
                 <small class="field-instructions">This is what instruction text would look like</small>
@@ -29,7 +29,7 @@
                 <span class="field-label">Address 1 <span class="text-red-500">*</span></span>
                 <input type="text" class="field-control" [(ngModel)]="model.address1" name="address1" required>
                 <small class="field-error" *ngIf="displayError('address1')">
-                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
+                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
                     Invalid value
                 </small>
             </label>
@@ -55,7 +55,7 @@
                 </label>
                 <small class="field-error"
                     *ngIf="displayError('city') || displayError('state') || displayError('zipCode')">
-                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
+                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
                     Invalid value(s)
                 </small>
             </div>
@@ -86,11 +86,11 @@
 
             <div class="footer">
                 <div class="form-message success" *ngIf="isSuccessful == true">
-                    <mz-svg-icon key="check-circle" type="solid"></mz-svg-icon>
+                    <mz-svg-icon key="check-circle-solid"></mz-svg-icon>
                     Saved!
                 </div>
                 <div class="form-message failed text-danger" *ngIf="isSuccessful == false">
-                    <mz-svg-icon key="exclamation" type="solid"></mz-svg-icon>
+                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
                     Unexpected error, try submitting the form again.
                 </div>
 
