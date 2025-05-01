@@ -1,0 +1,37 @@
+{
+    "dest": "projects/components/src/assets",
+    "svg": {
+        "transform": [
+            {
+                "svgo": {
+                    "plugins": [
+                        {
+                            "name": "preset-default",
+                            "params": {
+                                "overrides": {
+                                    "convertShapeToPath": false,
+                                    "moveGroupAttrsToElems": false
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "mode": {
+        "symbol": {
+            "inline": true,
+            "sprite": "icondefinitions.svg",
+            "dest": ".",
+            "example": {
+                "dest": "icondefinitions.html"
+            }
+        },
+        "svg": {
+            "xmlDeclaration": false,  
+            "doctypeDeclaration": false, 
+            "xmlns": false
+        }
+    }
+}

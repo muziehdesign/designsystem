@@ -62,11 +62,6 @@ export { MzDialogRef } from './lib/dialog/dialog-ref';
 export { DrawerContainerComponent } from './lib/dialog/container/drawer-container.component';
 export { MzDialogModule } from './lib/dialog/dialog.module';
 
-// dropdown
-export { MzDropdownComponent } from './lib/dropdown/dropdown.component';
-export { MzDropdownItemDirective } from './lib/dropdown/dropdown-item.directive';
-export { MzDropdownModule } from './lib/dropdown/dropdown.module';
-
 // filter
 export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';

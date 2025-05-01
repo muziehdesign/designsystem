@@ -87,7 +87,7 @@ export class ResultTableInlineEditingComponent {
     }
 
     getIconKey(orderNumber: number): string {
-        return this.editingRow === orderNumber ? 'check-circle' : 'pencil';
+        return this.editingRow === orderNumber ? 'check-solid' : 'pencil-solid';
     }
 }
 

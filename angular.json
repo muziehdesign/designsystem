@@ -40,6 +40,11 @@
             },
             "assets": [
               "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "dist/components/assets",
+                "output": "/assets"
+              },
               "src/assets",
               "src/demos",
               {
