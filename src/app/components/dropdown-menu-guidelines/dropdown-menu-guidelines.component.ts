@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ButtonDirective, SvgIconComponent } from 'muzieh-ngcomponents';
-import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
+import { CdkMenuModule } from '@angular/cdk/menu';
 
 @Component({
     selector: 'app-dropdown-menu-guidelines',
     templateUrl: './dropdown-menu-guidelines.component.html',
     styleUrls: ['./dropdown-menu-guidelines.component.scss'],
-    imports: [CdkMenuTrigger, CdkMenu, CdkMenuItem, ButtonDirective, SvgIconComponent],
+    imports: [CdkMenuModule, ButtonDirective, SvgIconComponent],
 })
 export class DropdownMenuGuidelinesComponent {
     constructor() {}
