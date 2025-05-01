@@ -20,11 +20,15 @@
         @apply bg-gray-100;
     }
 
+    .dl-stacked .dl-item{
+        @apply flex-col;
+    }
+
     .dl-stacked dt {
         @apply text-gray-600 mt-2 tracking-wide text-sm;
     }
 
     .dl-stacked dd {
-        @apply mb-2;
+        @apply mb-2 block;
     }
 }

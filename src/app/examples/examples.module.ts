@@ -6,18 +6,20 @@ import { SharedModule } from '../shared/shared.module';
 import { ExamplesComponent } from './examples.component';
 import { ResourceListComponent } from './resource-list/resource-list.component';
 import { FormsModule } from '@angular/forms';
-import { MuziehComponentsModule } from 'muzieh-ngcomponents';
-import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { ButtonDirective, MuziehComponentsModule, SvgIconComponent } from 'muzieh-ngcomponents';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 @NgModule({
   declarations: [ResourceDetailComponent, ExamplesComponent, ResourceListComponent],
   imports: [
     CommonModule,
     ExamplesRoutingModule,
-    NgbDropdownModule,
+    NgbNavModule,
     FormsModule,
     SharedModule,
     MuziehComponentsModule,
-    NgbNavModule,
+    
+    CdkMenuTrigger, CdkMenu, CdkMenuItem, ButtonDirective, SvgIconComponent
   ]
 })
 export class ExamplesModule { }

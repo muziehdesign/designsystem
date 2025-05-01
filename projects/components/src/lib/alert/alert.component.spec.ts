@@ -42,19 +42,19 @@ describe('AlertComponent', () => {
 
         // success
         expect(successClass).toBe('alert-success');
-        expect(successIcon).toBe('check-circle');
+        expect(successIcon).toBe('check-circle-solid');
 
         // warning
         expect(warningClass).toBe('alert-warning');
-        expect(waringIcon).toBe('exclamation');
+        expect(waringIcon).toBe('exclamation-triangle-solid');
 
         // info
         expect(infoClass).toBe('alert-info');
-        expect(infoIcon).toBe('information-circle');
+        expect(infoIcon).toBe('information-circle-solid');
 
         // error
-        expect(errorIcon).toBe('x-circle');
         expect(errorClass).toBe('alert-error');
+        expect(errorIcon).toBe('x-circle-solid');
 
         expect(component).toBeTruthy();
     });

@@ -5,22 +5,37 @@
 
 <div class="example">
     <div class="flex gap-5 items-center">
+        <button mzButton [cdkMenuTriggerFor]="menu">Open item</button>
+        <ng-template #menu>
+            <div class="menu" cdkMenu>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 1</button>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 2</button>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 3</button>
+            </div>
+        </ng-template>
 
-        <mz-dropdown label="Dropdown">
-            <button mzDropdownItem (click)="openItem()">item 1</button>
-            <button mzDropdownItem (click)="openItem()">item 2</button>
-        </mz-dropdown>
+        <button mzButton variant="tertiary" [cdkMenuTriggerFor]="menu2">
+            Menu
+            <mz-svg-icon key="chevron-down-control"></mz-svg-icon>
+        </button>
+        <ng-template #menu2>
+            <div class="menu" cdkMenu>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 1</button>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 2</button>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 3</button>
+            </div>
+        </ng-template>
 
-        <mz-dropdown label="Dropdown 2">
-            <button mzDropdownItem (click)="openItem()">item 1</button>
-            <button mzDropdownItem (click)="openItem()">item 2</button>
-        </mz-dropdown>
-
-        <form class="form">
-            <label class="field">
-                <span class="field-label">For testing focus and tab index</span>
-                <input type="text" class="form-input" />
-            </label>
-        </form>
+        <button mzButton variant="tertiary" [cdkMenuTriggerFor]="menu3">
+            <mz-svg-icon key="menu-outline"></mz-svg-icon>
+            Menu
+        </button>
+        <ng-template #menu3>
+            <div class="menu" cdkMenu>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 1</button>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 2</button>
+                <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 3</button>
+            </div>
+        </ng-template>
     </div>
 </div>

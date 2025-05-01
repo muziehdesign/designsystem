@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ExamplesModule } from './examples/examples.module';
-import { OrderModule } from './order/order.module';
 import { CommonModule } from '@angular/common';
 import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -17,7 +16,7 @@ import { NAVIGATION_LINK_TOKEN } from './navigation/navigation-links.token';
 
 @NgModule({
     declarations: [AppComponent, NavigationComponent],
-    imports: [BrowserModule, AppRoutingModule, ExamplesModule, SharedModule, CommonModule, OrderModule, NgbModule, HighlightModule, MuziehComponentsModule, NoopAnimationsModule],
+    imports: [BrowserModule, AppRoutingModule, ExamplesModule, SharedModule, CommonModule, NgbModule, HighlightModule, MuziehComponentsModule, NoopAnimationsModule],
     providers: [
         CustomErrorHandler,
         {

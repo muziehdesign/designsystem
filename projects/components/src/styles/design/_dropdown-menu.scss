@@ -1,21 +1,24 @@
-.dropdown-menu {
-    display: none;
-}
+@use 'mixins/dropdown' as dropdown;
 
-.dropdown-menu.show {
-    z-index: 1000;
-    float: left;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    display: block;
-    background-color: white;
-}
 
-.dropdown-item {
-    display: block;
-    padding: 0.5rem;
+.menu {
+    @include dropdown.overlay();
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 
-    &:hover {
-        @apply bg-neutral-200;
+    .cdk-menu-item {
+        border-radius: var(--border-radius);
+        padding: 0.625rem 0.75rem;
+        text-align: left;
+
+        &:hover {
+            background-color: var(--color-neutral-100);
+        }
+
+        &:active {
+            background-color: var(--color-neutral-200);
+        }
     }
 }
