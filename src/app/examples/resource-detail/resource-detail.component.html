@@ -4,22 +4,20 @@
             <div>
                 <mz-page-header pageTitle="Jane Doe"></mz-page-header>
                 <div>
-                    <div class="text-secondary text-sm">
-                        Member since 08/01/2019
-                    </div>
+                    <div class="text-secondary text-sm">Member since 08/01/2019</div>
                 </div>
             </div>
 
             <div class="mt-4 md:mt-0 space-x-3 md:flex-row">
-                <div ngbDropdown class="inline-flex">
-                    <button class="button button-secondary" id="dropdownBasic1" ngbDropdownToggle>Active <mz-svg-icon
-                            key="chevron-down" class="ml-4"></mz-svg-icon></button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem>Deactivate</button>
-                    </div>
-                </div>
-                <div class="inline-flex">
-                    <button class="button button-secondary"><mz-svg-icon key="dots-horizontal"></mz-svg-icon></button>
+                <div class="button-list">
+                    <button mzButton [cdkMenuTriggerFor]="statusMenu">Active <mz-svg-icon key="chevron-down-control"></mz-svg-icon></button>
+                    <ng-template #statusMenu>
+                        <div class="menu" cdkMenu>
+                            <button cdkMenuItem>Deactivate</button>
+                        </div>
+                    </ng-template>
+
+                    <button mzButton><mz-svg-icon key="dots-horizontal"></mz-svg-icon></button>
                 </div>
             </div>
         </div>
@@ -59,22 +57,22 @@
 
                     <label class="field">
                         <span class="field-label">First name <span class="text-red-500">*</span></span>
-                        <input type="text" class="field-control xs">
+                        <input type="text" class="field-control xs" />
                     </label>
 
                     <label class="field">
                         <span class="field-label">Last name <span class="text-red-500">*</span></span>
-                        <input type="text" class="field-control">
+                        <input type="text" class="field-control" />
                     </label>
 
                     <label class="field">
                         <span class="field-label">Email <span class="text-red-500">*</span></span>
-                        <input type="email" class="field-control">
+                        <input type="email" class="field-control" />
                     </label>
 
                     <label class="field">
                         <span class="field-label">Phone number <span class="text-red-500">*</span></span>
-                        <input type="tel" class="field-control">
+                        <input type="tel" class="field-control" />
                     </label>
 
                     <footer class="footer">
@@ -145,7 +143,9 @@
                     <ng-template ngbNavContent>
                         <div class="table-wrapper">
                             <table class="table" *ngIf="!isLoading; else loading">
-                                <caption>1-5 of 570 orders</caption>
+                                <caption>
+                                    1-5 of 570 orders
+                                </caption>
                                 <thead>
                                     <tr>
                                         <th>Order</th>
@@ -204,7 +204,9 @@
                     <ng-template ngbNavContent>
                         <div class="table-wrapper">
                             <table class="table" *ngIf="!isLoading; else loading">
-                                <caption>1-5 of 1070 shipments</caption>
+                                <caption>
+                                    1-5 of 1070 shipments
+                                </caption>
                                 <thead>
                                     <tr>
                                         <th>Shipment</th>

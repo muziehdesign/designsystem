@@ -1,6 +1,6 @@
 .button {
     --tw-ring-color: var(--color-primary);
-    @apply inline-flex px-4 py-2.5 font-medium items-center text-sm gap-1 focus:outline-none focus:ring-2 focus:ring-offset-2 text-secondary relative;
+    @apply inline-flex px-4 py-2.5 font-medium items-center text-sm gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 text-secondary relative;
 }
 
 .button-primary {

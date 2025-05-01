@@ -10,7 +10,10 @@ import { SVG_ICON_DEFAULT_OPTIONS, SvgIconOptions } from './svg-icon-config';
 })
 export class SvgIconComponent {
   @Input() key!: string;
-  @Input() type: 'outline' | 'solid' | string = 'outline';
+  /**
+   * @deprecated Pass in whole key instead.
+   */
+  @Input() type: 'outline' | 'solid' | string = '';
   @Input() size: string = 'medium';
   fileUrl: string;
   

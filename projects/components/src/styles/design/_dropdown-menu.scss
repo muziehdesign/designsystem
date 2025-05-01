@@ -8,37 +8,15 @@
     .cdk-menu-item {
         width: 100%;
         display: block;
-        padding: 0.5rem 0.25rem;;
+        padding: 0.5rem 1rem;
+        text-align: left;
 
         &:hover {
             background-color: var(--color-neutral-100);
         }
 
         &:active {
-            background-color: var(--color-neutral-300);
+            background-color: var(--color-neutral-200);
         }
-    }
-}
-
-// TODO: things below are obsolete and should be removed
-.dropdown-menu {
-    display: none;
-}
-
-.dropdown-menu.show {
-    z-index: 1000;
-    float: left;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    display: block;
-    background-color: white;
-}
-
-.dropdown-item {
-    display: block;
-    padding: 0.5rem;
-
-    &:hover {
-        @apply bg-neutral-200;
     }
 }
