@@ -26,13 +26,13 @@ export class AlertComponent implements OnInit {
     getAlertIcon(): string {
         let icon = '';
         if (this.type === 'info') {
-            icon = 'information-circle';
+            icon = 'information-circle-solid';
         } else if (this.type === 'success') {
-            icon = 'check-circle';
+            icon = 'check-circle-solid';
         } else if (this.type === 'error') {
-            icon = 'x-circle';
+            icon = 'x-circle-solid';
         } else if (this.type === 'warning') {
-            icon = 'exclamation';
+            icon = 'exclamation-solid';
         }
         return icon;
     }
