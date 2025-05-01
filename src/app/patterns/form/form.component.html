@@ -8,95 +8,70 @@
 <article>
     <h2>Example</h2>
     <div class="example">
-    <form class="form" #addressForm="ngForm" (ngSubmit)="onSubmit()" (change)="onFormChange()">
-            <header>
-                <h3>Add delivery address</h3>
-                <div class="description">Add a new delivery address to your profile.</div>
-            </header>
+        <header>
+            <h3>Add delivery address</h3>
+            <div class="description">Add a new delivery address to your profile.</div>
+        </header>
+        <form class="form" #addressForm="ngForm" (ngSubmit)="onSubmit()" (change)="onFormChange()" mzForm [schema]="schema">
 
-            <label class="field">
-                <span class="field-label">Recipent name <span class="text-red-500">*</span></span>
-                <input type="text" class="field-control" [(ngModel)]="model.recipientName" name="recipientName"
-                    required>
-                <small class="field-error" *ngIf="displayError('recipientName')">
-                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
-                    Invalid value
-                </small>
-                <small class="field-instructions">This is what instruction text would look like</small>
-            </label>
+            <mz-field label="Recipent name">
+                <input type="text" [(ngModel)]="model.recipientName" name="recipientName" class="form-input" />
+            </mz-field>
+            <mz-field label="Address 1">
+                <input type="text" [(ngModel)]="model.address1" name="address1" class="form-input" />
+            </mz-field>
+            <mz-field label="Address 2">
+                <input type="text" [(ngModel)]="model.address2" name="address2" class="form-input" />
+            </mz-field>
 
-            <label class="field">
-                <span class="field-label">Address 1 <span class="text-red-500">*</span></span>
-                <input type="text" class="field-control" [(ngModel)]="model.address1" name="address1" required>
-                <small class="field-error" *ngIf="displayError('address1')">
-                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
-                    Invalid value
-                </small>
-            </label>
-            <label class="field">
-                <span class="field-label">Address 2</span>
-                <input type="text" class="field-control" [(ngModel)]="model.address2" name="address2">
-            </label>
             <div class="grid grid-cols-3 gap-x-4">
-                <label class="field">
-                    <span class="field-label">City <span class="text-red-500">*</span></span>
-                    <input type="text" class="field-control" [(ngModel)]="model.city" name="city" required>
-                </label>
-                <label class="field">
-                    <span class="field-label">State <span class="text-red-500">*</span></span>
-                    <select class="field-control" [(ngModel)]="model.state" name="state" required>
+                <mz-field label="City">
+                    <input type="text" [(ngModel)]="model.city" name="city" class="form-input" />
+                </mz-field>
+                <mz-field label="State">
+                    <select class="form-select" [(ngModel)]="model.state" name="state" required>
                         <option>UT</option>
                         <option>NY</option>
                     </select>
-                </label>
-                <label class="field">
-                    <span class="field-label">Zip code <span class="text-red-500">*</span></span>
-                    <input type="text" class="field-control" [(ngModel)]="model.zipCode" name="zipCode" required>
-                </label>
-                <small class="field-error"
-                    *ngIf="displayError('city') || displayError('state') || displayError('zipCode')">
-                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
-                    Invalid value(s)
+                </mz-field>
+                <mz-field label="Zip code">
+                    <input type="text" [(ngModel)]="model.zipCode" name="zipCode" class="form-input" />
+                </mz-field>
+                <small class="field-error" *ngIf="displayError('city') || displayError('state') || displayError('zipCode')">
+                    <mz-svg-icon key="exclamation-triangle-solid" type="solid"></mz-svg-icon> Invalid value(s)
                 </small>
             </div>
 
             <fieldset class="fieldset">
                 <legend>Delivery instructions</legend>
-                <label class="field">
-                    <span class="field-label">Navigation instructions</span>
-                    <input type="text" class="field-control" [(ngModel)]="model.navigationInstructions"
-                        name="navigationInstructions">
+                <mz-field label="Navigation instructions">
+                    <input type="text" [(ngModel)]="model.navigationInstructions" name="navigationInstructions" class="form-input" />
                     <small class="field-instructions">Provide details such as nearby landmark to help find the address.</small>
-                </label>
-                <label class="field">
-                    <span class="field-label">Security code</span>
-                    <input type="text" class="field-control" [(ngModel)]="model.securityCode" name="securityCode">
+                </mz-field>
+                <mz-field label="Security code">
+                    <input type="text" [(ngModel)]="model.securityCode" name="securityCode" class="form-input" />
                     <small class="field-instructions">Security code for the door</small>
-                </label>
+                </mz-field>
             </fieldset>
 
             <fieldset class="fieldset">
                 <legend>Form scenario</legend>
-                <label class="field field-checkbox">
-                    <input type="checkbox" class="field-control" [(ngModel)]="model.unexpectedError"
-                        name="unexpectedError"> 
-                    <span class="field-label">Unexpected error</span>
+                <label class="field-option">
+                    <input class="form-checkbox" [(ngModel)]="model.unexpectedError" type="checkbox" name="unexpectedError"/>
+                    <span class="checkbox-label">Unexpected error</span>
                 </label>
             </fieldset>
 
             <div class="footer">
                 <div class="form-message success" *ngIf="isSuccessful == true">
-                    <mz-svg-icon key="check-circle-solid"></mz-svg-icon>
+                    <mz-svg-icon key="check-circle-solid" type="solid"></mz-svg-icon>
                     Saved!
                 </div>
                 <div class="form-message failed text-danger" *ngIf="isSuccessful == false">
-                    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
+                    <mz-svg-icon key="exclamation-triangle-solid" type="solid"></mz-svg-icon>
                     Unexpected error, try submitting the form again.
                 </div>
-
-                <button mzButton variant="primary" [busy]="isLoading">
-                    Add delivery address
-                </button>
+                <button mzButton variant="primary" [busy]="isLoading">Add delivery address</button>
             </div>
         </form>
     </div>
