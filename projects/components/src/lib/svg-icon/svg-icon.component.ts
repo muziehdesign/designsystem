@@ -5,7 +5,10 @@ import { SVG_ICON_DEFAULT_OPTIONS, SvgIconOptions } from './svg-icon-config';
     selector: 'mz-svg-icon',
     templateUrl: './svg-icon.component.svg',
     styleUrls: ['./svg-icon.component.scss'],
-    imports: []
+    host: {
+      'role': 'img',
+      '[attr.data-icon-name]': 'key',
+    }
 })
 export class SvgIconComponent {
   @Input() key!: string;
