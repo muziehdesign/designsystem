@@ -10,7 +10,7 @@ import { delay, finalize } from 'rxjs/operators';
     selector: 'app-form',
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.scss'],
-    imports: [ButtonDirective, CommonModule, FormsModule, SvgIconComponent]
+    imports: [ButtonDirective, CommonModule, FormsModule, MzFormsModule, SvgIconComponent],
 })
 export class FormComponent {
     schema: ModelSchema<DeliveryAddressInputModel>;
