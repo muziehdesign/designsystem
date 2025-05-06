@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageLoadingIndicatorComponent } from 'muzieh-ngcomponents';
+import { PageLoadingIndicatorComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-progress-bar-guidelines',

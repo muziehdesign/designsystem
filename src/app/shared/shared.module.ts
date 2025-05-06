@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EnumDisplayPipe, MuziehComponentsModule, PhoneNumberPipe, DateDisplayPipe, ResultTableComponent, SubjectDisplayPipe, SpinnerComponent, SvgIconComponent, ButtonDirective } from 'muzieh-ngcomponents';
+import { EnumDisplayPipe, MuziehComponentsModule, PhoneNumberPipe, DateDisplayPipe, ResultTableComponent, SubjectDisplayPipe, SpinnerComponent, SvgIconComponent, ButtonDirective } from '@muziehdesign/components';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { EmbedDirective } from './embed.directive';
 import { HighlightModule } from 'ngx-highlightjs';

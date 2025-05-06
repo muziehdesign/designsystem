@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MzInlineEditComponent } from 'muzieh-ngcomponents';
+import { MzInlineEditComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-inline-edit',

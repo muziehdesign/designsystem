@@ -1,7 +1,7 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, Injector, Signal, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { LoadingState, MuziehComponentsModule, ResultTableComponent, ResultTableModel } from 'muzieh-ngcomponents';
+import { LoadingState, MuziehComponentsModule, ResultTableComponent, ResultTableModel } from '@muziehdesign/components';
 import { Observable, delay, map, of, tap } from 'rxjs';
 import { NumberType, required, maxLength, StringType, DateType, NgFormModelState, NgFormModelStateFactory } from '@muziehdesign/forms';
 import { FormsModule as MuziehFormsModule } from '@muziehdesign/forms';

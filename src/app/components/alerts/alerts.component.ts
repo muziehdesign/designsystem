@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertComponent, DateDisplayPipe } from 'muzieh-ngcomponents';
+import { AlertComponent, DateDisplayPipe } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-alerts',

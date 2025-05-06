@@ -3,9 +3,9 @@
 Muzieh Design System is an evolving framework crafted to streamline the creation of modern projects with minimalistic CSS styles. Our focus is on providing foundational elements that emphasize structure and functionality, allowing developers easy bootstrap and customization.
 
 ## Components
-[muzieh-ngcomponents package](https://www.npmjs.com/package/muzieh-ngcomponents) [![<ORG_NAME>](https://circleci.com/gh/muziehdesign/designsystem.svg?style=shield)](https://github.com/muziehdesign/designsystem?branch=develop)
+[@muziehdesign/components package](https://www.npmjs.com/package/@muziehdesign/components?activeTab=versions) [![<ORG_NAME>](https://circleci.com/gh/muziehdesign/designsystem.svg?style=shield)](https://github.com/muziehdesign/designsystem?branch=develop)
 
-[muzieh design system pages](https://ruifang.github.io/designsystem/design/about) [![publish-github-pages](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml/badge.svg?branch=develop)](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml)
+[muzieh design system pages](https://muziehdesign.github.io/designsystem/) [![publish-github-pages](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml/badge.svg?branch=develop)](https://github.com/muziehdesign/designsystem/actions/workflows/publish-pages.yml)
 
 
 ## Setup
@@ -19,6 +19,7 @@ Muzieh Design System is an evolving framework crafted to streamline the creation
 ## Next version
 
 ### Breaking changes
+1. Package renamed to `@muziehdesign/components`
 1. Moved svg icon config `svgIconDefinitionUrl` from `ComponentConfig` to `SvgIconOptions`
 1. ResultTableModel changed to match interfaces of backend
 1. Spinner `type` now supports primary, secondary, or custom

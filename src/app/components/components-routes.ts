@@ -3,8 +3,7 @@ import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
 import { demoOf } from 'src/app/demonstration/utilities';
 import { ButtonsDemoComponent } from '../../demos/buttons-demo.component';
 import { ComponentsComponent } from './components.component';
-import { CanDeactivateComponent, MzDialog, hasImplementation } from 'muzieh-ngcomponents';
-import { inject } from '@angular/core';
+import { CanDeactivateComponent, hasImplementation } from '@muziehdesign/components';
 
 export const componentRoutes: Routes = [
     {

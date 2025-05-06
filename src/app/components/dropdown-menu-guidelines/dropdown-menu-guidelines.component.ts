@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonDirective, SvgIconComponent } from 'muzieh-ngcomponents';
+import { ButtonDirective, SvgIconComponent } from '@muziehdesign/components';
 import { CdkMenuModule } from '@angular/cdk/menu';
 
 @Component({

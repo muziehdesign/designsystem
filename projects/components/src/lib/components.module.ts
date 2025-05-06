@@ -21,6 +21,9 @@ import { DateTimeComponent } from './date-time/date-time.component';
 import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 
+/**
+ * @deprecated Import components and component modules separately.
+ */
 @NgModule({
   imports: [
     CommonModule,
