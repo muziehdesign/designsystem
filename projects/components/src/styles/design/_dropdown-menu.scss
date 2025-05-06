@@ -17,7 +17,7 @@
             background-color: var(--color-neutral-100);
         }
 
-        &:active {
+        &:active, &.selected {
             background-color: var(--color-neutral-200);
         }
     }

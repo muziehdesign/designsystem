@@ -1,12 +1,23 @@
+import { CdkMenuModule } from '@angular/cdk/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FilterOptionModel, MuziehComponentsModule, OptionsFilterComponent, FilterComponent } from 'muzieh-ngcomponents';
+import { MzCheckboxGroup, MzField } from '@muziehdesign/forms';
+import { FilterOptionModel, OptionsFilterComponent, FilterComponent, FilterMenuComponent } from 'muzieh-ngcomponents';
 
 @Component({
     selector: 'filter-options',
-    imports: [CommonModule, FormsModule, MuziehComponentsModule, OverlayModule, OptionsFilterComponent, FilterComponent],
+    imports: [
+        CommonModule, 
+        FormsModule, 
+        OverlayModule, 
+        OptionsFilterComponent, 
+        FilterComponent, 
+        CdkMenuModule, 
+        FilterMenuComponent, 
+        MzField, 
+        MzCheckboxGroup],
     templateUrl: './filter-options.component.html',
     styleUrls: ['./filter-options.component.scss']
 })

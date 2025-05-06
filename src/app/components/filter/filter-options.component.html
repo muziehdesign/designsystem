@@ -1,19 +1,17 @@
 <header>
     <h1>Filter options component</h1>
-    <p class="prose">
-        Use this component to search and select options. It allows for both single and multiple selections.
-    </p>
+    <p class="prose">Use this component to search and select options. It allows for both single and multiple selections.</p>
 </header>
 
 <article>
-    <div class="example">        
+    <div class="example">
         <mz-filter>
-            <form [ngFormOptions]="{updateOn: 'submit'}">
+            <form [ngFormOptions]="{ updateOn: 'submit' }">
                 @for (option of options; track $index) {
-                    <label class="field-option">
-                        <input type="checkbox" class="form-checkbox" [(ngModel)]="option.selected" name="option-{{option.value}}" />
-                        <span class="checkbox-label">{{ option.label }}</span>
-                    </label>
+                <label class="field-option">
+                    <input type="checkbox" class="form-checkbox" [(ngModel)]="option.selected" name="option-{{ option.value }}" />
+                    <span class="checkbox-label">{{ option.label }}</span>
+                </label>
                 }
             </form>
         </mz-filter>
@@ -26,3 +24,36 @@
     </div>
 </article>
 
+<article>
+    <div class="example">
+        <button class="button button-tertiary" [cdkMenuTriggerFor]="filterMenu1">Single option filter</button>
+        <ng-template #filterMenu1>
+            <mz-filter-menu cdkMenu>
+                @for(option of options; track option){
+                <button cdkMenuItemRadio [class.selected]="option.selected" [cdkMenuItemChecked]="option.value" (cdkMenuItemTriggered)="option.selected = !option.selected">{{ option.label }}</button>
+                }
+            </mz-filter-menu>
+        </ng-template>
+
+        <!--<mz-filter-menu>
+            @for(option of options; track option){
+            <button cdkMenuItemCheckbox [class.selected]="option.selected" [cdkMenuItemChecked]="option.value" (cdkMenuItemTriggered)="option.selected = !option.selected">{{ option.label }}</button>
+            }
+        </mz-filter-menu>-->
+
+        <mz-filter-menu>
+            <mz-field label="Options">
+                <mz-checkbox-group [(ngModel)]="values" [options]="options"></mz-checkbox-group>
+            </mz-field>
+        </mz-filter-menu>
+    </div>
+</article>
+
+<article>
+    <h2>Filter with form menu</h2>
+    <div class="example">
+        <mz-filter-menu> 
+            
+        </mz-filter-menu>
+    </div>
+</article>
