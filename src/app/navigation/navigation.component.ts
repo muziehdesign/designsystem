@@ -1,8 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NavigationLink } from 'src/app/navigation/navigation-links';
 import { NAVIGATION_LINK_TOKEN as NAVIGATION_LINKS_TOKEN } from './navigation-links.token';
-import { MzDialog } from 'muzieh-ngcomponents';
-import { ButtonsComponent } from '../components/buttons/buttons.component';
+import { MzDialog } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-navigation',

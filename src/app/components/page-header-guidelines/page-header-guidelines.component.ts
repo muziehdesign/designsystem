@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import sdk from '@stackblitz/sdk';
-import { PageHeaderComponent } from 'muzieh-ngcomponents';
+import { PageHeaderComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-page-header-guidelines',

@@ -6,7 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ExamplesComponent } from './examples.component';
 import { ResourceListComponent } from './resource-list/resource-list.component';
 import { FormsModule } from '@angular/forms';
-import { ButtonDirective, MuziehComponentsModule, SvgIconComponent } from 'muzieh-ngcomponents';
+import { ButtonDirective, MuziehComponentsModule, SvgIconComponent } from '@muziehdesign/components';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 @NgModule({

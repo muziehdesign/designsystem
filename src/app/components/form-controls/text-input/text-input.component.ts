@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SpinnerComponent, SvgIconComponent } from 'muzieh-ngcomponents';
+import { SpinnerComponent, SvgIconComponent } from '@muziehdesign/components';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { TextInputDemoComponent } from 'src/demos/text-input-demo.component';
 

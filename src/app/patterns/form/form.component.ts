@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { BooleanType, ModelSchema, ModelSchemaFactory, MzFormsModule, required, StringType } from '@muziehdesign/forms';
-import { ButtonDirective, SvgIconComponent } from 'muzieh-ngcomponents';
+import { ButtonDirective, SvgIconComponent } from '@muziehdesign/components';
 import { of } from 'rxjs';
 import { delay, finalize } from 'rxjs/operators';
 

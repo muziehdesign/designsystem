@@ -4,7 +4,7 @@ import { Paged } from './models/paged.model';
 import { ResourceListSearchModel } from './models/resource-list-search.model';
 import { ResourceStatus } from './models/resource-status.enum';
 import { ResourceSummaryModel } from './models/resource-summary.model';
-import { ResultTableModel } from 'muzieh-ngcomponents';
+import { ResultTableModel } from '@muziehdesign/components';
 
 @Injectable({
     providedIn: 'root',

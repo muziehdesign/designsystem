@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent, PaginationComponent } from 'muzieh-ngcomponents';
+import { PageEvent, PaginationComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-pagination-guidelines',

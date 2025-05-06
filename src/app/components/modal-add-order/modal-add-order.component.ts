@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MzDialog } from 'muzieh-ngcomponents';
+import { MzDialog } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-modal-add-order',

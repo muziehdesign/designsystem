@@ -5,20 +5,7 @@
     "baseUrl": "./",
     "paths": {
       "@muziehdesign/components": [
-        "./dist/muziehdesign/components"
-      ],
-      "@muziehdesign/designsystem": [
-        "dist/muziehdesign/designsystem"
-      ],
-      "@muziehdesign/ui": [
-        "dist/muziehdesign/ui"
-      ],
-      "muzieh-design": [
-        "dist/design"
-      ],
-      "muzieh-ngcomponents": [
-        "dist/components/components",
-        "dist/components"
+        "./dist/components"
       ]
     },
     "outDir": "./dist/out-tsc",

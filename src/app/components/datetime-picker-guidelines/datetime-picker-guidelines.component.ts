@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { TimeValue } from 'muzieh-ngcomponents';
 
 @Component({
     selector: 'app-datetime-picker-guidelines',
@@ -18,20 +17,9 @@ export class DatetimePickerGuidelinesComponent {
   min: Date = new Date('03/10/2022');
   max: Date = new Date('03/20/2022');
 
-  defaultScheduleInputModel: ScheduleInputModel = { time: { hour: 10, minute: 30 } };
   deactivationDate: Date = new Date();
 
   constructor() { }
-
-  changeScheduledRunTime(e: any) {
-    console.log(e);
-    console.log(this.defaultScheduleInputModel.time);
-  }
-
-  setScheduleRunTime(s: TimeValue) {
-    console.log(s);
-    this.defaultScheduleInputModel.time = s;
-  }
 
   onDeactivationDateChange() {
     console.log(this.deactivationDate);
@@ -40,8 +28,4 @@ export class DatetimePickerGuidelinesComponent {
   setDatetime(s: string | null) {
     this.dateTime = (s !== null) ? new Date(s) : null;
   }
-}
-
-export interface ScheduleInputModel {
-  time: TimeValue
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SvgIconComponent } from 'muzieh-ngcomponents';
+import { SvgIconComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-iconography',

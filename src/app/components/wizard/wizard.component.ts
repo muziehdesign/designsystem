@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { WizardProgressTrackerComponent, WizardStepLink } from 'muzieh-ngcomponents';
+import { WizardProgressTrackerComponent, WizardStepLink } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-wizard',

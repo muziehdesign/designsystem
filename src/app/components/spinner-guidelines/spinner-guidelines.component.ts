@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SpinnerComponent } from 'muzieh-ngcomponents';
+import { SpinnerComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-spinner-guidelines',
