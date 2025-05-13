@@ -1,41 +1,32 @@
-import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component, ContentChild, Input } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
     selector: 'mz-filter',
-    imports: [CdkOverlayOrigin, CdkConnectedOverlay, FormsModule, CommonModule],
+    imports: [FormsModule, CommonModule, CdkMenuModule],
     templateUrl: './filter.component.html',
-    styleUrl: './filter.component.scss'
+    styleUrl: './filter.component.scss',
 })
-export class FilterComponent implements AfterContentInit {
+export class FilterComponent {
     @Input() label = 'Filter';
-    @ContentChild(NgForm) menuForm!: NgForm;
-    protected open = false;
-    private initialValues: any;
+    @Input() menuTemplate: TemplateRef<unknown> | null = null;
+    @Output() clear = new EventEmitter<void>();
+    @Output() apply = new EventEmitter<any>();
 
-    ngAfterContentInit(): void {
-      this.initialValues = this.menuForm.value;
+    @ContentChild(NgForm) menuForm?: NgForm;
+
+    clearFilter() {
+       this.clear.emit();
     }
 
-    toggleOverlay() {
-        this.open = !this.open;
-    }
-
-    dismiss() {
-        this.open = false;
-        if(this.menuForm.options.updateOn === 'submit') {
-          this.menuForm.resetForm(this.initialValues);
-        }
-    }
-
-    clear() {
-      this.open = false;
-    }
-
-    apply() {
-      this.open = false;
-      console.log('applied', this.menuForm.value);
+    applyFilter() {
+        if (this.menuForm?.valid) {
+            console.log('emitting', this.menuForm.value);
+            this.apply.emit(this.menuForm?.value);
+        } else {
+            console.log('Form is invalid');
+        }        
     }
 }

@@ -1,9 +1,7 @@
+
 <ng-content></ng-content>
 
-    <div class="button-list">
-        @if(form && form.options.updateOn === 'submit') {
-            <button type="submit" class="button button-primary">Apply</button>
-        }
-
-        <button type="reset" class="button button-tertiary">Clear</button>
-    </div>
+<div class="button-list">
+    <button type="submit" class="button button-primary" cdkMenuItem (cdkMenuItemTriggered)="apply()">Apply</button>
+    <button type="reset" class="button button-tertiary" cdkMenuItem (cdkMenuItemTriggered)="clear()">Clear</button>
+</div>
