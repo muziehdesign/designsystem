@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CanDeactivateComponent, MzDialog, MzDialogModule } from 'muzieh-ngcomponents';
+import { CanDeactivateComponent, MzDialog, MzDialogModule } from '@muziehdesign/components';
 import { DrawerExampleComponent } from './examples/drawer-example.component';
 
 @Component({

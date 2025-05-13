@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MzCheckboxGroup, MzField } from '@muziehdesign/forms';
-import { FilterOptionModel, OptionsFilterComponent, FilterComponent, FilterMenuComponent } from 'muzieh-ngcomponents';
+import { FilterOptionModel, MuziehComponentsModule, OptionsFilterComponent, FilterComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'filter-options',

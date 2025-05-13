@@ -3,7 +3,7 @@ import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 
 import { ResourceListComponent } from './resource-list.component';
-import { ResultTableComponent, PaginationComponent } from 'muzieh-ngcomponents';
+import { ResultTableComponent, PaginationComponent } from '@muziehdesign/components';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 

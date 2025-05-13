@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CanDeactivateComponent, MzDialog, MzDialogModule } from 'muzieh-ngcomponents';
+import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-drawer-example',

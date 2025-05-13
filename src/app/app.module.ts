@@ -6,17 +6,17 @@ import { SharedModule } from './shared/shared.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ExamplesModule } from './examples/examples.module';
 import { CommonModule } from '@angular/common';
-import { MuziehComponentsModule } from 'muzieh-ngcomponents';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomErrorHandler } from './custom-error-handler';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightModule, HIGHLIGHT_OPTIONS, HighlightOptions } from 'ngx-highlightjs';
 import { navigationLinks } from './navigation/navigation-links';
 import { NAVIGATION_LINK_TOKEN } from './navigation/navigation-links.token';
+import { PageLoadingIndicatorComponent } from '@muziehdesign/components';
 
 @NgModule({
     declarations: [AppComponent, NavigationComponent],
-    imports: [BrowserModule, AppRoutingModule, ExamplesModule, SharedModule, CommonModule, NgbModule, HighlightModule, MuziehComponentsModule, NoopAnimationsModule],
+    imports: [BrowserModule, AppRoutingModule, ExamplesModule, SharedModule, CommonModule, NgbModule, HighlightModule, NoopAnimationsModule, PageLoadingIndicatorComponent],
     providers: [
         CustomErrorHandler,
         {
