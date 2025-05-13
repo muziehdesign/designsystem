@@ -28,5 +28,12 @@ export class FilterOptionsComponent {
         { label: 'Option 3', selected: false, value: '3' },
     ];
     values = [];
+    dateRangeModel = new DateRangeModel();
     onFilterChanged($event: FilterOptionModel<string | number>[]) {}
+}
+
+export class DateRangeModel {
+    startDate?: Date;
+    endDate?: Date;;
+    
 }

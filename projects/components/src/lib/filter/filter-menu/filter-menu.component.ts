@@ -1,5 +1,6 @@
 import { CdkMenu } from '@angular/cdk/menu';
-import { Component, ViewChild } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
+import { Component, ContentChild, TemplateRef, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MzField } from '@muziehdesign/forms';
 
@@ -15,7 +16,8 @@ import { MzField } from '@muziehdesign/forms';
     },
 })
 export class FilterMenuComponent {
-    @ViewChild(NgForm) form!: NgForm;
+    @ContentChild(NgForm) form?: NgForm;
+    @ContentChild('footer') footerTemplate: TemplateRef<any> | null = null;
 
     reset() {
         console.log('resetting');
@@ -23,6 +25,6 @@ export class FilterMenuComponent {
     }
 
     apply() {
-      console.log('applying', this.form.value);
+   
     }
 }

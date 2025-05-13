@@ -30,7 +30,7 @@
         <ng-template #filterMenu1>
             <mz-filter-menu cdkMenu>
                 @for(option of options; track option){
-                <button cdkMenuItemRadio [class.selected]="option.selected" [cdkMenuItemChecked]="option.value" (cdkMenuItemTriggered)="option.selected = !option.selected">{{ option.label }}</button>
+                    <button cdkMenuItemRadio [class.selected]="option.selected" [cdkMenuItemChecked]="option.value" (cdkMenuItemTriggered)="option.selected = !option.selected">{{ option.label }}</button>
                 }
             </mz-filter-menu>
         </ng-template>
@@ -53,7 +53,20 @@
     <h2>Filter with form menu</h2>
     <div class="example">
         <mz-filter-menu> 
-            
+            <form>
+                <mz-field label="Start date">
+                    <input type="date" class="form-input" [(ngModel)]="dateRangeModel.startDate" name="startDate" />
+                </mz-field>
+                <mz-field label="End date">
+                    <input type="date" class="form-input" [(ngModel)]="dateRangeModel.endDate" name="endDate" />
+                </mz-field>
+            </form>
+            <ng-template #footer>
+                <div class="button-list">
+                    <button type="submit" class="button button-primary">Apply</button>
+                    <button type="reset" class="button button-tertiary">Clear</button>
+                </div>
+            </ng-template>
         </mz-filter-menu>
     </div>
 </article>

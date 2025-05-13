@@ -1,7 +1,9 @@
-<form (ngSubmit)="apply()">
-    <ng-content></ng-content>
+<ng-content></ng-content>
+
     <div class="button-list">
-        <button type="submit">Apply</button>
-        <button (click)="reset()" type="reset">Reset</button>
+        @if(form && form.options.updateOn === 'submit') {
+            <button type="submit" class="button button-primary">Apply</button>
+        }
+
+        <button type="reset" class="button button-tertiary">Clear</button>
     </div>
-</form>
