@@ -1,6 +1,6 @@
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, EventEmitter, Input, Output, TemplateRef, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,7 @@ export class FilterComponent {
     @Output() clear = new EventEmitter<void>();
     @Output() apply = new EventEmitter<any>();
 
-    @ContentChild(NgForm) menuForm?: NgForm;
+    @ViewChild(NgForm) menuForm?: NgForm;
 
     clearFilter() {
        this.clear.emit();
@@ -24,7 +24,7 @@ export class FilterComponent {
     applyFilter() {
         if (this.menuForm?.valid) {
             console.log('emitting', this.menuForm.value);
-            this.apply.emit(this.menuForm?.value);
+            
         } else {
             console.log('Form is invalid');
         }        

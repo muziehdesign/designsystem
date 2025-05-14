@@ -48,8 +48,10 @@ export class FilterOptionsComponent {
         this.model[key] = undefined as SearchInputModel[K];
     }
 
-    applyFilter2(v: any){
+    applyFilter2(v: any, $event: Event){
         console.log('my form submission', v);
+        //$event.preventDefault();
+        //$event.stopPropagation();
     }
 }
 

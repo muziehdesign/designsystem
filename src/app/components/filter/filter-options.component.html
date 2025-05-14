@@ -7,11 +7,11 @@
     <div class="example">
         <mz-filter [menuTemplate]="filterMenu1" (apply)="applyFilter('options', $event)" (clear)="clearFilter('options')">
             <ng-template #filterMenu1>
-                <form #myForm="ngForm" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(myForm.value)">
+                <form #myForm="ngForm" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(myForm.value, $event)">
                     <label class="field">
                         <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
                     </label>
-                    <button (click)="applyFilter2(myForm.value)" class="mb-8" type="button">test</button>
+                    <button class="mb-8" type="submit">test</button>
                 </form>
             </ng-template>
         </mz-filter>
