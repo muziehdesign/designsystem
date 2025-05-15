@@ -1,8 +1,8 @@
-import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
-import { JsonPipe, NgTemplateOutlet } from '@angular/common';
-import { AfterContentInit, Component, contentChild, ContentChild, ContentChildren, contentChildren, QueryList, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { CdkMenuItem } from '@angular/cdk/menu';
+import { JsonPipe } from '@angular/common';
+import { AfterContentInit, Component, ContentChild, ContentChildren, Optional, QueryList, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
-import { MzField } from '@muziehdesign/forms';
+import { FilterComponent } from '../filter.component';
 
 @Component({
     selector: 'mz-filter-menu',
@@ -24,6 +24,8 @@ export class FilterMenuComponent implements AfterContentInit {
     @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
     @ContentChild(NgForm) form?: NgForm;
     @ContentChildren(NgModel, { descendants: true }) models?: QueryList<NgModel>;
+
+    constructor(@Optional() private filter: FilterComponent | null) { }
 
     reset() {
         console.log('resetting');

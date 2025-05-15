@@ -1,18 +1,5 @@
-
-
-here's the row:
-<div class="p-5 border">
-    <ng-content select="footer"></ng-content>
-</div>
-
-   <ng-template #container></ng-template>
-
-
+<ng-content></ng-content>
 <div class="button-list">
-    <button type="submit" class="button button-primary" cdkMenuItem (cdkMenuItemTriggered)="apply()">Apply</button>
-    <button type="reset" class="button button-tertiary" cdkMenuItem (cdkMenuItemTriggered)="clear()">Clear</button>
+    <button type="submit" class="button button-primary" (click)="apply()">Apply</button>
+    <button type="reset" class="button button-tertiary" (click)="clear()">Clear</button>
 </div>
-
-<ng-template #myTemplate>
-    <ng-content></ng-content>
-</ng-template>

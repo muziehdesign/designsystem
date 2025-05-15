@@ -16,13 +16,34 @@
                     <mz-field>
                         <input [(ngModel)]="model.singleOption" class="form-input" name="singleOption" type="string" />
                     </mz-field>
-                    <footer>my footer {{filter1Form.valid}}</footer>
-    
-                    <button class="mb-8" type="submit">test</button>
+                    
+                    <div class="button-list">
+                        <button type="submit">Apply</button>
+                        <button type="reset">Clear</button>
+                    </div>
                 </form>
             </ng-template>
         </mz-filter>
     </div>
+</article>
+
+<article>
+    <mz-filter (apply)="applyFilter('options', $event)" (clear)="clearFilter('options')" [menuTemplate]="menuTemplate2" #filter2="mzFilter">
+        <ng-template #menuTemplate2>
+            <mz-filter-menu>
+                <form #filter2Form="ngForm" mzForm [schema]="schema" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(filter2Form, $event)">
+                    <label class="field">
+                        <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
+                    </label>
+                    {{ filter2Form.value | json }}
+    
+                    <mz-field>
+                        <input [(ngModel)]="model.singleOption" class="form-input" name="singleOption" type="string" />
+                    </mz-field>
+                </form>
+            </mz-filter-menu>
+        </ng-template>
+    </mz-filter>
 </article>
 
 <article>
