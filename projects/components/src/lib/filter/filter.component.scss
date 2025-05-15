@@ -1,17 +1,17 @@
-@use "./mixins/icon" as icon;
+@use "./mixins/button" as button;
+@use 'mixins/dropdown' as dropdown;
 
-.dropdown-body {
-    background-color: var(--surface-bg, white);
-    min-width: 5rem;
-    margin-top: 0.25rem;
-    padding: 0.75rem; 
+
+.mz-filter-button {
+    @include button.button();
+    border: 1px solid var(--color-neutral-400);
+    padding: 0.5rem 0.75rem;
+
+    &[aria-expanded=true] {
+
+    }
 }
 
-.dropdown-buttons {
-    display: flex;
-    margin-top: 0.25rem;;
-}
-
-.dropdown-icon {
-    @include icon.icon();
+.mz-dropdown-body {
+    @include dropdown.overlay();
 }

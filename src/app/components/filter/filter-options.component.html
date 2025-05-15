@@ -5,21 +5,15 @@
 
 <article>
     <div class="example">
-        <mz-filter (apply)="applyFilter('options', $event)" (clear)="clearFilter('options')" [menuTemplate]="menuTemplate" #filter1="mzFilter">
+        <mz-filter (apply)="applyFilter('options', $event)" (clear)="applyFilter('options', [])" [menuTemplate]="menuTemplate" #filter1="mzFilter" [display]="getMonthsDisplay()">
             <ng-template #menuTemplate>
                 <form #filter1Form="ngForm" mzForm [schema]="schema" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(filter1Form, $event)">
                     <label class="field">
                         <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
-                    </label>
-                    {{ filter1Form.value | json }}
-    
-                    <mz-field>
-                        <input [(ngModel)]="model.singleOption" class="form-input" name="singleOption" type="string" />
-                    </mz-field>
-                    
+                    </label>                    
                     <div class="button-list">
-                        <button type="submit">Apply</button>
-                        <button type="reset">Clear</button>
+                        <button type="submit" mzButton variant="primary">Apply</button>
+                        <button type="reset" mzButton variant="tertiary">Clear</button>
                     </div>
                 </form>
             </ng-template>

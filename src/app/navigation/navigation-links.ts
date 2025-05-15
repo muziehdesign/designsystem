@@ -28,9 +28,9 @@ export const navigationLinks: NavigationLink[] = [
         { name: 'Date time picker', link: '/components/datetimepicker'},
         { name: 'Description lists', link: '/components/descriptionlist' },
         { name: 'Drawer', link: '/components/drawer' },
-        { name: 'Filter', link: '/components/filter' },
         { name: 'Dropdown menu', link: '/components/menudropdown' },
         { name: 'Empty state', link: '/components/emptystate' },
+        { name: 'Filter', link: '/components/filter' },
         { 
             name: 'Form controls', 
             link: '/components/formcontrols',

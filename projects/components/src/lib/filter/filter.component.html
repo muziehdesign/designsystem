@@ -1,6 +1,6 @@
-<button [cdkMenuTriggerFor]="filterMenu">my filter</button>
+<button [cdkMenuTriggerFor]="filterMenu" class="mz-filter-button">{{filterLabel}}<mz-svg-icon key="chevron-down-control"></mz-svg-icon></button>
 <ng-template #filterMenu>
-    <div cdkMenu>
+    <div cdkMenu class="mz-dropdown-body">
         <ng-container [ngTemplateOutlet]="menuTemplate"></ng-container>
     </div>
 </ng-template>

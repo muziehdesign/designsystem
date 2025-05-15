@@ -21,10 +21,10 @@ export class FilterOptionsComponent {
     }
 
     months = [
-        { label: 'January', value: 1 },
-        { label: 'February', value: 2 },
-        { label: 'March', value: 3 },
-        { label: 'April', value: 4 },
+        { label: 'January', value: "1" },
+        { label: 'February', value: "2" },
+        { label: 'March', value: "3" },
+        { label: 'April', value: "4" },
     ];
 
     singleOptionOptions = ['option1', 'option2', 'option3'];
@@ -42,11 +42,7 @@ export class FilterOptionsComponent {
     }
 
     applyFilter<K extends keyof SearchInputModel>(key: K, value: SearchInputModel[K]) {
-       // this.model[key] = value;
-    }
-
-    clearFilter<K extends keyof SearchInputModel>(key: K) {
-        this.model[key] = undefined as SearchInputModel[K];
+       this.model[key] = value;
     }
 
     applyFilter2(v: NgForm, $event: Event) {
@@ -54,6 +50,14 @@ export class FilterOptionsComponent {
         if(v.valid) {
             this.filter1?.close();
         }
+    }
+
+    clearFilter<K extends keyof SearchInputModel>(key: K){
+
+    }
+
+    getMonthsDisplay(){
+        return this.months.filter(m=>this.model.options?.includes(m.value)).map(m=>m.label).join(', ');
     }
 }
 
