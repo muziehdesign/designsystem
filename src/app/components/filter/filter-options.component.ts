@@ -1,8 +1,8 @@
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule, JsonPipe } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { DateType, ModelSchema, ModelSchemaFactory, MzCheckboxGroup, MzFormsModule, ObjectType, required, StringType } from '@muziehdesign/forms';
 import { FilterOptionModel, OptionsFilterComponent, FilterComponent, FilterMenuComponent } from '@muziehdesign/components';
 
@@ -15,6 +15,7 @@ import { FilterOptionModel, OptionsFilterComponent, FilterComponent, FilterMenuC
 export class FilterOptionsComponent {
     schema: ModelSchema<SearchInputModel>;
     model = new SearchInputModel();
+    @ViewChild('filter1') filter1?: FilterComponent;
     constructor(private schemaFactory: ModelSchemaFactory) {
         this.schema = this.schemaFactory.build(this.model);
     }
@@ -48,10 +49,11 @@ export class FilterOptionsComponent {
         this.model[key] = undefined as SearchInputModel[K];
     }
 
-    applyFilter2(v: any, $event: Event){
-        console.log('my form submission', v);
-        //$event.preventDefault();
-        //$event.stopPropagation();
+    applyFilter2(v: NgForm, $event: Event) {
+        console.log('my form submission', v.invalid, v.submitted, this.filter1);
+        if(v.valid) {
+            this.filter1?.close();
+        }
     }
 }
 

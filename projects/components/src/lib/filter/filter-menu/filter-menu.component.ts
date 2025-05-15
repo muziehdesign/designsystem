@@ -1,6 +1,6 @@
 import { CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
 import { JsonPipe, NgTemplateOutlet } from '@angular/common';
-import { Component, ContentChild, ContentChildren, contentChildren, QueryList, TemplateRef, ViewChild } from '@angular/core';
+import { AfterContentInit, Component, contentChild, ContentChild, ContentChildren, contentChildren, QueryList, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { MzField } from '@muziehdesign/forms';
 
@@ -15,10 +15,14 @@ import { MzField } from '@muziehdesign/forms';
         class: 'menu',
     },
 })
-export class FilterMenuComponent {
-    @ContentChild(NgForm) form?: NgForm;
-    @ContentChild('footer') footerTemplate: TemplateRef<any> | null = null;
+export class FilterMenuComponent implements AfterContentInit {
+    ngAfterContentInit(): void {
+      // this.container.createEmbeddedView(this.myTemplate);
+    }
 
+    @ViewChild('myTemplate') myTemplate!: TemplateRef<any>;
+    @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+    @ContentChild(NgForm) form?: NgForm;
     @ContentChildren(NgModel, { descendants: true }) models?: QueryList<NgModel>;
 
     reset() {

@@ -5,14 +5,22 @@
 
 <article>
     <div class="example">
-        <mz-filter [menuTemplate]="filterMenu1" (apply)="applyFilter('options', $event)" (clear)="clearFilter('options')">
-            <form #myForm="ngForm" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(myForm.value, $event)">
-                <label class="field">
-                    <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
-                </label>
-                {{ myForm.value | json }}
-                <button class="mb-8" type="submit">test</button>
-            </form>
+        <mz-filter (apply)="applyFilter('options', $event)" (clear)="clearFilter('options')" [menuTemplate]="menuTemplate" #filter1="mzFilter">
+            <ng-template #menuTemplate>
+                <form #filter1Form="ngForm" mzForm [schema]="schema" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(filter1Form, $event)">
+                    <label class="field">
+                        <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
+                    </label>
+                    {{ filter1Form.value | json }}
+    
+                    <mz-field>
+                        <input [(ngModel)]="model.singleOption" class="form-input" name="singleOption" type="string" />
+                    </mz-field>
+                    <footer>my footer {{filter1Form.valid}}</footer>
+    
+                    <button class="mb-8" type="submit">test</button>
+                </form>
+            </ng-template>
         </mz-filter>
     </div>
 </article>
@@ -65,8 +73,26 @@
                     <mz-field label="End date">
                         <input [(ngModel)]="model.dateRange.endDate" class="form-input" name="endDate" type="date" />
                     </mz-field>
+
+                    <footer><button>my button</button></footer>
                 </form>
             </mz-filter-menu>
         </ng-template>
     </div>
 </article>
+
+<mz-filter-menu cdkMenu>
+    <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()">
+        <mz-field label="Start date">
+            <input [(ngModel)]="model.dateRange.startDate" class="form-input" name="startDate" type="date" />
+        </mz-field>
+        <mz-field label="End date">
+            <input [(ngModel)]="model.dateRange.endDate" class="form-input" name="endDate" type="date" />
+        </mz-field>
+    </form>
+    <footer><button>my button</button></footer>
+</mz-filter-menu>
+
+<div>
+    {{model | json}}
+</div>
