@@ -1,6 +1,6 @@
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component, ContentChild, EventEmitter, Input, Output, TemplateRef, ViewChild } from '@angular/core';
+import { AfterContentInit, ChangeDetectorRef, Component, ContentChild, EventEmitter, Input, Output, TemplateRef, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
@@ -15,18 +15,32 @@ export class FilterComponent {
     @Output() clear = new EventEmitter<void>();
     @Output() apply = new EventEmitter<any>();
 
-    @ViewChild(NgForm) menuForm?: NgForm;
+    @ContentChild(NgForm) protected menuForm?: NgForm;
+    protected isOpen = false;
+
+    constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
     clearFilter() {
-       this.clear.emit();
+        this.clear.emit();
     }
 
-    applyFilter() {
-        if (this.menuForm?.valid) {
-            console.log('emitting', this.menuForm.value);
-            
-        } else {
-            console.log('Form is invalid');
-        }        
+    applyFilter($event: Event) {
+        console.log(this.menuForm?.value);
+        if (this.menuForm?.valid === false) {
+            console.log('form is invalid');
+            $event.preventDefault();
+            $event.stopPropagation();
+            return;
+        }
+    }
+
+    protected onOpened() {
+        this.isOpen = true;
+        this.changeDetectorRef.detectChanges();
+    }
+
+    protected onClosed() {
+        this.isOpen = false;
+        this.changeDetectorRef.detectChanges();
     }
 }

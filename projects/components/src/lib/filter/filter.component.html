@@ -1,12 +1,14 @@
-<button [cdkMenuTriggerFor]="filterMenu">my filter</button>
+<button [cdkMenuTriggerFor]="filterMenu" (cdkMenuOpened)="onOpened()" (cdkMenuClosed)="onClosed()">my filter</button>
 <ng-template #filterMenu>
     <div cdkMenu>
-        <form [ngFormOptions]="{ updateOn: 'submit' }">
-            <ng-container *ngTemplateOutlet="menuTemplate"></ng-container>
+        <ng-container [ngTemplateOutlet]="content" *ngIf="isOpen"></ng-container>
 
-            <input type="text" name="test" [(ngModel)]="label" />
-            <button type="submit" class="button button-primary" cdkMenuItem (cdkMenuItemTriggered)="applyFilter()">Apply</button>
-            <button type="reset" class="button button-tertiary" cdkMenuItem (cdkMenuItemTriggered)="clearFilter()">Clear</button>
-        </form>
+        <input type="text" name="test" [(ngModel)]="label" />
+        <button type="submit" class="button button-primary" (click)="applyFilter($event)">Apply</button>
+        <button type="reset" class="button button-tertiary" (click)="clearFilter()">Clear</button>
     </div>
+</ng-template>
+
+<ng-template #content>
+    <ng-content></ng-content>
 </ng-template>

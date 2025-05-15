@@ -6,14 +6,13 @@
 <article>
     <div class="example">
         <mz-filter [menuTemplate]="filterMenu1" (apply)="applyFilter('options', $event)" (clear)="clearFilter('options')">
-            <ng-template #filterMenu1>
-                <form #myForm="ngForm" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(myForm.value, $event)">
-                    <label class="field">
-                        <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
-                    </label>
-                    <button class="mb-8" type="submit">test</button>
-                </form>
-            </ng-template>
+            <form #myForm="ngForm" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(myForm.value, $event)">
+                <label class="field">
+                    <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
+                </label>
+                {{ myForm.value | json }}
+                <button class="mb-8" type="submit">test</button>
+            </form>
         </mz-filter>
     </div>
 </article>
