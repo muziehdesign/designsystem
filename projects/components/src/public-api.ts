@@ -67,7 +67,6 @@ export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';
 export { OptionsFilterComponent } from './lib/options-filter/options-filter.component';
 export { FilterMenuComponent } from './lib/filter/filter-menu/filter-menu.component';
-export { FilterMenuFooterComponent } from './lib/filter/filter-menu-footer/filter-menu-footer.component';
 
 // utilities
 export { CanDeactivateComponent, hasImplementation } from './lib/guard-deactivate';
