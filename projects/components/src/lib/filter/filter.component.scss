@@ -4,11 +4,11 @@
 
 .mz-filter-button {
     @include button.button();
-    border: 1px solid var(--color-neutral-400);
+    border: 1px solid var(--color-neutral-300);
     padding: 0.5rem 0.75rem;
 
     &[aria-expanded=true] {
-
+        background-color: var(--color-neutral-200);
     }
 }
 
