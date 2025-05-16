@@ -1,23 +1,43 @@
 <header>
     <h1>Filter options component</h1>
-    <p class="prose">
-        Use this component to search and select options. It allows for both single and multiple selections.
-    </p>
+    <p class="prose">Use this component to search and select options. It allows for both single and multiple selections.</p>
 </header>
 
 <article>
-    <div class="example">        
-        <mz-filter>
-            <form [ngFormOptions]="{updateOn: 'submit'}">
-                @for (option of options; track $index) {
-                    <label class="field-option">
-                        <input type="checkbox" class="form-checkbox" [(ngModel)]="option.selected" name="option-{{option.value}}" />
-                        <span class="checkbox-label">{{ option.label }}</span>
-                    </label>
-                }
-            </form>
+    <div class="example">
+        <mz-filter (apply)="applyFilter('options', $event)" (clear)="applyFilter('options', [])" [menuTemplate]="menuTemplate" #filter1="mzFilter" [display]="getMonthsDisplay()">
+            <ng-template #menuTemplate>
+                <form #filter1Form="ngForm" mzForm [schema]="schema" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(filter1Form, $event)">
+                    <label class="field">
+                        <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
+                    </label>                    
+                    <div class="button-list">
+                        <button type="submit" mzButton variant="primary">Apply</button>
+                        <button type="reset" mzButton variant="tertiary">Clear</button>
+                    </div>
+                </form>
+            </ng-template>
         </mz-filter>
     </div>
+</article>
+
+<article>
+    <mz-filter (apply)="applyFilter('options', $event)" (clear)="clearFilter('options')" [menuTemplate]="menuTemplate2" #filter2="mzFilter">
+        <ng-template #menuTemplate2>
+            <mz-filter-menu>
+                <form #filter2Form="ngForm" mzForm [schema]="schema" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="applyFilter2(filter2Form, $event)">
+                    <label class="field">
+                        <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
+                    </label>
+                    {{ filter2Form.value | json }}
+    
+                    <mz-field>
+                        <input [(ngModel)]="model.singleOption" class="form-input" name="singleOption" type="string" />
+                    </mz-field>
+                </form>
+            </mz-filter-menu>
+        </ng-template>
+    </mz-filter>
 </article>
 
 <article>
@@ -26,3 +46,68 @@
     </div>
 </article>
 
+<article>
+    <div class="example">
+        <div>
+            {{ model | json }}
+        </div>
+        <div>
+            <button class="button button-tertiary" [cdkMenuTriggerFor]="singleOptionMenu">Single option</button>
+            <ng-template #singleOptionMenu>
+                <mz-filter-menu cdkMenu>
+                    <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()" [ngFormOptions]="{ updateOn: 'submit' }">
+                        @for(option of singleOptionOptions; track $index) {
+                        <label class="field-option">
+                            <input type="radio" name="singleOption" [value]="option" class="form-radio" [(ngModel)]="model.singleOption" />
+                            <span class="radio-label">{{ option }}</span>
+                        </label>
+                        }
+                    </form>
+                </mz-filter-menu>
+            </ng-template>
+        </div>
+
+        <button class="button button-tertiary" [cdkMenuTriggerFor]="filterMenu1">Multiple options</button>
+        <ng-template #filterMenu1>
+            <mz-filter-menu cdkMenu>
+                <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()">
+                    <label class="field-option">
+                        <mz-checkbox-group [(ngModel)]="model.options" [options]="options" name="options"></mz-checkbox-group>
+                    </label>
+                </form>
+            </mz-filter-menu>
+        </ng-template>
+
+        <button class="button button-tertiary" [cdkMenuTriggerFor]="filterMenu1">Filter with form</button>
+        <ng-template #filterMenu1>
+            <mz-filter-menu cdkMenu>
+                <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()">
+                    <mz-field label="Start date">
+                        <input [(ngModel)]="model.dateRange.startDate" class="form-input" name="startDate" type="date" />
+                    </mz-field>
+                    <mz-field label="End date">
+                        <input [(ngModel)]="model.dateRange.endDate" class="form-input" name="endDate" type="date" />
+                    </mz-field>
+
+                    <footer><button>my button</button></footer>
+                </form>
+            </mz-filter-menu>
+        </ng-template>
+    </div>
+</article>
+
+<mz-filter-menu cdkMenu>
+    <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()">
+        <mz-field label="Start date">
+            <input [(ngModel)]="model.dateRange.startDate" class="form-input" name="startDate" type="date" />
+        </mz-field>
+        <mz-field label="End date">
+            <input [(ngModel)]="model.dateRange.endDate" class="form-input" name="endDate" type="date" />
+        </mz-field>
+    </form>
+    <footer><button>my button</button></footer>
+</mz-filter-menu>
+
+<div>
+    {{model | json}}
+</div>

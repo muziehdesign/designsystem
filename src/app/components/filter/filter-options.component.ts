@@ -1,16 +1,34 @@
+import { CdkMenuModule } from '@angular/cdk/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { FilterOptionModel, MuziehComponentsModule, OptionsFilterComponent, FilterComponent } from '@muziehdesign/components';
+import { CommonModule, JsonPipe } from '@angular/common';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import { DateType, ModelSchema, ModelSchemaFactory, MzCheckboxGroup, MzFormsModule, ObjectType, required, StringType } from '@muziehdesign/forms';
+import { FilterOptionModel, OptionsFilterComponent, FilterComponent, FilterMenuComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'filter-options',
-    imports: [CommonModule, FormsModule, MuziehComponentsModule, OverlayModule, OptionsFilterComponent, FilterComponent],
+    imports: [CommonModule, FormsModule, OverlayModule, OptionsFilterComponent, FilterComponent, CdkMenuModule, FilterMenuComponent, MzFormsModule, JsonPipe, MzCheckboxGroup],
     templateUrl: './filter-options.component.html',
-    styleUrls: ['./filter-options.component.scss']
+    styleUrls: ['./filter-options.component.scss'],
 })
 export class FilterOptionsComponent {
+    schema: ModelSchema<SearchInputModel>;
+    model = new SearchInputModel();
+    @ViewChild('filter1') filter1?: FilterComponent;
+    constructor(private schemaFactory: ModelSchemaFactory) {
+        this.schema = this.schemaFactory.build(this.model);
+    }
+
+    months = [
+        { label: 'January', value: "1" },
+        { label: 'February', value: "2" },
+        { label: 'March', value: "3" },
+        { label: 'April', value: "4" },
+    ];
+
+    singleOptionOptions = ['option1', 'option2', 'option3'];
+
     options: FilterOptionModel<string>[] = [
         { label: 'Option 1', selected: true, value: '1' },
         { label: 'Option 2', selected: false, value: '2' },
@@ -18,4 +36,41 @@ export class FilterOptionsComponent {
     ];
     values = [];
     onFilterChanged($event: FilterOptionModel<string | number>[]) {}
+
+    applyDateRange() {
+        console.log('Date range applied:', this.model);
+    }
+
+    applyFilter<K extends keyof SearchInputModel>(key: K, value: SearchInputModel[K]) {
+       this.model[key] = value;
+    }
+
+    applyFilter2(v: NgForm, $event: Event) {
+        console.log('my form submission', v.invalid, v.submitted, this.filter1);
+        if(v.valid) {
+            this.filter1?.close();
+        }
+    }
+
+    clearFilter<K extends keyof SearchInputModel>(key: K){
+
+    }
+
+    getMonthsDisplay(){
+        return this.months.filter(m=>this.model.options?.includes(m.value)).map(m=>m.label).join(', ');
+    }
+}
+
+export class DateRangeModel {
+    @DateType(required())
+    startDate?: Date;
+    endDate?: Date;
+}
+
+export class SearchInputModel {
+    @ObjectType(DateRangeModel)
+    dateRange: DateRangeModel = new DateRangeModel();
+    @StringType(required())
+    singleOption?: string;
+    options?: string[];
 }

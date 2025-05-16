@@ -1,41 +1,49 @@
-import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
+import { CdkMenuModule, CdkMenuTrigger } from '@angular/cdk/menu';
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component, ContentChild, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 @Component({
     selector: 'mz-filter',
-    imports: [CdkOverlayOrigin, CdkConnectedOverlay, FormsModule, CommonModule],
+    exportAs: 'mzFilter',
+    imports: [FormsModule, CommonModule, CdkMenuModule, SvgIconComponent],
     templateUrl: './filter.component.html',
-    styleUrl: './filter.component.scss'
+    styleUrl: './filter.component.scss',
 })
-export class FilterComponent implements AfterContentInit {
+export class FilterComponent {
     @Input() label = 'Filter';
-    @ContentChild(NgForm) menuForm!: NgForm;
-    protected open = false;
-    private initialValues: any;
+    @Input() display = '';
+    @Input() menuTemplate: TemplateRef<unknown> | null = null;
+    @Output() clear = new EventEmitter<void>();
+    @Output() apply = new EventEmitter<any>();
 
-    ngAfterContentInit(): void {
-      this.initialValues = this.menuForm.value;
+    @ViewChild(NgForm) protected menuForm?: NgForm;
+    @ViewChild(CdkMenuTrigger) protected menuTrigger?: CdkMenuTrigger;
+
+    close() { 
+        this.menuTrigger?.close();
     }
 
-    toggleOverlay() {
-        this.open = !this.open;
+    protected clearFilter() {
+        this.clear.emit();
     }
 
-    dismiss() {
-        this.open = false;
-        if(this.menuForm.options.updateOn === 'submit') {
-          this.menuForm.resetForm(this.initialValues);
+    protected applyFilter($event: Event) {
+        console.log(this.menuForm?.value);
+        if (this.menuForm?.valid === false) {
+            console.log('form is invalid');
+            $event.preventDefault();
+            $event.stopPropagation();
+            return;
         }
     }
 
-    clear() {
-      this.open = false;
-    }
+    protected get filterLabel() {
+        if(this.display) {
+            return `${this.label}: ${this.display}`;
+        }
 
-    apply() {
-      this.open = false;
-      console.log('applied', this.menuForm.value);
+        return this.label;
     }
 }
