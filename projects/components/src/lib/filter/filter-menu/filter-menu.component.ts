@@ -6,7 +6,7 @@ import { FilterComponent } from '../filter.component';
 
 @Component({
     selector: 'mz-filter-menu',
-    imports: [FormsModule, JsonPipe, CdkMenuItem],
+    imports: [FormsModule],
     exportAs: 'mzFilterMenu',
     templateUrl: './filter-menu.component.html',
     styleUrl: './filter-menu.component.scss',

@@ -33,12 +33,6 @@ export { ResultTableModel } from './lib/result-table/result-table.model';
 // infinite scroll
 export { InfiniteScrollComponent } from './lib/infinite-scroll/infinite-scroll.component';
 
-// Datetime
-export { DateTimeComponent } from './lib/date-time/date-time.component';
-export { TimeValue } from './lib/date-time/time-value';
-export { TimeValueAccessorDirective } from './lib/time-value-accessor.directive';
-export { TimeValueValidatorDirective } from './lib/time-value-validator.directive';
-
 // testing files
 export { MuziehComponentHarness } from './lib/testing/muzieh-component-harness';
 export { ResultTableHarness } from './lib/testing/result-table-harness';

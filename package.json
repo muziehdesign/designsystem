@@ -6,7 +6,7 @@
     "start": "concurrently -k \"ng build components --watch\" \"wait-on ./dist/components/index.d.ts && ng serve --open\"",
     "build": "ng build design && ng build components && ng build",
     "watch": "ng build --watch --configuration development",
-    "watch:lib": "ng build components --watch",
+    "watch:libs": "ng build components --watch",
     "test": "ng test components --watch",
     "test:ci": "ng test components --watch false",
     "mock-server": "node ./mock-server/server.js",
