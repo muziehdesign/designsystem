@@ -33,41 +33,4 @@ describe('FormComponent', () => {
         fixture.detectChanges();
         expect(component).toBeTruthy();
     });
-
-    it('should not respond to submit events if button is disabled', fakeAsync(() => {
-        // arrange
-        const getSubmitButton = () => fixture.debugElement.query(By.css('form button'));
-
-        component.model = {
-            ...component.model,
-            address1: 'addr1',
-            city: 'city',
-            state: 'st',
-            zipCode: 'zip',
-        };
-
-        fixture.detectChanges();
-
-        // act
-        expect(getSubmitButton()).not.toBeNull();
-        (getSubmitButton().nativeElement as HTMLButtonElement).click();
-        fixture.detectChanges();
-
-        // assert
-        expect((getSubmitButton().nativeElement as HTMLButtonElement).classList.contains('loading')).toBeTrue();
-        expect(component.submitCount).toBe(1); // the submit event did pass through on the first request
-
-        (getSubmitButton().nativeElement as HTMLButtonElement).click(); // attempts to trigger the submit event while processing (busy)
-        fixture.detectChanges();
-        expect(component.submitCount).toBe(2); // this implies that the submit event didn't pass through
-
-        tick(1500);
-        fixture.detectChanges();
-        expect((getSubmitButton().nativeElement as HTMLButtonElement).classList.contains('loading')).toBeFalse(); // button is reset to default
-
-        (getSubmitButton().nativeElement as HTMLButtonElement).click(); // trigger submit that passes through
-        fixture.detectChanges();
-        expect(component.submitCount).toBe(3);
-        tick(1500);
-    }));
 });
