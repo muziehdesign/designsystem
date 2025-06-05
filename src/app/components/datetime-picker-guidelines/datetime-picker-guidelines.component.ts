@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+
 
 @Component({
     selector: 'app-datetime-picker-guidelines',
     templateUrl: './datetime-picker-guidelines.component.html',
     styleUrls: ['./datetime-picker-guidelines.component.scss'],
-    imports: [CommonModule, FormsModule, MatDatepickerModule, MatNativeDateModule]
+    imports: [CommonModule, FormsModule ]
 })
 export class DatetimePickerGuidelinesComponent {
 

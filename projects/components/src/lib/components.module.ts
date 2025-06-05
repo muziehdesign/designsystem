@@ -7,7 +7,6 @@ import { ResultTableComponent } from './result-table/result-table.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
-import { TimeValueAccessorDirective } from './time-value-accessor.directive';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
@@ -17,8 +16,6 @@ import { SortKeyDirective } from './sort-key.directive';
 import { SubjectDisplayPipe } from './subject-display/subject-display.pipe';
 import { ButtonDirective } from './button.directive';
 import { WizardProgressTrackerComponent } from './wizard-progress-tracker/wizard-progress-tracker.component';
-import { DateTimeComponent } from './date-time/date-time.component';
-import { TimeValueValidatorDirective } from './time-value-validator.directive';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 
 /**
@@ -39,14 +36,11 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
-    TimeValueAccessorDirective,
     DateDisplayPipe,
     PhoneNumberPipe,
     SortKeyDirective,
     SortDirective,
     SubjectDisplayPipe,
-    DateTimeComponent,
-    TimeValueValidatorDirective,
   ],
   exports: [
     EnumDisplayPipe,
@@ -57,7 +51,6 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     PaginationComponent,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
-    TimeValueAccessorDirective,
     DateDisplayPipe,
     AlertComponent,
     PhoneNumberPipe,
@@ -66,8 +59,6 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     SubjectDisplayPipe,
     ButtonDirective,
     WizardProgressTrackerComponent,
-    DateTimeComponent,
-    TimeValueValidatorDirective,
   ],
   providers: [
     DatePipe,

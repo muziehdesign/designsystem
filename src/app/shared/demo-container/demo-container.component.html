@@ -12,11 +12,5 @@
 </div>
 
 <div class="bg-white mt-2" *ngIf="showCode">
-  <mat-tab-group>
-    <mat-tab *ngFor="let code of code$ | async" [label]="code.filename">
-      <pre>
-          <code [highlight]="code.content" [languages]="[code.language]"></code>
-        </pre>
-    </mat-tab>
-  </mat-tab-group>
+
 </div>
