@@ -57,7 +57,7 @@ export const navigationLinks: NavigationLink[] = [
             },
             { name: 'Page header', link: '/components/pageheader' },
             { name: 'Pagination', link: '/components/pagination' },
-            { name: 'Popover', link: '/components/popover' },
+            { name: 'Popover', link: '/components/popover', inactive: true },
             { name: 'Progress bar', link: '/components/progressbar' },
             { name: 'Skeleton loader', link: '/components/skeletonloader' },
             { name: 'Spinner', link: '/components/spinner' },

@@ -1,5 +1,12 @@
 @mixin icon() {
-    height:1.5rem;
-    width:1.5rem;
-    display: inline-block;
+    &, svg {
+        height:1.25rem;
+        width:1.25rem;
+        display: inline-block;
+    }
+}
+
+@mixin icon-medium() {
+    height:1.25rem;
+    width:1.25rem;
 }
