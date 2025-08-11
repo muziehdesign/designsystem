@@ -3,10 +3,11 @@ import { FilterOptionModel } from '../filter/filter-option.model';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { SpinnerComponent } from '../spinner/spinner.component';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 @Component({
     selector: 'mz-options-filter',
-    imports: [FormsModule, CdkOverlayOrigin, CdkConnectedOverlay, SpinnerComponent],
+    imports: [FormsModule, CdkOverlayOrigin, CdkConnectedOverlay, SpinnerComponent, SvgIconComponent],
     templateUrl: './options-filter.component.html',
     styleUrl: './options-filter.component.scss',
     encapsulation: ViewEncapsulation.None
