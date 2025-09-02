@@ -3,7 +3,7 @@ import { AfterViewInit, Component, ContentChild, EventEmitter, Input, Output, Te
 import { PageEvent } from '../models/page-event';
 import { ResultTableOptions } from '../models/result-table-options';
 import { PaginationComponent } from '../pagination/pagination.component';
-import { SpinnerComponent } from '../spinner/spinner.component';
+import { MzSpinner } from '../spinner/spinner.component';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { ResultTableModel } from './result-table.model';
 
@@ -11,7 +11,7 @@ import { ResultTableModel } from './result-table.model';
     selector: 'mz-result-table',
     templateUrl: './result-table.component.html',
     styleUrls: ['./result-table.component.scss'],
-    imports: [CommonModule, PaginationComponent, SpinnerComponent, SvgIconComponent]
+    imports: [CommonModule, PaginationComponent, MzSpinner, SvgIconComponent]
 })
 export class ResultTableComponent implements AfterViewInit {
 

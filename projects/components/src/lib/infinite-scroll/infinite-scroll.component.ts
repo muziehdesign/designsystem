@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
-import { SpinnerComponent } from '../spinner/spinner.component';
+import { MzSpinner } from '../spinner/spinner.component';
 
 @Component({
     selector: 'mz-infinite-scroll',
-    imports: [CommonModule, SpinnerComponent],
+    imports: [CommonModule, MzSpinner],
     templateUrl: './infinite-scroll.component.html',
     styleUrls: ['./infinite-scroll.component.scss']
 })

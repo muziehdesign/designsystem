@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { InfiniteScrollComponent } from './infinite-scroll.component';
-import { SpinnerComponent } from '../spinner/spinner.component';
+import { MzSpinner } from '../spinner/spinner.component';
 import { Component } from '@angular/core';
 
 @Component({
@@ -34,7 +34,7 @@ describe('InfiniteScrollComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [TestHostComponent],
-            imports: [CommonModule, InfiniteScrollComponent, SpinnerComponent],
+            imports: [CommonModule, InfiniteScrollComponent, MzSpinner],
         }).compileComponents();
     });
 
@@ -78,7 +78,7 @@ describe('InfiniteScrollComponent', () => {
         // arrange
         component.isLoading = true;
         fixture.detectChanges();
-        const spinner = fixture.debugElement.query(By.directive(SpinnerComponent));
+        const spinner = fixture.debugElement.query(By.directive(MzSpinner));
 
         // assert
         expect(spinner).toBeTruthy();
@@ -88,7 +88,7 @@ describe('InfiniteScrollComponent', () => {
         // arrange
         component.isLoading = false;
         fixture.detectChanges();
-        const spinner = fixture.debugElement.query(By.directive(SpinnerComponent));
+        const spinner = fixture.debugElement.query(By.directive(MzSpinner));
 
         // assert
         expect(spinner).toBeNull();

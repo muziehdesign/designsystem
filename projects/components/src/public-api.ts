@@ -6,7 +6,7 @@ export { SvgIconComponent } from './lib/svg-icon/svg-icon.component';
 export { SvgIconOptions, SVG_ICON_DEFAULT_OPTIONS } from './lib/svg-icon/svg-icon-config';
 
 export { EnumDisplayPipe } from './lib/enum-display/enum-display.pipe';
-export { SpinnerComponent } from './lib/spinner/spinner.component';
+export { MzSpinner } from './lib/spinner/spinner.component';
 
 export { MuziehComponentsModule } from './lib/components.module';
 export { PageLoadingIndicatorComponent } from './lib/page-loading-indicator/page-loading-indicator.component';

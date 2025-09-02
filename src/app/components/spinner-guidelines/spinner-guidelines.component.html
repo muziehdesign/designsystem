@@ -1,43 +1,42 @@
 <header>
     <h1>Spinner</h1>
-    <p class="prose">
-        Use a spinner to let users know content is being loaded.
-    </p>
+    <p class="prose">Use a spinner to let users know content is being loaded.</p>
 </header>
 
 <article>
     <h2>Example</h2>
     <div class="example">
-        <ul>
+        <ul class="flex items-center gap-2 flex-col">
             <li>
-                <span class="pr-4">medium (default)</span>
-                <div class="max-w-sm">
-                    <mz-spinner></mz-spinner>
-                </div>
+                <mz-spinner></mz-spinner>
             </li>
             <li>
-                <span class="pr-4">large</span>
-                <div class="max-w-sm">
-                    <mz-spinner size="large"></mz-spinner>
-                </div>
+                <mz-spinner size="large"></mz-spinner>
+            </li>
+            <li>
+                <mz-spinner appearance="secondary"></mz-spinner>
+            </li>
+            <li>
+                <mz-spinner appearance="secondary" size="large"></mz-spinner>
             </li>
         </ul>
     </div>
     <div class="example-template">
         <code>
             <pre>
-                &lt;mz-spinner size="large"&gt;&lt;/mz-spinner&gt;
-                // size options are ['medium', 'large']
+            &lt;li&gt;
+                &lt;mz-spinner&gt;&lt;&#x2F;mz-spinner&gt;
+            &lt;&#x2F;li&gt;
+            &lt;li&gt;
+                &lt;mz-spinner size&#x3D;&quot;large&quot;&gt;&lt;&#x2F;mz-spinner&gt;
+            &lt;&#x2F;li&gt;
+            &lt;li&gt;
+                &lt;mz-spinner appearance&#x3D;&quot;secondary&quot;&gt;&lt;&#x2F;mz-spinner&gt;
+            &lt;&#x2F;li&gt;
+            &lt;li&gt;
+                &lt;mz-spinner appearance&#x3D;&quot;secondary&quot; size&#x3D;&quot;large&quot;&gt;&lt;&#x2F;mz-spinner&gt;
+            &lt;&#x2F;li&gt;
             </pre>
         </code>
     </div>
-
-    <section>
-        <h2>Best practices</h2>
-        <ul class="list-inside list-disc">
-            <li>There should only be a single spinner on a page at one time.</li>
-            <li>Spinner should be placed inside container of the content being loaded.</li>
-            <li>Spinner should appear when user action is initiated and disappear once content loads.</li>
-        </ul>
-    </section>
 </article>

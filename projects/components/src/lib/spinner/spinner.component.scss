@@ -1,23 +1,35 @@
 .mz-spinner {
     animation: spin 1s linear infinite;
     margin: auto;
-
-    &.medium {
-        height: 1.25rem;
-        width: 1.25rem;
-    }
-
-    &.large {
-        height: 4rem;
-        width: 4rem;
-    }
+    height: 100%;
+    width: 100%;
 }
 
-/*
 .opacity-25 {
     opacity: 0.25;
 }
 
 .opacity-75 {
     opacity: 0.75;
-}*/
+}
+
+:host {
+    display: inline-block;
+}
+
+:host.medium {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+:host.large {
+    height: 4rem;
+    width: 4rem;
+}
+
+:host.primary {
+    color: var(--color-primary);
+}
+
+:host.secondary {
+    color: var(--color-secondary);
+}
