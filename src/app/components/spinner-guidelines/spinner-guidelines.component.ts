@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SpinnerComponent } from '@muziehdesign/components';
+import { MzSpinner } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-spinner-guidelines',
     templateUrl: './spinner-guidelines.component.html',
     styleUrls: ['./spinner-guidelines.component.scss'],
-    imports: [RouterModule, SpinnerComponent]
+    imports: [RouterModule, MzSpinner]
 })
 export class SpinnerGuidelinesComponent implements OnInit {
 

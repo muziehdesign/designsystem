@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SpinnerComponent, SvgIconComponent } from '@muziehdesign/components';
+import { MzSpinner, SvgIconComponent } from '@muziehdesign/components';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { TextInputDemoComponent } from 'src/demos/text-input-demo.component';
 
@@ -9,7 +9,7 @@ import { TextInputDemoComponent } from 'src/demos/text-input-demo.component';
     selector: 'app-text-input',
     templateUrl: './text-input.component.html',
     styleUrls: ['./text-input.component.scss'],
-    imports: [CommonModule, FormsModule, SvgIconComponent, SpinnerComponent, SharedModule]
+    imports: [CommonModule, FormsModule, SvgIconComponent, MzSpinner, SharedModule]
 })
 export class TextInputComponent implements OnInit {
 
