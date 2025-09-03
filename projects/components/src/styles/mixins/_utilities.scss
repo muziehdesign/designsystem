@@ -1,0 +1,105 @@
+@use '../theme.scss' as *;
+
+@mixin font-weight($param) {
+    font-weight: map-get(map-get($font, weight), $param);
+}
+
+@mixin gap($size) {
+    gap: calc(map-get($core, spacing) * #{$size});
+}
+
+@mixin p($p) {
+    padding: calc(map-get($core, spacing) * #{$p});
+}
+
+@mixin pt($t) {
+    padding-top: calc(map-get($core, spacing) * #{$t});
+}
+
+@mixin pb($b) {
+    padding-bottom: calc(map-get($core, spacing) * #{$b});
+}
+
+@mixin pl($l) {
+    padding-left: calc(map-get($core, spacing) * #{$l});
+}
+
+@mixin pr($r) {
+    padding-right: calc(map-get($core, spacing) * #{$r});
+}
+
+@mixin px($x) {
+    padding-left: calc(map-get($core, spacing) * #{$x});
+    padding-right: calc(map-get($core, spacing) * #{$x});
+}
+
+@mixin py($y) {
+    padding-top: calc(map-get($core, spacing) * #{$y});
+    padding-bottom: calc(map-get($core, spacing) * #{$y});
+}
+
+@mixin padding($t, $r, $b, $l) {
+    padding: calc(map-get($core, spacing) * #{$t}) calc(map-get($core, spacing) * #{$r}) calc(map-get($core, spacing) * #{$b}) calc(map-get($core, spacing) * #{$l});
+}
+
+@mixin mx($x) {
+    margin-left: calc(map-get($core, spacing) * #{$x});
+    margin-right: calc(map-get($core, spacing) * #{$x});
+}
+
+@mixin my($y) {
+    margin-top: calc(map-get($core, spacing) * #{$y});
+    margin-bottom: calc(map-get($core, spacing) * #{$y});
+}
+
+@mixin text($font-size) {
+    $sizes: map-get($font, size);
+
+    @if map-has-key($sizes, $font-size) {
+        font-size: map-get($sizes, $font-size);
+    } @else {
+        @error "Unknown font-size `#{$font-size}`. Allowed: #{map-keys($sizes)}.";
+    }
+}
+
+@mixin color($color-name) {
+    $colors: map-get($color, text);
+
+    @if map-has-key($colors, $color-name) {
+        color: map-get($colors, $color-name);
+    } @else {
+        @error "Unknown color `#{$color-name}`. Allowed: #{map-keys($colors)}.";
+    }
+}
+
+@function range($from, $to) {
+    $list: ();
+    @for $i from $from through $to {
+        $list: append($list, $i);
+    }
+    @return $list;
+}
+
+@each $i in range(0, 8) {
+    .p-#{$i} {
+        @include p($i);
+    }
+    .pt-#{$i} {
+        @include pt($i);
+    }
+    .pb-#{$i} {
+        @include pb($i);
+    }
+    .pl-#{$i} {
+        @include pl($i);
+    }
+    .pr-#{$i} {
+        @include pr($i);
+    }
+    .px-#{$i} {
+        @include px($i);
+    }
+    .py-#{$i} {
+        @include py($i);
+    }
+}

@@ -1,0 +1,56 @@
+@use 'mixins/utilities' as *;
+
+.pagination-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    color: var(--text-subtlest);
+    @include gap(5);
+}
+
+.pagination-nav {
+    display: flex;
+    align-items: center;
+    grid-column-start: 2;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.page-link {
+    display: flex;
+    cursor: pointer;
+    @include p(4);
+    @include font-weight(medium);
+    @include color(subtler);
+}
+
+.page-link:hover {
+    @include color(primary);
+}
+
+.page-link.active {
+    @include color(primary);
+    font-weight: bolder;
+    cursor: default;
+}
+
+.page-link.disabled {
+    @include color(disabled);
+    cursor: default;
+    text-decoration: none;
+}
+
+.pagination-size,
+.collection-size {
+    @include color(subtler);
+    @include p(4);
+    @include text(sm);
+    margin-left: auto;
+}
+
+.page-size-control {
+    @include pl(0.5);
+    @include py(0);
+    @include pr(7);
+    @include mx(1);
+}
