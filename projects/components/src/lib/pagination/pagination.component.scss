@@ -1,8 +1,7 @@
 @use 'mixins/utilities' as *;
 
 .pagination-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
     justify-content: center;
     color: var(--text-subtlest);
     @include gap(5);
@@ -10,10 +9,9 @@
 
 .pagination-nav {
     display: flex;
-    align-items: center;
-    grid-column-start: 2;
-    justify-items: center;
-    margin: 0 auto;
+    justify-content: center;
+    flex-grow: 1;
+    @include px(4);
 }
 
 .page-link {
@@ -40,12 +38,17 @@
     text-decoration: none;
 }
 
-.pagination-size,
-.collection-size {
-    @include color(subtler);
+.pagination-size {
+    @include color(subtlest);
     @include p(4);
     @include text(sm);
     margin-left: auto;
+    display: none;
+    flex-grow: 0;
+
+    @include respond(lg) {
+        display:inline-block;
+    }
 }
 
 .page-size-control {

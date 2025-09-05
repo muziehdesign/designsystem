@@ -103,3 +103,15 @@
         @include py($i);
     }
 }
+
+@mixin respond($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+
+  @if $size {
+    @media (min-width: #{$size}) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint: #{$breakpoint}";
+  }
+}

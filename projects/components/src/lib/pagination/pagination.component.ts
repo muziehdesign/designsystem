@@ -26,7 +26,7 @@ export class PaginationComponent implements OnChanges {
 
     this.updatePages(this.page, this.length, this.pageSize);
   }
-
+  
   ngOnChanges(): void {
     this.updatePages(this.page, this.length, this.pageSize);
   }
