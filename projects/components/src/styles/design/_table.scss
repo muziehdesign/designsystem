@@ -66,28 +66,25 @@
     @apply bg-gray-100 hover:bg-gray-200;
 }
 
-.sort-ascending .sort-icon {
+.sort-icon {
     width: 10px;
     display: inline-flex;
     margin-bottom: -7px;
     margin-left: 10px;
     height: 23px;
-    mask-image: url('/assets/icons/arrow-long-up-mini.svg'); // TODO
-    mask-repeat: no-repeat;
-    mask-size: 1.2rem;
-    mask-position: center;
     @apply bg-gray-500;
 }
 
+.sort-ascending .sort-icon {    
+    mask-image: url('/assets/icons/arrow-long-up-mini.svg'); // TODO
+    mask-repeat: no-repeat;
+    mask-size: 1.2rem;
+    mask-position: center;    
+}
+
 .sort-descending .sort-icon {
-    width: 10px;
-    display: inline-flex;
-    margin-bottom: -7px;
-    margin-left: 10px;
-    height: 23px;
     mask-image: url('/assets/icons/arrow-long-down-mini.svg');
     mask-repeat: no-repeat;
     mask-size: 1.2rem;
     mask-position: center;
-    @apply bg-gray-500;
 }
