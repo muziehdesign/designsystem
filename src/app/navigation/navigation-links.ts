@@ -28,6 +28,7 @@ export const navigationLinks: NavigationLink[] = [
             { name: 'Badge', inactive: true, link: '/components/badge' },
             { name: 'Breadcrumbs', link: '/components/breadcrumbs' },
             { name: 'Button', link: '/components/buttons' },
+            { name: 'Split button', inactive: true },
             { name: 'Collapsible', inactive: true, link: '/components/collapsible' },
             { name: 'Description lists', link: '/components/descriptionlist' },
             { name: 'Dropdown menu', link: '/components/menudropdown' },

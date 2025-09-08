@@ -54,6 +54,7 @@ export { MzDialog } from './lib/dialog/mz-dialog.service';
 export { MzDialogConfig } from './lib/dialog/dialog-config';
 export { MzDialogRef } from './lib/dialog/dialog-ref';
 export { DrawerContainerComponent } from './lib/dialog/container/drawer-container.component';
+export { MzModalContainer } from './lib/dialog/modal-container/modal-container.component';
 export { MzDialogModule } from './lib/dialog/dialog.module';
 
 // filter

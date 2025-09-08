@@ -13,7 +13,7 @@ import { MzDialogRef } from '../dialog-ref';
     templateUrl: './drawer-container.component.html',
     styleUrl: './drawer-container.component.scss',
     host: {
-        'class': 'mz-dialog-container',
+        'class': 'mz-dialog-container mz-drawer',
         '[class.open]': 'open'
     }
 })

@@ -2,7 +2,7 @@
 @use 'mixins/icon' as icon;
 
 // drawer
-:host(.mz-dialog-container) {
+:host {
     background-color: var(--surface-bg);
     width: 500px;
     max-width: 90%;
@@ -24,10 +24,4 @@
     top: 1rem;
     right: 1.5rem;
     z-index: 10;
-}
-
-.mz-dialog {
-    height: 100%;
-    position: relative;
-    overflow: auto;
 }

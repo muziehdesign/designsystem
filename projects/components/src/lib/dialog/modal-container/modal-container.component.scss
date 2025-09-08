@@ -1,0 +1,12 @@
+@use 'mixins/dialog' as dialog;
+@use 'mixins/icon' as icon;
+
+:host {
+    background-color: var(--surface-bg);
+    max-width: 80vh;
+    max-height: 80vh;
+
+    &.open {
+        translate: 0%;
+    }
+}

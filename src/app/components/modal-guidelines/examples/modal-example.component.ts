@@ -1,17 +1,15 @@
-import { Component, OnDestroy } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
+import { Component, OnDestroy } from "@angular/core";
+import { RouterLink } from "@angular/router";
+import { CanDeactivateComponent, MzDialog } from "@muziehdesign/components";
 
 @Component({
-    selector: 'app-drawer-example',
+    selector: 'app-modal-example',
     imports: [RouterLink],
     template: `
         <header>
-            <h2>Drawer Content</h2>
+            <h2>Modal Content</h2>
         </header>
         <div>
-            <div>
-                <input type="text" class="form-input" />
             <div>
                 <label>
                     <input type="radio" name="contentLength" [value]="'short'" [checked]="contentLength === 'short'" (change)="useShortContent()" />
@@ -45,7 +43,7 @@ import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
         </footer>
     `
 })
-export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent {
+export class ModalExampleComponent implements OnDestroy, CanDeactivateComponent {
 
     contentLength : 'short' | 'long' = 'short';
     confirmOnClose = false;
@@ -73,10 +71,10 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
     }
 
     openAnother() {
-        this.mzDialog.open(DrawerExampleComponent);
+        this.mzDialog.open(ModalExampleComponent);
     }
 
     ngOnDestroy(): void {
-        console.log('DrawerExampleComponent ngOnDestroy');
+        console.log('ModalExampleComponent ngOnDestroy');
     }
 }
