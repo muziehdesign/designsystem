@@ -10,8 +10,7 @@ import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
             <h2>Drawer Content</h2>
         </header>
         <div>
-            <div>
-                <input type="text" class="form-input" />
+            <input type="text" class="form-input" />
             <div>
                 <label>
                     <input type="radio" name="contentLength" [value]="'short'" [checked]="contentLength === 'short'" (change)="useShortContent()" />
@@ -30,10 +29,10 @@ import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
                 </label>
             </div>
             @for(i of paragraphs; track $index) {
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad
-                    litora torquent per conubia nostra inceptos himenaeos.
-                </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad
+                litora torquent per conubia nostra inceptos himenaeos.
+            </p>
             }
             <div>
                 <a [routerLink]="['/components']">Link</a>
@@ -43,18 +42,15 @@ import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
         <footer>
             <button class="button button-primary">Done</button>
         </footer>
-    `
+    `,
 })
 export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent {
-
-    contentLength : 'short' | 'long' = 'short';
+    contentLength: 'short' | 'long' = 'short';
     confirmOnClose = false;
 
     paragraphs = new Array(1);
-    constructor(private mzDialog: MzDialog) {
+    constructor(private mzDialog: MzDialog) {}
 
-    }
-    
     confirmDeactivation(): boolean {
         return window.confirm('Discard changes?');
     }

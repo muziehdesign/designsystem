@@ -4,14 +4,15 @@
 // drawer
 :host {
     background-color: var(--surface-bg);
-    width: 500px;
+    width: 35rem;
     max-width: 90%;
     position: absolute;
     right: 0;
     top: 0;
-    height: 100vh;
+    height: 100%;
     transition: translate 0.3s ease-out;
     translate: 100%;
+    overflow-y: auto;
 
     &.open {
         translate: 0%;
