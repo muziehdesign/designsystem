@@ -1,10 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CanDeactivateComponent, MzDialog, MzModalHeader, MzModal, MzModalService } from '@muziehdesign/components';
+import { CanDeactivateComponent, MzModalService, MzModalModule } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-modal-example',
-    imports: [RouterLink, MzModalHeader, MzModal],
+    imports: [RouterLink, MzModalModule],
     template: `
         <mz-modal>
             <mz-modal-header title="Default modal"></mz-modal-header>
@@ -37,9 +37,9 @@ import { CanDeactivateComponent, MzDialog, MzModalHeader, MzModal, MzModalServic
                 </div>
                 <button class="button button-secondary" (click)="openAnother()">Open another</button>
             </div>
-            <footer mz-modal-footer>
+            <mz-modal-footer>
                 <button class="button button-primary">Done</button>
-            </footer>
+            </mz-modal-footer>
         </mz-modal>
     `,
 })
@@ -48,7 +48,7 @@ export class ModalExampleComponent implements OnDestroy, CanDeactivateComponent 
     confirmOnClose = false;
 
     paragraphs = new Array(1);
-    constructor(private mzDialog: MzDialog, private modal: MzModalService) {}
+    constructor(private modal: MzModalService) {}
 
     confirmDeactivation(): boolean {
         return window.confirm('Discard changes?');

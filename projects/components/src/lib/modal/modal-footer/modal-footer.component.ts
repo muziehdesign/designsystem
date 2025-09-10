@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './modal-footer.component.html',
   styleUrl: './modal-footer.component.scss'
 })
-export class ModalFooterComponent {
+export class MzModalFooter {
 
 }

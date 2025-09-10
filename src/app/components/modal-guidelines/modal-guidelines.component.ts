@@ -1,17 +1,17 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
-import { MzDialog, MzDialogModule, MzModalService } from '@muziehdesign/components';
+import { MzDialog, MzModalService } from '@muziehdesign/components';
 import { ModalExampleComponent } from './examples/modal-example.component';
 
 @Component({
     selector: 'app-modal-guidelines',
     templateUrl: './modal-guidelines.component.html',
     styleUrls: ['./modal-guidelines.component.scss'],
-    imports: [MzDialogModule]
+    imports: []
 })
 export class ModalGuidelinesComponent implements OnDestroy {
 
-    constructor(private dialog: MzDialog, private overlay: Overlay, private modal: MzModalService) {}
+    constructor(private modal: MzModalService) {}
 
     open(): void {
         const ref = this.modal.open(ModalExampleComponent);

@@ -54,11 +54,16 @@ export { MzDialog } from './lib/dialog/mz-dialog.service';
 export { MzDialogConfig } from './lib/dialog/dialog-config';
 export { MzDialogRef } from './lib/dialog/dialog-ref';
 export { DrawerContainerComponent } from './lib/dialog/container/drawer-container.component';
+
+// modal
+export { MzModalModule } from './lib/modal/modal.module';
 export { MzModalContainer } from './lib/modal/modal-container/modal-container.component';
 export { MzDialogModule } from './lib/dialog/dialog.module';
 export { MzModalService } from './lib/modal/modal.service';
 export { MzModalHeader } from './lib/modal/modal-header/modal-header.component';
+export { MzModalFooter } from './lib/modal/modal-footer/modal-footer.component';
 export { MzModal } from './lib/modal/modal/modal.component';
+export { MzMessageModal } from './lib/modal/message-modal/message-modal.component';
 
 // filter
 export { FilterComponent } from './lib/filter/filter.component';

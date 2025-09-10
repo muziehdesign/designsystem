@@ -4,10 +4,11 @@ import { MessageModalData } from './message-modal-data';
 import { MzModal } from '../modal/modal.component';
 import { MzModalHeader } from '../modal-header/modal-header.component';
 import { ButtonDirective } from '../../button.directive';
+import { MzModalFooter } from '../modal-footer/modal-footer.component';
 
 @Component({
     selector: 'mz-message-modal',
-    imports: [MzModal, MzModalHeader, ButtonDirective],
+    imports: [MzModal, MzModalHeader, MzModalFooter, ButtonDirective],
     templateUrl: './message-modal.component.html',
     styleUrl: './message-modal.component.scss',
 })
