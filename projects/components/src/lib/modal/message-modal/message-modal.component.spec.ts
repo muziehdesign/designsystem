@@ -1,23 +1,45 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Component } from '@angular/core';
 import { MzMessageModal } from './message-modal.component';
+import { DIALOG_DATA, DialogConfig, DialogRef } from '@angular/cdk/dialog';
+import { MessageModalData } from './message-modal-data';
 
-describe('GenericModalComponent', () => {
-  let component: MzMessageModal;
-  let fixture: ComponentFixture<MzMessageModal>;
+@Component({
+    template: `<mz-message-modal [message]="message"></mz-message-modal>`,
+    imports: [MzMessageModal],
+})
+class TestHostComponent {
+    message = 'Test message';
+}
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [MzMessageModal]
-    })
-    .compileComponents();
+describe('MessageModalComponent', () => {
+    let component: MzMessageModal;
+    let fixture: ComponentFixture<MzMessageModal>;
 
-    fixture = TestBed.createComponent(MzMessageModal);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(async () => {
+        const dialogRef = jasmine.createSpyObj<DialogRef>('DialogRef', ['close'], { config: { disableClose: false } } as DialogConfig );
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+        await TestBed.configureTestingModule({
+            imports: [MzMessageModal],
+            providers: [
+                { provide: DIALOG_DATA, useValue: { title: 'Test title', message: 'Test message', okButtonText: 'OK' } as MessageModalData },
+                { provide: DialogRef, useValue: dialogRef },
+            ],
+        }).compileComponents();
+
+        fixture = TestBed.createComponent(MzMessageModal);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should render the message input', () => {
+        const hostFixture = TestBed.createComponent(TestHostComponent);
+        hostFixture.detectChanges();
+        const modalEl = hostFixture.nativeElement.querySelector('mz-message-modal');
+        expect(modalEl.textContent).toContain('Test title');
+        expect(modalEl.textContent).toContain('Test message');
+        const buttonElements = modalEl.querySelectorAll('mz-modal-footer button');
+        expect(buttonElements.length).toBe(1);
+        expect(buttonElements[0].textContent).toBe('OK');
+    });
 });

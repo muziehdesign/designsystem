@@ -5,11 +5,11 @@
     @include gap(2);
 }
 
-.header-danger {
+:host.header-danger .header-icon {
     @include color(danger);
 }
 
-.header-warning {
+:host.header-warning .header-icon {
     @include color(warning);
 }
 

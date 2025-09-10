@@ -5,6 +5,6 @@
         @if(data.cancelButtonText) {
         <button (click)="close()" mzButton variant="tertiary">{{ data.cancelButtonText }}</button>
         }
-        <button (click)="ok()" cdkFocusInitial mzButton [variant]="data.appearance || 'primary'">{{ data.okButtonText }}</button>
+        <button (click)="ok()" cdkFocusInitial mzButton [variant]="data.appearance || 'primary'">{{ data.okButtonText || 'OK' }}</button>
     </mz-modal-footer>
 </mz-modal>

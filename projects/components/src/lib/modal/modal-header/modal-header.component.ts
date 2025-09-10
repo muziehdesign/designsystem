@@ -8,6 +8,10 @@ import { DialogRef } from '@angular/cdk/dialog';
     imports: [SvgIconComponent],
     templateUrl: './modal-header.component.html',
     styleUrl: './modal-header.component.scss',
+    host: {
+        '[class.header-danger]': 'appearance() === "danger"',
+        '[class.header-warning]': 'appearance() === "warning"',
+    }
 })
 export class MzModalHeader {
     appearance = input<ModalAppearance | undefined>(undefined);

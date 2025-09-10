@@ -1,13 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { MzModalHeader } from './modal-header.component';
-import { MzModalConfig } from '../modal.service';
+import { DialogConfig, DialogRef } from '@angular/cdk/dialog';
 
 @Component({
     template: `<mz-modal-header [title]="title"></mz-modal-header>`,
     standalone: true,
     imports: [MzModalHeader],
-    providers: [{ provide: MzModalConfig, useValue: { disableClose: false } }],
 })
 class TestHostComponent {
     title = 'Test Modal Title';
@@ -18,8 +17,11 @@ describe('MzModalHeader', () => {
     let component: MzModalHeader;
 
     beforeEach(async () => {
+        const dialogRef = jasmine.createSpyObj<DialogRef>('DialogRef', ['close'], { config: { disableClose: false } } as DialogConfig);
+
         await TestBed.configureTestingModule({
             imports: [MzModalHeader],
+            providers: [{ provide: DialogRef, useValue: dialogRef }],
         }).compileComponents();
 
         fixture = TestBed.createComponent(MzModalHeader);
@@ -32,7 +34,7 @@ describe('MzModalHeader', () => {
         hostFixture.detectChanges();
         const headerElement = hostFixture.nativeElement.querySelector('mz-modal-header');
         expect(headerElement.textContent).toContain('Test Modal Title');
-        const iconElement = hostFixture.nativeElement.querySelector('mz-svg-icon');
+        const iconElement = hostFixture.nativeElement.querySelector('.header-icon mz-svg-icon');
         expect(iconElement).toBeNull();
         const closeButton = hostFixture.nativeElement.querySelector('button');
         expect(closeButton).not.toBeNull();
