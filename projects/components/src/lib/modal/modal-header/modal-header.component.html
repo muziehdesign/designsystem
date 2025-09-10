@@ -1,0 +1,13 @@
+@if(appearance() === 'danger' || appearance() === 'warning') {
+<div [class]="`header-${appearance()}`">
+    <mz-svg-icon key="exclamation-triangle-solid"></mz-svg-icon>
+</div>
+}
+<h2>{{ title() }}</h2>
+@if(modalConfig.disableClose !== true) {
+<div>
+    <button class="button" (click)="close()">
+        <mz-svg-icon key="x-outline"></mz-svg-icon>
+    </button>
+</div>
+}

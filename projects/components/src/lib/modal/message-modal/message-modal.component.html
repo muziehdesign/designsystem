@@ -1,0 +1,10 @@
+<mz-modal>
+    <mz-modal-header [title]="data.title" [appearance]="data.appearance"></mz-modal-header>
+    {{ data.message }} {{data.appearance}}
+    <footer>
+        @if(data.cancelButtonText) {
+        <button (click)="close()" mzButton variant="tertiary">{{ data.cancelButtonText }}</button>
+        }
+        <button (click)="ok()" cdkFocusInitial mzButton [variant]="data.appearance || 'primary'">{{ data.okButtonText }}</button>
+    </footer>
+</mz-modal>

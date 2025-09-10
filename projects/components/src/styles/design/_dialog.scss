@@ -3,7 +3,7 @@
 .mz-drawer :has(header, footer) {
     @include dialog.dialog-article();
 }
-
+/*
 .mz-modal :has(header, footer) {
     @include dialog.dialog-article();
-}
+}*/

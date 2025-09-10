@@ -1,0 +1,18 @@
+@use 'mixins/utilities' as *;
+
+:host {
+    display: flex;
+    @include gap(2);
+}
+
+.header-danger {
+    @include color(danger);
+}
+
+.header-warning {
+    @include color(warning);
+}
+
+h2 {
+    flex: 1;
+}

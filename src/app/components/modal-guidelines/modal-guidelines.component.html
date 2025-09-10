@@ -6,7 +6,23 @@
 <article>
     <h2>Example</h2>
     <div class="example">
-        <button class="button button-primary" (click)="open()">Open</button>
+        <div class="flex flex-col gap-4">
+            <div>
+                <button class="button button-primary" (click)="open()">Open</button>
+            </div>
+            <div>
+                <button class="button button-primary" (click)="alert()">Alert</button>
+            </div>
+            <div>
+                <button class="button button-primary" (click)="confirm()">Confirm</button>
+            </div>
+            <div>
+                <button class="button button-primary" (click)="confirmWarning()">Confirm warning</button>
+            </div>
+            <div>
+                <button class="button button-primary" (click)="confirmDanger()">Confirm danger</button>
+            </div>
+        </div>
     </div>
 </article>
 

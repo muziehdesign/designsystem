@@ -1,14 +1,14 @@
 @layer base {
     h1 {
-        @apply text-2xl font-medium mt-8;
+        @apply text-2xl font-medium; // mt-8;
     }
 
     h2 {
-        @apply text-xl font-medium mt-8;
+        @apply text-xl font-medium; // mt-8;
     }
 
     h3 {
-        @apply text-lg font-medium mt-8;
+        @apply text-lg font-medium; // mt-8;
     }
 
     h4 {
@@ -16,11 +16,11 @@
     }
 
     h5 {
-        @apply text-sm font-semibold mt-5;
+        @apply text-sm font-semibold; // mt-5;
     }
 
     h6 {
-        @apply text-sm font-semibold mt-5;
+        @apply text-sm font-semibold; // mt-5;
     }
 
     h1,
