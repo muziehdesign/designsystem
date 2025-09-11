@@ -1,6 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Overlay } from '@angular/cdk/overlay';
-import { ModalAppearance, MzDialog, MzModalService } from '@muziehdesign/components';
+import { ModalAppearance, MzModalService } from '@muziehdesign/components';
 import { ModalExampleComponent } from './examples/modal-example.component';
 
 @Component({

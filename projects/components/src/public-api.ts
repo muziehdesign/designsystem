@@ -63,7 +63,6 @@ export { MzModalService } from './lib/modal/modal.service';
 export { MzModalHeader } from './lib/modal/modal-header/modal-header.component';
 export { MzModalContent } from './lib/modal/modal-content/modal-content.component';
 export { MzModalFooter } from './lib/modal/modal-footer/modal-footer.component';
-export { MzModal } from './lib/modal/modal/modal.component';
 export { MzMessageModal } from './lib/modal/message-modal/message-modal.component';
 export { MzModalClose } from './lib/modal/modal-close.directive';
 export { ModalAppearance } from './lib/modal/modal-appearance';

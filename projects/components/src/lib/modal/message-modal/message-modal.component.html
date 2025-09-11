@@ -1,11 +1,11 @@
-<mz-modal>
-    <mz-modal-header [title]="data.title"></mz-modal-header>
+<mz-modal-header [title]="data.title"></mz-modal-header>
+<mz-modal-content>
     {{ data.message }}
-    <mz-modal-footer>
-        @if(data.cancelAction.length > 0 ) {
-        <button (click)="close()" mzButton variant="tertiary">{{ data.cancelAction }}</button>
-        } @if(data.action.length > 0) {
-        <button (click)="ok()" cdkFocusInitial mzButton [variant]="data.appearance || 'primary'">{{ data.action }}</button>
-        }
-    </mz-modal-footer>
-</mz-modal>
+</mz-modal-content>
+<mz-modal-footer>
+    @if(data.cancelAction.length > 0 ) {
+    <button (click)="close()" mzButton variant="tertiary">{{ data.cancelAction }}</button>
+    } @if(data.action.length > 0) {
+    <button (click)="ok()" cdkFocusInitial mzButton [variant]="data.appearance || 'primary'">{{ data.action }}</button>
+    }
+</mz-modal-footer>

@@ -1,3 +1,4 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CanDeactivateComponent, MzModalService, MzModalModule } from '@muziehdesign/components';
@@ -39,7 +40,7 @@ import { CanDeactivateComponent, MzModalService, MzModalModule } from '@muziehde
             <button class="button button-secondary" (click)="openAnother()">Open another</button>
         </mz-modal-content>
         <mz-modal-footer>
-            <button class="button button-primary">Done</button>
+            <button class="button button-primary" (click)="close()">Done</button>
         </mz-modal-footer>
     `,
 })
@@ -48,7 +49,7 @@ export class ModalExampleComponent implements OnDestroy, CanDeactivateComponent 
     confirmOnClose = false;
 
     paragraphs = new Array(1);
-    constructor(private modal: MzModalService) {}
+    constructor(private modal: MzModalService, private dialogRef: DialogRef) {}
 
     confirmDeactivation(): boolean {
         return window.confirm('Discard changes?');
@@ -69,6 +70,10 @@ export class ModalExampleComponent implements OnDestroy, CanDeactivateComponent 
 
     openAnother() {
         this.modal.open(ModalExampleComponent);
+    }
+
+    close() {
+        this.dialogRef.close();
     }
 
     ngOnDestroy(): void {

@@ -2,16 +2,8 @@
 
 :host {
     display: flex;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
     @include gap(2);
-}
-
-:host.header-danger .header-icon {
-    @include color(danger);
-}
-
-:host.header-warning .header-icon {
-    @include color(warning);
 }
 
 h2 {
