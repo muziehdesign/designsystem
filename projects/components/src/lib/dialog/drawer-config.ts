@@ -5,11 +5,11 @@ import { BasePortalOutlet } from "@angular/cdk/portal";
 import { Injector, Type, ViewContainerRef } from "@angular/core";
 
 /**
- * Configuration opening a modal dialog with the MzDialog service. Properties here are exposes what's available in @angular/cdk DialogConfig
- * and with a few additional properties for MzDialog.
+ * Configuration opening a modal dialog with the MzDrawer service. Properties here are exposes what's available in @angular/cdk DialogConfig
+ * and with a few additional properties for MzDrawer.
  * See https://material.angular.io/cdk/dialog/api#DialogConfig
  */
-export class MzDialogConfig<D = any, C extends BasePortalOutlet = BasePortalOutlet> {
+export class MzDrawerConfig<D = any, C extends BasePortalOutlet = BasePortalOutlet> {
     size?: 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
     /**

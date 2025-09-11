@@ -50,11 +50,11 @@ export { WizardStepLink } from './lib/models/wizard-step-link';
 export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
 
 // dialog
-export { MzDialog } from './lib/dialog/mz-dialog.service';
-export { MzDialogConfig } from './lib/dialog/dialog-config';
-export { MzDialogRef } from './lib/dialog/dialog-ref';
-export { DrawerContainerComponent } from './lib/dialog/container/drawer-container.component';
-export { MzDialogModule } from './lib/dialog/dialog.module';
+export { MzDrawer } from './lib/dialog/drawer';
+export { MzDrawerConfig } from './lib/dialog/drawer-config';
+export { MzDrawerRef } from './lib/dialog/drawer-ref';
+export { MzDrawerContainer } from './lib/dialog/container/drawer-container.component';
+export { MzDrawerModule } from './lib/dialog/drawer.module';
 
 // filter
 export { FilterComponent } from './lib/filter/filter.component';

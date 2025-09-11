@@ -2,19 +2,19 @@ import { Dialog, DialogConfig } from '@angular/cdk/dialog';
 import { ComponentType, Overlay } from '@angular/cdk/overlay';
 import { Inject, Injectable, Injector, OnDestroy, Optional, TemplateRef, ViewContainerRef } from '@angular/core';
 import { take } from 'rxjs';
-import { DEFAULT_MZ_DIALOG_CONFIG, MZ_DIALOG_DATA } from './dialog-injectors';
-import { DrawerContainerComponent } from './container/drawer-container.component';
-import { MzDialogConfig } from './dialog-config';
-import { MzDialogRef } from './dialog-ref';
+import { DEFAULT_MZ_DRAWER_CONFIG, MZ_DIALOG_DATA } from './drawer-injectors';
+import { MzDrawerContainer } from './container/drawer-container.component';
+import { MzDrawerConfig } from './drawer-config';
+import { MzDrawerRef } from './drawer-ref';
 
 @Injectable({
     providedIn: 'root',
 })
-export class MzDialog implements OnDestroy {
+export class MzDrawer implements OnDestroy {
     private cdkDialog: Dialog;
-    private openDialogs: MzDialogRef<any>[] = [];
+    private openDialogs: MzDrawerRef<any>[] = [];
 
-    constructor(private injector: Injector, private overlay: Overlay, @Optional() @Inject(DEFAULT_MZ_DIALOG_CONFIG) private configuredOptions: MzDialogConfig, @Optional() private viewContainerRef?: ViewContainerRef | null) {
+    constructor(private injector: Injector, private overlay: Overlay, @Optional() @Inject(DEFAULT_MZ_DRAWER_CONFIG) private configuredOptions: MzDrawerConfig, @Optional() private viewContainerRef?: ViewContainerRef | null) {
         this.cdkDialog = injector.get(Dialog);
     }
 
@@ -24,18 +24,18 @@ export class MzDialog implements OnDestroy {
      * @param config Extra configuration options.
      * @returns Reference to the newly-opened dialog.
      */
-    open<R = any, D = any, T = any>(component: ComponentType<T>, config?: MzDialogConfig<D>): MzDialogRef<R, T>;
+    open<R = any, D = any, T = any>(component: ComponentType<T>, config?: MzDrawerConfig<D>): MzDrawerRef<R, T>;
     /**
      * Opens a modal dialog containing the given template.
      * @param template TemplateRef to instantiate as the dialog content.
      * @param config Extra configuration options.
      * @returns Reference to the newly-opened dialog.
      */
-    open<R = any, D = any, T = any>(template: TemplateRef<T>, config?: MzDialogConfig<D>): MzDialogRef<R, T>;
-    open<R = any, D = any, T = any>(componentOrTemplateRef: ComponentType<T> | TemplateRef<T>, config?: MzDialogConfig<D>): MzDialogRef<R, T>;
-    open<R = any, D = any, T = any>(componentOrTemplateRef: ComponentType<T> | TemplateRef<T>, config?: MzDialogConfig<D>): MzDialogRef<R, T> {
+    open<R = any, D = any, T = any>(template: TemplateRef<T>, config?: MzDrawerConfig<D>): MzDrawerRef<R, T>;
+    open<R = any, D = any, T = any>(componentOrTemplateRef: ComponentType<T> | TemplateRef<T>, config?: MzDrawerConfig<D>): MzDrawerRef<R, T>;
+    open<R = any, D = any, T = any>(componentOrTemplateRef: ComponentType<T> | TemplateRef<T>, config?: MzDrawerConfig<D>): MzDrawerRef<R, T> {
 
-        const defaultOptions = new MzDialogConfig<D>();
+        const defaultOptions = new MzDrawerConfig<D>();
         const options = { ...(this.configuredOptions || defaultOptions), ...config };
 
         // compute closeOnNavigation if left undefined. dialogs need to be destroyed either via navigation or component destruction
@@ -43,7 +43,7 @@ export class MzDialog implements OnDestroy {
             options.closeOnNavigation = options.viewContainerRef === undefined && (this.viewContainerRef === undefined || this.viewContainerRef === null);
         }
 
-        let dialogRef: MzDialogRef<R, T>;
+        let dialogRef: MzDrawerRef<R, T>;
         const cdkRef = this.cdkDialog.open<R, D, T>(componentOrTemplateRef, {
             ...options,
             injector: options.injector,
@@ -55,18 +55,18 @@ export class MzDialog implements OnDestroy {
             closeOnOverlayDetachments: false,
             closeOnNavigation: options.closeOnNavigation,
             container: {
-                type: options.container || DrawerContainerComponent,
+                type: options.container || MzDrawerContainer,
                 providers: () => [
-                    { provide: MzDialogConfig, useValue: options },
+                    { provide: MzDrawerConfig, useValue: options },
                     { provide: DialogConfig, useValue: options },
                 ],
             },
             templateContext: () => ({ dialogRef }),
             providers: (ref, cdkConfig, dialogContainer) => {
-                dialogRef = new MzDialogRef(ref, options, dialogContainer);
+                dialogRef = new MzDrawerRef(ref, options, dialogContainer);
                 return [
                     { provide: MZ_DIALOG_DATA, useValue: cdkConfig.data },
-                    { provide: MzDialogRef, useValue: dialogRef },
+                    { provide: MzDrawerRef, useValue: dialogRef },
                 ];
             },
         });
@@ -76,7 +76,7 @@ export class MzDialog implements OnDestroy {
             this.openDialogs.splice(i, 1);
         });
 
-        if (cdkRef.containerInstance instanceof DrawerContainerComponent) {
+        if (cdkRef.containerInstance instanceof MzDrawerContainer) {
             cdkRef.containerInstance.enter();
             cdkRef.containerInstance.associateDialogRef(dialogRef!);
         }
@@ -87,7 +87,7 @@ export class MzDialog implements OnDestroy {
     /**
      * Gets an array of currently opened dialogs that were opened with this instance of service.
      */
-    getDialogs(): MzDialogRef<any>[] {
+    getDialogs(): MzDrawerRef<any>[] {
         return this.openDialogs;
     }
 
@@ -110,7 +110,7 @@ export class MzDialog implements OnDestroy {
         this.closeDialogs(this.openDialogs);
     }
 
-    private closeDialogs(dialogs: MzDialogRef<any>[]) {
+    private closeDialogs(dialogs: MzDrawerRef<any>[]) {
         let i = dialogs.length;
 
         while (i--) {

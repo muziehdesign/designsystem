@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NavigationLink } from 'src/app/navigation/navigation-links';
 import { NAVIGATION_LINK_TOKEN as NAVIGATION_LINKS_TOKEN } from './navigation-links.token';
-import { MzDialog } from '@muziehdesign/components';
+import { MzDrawer } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-navigation',
@@ -12,7 +12,7 @@ import { MzDialog } from '@muziehdesign/components';
 export class NavigationComponent implements OnInit {
 
   links: NavigationLink[];
-  constructor(@Inject (NAVIGATION_LINKS_TOKEN) nav: NavigationLink[], private mzDialog: MzDialog) { 
+  constructor(@Inject (NAVIGATION_LINKS_TOKEN) nav: NavigationLink[], private mzDrawer: MzDrawer) { 
     this.links = nav;
   }
 

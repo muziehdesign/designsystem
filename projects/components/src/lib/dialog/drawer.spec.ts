@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MzDialog } from './mz-dialog.service';
+import { MzDrawer } from './drawer';
 
-describe('MzDialog', () => {
-  let service: MzDialog;
+describe('MzDrawer', () => {
+  let service: MzDrawer;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MzDialog);
+    service = TestBed.inject(MzDrawer);
   });
 
   it('should be created', () => {

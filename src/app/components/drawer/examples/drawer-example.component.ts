@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
+import { CanDeactivateComponent, MzDrawer } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-drawer-example',
@@ -52,7 +52,7 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
     confirmOnClose = false;
 
     paragraphs = new Array(1);
-    constructor(private mzDialog: MzDialog) {
+    constructor(private mzDrawer: MzDrawer) {
 
     }
     
@@ -74,7 +74,7 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
     }
 
     openAnother() {
-        this.mzDialog.open(DrawerExampleComponent);
+        this.mzDrawer.open(DrawerExampleComponent);
     }
 
     ngOnDestroy(): void {

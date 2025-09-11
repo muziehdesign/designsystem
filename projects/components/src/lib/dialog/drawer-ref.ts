@@ -1,15 +1,15 @@
 import { DialogCloseOptions, DialogRef } from "@angular/cdk/dialog";
-import { MzDialogConfig } from "./dialog-config";
+import { MzDrawerConfig } from "./drawer-config";
 import { BasePortalOutlet } from "@angular/cdk/portal";
 import { Observable, filter, merge } from "rxjs";
 import { CanDeactivateComponent, hasImplementation } from "../guard-deactivate";
 
-export class MzDialogRef<R, C = any> {
+export class MzDrawerRef<R, C = any> {
     /** Whether the user is allowed to close the dialog. */
     readonly disableClose: boolean | undefined;
     readonly id: string;
 
-    constructor(readonly cdkRef: DialogRef<R, C>, readonly config: MzDialogConfig, readonly containerInstance: BasePortalOutlet) {
+    constructor(readonly cdkRef: DialogRef<R, C>, readonly config: MzDrawerConfig, readonly containerInstance: BasePortalOutlet) {
         this.disableClose = config.disableClose;
         this.id = cdkRef.id;
         merge(this.cdkRef.backdropClick, this.cdkRef.keydownEvents.pipe(filter((event) => !this.disableClose && event.code === 'Escape' && !event.getModifierState(event.key)))).subscribe((event) => {
