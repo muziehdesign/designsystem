@@ -10,8 +10,6 @@ import { Injector, Type, ViewContainerRef } from "@angular/core";
  * See https://material.angular.io/cdk/dialog/api#DialogConfig
  */
 export class MzDrawerConfig<D = any, C extends BasePortalOutlet = BasePortalOutlet> {
-    size?: 'sm' | 'md' | 'lg' | 'xl' = 'md';
-
     /**
      * Where the attached component should live in Angular's *logical* component tree.
      * This affects what is available for injection and the change detection order for the

@@ -49,12 +49,12 @@ export { SortEvent } from './lib/models/sort-event';
 export { WizardStepLink } from './lib/models/wizard-step-link';
 export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
 
-// dialog
-export { MzDrawer } from './lib/dialog/drawer';
-export { MzDrawerConfig } from './lib/dialog/drawer-config';
-export { MzDrawerRef } from './lib/dialog/drawer-ref';
-export { MzDrawerContainer } from './lib/dialog/container/drawer-container.component';
-export { MzDrawerModule } from './lib/dialog/drawer.module';
+// drawer
+export { MzDrawer } from './lib/drawer/drawer';
+export { MzDrawerConfig } from './lib/drawer/drawer-config';
+export { MzDrawerRef } from './lib/drawer/drawer-ref';
+export { MzDrawerContainer } from './lib/drawer/container/drawer-container.component';
+export { MzDrawerModule } from './lib/drawer/drawer.module';
 
 // filter
 export { FilterComponent } from './lib/filter/filter.component';
