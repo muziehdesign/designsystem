@@ -108,11 +108,4 @@ export class MzDrawerConfig<D = any, C extends BasePortalOutlet = BasePortalOutl
      * Whether the dialog should close when the user goes backwards/forwards in history.
      */
     closeOnNavigation?: boolean;
-
-    /**
-     * Component into which the dialog content will be rendered. Defaults to `CdkDialogContainer`.
-     * A configuration object can be passed in to customize the providers that will be exposed
-     * to the dialog container.
-     */
-    container?: Type<C>;
 }

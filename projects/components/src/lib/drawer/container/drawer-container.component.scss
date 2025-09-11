@@ -1,8 +1,4 @@
-@use 'mixins/dialog' as dialog;
-@use 'mixins/icon' as icon;
-
-// drawer
-:host(.mz-dialog-container) {
+.mz-drawer-container {
     background-color: var(--surface-bg);
     width: 500px;
     max-width: 90%;
@@ -18,16 +14,8 @@
     }
 }
 
-.button-close {
-    @include icon.icon();
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    z-index: 10;
-}
-
-.mz-dialog {
+.mz-drawer-component {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    position: relative;
-    overflow: auto;
 }

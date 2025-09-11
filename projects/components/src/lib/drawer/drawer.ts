@@ -2,7 +2,7 @@ import { Dialog, DialogConfig } from '@angular/cdk/dialog';
 import { ComponentType, Overlay } from '@angular/cdk/overlay';
 import { Inject, Injectable, Injector, OnDestroy, Optional, TemplateRef, ViewContainerRef } from '@angular/core';
 import { take } from 'rxjs';
-import { DEFAULT_MZ_DRAWER_CONFIG, MZ_DIALOG_DATA } from './drawer-injectors';
+import { DEFAULT_MZ_DRAWER_CONFIG, MZ_DRAWER_DATA } from './drawer-injectors';
 import { MzDrawerContainer } from './container/drawer-container.component';
 import { MzDrawerConfig } from './drawer-config';
 import { MzDrawerRef } from './drawer-ref';
@@ -55,7 +55,7 @@ export class MzDrawer implements OnDestroy {
             closeOnOverlayDetachments: false,
             closeOnNavigation: options.closeOnNavigation,
             container: {
-                type: options.container || MzDrawerContainer,
+                type: MzDrawerContainer,
                 providers: () => [
                     { provide: MzDrawerConfig, useValue: options },
                     { provide: DialogConfig, useValue: options },
@@ -65,7 +65,7 @@ export class MzDrawer implements OnDestroy {
             providers: (ref, cdkConfig, dialogContainer) => {
                 dialogRef = new MzDrawerRef(ref, options, dialogContainer);
                 return [
-                    { provide: MZ_DIALOG_DATA, useValue: cdkConfig.data },
+                    { provide: MZ_DRAWER_DATA, useValue: cdkConfig.data },
                     { provide: MzDrawerRef, useValue: dialogRef },
                 ];
             },
@@ -77,7 +77,6 @@ export class MzDrawer implements OnDestroy {
         });
 
         if (cdkRef.containerInstance instanceof MzDrawerContainer) {
-            cdkRef.containerInstance.enter();
             cdkRef.containerInstance.associateDialogRef(dialogRef!);
         }
 

@@ -1,6 +1,6 @@
 import { CdkDialogContainer } from '@angular/cdk/dialog';
 import { CdkPortalOutlet } from '@angular/cdk/portal';
-import { Component, ElementRef, HostListener, Inject, NgZone, Optional } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, NgZone, Optional, ViewEncapsulation } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
@@ -12,9 +12,9 @@ import { MzDrawerRef } from '../drawer-ref';
     imports: [CdkPortalOutlet],
     templateUrl: './drawer-container.component.html',
     styleUrl: './drawer-container.component.scss',
+    encapsulation: ViewEncapsulation.None,
     host: {
-        'class': 'mz-dialog-container',
-        '[class.open]': 'open'
+        'class': 'mz-drawer-container'
     }
 })
 export class MzDrawerContainer extends CdkDialogContainer<MzDrawerConfig> {
@@ -22,16 +22,12 @@ export class MzDrawerContainer extends CdkDialogContainer<MzDrawerConfig> {
     private dialogRef?: MzDrawerRef<any>;
     protected open = false;
 
-    constructor(elementRef: ElementRef, focusTrapFactory: FocusTrapFactory, readonly dialogConfig: MzDrawerConfig, protected interactivityChecker: InteractivityChecker, protected ngZone: NgZone, protected overlayRef: OverlayRef, @Optional() @Inject(DOCUMENT) _document: any) {
+    constructor(private elementRef: ElementRef, focusTrapFactory: FocusTrapFactory, readonly dialogConfig: MzDrawerConfig, protected interactivityChecker: InteractivityChecker, protected ngZone: NgZone, protected overlayRef: OverlayRef, @Optional() @Inject(DOCUMENT) _document: any) {
         super(elementRef, focusTrapFactory, _document, dialogConfig, interactivityChecker, ngZone, overlayRef);
     }
 
     associateDialogRef(dialogRef: MzDrawerRef<any>): void {
         this.dialogRef = dialogRef;
-    }
-
-    protected tryClose(e: UIEvent): void {
-        this.dialogRef?.tryClose(undefined, { focusOrigin: e.detail === 0 ? 'keyboard' : 'mouse' });
     }
 
     @HostListener('window:beforeunload', ['$event'])
@@ -42,10 +38,14 @@ export class MzDrawerContainer extends CdkDialogContainer<MzDrawerConfig> {
         }
     }
 
-    /**
-     * Marks state of container for animation purposes.
-     */
-    enter() {
-        this.open = true;
+    protected override _contentAttached(): void {
+        super._contentAttached();
+        const element = this.elementRef.nativeElement as HTMLElement;
+
+        // for styling purposes
+        element.firstElementChild?.classList.add('mz-drawer-component');
+
+        // for animation purposes
+        element.classList.add('open');
     }
 }

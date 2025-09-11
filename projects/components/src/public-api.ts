@@ -55,6 +55,9 @@ export { MzDrawerConfig } from './lib/drawer/drawer-config';
 export { MzDrawerRef } from './lib/drawer/drawer-ref';
 export { MzDrawerContainer } from './lib/drawer/container/drawer-container.component';
 export { MzDrawerModule } from './lib/drawer/drawer.module';
+export { MzDrawerHeader } from './lib/drawer/drawer-header/drawer-header.component';
+export { MzDrawerContent } from './lib/drawer/drawer-content/drawer-content.component';
+export { MzDrawerFooter } from './lib/drawer/drawer-footer/drawer-footer.component';
 
 // filter
 export { FilterComponent } from './lib/filter/filter.component';
