@@ -64,11 +64,12 @@ export class MzModalService {
             closeOnNavigation: true,
             closeOnDestroy: true,
             closeOnOverlayDetachments: true,
-            container: {
+            /*container: {
                 type: MzModalContainer,
                 providers: () => [{ provide: MzModalConfig, useValue: options }],
             },
-            providers: () => [{ provide: MzModalConfig, useValue: options }],
+            providers: () => [{ provide: MzModalConfig, useValue: options }],*/
+            container: MzModalContainer
         } satisfies DialogConfig<D, R, MzModalContainer>;
         const ref = this.cdkDialog.open<R, D, T>(component, dialogConfig);
         return ref;
