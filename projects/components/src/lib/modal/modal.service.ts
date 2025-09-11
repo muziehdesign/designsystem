@@ -70,7 +70,8 @@ export class MzModalService {
                 providers: () => [{ provide: MzModalConfig, useValue: options }],
             },
             providers: () => [{ provide: MzModalConfig, useValue: options }],
-        } satisfies DialogConfig<D>;
-        return this.cdkDialog.open(component, dialogConfig);
+        } satisfies DialogConfig<D, R, MzModalContainer>;
+        const ref = this.cdkDialog.open<R, D, T>(component, dialogConfig);
+        return ref;
     }
 }

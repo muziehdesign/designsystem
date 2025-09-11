@@ -7,17 +7,27 @@ import { CdkPortalOutlet } from '@angular/cdk/portal';
 import { MzModalClose } from '../modal-close.directive';
 
 @Component({
-  selector: 'mz-modal-container',
-  imports: [CdkPortalOutlet, MzModalClose],
-  templateUrl: './modal-container.component.html',
-  styleUrl: './modal-container.component.scss',
-  encapsulation: ViewEncapsulation.None,
-  host: {
-    'class': 'mz-modal-container'
-  }
+    selector: 'mz-modal-container',
+    imports: [CdkPortalOutlet, MzModalClose],
+    templateUrl: './modal-container.component.html',
+    styleUrl: './modal-container.component.scss',
+    encapsulation: ViewEncapsulation.None,
+    host: {
+        class: 'mz-modal-container',
+    },
 })
 export class MzModalContainer extends CdkDialogContainer<DialogConfig> {
-    constructor(elementRef: ElementRef, focusTrapFactory: FocusTrapFactory, readonly dialogConfig: DialogConfig, protected interactivityChecker: InteractivityChecker, protected ngZone: NgZone, protected overlayRef: OverlayRef, @Optional() @Inject(DOCUMENT) _document: any) {
+    constructor(private elementRef: ElementRef, focusTrapFactory: FocusTrapFactory, readonly dialogConfig: DialogConfig, protected interactivityChecker: InteractivityChecker, protected ngZone: NgZone, protected overlayRef: OverlayRef, @Optional() @Inject(DOCUMENT) _document: any) {
         super(elementRef, focusTrapFactory, _document, dialogConfig, interactivityChecker, ngZone, overlayRef);
+    }
+
+    protected override _contentAttached(): void {
+        super._contentAttached();
+        this.enter();
+    }
+
+    private enter() {
+        const html = this.elementRef.nativeElement as HTMLElement;
+        html.classList.add('open');
     }
 }
