@@ -1,10 +1,9 @@
 @use 'mixins/dialog' as dialog;
 @use 'mixins/icon' as icon;
 
-:host {
+.mz-modal-container {
     background-color: var(--surface-bg);
-    max-width: 80vh;
-    max-height: 80vh;
+    padding: 1rem;
 
     &.open {
         translate: 0%;

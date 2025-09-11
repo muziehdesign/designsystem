@@ -17,10 +17,19 @@ export class MzModalService {
         this.cdkDialog = injector.get(Dialog);
     }
 
-    showMessage(title: string, message: string, okButtonText: string = 'OK', appearance?: ModalAppearance): DialogRef<void, MzMessageModal> {
-        return this.open(MzMessageModal, { data: { title: title, message: message, appearance: appearance, okButtonText: okButtonText } satisfies MessageModalData });
+    showMessage(title: string, message: string, action: string = 'OK', appearance?: ModalAppearance): DialogRef<void, MzMessageModal> {
+        return this.open(MzMessageModal, { data: { title: title, message: message, appearance: appearance, okButtonText: action } satisfies MessageModalData });
     }
 
+    /**
+     * Opens a confirmation dialog.
+     * @param title The title of the dialog.
+     * @param message The message to display in the dialog.
+     * @param okButtonText The text for the OK button.
+     * @param cancelButtonText The text for the Cancel button.
+     * @param appearance The appearance of the dialog.
+     * @returns A promise that resolves to true if the user confirmed, false if canceled, undefined if dismissed.
+     */
     confirm(title: string, message: string, okButtonText: string = 'OK', cancelButtonText: string = 'Cancel', appearance?: ModalAppearance): Promise<boolean | undefined> {
         const ref = this.open(MzMessageModal, { data: { title: title, message: message, appearance: appearance, okButtonText: okButtonText, cancelButtonText: cancelButtonText } satisfies MessageModalData });
         return firstValueFrom(ref.closed) as Promise<boolean | undefined>;

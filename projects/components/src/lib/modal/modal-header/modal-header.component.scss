@@ -2,6 +2,7 @@
 
 :host {
     display: flex;
+    padding: 0 0.5rem;
     @include gap(2);
 }
 

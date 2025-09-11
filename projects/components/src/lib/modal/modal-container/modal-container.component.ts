@@ -1,18 +1,19 @@
 import { CdkDialogContainer, DialogConfig } from '@angular/cdk/dialog';
-import { Component, ElementRef, Inject, NgZone, Optional } from '@angular/core';
+import { Component, ElementRef, Inject, NgZone, Optional, ViewEncapsulation } from '@angular/core';
 import { FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { CdkPortalOutlet } from '@angular/cdk/portal';
-import { SvgIconComponent } from '../../svg-icon/svg-icon.component';
+import { MzModalClose } from '../modal-close.directive';
 
 @Component({
   selector: 'mz-modal-container',
-  imports: [CdkPortalOutlet, SvgIconComponent],
+  imports: [CdkPortalOutlet, MzModalClose],
   templateUrl: './modal-container.component.html',
   styleUrl: './modal-container.component.scss',
+  encapsulation: ViewEncapsulation.None,
   host: {
-    'class': 'mz-dialog-container mz-modal'
+    'class': 'mz-modal-container'
   }
 })
 export class MzModalContainer extends CdkDialogContainer<DialogConfig> {
