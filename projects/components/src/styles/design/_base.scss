@@ -1,14 +1,14 @@
 @layer base {
     h1 {
-        @apply text-2xl font-medium mt-8;
+        @apply text-2xl font-medium;
     }
 
     h2 {
-        @apply text-xl font-medium mt-8;
+        @apply text-xl font-medium;
     }
 
     h3 {
-        @apply text-lg font-medium mt-8;
+        @apply text-lg font-medium;
     }
 
     h4 {
@@ -16,11 +16,11 @@
     }
 
     h5 {
-        @apply text-sm font-semibold mt-5;
+        @apply text-sm font-semibold;
     }
 
     h6 {
-        @apply text-sm font-semibold mt-5;
+        @apply text-sm font-semibold;
     }
 
     h1,
@@ -33,7 +33,7 @@
     }
 
     a {
-        @apply text-blue-500 hover:text-blue-900 hover:underline;
+        @apply text-primary hover:underline;
     }
 
     p {

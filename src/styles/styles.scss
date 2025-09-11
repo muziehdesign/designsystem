@@ -27,7 +27,16 @@
 
 @import 'highlight.js/styles/github.css';
 
+h1,
+h2,
+h3 {
+    @apply mt-8;
+}
 
+h5,
+h6 {
+    @apply mt-5;
+}
 
 // icon
 .page > header {
@@ -75,11 +84,6 @@
     }
 }
 
-
-article {
-    //margin: 2rem 0;
-}
-
 code {
     @apply font-mono text-pink-500;
 }
@@ -87,4 +91,3 @@ code {
 .page {
     @apply pt-0.5 pb-4 max-w-7xl mx-auto;
 }
-
