@@ -26,15 +26,8 @@
 
 @import 'highlight.js/styles/github.css';
 
-h1,
-h2,
-h3 {
+header, article, section {
     @apply mt-8;
-}
-
-h5,
-h6 {
-    @apply mt-5;
 }
 
 // icon
