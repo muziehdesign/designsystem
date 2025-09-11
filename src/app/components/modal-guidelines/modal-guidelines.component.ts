@@ -21,7 +21,7 @@ export class ModalGuidelinesComponent implements OnDestroy {
     }
 
     alert() {
-        this.modal.showMessage('Confirmed', 'This is an alert message');
+        this.modal.display('Confirmed', 'This is an alert message');
     }
 
     confirm() {

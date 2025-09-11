@@ -4,6 +4,6 @@ export interface MessageModalData {
     title: string;
     message: string;
     appearance?: ModalAppearance;
-    okButtonText?: string;
-    cancelButtonText?: string;
+    action: string;
+    cancelAction: string;
 }

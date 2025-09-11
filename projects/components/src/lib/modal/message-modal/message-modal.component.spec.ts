@@ -22,7 +22,7 @@ describe('MessageModalComponent', () => {
         await TestBed.configureTestingModule({
             imports: [MzMessageModal],
             providers: [
-                { provide: DIALOG_DATA, useValue: { title: 'Test title', message: 'Test message', okButtonText: 'OK' } as MessageModalData },
+                { provide: DIALOG_DATA, useValue: { title: 'Test title', message: 'Test message', action: 'OK' } as MessageModalData },
                 { provide: DialogRef, useValue: dialogRef },
             ],
         }).compileComponents();
