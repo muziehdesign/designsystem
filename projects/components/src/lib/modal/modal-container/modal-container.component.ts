@@ -4,11 +4,10 @@ import { FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import { CdkPortalOutlet } from '@angular/cdk/portal';
-import { MzModalClose } from '../modal-close.directive';
 
 @Component({
     selector: 'mz-modal-container',
-    imports: [CdkPortalOutlet, MzModalClose],
+    imports: [CdkPortalOutlet],
     templateUrl: './modal-container.component.html',
     styleUrl: './modal-container.component.scss',
     encapsulation: ViewEncapsulation.None,

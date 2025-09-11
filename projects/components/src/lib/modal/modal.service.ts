@@ -1,6 +1,5 @@
-import { AutoFocusTarget, Dialog, DialogConfig, DialogRef } from '@angular/cdk/dialog';
+import { Dialog, DialogConfig, DialogRef } from '@angular/cdk/dialog';
 import { ComponentType } from '@angular/cdk/overlay';
-import { BasePortalOutlet } from '@angular/cdk/portal';
 import { Inject, Injectable, Injector, Optional } from '@angular/core';
 import { MzModalContainer } from './modal-container/modal-container.component';
 import { MzMessageModal } from './message-modal/message-modal.component';

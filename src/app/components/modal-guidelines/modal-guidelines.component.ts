@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
-import { MzDialog, MzModalService } from '@muziehdesign/components';
+import { ModalAppearance, MzDialog, MzModalService } from '@muziehdesign/components';
 import { ModalExampleComponent } from './examples/modal-example.component';
 
 @Component({
@@ -20,8 +20,8 @@ export class ModalGuidelinesComponent implements OnDestroy {
         });
     }
 
-    alert() {
-        this.modal.display('Confirmed', 'This is an alert message');
+    display(appearance?: ModalAppearance) {
+        this.modal.display('Confirmed', 'This is a message', 'OK', '', appearance);
     }
 
     confirm() {
