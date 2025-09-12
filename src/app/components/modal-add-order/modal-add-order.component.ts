@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MzDialog } from '@muziehdesign/components';
+import { MzDrawer } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-modal-add-order',
@@ -9,7 +9,7 @@ import { MzDialog } from '@muziehdesign/components';
 })
 export class ModalAddOrderComponent implements OnInit {
 
-  constructor(private dialog: MzDialog) { }
+  constructor(private dialog: MzDrawer) { }
 
   ngOnInit(): void {
   }

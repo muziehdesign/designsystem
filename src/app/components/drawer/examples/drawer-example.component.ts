@@ -1,16 +1,13 @@
 import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
+import { CanDeactivateComponent, MzDrawer, MzDrawerModule } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-drawer-example',
-    imports: [RouterLink],
+    imports: [RouterLink, MzDrawerModule],
     template: `
-        <header>
-            <h2>Drawer Content</h2>
-        </header>
-        <div>
-            <input type="text" class="form-input" />
+        <mz-drawer-header title="Example drawer"></mz-drawer-header>
+        <mz-drawer-content>
             <div>
                 <label>
                     <input type="radio" name="contentLength" [value]="'short'" [checked]="contentLength === 'short'" (change)="useShortContent()" />
@@ -38,10 +35,10 @@ import { CanDeactivateComponent, MzDialog } from '@muziehdesign/components';
                 <a [routerLink]="['/components']">Link</a>
             </div>
             <button class="button button-secondary" (click)="openAnother()">Open another</button>
-        </div>
-        <footer>
+        </mz-drawer-content>
+        <mz-drawer-footer>
             <button class="button button-primary">Done</button>
-        </footer>
+        </mz-drawer-footer>
     `,
 })
 export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent {
@@ -49,7 +46,7 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
     confirmOnClose = false;
 
     paragraphs = new Array(1);
-    constructor(private mzDialog: MzDialog) {}
+    constructor(private mzDrawer: MzDrawer) {}
 
     confirmDeactivation(): boolean {
         return window.confirm('Discard changes?');
@@ -69,7 +66,7 @@ export class DrawerExampleComponent implements OnDestroy, CanDeactivateComponent
     }
 
     openAnother() {
-        this.mzDialog.open(DrawerExampleComponent);
+        this.mzDrawer.open(DrawerExampleComponent);
     }
 
     ngOnDestroy(): void {

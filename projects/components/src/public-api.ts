@@ -49,16 +49,19 @@ export { SortEvent } from './lib/models/sort-event';
 export { WizardStepLink } from './lib/models/wizard-step-link';
 export { WizardProgressTrackerComponent } from './lib/wizard-progress-tracker/wizard-progress-tracker.component';
 
-// dialog
-export { MzDialog } from './lib/dialog/mz-dialog.service';
-export { MzDialogConfig } from './lib/dialog/dialog-config';
-export { MzDialogRef } from './lib/dialog/dialog-ref';
-export { DrawerContainerComponent } from './lib/dialog/container/drawer-container.component';
+// drawer
+export { MzDrawer } from './lib/drawer/drawer';
+export { MzDrawerConfig } from './lib/drawer/drawer-config';
+export { MzDrawerRef } from './lib/drawer/drawer-ref';
+export { MzDrawerContainer } from './lib/drawer/container/drawer-container.component';
+export { MzDrawerModule } from './lib/drawer/drawer.module';
+export { MzDrawerHeader } from './lib/drawer/drawer-header/drawer-header.component';
+export { MzDrawerContent } from './lib/drawer/drawer-content/drawer-content.component';
+export { MzDrawerFooter } from './lib/drawer/drawer-footer/drawer-footer.component';
 
 // modal
 export { MzModalModule } from './lib/modal/modal.module';
 export { MzModalContainer } from './lib/modal/modal-container/modal-container.component';
-export { MzDialogModule } from './lib/dialog/dialog.module';
 export { MzModalService } from './lib/modal/modal.service';
 export { MzModalHeader } from './lib/modal/modal-header/modal-header.component';
 export { MzModalContent } from './lib/modal/modal-content/modal-content.component';

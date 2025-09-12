@@ -62,47 +62,56 @@
     </section>
 </article>
 
-<h2>Best practices</h2>
-<ul class="list-disc list-inside text-block">
-    <li>Icons should only be used when it serves a purpose and adds value.</li>
-    <li>Icon should reflect the associated section or action.</li>
-    <li>Icon should share the same color as what they're associated with.</li>
-    <li>The few globally recognized icons can be used by themselves to save space. Add a `sr-only` span for screen-reader in this case. See this site's hamburger menu for example.</li>
-</ul>
+<article>
+    <h2>Best practices</h2>
+    <ul class="list-disc list-inside text-block">
+        <li>Icons should only be used when it serves a purpose and adds value.</li>
+        <li>Icon should reflect the associated section or action.</li>
+        <li>Icon should share the same color as what they're associated with.</li>
+        <li>The few globally recognized icons can be used by themselves to save space. Add a `sr-only` span for screen-reader in this case. See this site's hamburger menu for example.</li>
+    </ul>
+</article>
 
-<h2>Accessibility</h2>
-<p>Icons are rendered with <code>aria-hidden=true</code>. Use an additional <code>sr-only</code> element with help text for accessibility support.</p>
+<article>
+    <h2>Accessibility</h2>
+    <p>Icons are rendered with <code>aria-hidden=true</code>. Use an additional <code>sr-only</code> element with help text for accessibility support.</p>
+</article>
 
-<h2>Notes</h2>
-<ul class="list-disc list-inside text-block">
-    <li>Component renders via a key in icondefinitions.svg</li>
-    <li>To add icon to designsystem, add to `projects/components/src/assets/icons`, then run `npm run icons`</li>
-    <li>See <a href="/assets/icondefinitions.html" target="_blank">icon preview page</a> for a list of icon files shipped in package. These icons are needed by &#64;muziehdesign/components.</li>
-    <li>Solidify which icon to use for info, warning, and error.</li>
-</ul>
+<article>
+    <h2>Notes</h2>
+    <ul class="list-disc list-inside text-block">
+        <li>Component renders via a key in icondefinitions.svg</li>
+        <li>To add icon to designsystem, add to `projects/components/src/assets/icons`, then run `npm run icons`</li>
+        <li>See <a href="/assets/icondefinitions.html" target="_blank">icon preview page</a> for a list of icon files shipped in package. These icons are needed by &#64;muziehdesign/components.</li>
+        <li>Solidify which icon to use for info, warning, and error.</li>
+    </ul>
+</article>
 
-<h2>Using icons in project</h2>
-<div>
-    Projects that consume this library can use svgo and svg-sprite to optimize and create a sprite of the icons. This can be done by using the following commands from package.json:
-    <pre>
+<article>
+    <h2>Using icons in project</h2>
+    <div>
+        Projects that consume this library can use svgo and svg-sprite to optimize and create a sprite of the icons. This can be done by using the following commands from package.json:
+        <pre>
         <code> 
             // package.json 
             "icons": "npm run icons:optimize && npm run icons:sprite", 
             "icons:optimize": "svgo --config .svgo.js src/assets/icons", 
             "icons:sprite": "svg-sprite --config ./.svg-sprite.json node_modules/&#64;muziehdesign/components/assets/icons/*.svg src/assets/icons/*.svg" </code>
     </pre>
-    <ul>
-        <li>Place new icon file in `src/assets/icons`. File name should be all lowercase and follow pattern of `[kebab-case-name]-[iconType (solid | outline)]`</li>
-        <li>Run `npm run icons`</li>
-        <li>
-            Verify icons in `/assets/icondefinitions.html`
-            <code>
-                <pre>
+        <ul>
+            <li>Place new icon file in `src/assets/icons`. File name should be all lowercase and follow pattern of `[kebab-case-name]-[iconType (solid | outline)]`</li>
+            <li>Run `npm run icons`</li>
+            <li>
+                Verify icons in `/assets/icondefinitions.html`
+                <code>
+                    <pre>
                     &#64;component(&#123; imports: [ SvgIconComponent ] ... &#125;)
                     &lt;mz-svg-icon key="menu-outline"&gt;&lt;/mz-svg-icon&gt;
-                </pre>
-            </code>
-        </li>
-    </ul>
-    Remember to remove icondefinitions.html from build process for production if you don't want to ship it. See `src/.svg-sprite.json` and `.svgo.js` for configuration examples.
-</div>
+                </pre
+                    >
+                </code>
+            </li>
+        </ul>
+        Remember to remove icondefinitions.html from build process for production if you don't want to ship it. See `src/.svg-sprite.json` and `.svgo.js` for configuration examples.
+    </div>
+</article>
