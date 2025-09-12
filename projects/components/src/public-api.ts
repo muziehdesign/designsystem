@@ -62,7 +62,7 @@ export { MzDrawerFooter } from './lib/drawer/drawer-footer/drawer-footer.compone
 // modal
 export { MzModalModule } from './lib/modal/modal.module';
 export { MzModalContainer } from './lib/modal/modal-container/modal-container.component';
-export { MzModalService } from './lib/modal/modal.service';
+export { MzModal as MzModalService } from './lib/modal/modal';
 export { MzModalHeader } from './lib/modal/modal-header/modal-header.component';
 export { MzModalContent } from './lib/modal/modal-content/modal-content.component';
 export { MzModalFooter } from './lib/modal/modal-footer/modal-footer.component';

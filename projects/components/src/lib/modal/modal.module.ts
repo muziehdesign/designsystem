@@ -1,14 +1,15 @@
 import { DialogModule } from "@angular/cdk/dialog";
 import { NgModule } from "@angular/core";
+import { OverlayModule } from "@angular/cdk/overlay";
 import { MzModalContainer } from "./modal-container/modal-container.component";
-import { MzModalService } from "./modal.service";
+import { MzModal } from "./modal";
 import { MzMessageModal } from "./message-modal/message-modal.component";
 import { MzModalHeader } from "./modal-header/modal-header.component";
 import { MzModalFooter } from "./modal-footer/modal-footer.component";
 import { MzModalContent } from "./modal-content/modal-content.component";
 
 @NgModule({
-    imports: [DialogModule, MzModalContainer, MzModalHeader, MzModalContent, MzModalFooter, MzMessageModal],
+    imports: [DialogModule, OverlayModule, MzModalContainer, MzModalHeader, MzModalContent, MzModalFooter, MzMessageModal],
     exports: [
         DialogModule,
         MzModalHeader,
@@ -17,6 +18,6 @@ import { MzModalContent } from "./modal-content/modal-content.component";
         MzModalContainer,
         MzMessageModal
     ],
-    providers: [MzModalService]
+    providers: [MzModal]
 })
 export class MzModalModule {}

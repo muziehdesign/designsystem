@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { MzDrawer } from './drawer';
 import { MzDrawerModule } from './drawer.module';
 import { MzDrawerRef } from './drawer-ref';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
     imports: [MzDrawerModule],
@@ -38,13 +39,15 @@ class TestHostComponent {
 describe('MzDrawer', () => {
     let fixture: ComponentFixture<TestHostComponent>;
     let drawer: MzDrawer;
+    let overlay: OverlayContainer;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [TestHostComponent]
+            imports: [TestHostComponent],
         });
         fixture = TestBed.createComponent(TestHostComponent);
         drawer = TestBed.inject(MzDrawer);
+        overlay = TestBed.inject(OverlayContainer);
     });
 
     it('should open and close drawer', () => {
@@ -53,9 +56,9 @@ describe('MzDrawer', () => {
         fixture.detectChanges();
 
         // Query for drawer header, content, and footer elements
-        let header = document.querySelector('mz-drawer-header');
-        let content = document.querySelector('mz-drawer-content');
-        let footer = document.querySelector('mz-drawer-footer');
+        let header = overlay.getContainerElement().querySelector('mz-drawer-header');
+        let content = overlay.getContainerElement().querySelector('mz-drawer-content');
+        let footer = overlay.getContainerElement().querySelector('mz-drawer-footer');
         let closeButton = footer?.querySelector('button');
 
         expect(header).toBeTruthy();
@@ -71,9 +74,9 @@ describe('MzDrawer', () => {
         fixture.detectChanges();
 
         // After closing, elements should not be present
-        header = document.querySelector('mz-drawer-header');
-        content = document.querySelector('mz-drawer-content');
-        footer = document.querySelector('mz-drawer-footer');
+        header = overlay.getContainerElement().querySelector('mz-drawer-header');
+        content = overlay.getContainerElement().querySelector('mz-drawer-content');
+        footer = overlay.getContainerElement().querySelector('mz-drawer-footer');
 
         expect(header).toBeNull();
         expect(content).toBeNull();

@@ -11,7 +11,7 @@ import { MZ_MODAL_DEFAULT_OPTIONS, MzModalConfig } from './modal-config';
 @Injectable({
     providedIn: 'root',
 })
-export class MzModalService {
+export class MzModal {
     private cdkDialog: Dialog;
     constructor(injector: Injector, @Optional() @Inject(MZ_MODAL_DEFAULT_OPTIONS) private defaultOptions: DialogConfig<any>) {
         this.cdkDialog = injector.get(Dialog);

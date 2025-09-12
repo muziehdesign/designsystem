@@ -22,12 +22,6 @@ import { CanDeactivateComponent, MzModalService, MzModalModule } from '@muziehde
                     Long content
                 </label>
             </div>
-            <div>
-                <label class="field">
-                    <input type="checkbox" class="form-checkbox" [checked]="confirmOnClose" (change)="confirmOnClose = !confirmOnClose" />
-                    <span class="checkbox-label">Confirm on close</span>
-                </label>
-            </div>
             @for(i of paragraphs; track $index) {
             <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad
@@ -44,21 +38,12 @@ import { CanDeactivateComponent, MzModalService, MzModalModule } from '@muziehde
         </mz-modal-footer>
     `,
 })
-export class ModalExampleComponent implements OnDestroy, CanDeactivateComponent {
+export class ModalExampleComponent implements OnDestroy {
     contentLength: 'short' | 'long' = 'short';
     confirmOnClose = false;
 
     paragraphs = new Array(1);
     constructor(private modal: MzModalService, private dialogRef: DialogRef) {}
-
-    confirmDeactivation(): boolean {
-        return window.confirm('Discard changes?');
-    }
-
-    canDeactivate(): boolean {
-        console.log('canDeactivate', this.confirmOnClose);
-        return this.confirmOnClose !== true;
-    }
 
     useLongContent() {
         this.paragraphs = new Array(10);
