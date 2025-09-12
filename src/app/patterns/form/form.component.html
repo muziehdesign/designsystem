@@ -1,8 +1,6 @@
 <header>
     <h1>Form</h1>
-    <p class="prose">Use a form to collect information from the user. Guidelines here are on top of <a
-            href="https://atlassian.design/components/form/usage">Atlassian
-            Design System's on forms.</a></p>
+    <p class="prose">Use a form to collect information from the user. Guidelines here are on top of <a href="https://atlassian.design/components/form/usage">Atlassian Design System's on forms.</a></p>
 </header>
 
 <article>
@@ -13,7 +11,6 @@
             <div class="description">Add a new delivery address to your profile.</div>
         </header>
         <form class="form" #addressForm="ngForm" (ngSubmit)="onSubmit()" (change)="onFormChange()" mzForm [schema]="schema">
-
             <mz-field label="Recipent name">
                 <input type="text" [(ngModel)]="model.recipientName" name="recipientName" class="form-input" />
             </mz-field>
@@ -37,9 +34,7 @@
                 <mz-field label="Zip code">
                     <input type="text" [(ngModel)]="model.zipCode" name="zipCode" class="form-input" />
                 </mz-field>
-                <small class="field-error" *ngIf="displayError('city') || displayError('state') || displayError('zipCode')">
-                    <mz-svg-icon key="exclamation-triangle-solid" type="solid"></mz-svg-icon> Invalid value(s)
-                </small>
+                <small class="field-error" *ngIf="displayError('city') || displayError('state') || displayError('zipCode')"> <mz-svg-icon key="exclamation-triangle-solid" type="solid"></mz-svg-icon> Invalid value(s) </small>
             </div>
 
             <fieldset class="fieldset">
@@ -57,7 +52,7 @@
             <fieldset class="fieldset">
                 <legend>Form scenario</legend>
                 <label class="field-option">
-                    <input class="form-checkbox" [(ngModel)]="model.unexpectedError" type="checkbox" name="unexpectedError"/>
+                    <input class="form-checkbox" [(ngModel)]="model.unexpectedError" type="checkbox" name="unexpectedError" />
                     <span class="checkbox-label">Unexpected error</span>
                 </label>
             </fieldset>
@@ -80,102 +75,103 @@
 <article>
     <h2>Usage</h2>
 
-    <h3>Anatomy</h3>
-    <div class="text-block">
-        <ol class="list-outside list-decimal ml-4">
-            <li class="mb-2">
-                <strong>Form title</strong>
-                <p>Concise text that describes the form. Use appropriate heading element based on where form is on page.</p>
+    <section>
+        <h3>Anatomy</h3>
+        <div class="text-block">
+            <ol class="list-outside list-decimal ml-4">
+                <li class="mb-2">
+                    <strong>Form title</strong>
+                    <p>Concise text that describes the form. Use appropriate heading element based on where form is on page.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>Form description</strong>
+                    <p>Optional. Use a form description to provide additional context.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>Form section</strong>
+                    <p>Use form sections to group information that are logically related. There can be multiple form sections in one form. They should be grouped using <code>&lt;fieldset&gt;</code>, with <code>&lt;legend&gt;</code> as the headline.</p>
+                </li>
+                <li class="mb-2">
+                    <strong>Field</strong>
+                    <p>A field is an entry in the form.</p>
+                    <ol class="list-outside list-decimal ml-8">
+                        <li>
+                            <strong>Label</strong>
+                            <p>Use a label to communicate what the field is for. Use sentence casing.</p>
+                        </li>
+                        <li>
+                            <strong>Required field</strong>
+                            <p>Use asterisk to indicate a required field.</p>
+                        </li>
+                        <li>
+                            <strong>Help text</strong>
+                            <p>Use help text to provide instructions so that users don't have to guess.</p>
+                        </li>
+                        <li>
+                            <strong>Error message</strong>
+                            <p>Use field error message to communicate that associated field needs correction.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li class="mb-2">
+                    <strong>Form footer</strong>
+                    <p>Use footer section to communicate available actions. It should always contain exactly one primary action button, and form errors above button.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+    <section>
+        <h3>Layout</h3>
+        <div class="text-block">Use one column layout.</div>
+    </section>
+    <section>
+        <h3>Best practices</h3>
+        <p>A form is a conversation between the system and the user. Practice good communication -- be helpful, concise, and timely.</p>
+        <ul class="list-disc list-inside text-block">
+            <li>Use sentence casing for labels</li>
+            <li>Use clear and concise text for labels to make things clear and simple to understand</li>
+            <li>Button text should state the action that the button performs when clicked.</li>
+            <li>Avoid multiple action buttons. Forms usually should have 1-2 buttons.</li>
+            <li>Avoid reset button, and cancel button to avoid misclicks, unless they add value.</li>
+            <li>Avoid placeholder attributes due to accessibility concerns.</li>
+            <li>Never disable a submit button.</li>
+            <li>Present fields in a single column layout to keep users in flow.</li>
+            <li>Use logical grouping and sequencing for form field arrangements.</li>
+            <li>Use `autocomplete` to help users auto-fill their personal information</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Error messages</h3>
+        <ul class="list-inside list-disc text-block">
+            <li>Error message should be clear, precise, and constructive to help user understand what the error is and how to correct it.</li>
+            <li>Place error message right underneath the field being validated. Keeping them close makes the error noticeable and helps user make the association.</li>
+            <li>
+                Validate and display error messages as soon as user completes input to provide quick feedback
+                <ul class="list-inside list-disc text-block ml-8">
+                    <li>Always perform simple validations on client side</li>
+                </ul>
             </li>
-            <li class="mb-2">
-                <strong>Form description</strong>
-                <p>Optional. Use a form description to provide additional context.</p>
-            </li>
-            <li class="mb-2">
-                <strong>Form section</strong>
-                <p>Use form sections to group information that are logically related. There can be multiple form sections in one
-                    form. They should be grouped using <code>&lt;fieldset&gt;</code>, with <code>&lt;legend&gt;</code> as the headline.
-                </p>
-            </li>
-            <li class="mb-2">
-                <strong>Field</strong>
-                <p>A field is an entry in the form.</p>
-                <ol class="list-outside list-decimal ml-8">
-                    <li>
-                        <strong>Label</strong>
-                        <p>Use a label to communicate what the field is for. Use sentence casing.</p>
-                    </li>
-                    <li>
-                        <strong>Required field</strong>
-                        <p>Use asterisk to indicate a required field.</p>
-                    </li>
-                    <li>
-                        <strong>Help text</strong>
-                        <p>Use help text to provide instructions so that users don't have to guess.</p>
-                    </li>
-                    <li>
-                        <strong>Error message</strong>
-                        <p>Use field error message to communicate that associated field needs correction.</p>
-                    </li>
-                </ol>
-            </li>
-            <li class="mb-2">
-                <strong>Form footer</strong>
-                <p>Use footer section to communicate available actions. It should always contain exactly one primary action button, and form errors above button.</p>
-            </li>
-        </ol>
-    </div>
-
-    <h3>Layout</h3>
-    <div class="text-block">
-        Use one column layout. 
-    </div>
-
-    <h3>Best practices</h3>
-    <p>A form is a conversation between the system and the user. Practice good communication -- be helpful, concise, and timely.</p>
-    <ul class="list-disc list-inside text-block">
-        <li>Use sentence casing for labels</li>
-        <li>Use clear and concise text for labels to make things clear and simple to understand</li>
-        <li>Button text should state the action that the button performs when clicked.</li>
-        <li>Avoid multiple action buttons. Forms usually should have 1-2 buttons.</li>
-        <li>Avoid reset button, and cancel button to avoid misclicks, unless they add value.</li>
-        <li>Avoid placeholder attributes due to accessibility concerns.</li>
-        <li>Never disable a submit button.</li>
-        <li>Present fields in a single column layout to keep users in flow.</li>
-        <li>Use logical grouping and sequencing for form field arrangements.</li>
-        <li>Use `autocomplete` to help users auto-fill their personal information</li>
-    </ul>
-
-    <h3>Error messages</h3>
-    <ul class="list-inside list-disc text-block">
-        <li>Error message should be clear, precise, and constructive to help user understand what the error is and how to correct it.</li>
-        <li>Place error message right underneath the field being validated. Keeping them close makes the error noticeable and helps user make the association.</li>
-        <li>
-            Validate and display error messages as soon as user completes input to provide quick feedback
-            <ul class="list-inside list-disc text-block ml-8">
-                <li>Always perform simple validations on client side</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h3>Button positioning</h3>
-    <ul class="list-inside list-disc text-block">
-        <li>Buttons should be sorted by importance from left to right for pages. Primary button should always be first
-            button.</li>
-        <li>Buttons should be sorted by importance from right to left for modals and multi-step forms and modal. Primary button
-            should always be last.</li>
-    </ul>
-
-    <h3>References</h3>
-    <ul class="list-inside list-disc">
-        <li><a href="https://atlassian.design/patterns/forms">Atlassian Design System Forms Patterns</a></li>
-        <!--<li><a href="https://www.nngroup.com/articles/indicators-validations-notifications/"></a></li>-->
-        <li><a href="https://www.nngroup.com/articles/errors-forms-design-guidelines/">How to Report Errors in Forms: 10 Design Guidelines</a></li>
-        <li><a href="https://www.nngroup.com/articles/error-message-guidelines/">Error Message Guidelines</a></li>
-        <li><a href="https://www.nngroup.com/articles/web-form-design/">Website Forms Usability: Top 10 Recommendations</a></li>
-        <li><a href="https://uxdesign.cc/title-case-vs-sentence-case-in-ux-writing-212087192261">Title case vs sentence case in UX writing</a></li>
-        <li><a href="https://uxplanet.org/why-letter-casing-is-important-to-consider-during-design-decisions-50402acd0a4e">Why letter casing is important to consider during design decisions</a></li>
-    </ul>
+        </ul>
+    </section>
+    <section>
+        <h3>Button positioning</h3>
+        <ul class="list-inside list-disc text-block">
+            <li>Buttons should be sorted by importance from left to right for pages. Primary button should always be first button.</li>
+            <li>Buttons should be sorted by importance from right to left for modals and multi-step forms and modal. Primary button should always be last.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>References</h3>
+        <ul class="list-inside list-disc">
+            <li><a href="https://atlassian.design/patterns/forms">Atlassian Design System Forms Patterns</a></li>
+            <!--<li><a href="https://www.nngroup.com/articles/indicators-validations-notifications/"></a></li>-->
+            <li><a href="https://www.nngroup.com/articles/errors-forms-design-guidelines/">How to Report Errors in Forms: 10 Design Guidelines</a></li>
+            <li><a href="https://www.nngroup.com/articles/error-message-guidelines/">Error Message Guidelines</a></li>
+            <li><a href="https://www.nngroup.com/articles/web-form-design/">Website Forms Usability: Top 10 Recommendations</a></li>
+            <li><a href="https://uxdesign.cc/title-case-vs-sentence-case-in-ux-writing-212087192261">Title case vs sentence case in UX writing</a></li>
+            <li><a href="https://uxplanet.org/why-letter-casing-is-important-to-consider-during-design-decisions-50402acd0a4e">Why letter casing is important to consider during design decisions</a></li>
+        </ul>
+    </section>
 </article>
 
 <article>
@@ -186,7 +182,7 @@
         <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html">Understanding Success Criterion 1.3.5: Identify Input Purpose</a></li>
         <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html">Understanding Success Criterion 1.4.1: Use of Color</a></li>
         <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html">Understanding Success Criterion 2.1.1: Keyboard</a></li>
-        <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard-no-exception.html">Understanding Success Criterion 2.1.3: Keyboard (No Exception)</a> </li>
+        <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard-no-exception.html">Understanding Success Criterion 2.1.3: Keyboard (No Exception)</a></li>
         <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">Understanding Success Criterion 2.4.3: Focus Order</a></li>
         <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html">Understanding Success Criterion 2.4.6: Headings and Labels</a></li>
         <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html">Understanding Success Criterion 2.4.7: Focus Visible</a></li>

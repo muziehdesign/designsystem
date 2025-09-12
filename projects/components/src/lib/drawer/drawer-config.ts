@@ -5,13 +5,11 @@ import { BasePortalOutlet } from "@angular/cdk/portal";
 import { Injector, Type, ViewContainerRef } from "@angular/core";
 
 /**
- * Configuration opening a modal dialog with the MzDialog service. Properties here are exposes what's available in @angular/cdk DialogConfig
- * and with a few additional properties for MzDialog.
+ * Configuration opening a modal dialog with the MzDrawer service. Properties here are exposes what's available in @angular/cdk DialogConfig
+ * and with a few additional properties for MzDrawer.
  * See https://material.angular.io/cdk/dialog/api#DialogConfig
  */
-export class MzDialogConfig<D = any, C extends BasePortalOutlet = BasePortalOutlet> {
-    size?: 'sm' | 'md' | 'lg' | 'xl' = 'md';
-
+export class MzDrawerConfig<D = any, C extends BasePortalOutlet = BasePortalOutlet> {
     /**
      * Where the attached component should live in Angular's *logical* component tree.
      * This affects what is available for injection and the change detection order for the
@@ -110,11 +108,4 @@ export class MzDialogConfig<D = any, C extends BasePortalOutlet = BasePortalOutl
      * Whether the dialog should close when the user goes backwards/forwards in history.
      */
     closeOnNavigation?: boolean;
-
-    /**
-     * Component into which the dialog content will be rendered. Defaults to `CdkDialogContainer`.
-     * A configuration object can be passed in to customize the providers that will be exposed
-     * to the dialog container.
-     */
-    container?: Type<C>;
 }

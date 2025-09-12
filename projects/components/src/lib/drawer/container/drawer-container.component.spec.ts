@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DrawerContainerComponent } from './drawer-container.component';
+import { MzDrawerContainer } from './drawer-container.component';
 import { DialogConfig, DialogModule } from '@angular/cdk/dialog';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { EMPTY } from 'rxjs';
-import { MzDialogConfig } from '../dialog-config';
+import { MzDrawerConfig } from '../drawer-config';
 
 
 const overlayRefStub = {
@@ -14,23 +14,23 @@ const overlayRefStub = {
 };
 
 describe('DrawerContainerComponent', () => {
-  let component: DrawerContainerComponent;
-  let fixture: ComponentFixture<DrawerContainerComponent>;
+  let component: MzDrawerContainer;
+  let fixture: ComponentFixture<MzDrawerContainer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        DrawerContainerComponent, 
+        MzDrawerContainer, 
         DialogModule
       ],
       providers: [
-        { provide: MzDialogConfig, useValue: {} }, 
+        { provide: MzDrawerConfig, useValue: {} }, 
         { provide: OverlayRef, useValue: overlayRefStub } 
       ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DrawerContainerComponent);
+    fixture = TestBed.createComponent(MzDrawerContainer);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
