@@ -6,6 +6,9 @@ import { MzDrawerRef } from '../drawer-ref';
     imports: [],
     templateUrl: './drawer-header.component.html',
     styleUrl: './drawer-header.component.scss',
+    host: {
+        'class': 'mz-drawer-header'
+    }
 })
 export class MzDrawerHeader {
     title = input<string>('');

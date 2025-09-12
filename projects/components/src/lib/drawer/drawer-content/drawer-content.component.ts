@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
   selector: 'mz-drawer-content',
   imports: [],
   templateUrl: './drawer-content.component.html',
-  styleUrl: './drawer-content.component.scss'
+  styleUrl: './drawer-content.component.scss',
+  host: {
+    'class': 'mz-drawer-content'
+  }
 })
 export class MzDrawerContent {
 
