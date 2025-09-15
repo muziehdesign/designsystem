@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } 
 import { FilterOptionModel } from '../filter/filter-option.model';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { SpinnerComponent } from '../spinner/spinner.component';
+import { MzSpinner } from '../spinner/spinner.component';
 
 @Component({
     selector: 'mz-options-filter',
-    imports: [FormsModule, CdkOverlayOrigin, CdkConnectedOverlay, SpinnerComponent],
+    imports: [FormsModule, CdkOverlayOrigin, CdkConnectedOverlay, MzSpinner],
     templateUrl: './options-filter.component.html',
     styleUrl: './options-filter.component.scss',
     encapsulation: ViewEncapsulation.None

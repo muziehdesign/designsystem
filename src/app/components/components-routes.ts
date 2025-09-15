@@ -41,15 +41,21 @@ export const componentRoutes: Routes = [
                 loadComponent: () => import('./description-list/description-list.component').then((b) => b.DescriptionListComponent),
             },
             {
+                path: 'dialog',
+                loadComponent: () => import('./dialog-guidelines/dialog-guidelines.component').then((b) => b.DialogGuidelinesComponent),
+            },
+            {
                 path: 'drawer',
                 loadComponent: () => import('./drawer/drawer.component').then((b) => b.DrawerComponent),
-                canDeactivate: [(component: unknown)=>{
-                    if(hasImplementation<CanDeactivateComponent>(component, 'canDeactivate')) {
-                        return component.canDeactivate() || component.confirmDeactivation();
-                    }
+                canDeactivate: [
+                    (component: unknown) => {
+                        if (hasImplementation<CanDeactivateComponent>(component, 'canDeactivate')) {
+                            return component.canDeactivate() || component.confirmDeactivation();
+                        }
 
-                    return true;
-                }]
+                        return true;
+                    },
+                ],
             },
             {
                 path: 'emptystate',
@@ -91,10 +97,6 @@ export const componentRoutes: Routes = [
             {
                 path: 'menudropdown',
                 loadComponent: () => import('./dropdown-menu-guidelines/dropdown-menu-guidelines.component').then((b) => b.DropdownMenuGuidelinesComponent),
-            },
-            {
-                path: 'modal',
-                loadComponent: () => import('./modal-guidelines/modal-guidelines.component').then((b) => b.ModalGuidelinesComponent),
             },
             {
                 path: 'pageheader',

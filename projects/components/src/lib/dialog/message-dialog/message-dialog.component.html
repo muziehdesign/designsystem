@@ -1,0 +1,11 @@
+<mz-dialog-header [title]="data.title"></mz-dialog-header>
+<mz-dialog-content>
+    {{ data.message }}
+</mz-dialog-content>
+<mz-dialog-footer>
+    @if(data.cancelAction.length > 0 ) {
+    <button (click)="close()" mzButton variant="tertiary">{{ data.cancelAction }}</button>
+    } @if(data.action.length > 0) {
+    <button (click)="ok()" cdkFocusInitial mzButton [variant]="data.appearance || 'primary'">{{ data.action }}</button>
+    }
+</mz-dialog-footer>

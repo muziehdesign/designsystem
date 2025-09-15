@@ -2,9 +2,7 @@
 @use 'design/button';
 @use 'design/dl';
 @use 'design/dropdown-menu';
-@use 'design/modal';
 @use 'design/breadcrumb';
-@use 'design/pagination';
 @use 'design/table';
 @use 'design/tabs';
 @use 'design/progress-bar';
@@ -14,7 +12,6 @@
 @use 'design/accordion';
 @use 'design/utilities';
 @use 'design/form';
-@use 'design/dialog';
 @use 'design/base';
 @use 'design/cdk-overlay';
 
@@ -28,7 +25,9 @@
 
 @import 'highlight.js/styles/github.css';
 
-
+header, article, section {
+    @apply mt-8;
+}
 
 // icon
 .page > header {
@@ -76,11 +75,6 @@
     }
 }
 
-
-article {
-    //margin: 2rem 0;
-}
-
 code {
     @apply font-mono text-pink-500;
 }
@@ -88,4 +82,3 @@ code {
 .page {
     @apply pt-0.5 pb-4 max-w-7xl mx-auto;
 }
-

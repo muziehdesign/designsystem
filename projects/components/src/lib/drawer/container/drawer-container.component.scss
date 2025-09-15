@@ -1,0 +1,21 @@
+.mz-drawer-container {
+    background-color: var(--surface-bg);
+    width: 500px;
+    max-width: 90%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    transition: translate 0.3s ease-out;
+    translate: 100%;
+
+    &.open {
+        translate: 0%;
+    }
+}
+
+.mz-drawer-component {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

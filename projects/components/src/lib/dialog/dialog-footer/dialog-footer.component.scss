@@ -1,0 +1,8 @@
+@use 'mixins/utilities' as *;
+
+:host {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    @include gap(2);
+}

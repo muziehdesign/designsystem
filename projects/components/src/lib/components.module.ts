@@ -1,6 +1,6 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { MzSpinner } from './spinner/spinner.component';
 import { EnumDisplayPipe } from './enum-display/enum-display.pipe';
 import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { ResultTableComponent } from './result-table/result-table.component';
@@ -27,7 +27,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     FormsModule,
     ButtonDirective,
     SvgIconComponent,
-    SpinnerComponent,
+    MzSpinner,
     WizardProgressTrackerComponent,
     AlertComponent,
     EnumDisplayPipe,
@@ -44,7 +44,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
   ],
   exports: [
     EnumDisplayPipe,
-    SpinnerComponent,
+    MzSpinner,
     SvgIconComponent,
     ResultTableComponent,
     InfiniteScrollComponent,

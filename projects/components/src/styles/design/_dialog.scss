@@ -1,7 +1,9 @@
 @use './mixins/dialog' as dialog;
 
-@layer utilities {
-    .mz-dialog-container .article {
-        @include dialog.dialog-article();
-    }
+.mz-drawer :has(header, footer) {
+    @include dialog.dialog-article();
 }
+/*
+.mz-modal :has(header, footer) {
+    @include dialog.dialog-article();
+}*/

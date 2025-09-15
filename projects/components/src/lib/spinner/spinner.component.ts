@@ -1,16 +1,20 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, input } from '@angular/core';
 
 @Component({
     selector: 'mz-spinner',
     templateUrl: './spinner.component.html',
     styleUrls: ['./spinner.component.scss'],
-    imports: [CommonModule]
+    imports: [],
 })
-export class SpinnerComponent  {
+export class MzSpinner {
+    @Input() size: SpinnerSize = 'medium';
+    @Input() appearance: SpinnerAppearance = 'primary';
 
-  @Input() size: 'medium' | 'large' = 'medium';
-  @Input() type: 'primary' | 'secondary' | 'custom' = 'primary';
-  constructor() { }
-
+    @HostBinding('class')
+    get elementClass(): string {
+        return [`${this.size}`, `${this.appearance}`].join(' ');
+    }
 }
+
+export type SpinnerSize = 'medium' | 'large';
+export type SpinnerAppearance = 'primary' | 'secondary';

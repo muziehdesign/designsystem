@@ -1,37 +1,9 @@
-import { Direction } from "@angular/cdk/bidi";
-import { AutoFocusTarget, DialogRole } from "@angular/cdk/dialog";
-import { PositionStrategy, ScrollStrategy } from "@angular/cdk/overlay";
-import { BasePortalOutlet } from "@angular/cdk/portal";
-import { Injector, Type, ViewContainerRef } from "@angular/core";
+import { AutoFocusTarget } from "@angular/cdk/dialog";
+import { InjectionToken } from "@angular/core";
 
-/**
- * Configuration opening a modal dialog with the MzDialog service. Properties here are exposes what's available in @angular/cdk DialogConfig
- * and with a few additional properties for MzDialog.
- * See https://material.angular.io/cdk/dialog/api#DialogConfig
- */
-export class MzDialogConfig<D = any, C extends BasePortalOutlet = BasePortalOutlet> {
-    size?: 'sm' | 'md' | 'lg' | 'xl' = 'md';
+export const MZ_DIALOG_DEFAULT_OPTIONS = new InjectionToken<MzDialogConfig<any>>('MZ_DIALOG_DEFAULT_OPTIONS');
 
-    /**
-     * Where the attached component should live in Angular's *logical* component tree.
-     * This affects what is available for injection and the change detection order for the
-     * component instantiated inside of the dialog. This does not affect where the dialog
-     * content will be rendered.
-     */
-    viewContainerRef?: ViewContainerRef;
-
-    /**
-     * Injector used for the instantiation of the component to be attached. If provided,
-     * takes precedence over the injector indirectly provided by `ViewContainerRef`.
-     */
-    injector?: Injector;
-
-    /** ID for the dialog. If omitted, a unique one will be generated. */
-    id?: string;
-
-    /** The ARIA role of the dialog element. */
-    role?: DialogRole = 'dialog';
-
+export class MzDialogConfig<D> {
     /** Optional CSS class or classes applied to the overlay panel. */
     panelClass?: string | string[] = '';
 
@@ -62,33 +34,15 @@ export class MzDialogConfig<D = any, C extends BasePortalOutlet = BasePortalOutl
     /** Max-height of the dialog. If a number is provided, assumes pixel units. */
     maxHeight?: number | string;
 
-    /** Strategy to use when positioning the dialog. Defaults to centering it on the page. */
-    positionStrategy?: PositionStrategy;
-
     /** Data being injected into the child component. */
     data?: D | null = null;
-
-    /** Layout direction for the dialog's content. */
-    direction?: Direction;
-
-    /** ID of the element that describes the dialog. */
-    ariaDescribedBy?: string | null = null;
-
-    /** ID of the element that labels the dialog. */
-    ariaLabelledBy?: string | null = null;
-
-    /** Dialog label applied via `aria-label` */
-    ariaLabel?: string | null = null;
-
-    /** Whether this is a modal dialog. Used to set the `aria-modal` attribute. */
-    ariaModal?: boolean = true;
 
     /**
      * Where the dialog should focus on open.
      * @breaking-change 14.0.0 Remove boolean option from autoFocus. Use string or
      * AutoFocusTarget instead.
      */
-    autoFocus?: AutoFocusTarget | string | boolean = 'first-tabbable';
+    autoFocus?: AutoFocusTarget = 'first-tabbable';
 
     /**
      * Whether the dialog should restore focus to the previously-focused element upon closing.
@@ -99,22 +53,4 @@ export class MzDialogConfig<D = any, C extends BasePortalOutlet = BasePortalOutl
      * - `HTMLElement` - focus will be restored to the specific element.
      */
     restoreFocus?: boolean | string | HTMLElement = true;
-
-    /**
-     * Scroll strategy to be used for the dialog. This determines how
-     * the dialog responds to scrolling underneath the panel element.
-     */
-    scrollStrategy?: ScrollStrategy;
-
-    /**
-     * Whether the dialog should close when the user goes backwards/forwards in history.
-     */
-    closeOnNavigation?: boolean;
-
-    /**
-     * Component into which the dialog content will be rendered. Defaults to `CdkDialogContainer`.
-     * A configuration object can be passed in to customize the providers that will be exposed
-     * to the dialog container.
-     */
-    container?: Type<C>;
 }

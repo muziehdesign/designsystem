@@ -1,15 +1,22 @@
 import { DialogModule } from "@angular/cdk/dialog";
 import { NgModule } from "@angular/core";
 import { OverlayModule } from "@angular/cdk/overlay";
-import { PortalModule } from "@angular/cdk/portal";
-import { MzDialog } from "./mz-dialog.service";
-import { DrawerContainerComponent } from "./container/drawer-container.component";
+import { MzDialogContainer } from "./dialog-container/dialog-container.component";
+import { MzDialog } from "./dialog";
+import { MzMessageDialog } from "./message-dialog/message-dialog.component";
+import { MzDialogHeader } from "./dialog-header/dialog-header.component";
+import { MzDialogFooter } from "./dialog-footer/dialog-footer.component";
+import { MzDialogContent } from "./dialog-content/dialog-content.component";
 
 @NgModule({
-    imports: [DialogModule, OverlayModule, PortalModule, DrawerContainerComponent],
+    imports: [DialogModule, OverlayModule, MzDialogContainer, MzDialogHeader, MzDialogContent, MzDialogFooter, MzMessageDialog],
     exports: [
         DialogModule,
-        DrawerContainerComponent
+        MzDialogHeader,
+        MzDialogContent,
+        MzDialogFooter,
+        MzDialogContainer,
+        MzMessageDialog
     ],
     providers: [MzDialog]
 })
