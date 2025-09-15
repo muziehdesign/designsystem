@@ -1,0 +1,11 @@
+@use 'mixins/utilities' as *;
+
+:host {
+    display: flex;
+    padding: 0.5rem 0.5rem;
+    @include gap(2);
+}
+
+h2 {
+    flex: 1;
+}

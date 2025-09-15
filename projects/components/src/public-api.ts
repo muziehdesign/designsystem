@@ -59,6 +59,16 @@ export { MzDrawerHeader } from './lib/drawer/drawer-header/drawer-header.compone
 export { MzDrawerContent } from './lib/drawer/drawer-content/drawer-content.component';
 export { MzDrawerFooter } from './lib/drawer/drawer-footer/drawer-footer.component';
 
+// modal dialog
+export { MzDialogModule } from './lib/dialog/dialog.module';
+export { MzDialogContainer } from './lib/dialog/dialog-container/dialog-container.component';
+export { MzDialog } from './lib/dialog/dialog';
+export { MzDialogHeader } from './lib/dialog/dialog-header/dialog-header.component';
+export { MzDialogContent } from './lib/dialog/dialog-content/dialog-content.component';
+export { MzDialogFooter } from './lib/dialog/dialog-footer/dialog-footer.component';
+export { MzMessageDialog as MzMessageModal } from './lib/dialog/message-dialog/message-dialog.component';
+export { DialogAppearance } from './lib/dialog/dialog-appearance';
+
 // filter
 export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';

@@ -1,0 +1,15 @@
+@use 'mixins/dialog' as dialog;
+@use 'mixins/icon' as icon;
+
+.mz-dialog-container {
+    background-color: var(--surface-bg);
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity linear 0.2s;
+
+    &.open {
+        opacity: 1;
+    }
+}

@@ -86,7 +86,7 @@ export class MzDrawerConfig<D = any, C extends BasePortalOutlet = BasePortalOutl
      * @breaking-change 14.0.0 Remove boolean option from autoFocus. Use string or
      * AutoFocusTarget instead.
      */
-    autoFocus?: AutoFocusTarget | string | boolean = 'first-tabbable';
+    autoFocus?: AutoFocusTarget = 'first-tabbable';
 
     /**
      * Whether the dialog should restore focus to the previously-focused element upon closing.
