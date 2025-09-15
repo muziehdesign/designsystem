@@ -59,16 +59,15 @@ export { MzDrawerHeader } from './lib/drawer/drawer-header/drawer-header.compone
 export { MzDrawerContent } from './lib/drawer/drawer-content/drawer-content.component';
 export { MzDrawerFooter } from './lib/drawer/drawer-footer/drawer-footer.component';
 
-// modal
-export { MzModalModule } from './lib/modal/modal.module';
-export { MzModalContainer } from './lib/modal/modal-container/modal-container.component';
-export { MzModal as MzModalService } from './lib/modal/modal';
-export { MzModalHeader } from './lib/modal/modal-header/modal-header.component';
-export { MzModalContent } from './lib/modal/modal-content/modal-content.component';
-export { MzModalFooter } from './lib/modal/modal-footer/modal-footer.component';
-export { MzMessageModal } from './lib/modal/message-modal/message-modal.component';
-export { MzModalClose } from './lib/modal/modal-close.directive';
-export { ModalAppearance } from './lib/modal/modal-appearance';
+// modal dialog
+export { MzDialogModule } from './lib/dialog/dialog.module';
+export { MzDialogContainer } from './lib/dialog/dialog-container/dialog-container.component';
+export { MzDialog } from './lib/dialog/dialog';
+export { MzDialogHeader } from './lib/dialog/dialog-header/dialog-header.component';
+export { MzDialogContent } from './lib/dialog/dialog-content/dialog-content.component';
+export { MzDialogFooter } from './lib/dialog/dialog-footer/dialog-footer.component';
+export { MzMessageDialog as MzMessageModal } from './lib/dialog/message-dialog/message-dialog.component';
+export { DialogAppearance } from './lib/dialog/dialog-appearance';
 
 // filter
 export { FilterComponent } from './lib/filter/filter.component';

@@ -1,6 +1,6 @@
 <header>
-    <h1>Modal</h1>
-    <p class="prose">Use a modal to capture information or acknowledgement from users immediately without having users lose context.</p>
+    <h1>Dialog</h1>
+    <p class="prose">Use a dialog to capture information or acknowledgement from users immediately without having users lose context.</p>
 </header>
 
 <article>
@@ -25,8 +25,18 @@
             <div>
                 <button class="button button-primary" (click)="confirmDanger()">Confirm danger</button>
             </div>
+            <div>
+                <button class="button button-primary" (click)="openTemplate()">Open template</button>
+            </div>
         </div>
     </div>
+
+    <ng-template #dialogTemplate>
+        <mz-dialog-header title="Dialog title"></mz-dialog-header>
+        <mz-dialog-content>This is content</mz-dialog-content>
+        <mz-dialog-footer></mz-dialog-footer>
+    </ng-template>
+
 </article>
 
 <article>

@@ -1,9 +1,9 @@
-import { AutoFocusTarget, DialogConfig } from "@angular/cdk/dialog";
+import { AutoFocusTarget } from "@angular/cdk/dialog";
 import { InjectionToken } from "@angular/core";
 
-export const MZ_MODAL_DEFAULT_OPTIONS = new InjectionToken<MzModalConfig<any>>('MZ_MODAL_DEFAULT_OPTIONS');
+export const MZ_DIALOG_DEFAULT_OPTIONS = new InjectionToken<MzDialogConfig<any>>('MZ_DIALOG_DEFAULT_OPTIONS');
 
-export class MzModalConfig<D> {
+export class MzDialogConfig<D> {
     /** Optional CSS class or classes applied to the overlay panel. */
     panelClass?: string | string[] = '';
 

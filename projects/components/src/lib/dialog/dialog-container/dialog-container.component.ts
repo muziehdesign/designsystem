@@ -6,16 +6,16 @@ import { DOCUMENT } from '@angular/common';
 import { CdkPortalOutlet } from '@angular/cdk/portal';
 
 @Component({
-    selector: 'mz-modal-container',
+    selector: 'mz-dialog-container',
     imports: [CdkPortalOutlet],
-    templateUrl: './modal-container.component.html',
-    styleUrl: './modal-container.component.scss',
+    templateUrl: './dialog-container.component.html',
+    styleUrl: './dialog-container.component.scss',
     encapsulation: ViewEncapsulation.None,
     host: {
-        class: 'mz-modal-container',
+        class: 'mz-dialog-container',
     },
 })
-export class MzModalContainer extends CdkDialogContainer<DialogConfig> {
+export class MzDialogContainer extends CdkDialogContainer<DialogConfig> {
     constructor(private elementRef: ElementRef, focusTrapFactory: FocusTrapFactory, readonly dialogConfig: DialogConfig, protected interactivityChecker: InteractivityChecker, protected ngZone: NgZone, protected overlayRef: OverlayRef, @Optional() @Inject(DOCUMENT) _document: any) {
         super(elementRef, focusTrapFactory, _document, dialogConfig, interactivityChecker, ngZone, overlayRef);
     }

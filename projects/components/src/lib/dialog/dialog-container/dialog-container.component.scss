@@ -1,7 +1,7 @@
 @use 'mixins/dialog' as dialog;
 @use 'mixins/icon' as icon;
 
-.mz-modal-container {
+.mz-dialog-container {
     background-color: var(--surface-bg);
     padding: 1rem;
     width: 100%;

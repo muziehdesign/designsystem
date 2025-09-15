@@ -1,36 +1,36 @@
 import { ComponentFixture, fakeAsync, flush, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { MzModalModule } from './modal.module';
-import { MzModal } from './modal';
+import { MzDialogModule } from './dialog.module';
+import { MzDialog } from './dialog';
 
 @Component({
     template: ` <button (click)="openModal()">Open modal</button> `,
     imports: [],
 })
 class TestHostComponent {
-    constructor(private modal: MzModal) {}
+    constructor(private modal: MzDialog) {}
 
     openModal() {
-        this.modal.open(ModalExampleComponent);
+        this.modal.open(DialogExampleComponent);
     }
 }
 
 @Component({
     template: `
-        <mz-modal-header title="Modal test"></mz-modal-header>
-        <mz-modal-body>Test Modal Body</mz-modal-body>
-        <mz-modal-footer>
+        <mz-dialog-header title="Modal test"></mz-dialog-header>
+        <mz-dialog-body>Test Modal Body</mz-dialog-body>
+        <mz-dialog-footer>
             <button>Close</button>
-        </mz-modal-footer>
+        </mz-dialog-footer>
     `,
-    imports: [MzModalModule],
+    imports: [MzDialogModule],
 })
-class ModalExampleComponent {}
+class DialogExampleComponent {}
 
 describe('Modal', () => {
     let fixture: ComponentFixture<TestHostComponent>;
-    let modal: MzModal;
+    let modal: MzDialog;
     let overlay: OverlayContainer;
 
     beforeEach(() => {
@@ -39,7 +39,7 @@ describe('Modal', () => {
         });
         fixture = TestBed.createComponent(TestHostComponent);
         fixture.detectChanges();
-        modal = TestBed.inject(MzModal);
+        modal = TestBed.inject(MzDialog);
         overlay = TestBed.inject(OverlayContainer);
     });
 
@@ -50,9 +50,9 @@ describe('Modal', () => {
         fixture.detectChanges();
 
         expect(modal.open).toHaveBeenCalled();
-        const header = overlay.getContainerElement().querySelector('mz-modal-header');
-        const body = overlay.getContainerElement().querySelector('mz-modal-body');
-        const footer = overlay.getContainerElement().querySelector('mz-modal-footer');
+        const header = overlay.getContainerElement().querySelector('mz-dialog-header');
+        const body = overlay.getContainerElement().querySelector('mz-dialog-body');
+        const footer = overlay.getContainerElement().querySelector('mz-dialog-footer');
 
         expect(header).toBeTruthy();
         expect(header?.textContent).toBe('Modal test');

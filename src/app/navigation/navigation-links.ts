@@ -32,14 +32,8 @@ export const navigationLinks: NavigationLink[] = [
             { name: 'Collapsible', inactive: true, link: '/components/collapsible' },
             { name: 'Description lists', link: '/components/descriptionlist' },
             { name: 'Dropdown menu', link: '/components/menudropdown' },
-            {
-                name: 'Dialogs',
-                link: '/components/modal',
-                children: [
-                    { name: 'Modal', link: '/components/modal' },
-                    { name: 'Drawer', link: '/components/drawer' },
-                ],
-            },
+            { name: 'Dialog', link: '/components/dialog' },
+            { name: 'Drawer', link: '/components/drawer' },
             { name: 'Empty state', link: '/components/emptystate' },
             { name: 'Filter', link: '/components/filter' },
             {
