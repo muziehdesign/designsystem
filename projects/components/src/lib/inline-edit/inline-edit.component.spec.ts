@@ -73,7 +73,7 @@ describe('InlineEditComponent', () => {
         input.nativeElement.dispatchEvent(new Event('input'));
         fixture.detectChanges();
 
-        const cancel = fixture.debugElement.query(By.css('.button-tertiary'));
+        const cancel = fixture.debugElement.query(By.css('.button-subtle'));
         cancel.triggerEventHandler('click');
         fixture.detectChanges();
 

@@ -51,5 +51,8 @@ describe('ButtonComponent', () => {
         buttonElement.click();
         fixture.detectChanges();
         expect(component.counter).toBe(3);
+
+        expect(buttonElement.classList).toContain('button');
+        expect(buttonElement.classList).toContain('button-secondary');
     });
 });
