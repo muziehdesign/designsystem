@@ -9,6 +9,11 @@
     @include text(sm);
 }
 
+:host[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 :host(.button-primary) {
     background-color: get-color('background', 'primary');
     @include color(inverse);
