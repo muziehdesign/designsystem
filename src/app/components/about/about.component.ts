@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { MzButtonComponent } from '@muziehdesign/components';
+import { MzButton } from '@muziehdesign/components';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   standalone: true,
-  imports: [MzButtonComponent]
+  imports: [MzButton]
 })
 export class AboutComponent {
 

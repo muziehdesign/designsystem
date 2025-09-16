@@ -1,0 +1,91 @@
+@use 'mixins/utilities' as *;
+
+:host {
+    position: relative;
+    @include px(4);
+    @include py(2.5);
+    @include font-weight(medium);
+    @include text(sm);
+}
+
+:host(.button-primary) {
+    background-color: get-color('background', 'primary');
+    @include color(inverse);
+
+    &:hover {
+        background-color: get-color('background', 'primary-hovered');
+    }
+
+    &:active {
+        background-color: get-color('background', 'primary-active');
+    }
+}
+
+:host(.button-danger) {
+    background-color: get-color('background', 'danger');
+    @include color(inverse);
+
+    &:hover {
+        background-color: get-color('background', 'danger-hovered');
+    }
+
+    &:active {
+        background-color: get-color('background', 'danger-active');
+    }
+}
+
+:host(.button-warning) {
+    background-color: get-color('background', 'warning');
+    @include color(inverse);
+
+    &:hover {
+        background-color: get-color('background', 'warning-hovered');
+    }
+
+    &:active {
+        background-color: get-color('background', 'warning-active');
+    }
+}
+
+:host.busy {
+    cursor: wait;
+
+    .button--label {
+        color: transparent;
+    }
+}
+
+.button--label{
+    display: inline-flex;
+    align-items: center;
+    @include gap(1);
+}
+
+.button--loading {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.opacity-25 {
+    opacity: 0.25;
+}
+
+.opacity-75 {
+    opacity: 0.75;
+}
+
+.button--loading-spinner {
+    @include h(5);
+    @include w(5);
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -5,16 +5,16 @@
     </p>
 </header>
 <article>
-    <h2>Variants</h2>
+    <h2>Appearance</h2>
     <p>
-        Each button variant serves a specific purpose, they should be used accordingly.
+        Each button appearance serves a specific purpose, they should be used accordingly.
     </p>
     <h3>Primary</h3>
     <p class="text-block">Use primary for primary action of a container. Primary actions are actions that help user
         complete a task, or actions that users are encouraged to take. Containers should contain at most one
         primary button (not including application header and modal).</p>
     <div class="example">
-        <button class="button button-primary">Primary button</button>
+        <button mzButton appearance="primary">Primary button</button>
     </div>
 
     <h3>Secondary/Default</h3>
@@ -23,19 +23,19 @@
         button.
     </p>
     <div class="example">
-        <button class="button button-secondary">Secondary button</button>
+        <button mzButton>Default button</button>
     </div>
 
     <h3>Tertiary</h3>
     <p class="text-block">Use tertiary in conjunction with a primary button and/or secondary button, such as "Cancel".</p>
     <div class="example">
-        <button class="button button-tertiary">Tertiary button</button>
+        <button mzButton appearance="tertiary">Tertiary button</button>
     </div>
 
     <h3>Link</h3>
     <p>Use a `link` "button" when visual emphasis is needed and the action takes a user to another page. This is an <code>&lt;a&gt;</code> to be semantically correct.</p>
     <div class="example">
-        <a class="button button-link" href="/">Link button</a>
+        <a mzButton href="/">Link button</a>
     </div>
 
     <h3>Danger</h3>
@@ -43,7 +43,7 @@
         This is usually
         seen in confirmation modals.</p>
     <div class="example">
-        <button class="button button-danger">Danger button</button>
+        <button mzButton appearance="danger">Danger button</button>
     </div>
 
     <h3>Warning</h3>
@@ -51,7 +51,7 @@
         changes. This is
         usually seen in modals.</p>
     <div class="example">
-        <button class="button button-warning">Warning button</button>
+        <button mzButton appearance="warning">Warning button</button>
     </div>
 </article>
 
@@ -63,23 +63,29 @@
     <h3>Loading</h3>
     <div class="example">
         <div class="button-list">
-            <button mzButton [variant]="'primary'" [busy]="busy" (click)="testBusyEvent()">
+            <button mzButton [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 <mz-svg-icon key="pencil-solid"></mz-svg-icon>
             </button>
-            <button mzButton [variant]="'primary'" [busy]="busy" (click)="testBusyEvent()">
-                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
+            <button mzButton [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
+                <mz-svg-icon key="pencil-outline"></mz-svg-icon>
             </button>
-            <button mzButton variant="primary" [busy]="busy" (click)="testBusyEvent()">
+            <button mzButton [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 Primary
             </button>
             <button mzButton [busy]="busy" (click)="testBusyEvent()">
                 Default
             </button>
-            <button mzButton variant="tertiary" [busy]="busy" (click)="testBusyEvent()">
+            <button mzButton appearance="tertiary" [busy]="busy" (click)="testBusyEvent()">
                 Default
             </button>
-            
+            <button mzButton appearance="danger" [busy]="busy" (click)="testBusyEvent()">
+                Danger
+            </button>
+            <button mzButton appearance="warning" [busy]="busy" (click)="testBusyEvent()">
+                Warning
+            </button>
         </div>
+
         <div class="text-sm text-subtle mt-2">Button click handler has been called {{counter}} times.</div>
     </div>
 </article>
@@ -102,11 +108,11 @@
         the action.</p>
     <div class="example">
         <div class="button-list">
-            <button class="button button-primary">
-                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
+            <button mzButton>
+                <mz-svg-icon key="x-outline"></mz-svg-icon>
                 Edit
             </button>
-            <button class="button button-secondary">
+            <button mzButton>
                 <mz-svg-icon key="pencil-solid"></mz-svg-icon>
                 Edit
             </button>
@@ -120,14 +126,17 @@
         means, and using it without text brings benefits.</p>
     <div class="example">
         <div class="button-list">
-            <button mzButton variant="primary">
+            <button mzButton appearance="primary">
                 <mz-svg-icon key="menu-outline"></mz-svg-icon>
             </button>
             <button mzButton>
-                <mz-svg-icon key="pencil-solid"></mz-svg-icon>
+                <mz-svg-icon appearance="pencil-solid"></mz-svg-icon>
             </button>
             <button mzButton>
-                <mz-svg-icon key="menu-outline"></mz-svg-icon>
+                <mz-svg-icon appearance="pencil-solid"></mz-svg-icon>
+            </button>
+            <button mzButton>
+                <mz-svg-icon appearance="menu-outline"></mz-svg-icon>
                 Menu
             </button>
         </div>
@@ -156,3 +165,16 @@
         <li>Use active verbs or phrases that clearly indicate action</li>
     </ul>
 </article>
+
+
+<button class="p-4 bg-primary text-white inline-flex items-center gap-2 text-sm">
+<mz-svg-icon key="pencil-solid"></mz-svg-icon>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+    <span>
+    Some text
+    </span>
+</button>
+
+<button class="p-4 bg-primary text-white inline-flex items-center gap-2 text-sm">
+Edit
+</button>

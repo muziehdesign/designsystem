@@ -1,17 +1,15 @@
-import { Component, DestroyRef, Inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { ButtonsDemoComponent } from '../../../demos/buttons-demo.component';
 import { of, Subscription } from 'rxjs';
 import { delay, take } from 'rxjs/operators';
+import { MzButton, SvgIconComponent } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-buttons',
-    imports: [CommonModule, SharedModule],
+    imports: [CommonModule, MzButton, SvgIconComponent],
     templateUrl: './buttons.component.html'
 })
 export class ButtonsComponent{
-    buttonsDemo = ButtonsDemoComponent;
     langs: string[] = ['xml'];
     counter: number = 0;
     busy: boolean = false;

@@ -4,6 +4,14 @@
     font-weight: map-get(map-get($font, weight), $param);
 }
 
+@mixin h($h){
+    height: calc(map-get($core, spacing) * #{$h});
+}
+
+@mixin w($w){
+    width: calc(map-get($core, spacing) * #{$w});
+}
+
 @mixin gap($size) {
     gap: calc(map-get($core, spacing) * #{$size});
 }
@@ -54,9 +62,11 @@
 
 @mixin text($font-size) {
     $sizes: map-get($font, size);
+    $lh: map-get($font, line-height);
 
     @if map-has-key($sizes, $font-size) {
         font-size: map-get($sizes, $font-size);
+        line-height: map-get($lh, $font-size);
     } @else {
         @error "Unknown font-size `#{$font-size}`. Allowed: #{map-keys($sizes)}.";
     }
@@ -72,36 +82,17 @@
     }
 }
 
+@function get-color($namespace, $color-name) {
+    $colors: map-get($color, $namespace);
+    @return map-get($colors, $color-name);
+}
+
 @function range($from, $to) {
     $list: ();
     @for $i from $from through $to {
         $list: append($list, $i);
     }
     @return $list;
-}
-
-@each $i in range(0, 8) {
-    .p-#{$i} {
-        @include p($i);
-    }
-    .pt-#{$i} {
-        @include pt($i);
-    }
-    .pb-#{$i} {
-        @include pb($i);
-    }
-    .pl-#{$i} {
-        @include pl($i);
-    }
-    .pr-#{$i} {
-        @include pr($i);
-    }
-    .px-#{$i} {
-        @include px($i);
-    }
-    .py-#{$i} {
-        @include py($i);
-    }
 }
 
 @mixin respond($breakpoint) {

@@ -1,0 +1,1 @@
+export type ButtonAppearance = 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning';
