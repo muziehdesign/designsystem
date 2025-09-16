@@ -5,7 +5,7 @@
 
 <div class="example">
     <div class="flex gap-5 items-center">
-        <button mzButton [cdkMenuTriggerFor]="menu">Open item</button>
+        <button mz-button [cdkMenuTriggerFor]="menu">Open item</button>
         <ng-template #menu>
             <div class="menu" cdkMenu>
                 <button cdkMenuItem (cdkMenuItemTriggered)="openItem()">Option 1</button>
@@ -14,7 +14,7 @@
             </div>
         </ng-template>
 
-        <button mzButton variant="tertiary" [cdkMenuTriggerFor]="menu2">
+        <button mz-button appearance="subtle" [cdkMenuTriggerFor]="menu2">
             Menu
             <mz-svg-icon key="chevron-down-control"></mz-svg-icon>
         </button>
@@ -26,7 +26,7 @@
             </div>
         </ng-template>
 
-        <button mzButton variant="tertiary" [cdkMenuTriggerFor]="menu3">
+        <button mz-button appearance="subtle" [cdkMenuTriggerFor]="menu3">
             <mz-svg-icon key="menu-outline"></mz-svg-icon>
             Menu
         </button>
