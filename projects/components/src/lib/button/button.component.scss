@@ -96,7 +96,7 @@
 }
 
 .button--label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     @include gap(1);
 }
