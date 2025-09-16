@@ -14,7 +14,7 @@
         complete a task, or actions that users are encouraged to take. Containers should contain at most one
         primary button (not including application header and modal).</p>
     <div class="example">
-        <button mzButton appearance="primary">Primary button</button>
+        <button mz-button appearance="primary">Primary button</button>
     </div>
 
     <h3>Secondary/Default</h3>
@@ -23,19 +23,13 @@
         button.
     </p>
     <div class="example">
-        <button mzButton>Default button</button>
+        <button mz-button>Default button</button>
     </div>
 
     <h3>Tertiary</h3>
     <p class="text-block">Use tertiary in conjunction with a primary button and/or secondary button, such as "Cancel".</p>
     <div class="example">
-        <button mzButton appearance="tertiary">Tertiary button</button>
-    </div>
-
-    <h3>Link</h3>
-    <p>Use a `link` "button" when visual emphasis is needed and the action takes a user to another page. This is an <code>&lt;a&gt;</code> to be semantically correct.</p>
-    <div class="example">
-        <a mzButton href="/">Link button</a>
+        <button mz-button appearance="tertiary">Tertiary button</button>
     </div>
 
     <h3>Danger</h3>
@@ -43,7 +37,7 @@
         This is usually
         seen in confirmation modals.</p>
     <div class="example">
-        <button mzButton appearance="danger">Danger button</button>
+        <button mz-button appearance="danger">Danger button</button>
     </div>
 
     <h3>Warning</h3>
@@ -51,7 +45,7 @@
         changes. This is
         usually seen in modals.</p>
     <div class="example">
-        <button mzButton appearance="warning">Warning button</button>
+        <button mz-button appearance="warning">Warning button</button>
     </div>
 </article>
 
@@ -63,25 +57,25 @@
     <h3>Loading</h3>
     <div class="example">
         <div class="button-list">
-            <button mzButton [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
+            <button mz-button [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 <mz-svg-icon key="pencil-solid"></mz-svg-icon>
             </button>
-            <button mzButton [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
+            <button mz-button [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 <mz-svg-icon key="pencil-outline"></mz-svg-icon>
             </button>
-            <button mzButton [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
+            <button mz-button [appearance]="'primary'" [busy]="busy" (click)="testBusyEvent()">
                 Primary
             </button>
-            <button mzButton [busy]="busy" (click)="testBusyEvent()">
+            <button mz-button [busy]="busy" (click)="testBusyEvent()">
                 Default
             </button>
-            <button mzButton appearance="tertiary" [busy]="busy" (click)="testBusyEvent()">
+            <button mz-button appearance="tertiary" [busy]="busy" (click)="testBusyEvent()">
                 Default
             </button>
-            <button mzButton appearance="danger" [busy]="busy" (click)="testBusyEvent()">
+            <button mz-button appearance="danger" [busy]="busy" (click)="testBusyEvent()">
                 Danger
             </button>
-            <button mzButton appearance="warning" [busy]="busy" (click)="testBusyEvent()">
+            <button mz-button appearance="warning" [busy]="busy" (click)="testBusyEvent()">
                 Warning
             </button>
         </div>
@@ -108,11 +102,11 @@
         the action.</p>
     <div class="example">
         <div class="button-list">
-            <button mzButton>
+            <button mz-button>
                 <mz-svg-icon key="x-outline"></mz-svg-icon>
                 Edit
             </button>
-            <button mzButton>
+            <button mz-button>
                 <mz-svg-icon key="pencil-solid"></mz-svg-icon>
                 Edit
             </button>
@@ -126,16 +120,16 @@
         means, and using it without text brings benefits.</p>
     <div class="example">
         <div class="button-list">
-            <button mzButton appearance="primary">
+            <button mz-button appearance="primary">
                 <mz-svg-icon key="menu-outline"></mz-svg-icon>
             </button>
-            <button mzButton>
+            <button mz-button>
                 <mz-svg-icon appearance="pencil-solid"></mz-svg-icon>
             </button>
-            <button mzButton>
+            <button mz-button>
                 <mz-svg-icon appearance="pencil-solid"></mz-svg-icon>
             </button>
-            <button mzButton>
+            <button mz-button>
                 <mz-svg-icon appearance="menu-outline"></mz-svg-icon>
                 Menu
             </button>

@@ -1,5 +1,10 @@
 @use '../theme.scss' as *;
 
+@mixin ring($width, $color, $offset: 0) {
+    $sizing: 1px;
+    box-shadow: 0 0 0 calc(#{$offset} * #{$sizing}) white, 0 0 0 calc((#{$width} + #{$offset}) * #{$sizing}) $color;
+}
+
 @mixin font-weight($param) {
     font-weight: map-get(map-get($font, weight), $param);
 }

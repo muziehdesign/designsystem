@@ -6,6 +6,10 @@
     @include py(2.5);
     @include font-weight(medium);
     @include text(sm);
+
+    &:focus {
+        @include ring(2, get-color('background', 'primary'), 2);
+    }
 }
 
 :host(.button-primary) {
@@ -28,7 +32,9 @@
     &:hover {
         background-color: get-color('background', 'danger-hovered');
     }
-
+    &:focus {
+        @include ring(2, get-color('background', 'danger'), 2);
+    }
     &:active {
         background-color: get-color('background', 'danger-active');
     }
@@ -41,10 +47,29 @@
     &:hover {
         background-color: get-color('background', 'warning-hovered');
     }
-
+    &:focus {
+        @include ring(2, get-color('background', 'warning'), 2);
+    }
     &:active {
         background-color: get-color('background', 'warning-active');
     }
+}
+
+:host(.button-secondary) {
+    background-color: get-color('background', 'neutral');
+
+    @include color(subtle);
+    &:hover {
+        background-color: get-color('background', 'neutral-hovered');
+    }
+
+    &:active {
+        background-color: get-color('background', 'neutral-active');
+    }
+}
+
+:host(.button-tertiary) {
+    @include color(subtle);
 }
 
 :host.busy {
@@ -55,7 +80,7 @@
     }
 }
 
-.button--label{
+.button--label {
     display: inline-flex;
     align-items: center;
     @include gap(1);
