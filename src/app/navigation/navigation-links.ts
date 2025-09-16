@@ -34,7 +34,7 @@ export const navigationLinks: NavigationLink[] = [
             { name: 'Dropdown menu', link: '/components/menudropdown' },
             { name: 'Dialog', link: '/components/dialog' },
             { name: 'Drawer', link: '/components/drawer' },
-            { name: 'Empty state', link: '/components/emptystate' },
+            { name: 'Empty state', link: '/components/emptystate', inactive: true },
             { name: 'Filter', link: '/components/filter' },
             {
                 name: 'Form',

@@ -1,11 +1,11 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MzDialog, MzDialogModule } from '@muziehdesign/components';
+import { MzButton, MzDialog, MzDialogModule } from '@muziehdesign/components';
 
 @Component({
     selector: 'app-modal-example',
-    imports: [RouterLink, MzDialogModule],
+    imports: [RouterLink, MzDialogModule, MzButton],
     template: `
         <mz-dialog-header title="Default dialog">
         </mz-dialog-header>
@@ -30,10 +30,10 @@ import { MzDialog, MzDialogModule } from '@muziehdesign/components';
             <div>
                 <a [routerLink]="['/components']">Link</a>
             </div>
-            <button class="button button-secondary" (click)="openAnother()">Open another</button>
+            <button mz-button (click)="openAnother()">Open another</button>
         </mz-dialog-content>
         <mz-dialog-footer>
-            <button class="button button-primary" (click)="close()">Done</button>
+            <button mz-button appearance="primary" (click)="close()">Done</button>
         </mz-dialog-footer>
     `,
 })
