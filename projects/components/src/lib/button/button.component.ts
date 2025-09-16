@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, ElementRef, HostBinding, HostListener, input, Input } from '@angular/core';
+import { booleanAttribute, Component, ElementRef, HostBinding, input } from '@angular/core';
 import { ButtonAppearance } from './button-appearance';
 
 @Component({

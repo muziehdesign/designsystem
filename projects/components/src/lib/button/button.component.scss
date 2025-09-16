@@ -2,14 +2,11 @@
 
 :host {
     position: relative;
+    outline: none;
     @include px(4);
     @include py(2.5);
     @include font-weight(medium);
     @include text(sm);
-
-    &:focus {
-        @include ring(2, get-color('background', 'primary'), 2);
-    }
 }
 
 :host(.button-primary) {
@@ -19,7 +16,9 @@
     &:hover {
         background-color: get-color('background', 'primary-hovered');
     }
-
+    &:focus-visible {
+        @include ring(2, get-color('background', 'primary'), 2);
+    }
     &:active {
         background-color: get-color('background', 'primary-active');
     }
@@ -32,7 +31,7 @@
     &:hover {
         background-color: get-color('background', 'danger-hovered');
     }
-    &:focus {
+    &:focus-visible {
         @include ring(2, get-color('background', 'danger'), 2);
     }
     &:active {
@@ -47,7 +46,7 @@
     &:hover {
         background-color: get-color('background', 'warning-hovered');
     }
-    &:focus {
+    &:focus-visible {
         @include ring(2, get-color('background', 'warning'), 2);
     }
     &:active {
@@ -62,14 +61,25 @@
     &:hover {
         background-color: get-color('background', 'neutral-hovered');
     }
-
+    &:focus-visible {
+        @include ring(2, get-color('background', 'primary'), 2);
+    }
     &:active {
-        background-color: get-color('background', 'neutral-active');
+        background: get-color('background', 'neutral-active');
     }
 }
 
-:host(.button-tertiary) {
+:host(.button-subtle) {
     @include color(subtle);
+    &:hover {
+        background-color: get-color('background', 'neutral-hovered');
+    }
+    &:focus-visible {
+        @include ring(2, get-color('background', 'primary'), 2);
+    }
+    &:active {
+        background-color: get-color('background', 'neutral-active');
+    }
 }
 
 :host.busy {
