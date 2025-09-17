@@ -8,25 +8,25 @@
     <div class="example">
         <div class="flex flex-col gap-4">
             <div>
-                <button class="button button-primary" (click)="open()">Open</button>
+                <button mz-button appearance="primary" (click)="open()">Open</button>
             </div>
             <div>
-                <button class="button button-primary" (click)="display()">Display</button>
+                <button mz-button (click)="display()">Display</button>
             </div>
             <div>
-                <button class="button button-primary" (click)="display('warning')">Display warning</button>
+                <button mz-button (click)="display('warning')">Display warning</button>
             </div>
             <div>
-                <button class="button button-primary" (click)="confirm()">Confirm</button>
+                <button mz-button (click)="confirm()">Confirm</button>
             </div>
             <div>
-                <button class="button button-primary" (click)="confirmWarning()">Confirm warning</button>
+                <button mz-button appearance="warning" (click)="confirmWarning()">Confirm warning</button>
             </div>
             <div>
-                <button class="button button-primary" (click)="confirmDanger()">Confirm danger</button>
+                <button mz-button appearance="danger" (click)="confirmDanger()">Confirm danger</button>
             </div>
             <div>
-                <button class="button button-primary" (click)="openTemplate()">Open template</button>
+                <button mz-button (click)="openTemplate()">Open template</button>
             </div>
         </div>
     </div>

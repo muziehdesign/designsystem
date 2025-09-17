@@ -1,7 +1,4 @@
 import { Routes } from '@angular/router';
-import { DEMONSTRATIONS } from 'src/app/demonstration/demonstrations.token';
-import { demoOf } from 'src/app/demonstration/utilities';
-import { ButtonsDemoComponent } from '../../demos/buttons-demo.component';
 import { ComponentsComponent } from './components.component';
 import { CanDeactivateComponent, hasImplementation } from '@muziehdesign/components';
 
@@ -29,8 +26,7 @@ export const componentRoutes: Routes = [
             },
             {
                 path: 'buttons',
-                loadComponent: () => import('./buttons/buttons.component').then((b) => b.ButtonsComponent),
-                providers: [{ provide: DEMONSTRATIONS, useValue: demoOf(ButtonsDemoComponent), multi: true }],
+                loadComponent: () => import('./buttons/buttons.component').then((b) => b.ButtonsComponent)
             },
             {
                 path: 'datetimepicker',

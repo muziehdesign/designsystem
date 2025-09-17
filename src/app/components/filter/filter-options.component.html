@@ -12,8 +12,8 @@
                         <mz-checkbox-group [(ngModel)]="model.options" [options]="months" name="options"></mz-checkbox-group>
                     </label>                    
                     <div class="button-list">
-                        <button type="submit" mzButton variant="primary">Apply</button>
-                        <button type="reset" mzButton variant="tertiary">Clear</button>
+                        <button type="submit" mz-button appearance="primary">Apply</button>
+                        <button type="reset" mz-button appearance="subtle">Clear</button>
                     </div>
                 </form>
             </ng-template>
@@ -52,7 +52,7 @@
             {{ model | json }}
         </div>
         <div>
-            <button class="button button-tertiary" [cdkMenuTriggerFor]="singleOptionMenu">Single option</button>
+            <button mz-button appearance="subtle" [cdkMenuTriggerFor]="singleOptionMenu">Single option</button>
             <ng-template #singleOptionMenu>
                 <mz-filter-menu cdkMenu>
                     <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()" [ngFormOptions]="{ updateOn: 'submit' }">
@@ -67,7 +67,7 @@
             </ng-template>
         </div>
 
-        <button class="button button-tertiary" [cdkMenuTriggerFor]="filterMenu1">Multiple options</button>
+        <button mz-button appearance="subtle" [cdkMenuTriggerFor]="filterMenu1">Multiple options</button>
         <ng-template #filterMenu1>
             <mz-filter-menu cdkMenu>
                 <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()">
@@ -78,7 +78,7 @@
             </mz-filter-menu>
         </ng-template>
 
-        <button class="button button-tertiary" [cdkMenuTriggerFor]="filterMenu1">Filter with form</button>
+        <button mz-button appearance="subtle" [cdkMenuTriggerFor]="filterMenu1">Filter with form</button>
         <ng-template #filterMenu1>
             <mz-filter-menu cdkMenu>
                 <form mzForm [schema]="schema" (ngSubmit)="applyDateRange()">

@@ -43,11 +43,3 @@
     @apply absolute inset-0 flex items-center justify-center z-10 text-secondary;
     background-color: inherit;
 }
-
-.link-action {
-    @apply cursor-pointer;
-}
-
-.button-list {
-    @apply flex gap-2;
-}

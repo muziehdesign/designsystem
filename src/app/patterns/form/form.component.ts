@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { BooleanType, ModelSchema, ModelSchemaFactory, MzFormsModule, required, StringType } from '@muziehdesign/forms';
-import { ButtonDirective, SvgIconComponent } from '@muziehdesign/components';
+import { MzButton, SvgIconComponent } from '@muziehdesign/components';
 import { of } from 'rxjs';
 import { delay, finalize } from 'rxjs/operators';
 
@@ -10,7 +10,7 @@ import { delay, finalize } from 'rxjs/operators';
     selector: 'app-form',
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.scss'],
-    imports: [ButtonDirective, CommonModule, FormsModule, MzFormsModule, SvgIconComponent],
+    imports: [MzButton, CommonModule, FormsModule, MzFormsModule, SvgIconComponent],
 })
 export class FormComponent {
     schema: ModelSchema<DeliveryAddressInputModel>;

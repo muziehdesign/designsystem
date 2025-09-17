@@ -41,6 +41,30 @@
     --color-green-900: #14532d;
     --color-green-950: #052e16;
 
+    --color-red-50: #fef2f2;
+    --color-red-100: #fee2e2;
+    --color-red-200: #fecaca;
+    --color-red-300: #fca5a5;
+    --color-red-400: #f87171;
+    --color-red-500: #ef4444;
+    --color-red-600: #dc2626;
+    --color-red-700: #b91c1c;
+    --color-red-800: #991b1b;
+    --color-red-900: #7f1d1d;
+    --color-red-950: #450a0a;
+
+    --color-yellow-50: #fefce8;
+    --color-yellow-100: #fef9c3;
+    --color-yellow-200: #fef08a;
+    --color-yellow-300: #fde047;
+    --color-yellow-400: #facc15;
+    --color-yellow-500: #eab308;
+    --color-yellow-600: #ca8a04;
+    --color-yellow-700: #a16207;
+    --color-yellow-800: #854d0e;
+    --color-yellow-900: #713f12;
+    --color-yellow-950: #422006;
+
     --border-radius: 0px;
 
     --surface-bg: #fff;
@@ -86,9 +110,23 @@ $color: (
         subtlest: var(--color-neutral-500),
         danger: var(--color-danger),
         warning: var(--color-warning),
-        //inverse: var(--text-inverse),
+        inverse: white,
         disabled: var(--color-neutral-400)
         //link: var(--text-link)
+    ),
+    background: (
+        primary: var(--color-primary),
+        primary-hovered: var(--color-brand-600),
+        primary-active: var(--color-brand-800),
+        neutral: var(--color-neutral-200),
+        neutral-hovered: rgb(from var(--color-neutral-200) r r b / 65%),
+        neutral-active: var(--color-neutral-300),
+        danger: var(--color-red-500),
+        danger-hovered: var(--color-red-600),
+        danger-active: var(--color-red-700),
+        warning: var(--color-yellow-500),
+        warning-hovered: var(--color-yellow-600),
+        warning-active: var(--color-yellow-700),
     ),
 );
 

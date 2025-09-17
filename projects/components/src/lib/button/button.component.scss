@@ -1,0 +1,131 @@
+@use 'mixins/utilities' as *;
+
+:host {
+    position: relative;
+    outline: none;
+    @include px(4);
+    @include py(2.5);
+    @include font-weight(medium);
+    @include text(sm);
+}
+
+:host[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+:host(.button-primary) {
+    background-color: get-color('background', 'primary');
+    @include color(inverse);
+
+    &:hover {
+        background-color: get-color('background', 'primary-hovered');
+    }
+    &:focus-visible {
+        @include ring(2, get-color('background', 'primary'), 2);
+    }
+    &:active {
+        background-color: get-color('background', 'primary-active');
+    }
+}
+
+:host(.button-danger) {
+    background-color: get-color('background', 'danger');
+    @include color(inverse);
+
+    &:hover {
+        background-color: get-color('background', 'danger-hovered');
+    }
+    &:focus-visible {
+        @include ring(2, get-color('background', 'danger'), 2);
+    }
+    &:active {
+        background-color: get-color('background', 'danger-active');
+    }
+}
+
+:host(.button-warning) {
+    background-color: get-color('background', 'warning');
+    @include color(inverse);
+
+    &:hover {
+        background-color: get-color('background', 'warning-hovered');
+    }
+    &:focus-visible {
+        @include ring(2, get-color('background', 'warning'), 2);
+    }
+    &:active {
+        background-color: get-color('background', 'warning-active');
+    }
+}
+
+:host(.button-secondary) {
+    background-color: get-color('background', 'neutral');
+
+    @include color(subtle);
+    &:hover {
+        background-color: get-color('background', 'neutral-hovered');
+    }
+    &:focus-visible {
+        @include ring(2, get-color('background', 'primary'), 2);
+    }
+    &:active {
+        background: get-color('background', 'neutral-active');
+    }
+}
+
+:host(.button-subtle) {
+    @include color(subtle);
+    &:hover {
+        background-color: get-color('background', 'neutral-hovered');
+    }
+    &:focus-visible {
+        @include ring(2, get-color('background', 'primary'), 2);
+    }
+    &:active {
+        background-color: get-color('background', 'neutral-active');
+    }
+}
+
+:host.busy {
+    cursor: wait;
+
+    .button--label {
+        color: transparent;
+    }
+}
+
+.button--label {
+    display: flex;
+    align-items: center;
+    @include gap(1);
+}
+
+.button--loading {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.opacity-25 {
+    opacity: 0.25;
+}
+
+.opacity-75 {
+    opacity: 0.75;
+}
+
+.button--loading-spinner {
+    @include h(5);
+    @include w(5);
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
