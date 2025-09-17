@@ -1,12 +1,11 @@
-import { CdkMenuItem } from '@angular/cdk/menu';
-import { JsonPipe } from '@angular/common';
 import { AfterContentInit, Component, ContentChild, ContentChildren, Optional, QueryList, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { FilterComponent } from '../filter.component';
+import { MzButton } from '../../button/button.component';
 
 @Component({
     selector: 'mz-filter-menu',
-    imports: [FormsModule],
+    imports: [FormsModule, MzButton],
     exportAs: 'mzFilterMenu',
     templateUrl: './filter-menu.component.html',
     styleUrl: './filter-menu.component.scss',

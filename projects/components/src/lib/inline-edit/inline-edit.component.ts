@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ContentChild, ElementRef, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
-import { ButtonDirective } from '../button.directive';
+import { MzButton } from '../button/button.component';
 
 @Component({
     selector: 'mz-inline-edit',
-    imports: [ButtonDirective, FormsModule, CommonModule],
+    imports: [MzButton, FormsModule, CommonModule],
     templateUrl: './inline-edit.component.html',
     styleUrl: './inline-edit.component.scss'
 })

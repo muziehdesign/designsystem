@@ -4,11 +4,11 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { DateType, ModelSchema, ModelSchemaFactory, MzCheckboxGroup, MzFormsModule, ObjectType, required, StringType } from '@muziehdesign/forms';
-import { FilterOptionModel, OptionsFilterComponent, FilterComponent, FilterMenuComponent } from '@muziehdesign/components';
+import { FilterOptionModel, OptionsFilterComponent, FilterComponent, FilterMenuComponent, MzButton } from '@muziehdesign/components';
 
 @Component({
     selector: 'filter-options',
-    imports: [CommonModule, FormsModule, OverlayModule, OptionsFilterComponent, FilterComponent, CdkMenuModule, FilterMenuComponent, MzFormsModule, JsonPipe, MzCheckboxGroup],
+    imports: [CommonModule, FormsModule, OverlayModule, OptionsFilterComponent, FilterComponent, CdkMenuModule, FilterMenuComponent, MzFormsModule, JsonPipe, MzCheckboxGroup, MzButton],
     templateUrl: './filter-options.component.html',
     styleUrls: ['./filter-options.component.scss'],
 })

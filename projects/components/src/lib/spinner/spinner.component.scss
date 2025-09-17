@@ -33,3 +33,9 @@
 :host.secondary {
     color: var(--color-secondary);
 }
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

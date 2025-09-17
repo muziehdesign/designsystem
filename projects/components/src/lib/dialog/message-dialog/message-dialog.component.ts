@@ -2,13 +2,13 @@ import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { Component, Inject } from '@angular/core';
 import { MessageDialogData } from './message-dialog-data';
 import { MzDialogHeader } from '../dialog-header/dialog-header.component';
-import { ButtonDirective } from '../../button.directive';
 import { MzDialogFooter } from '../dialog-footer/dialog-footer.component';
 import { MzDialogContent } from '../dialog-content/dialog-content.component';
+import { MzButton } from '../../button/button.component';
 
 @Component({
     selector: 'mz-message-dialog',
-    imports: [MzDialogHeader, MzDialogFooter, ButtonDirective, MzDialogContent],
+    imports: [MzDialogHeader, MzDialogFooter, MzButton, MzDialogContent],
     templateUrl: './message-dialog.component.html',
     styleUrl: './message-dialog.component.scss',
 })

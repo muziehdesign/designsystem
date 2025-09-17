@@ -1,12 +1,12 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
-import { ButtonDirective, DialogAppearance, MzDialog, MzDialogModule } from '@muziehdesign/components';
+import { DialogAppearance, MzButton, MzDialog, MzDialogModule } from '@muziehdesign/components';
 import { DialogExampleComponent } from './examples/dialog-example.component';
 
 @Component({
     selector: 'app-dialog-guidelines',
     templateUrl: './dialog-guidelines.component.html',
     styleUrls: ['./dialog-guidelines.component.scss'],
-    imports: [MzDialogModule, ButtonDirective],
+    imports: [MzDialogModule, MzButton],
 })
 export class DialogGuidelinesComponent implements OnDestroy {
     @ViewChild('dialogTemplate', { static: true }) dialogTemplate!: TemplateRef<any>;

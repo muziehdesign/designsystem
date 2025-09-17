@@ -2,6 +2,9 @@ import { Directive, ElementRef, HostBinding, Input, OnChanges, OnDestroy, Render
 import { fromEvent, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
+/**
+ * @deprecated Use MzButton component instead: `<button mz-button appearance="primary">...</button>`
+ */
 @Directive({
     selector: '[mzButton]',
     standalone: true,
