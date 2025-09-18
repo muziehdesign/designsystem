@@ -26,7 +26,7 @@ export const componentRoutes: Routes = [
             },
             {
                 path: 'buttons',
-                loadComponent: () => import('./buttons/buttons.component').then((b) => b.ButtonsComponent)
+                loadComponent: () => import('./buttons/buttons.component').then((b) => b.ButtonsComponent),
             },
             {
                 path: 'datetimepicker',
@@ -93,6 +93,10 @@ export const componentRoutes: Routes = [
             {
                 path: 'menudropdown',
                 loadComponent: () => import('./dropdown-menu-guidelines/dropdown-menu-guidelines.component').then((b) => b.DropdownMenuGuidelinesComponent),
+            },
+            {
+                path: 'notification',
+                loadComponent: () => import('./notification/notification.component').then((b) => b.NotificationComponent),
             },
             {
                 path: 'pageheader',

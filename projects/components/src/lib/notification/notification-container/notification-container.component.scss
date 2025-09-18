@@ -1,0 +1,42 @@
+@use 'mixins/utilities' as *;
+
+:host {
+    background-color: var(--surface-bg);
+    width: 100%;
+    @include mx(2);
+    @include my(1);
+
+    @include respond(md) {
+        width: auto;
+    }
+}
+
+:host(.opening) {
+    animation: notification-open 150ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+:host(.closing) {
+    animation: notification-close 75ms cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes notification-open {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes notification-close {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

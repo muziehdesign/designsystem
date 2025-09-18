@@ -1,0 +1,10 @@
+<div class="mz-notification-content">
+    {{ data.message }}
+</div>
+
+@if(data.action.length > 0) {
+<div>
+    <button mz-button appearance="subtle" (click)="action()">{{ data.action }}</button>
+    <button mz-button appearance="subtle"><mz-svg-icon key="x-outline"></mz-svg-icon></button>
+</div>
+}

@@ -128,6 +128,9 @@ $color: (
         warning-hovered: var(--color-yellow-600),
         warning-active: var(--color-yellow-700),
     ),
+    border: (
+        neutral: var(--color-neutral-200)
+    )
 );
 
 $breakpoints: (
