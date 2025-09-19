@@ -10,7 +10,7 @@ describe('PageLoadingIndicatorComponent', () => {
     let component: PageLoadingIndicatorComponent;
     let fixture: ComponentFixture<PageLoadingIndicatorComponent>;
     let eventSubject: Subject<RouterEvent>;
-    const getHtmlContent = () => fixture.debugElement.query(By.css('div'));
+    const getLoadingProgressBar = () => fixture.debugElement.query(By.css('.progress-bar-container.loading'));
 
     beforeEach(async () => {
         eventSubject = new Subject<RouterEvent>();
@@ -47,7 +47,7 @@ describe('PageLoadingIndicatorComponent', () => {
         // assert
         expect(component).toBeTruthy();
         expect(component.isLoading).toBeFalse();
-        expect(getHtmlContent()).toBeNull();
+        expect(getLoadingProgressBar()).toBeNull();
 
         // act
         eventSubject.next(new NavigationEnd(1, 'http://test.com', 'popstate'));
@@ -55,7 +55,7 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeFalse();
-        expect(getHtmlContent()).toBeNull();
+        expect(getLoadingProgressBar()).toBeNull();
     }));
 
     it('should render content when delay hits one second and then hide it', fakeAsync(() => {
@@ -69,7 +69,7 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeTrue();
-        expect(getHtmlContent()).not.toBeNull();
+        expect(getLoadingProgressBar()).not.toBeNull();
 
         // arrange
         eventSubject.next(new NavigationError(1, 'http://test.com', 'popstate'));
@@ -79,7 +79,7 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeFalse();
-        expect(getHtmlContent()).toBeNull();
+        expect(getLoadingProgressBar()).toBeNull();
     }));
 
     it('should hide content when end navigation is hit in one second', fakeAsync(() => {
@@ -94,6 +94,6 @@ describe('PageLoadingIndicatorComponent', () => {
 
         // assert
         expect(component.isLoading).toBeFalse();
-        expect(getHtmlContent()).toBeNull();
+        expect(getLoadingProgressBar()).toBeNull();
     }));
 });
