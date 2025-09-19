@@ -2,9 +2,9 @@
   "name": "@muziehdesign/components",
   "version": "19.2.8-next.0",
   "peerDependencies": {
-    "@angular/common": "^19.2.8",
-    "@angular/core": "^19.2.8",
-    "@angular/cdk": "^19.2.11"
+    "@angular/common": ">=19.2.8",
+    "@angular/core": ">=19.2.8",
+    "@angular/cdk": ">=19.2.11"
   },
   "dependencies": {
     "tslib": "^2.3.0"
