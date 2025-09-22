@@ -36,9 +36,9 @@ export class ResultTableComponent implements AfterViewInit {
     changePage(page: PageEvent, table: HTMLElement) {
         this.pageChange.emit(page);
         if(!this.options.skipScrolling) {
-            setTimeout(() => {
+            /*setTimeout(() => {
                 table.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
+            });*/
         }
     }
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, Input, OnChanges, Optional, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Input, OnChanges, Optional, Output } from '@angular/core';
 import { PageEvent } from '../models/page-event';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { PaginationDefaultOptions } from './pagination-default-options';
@@ -16,6 +16,7 @@ export class PaginationComponent implements OnChanges {
   @Input() page: number = 1;
   @Input() pageSize: number;
   @Output() public changePage = new EventEmitter<PageEvent>();
+  @Input() collection?: HTMLElement;
 
   @Input() pageSizeOptions?: number[];
   pages: number[] = [];
@@ -39,6 +40,7 @@ export class PaginationComponent implements OnChanges {
     if (newValue == this.page || newValue < 1 || newValue > this.pageCount) {
       return;
     }
+    this.collection?.scrollIntoView({ behavior: 'instant', block: 'start' });
     this.changePage.emit({ pageNumber: newValue, pageSize: this.pageSize } as PageEvent)
   }
 

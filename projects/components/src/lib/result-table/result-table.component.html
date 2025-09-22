@@ -2,7 +2,7 @@
     <div class="loading-overlay-spinner" *ngIf="state === 'loading'">
         <mz-spinner size="large"></mz-spinner>
     </div>
-    <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
+    <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}" #table>
         <caption *ngIf="state === 'succeeded' && model && model.items.length > 0">
             {{(model.pageNumber-1) * model.pageSize + 1}} - {{(model.pageNumber-1) * model.pageSize + model.items.length}} of {{ model.totalItems }} results
         </caption>
@@ -18,6 +18,7 @@
     <div class="table-pagination" *ngIf="state === 'succeeded' && !options?.hidePagination && !isEmpty">
         <mz-pagination [length]="model!.totalItems" [page]="model!.pageNumber" [pageSize]="model!.pageSize"
             [pageSizeOptions]="pageSizeOptions"
+            [collection]="table"
             (changePage)="changePage($event, tableRef)"></mz-pagination>
     </div>
     <div class="state-message" *ngIf="state == 'succeeded' && isEmpty">
