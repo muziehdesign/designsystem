@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { PageEvent } from '../models/page-event';
-import { PaginationComponent } from '../pagination/pagination.component';
+import { MzPagination } from '../pagination/pagination.component';
 import { ResultTableComponent } from './result-table.component';
 import { ResultTableModel } from './result-table.model';
 
@@ -25,7 +25,7 @@ describe('ResultTableComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [ResultTableComponent, PaginationComponent],
+            imports: [ResultTableComponent, MzPagination],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents();
     });
@@ -45,7 +45,7 @@ describe('ResultTableComponent', () => {
         spyOn(component.pageChange, 'emit');
 
         // act
-        component.changePage(pageEvent, table);
+        component.changePage(pageEvent);
 
         // assert
         expect(component.pageChange.emit).toHaveBeenCalledWith({ pageNumber: 1, pageSize: 20 } satisfies PageEvent);

@@ -25,7 +25,7 @@ export { Subject } from './lib/models/subject';
 
 // table
 export { ResultTableComponent } from './lib/result-table/result-table.component';
-export { PaginationComponent } from './lib/pagination/pagination.component';
+export { MzPagination } from './lib/pagination/pagination.component';
 export { PageEvent } from './lib/models/page-event';
 export { LoadingState } from './lib/models/loading-state';
 export { ResultTableModel } from './lib/result-table/result-table.model';

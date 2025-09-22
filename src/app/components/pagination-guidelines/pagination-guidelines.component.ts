@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent, PaginationComponent } from '@muziehdesign/components';
+import { MzPagination, PageEvent } from '@muziehdesign/components';
+import { PaginationExampleComponent } from './pagination-example';
 
 @Component({
     selector: 'app-pagination-guidelines',
     templateUrl: './pagination-guidelines.component.html',
     styleUrls: ['./pagination-guidelines.component.scss'],
-    imports: [PaginationComponent]
+    imports: [MzPagination, PaginationExampleComponent]
 })
 export class PaginationGuidelinesComponent implements OnInit {
 

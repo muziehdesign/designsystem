@@ -6,13 +6,16 @@
 <article>
     <h2>Examples</h2>
     <div class="example">
-        <mz-pagination [length]="smallPagination.length" [page]="smallPagination.page" [pageSize]="smallPagination.pageSize" (changePage)="changePage($event, smallPagination)"></mz-pagination>
+        <mz-pagination [totalItems]="smallPagination.length" [pageNumber]="smallPagination.page" [pageSize]="smallPagination.pageSize" (changePage)="changePage($event, smallPagination)"></mz-pagination>
     </div>
     <div class="example">
-        <mz-pagination [length]="smallPagination3.length" [page]="smallPagination3.page" [pageSize]="smallPagination3.pageSize" (changePage)="changePage($event, smallPagination3)"></mz-pagination>
+        <mz-pagination [totalItems]="smallPagination3.length" [pageNumber]="smallPagination3.page" [pageSize]="smallPagination3.pageSize" (changePage)="changePage($event, smallPagination3)"></mz-pagination>
     </div>
     <div class="example">
-        <mz-pagination [length]="largeCollection.length" [page]="largeCollection.page" [pageSize]="largeCollection.pageSize" (changePage)="changePage($event, largeCollection)"></mz-pagination>
+        <mz-pagination [totalItems]="largeCollection.length" [pageNumber]="largeCollection.page" [pageSize]="largeCollection.pageSize" (changePage)="changePage($event, largeCollection)"></mz-pagination>
+    </div>
+    <div class="example">
+        <app-pagination-example></app-pagination-example>
     </div>
 </article>
 
