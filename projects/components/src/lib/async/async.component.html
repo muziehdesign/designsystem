@@ -1,0 +1,13 @@
+@if(isLoading()) {
+<div class="loading-content">
+    <ng-content select="[mzAsyncLoading]"></ng-content>
+</div>
+<div class="loading-content">Default loading look...</div>
+} @else if(error()) {
+<div class="error-content">
+    <ng-content select="[mzAsyncError]"></ng-content>
+</div>
+<div class="error-content">Default error look...</div>
+} @else {
+<ng-content select="[mzAsyncSuccess]"></ng-content>
+}

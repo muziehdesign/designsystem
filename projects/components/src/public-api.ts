@@ -23,6 +23,11 @@ export { MzInlineEditComponent } from './lib/inline-edit/inline-edit.component';
 export { SubjectDisplayPipe } from './lib/subject-display/subject-display.pipe';
 export { Subject } from './lib/models/subject';
 
+// async
+export { MzAsync } from './lib/async/async.component';
+export { MzAsyncError } from './lib/async/async-error.directive';
+export { MzAsyncLoading } from './lib/async/async-loading.directive';
+
 // table
 export { ResultTableComponent } from './lib/result-table/result-table.component';
 export { MzPagination } from './lib/pagination/pagination.component';
