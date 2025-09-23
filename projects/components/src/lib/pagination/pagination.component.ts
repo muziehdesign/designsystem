@@ -12,9 +12,9 @@ import { MZ_PAGINATION_DEFAULT_OPTIONS, MzPaginationConfig } from './pagination-
 export class MzPagination implements OnChanges {
     @Input({ required: true }) totalItems: number = 0;
     @Input({ required: true }) pageNumber: number = 1;
-    @Input() pageSize?: number;
     @Input() scrollTo?: HTMLElement;
-    @Input() pageSizeOptions?: number[];
+    @Input() pageSizeOptions: number[];
+    @Input() pageSize: number;
 
     @Output() public changePage = new EventEmitter<PageEvent>();
 
@@ -22,26 +22,19 @@ export class MzPagination implements OnChanges {
     pageCount: number = 1;
     protected options: MzPaginationConfig;
 
-    constructor(@Optional() @Inject(MZ_PAGINATION_DEFAULT_OPTIONS) paginationOptions: MzPaginationConfig) {
+    constructor(@Optional() @Inject(MZ_PAGINATION_DEFAULT_OPTIONS) private paginationOptions: MzPaginationConfig) {
         this.options = paginationOptions || new MzPaginationConfig();
-
-        this.updatePages(this.pageNumber, this.totalItems, this.getPageSize());
+        this.pageSizeOptions = this.options.pageSizeOptions;
+        this.pageSize = this.pageSizeOptions[0];
+        this.updatePages(this.pageNumber, this.totalItems, this.pageSize);
     }
 
     ngOnChanges(): void {
-        this.updatePages(this.pageNumber, this.totalItems, this.getPageSize());
+        this.updatePages(this.pageNumber, this.totalItems, this.pageSize);
     }
 
     protected isEllipsis(v: number) {
         return v === -1;
-    }
-
-    protected getPageSize(): number {
-        return this.pageSize || this.options.pageSize;
-    }
-
-    protected getPageSizeOptions(): number[] {
-      return this.pageSizeOptions || this.options.pageSizeOptions;
     }
 
     changePageNumber(newValue: number) {

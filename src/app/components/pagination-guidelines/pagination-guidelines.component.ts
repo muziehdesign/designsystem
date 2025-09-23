@@ -10,7 +10,7 @@ import { PaginationExampleComponent } from './pagination-example';
 })
 export class PaginationGuidelinesComponent implements OnInit {
 
-  smallPagination: PaginationModel = { page: 1, length: 40, pageSize: 20 };
+  smallPagination: PaginationModel = { page: 1, length: 40, pageSize: 50 };
   smallPagination2: PaginationModel = { page: 1, length: 100, pageSize: 20 };
   smallPagination3: PaginationModel = { page: 1, length: 140, pageSize: 20 };
   largeCollection: PaginationModel = { page: 1, length: 480, pageSize: 20 };

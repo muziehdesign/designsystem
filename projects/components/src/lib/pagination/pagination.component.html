@@ -18,8 +18,8 @@
     <div class="pagination-size">
         Show
         <select #c (change)="changePageSize(c.value)" name="pageSizeControl" class="page-size-control">
-            @for(size of getPageSizeOptions(); track size) {
-                <option [attr.selected]="getPageSize() == size ? true : null" [value]="size">{{ size }}</option>
+            @for(size of pageSizeOptions; track size) {
+                <option [attr.selected]="pageSize == size ? true : null" [value]="size">{{ size }}</option>
             }
         </select>
         per page
