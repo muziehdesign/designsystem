@@ -26,7 +26,7 @@ export const componentRoutes: Routes = [
             },
             {
                 path: 'buttons',
-                loadComponent: () => import('./buttons/buttons.component').then((b) => b.ButtonsComponent)
+                loadComponent: () => import('./buttons/buttons.component').then((b) => b.ButtonsComponent),
             },
             {
                 path: 'datetimepicker',

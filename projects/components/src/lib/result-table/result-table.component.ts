@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ContentChild, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { PageEvent } from '../models/page-event';
 import { ResultTableOptions } from '../models/result-table-options';
-import { PaginationComponent } from '../pagination/pagination.component';
+import { MzPagination } from '../pagination/pagination.component';
 import { MzSpinner } from '../spinner/spinner.component';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { ResultTableModel } from './result-table.model';
@@ -11,7 +11,7 @@ import { ResultTableModel } from './result-table.model';
     selector: 'mz-result-table',
     templateUrl: './result-table.component.html',
     styleUrls: ['./result-table.component.scss'],
-    imports: [CommonModule, PaginationComponent, MzSpinner, SvgIconComponent]
+    imports: [CommonModule, MzPagination, MzSpinner, SvgIconComponent]
 })
 export class ResultTableComponent implements AfterViewInit {
 
@@ -33,13 +33,8 @@ export class ResultTableComponent implements AfterViewInit {
 
     }
 
-    changePage(page: PageEvent, table: HTMLElement) {
+    changePage(page: PageEvent) {
         this.pageChange.emit(page);
-        if(!this.options.skipScrolling) {
-            setTimeout(() => {
-                table.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        }
     }
 
     searchAgain() {

@@ -1,24 +1,21 @@
 <h1>Pagination</h1>
 <p class="prose">
-    Use pagination to divide content into smaller chunks, and allow user to page through them. The guidelines here
-    follow <a href="https://atlassian.design/components/pagination/examples">Atlassian pagination</a>.
+    Use pagination to divide content into smaller chunks, and allow user to page through them.
 </p>
 
 <article>
     <h2>Examples</h2>
-    <h3>Small collections</h3>
     <div class="example">
-        <mz-pagination [length]="smallPagination.length" [page]="smallPagination.page" [pageSize]="smallPagination.pageSize" (changePage)="changePage($event, smallPagination)"></mz-pagination>
+        <mz-pagination [totalItems]="smallPagination.length" [pageNumber]="smallPagination.page" [pageSize]="smallPagination.pageSize" (changePage)="changePage($event, smallPagination)"></mz-pagination>
     </div>
     <div class="example">
-        <mz-pagination [length]="smallPagination2.length" [page]="smallPagination2.page" [pageSize]="smallPagination2.pageSize" (changePage)="changePage($event, smallPagination2)"></mz-pagination>
+        <mz-pagination [totalItems]="smallPagination3.length" [pageNumber]="smallPagination3.page" [pageSize]="10" [pageSizeOptions]="[10, 20, 30]" (changePage)="changePage($event, smallPagination3)"></mz-pagination>
     </div>
     <div class="example">
-        <mz-pagination [length]="smallPagination3.length" [page]="smallPagination3.page" [pageSize]="smallPagination3.pageSize" (changePage)="changePage($event, smallPagination3)"></mz-pagination>
+        <mz-pagination [totalItems]="largeCollection.length" [pageNumber]="largeCollection.page" [pageSize]="largeCollection.pageSize" (changePage)="changePage($event, largeCollection)"></mz-pagination>
     </div>
-    <h3>Large collections</h3>
     <div class="example">
-        <mz-pagination [length]="largeCollection.length" [page]="largeCollection.page" [pageSize]="largeCollection.pageSize" (changePage)="changePage($event, largeCollection)"></mz-pagination>
+        <app-pagination-example></app-pagination-example>
     </div>
 </article>
 

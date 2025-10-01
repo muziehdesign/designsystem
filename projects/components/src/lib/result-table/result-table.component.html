@@ -16,9 +16,10 @@
         </tbody>
     </table>
     <div class="table-pagination" *ngIf="state === 'succeeded' && !options?.hidePagination && !isEmpty">
-        <mz-pagination [length]="model!.totalItems" [page]="model!.pageNumber" [pageSize]="model!.pageSize"
+        <mz-pagination [totalItems]="model!.totalItems" [pageNumber]="model!.pageNumber" [pageSize]="model!.pageSize"
             [pageSizeOptions]="pageSizeOptions"
-            (changePage)="changePage($event, tableRef)"></mz-pagination>
+            [scrollTo]="tableRef"
+            (changePage)="changePage($event)"></mz-pagination>
     </div>
     <div class="state-message" *ngIf="state == 'succeeded' && isEmpty">
         <div class="title">No results found</div>

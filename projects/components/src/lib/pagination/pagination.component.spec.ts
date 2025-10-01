@@ -3,13 +3,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
-import { PAGINATION_DEFAULT_OPTIONS } from './pagination-default-options.token';
+import { MZ_PAGINATION_DEFAULT_OPTIONS } from './pagination-config';
 
-import { PaginationComponent } from './pagination.component';
+import { MzPagination } from './pagination.component';
 
 describe('PaginationComponent', () => {
-    let component: PaginationComponent;
-    let fixture: ComponentFixture<PaginationComponent>;
+    let component: MzPagination;
+    let fixture: ComponentFixture<MzPagination>;
     let subs: Subscription;
     //
     // this includes the previous/next buttons
@@ -21,11 +21,11 @@ describe('PaginationComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [PaginationComponent, SvgIconComponent],
+            imports: [MzPagination, SvgIconComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
             providers: [
                 {
-                    provide: PAGINATION_DEFAULT_OPTIONS,
+                    provide: MZ_PAGINATION_DEFAULT_OPTIONS,
                     useValue: {
                         pageSize: 12,
                         pageSizeOptions: [20, 50, 100, 2000],
@@ -36,11 +36,11 @@ describe('PaginationComponent', () => {
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(PaginationComponent);
+        fixture = TestBed.createComponent(MzPagination);
         component = fixture.componentInstance;
         subs = component.changePage.subscribe((event) => {
             // this mimics what then component would eventually do.
-            component.page = event.pageNumber;
+            component.pageNumber = event.pageNumber;
             component.pageSize = event.pageSize;
             component.ngOnChanges();
         });
@@ -54,11 +54,13 @@ describe('PaginationComponent', () => {
     it('should render and navigate with 7 or less records', () => {
         // initial assert
         expect(component).toBeTruthy();
-        expect(component.pageSize).toBe(12);
-        expect(component.pageSizeOptions).toEqual([20, 50, 100, 2000]);
+        const pageSizeControl = fixture.debugElement.nativeElement.querySelector('.page-size-control') as HTMLSelectElement;
+        const optionValues = Array.from(pageSizeControl.options).map(opt => opt.value);
+        expect(optionValues).toEqual(['20', '50', '100', '2000']);
+        expect(pageSizeControl.value).toBe('20');
 
         // arrange
-        component.length = 14;
+        component.totalItems = 14;
         component.pageSize = 2;
         component.ngOnChanges();
 
@@ -106,7 +108,7 @@ describe('PaginationComponent', () => {
 
         // arrange
         // meaning 14 pages because 41 / 3 = 13.666
-        component.length = 41;
+        component.totalItems = 41;
         component.pageSize = 3;
         component.ngOnChanges();
 
@@ -188,7 +190,7 @@ describe('PaginationComponent', () => {
         expect(component).toBeTruthy();
 
         // arrange
-        component.length = 60;
+        component.totalItems = 60;
         component.pageSize = 10;
         component.ngOnChanges();
 
@@ -218,7 +220,7 @@ describe('PaginationComponent', () => {
 
         // assert
         expect(component.pages).toEqual([1]);
-        expect(component.page).toBe(1);
+        expect(component.pageNumber).toBe(1);
         expect(component.pageSize).toBe(100);
         expect(getPageEllipsisCount()).toBe(0);
         expect(getPreviousButton().classes['disabled']).toBeTrue();
@@ -228,7 +230,7 @@ describe('PaginationComponent', () => {
 
     it('should skip page number change when matches current page or is below/above allowed boundaries', () => {
         // act
-        component.length = 30;
+        component.totalItems = 30;
         component.pageSize = 20;
         component.ngOnChanges();
 
@@ -260,7 +262,7 @@ describe('PaginationComponent', () => {
 
     it('should skip page size change when matches current page size', () => {
         // act
-        component.length = 30;
+        component.totalItems = 30;
         component.pageSize = 20;
         component.ngOnChanges();
 
@@ -313,9 +315,9 @@ describe('PaginationComponent', () => {
         it(`should match pages for page size ${setup.expectedPageCount}`, () => {
             // initial assert
             // arrange
-            component.length = setup.length;
+            component.totalItems = setup.length;
             component.pageSize = setup.pageSize;
-            component.page = setup.page;
+            component.pageNumber = setup.page;
             component.ngOnChanges();
 
             // act
