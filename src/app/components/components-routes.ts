@@ -21,10 +21,6 @@ export const componentRoutes: Routes = [
                 loadComponent: () => import('./alerts/alerts.component').then((b) => b.AlertsComponent),
             },
             {
-                path: 'async',
-                loadComponent: () => import('./async/async.component').then((b) => b.AsyncComponent),
-            },
-            {
                 path: 'breadcrumbs',
                 loadComponent: () => import('./breadcrumbs/breadcrumbs.component').then((b) => b.BreadcrumbsComponent),
             },
