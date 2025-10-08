@@ -29,6 +29,7 @@ export { MzPagination } from './lib/pagination/pagination.component';
 export { PageEvent } from './lib/models/page-event';
 export { LoadingState } from './lib/models/loading-state';
 export { ResultTableModel } from './lib/result-table/result-table.model';
+export { ResultTableOptions } from './lib/models/result-table-options';
 
 // infinite scroll
 export { InfiniteScrollComponent } from './lib/infinite-scroll/infinite-scroll.component';
