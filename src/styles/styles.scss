@@ -21,8 +21,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'highlight.js/styles/github.css';
-
 header, article, section {
     @apply mt-8;
 }
