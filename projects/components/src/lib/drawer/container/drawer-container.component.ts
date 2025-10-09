@@ -1,7 +1,7 @@
 import { CdkDialogContainer } from '@angular/cdk/dialog';
 import { CdkPortalOutlet } from '@angular/cdk/portal';
-import { Component, ElementRef, HostListener, Inject, NgZone, Optional, ViewEncapsulation } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, ElementRef, HostListener, Inject, NgZone, Optional, ViewEncapsulation, DOCUMENT } from '@angular/core';
+
 import { OverlayRef } from '@angular/cdk/overlay';
 import { FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
 import { MzDrawerConfig } from '../drawer-config';
