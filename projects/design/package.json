@@ -2,8 +2,8 @@
   "name": "@muziedhdesign/styles",
   "version": "20.0.0-next.0",
   "peerDependencies": {
-    "@angular/common": "^19.2.8",
-    "@angular/core": "^19.2.8"
+    "@angular/common": ">=20.2.0",
+    "@angular/core": ">=20.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
