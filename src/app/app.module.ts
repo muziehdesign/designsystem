@@ -9,28 +9,15 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomErrorHandler } from './custom-error-handler';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { HighlightModule, HIGHLIGHT_OPTIONS, HighlightOptions } from 'ngx-highlightjs';
 import { navigationLinks } from './navigation/navigation-links';
 import { NAVIGATION_LINK_TOKEN } from './navigation/navigation-links.token';
 import { PageLoadingIndicatorComponent } from '@muziehdesign/components';
 
 @NgModule({
     declarations: [AppComponent, NavigationComponent],
-    imports: [BrowserModule, AppRoutingModule, ExamplesModule, SharedModule, CommonModule, NgbModule, HighlightModule, NoopAnimationsModule, PageLoadingIndicatorComponent],
+    imports: [BrowserModule, AppRoutingModule, ExamplesModule, SharedModule, CommonModule, NgbModule, NoopAnimationsModule, PageLoadingIndicatorComponent],
     providers: [
         CustomErrorHandler,
-        {
-            provide: HIGHLIGHT_OPTIONS,
-            useValue: <HighlightOptions>{
-                lineNumbers: true,
-                coreLibraryLoader: () => import('highlight.js/lib/core'),
-                languages: {
-                    typescript: () => import('highlight.js/lib/languages/typescript'),
-                    css: () => import('highlight.js/lib/languages/css'),
-                    xml: () => import('highlight.js/lib/languages/xml'),
-                },
-            },
-        },
         { provide: NAVIGATION_LINK_TOKEN, useValue: navigationLinks }
     ],
     bootstrap: [AppComponent],

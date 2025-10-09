@@ -10,12 +10,16 @@
     </div>
   </div>
 
-  <div class="alert-body" *ngIf="body">
-    <ng-container *ngTemplateOutlet="body"></ng-container>
-  </div>
+  @if (body) {
+    <div class="alert-body">
+      <ng-container *ngTemplateOutlet="body"></ng-container>
+    </div>
+  }
 
-  <div class="alert-footer" *ngIf="footer">
-    <ng-container *ngTemplateOutlet="footer"></ng-container>
-  </div>
+  @if (footer) {
+    <div class="alert-footer">
+      <ng-container *ngTemplateOutlet="footer"></ng-container>
+    </div>
+  }
 
 </div>
