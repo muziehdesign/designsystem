@@ -5,7 +5,7 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 @Component({
     selector: 'mz-alert',
     templateUrl: './alert.component.html',
-    styleUrls: ['./alert.component.css'],
+    styleUrls: ['./alert.component.scss'],
     imports: [CommonModule, SvgIconComponent]
 })
 export class AlertComponent implements OnInit {
