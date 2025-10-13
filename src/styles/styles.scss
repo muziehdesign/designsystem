@@ -4,7 +4,6 @@
 @use 'design/breadcrumb';
 @use 'design/table';
 @use 'design/tabs';
-@use 'design/progress-bar';
 @use 'design/alert';
 @use 'design/wizard';
 @use 'design/infinite-scroll';
@@ -21,8 +20,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import 'highlight.js/styles/github.css';
 
 header, article, section {
     @apply mt-8;

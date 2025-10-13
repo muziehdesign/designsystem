@@ -4,7 +4,7 @@ import { MzSpinner } from './spinner/spinner.component';
 import { EnumDisplayPipe } from './enum-display/enum-display.pipe';
 import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { ResultTableComponent } from './result-table/result-table.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { MzPagination } from './pagination/pagination.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { FormsModule } from '@angular/forms';
@@ -33,7 +33,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     EnumDisplayPipe,
     ResultTableComponent,
     InfiniteScrollComponent,
-    PaginationComponent,
+    MzPagination,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     DateDisplayPipe,
@@ -48,7 +48,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     SvgIconComponent,
     ResultTableComponent,
     InfiniteScrollComponent,
-    PaginationComponent,
+    MzPagination,
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     DateDisplayPipe,

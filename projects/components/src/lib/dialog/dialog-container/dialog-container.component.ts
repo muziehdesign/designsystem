@@ -1,8 +1,8 @@
 import { CdkDialogContainer, DialogConfig } from '@angular/cdk/dialog';
-import { Component, ElementRef, Inject, NgZone, Optional, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Inject, NgZone, Optional, ViewEncapsulation, DOCUMENT } from '@angular/core';
 import { FocusTrapFactory, InteractivityChecker } from '@angular/cdk/a11y';
 import { OverlayRef } from '@angular/cdk/overlay';
-import { DOCUMENT } from '@angular/common';
+
 import { CdkPortalOutlet } from '@angular/cdk/portal';
 
 @Component({

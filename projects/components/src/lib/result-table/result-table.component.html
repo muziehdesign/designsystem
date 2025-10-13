@@ -1,33 +1,44 @@
 <div class="result-table" [ngClass]="{'loading': state === 'loading', 'failed': state === 'failed'}" #tableRef>
-    <div class="loading-overlay-spinner" *ngIf="state === 'loading'">
-        <mz-spinner size="large"></mz-spinner>
+  @if (state === 'loading') {
+    <div class="loading-overlay-spinner">
+      <mz-spinner size="large"></mz-spinner>
     </div>
-    <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
-        <caption *ngIf="state === 'succeeded' && model && model.items.length > 0">
-            {{(model.pageNumber-1) * model.pageSize + 1}} - {{(model.pageNumber-1) * model.pageSize + model.items.length}} of {{ model.totalItems }} results
-        </caption>
-        <thead>
-            <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
-        </thead>
-        <tbody>
-            @if(state === 'succeeded' && !isEmpty) {
-                <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
-            }
-        </tbody>
-    </table>
-    <div class="table-pagination" *ngIf="state === 'succeeded' && !options?.hidePagination && !isEmpty">
-        <mz-pagination [length]="model!.totalItems" [page]="model!.pageNumber" [pageSize]="model!.pageSize"
-            [pageSizeOptions]="pageSizeOptions"
-            (changePage)="changePage($event, tableRef)"></mz-pagination>
+  }
+  <table class="table" [ngClass]="{'has-overlay' : state === 'loading'}">
+    @if (state === 'succeeded' && model && model.items.length > 0) {
+      <caption>
+        {{(model.pageNumber-1) * model.pageSize + 1}} - {{(model.pageNumber-1) * model.pageSize + model.items.length}} of {{ model.totalItems }} results
+      </caption>
+    }
+    <thead>
+      <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+    </thead>
+    <tbody>
+      @if(state === 'succeeded' && !isEmpty) {
+        <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+      }
+    </tbody>
+  </table>
+  @if (state === 'succeeded' && !options?.hidePagination && !isEmpty) {
+    <div class="table-pagination">
+      <mz-pagination [totalItems]="model!.totalItems" [pageNumber]="model!.pageNumber" [pageSize]="model!.pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        [scrollTo]="tableRef"
+      (changePage)="changePage($event)"></mz-pagination>
     </div>
-    <div class="state-message" *ngIf="state == 'succeeded' && isEmpty">
-        <div class="title">No results found</div>
+  }
+  @if (state == 'succeeded' && isEmpty) {
+    <div class="state-message">
+      <div class="title">No results found</div>
     </div>
-    <div class="state-message" *ngIf="state == 'failed'">
-        <div class="title">
-            <mz-svg-icon key="x-circle-solid" class="text-danger"></mz-svg-icon>
-            Something went wrong
-        </div>
-        <div>Unexpected error, <a (click)="searchAgain()" class="link-action">try searching again</a>.</div>
+  }
+  @if (state == 'failed') {
+    <div class="state-message">
+      <div class="title">
+        <mz-svg-icon key="x-circle-solid" class="text-danger"></mz-svg-icon>
+        Something went wrong
+      </div>
+      <div>Unexpected error, <a (click)="searchAgain()" class="link-action">try searching again</a>.</div>
     </div>
+  }
 </div>

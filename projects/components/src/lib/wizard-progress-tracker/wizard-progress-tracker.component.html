@@ -1,45 +1,65 @@
 <div class="wizard-progress-tracker">
-    <div class="direction-container">
-        <span class="steps-count">Step {{ currentStep + 1 }} of {{ steps.length }}</span>
-        <div class="wizard-steps-container" [ngClass]="{'toggled': toggled}">
-            <div *ngFor="let step of steps; index as i;" class="wizard-step"
-                [ngClass]="{ 'previous': i < currentStep, 'current': i === currentStep, 'unvisited': i > currentStep }">
-                <ng-container>
-                    <div class="wizard-step-icon-container">
-                        <div class="spacer left">
-                        </div>
-                        <div *ngIf="i > 0" class="step-line left"></div>
-
-                        <div *ngIf="i < currentStep" class="wizard-step-icon">
-                            <mz-svg-icon key="check-circle-solid">
-                            </mz-svg-icon>
-                        </div>
-                        <div *ngIf="i === currentStep" class="wizard-step-icon">
-                            <div class="step-inner-circle"></div>
-                        </div>
-                        <div *ngIf="i > currentStep" class="wizard-step-icon">
-                        </div>
-
-                        <div *ngIf="i < (steps.length - 1)" class="step-line step-line-right"></div>
-                        <div class="spacer right"></div>
-                    </div>
-                    <a *ngIf="i < currentStep" class="step-desc" (click)="goToStep(step)"> {{
-                        step.name
-                        }}</a>
-                    <div *ngIf=" i === currentStep" class="step-desc"> {{ step.name }}
-                    </div>
-                    <div *ngIf=" i > currentStep" class="step-desc"> {{ step.name }}
-                    </div>
-                    <div class="toggable-icon">
-                        <button *ngIf="!toggled" (click)="toggle()">
-                            <mz-svg-icon key="chevron-down-solid"></mz-svg-icon>
-                        </button>
-                        <button *ngIf="toggled" (click)="toggle()">
-                            <mz-svg-icon key="chevron-up-solid"></mz-svg-icon>
-                        </button>
-                    </div>
-                </ng-container>
+  <div class="direction-container">
+    <span class="steps-count">Step {{ currentStep + 1 }} of {{ steps.length }}</span>
+    <div class="wizard-steps-container" [ngClass]="{'toggled': toggled}">
+      @for (step of steps; track step; let i = $index) {
+        <div class="wizard-step"
+          [ngClass]="{ 'previous': i < currentStep, 'current': i === currentStep, 'unvisited': i > currentStep }">
+          <ng-container>
+            <div class="wizard-step-icon-container">
+              <div class="spacer left">
+              </div>
+              @if (i > 0) {
+                <div class="step-line left"></div>
+              }
+              @if (i < currentStep) {
+                <div class="wizard-step-icon">
+                  <mz-svg-icon key="check-circle-solid">
+                  </mz-svg-icon>
+                </div>
+              }
+              @if (i === currentStep) {
+                <div class="wizard-step-icon">
+                  <div class="step-inner-circle"></div>
+                </div>
+              }
+              @if (i > currentStep) {
+                <div class="wizard-step-icon">
+                </div>
+              }
+              @if (i < (steps.length - 1)) {
+                <div class="step-line step-line-right"></div>
+              }
+              <div class="spacer right"></div>
             </div>
+            @if (i < currentStep) {
+              <a class="step-desc" (click)="goToStep(step)"> {{
+                step.name
+              }}</a>
+            }
+            @if ( i === currentStep) {
+              <div class="step-desc"> {{ step.name }}
+              </div>
+            }
+            @if ( i > currentStep) {
+              <div class="step-desc"> {{ step.name }}
+              </div>
+            }
+            <div class="toggable-icon">
+              @if (!toggled) {
+                <button (click)="toggle()">
+                  <mz-svg-icon key="chevron-down-solid"></mz-svg-icon>
+                </button>
+              }
+              @if (toggled) {
+                <button (click)="toggle()">
+                  <mz-svg-icon key="chevron-up-solid"></mz-svg-icon>
+                </button>
+              }
+            </div>
+          </ng-container>
         </div>
+      }
     </div>
+  </div>
 </div>
