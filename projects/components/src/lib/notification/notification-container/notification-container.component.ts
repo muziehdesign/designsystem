@@ -1,6 +1,5 @@
-import { Component, ComponentRef, ElementRef, EmbeddedViewRef, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ComponentRef, ElementRef, EmbeddedViewRef, OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { BasePortalOutlet, CdkPortalOutlet, ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
-import { MzNotificationConfig } from '../notification-config';
 
 const ANIMATION_CLASS_OPENING = 'opening';
 const ANIMATION_CLASS_CLOSING = 'closing';
@@ -15,7 +14,7 @@ export class MzNotificationContainer extends BasePortalOutlet implements OnDestr
     
     @ViewChild(CdkPortalOutlet, { static: true }) private portalOutlet!: CdkPortalOutlet;
 
-    constructor(private elementRef: ElementRef) {
+    constructor(private elementRef: ElementRef, private renderer: Renderer2) {
         super();
     }
 
@@ -30,11 +29,13 @@ export class MzNotificationContainer extends BasePortalOutlet implements OnDestr
     }
 
     enter() {
+        this.renderer.setAttribute(this.elementRef.nativeElement, 'data-state', 'opening');
         const element = this.elementRef.nativeElement as HTMLElement;
         element.classList.add(ANIMATION_CLASS_OPENING);
     }
 
     exit() {
+        this.renderer.setAttribute(this.elementRef.nativeElement, 'data-state', 'closing');
         const element = this.elementRef.nativeElement as HTMLElement;
         element.classList.remove(ANIMATION_CLASS_OPENING);
         element.classList.add(ANIMATION_CLASS_CLOSING);

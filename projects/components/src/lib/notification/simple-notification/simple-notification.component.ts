@@ -20,4 +20,8 @@ export class MzSimpleNotification {
   action() {
     this.ref.dismiss();
   }
+
+  close() {
+    this.ref.dismiss();
+  }
 }

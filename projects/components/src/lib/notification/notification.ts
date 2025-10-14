@@ -1,6 +1,6 @@
-import { ComponentRef, Injectable, Injector } from '@angular/core';
+import { ComponentRef, Inject, Injectable, Injector, Optional } from '@angular/core';
 import { MZ_NOTIFICATION_DATA, MzNotificationConfig } from './notification-config';
-import { ComponentType, Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
+import { ComponentType, GlobalPositionStrategy, Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { MzNotificationContainer } from './notification-container/notification-container.component';
 import { MzNotificationRef } from './notification-ref';
@@ -12,15 +12,15 @@ import { SimpleNotificationData } from './simple-notification/simple-notificatio
 })
 export class MzNotification {
     private currentNotificationRef: MzNotificationRef<any> | null = null;
-    constructor(private injector: Injector, private overlay: Overlay) {}
+    constructor(private injector: Injector, private overlay: Overlay, @Optional() @Inject(MZ_NOTIFICATION_DATA) private defaultConfig?: MzNotificationConfig) {}
 
     open(message: string, action: string = '', config?: MzNotificationConfig) {
         const data: SimpleNotificationData = { message, action };
-        return this.openFromComponent(MzSimpleNotification, { data, horizontalPosition: 'center', verticalPosition: 'bottom' });
+        return this.openFromComponent(MzSimpleNotification, { ...config, data, horizontalPosition: 'center', verticalPosition: 'bottom' });
     }
 
     openFromComponent<T>(component: ComponentType<T>, config?: MzNotificationConfig) {
-        const options = { ...new MzNotificationConfig(), ...config };
+        const options = { ...new MzNotificationConfig(), ...this.defaultConfig, ...config };
         const overlayRef = this.createOverlay(options);
         const container = this.attachContainer(overlayRef, options);
         const ref = new MzNotificationRef<T>(container, overlayRef);
@@ -30,22 +30,40 @@ export class MzNotification {
         const contentRef = container.attachComponentPortal(portal);
         ref.instance = contentRef.instance;
 
-        /*ref.afterDismissed().subscribe(()=> {
-             // Clear the ref if it hasn't already been replaced by a newer ref.
-            if(this.currentNotificationRef === ref) {
-                this.currentNotificationRef = null;
-            }
-        });*/
+        this.animateNotification(ref, options);
         this.currentNotificationRef = ref;
         return ref;
     }
 
+    private animateNotification(notificationRef: MzNotificationRef<any>, config: MzNotificationConfig) {
+        notificationRef.afterDismissed().subscribe(() => {
+            if (this.currentNotificationRef === notificationRef) {
+                this.currentNotificationRef = null;
+            }
+        });
+
+        if (this.currentNotificationRef) {
+            this.currentNotificationRef.afterDismissed().subscribe(() => {
+                notificationRef.containerInstance.enter();
+            });
+            this.currentNotificationRef.dismiss();
+        } else {
+            notificationRef.containerInstance.enter();
+        }
+
+        if(config.duration && config.duration > 0) {
+            notificationRef.dismissAfter(config.duration);
+        }
+    }
+
     private createOverlay(config: MzNotificationConfig) {
-        const positionStrategy = this.overlay.position().global();
+        const positionStrategy = new GlobalPositionStrategy();
         if (config.horizontalPosition === 'start') {
             positionStrategy.left('0');
         } else if (config.horizontalPosition === 'end') {
             positionStrategy.right('0');
+        } else {
+            positionStrategy.centerHorizontally();
         }
         if (config.verticalPosition === 'top') {
             positionStrategy.top('0');
@@ -77,7 +95,7 @@ export class MzNotification {
             parent: userInjector || this.injector,
             providers: [
                 { provide: MzNotificationRef, useValue: notificationRef },
-                { provide: MZ_NOTIFICATION_DATA, useValue: config.data }
+                { provide: MZ_NOTIFICATION_DATA, useValue: config.data },
             ],
         });
         return injector;

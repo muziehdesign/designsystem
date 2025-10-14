@@ -50,7 +50,7 @@ export const navigationLinks: NavigationLink[] = [
                     { name: 'Date time picker', link: '/components/datetimepicker' },
                 ],
             },
-            { name: 'Notifcation', link: '/components/notification', inactive: true },
+            { name: 'Notification', link: '/components/notification', inactive: true },
             { name: 'Page header', link: '/components/pageheader' },
             { name: 'Pagination', link: '/components/pagination' },
             { name: 'Popover', link: '/components/popover' },

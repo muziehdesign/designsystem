@@ -1,7 +1,6 @@
 @use 'mixins/utilities' as *;
 
 :host {
-    background-color: var(--surface-bg);
     width: 100%;
     @include mx(2);
     @include my(1);

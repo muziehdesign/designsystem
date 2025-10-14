@@ -115,6 +115,7 @@ $color: (
         //link: var(--text-link)
     ),
     background: (
+        surface: var(--surface-bg),
         primary: var(--color-primary),
         primary-hovered: var(--color-brand-600),
         primary-active: var(--color-brand-800),
