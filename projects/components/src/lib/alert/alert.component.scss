@@ -3,16 +3,22 @@
 .alert {
     @include default-rounded();
     @include p(5);
+    @include text(sm);
 }
 
 .alert-title {
     display: inline-block;
     vertical-align: middle;
+    @include font-weight(medium);
 }
 
 .alert-body {
-    @include pb(0.5);
-    @include ml(7);
+    @include mt(2);
+    @include pl(7);
+}
+
+.alert-body:empty {
+    display: none;
 }
 
 .alert-icon {
@@ -24,33 +30,22 @@
 
 .alert-info {
     background-color: get-color('background', 'primary-subtlest');
-
-    .alert-icon {
-        @include color(primary);
-    }
+    @include color(primary);
 }
 
 .alert-success {
     background-color: get-color('background', 'success-subtlest');
-    .alert-icon {
-        @include color(success);
-    }
+    @include color(success);
 }
 
-.alert-error {
+.alert-danger {
     background-color: get-color('background', 'danger-subtlest');
-
-    .alert-icon {
-        @include color(danger);
-    }
+    @include color(danger);
 }
 
 .alert-warning {
     background-color: get-color('background', 'warning-subtlest');
-
-    .alert-icon {
-        @include color(warning);
-    }
+    @include color(warning);
 }
 
 .alert-footer {

@@ -1,0 +1,1 @@
+export type AlertAppearance = 'info' | 'success' | 'danger' | 'warning';

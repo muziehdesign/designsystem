@@ -1,36 +1,30 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
+import { NgbCarouselModule } from "@ng-bootstrap/ng-bootstrap";
+import { AlertAppearance } from './alert-appearance';
 
 @Component({
     selector: 'mz-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
-    imports: [CommonModule, SvgIconComponent]
+    imports: [CommonModule, SvgIconComponent, NgbCarouselModule]
 })
-export class AlertComponent implements OnInit {
-    @Input() title: string = '';
-    @Input() type: 'info' | 'success' | 'error' | 'warning' = 'info';
-    @Input() body: TemplateRef<any> | undefined | null;
-    @Input() footer: TemplateRef<any> | undefined | null;
-
-    constructor() {}
-
-    ngOnInit(): void {}
+export class MzAlert {
+    title = input<string>('');
+    appearance = input<AlertAppearance>('info');
 
     getAlertClass(): string {
-        return `alert-${this.type}`;
+        return `alert-${this.appearance()}`;
     }
 
     getAlertIcon(): string {
-        let icon = '';
-        if (this.type === 'info') {
-            icon = 'information-circle-solid';
-        } else if (this.type === 'success') {
+        let icon = 'information-circle-solid';
+        if (this.appearance() === 'success') {
             icon = 'check-circle-solid';
-        } else if (this.type === 'error') {
+        } else if (this.appearance() === 'danger') {
             icon = 'x-circle-solid';
-        } else if (this.type === 'warning') {
+        } else if (this.appearance() === 'warning') {
             icon = 'exclamation-triangle-solid';
         }
         return icon;
