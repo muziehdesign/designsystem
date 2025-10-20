@@ -1,5 +1,9 @@
 @use '../theme.scss' as *;
 
+@mixin default-rounded(){
+    border-radius: var(--border-radius);
+}
+
 @mixin ring($width, $color, $offset: 0) {
     $sizing: 1px;
     box-shadow: 0 0 0 calc(#{$offset} * #{$sizing}) white, 0 0 0 calc((#{$width} + #{$offset}) * #{$sizing}) $color;
@@ -9,11 +13,11 @@
     font-weight: map-get(map-get($font, weight), $param);
 }
 
-@mixin h($h){
+@mixin h($h) {
     height: calc(map-get($core, spacing) * #{$h});
 }
 
-@mixin w($w){
+@mixin w($w) {
     width: calc(map-get($core, spacing) * #{$w});
 }
 
@@ -65,6 +69,22 @@
     margin-bottom: calc(map-get($core, spacing) * #{$y});
 }
 
+@mixin ml($l) {
+    margin-left: calc(map-get($core, spacing) * #{$l});
+}
+
+@mixin mr($r) {
+    margin-right: calc(map-get($core, spacing) * #{$r});
+}
+
+@mixin mt($t) {
+    margin-top: calc(map-get($core, spacing) * #{$t});
+}
+
+@mixin mb($b) {
+    margin-bottom: calc(map-get($core, spacing) * #{$b});
+}
+
 @mixin text($font-size) {
     $sizes: map-get($font, size);
     $lh: map-get($font, line-height);
@@ -101,13 +121,13 @@
 }
 
 @mixin respond($breakpoint) {
-  $size: map-get($breakpoints, $breakpoint);
+    $size: map-get($breakpoints, $breakpoint);
 
-  @if $size {
-    @media (min-width: #{$size}) {
-      @content;
+    @if $size {
+        @media (min-width: #{$size}) {
+            @content;
+        }
+    } @else {
+        @warn "No value found for breakpoint: #{$breakpoint}";
     }
-  } @else {
-    @warn "No value found for breakpoint: #{$breakpoint}";
-  }
 }

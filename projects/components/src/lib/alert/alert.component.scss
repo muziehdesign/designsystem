@@ -1,0 +1,54 @@
+@use 'mixins/utilities' as *;
+
+.alert {
+    @include default-rounded();
+    @include p(5);
+    @include text(sm);
+}
+
+.alert-title {
+    display: inline-block;
+    vertical-align: middle;
+    @include font-weight(medium);
+}
+
+.alert-body {
+    @include mt(2);
+    @include pl(7);
+}
+
+.alert-body:empty {
+    display: none;
+}
+
+.alert-icon {
+    display: inline-block;
+    vertical-align: middle;
+    @include w(7);
+    @include mt(-0.5);
+}
+
+.alert-info {
+    background-color: get-color('background', 'primary-subtlest');
+    @include color(primary);
+}
+
+.alert-success {
+    background-color: get-color('background', 'success-subtlest');
+    @include color(success);
+}
+
+.alert-danger {
+    background-color: get-color('background', 'danger-subtlest');
+    @include color(danger);
+}
+
+.alert-warning {
+    background-color: get-color('background', 'warning-subtlest');
+    @include color(warning);
+}
+
+.alert-footer {
+    @include mt(3);
+    @include ml(3);
+}
