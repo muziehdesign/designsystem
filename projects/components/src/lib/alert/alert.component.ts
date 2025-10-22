@@ -1,14 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
-import { NgbCarouselModule } from "@ng-bootstrap/ng-bootstrap";
 import { AlertAppearance } from './alert-appearance';
 
 @Component({
     selector: 'mz-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
-    imports: [CommonModule, SvgIconComponent, NgbCarouselModule]
+    imports: [SvgIconComponent]
 })
 export class MzAlert {
     title = input<string>('');
