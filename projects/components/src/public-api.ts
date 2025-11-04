@@ -39,7 +39,8 @@ export { MuziehComponentHarness } from './lib/testing/muzieh-component-harness';
 export { ResultTableHarness } from './lib/testing/result-table-harness';
 
 // alert
-export { AlertComponent } from './lib/alert/alert.component';
+export { MzAlert } from './lib/alert/alert.component';
+export { AlertAppearance } from './lib/alert/alert-appearance';
 
 // sort
 export { SortKeyDirective } from './lib/sort-key.directive';

@@ -1,25 +1,13 @@
-<div [className]="'alert alert-' + type">
+<div [className]="'alert alert-' + appearance()">
+    <div>
+        <div class="alert-icon">
+            <mz-svg-icon [key]="getAlertIcon()"></mz-svg-icon>
+        </div>
 
-  <div>
-    <div class="alert-icon">
-      <mz-svg-icon [key]="getAlertIcon()"></mz-svg-icon>
+        <div class="alert-title">{{ title() }}</div>
     </div>
 
-    <div class="alert-title">
-      <strong>{{ title }}</strong>
-    </div>
-  </div>
-
-  @if (body) {
     <div class="alert-body">
-      <ng-container *ngTemplateOutlet="body"></ng-container>
+        <ng-content></ng-content>
     </div>
-  }
-
-  @if (footer) {
-    <div class="alert-footer">
-      <ng-container *ngTemplateOutlet="footer"></ng-container>
-    </div>
-  }
-
 </div>

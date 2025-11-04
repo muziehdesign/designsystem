@@ -3,10 +3,12 @@
 :host {
     position: relative;
     outline: none;
+    cursor: pointer;
     @include px(4);
     @include py(2.5);
     @include font-weight(medium);
     @include text(sm);
+    border-radius: var(--button-border-radius);
 }
 
 :host[disabled] {
@@ -98,6 +100,7 @@
 .button--label {
     display: flex;
     align-items: center;
+    justify-content: center;
     @include gap(1);
 }
 

@@ -8,7 +8,7 @@ import { MzPagination } from './pagination/pagination.component';
 import { PageLoadingIndicatorComponent } from './page-loading-indicator/page-loading-indicator.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { FormsModule } from '@angular/forms';
-import { AlertComponent } from './alert/alert.component';
+import { MzAlert } from './alert/alert.component';
 import { PhoneNumberPipe } from './phone-number/phone-number.pipe';
 import { DateDisplayPipe } from './date-display/date-display.pipe';
 import { SortDirective } from './sort.directive';
@@ -29,7 +29,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     SvgIconComponent,
     MzSpinner,
     WizardProgressTrackerComponent,
-    AlertComponent,
+    MzAlert,
     EnumDisplayPipe,
     ResultTableComponent,
     InfiniteScrollComponent,
@@ -52,7 +52,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     PageLoadingIndicatorComponent,
     PageHeaderComponent,
     DateDisplayPipe,
-    AlertComponent,
+    MzAlert,
     PhoneNumberPipe,
     SortKeyDirective,
     SortDirective,
