@@ -2,9 +2,9 @@
     {{ data.message }}
 </div>
 
-@if(data.action.length > 0) {
 <div>
+    @if(data.action.length > 0) {
     <button mz-button appearance="subtle" (click)="action()">{{ data.action }}</button>
+    }
     <button mz-button appearance="subtle" (click)="close()"><mz-svg-icon key="x-outline"></mz-svg-icon></button>
 </div>
-}
