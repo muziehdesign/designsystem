@@ -95,6 +95,10 @@ export const componentRoutes: Routes = [
                 loadComponent: () => import('./dropdown-menu-guidelines/dropdown-menu-guidelines.component').then((b) => b.DropdownMenuGuidelinesComponent),
             },
             {
+                path: 'notification',
+                loadComponent: () => import('./notification/notification.component').then((b) => b.NotificationComponent),
+            },
+            {
                 path: 'pageheader',
                 loadComponent: () => import('./page-header-guidelines/page-header-guidelines.component').then((b) => b.PageHeaderGuidelinesComponent),
             },

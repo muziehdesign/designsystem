@@ -116,6 +116,7 @@ $color: (
         //link: var(--text-link)
     ),
     background: (
+        surface: var(--surface-bg),
         primary: var(--color-primary),
         primary-hovered: var(--color-brand-600),
         primary-active: var(--color-brand-800),
@@ -134,6 +135,9 @@ $color: (
         success: var(--color-green-500),
         success-subtlest: var(--color-green-50),
     ),
+    border: (
+        neutral: var(--color-neutral-200)
+    )
 );
 
 $breakpoints: (

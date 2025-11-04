@@ -1,0 +1,15 @@
+@use 'mixins/utilities' as *;
+
+:host {
+    display: flex;
+    align-items: center;
+    background-color: get-color('background', 'surface');
+    border: 1px solid get-color('border', 'neutral');
+    border-radius: 0.375rem;
+    @include py(1.5);
+    @include px(4);
+}
+
+.mz-notification-content {
+    padding-right: 2rem;
+}

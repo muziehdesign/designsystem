@@ -72,6 +72,9 @@ export { MzDialogFooter } from './lib/dialog/dialog-footer/dialog-footer.compone
 export { MzMessageDialog as MzMessageModal } from './lib/dialog/message-dialog/message-dialog.component';
 export { DialogAppearance } from './lib/dialog/dialog-appearance';
 
+// notification
+export { MzNotification } from './lib/notification/notification';
+
 // filter
 export { FilterComponent } from './lib/filter/filter.component';
 export { FilterOptionModel } from './lib/filter/filter-option.model';
