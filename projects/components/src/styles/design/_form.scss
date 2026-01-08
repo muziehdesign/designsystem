@@ -1,4 +1,4 @@
-@use "./mixins/form" as form;
+@use "mixins/form" as form;
 
 .form-input, .form-textarea, .form-select {
     @include form.field-control();
