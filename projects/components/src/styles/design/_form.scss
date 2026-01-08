@@ -1,4 +1,5 @@
 @use "mixins/form" as form;
+@use "mixins/utilities" as u;
 
 .form-input, .form-textarea, .form-select {
     @include form.field-control();
@@ -9,7 +10,9 @@
 }
 
 .input-group {
-    @apply flex gap-2 items-center;
+    display: flex;
+    align-items: center;
+    @include u.gap(2);
     @include form.field-control();
 
     &:focus-within {
@@ -17,7 +20,7 @@
     }
 
     .form-input {
-        @apply grow;
+        flex-grow: 1;
     }
 
     .form-input, .form-input:focus, .form-select, .form-select:focus, .button, .button:focus {
@@ -27,20 +30,20 @@
     }
 
     & > *:first-child {
-        @apply pl-3;
+        @include u.pl(3);
     }
 
     & > *:last-child {
-        @apply pr-3;
+        @include u.pr(3);
     }
 }
 
 .checkbox-label, .radio-label {
-    @apply ml-2;
+    @include u.ml(2);
 }
 
 .form {
-    @apply max-w-md;
+    max-width: 28rem;
 
     // TODO
     h1,
@@ -49,79 +52,100 @@
     h4,
     h5,
     h6 {
-        @apply mt-3 mb-0;
+        @include u.mt(3);
+        @include u.mb(0);
     }
 
     header {
-        @apply mb-2;
+        @include u.mb(2);
     }
 
     .description {
-        @apply text-subtle text-sm;
+        @include u.text(sm);
+        @include u.color(subtle);
     }
 
     .footer {
-        @apply mt-4 mb-3;
+        @include u.mt(4);
+        @include u.mb(3);
     }
 }
 
 .field {
-    @apply block py-3;
+    display: block;
+    @include u.py(3);
 }
 
 .field-option {
-    @apply block py-0.5;
+    display: block;
+    @include u.py(0.5);
 }
 
 .field-instructions {
-    @apply text-subtler block mt-1 text-sm;
+    @include u.color(subtler);
+    @include u.text(sm);
+    @include u.mt(1);
+    display: block;
 }
 
 .option-list .field {
-    @apply py-1;
+    @include u.py(1);
 }
 
 .field-label {
-    @apply text-sm text-subtle font-medium block mb-1;
+    @include u.text(sm);
+    @include u.color(subtle);
+    @include u.font-weight(medium);
+    @include u.mb(1);
+    display: block;
 }
 
 .form-input,
 .form-select,
 .form-textarea {
-    @apply w-full;
+    width: 100%;
 }
 
 .fieldset {
-    @apply mt-6;
+    @include u.mt(6);
 
     legend {
-        @apply text-subtle tracking-wide uppercase font-medium text-sm;
+        @include u.color(subtle);
+        @include u.font-weight(medium);
+        @include u.text(sm);
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
     }
 }
 
 // code below needs to be validated again
 .form-message {
-    @apply p-1 block;
+    @include u.p(1);
+    display: block;
 
     // this is temporary
     &.success {
-        @apply text-success;
+        @include u.color(success);
     }
     &.success svg {
-        @apply text-success inline-block;
+        @include u.color(success);
+        display: inline-block;
     }
     &.failed svg {
-        @apply text-danger inline-block;
+        @include u.color(danger);
+        display: inline-block;
     }
 }
 
 .field-error {
-    @apply mt-1 block text-danger;
+    @include u.mt(1);
+    display: block;
+    @include u.color(danger);
 }
 
 .form {
     .ng-submitted .ng-invalid:not(:focus),
     .ng-touched.ng-invalid:not(:focus) {
-        @apply border-danger;
+        border-color: var(--color-danger);
     }
 }

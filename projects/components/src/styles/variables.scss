@@ -1,0 +1,74 @@
+$font: (
+    weight: (
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700
+    ),
+    size: (
+        xs: 0.75rem,
+        sm: 0.875rem,
+        base: 1rem,
+        lg: 1.125rem,
+        xl: 1.25rem
+    ),
+    line-height: (
+        xs: calc(1 / 0.75),
+        sm: calc(1.25 / 0.875),
+        base: calc(1.5 / 1),
+        lg: calc(1.75 / 1.125),
+        xl: calc(1.75 / 1.25)
+    )
+);
+
+$core: (
+    spacing: 0.25rem, // 4px
+    sizing: 1px
+);
+
+$color: (
+    text: (
+        //default: var(--text-default),
+        primary: var(--color-primary),
+        subtle: var(--color-neutral-700),
+        subtler: var(--color-neutral-600),
+        subtlest: var(--color-neutral-500),
+        success: var(--color-success),
+        danger: var(--color-danger),
+        warning: var(--color-warning),
+        inverse: white,
+        disabled: var(--color-neutral-400)
+        //link: var(--text-link)
+    ),
+    background: (
+        surface: var(--surface-bg),
+        primary: var(--color-primary),
+        primary-hovered: var(--color-brand-600),
+        primary-active: var(--color-brand-800),
+        primary-subtlest: var(--color-brand-50),
+        neutral: var(--color-neutral-200),
+        neutral-hovered: rgb(from var(--color-neutral-200) r r b / 65%),
+        neutral-active: var(--color-neutral-300),
+        danger: var(--color-red-500),
+        danger-subtlest: var(--color-red-50),
+        danger-hovered: var(--color-red-600),
+        danger-active: var(--color-red-700),
+        warning: var(--color-yellow-500),
+        warning-subtlest: var(--color-yellow-50),
+        warning-hovered: var(--color-yellow-600),
+        warning-active: var(--color-yellow-700),
+        success: var(--color-green-500),
+        success-subtlest: var(--color-green-50),
+    ),
+    border: (
+        neutral: var(--color-neutral-200)
+    )
+);
+
+$breakpoints: (
+    sm: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    '2xl': 1536px
+);
