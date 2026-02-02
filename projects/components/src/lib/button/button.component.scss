@@ -14,13 +14,13 @@
     color: var(--button-color);
 
     &:hover {
-        background-color: var(--button-background-hover, color-mix(in srgb, var(--button-background) 85%, white));
+        background-color: color-mix(in srgb, var(--button-background) 92%, white);
     }
     &:focus-visible {
         @include ring(2, var(--button-ring-color, var(--button-background)), 2);
     }
     &:active {
-        background-color: var(--button-background-active, color-mix(in srgb, var(--button-background) 88%, black));
+        background-color: color-mix(in srgb, var(--button-background) 88%, black);
     }
 }
 
@@ -51,6 +51,9 @@
 
 :host(.button-secondary) {
     --button-background: var(--color-neutral-200); // TODO
+    &:hover {
+      --button-background: var(--color-neutral-300); // TODO
+    }
     --button-color: var(--color-subtle);
     --button-ring-color: var(--color-primary);
 }
