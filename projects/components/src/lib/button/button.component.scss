@@ -8,7 +8,20 @@
     @include py(2.5);
     @include font-weight(medium);
     @include text(sm);
+
     border-radius: var(--button-border-radius);
+    background: var(--button-background);
+    color: var(--button-color);
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--button-background) 92%, white);
+    }
+    &:focus-visible {
+        @include ring(2, var(--button-ring-color, var(--button-background)), 2);
+    }
+    &:active {
+        background-color: color-mix(in srgb, var(--button-background) 88%, black);
+    }
 }
 
 :host[disabled] {
@@ -17,76 +30,38 @@
 }
 
 :host(.button-primary) {
-    background-color: get-color('background', 'primary');
-    @include color(inverse);
+    --button-background: var(--color-primary);
+    --button-color: white;
+}
 
-    &:hover {
-        background-color: get-color('background', 'primary-hovered');
-    }
-    &:focus-visible {
-        @include ring(2, get-color('background', 'primary'), 2);
-    }
-    &:active {
-        background-color: get-color('background', 'primary-active');
-    }
+:host(.button-accent) {
+    --button-background: var(--color-accent);
+    --button-color: white;
 }
 
 :host(.button-danger) {
-    background-color: get-color('background', 'danger');
-    @include color(inverse);
-
-    &:hover {
-        background-color: get-color('background', 'danger-hovered');
-    }
-    &:focus-visible {
-        @include ring(2, get-color('background', 'danger'), 2);
-    }
-    &:active {
-        background-color: get-color('background', 'danger-active');
-    }
+    --button-background: var(--color-danger);
+    --button-color: white;
 }
 
 :host(.button-warning) {
-    background-color: get-color('background', 'warning');
-    @include color(inverse);
-
-    &:hover {
-        background-color: get-color('background', 'warning-hovered');
-    }
-    &:focus-visible {
-        @include ring(2, get-color('background', 'warning'), 2);
-    }
-    &:active {
-        background-color: get-color('background', 'warning-active');
-    }
+    --button-background: var(--color-warning);
+    --button-color: white;
 }
 
 :host(.button-secondary) {
-    background-color: get-color('background', 'neutral');
-
-    @include color(subtle);
+    --button-background: var(--color-neutral-200); // TODO
     &:hover {
-        background-color: get-color('background', 'neutral-hovered');
+      --button-background: var(--color-neutral-300); // TODO
     }
-    &:focus-visible {
-        @include ring(2, get-color('background', 'primary'), 2);
-    }
-    &:active {
-        background: get-color('background', 'neutral-active');
-    }
+    --button-color: var(--color-subtle);
+    --button-ring-color: var(--color-primary);
 }
 
 :host(.button-subtle) {
-    @include color(subtle);
-    &:hover {
-        background-color: get-color('background', 'neutral-hovered');
-    }
-    &:focus-visible {
-        @include ring(2, get-color('background', 'primary'), 2);
-    }
-    &:active {
-        background-color: get-color('background', 'neutral-active');
-    }
+    --button-background: transparent;
+    --button-color: var(--color-subtle);
+    --button-ring-color: var(--color-primary);
 }
 
 :host.busy {
