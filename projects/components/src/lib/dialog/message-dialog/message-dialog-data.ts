@@ -6,4 +6,5 @@ export interface MessageDialogData {
     appearance?: DialogAppearance;
     action: string;
     cancelAction: string;
+    topRightXButton: boolean;
 }

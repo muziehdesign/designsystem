@@ -5,10 +5,11 @@ import { MzDialogHeader } from '../dialog-header/dialog-header.component';
 import { MzDialogFooter } from '../dialog-footer/dialog-footer.component';
 import { MzDialogContent } from '../dialog-content/dialog-content.component';
 import { MzButton } from '../../button/button.component';
+import { SvgIconComponent } from "../../svg-icon/svg-icon.component";
 
 @Component({
     selector: 'mz-message-dialog',
-    imports: [MzDialogHeader, MzDialogFooter, MzButton, MzDialogContent],
+    imports: [MzDialogHeader, MzDialogFooter, MzButton, MzDialogContent, SvgIconComponent],
     templateUrl: './message-dialog.component.html',
     styleUrl: './message-dialog.component.scss',
 })
