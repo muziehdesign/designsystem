@@ -26,8 +26,8 @@ export class MzDialog {
      * @param appearance The appearance of the dialog.
      * @returns A reference to the opened dialog.
      */
-    display(title: string, message: string, action: string = 'OK', cancelAction: string = '', appearance?: DialogAppearance): DialogRef<void, MzMessageDialog> {
-        return this.open(MzMessageDialog, { data: { title: title, message: message, appearance: appearance, action: action, cancelAction: cancelAction } satisfies MessageDialogData, hasBackdrop: true });
+    display(title: string, message: string, action: string = 'OK', cancelAction: string = '', topRightXButton: boolean = false, appearance?: DialogAppearance): DialogRef<void, MzMessageDialog> {
+        return this.open(MzMessageDialog, { data: { title: title, message: message, appearance: appearance, action: action, cancelAction: cancelAction, topRightXButton: topRightXButton } satisfies MessageDialogData, hasBackdrop: true });
     }
 
     /**
@@ -39,8 +39,8 @@ export class MzDialog {
      * @param appearance The appearance of the dialog.
      * @returns A promise that resolves to true if the user confirmed, false if canceled, undefined if dismissed.
      */
-    confirm(title: string, message: string, action: string = 'OK', cancelAction: string = 'Cancel', appearance?: DialogAppearance): Promise<boolean | undefined> {
-        const ref = this.open(MzMessageDialog, { data: { title: title, message: message, appearance: appearance, action: action, cancelAction: cancelAction } satisfies MessageDialogData, hasBackdrop: true });
+    confirm(title: string, message: string, action: string = 'OK', cancelAction: string = 'Cancel', topRightXButton: boolean = false, appearance?: DialogAppearance): Promise<boolean | undefined> {
+        const ref = this.open(MzMessageDialog, { data: { title: title, message: message, appearance: appearance, action: action, cancelAction: cancelAction, topRightXButton: topRightXButton } satisfies MessageDialogData, hasBackdrop: true });
         return firstValueFrom(ref.closed) as Promise<boolean | undefined>;
     }
 

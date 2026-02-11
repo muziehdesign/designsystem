@@ -20,7 +20,7 @@ export class DialogGuidelinesComponent implements OnDestroy {
     }
 
     display(appearance?: DialogAppearance) {
-        this.modal.display('Confirmed', 'This is a message', 'OK', '', appearance);
+        this.modal.display('Confirmed', 'This is a message', 'OK', '', false, appearance);
     }
 
     confirm() {
@@ -28,12 +28,12 @@ export class DialogGuidelinesComponent implements OnDestroy {
     }
 
     async confirmWarning() {
-        const result = await this.modal.confirm('Move file', 'Moving files can result in broken links.', 'Move', 'Cancel', 'warning');
+        const result = await this.modal.confirm('Move file', 'Moving files can result in broken links.', 'Move', 'Cancel', false, 'warning');
         console.log('confirm warning result: ', result);
     }
 
     async confirmDanger() {
-        const result = await this.modal.confirm('Delete file', 'This action cannot be undone.', 'Delete', 'Cancel', 'danger');
+        const result = await this.modal.confirm('Delete file', 'This action cannot be undone.', 'Delete', 'Cancel', false, 'danger');
         console.log('confirm danger result: ', result);
     }
 

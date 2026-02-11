@@ -1,3 +1,10 @@
+@if(data.topRightXButton) {
+<div class="relative">
+    <button (click)="close()" class="absolute top-0 right-0 hover:opacity-70 transition-opacity" aria-label="Close">
+        <mz-svg-icon key="x-outline" />
+    </button>
+</div>
+}
 <mz-dialog-header [title]="data.title"></mz-dialog-header>
 <mz-dialog-content>
     {{ data.message }}
