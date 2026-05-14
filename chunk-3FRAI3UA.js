@@ -1,0 +1,2 @@
+import{Fb as o,Gb as i,ab as m,ac as a}from"./chunk-AFOWYH35.js";import"./chunk-EQDQRRRY.js";var p=(()=>{let t=class t{constructor(){}ngOnInit(){}};t.\u0275fac=function(n){return new(n||t)},t.\u0275cmp=m({type:t,selectors:[["app-layout"]],decls:4,vars:0,template:function(n,c){n&1&&(o(0,"h1"),a(1,"Layout"),i(),o(2,"p"),a(3,` Navigation bar, content, side content
+`),i())},encapsulation:2});let e=t;return e})();export{p as LayoutComponent};
